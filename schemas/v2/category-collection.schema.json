@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v2/category-collection.schema.json",
+  "title": "CategoryCollectionManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "domainId", "categories"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "domainId": { "$ref": "#/$defs/domainId" },
+    "categories": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/category" } }
+  },
+  "$defs": {
+    "kebabCaseId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "domainId": { "enum": ["research-and-intelligence", "strategy-and-decision", "writing-and-publishing", "marketing-and-growth", "promotion-and-distribution", "sales-and-customer", "product-management", "project-management", "software-engineering", "devops-and-security", "ai-agents-and-automation", "data-and-analytics", "design-and-brand", "video-and-audio", "documents-and-knowledge", "business-operations", "finance-and-accounting", "commerce", "people-and-training", "legal-risk-and-compliance"] },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": { "ko": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+    },
+    "releaseStatus": { "type": "string", "enum": ["draft", "beta", "stable", "deprecated", "blocked"] },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "description", "status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/kebabCaseId" },
+        "name": { "$ref": "#/$defs/localizedText" },
+        "description": { "$ref": "#/$defs/localizedText" },
+        "status": { "$ref": "#/$defs/releaseStatus" }
+      }
+    }
+  }
+}

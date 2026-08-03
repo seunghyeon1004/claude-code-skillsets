@@ -1,0 +1,115 @@
+schemaVersion: 2
+domainId: writing-and-publishing
+categories:
+  - id: ideation
+    name:
+      ko: 아이디어 발상
+      en: Ideation
+    description:
+      ko: 목적, 독자, 근거에 맞는 콘텐츠 주제와 관점을 발굴한다.
+      en: Develops content topics and angles suited to the purpose, audience, and evidence.
+    status: draft
+  - id: outlining
+    name:
+      ko: 개요 작성
+      en: Outlining
+    description:
+      ko: 핵심 주장과 근거를 논리적인 문서 구조와 흐름으로 배열한다.
+      en: Arranges key claims and evidence into a logical document structure and flow.
+    status: draft
+  - id: long-form-writing
+    name:
+      ko: 장문 작성
+      en: Long-form writing
+    description:
+      ko: 복잡한 주제를 일관된 논지와 충분한 근거를 갖춘 장문으로 작성한다.
+      en: Develops complex subjects into sustained writing with a coherent argument and adequate evidence.
+    status: draft
+  - id: blogs
+    name:
+      ko: 블로그
+      en: Blogs
+    description:
+      ko: 검색과 독자 맥락에 맞는 유용하고 읽기 쉬운 블로그 글을 만든다.
+      en: Produces useful and readable blog posts suited to search and audience context.
+    status: draft
+  - id: newsletters
+    name:
+      ko: 뉴스레터
+      en: Newsletters
+    description:
+      ko: 구독자 관계와 정기 발행 목적에 맞는 뉴스레터를 구성한다.
+      en: Structures newsletters for subscriber relationships and recurring publication goals.
+    status: draft
+  - id: technical-writing
+    name:
+      ko: 기술 문서 작성
+      en: Technical writing
+    description:
+      ko: 기술 개념, 절차, 제약을 정확하고 재현 가능한 문서로 설명한다.
+      en: Explains technical concepts, procedures, and constraints accurately and reproducibly.
+    status: draft
+  - id: business-writing
+    name:
+      ko: 비즈니스 글쓰기
+      en: Business writing
+    description:
+      ko: 의사결정과 협업에 필요한 제안, 보고, 안내 문서를 명확하게 작성한다.
+      en: Creates clear proposals, reports, and communications for decisions and collaboration.
+    status: draft
+  - id: copywriting
+    name:
+      ko: 카피라이팅
+      en: Copywriting
+    description:
+      ko: 가치 제안과 행동 요청을 설득력 있고 검증 가능한 문구로 표현한다.
+      en: Expresses value propositions and calls to action in persuasive, supportable language.
+    status: draft
+  - id: editing
+    name:
+      ko: 편집
+      en: Editing
+    description:
+      ko: 문서의 논리, 구조, 명료성, 어조를 목적과 독자에 맞게 개선한다.
+      en: Improves a document's logic, structure, clarity, and tone for its purpose and audience.
+    status: draft
+  - id: proofreading
+    name:
+      ko: 교정
+      en: Proofreading
+    description:
+      ko: 맞춤법, 문법, 표기, 형식의 오류와 불일치를 바로잡는다.
+      en: Corrects errors and inconsistencies in spelling, grammar, notation, and formatting.
+    status: draft
+  - id: citation-verification
+    name:
+      ko: 인용 검증
+      en: Citation verification
+    description:
+      ko: 인용이 원출처의 내용과 위치를 정확히 반영하는지 확인한다.
+      en: Verifies that citations accurately reflect and locate the supporting source material.
+    status: draft
+  - id: translation
+    name:
+      ko: 번역
+      en: Translation
+    description:
+      ko: 원문의 의미, 용어, 어조를 보존해 다른 언어로 옮긴다.
+      en: Transfers meaning, terminology, and tone faithfully into another language.
+    status: draft
+  - id: localization
+    name:
+      ko: 현지화
+      en: Localization
+    description:
+      ko: 콘텐츠를 대상 지역의 언어, 문화, 형식, 규범에 맞게 조정한다.
+      en: Adapts content to the language, culture, formats, and conventions of a target locale.
+    status: draft
+  - id: cms-publishing
+    name:
+      ko: CMS 출판
+      en: CMS publishing
+    description:
+      ko: 승인된 콘텐츠와 메타데이터를 콘텐츠 관리 시스템에 정확히 게시한다.
+      en: Publishes approved content and metadata accurately through a content management system.
+    status: draft

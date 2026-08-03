@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-kepano-obsidian-skills",
+  "sourceUrl": "https://github.com/kepano/obsidian-skills",
+  "queryUrls": [
+    "https://github.com/kepano/obsidian-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": ".claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/kepano/obsidian-skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/defuddle/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/json-canvas/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/obsidian-bases/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/obsidian-cli/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/obsidian-markdown/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 5
+    }
+  ],
+  "contentSha256": "0e48599f45f0ea0b84d9a634e4793a716997825f4cbf5d238eae94be4a282fc2"
+}

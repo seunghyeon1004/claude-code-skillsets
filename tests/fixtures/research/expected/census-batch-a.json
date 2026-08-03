@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-07-23T09:08:12Z",
+  "snapshotIds": [
+    "2026-07-23-anthropic-plugins-official",
+    "2026-07-23-anthropic-skills",
+    "2026-07-23-obra-superpowers",
+    "2026-07-23-wshobson-agents",
+    "2026-07-23-coreyhaines31-marketingskills"
+  ],
+  "sources": [
+    {
+      "id": "2026-07-23-anthropic-plugins-official",
+      "sourceUrl": "https://github.com/anthropics/claude-plugins-official",
+      "inspectedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 272 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 40 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 31 }
+      ],
+      "contentSha256": "355696da746e58e1e197be509236d8f8e6a7c5f8f7437c1a71ff32896c866c05"
+    },
+    {
+      "id": "2026-07-23-anthropic-skills",
+      "sourceUrl": "https://github.com/anthropics/skills",
+      "inspectedCommit": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 3 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 18 }
+      ],
+      "contentSha256": "cf2b1e8206fb84c75ea867ee5c88282b5a61cac5820dccc053db3a578927107e"
+    },
+    {
+      "id": "2026-07-23-obra-superpowers",
+      "sourceUrl": "https://github.com/obra/superpowers",
+      "inspectedCommit": "d884ae04edebef577e82ff7c4e143debd0bbec99",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 14 }
+      ],
+      "contentSha256": "9ed7828bf274052df1deca567333221cb045f8269dbf5cb382cc8567f7c89342"
+    },
+    {
+      "id": "2026-07-23-wshobson-agents",
+      "sourceUrl": "https://github.com/wshobson/agents",
+      "inspectedCommit": "c4b82b0ad771190355eb8e204b1329732a18449a",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 95 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 91 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 180 }
+      ],
+      "contentSha256": "1c31895f34aa6156e83755bbd65243cd0ae13a8bb9983e394215b6425ff715d1"
+    },
+    {
+      "id": "2026-07-23-coreyhaines31-marketingskills",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "inspectedCommit": "c21a984a56da10fb6085e6334f6f60929220a4da",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 48 }
+      ],
+      "contentSha256": "2652f28194c95f3961b4d0326787daaa8a48b3efddb9886128654c7cc343bd59"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+name: Decision Broker Gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      expected_tip:
+        description: Exact main tip to revalidate after registry anchoring
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prepare exact first-public bootstrap context
+        id: bootstrap_context
+        if: github.event_name == 'push' && github.event.before == '0000000000000000000000000000000000000000'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/main
+          test -n "${GH_TOKEN:-}"
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          remote_refs="$(GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.extraHeader GIT_CONFIG_VALUE_0="$auth_header" git ls-remote --heads --tags origin)"
+          unset auth_header
+          test "$(printf '%s\n' "$remote_refs" | awk 'NF { count += 1 } END { print count + 0 }')" = 3
+          main_sha="$(printf '%s\n' "$remote_refs" | awk '$2 == "refs/heads/main" { print $1 }')"
+          test "$main_sha" = "$GITHUB_SHA"
+          tag_ref="$(printf '%s\n' "$remote_refs" | awk '$2 ~ /^refs\/tags\/public-history\/root-v[1-9][0-9]*$/ { print $2 }')"
+          test -n "$tag_ref"
+          test "$(printf '%s\n' "$tag_ref" | awk 'NF { count += 1 } END { print count + 0 }')" = 1
+          tag_object="$(printf '%s\n' "$remote_refs" | awk -v tag="$tag_ref" '$2 == tag { print $1 }')"
+          peeled_object="$(printf '%s\n' "$remote_refs" | awk -v tag="${tag_ref}^{}" '$2 == tag { print $1 }')"
+          [[ "$tag_object" =~ ^[0-9a-f]{40,64}$ ]]
+          [[ "$peeled_object" =~ ^[0-9a-f]{40,64}$ ]]
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.extraHeader GIT_CONFIG_VALUE_0="$auth_header" \
+            git fetch --no-tags origin "${tag_ref}:${tag_ref}"
+          unset auth_header
+          test "$(git rev-parse --verify "${tag_ref}^{tag}")" = "$tag_object"
+          printf 'remote_exact=true\n' >> "$GITHUB_OUTPUT"
+          printf 'tag_name=%s\n' "${tag_ref#refs/tags/}" >> "$GITHUB_OUTPUT"
+          printf 'tag_object=%s\n' "$tag_object" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # actions/setup-node v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Resolve registry approval context
+        id: approval_context
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          MANUAL_CURRENT_TIP: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+          EXPECTED_CURRENT_TIP: ${{ inputs.expected_tip }}
+          PUBLIC_BOOTSTRAP_REMOTE_EXACT: ${{ steps.bootstrap_context.outputs.remote_exact }}
+          PUBLIC_ROOT_TAG_NAME: ${{ steps.bootstrap_context.outputs.tag_name }}
+        run: npm exec -- tsx scripts/research/resolve-ci-approval-context.ts >> "$GITHUB_OUTPUT"
+      - name: Enforce immutable and append-only broker records
+        env:
+          APPEND_BASE: ${{ steps.approval_context.outputs.base }}
+          REGISTRY_APPROVAL_MODE: ${{ steps.approval_context.outputs.mode }}
+          REGISTRY_APPROVAL_ANCHORED: ${{ vars.REGISTRY_APPROVAL_ANCHORED }}
+          APPROVED_REGISTRY_TAG_OBJECT: ${{ secrets.APPROVED_REGISTRY_TAG_OBJECT }}
+          PUBLIC_ROOT_COMMIT: ${{ steps.approval_context.outputs.mode == 'first-public-bootstrap' && steps.approval_context.outputs.base || '' }}
+        run: |
+          test -n "$APPEND_BASE"
+          case "$REGISTRY_APPROVAL_MODE" in
+            first-public-bootstrap)
+              test -n "$PUBLIC_ROOT_COMMIT"
+              export REGISTRY_APPROVAL_MODE=current-tip
+              npm run verify:p03-immutable -- --baseline-ref "$PUBLIC_ROOT_COMMIT"
+              bash scripts/research/require-registry-anchor-input.sh --mode current-tip
+              ;;
+            current-tip) bash scripts/research/require-registry-anchor-input.sh --mode current-tip ;;
+            changed-batch) bash scripts/research/require-registry-anchor-input.sh --mode changed-batch --base "$APPEND_BASE" ;;
+            *) printf '%s\n' "Unsupported registry approval mode: $REGISTRY_APPROVAL_MODE" >&2; exit 1 ;;
+          esac
+          if [ -z "$PUBLIC_ROOT_COMMIT" ]; then
+            npm run verify:p03-immutable
+          fi
+          npm run verify:research-append-only -- --base "$APPEND_BASE"
+          npm run verify:review-ledger-append-only -- --base "$APPEND_BASE"
+          npm run verify:decision-index-history -- --previous-ref "$APPEND_BASE"
+          npm run verify:broker-only
+
+  claude-plugin-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prepare exact first-public bootstrap context
+        id: bootstrap_context
+        if: github.event_name == 'push' && github.event.before == '0000000000000000000000000000000000000000'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/main
+          test -n "${GH_TOKEN:-}"
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          remote_refs="$(GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.extraHeader GIT_CONFIG_VALUE_0="$auth_header" git ls-remote --heads --tags origin)"
+          unset auth_header
+          test "$(printf '%s\n' "$remote_refs" | awk 'NF { count += 1 } END { print count + 0 }')" = 3
+          main_sha="$(printf '%s\n' "$remote_refs" | awk '$2 == "refs/heads/main" { print $1 }')"
+          test "$main_sha" = "$GITHUB_SHA"
+          tag_ref="$(printf '%s\n' "$remote_refs" | awk '$2 ~ /^refs\/tags\/public-history\/root-v[1-9][0-9]*$/ { print $2 }')"
+          test -n "$tag_ref"
+          test "$(printf '%s\n' "$tag_ref" | awk 'NF { count += 1 } END { print count + 0 }')" = 1
+          tag_object="$(printf '%s\n' "$remote_refs" | awk -v tag="$tag_ref" '$2 == tag { print $1 }')"
+          peeled_object="$(printf '%s\n' "$remote_refs" | awk -v tag="${tag_ref}^{}" '$2 == tag { print $1 }')"
+          [[ "$tag_object" =~ ^[0-9a-f]{40,64}$ ]]
+          [[ "$peeled_object" =~ ^[0-9a-f]{40,64}$ ]]
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.extraHeader GIT_CONFIG_VALUE_0="$auth_header" \
+            git fetch --no-tags origin "${tag_ref}:${tag_ref}"
+          unset auth_header
+          test "$(git rev-parse --verify "${tag_ref}^{tag}")" = "$tag_object"
+          printf 'remote_exact=true\n' >> "$GITHUB_OUTPUT"
+          printf 'tag_name=%s\n' "${tag_ref#refs/tags/}" >> "$GITHUB_OUTPUT"
+          printf 'tag_object=%s\n' "$tag_object" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # actions/setup-node v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm install --global @anthropic-ai/claude-code@2.1.198
+      - run: claude plugin validate . --strict
+      - run: claude plugin validate plugins/shared-core --strict
+      - run: claude plugin validate plugins/skillset-manager --strict
+      - name: Resolve registry approval context
+        id: approval_context
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          MANUAL_CURRENT_TIP: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+          EXPECTED_CURRENT_TIP: ${{ inputs.expected_tip }}
+          PUBLIC_BOOTSTRAP_REMOTE_EXACT: ${{ steps.bootstrap_context.outputs.remote_exact }}
+          PUBLIC_ROOT_TAG_NAME: ${{ steps.bootstrap_context.outputs.tag_name }}
+        run: npm exec -- tsx scripts/research/resolve-ci-approval-context.ts >> "$GITHUB_OUTPUT"
+      - run: bash tests/e2e/clean-copy.sh
+        env:
+          APPEND_BASE: ${{ steps.approval_context.outputs.base }}
+          LEDGER_APPEND_BASE: ${{ steps.approval_context.outputs.base }}
+          REGISTRY_APPROVAL_MODE: ${{ steps.approval_context.outputs.mode == 'first-public-bootstrap' && 'current-tip' || steps.approval_context.outputs.mode }}
+          REGISTRY_APPROVAL_ANCHORED: ${{ vars.REGISTRY_APPROVAL_ANCHORED }}
+          APPROVED_REGISTRY_TAG_OBJECT: ${{ secrets.APPROVED_REGISTRY_TAG_OBJECT }}
+          PUBLIC_ROOT_COMMIT: ${{ steps.approval_context.outputs.mode == 'first-public-bootstrap' && steps.approval_context.outputs.base || '' }}
+          PUBLIC_ROOT_TAG_NAME: ${{ steps.bootstrap_context.outputs.tag_name }}
+          PUBLIC_ROOT_TAG_OBJECT: ${{ steps.bootstrap_context.outputs.tag_object }}

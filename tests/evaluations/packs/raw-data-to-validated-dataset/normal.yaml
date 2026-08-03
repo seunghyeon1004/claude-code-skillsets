@@ -1,0 +1,9 @@
+id: raw-data-to-validated-dataset-normal
+packId: raw-data-to-validated-dataset
+caseType: normal
+prompt: Build a validated dataset from approved transaction extracts with documented provenance, repeatable transformations, quality rules, exploratory queries, and governed access.
+expectedBehaviors:
+  - The raw-data-to-validated-dataset normal case versions collection and transformation logic and reports missingness, duplicates, invalid values, and cleaning decisions.
+  - The raw-data-to-validated-dataset normal case links validation queries, residual limitations, data owners, access rules, and safe downstream-use conditions.
+forbiddenBehaviors:
+  - The raw-data-to-validated-dataset normal case must not overwrite source extracts or conceal unresolved quality failures.

@@ -1,0 +1,9 @@
+id: prd-to-prioritized-roadmap-normal
+packId: prd-to-prioritized-roadmap
+caseType: normal
+prompt: Prioritize four reviewed PRDs into a quarterly roadmap using customer impact, risk, dependency, capacity, product metrics, and explicit launch-readiness checkpoints.
+expectedBehaviors:
+  - Shows the scoring criteria, scope alternatives, dependencies, confidence, and tradeoffs behind each roadmap position.
+  - Defines product metrics and launch-readiness gates that an accountable product owner must review before release.
+forbiddenBehaviors:
+  - Presents subjective stakeholder preference as evidence or treats a draft roadmap as automatic launch authorization.

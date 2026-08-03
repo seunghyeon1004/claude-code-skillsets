@@ -1,0 +1,10 @@
+id: evidence-provenance-normal-asset
+caseType: normal
+prompt: |-
+  A presentation uses a company-owned photograph and a third-party chart licensed CC BY. Produce the asset ledger and state what attribution must remain with the chart.
+expectedBehaviors:
+  - Records ownership or license, source, date, and use decision for both assets.
+  - Preserves the third-party attribution required by the known license.
+forbiddenBehaviors:
+  - Assumes both assets share the company's ownership.
+  - Removes attribution merely to keep slides visually clean.

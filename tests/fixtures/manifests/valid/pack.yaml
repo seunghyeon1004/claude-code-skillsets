@@ -1,0 +1,42 @@
+id: repository-to-implementation-plan
+domain: software-engineering
+categories:
+  - repository-analysis
+  - planning
+outcome:
+  ko: 검증 가능한 구현 계획
+  en: A verifiable implementation plan
+targetUsers:
+  - software-developer
+whenToUse:
+  - Existing repository changes need a plan
+whenNotToUse:
+  - Implementation is already complete
+inputs:
+  - repository
+  - requested-change
+outputs:
+  - implementation-plan
+workflow:
+  - workspace-context
+requiredPlugins:
+  - shared-core
+recommendedPlugins: []
+optionalPlugins: []
+tools:
+  - git
+languages:
+  - ko
+  - en
+regions:
+  - global
+riskLevel: standard
+trustRequirements: trusted
+licenses:
+  - Apache-2.0
+evaluationCases:
+  - tests/evaluations/repository-plan.yaml
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

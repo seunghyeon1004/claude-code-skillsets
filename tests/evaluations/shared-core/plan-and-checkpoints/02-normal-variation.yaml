@@ -1,0 +1,10 @@
+id: plan-and-checkpoints-normal-parallel
+caseType: normal
+prompt: |-
+  An implementation needs independent documentation drafting and test-fixture preparation before both feed a final review. Produce the step plan and identify safe parallel work.
+expectedBehaviors:
+  - Runs documentation and fixture preparation in parallel only because neither consumes the other's output.
+  - Joins both outputs at the review checkpoint with explicit evidence.
+forbiddenBehaviors:
+  - Serializes independent work without a dependency reason.
+  - Starts final review before both required inputs exist.

@@ -1,0 +1,4917 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-alirezarezvani-claude-skills",
+  "sourceUrl": "https://github.com/alirezarezvani/claude-skills",
+  "queryUrls": [
+    "https://github.com/alirezarezvani/claude-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/1",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/10",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/11",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/12",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/13",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/14",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/15",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/16",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/17",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/18",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/19",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/2",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/20",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/21",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/22",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/23",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/24",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/25",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/26",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/27",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/28",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/29",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/3",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/30",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/31",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/32",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/33",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/34",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/35",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/36",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/37",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/38",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/39",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/4",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/40",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/41",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/42",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/43",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/44",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/45",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/46",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/47",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/48",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/49",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/5",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/50",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/51",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/52",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/53",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/54",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/55",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/56",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/57",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/58",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/59",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/6",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/60",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/61",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/62",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/63",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/64",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/65",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/66",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/67",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/68",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/69",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/7",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/70",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/71",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/72",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/73",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/74",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/75",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/76",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/77",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/78",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/79",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/8",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/80",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/81",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/82",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/83",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/84",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/85",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/86",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/87",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/9",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "business-growth/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "business-operations/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/arquiteto-de-empresa/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/c-level-agents/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/chief-ai-officer-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/chief-customer-officer-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/chief-data-officer-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/executive-mentor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/general-counsel-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "c-level-advisor/vpe-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "commercial/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "compliance-os/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/a11y-audit/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/google-workspace-cli/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/playwright-pro/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/self-improving-agent/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering-team/snowflake-development/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/agent-harness/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/agenthub/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/autoresearch-agent/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/behuman/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/caveman/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/chaos-engineering/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/claude-coach/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/code-tour/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/collab-proof/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/data-quality-auditor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/demo-video/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/docker-development/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/feature-flags-architect/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/grill-me/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/grill-with-docs/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/handoff/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/helm-chart-builder/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/karpathy-coder/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/kubernetes-operator/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/llm-cost-optimizer/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/llm-wiki/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/prompt-governance/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/security-guidance/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/skillopt-sleep/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/slo-architect/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/statistical-analyst/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/terraform-patterns/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/universal-scraping-architect/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/workflow-builder/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/write-a-skill/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "engineering/zero-hallucination-coder/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "finance/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "finance/business-investment-advisor/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "markdown-html/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "marketing-skill/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "marketing-skill/skills/aeo/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "marketing-skill/skills/youtube-full/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "marketing-skill/video-content-strategist/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "marketing/landing/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "product-team/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "product-team/agile-product-owner/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "product-team/apple-hig-expert/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "product-team/code-to-prd/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "product-team/research-summarizer/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/andreessen/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/capture/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/deep-work/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/email/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/fable-goal/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/handoff/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/meetings/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/reflect/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/roast/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "productivity/weekly-review/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "project-management/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "ra-qm-team/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "ra-qm-team/compliance-team-eu-ai-act/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "ra-qm-team/compliance-team-iso42001/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research-ops/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/deep-research/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/dossier/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/grants/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/litreview/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/notebooklm/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/patent/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/pulse/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/research/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "research/syllabus/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/alirezarezvani/claude-skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/README/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/TEMPLATE/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/a11y-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ab-test-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ad-creative/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/adversarial-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/aeo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agent-decision-receipts/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agent-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agent-harness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agent-protocol/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agent-workflow-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agenthub/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/agile-product-owner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ai-act-readiness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ai-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/aims-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/analytics-tracking/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/andreessen/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/api-design-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/api-test-suite-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/app-store-optimization/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/apple-hig-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/arquiteto-de-empresa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/atlassian-admin/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/atlassian-templates/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/autoresearch-agent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/aws-solution-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/azure-cloud-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/behuman/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/board-deck-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/board-meeting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/board-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/board/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/boardroom/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/brand-guidelines/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/brief/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/browser-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/browserstack/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/business-growth-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/business-investment-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/business-operations-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/c-level-agents/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/c-level-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/caio-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/campaign-analytics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/capa-officer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/capacity-planner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/capture/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/caveman/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cco-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cdo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ceo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cfo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cfo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/challenge/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/change-management/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/changelog-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/changelog/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/channel-economics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chaos-engineering/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chaos-experiment/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chief-ai-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chief-customer-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chief-data-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chief-of-staff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/chro-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/churn-prevention/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ci-cd-pipeline-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ciso-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ciso-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/claude-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/clinical-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cloud-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmd-a11y-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmd-code-to-prd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmd-cs-aeo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmd-focused-fix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cmo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/code-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/code-to-prd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/code-tour/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/codebase-onboarding/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cold-email/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/collab-proof/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/commercial-forecaster/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/commercial-policy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/commercial-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/company-os/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/competitive-intel/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/competitive-matrix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/competitive-teardown/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/competitor-alternatives/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/compliance-os-bundle/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/compliance-readiness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/confluence-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/content-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/content-humanizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/content-production/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/content-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/content-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/context-engine/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/contract-and-proposal-writer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/coo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/copy-editing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/copywriting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/coverage/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cpo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cpo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cro-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cro-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cross-eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-aeo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-agile-product-owner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-backend-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-backend-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-ceo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-content-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-cto-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-demand-gen-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-engineer-grill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-engineering-lead/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-financial-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-frontend-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-frontend-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-fullstack-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-fullstack-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-growth-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-karpathy-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-onboard/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-product-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-product-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-product-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-project-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-quality-regulatory/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-senior-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-ux-researcher/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-webinar-marketer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-webinar/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-wiki-ingestor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-wiki-librarian/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-wiki-linter/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cs-workspace-admin/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cto-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/cto-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/culture-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/customer-success-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/data-quality-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/database-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/database-schema-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/deal-desk/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/decide/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/decision-logger/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/deep-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/deep-work/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/demo-video/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/dependency-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/design-system/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/devops-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/docker-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/dossier/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/email-sequence/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/email-template-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/engineering-advanced-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/engineering-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/env-secrets-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/epic-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/eu-ai-act-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/execute/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/executive-mentor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/experiment-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/extract/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/fable-goal/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/fda-consultant-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/fda-qsr-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/feature-flags-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/finance-lead/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/finance-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/financial-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/financial-health/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/fix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/flag-cleanup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/focused-fix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/form-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/founder-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/founder-mode/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/free-tool-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/freeze/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/full-page-screenshot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/gc-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/gcp-cloud-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/gdpr-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/gdpr-dsgvo-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/general-counsel-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/generate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/git-worktree-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/google-workspace-cli/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/google-workspace/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/grants/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/grill-me/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/grill-with-docs/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/growth-marketer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/handoff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/hard-call/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/helm-chart-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/inbox-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/inbox-triage/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/incident-commander/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/incident-response/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/information-security-manager-iso27001/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/init/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/internal-comms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/internal-narrative/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/interview-system-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/intl-expansion/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/isms-audit-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/iso13485-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/iso27001-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/iso42001-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/jira-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/karpathy-check/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/karpathy-coder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/knowledge-ops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/kubernetes-operator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/landing-page-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/landing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/launch-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/litreview/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/llm-cost-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/llm-wiki/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/local-seo-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/loop/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ma-playbook/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/markdown-html-orchestrator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/market-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-context/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-demand-acquisition/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-ideas/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-ops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-psychology/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/marketing-strategy-pmm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/mcp-server-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/md-document/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/md-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/md-slides/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/mdr-745-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/meeting-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/meetings/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/memory-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/memory-status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/merge/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/migrate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/migration-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/minimalist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/monorepo-navigator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ms365-tenant-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/named-persona-adversarial-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/notebooklm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/observability-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/office-hours/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/okr/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/onboard/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/onboarding-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/operator-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/org-health-diagnostic/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/page-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/paid-ads/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/partnerships-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/patent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/paywall-upgrade-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/performance-profiler/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/persona/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pipeline/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/plugin-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pm-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/popup-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/post-mortem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/postmortem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pr-review-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/prd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pricing-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pricing-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/process-mapper/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/procurement-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-analytics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-discovery/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-manager-toolkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/product-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/programmatic-seo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/project-health/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/promote/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/prompt-engineer-toolkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/prompt-governance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pulse/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/pw/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/qms-audit-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/quality-documentation-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/quality-manager-qmr/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/quality-manager-qms-iso13485/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ra-qm-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/rag-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/red-team/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/referral-program/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/reflect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/regulatory-affairs-head/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/remember/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/report/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/research-bundle/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/research-finance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/research-ops-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/research-summarizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/resume/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/retro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/revenue-operations/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/rfp-responder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/rice/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/risk-management-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/roadmap-communicator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/roast/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/run/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/runbook-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/saas-health/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/saas-metrics-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/saas-scaffolder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/sales-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/sample-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/scenario-war-room/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/schema-markup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/scrum-master/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/secrets-vault-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/security-guidance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/security-pen-testing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/self-eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/self-improving-agent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-backend/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-computer-vision/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-data-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-data-scientist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-devops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-frontend/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-fullstack/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-ml-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-pm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-prompt-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-qa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-secops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/senior-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/seo-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/seo-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ship-gate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/signup-flow-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/site-architecture/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skill-security-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skill-tester/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skillopt-sleep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-arquiteto-de-empresa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-chaos-engineering/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-chief-ai-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-chief-customer-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-chief-data-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-eu-ai-act-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-feature-flags-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-general-counsel-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-handoff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-init/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-iso42001-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-kubernetes-operator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-run/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-slo-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-status-2/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/skills-vpe-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/slo-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/slo-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/snowflake-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/soc2-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/soc2-compliance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/social-content/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/social-media-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/social-media-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/solo-founder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/spawn/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/spec-driven-workflow/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/spec-to-repo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/sprint-health/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/sprint-plan/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/sql-database-assistant/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/startup-cto/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/statistical-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/strategic-alignment/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/stress-test/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/strict-api/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/stripe-integration-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/syllabus/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tc-tracker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tc/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tdd-guide/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tdd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/team-communications/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tech-debt-tracker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tech-debt/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/tech-stack-evaluator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/terraform-patterns/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/testrail/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/threat-detection/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ui-design-system/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/universal-scraping-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/user-story/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/ux-researcher-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/vendor-management/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/video-content-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/vpe-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/vpe-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/webinar-marketing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/weekly-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/wiki-ingest/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/wiki-init/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/wiki-lint/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/wiki-log/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/wiki-query/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/workflow-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/write-a-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/x-twitter-growth/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/youtube-full/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": ".gemini/skills/zero-hallucination-coder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-growth/skills/business-growth-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-growth/skills/contract-and-proposal-writer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-growth/skills/customer-success-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-growth/skills/revenue-operations/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-growth/skills/sales-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/business-operations-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/capacity-planner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/internal-comms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/knowledge-ops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/process-mapper/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/procurement-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "business-operations/skills/vendor-management/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/arquiteto-de-empresa/skills/arquiteto-de-empresa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/boardroom/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/brief/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/c-level-agents/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/caio-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cco-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cdo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cfo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/ciso-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cmo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cpo-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cro-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cross-eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/cto-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/decide/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/execute/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/founder-mode/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/freeze/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/gc-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/office-hours/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/onboard/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/post-mortem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/c-level-agents/skills/vpe-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/chief-ai-officer-advisor/skills/chief-ai-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/chief-customer-officer-advisor/skills/chief-customer-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/chief-data-officer-advisor/skills/chief-data-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/board-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/challenge/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/executive-mentor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/hard-call/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/postmortem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/executive-mentor/skills/stress-test/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/general-counsel-advisor/skills/general-counsel-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/agent-protocol/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/arquiteto-de-empresa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/board-deck-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/board-meeting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/c-level-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/ceo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cfo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/change-management/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/chief-ai-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/chief-data-officer-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/chief-of-staff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/chro-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/ciso-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cmo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/company-os/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/competitive-intel/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/context-engine/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/coo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cpo-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cro-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cs-onboard/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/cto-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/culture-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/decision-logger/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/founder-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/general-counsel-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/internal-narrative/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/intl-expansion/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/ma-playbook/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/org-health-diagnostic/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/scenario-war-room/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/strategic-alignment/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/skills/vpe-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "c-level-advisor/vpe-advisor/skills/vpe-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/channel-economics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/commercial-forecaster/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/commercial-policy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/commercial-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/deal-desk/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/partnerships-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/pricing-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "commercial/skills/rfp-responder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/ai-act-readiness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/aims-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/compliance-os/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/compliance-readiness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/fda-qsr-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/gdpr-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/iso13485-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/iso27001-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "compliance-os/skills/soc2-audit-prep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/a11y-audit/skills/a11y-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/google-workspace-cli/skills/google-workspace-cli/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/browserstack/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/coverage/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/fix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/generate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/init/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/migrate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/pw/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/report/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/playwright-pro/skills/testrail/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/extract/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/memory-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/memory-status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/promote/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/remember/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/self-improving-agent/skills/self-improving-agent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/adversarial-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/ai-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/aws-solution-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/azure-cloud-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/cloud-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/code-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/email-template-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/engineering-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/epic-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/gcp-cloud-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/incident-commander/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/incident-response/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/ms365-tenant-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/named-persona-adversarial-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/red-team/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/security-pen-testing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-backend/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-computer-vision/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-data-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-data-scientist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-devops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-frontend/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-fullstack/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-ml-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-prompt-engineer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-qa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-secops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/senior-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/stripe-integration-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/tdd-guide/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/tech-stack-evaluator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/skills/threat-detection/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering-team/snowflake-development/skills/snowflake-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agent-harness/skills/agent-harness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/agenthub/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/board/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/init/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/merge/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/run/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/spawn/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/agenthub/skills/status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/loop/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/resume/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/run/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/autoresearch-agent/skills/status/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/behuman/skills/behuman/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/caveman/skills/caveman/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/chaos-engineering/skills/chaos-engineering/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/claude-coach/skills/claude-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/code-tour/skills/code-tour/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/collab-proof/skills/collab-proof/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/data-quality-auditor/skills/data-quality-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/demo-video/skills/demo-video/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/docker-development/skills/docker-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/feature-flags-architect/skills/feature-flags-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/grill-me/skills/grill-me/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/grill-with-docs/skills/grill-with-docs/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/handoff/skills/handoff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/helm-chart-builder/skills/helm-chart-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/karpathy-coder/skills/karpathy-coder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/kubernetes-operator/skills/kubernetes-operator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/llm-cost-optimizer/skills/llm-cost-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/llm-wiki/skills/llm-wiki/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/minimalist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/prompt-governance/skills/prompt-governance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/security-guidance/skills/security-guidance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skillopt-sleep/skills/skillopt-sleep/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/agent-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/agent-workflow-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/api-design-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/api-test-suite-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/browser-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/changelog-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/chaos-engineering/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/ci-cd-pipeline-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/codebase-onboarding/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/database-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/database-schema-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/dependency-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/engineering-advanced-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/env-secrets-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/feature-flags-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/focused-fix/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/full-page-screenshot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/git-worktree-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/interview-system-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/kubernetes-operator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/mcp-server-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/migration-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/monorepo-navigator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/observability-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/performance-profiler/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/pr-review-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/rag-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/runbook-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/secrets-vault-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/self-eval/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/ship-gate/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/skill-security-auditor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/skill-tester/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/skill-tester/assets/sample-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/slo-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/spec-driven-workflow/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/sql-database-assistant/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/tc-tracker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/skills/tech-debt-tracker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/slo-architect/skills/slo-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/statistical-analyst/skills/statistical-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/strict-api/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/terraform-patterns/skills/terraform-patterns/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/universal-scraping-architect/skills/universal-scraping-architect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/workflow-builder/skills/workflow-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/write-a-skill/skills/write-a-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "engineering/zero-hallucination-coder/skills/zero-hallucination-coder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "finance/business-investment-advisor/skills/business-investment-advisor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "finance/skills/finance-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "finance/skills/financial-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "finance/skills/saas-metrics-coach/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "loop-library/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "markdown-html/skills/design-system/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "markdown-html/skills/markdown-html-orchestrator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "markdown-html/skills/md-document/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "markdown-html/skills/md-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "markdown-html/skills/md-slides/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/ab-test-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/ad-creative/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/aeo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/analytics-tracking/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/app-store-optimization/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/brand-guidelines/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/campaign-analytics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/churn-prevention/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/cold-email/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/competitor-alternatives/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/content-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/content-humanizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/content-production/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/content-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/copy-editing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/copywriting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/email-sequence/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/form-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/free-tool-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/launch-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/local-seo-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-context/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-demand-acquisition/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-ideas/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-ops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-psychology/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/marketing-strategy-pmm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/onboarding-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/page-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/paid-ads/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/paywall-upgrade-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/popup-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/pricing-strategy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/programmatic-seo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/prompt-engineer-toolkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/referral-program/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/schema-markup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/seo-audit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/signup-flow-cro/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/site-architecture/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/social-content/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/social-media-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/social-media-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/webinar-marketing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/x-twitter-growth/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/skills/youtube-full/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing-skill/video-content-strategist/skills/video-content-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketing/landing/skills/landing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/code-to-prd/skills/code-to-prd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/research-summarizer/skills/research-summarizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/competitive-teardown/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/experiment-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/landing-page-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/product-analytics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/product-discovery/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/product-manager-toolkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/product-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/product-strategist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/roadmap-communicator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/saas-scaffolder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/spec-to-repo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/ui-design-system/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-team/skills/ux-researcher-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/andreessen/skills/andreessen/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/capture/skills/capture/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/deep-work/skills/deep-work/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/email/skills/inbox-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/email/skills/inbox-triage/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/fable-goal/skills/fable-goal/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/handoff/skills/handoff/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/meetings/skills/meetings/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/reflect/skills/reflect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/roast/skills/roast/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "productivity/weekly-review/skills/weekly-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/atlassian-admin/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/atlassian-templates/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/confluence-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/jira-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/meeting-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/pm-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/scrum-master/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/senior-pm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "project-management/skills/team-communications/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/compliance-team-eu-ai-act/skills/eu-ai-act-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/compliance-team-iso42001/skills/iso42001-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/agent-decision-receipts/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/capa-officer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/eu-ai-act-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/fda-consultant-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/gdpr-dsgvo-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/information-security-manager-iso27001/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/isms-audit-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/iso42001-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/mdr-745-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/qms-audit-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/quality-documentation-manager/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/quality-manager-qmr/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/quality-manager-qms-iso13485/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/ra-qm-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/regulatory-affairs-head/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/risk-management-specialist/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ra-qm-team/skills/soc2-compliance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research-ops/skills/clinical-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research-ops/skills/market-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research-ops/skills/product-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research-ops/skills/research-finance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research-ops/skills/research-ops-skills/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/deep-research/skills/deep-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/dossier/skills/dossier/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/grants/skills/grants/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/litreview/skills/litreview/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/notebooklm/skills/notebooklm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/patent/skills/patent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/pulse/skills/pulse/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/research/skills/research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "research/syllabus/skills/syllabus/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 88
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 88
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 798
+    }
+  ],
+  "contentSha256": "586704ee4f10a34817973aa3cc44ee8c8cab73986c88eb4fe5adfa2f0fb7fc9b"
+}

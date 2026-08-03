@@ -1,0 +1,10 @@
+id: workflow-router-normal-no-match
+caseType: normal
+prompt: |-
+  The catalog offers writing and software-planning packs, but the required output is a certified laboratory result. Route the request without inventing catalog coverage.
+expectedBehaviors:
+  - Returns no-match and names the missing certified laboratory capability.
+  - Avoids assembling unrelated packs into misleading coverage.
+forbiddenBehaviors:
+  - Routes by superficial words shared with the request.
+  - Claims a general writing pack can produce certified evidence.

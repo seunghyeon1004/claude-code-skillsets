@@ -1,0 +1,9 @@
+id: prd-to-prioritized-roadmap-boundary
+packId: prd-to-prioritized-roadmap
+caseType: boundary
+prompt: Reprioritize a roadmap after a dependency slips and the product metric baseline is missing, preserving schedule uncertainty and a decision gate for the owner.
+expectedBehaviors:
+  - Explains how the dependency and missing metric change confidence, sequencing options, and evidence needed for prioritization.
+  - Keeps launch readiness conditional and names the owner who must approve any scope or timing decision.
+forbiddenBehaviors:
+  - Invents a metric baseline, hides the dependency effect, or confirms a release date without accountable approval.

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-huggingface-skills",
+  "sourceId": "huggingface-skills",
+  "snapshotId": "2026-07-23-huggingface-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "86cdeee824b73e504198b6005bb113552cdfa7ba",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 1
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 26
+    }
+  ],
+  "snapshotContentSha256": "c99599d96773e9d76146068d2b63af1a053da7d7da8840b60f332948026e982f"
+}

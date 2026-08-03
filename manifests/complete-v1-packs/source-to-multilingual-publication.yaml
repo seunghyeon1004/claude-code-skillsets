@@ -1,0 +1,52 @@
+schemaVersion: 2
+id: source-to-multilingual-publication
+domainId: writing-and-publishing
+categoryIds:
+  - technical-writing
+  - business-writing
+  - editing
+  - proofreading
+  - citation-verification
+  - translation
+  - localization
+  - cms-publishing
+outcome:
+  ko: 승인된 기술 또는 비즈니스 원문을 의미, 인용, 문화적 맥락, 게시 권한이 검토된 다국어 CMS 게시물로 전환한다.
+  en: Turns approved technical or business source material into multilingual CMS publications with reviewed meaning, citations, cultural context, and publishing authorization.
+inputs:
+  - Approved source document, source locale, target locales, audience, and terminology guidance
+  - CMS destination, formatting rules, media rights, metadata, and named publishing approver
+outputs:
+  - Reviewed localized documents that preserve source meaning and required citations
+  - A staged multilingual CMS publication set with metadata and approval evidence
+completionCriteria:
+  - Each locale passes meaning, terminology, cultural, formatting, and citation verification
+  - The staged CMS content matches the approved localized documents and authorized media exactly
+  - No publication occurs until the named human approver confirms every target locale and destination
+routingProfileId: writing-and-publishing
+requiredCapabilityIds:
+  - produce-technical-and-business-writing
+  - edit-verify-and-proofread-content
+  - translate-and-localize-content
+  - publish-content-to-cms
+recommendedCapabilityIds: []
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: source-to-multilingual-publication-normal
+    type: normal
+    path: tests/evaluations/packs/source-to-multilingual-publication/normal.yaml
+  - id: source-to-multilingual-publication-boundary
+    type: boundary
+    path: tests/evaluations/packs/source-to-multilingual-publication/boundary.yaml
+  - id: source-to-multilingual-publication-refusal
+    type: refusal
+    path: tests/evaluations/packs/source-to-multilingual-publication/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

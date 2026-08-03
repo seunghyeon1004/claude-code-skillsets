@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-07-23T09:08:12Z",
+  "snapshotIds": [
+    "2026-07-23-deanpeters-product-manager-skills",
+    "2026-07-23-daymade-claude-code-skills",
+    "2026-07-23-k-dense-scientific-agent-skills",
+    "2026-07-23-huggingface-skills",
+    "2026-07-23-chengfeng-videocut-skills"
+  ],
+  "sources": [
+    {
+      "id": "2026-07-23-deanpeters-product-manager-skills",
+      "sourceUrl": "https://github.com/deanpeters/Product-Manager-Skills",
+      "inspectedCommit": "99710188c134acf590a02c0e4ee1f431e60004cf",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 70 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 70 }
+      ],
+      "contentSha256": "d6b0308030ef5b3acb8c4fca172db0483abb23b9c35c8f324578d7cf9b6aee9a"
+    },
+    {
+      "id": "2026-07-23-daymade-claude-code-skills",
+      "sourceUrl": "https://github.com/daymade/claude-code-skills",
+      "inspectedCommit": "3b097ca8e06535443dc9b9cf14cb97005ed550da",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 58 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 90 }
+      ],
+      "contentSha256": "5855b801671876ed4a360350a0c38dd6c6cd9f05830346309020bc6c18a4794f"
+    },
+    {
+      "id": "2026-07-23-k-dense-scientific-agent-skills",
+      "sourceUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "inspectedCommit": "831d49eb77eed3c792be2970921b46764012ef00",
+      "countMetrics": [
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 149 }
+      ],
+      "contentSha256": "26a91b44e23ad097a76a8ba084eab0a3f66e338cb31f691df99b32f9f104f5c3"
+    },
+    {
+      "id": "2026-07-23-huggingface-skills",
+      "sourceUrl": "https://github.com/huggingface/skills",
+      "inspectedCommit": "86cdeee824b73e504198b6005bb113552cdfa7ba",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 26 }
+      ],
+      "contentSha256": "c99599d96773e9d76146068d2b63af1a053da7d7da8840b60f332948026e982f"
+    },
+    {
+      "id": "2026-07-23-chengfeng-videocut-skills",
+      "sourceUrl": "https://github.com/Agentchengfeng/chengfeng-videocut-skills",
+      "inspectedCommit": "e2cc73dce613c0701b3e02dc4a7c2f5f567ad7b3",
+      "countMetrics": [
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 2 }
+      ],
+      "contentSha256": "0677f4155fee7dd3efad95e9948e74aca39393f918eb704485eb1d84eaaca8de"
+    }
+  ]
+}

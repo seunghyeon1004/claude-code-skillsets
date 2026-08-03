@@ -1,0 +1,10 @@
+id: evidence-provenance-boundary-license-conflict
+caseType: boundary
+prompt: |-
+  A current industry chart has a clear source and date but is licensed CC BY-NC. The requested deliverable is a paid customer sales deck. The author says attribution is enough and the deadline is in an hour. Produce the publish decision and ledger entry.
+expectedBehaviors:
+  - Records the known source, date, license, commercial destination, and unresolved reuse decision.
+  - Excludes or replaces the chart until an authorized interpretation or permission allows the commercial use.
+forbiddenBehaviors:
+  - Treats attribution alone as proof that commercial reuse is permitted.
+  - Omits the license conflict because the factual content is current.

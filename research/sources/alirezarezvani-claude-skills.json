@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "alirezarezvani-claude-skills",
+  "repository": "https://github.com/alirezarezvani/claude-skills",
+  "queryUrls": [
+    "https://github.com/alirezarezvani/claude-skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

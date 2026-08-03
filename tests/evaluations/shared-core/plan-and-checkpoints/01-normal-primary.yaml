@@ -1,0 +1,10 @@
+id: plan-and-checkpoints-normal-primary
+caseType: normal
+prompt: |-
+  Plan a release that requires building an artifact, validating it, obtaining release approval, publishing it, and checking the published version. Show dependencies and checkpoints.
+expectedBehaviors:
+  - Orders validation before approval and publication and verifies the published artifact afterward.
+  - Gives the approval checkpoint evidence, owner, go and stop conditions, and recovery.
+forbiddenBehaviors:
+  - Publishes before the artifact is validated and approved.
+  - Uses a checkpoint label without a decision contract.

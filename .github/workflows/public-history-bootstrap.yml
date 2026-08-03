@@ -1,0 +1,107 @@
+name: First Public History Bootstrap
+
+on:
+  workflow_dispatch:
+    inputs:
+      root_commit:
+        description: Parentless public root commit A
+        required: true
+        type: string
+      tip_commit:
+        description: Public main tip B whose only parent is A
+        required: true
+        type: string
+      tag_name:
+        description: Annotated public-history root governance tag
+        required: true
+        type: string
+      tag_object:
+        description: Exact annotated governance tag object ID
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify-first-public-history:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_ROOT_COMMIT: ${{ inputs.root_commit }}
+      PUBLIC_TIP_COMMIT: ${{ inputs.tip_commit }}
+      PUBLIC_ROOT_TAG_NAME: ${{ inputs.tag_name }}
+      PUBLIC_ROOT_TAG_OBJECT: ${{ inputs.tag_object }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7
+        with:
+          ref: main
+          fetch-depth: 2
+          fetch-tags: false
+          persist-credentials: false
+      - name: Validate bootstrap input syntax
+        run: |
+          [[ "$PUBLIC_ROOT_COMMIT" =~ ^[0-9a-f]{40,64}$ ]]
+          [[ "$PUBLIC_TIP_COMMIT" =~ ^[0-9a-f]{40,64}$ ]]
+          [[ "$PUBLIC_ROOT_TAG_OBJECT" =~ ^[0-9a-f]{40,64}$ ]]
+          [[ "$PUBLIC_ROOT_TAG_NAME" =~ ^public-history/root-v[1-9][0-9]*$ ]]
+          test "$GITHUB_REF" = refs/heads/main
+      - name: Fetch only the approved governance tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          if test "$(git rev-parse --is-shallow-repository)" = true; then
+            GIT_CONFIG_COUNT=1 \
+            GIT_CONFIG_KEY_0=http.extraHeader \
+            GIT_CONFIG_VALUE_0="$auth_header" \
+              git fetch --unshallow --no-tags origin refs/heads/main
+          fi
+          GIT_CONFIG_COUNT=1 \
+          GIT_CONFIG_KEY_0=http.extraHeader \
+          GIT_CONFIG_VALUE_0="$auth_header" \
+            git fetch --no-tags origin "refs/tags/${PUBLIC_ROOT_TAG_NAME}:refs/tags/${PUBLIC_ROOT_TAG_NAME}"
+          unset auth_header
+          git checkout -B main
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # actions/setup-node v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm install --global @anthropic-ai/claude-code@2.1.198
+      - name: Resolve the exact one-time bootstrap context
+        env:
+          EVENT_NAME: workflow_dispatch
+          PUSH_BEFORE: "0000000000000000000000000000000000000000"
+        run: |
+          context="$(npm exec -- tsx scripts/research/resolve-ci-approval-context.ts)"
+          test "$context" = "base=${PUBLIC_ROOT_COMMIT}
+          mode=first-public-bootstrap"
+      - name: Verify mandatory public baselines
+        run: |
+          npm run verify:p03-immutable -- --baseline-ref "$PUBLIC_ROOT_COMMIT"
+          npm run verify:research-append-only -- --base "$PUBLIC_ROOT_COMMIT"
+          npm run verify:review-ledger-append-only -- --base "$PUBLIC_ROOT_COMMIT"
+          npm run verify:decision-index-history -- --previous-ref "$PUBLIC_ROOT_COMMIT"
+          npm run verify:broker-only
+      - name: Verify public refs, history, identities, and generated state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          auth_header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          GIT_CONFIG_COUNT=1 \
+          GIT_CONFIG_KEY_0=http.extraHeader \
+          GIT_CONFIG_VALUE_0="$auth_header" \
+            npm run verify:public-history -- \
+              --remote origin \
+              --branch main \
+              --root-commit "$PUBLIC_ROOT_COMMIT" \
+              --tip-commit "$PUBLIC_TIP_COMMIT" \
+              --tag-name "$PUBLIC_ROOT_TAG_NAME" \
+              --tag-object "$PUBLIC_ROOT_TAG_OBJECT"
+          unset auth_header
+      - name: Verify the transport-like clean copy
+        env:
+          APPEND_BASE: ${{ inputs.root_commit }}
+          LEDGER_APPEND_BASE: ${{ inputs.root_commit }}
+          REGISTRY_APPROVAL_ANCHORED: pre-anchor
+        run: bash tests/e2e/clean-copy.sh

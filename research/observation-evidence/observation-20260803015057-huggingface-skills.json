@@ -1,0 +1,1361 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-huggingface-skills",
+  "sourceId": "huggingface-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "87f9ee5b670a630b022809a8742606c6da21812c",
+  "blobs": [
+    {
+      "path": ".claude-plugin/marketplace-internal.json",
+      "gitBlobSha": "135fdfcc6b3f52c04436d1cfa08b2d33655b4c5b",
+      "byteSize": 7348,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "gitBlobSha": "3eb45de45a6d363d232aa7a684be854f8a8a3a7a",
+      "byteSize": 632,
+      "readStatus": "observed",
+      "contentSha256": "d06eb06ed9e640e26b7db6de509e92e1785d2f9e08810cd4eaaba74f33e4cc6e"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "gitBlobSha": "3f4dc9dae3e1aaec64748ffb85f0d0ae2c368872",
+      "byteSize": 532,
+      "readStatus": "observed",
+      "contentSha256": "ea18dfdd62c324120ad60b6f6ffe0a26a38440f578c8bcc72f527929e7571d64"
+    },
+    {
+      "path": ".cursor-plugin/marketplace.json",
+      "gitBlobSha": "3eb45de45a6d363d232aa7a684be854f8a8a3a7a",
+      "byteSize": 632,
+      "readStatus": "observed",
+      "contentSha256": "d06eb06ed9e640e26b7db6de509e92e1785d2f9e08810cd4eaaba74f33e4cc6e"
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "gitBlobSha": "5e971b138359e17bafd85339a7082e03770f4317",
+      "byteSize": 583,
+      "readStatus": "observed",
+      "contentSha256": "93d7463ff088cdfefee4e7a61ef97bbdaec040282dd5ec2c93011b21f7a4e073"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "gitBlobSha": "15f7bdd7916ac5fca2274ad5d1239bafe0f0f5a2",
+      "byteSize": 205,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/SECURITY.md",
+      "gitBlobSha": "16b5d0c7ae3c5a1cd01de123290b374bfa4d26c5",
+      "byteSize": 1358,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/generate-agents.yml",
+      "gitBlobSha": "12f7befbea1b7804037582613c252b2f9216f7c8",
+      "byteSize": 1340,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/publish-clawhub-skills.yml",
+      "gitBlobSha": "67bd32af43726c31f05cac8570bd8715c118b5b4",
+      "byteSize": 3495,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/publish-single-clawhub-skill.yml",
+      "gitBlobSha": "bddb07caf49c8b4b49a57b54bf15bf410daee277",
+      "byteSize": 9508,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/push-evals-leaderboard.yml",
+      "gitBlobSha": "999273f9c4054718afdb8e281dfd5e20a80081d1",
+      "byteSize": 749,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/push-hackers-leaderboard.yml",
+      "gitBlobSha": "231e72d26eb44f86ea7890f25d76184700a79fdb",
+      "byteSize": 752,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/push-quests.yml",
+      "gitBlobSha": "89e8da7d3309321d55f8661aa2be5f34c0eb3fbd",
+      "byteSize": 690,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/sync-skills-to-bucket.yml",
+      "gitBlobSha": "d8ca21602b92a53a5214b116501c454d97eb82ba",
+      "byteSize": 1658,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "8d1caa8c61f47c8ce4167550981b9585772362e5",
+      "byteSize": 4730,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".mcp.json",
+      "gitBlobSha": "a9a3c69b4c75e04c07e53f9f865804ee29173e97",
+      "byteSize": 130,
+      "readStatus": "observed",
+      "contentSha256": "678ac749a219fdf813731cc94d46101f6aeb78f7d2f0afc376ab8619e5c74b57"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "byteSize": 11357,
+      "readStatus": "observed",
+      "contentSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "bb25d0b9db9bb299d9a2181589410187c6637c0f",
+      "byteSize": 11903,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "agentsmd/AGENTS.md",
+      "gitBlobSha": "426a11e0ceba14ed4e65bc0dbef23ace423d3731",
+      "byteSize": 15691,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/evals-leaderboard/app.py",
+      "gitBlobSha": "ff3850b042b063158fa3856039bcb32283a81a95",
+      "byteSize": 3629,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/evals-leaderboard/collect_evals.py",
+      "gitBlobSha": "a2e2a7721d794dad382412024467bbe2c9ad1b9a",
+      "byteSize": 16775,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/evals-leaderboard/requirements.txt",
+      "gitBlobSha": "64affda844b262e0facc7c3ea07e79cb72d66eb0",
+      "byteSize": 40,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/hackers-leaderboard/README.md",
+      "gitBlobSha": "6011c67a18a77bd68403e3891452df22f97b11cf",
+      "byteSize": 1952,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/hackers-leaderboard/app.py",
+      "gitBlobSha": "59e32f422f0204d64252d915aa319a09544608c8",
+      "byteSize": 3496,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/hackers-leaderboard/collect_points.py",
+      "gitBlobSha": "e8ea5bf5ba47cf0633e0e09042b0dea9df42d61b",
+      "byteSize": 19534,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/hackers-leaderboard/requirements.txt",
+      "gitBlobSha": "49503c5461f571d9f8097bf5f9d47758de791347",
+      "byteSize": 54,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/quests/02_evaluate-hub-model.md",
+      "gitBlobSha": "b3cff82c0ccb76fc58288e7495f4636dcc107ee7",
+      "byteSize": 5135,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/quests/03_publish-hub-dataset.md",
+      "gitBlobSha": "8486a0c72153e5d7d270829fe756a7e5aa1386de",
+      "byteSize": 2483,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/quests/04_sft-finetune-hub.md",
+      "gitBlobSha": "4a8f2c478c3a4f7f96f93b7bd1e13b1a0a16bf33",
+      "byteSize": 1583,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "apps/quests/README.md",
+      "gitBlobSha": "f8585932973b57b5fba7649331ccb388ace22bf7",
+      "byteSize": 4432,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "assets/banner.png",
+      "gitBlobSha": "a0b166e47e0f67451f205158dc2f61fa57d6b685",
+      "byteSize": 43226,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "fast-agent-log.jsonl",
+      "gitBlobSha": "e8aeddd53b82bd943552b75001b63f6cef02be6b",
+      "byteSize": 696,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "gemini-extension.json",
+      "gitBlobSha": "1534b35149d996e88b6f33e47bf2306325c39367",
+      "byteSize": 274,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "hf-mcp/skills/hf-mcp/SKILL.md",
+      "gitBlobSha": "eb717f2c916d6a03f4322272b0a51fb10963b349",
+      "byteSize": 4968,
+      "readStatus": "observed",
+      "contentSha256": "4cd99f2f6fabc5d87eac1b9e9bb2278d8348eca3621c2120599dede8d6b66eb4"
+    },
+    {
+      "path": "scripts/AGENTS_TEMPLATE.md",
+      "gitBlobSha": "c6bd117bcba7d74556341665440ac6e3007862a6",
+      "byteSize": 594,
+      "readStatus": "observed",
+      "contentSha256": "4c29a57083b69e810eb05f9f061ee919266754346a3db2bdd70f4a2d0c35cc1d"
+    },
+    {
+      "path": "scripts/UV_RULES.md",
+      "gitBlobSha": "b2f0c3dad1d885a9ef83f224226fe1655e4f2647",
+      "byteSize": 852,
+      "readStatus": "observed",
+      "contentSha256": "91c6a9ef445e41443237fbbf4348e9fcd18dbb16f7e412774c20894038611264"
+    },
+    {
+      "path": "scripts/build_skill_distribution.py",
+      "gitBlobSha": "93dd2c78fab01b468f381aec01c39aab9c2ba078",
+      "byteSize": 8162,
+      "readStatus": "observed",
+      "contentSha256": "93a09bbbd12d4e49330b7d38b9585354d91055a0d5477dfb29d7230e51e7db96"
+    },
+    {
+      "path": "scripts/build_skills_index.py",
+      "gitBlobSha": "4c9fa1579e0138e64c387e2120253131e379980e",
+      "byteSize": 14980,
+      "readStatus": "observed",
+      "contentSha256": "c18a6ac8436a73265ad1c738ee97742ff04089ecf38dc0e8603379e3a823a52e"
+    },
+    {
+      "path": "scripts/generate_agents.py",
+      "gitBlobSha": "90ac76849672da0aef7cf9a5b52154d11ce547f4",
+      "byteSize": 13034,
+      "readStatus": "observed",
+      "contentSha256": "692acd82bbd10f116946397ed3712e89b3c1fac730b908cddc910c6851c53a79"
+    },
+    {
+      "path": "scripts/generate_cursor_plugin.py",
+      "gitBlobSha": "3b519e3e2ac07ac15b89e436a30612365e171188",
+      "byteSize": 5946,
+      "readStatus": "observed",
+      "contentSha256": "27164be30c4d196721a02cf12be136bce7924b662bea3fb11af5cd652956d73f"
+    },
+    {
+      "path": "scripts/plugin_versions.py",
+      "gitBlobSha": "807e53b9421a75af72a9d3ae55db400d38a10692",
+      "byteSize": 9113,
+      "readStatus": "observed",
+      "contentSha256": "76c5425e1bb154576de26deb8c7bcd3d16e68761c76d8274b737f8047407ddaa"
+    },
+    {
+      "path": "scripts/publish.sh",
+      "gitBlobSha": "93f13a0eb7b55fece7955b073a14ff6785d87999",
+      "byteSize": 2368,
+      "readStatus": "observed",
+      "contentSha256": "e2cc503648e2f16ac1b94c9a48eb914f0a909032a7fc2ff299640f0f1d061cfa"
+    },
+    {
+      "path": "scripts/run_skills_help.py",
+      "gitBlobSha": "eb8be228008863b001dc31dc39ec1f53d57f4680",
+      "byteSize": 2401,
+      "readStatus": "observed",
+      "contentSha256": "5d3442223646e349e0820de5772a7330a8f076b2d896511ef4c5802676ba0020"
+    },
+    {
+      "path": "scripts/skills_index_queries.json",
+      "gitBlobSha": "eeffda9e37b1d4b70e33b1868e97dbd013c6d3e9",
+      "byteSize": 941,
+      "readStatus": "observed",
+      "contentSha256": "d5083bae144cd3aa160a2cec22bd051e166713cd5bb270329bc644671a9b11ee"
+    },
+    {
+      "path": "skills/hf-cli/SKILL.md",
+      "gitBlobSha": "4fd111f9df28b11d71c6a4f012a2b898f91c195a",
+      "byteSize": 31579,
+      "readStatus": "observed",
+      "contentSha256": "a6b3fcf3bd0a6164aeda357f483295638cbaee54f56f0cec13462e647920ec37"
+    },
+    {
+      "path": "skills/hf-cloud-aws-context-discovery/SKILL.md",
+      "gitBlobSha": "fbf62203595b187ea833904f67ca0ae2fdaf39a6",
+      "byteSize": 3972,
+      "readStatus": "observed",
+      "contentSha256": "6b59128ea1834913b01ff6752d52e529d304ee6086e2edec5c7ce451f7a14dff"
+    },
+    {
+      "path": "skills/hf-cloud-python-env-setup/SKILL.md",
+      "gitBlobSha": "462a6b99e7767576e1ba6c39c1456873d020de92",
+      "byteSize": 6723,
+      "readStatus": "observed",
+      "contentSha256": "c5d108b134dc5237ec63fbbb3200717853f2c5281ab33b7a2f1576b46a4d0fe8"
+    },
+    {
+      "path": "skills/hf-cloud-python-env-setup/requirements.txt",
+      "gitBlobSha": "461cf1f933013fd99a24220efbfe0f303bb0e083",
+      "byteSize": 796,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-python-env-setup/scripts/check_versions.py",
+      "gitBlobSha": "c863f8dd5caabfd1f45dcd9f918c7c0858176fe4",
+      "byteSize": 740,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-python-env-setup/scripts/setup_env.py",
+      "gitBlobSha": "c1f164ab29c162b74e956165fca714d4d94cbcbf",
+      "byteSize": 5035,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-deployment-planner/SKILL.md",
+      "gitBlobSha": "567bcd7be7529892217d7e9b07518b61ec78df65",
+      "byteSize": 7516,
+      "readStatus": "observed",
+      "contentSha256": "ee51349e7a21980f8eda6fc7790df875d3b8ce0aedbcf8f74982402eae40b9a9"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
+      "gitBlobSha": "8f15164327ff28e8086ae275a54b068ff32025e8",
+      "byteSize": 6807,
+      "readStatus": "observed",
+      "contentSha256": "192add8e50e87b5055576f12e5ac41b1a2bc5d168dc35e51c1db618c5afd1d0f"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-iam-preflight/references/minimum-permissions.json",
+      "gitBlobSha": "e0c6e1dca9607ce192716d4d17790d1eaf839029",
+      "byteSize": 1043,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-iam-preflight/references/trust-policy.json",
+      "gitBlobSha": "459fa5217ca2a73c39993a4945f59a3f7beb4550",
+      "byteSize": 197,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-iam-preflight/scripts/check_role.py",
+      "gitBlobSha": "1744158c05f33ff1bfc5aae0da408670539fb8e4",
+      "byteSize": 6862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-iam-preflight/scripts/create_role.py",
+      "gitBlobSha": "a7cbd5f9f8b711606b40b82bc18cccc838b1c5a5",
+      "byteSize": 4129,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+      "gitBlobSha": "8e4f7f30f816f40b3eb364485de0b3c886f108f6",
+      "byteSize": 18896,
+      "readStatus": "observed",
+      "contentSha256": "3157f85b10524e713441ce14086e99f63da5a5409d7bb7d3212069419e72293d"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/references/deployment-template.md",
+      "gitBlobSha": "c2b52bfdf53a7fc0084919047a4836fc5b410c9c",
+      "byteSize": 3664,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/scripts/_common.py",
+      "gitBlobSha": "c4f13ce80dbfba9ec3395e3e5ac689440457aaf6",
+      "byteSize": 4874,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/scripts/deploy.py",
+      "gitBlobSha": "823e241de03e1b6154d9d486115f0af16b3d2b99",
+      "byteSize": 12915,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/scripts/deploy_async.py",
+      "gitBlobSha": "5ec28b84a85fffd2d5a73201327625b63841a755",
+      "byteSize": 18430,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/scripts/invoke_endpoint.py",
+      "gitBlobSha": "a6d210eb8daecbe5af599530189fae3781520ada",
+      "byteSize": 4514,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-sagemaker-production-defaults/scripts/teardown.py",
+      "gitBlobSha": "2d4c7ee7a3079fd7ed4b15ca684bc24110ae6e1a",
+      "byteSize": 6401,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-serving-image-selection/SKILL.md",
+      "gitBlobSha": "05f70d82c00da9160a086f477f31ff77e9bddea5",
+      "byteSize": 17970,
+      "readStatus": "observed",
+      "contentSha256": "66e1b95d8bba2117300b6392eeb89500ba7aed7a175733479d7985c7178c4574"
+    },
+    {
+      "path": "skills/hf-cloud-serving-image-selection/references/model-to-image.md",
+      "gitBlobSha": "09d3888d73a979308b61eac364815b88ed97eab1",
+      "byteSize": 10826,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-cloud-serving-image-selection/scripts/mirror_image.py",
+      "gitBlobSha": "e3eab00d9bd828c8964f74a11735e387d79b67c3",
+      "byteSize": 4803,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/hf-mem/SKILL.md",
+      "gitBlobSha": "fadc48b0e2a510e21345e3860c69ac799255d9c0",
+      "byteSize": 3325,
+      "readStatus": "observed",
+      "contentSha256": "ee99f9d97e084aa61a80eaec4e6de2265341e71256d918d48fb87a2ac01ce99f"
+    },
+    {
+      "path": "skills/huggingface-best/SKILL.md",
+      "gitBlobSha": "6073590ebf8b136bb405a567fed9d47840164713",
+      "byteSize": 5851,
+      "readStatus": "observed",
+      "contentSha256": "156a85e1e6e6c7502dea17e692c7ef7273595051d6f774ddbf055bc590bf53af"
+    },
+    {
+      "path": "skills/huggingface-community-evals/SKILL.md",
+      "gitBlobSha": "a68b2e79958930b3913cb8e7667e07000031e40b",
+      "byteSize": 6552,
+      "readStatus": "observed",
+      "contentSha256": "a97f1c703f55b72427453a76af858237e6392a447fcafa9eeb85f7ac67f0155d"
+    },
+    {
+      "path": "skills/huggingface-community-evals/examples/.env.example",
+      "gitBlobSha": "26d9b9b4b284d58add70f2ed2d581a1ab503fa67",
+      "byteSize": 159,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-community-evals/examples/USAGE_EXAMPLES.md",
+      "gitBlobSha": "64c243344a170b86262f88d3db0c0532426f3bfb",
+      "byteSize": 2062,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-community-evals/scripts/inspect_eval_uv.py",
+      "gitBlobSha": "d398bc60b0bf4dcb5571ae144ce5fef5226d2467",
+      "byteSize": 3004,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-community-evals/scripts/inspect_vllm_uv.py",
+      "gitBlobSha": "f1454c5a6e2cd2934a60eeab8d5826f6075e102a",
+      "byteSize": 9119,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-community-evals/scripts/lighteval_vllm_uv.py",
+      "gitBlobSha": "91ba83b33f68d8b0705c6f9abe089ecf97cbb9d5",
+      "byteSize": 9204,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-datasets/SKILL.md",
+      "gitBlobSha": "abafddcbe62bd6e549c095ee9ce23b921081fe22",
+      "byteSize": 4671,
+      "readStatus": "observed",
+      "contentSha256": "eeca50adf211ea64a288b852938f85a5183b045c720dc696b62db9aa2ea8deb2"
+    },
+    {
+      "path": "skills/huggingface-gradio/SKILL.md",
+      "gitBlobSha": "81dfb05834ab34a13cb0171a2fb03e4557b1e148",
+      "byteSize": 24741,
+      "readStatus": "observed",
+      "contentSha256": "ce41c656e364a8027755a520372448036d90811f5a1d377f02bb9d549c0865a9"
+    },
+    {
+      "path": "skills/huggingface-gradio/examples.md",
+      "gitBlobSha": "b48c4cdc6dddbef128d026c1ec47442ebca51788",
+      "byteSize": 14481,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/SKILL.md",
+      "gitBlobSha": "74ad29af05eee633fb4c04376118f751c24cdd5e",
+      "byteSize": 28780,
+      "readStatus": "observed",
+      "contentSha256": "fb5c5e25103e38226e4d8ae28db84a01de42a11da4be1918fa72f833699f9d0d"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/gguf_conversion.md",
+      "gitBlobSha": "a99ea0e888a24895ab2017bc8fdab3d809f66f88",
+      "byteSize": 9854,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/hardware_guide.md",
+      "gitBlobSha": "22eba945ad61b93725d547a94bd130c422f98b27",
+      "byteSize": 6778,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/hub_saving.md",
+      "gitBlobSha": "734e49b51de8b0224a3e2ee91084432a2fdb5a76",
+      "byteSize": 8501,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/local_training_macos.md",
+      "gitBlobSha": "fdf5dede51aaf47c3bd31cc9b45fd36e3a8faa24",
+      "byteSize": 8324,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/reliability_principles.md",
+      "gitBlobSha": "bf2f745878edd6a4a7b51b68e806b43ac6e6d856",
+      "byteSize": 10867,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/trackio_guide.md",
+      "gitBlobSha": "dc569c7d2f109cd9be5d11353f85ad53b757e9d4",
+      "byteSize": 6400,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/training_methods.md",
+      "gitBlobSha": "2393d7731cb2c9d1b4c3029f5fbc635d3beba49f",
+      "byteSize": 5011,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/training_patterns.md",
+      "gitBlobSha": "2101e12a766ea675ee0577b2c4d46f6b5277f7a7",
+      "byteSize": 6127,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/troubleshooting.md",
+      "gitBlobSha": "430816ce5340022f7f7422ba5ca4fbc39a8baf8c",
+      "byteSize": 8858,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/references/unsloth.md",
+      "gitBlobSha": "83e1e116e54106709eafc3ff4273419a5512c8a6",
+      "byteSize": 8005,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/convert_to_gguf.py",
+      "gitBlobSha": "db42069a8366a4b460b2615e56eca6600f01aafc",
+      "byteSize": 12612,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/dataset_inspector.py",
+      "gitBlobSha": "e29aed3e239f8d6f6fa9038724b77078e93f5ad6",
+      "byteSize": 15683,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/estimate_cost.py",
+      "gitBlobSha": "fff8e4eb38ca93356867f11aead4259dbf895cfe",
+      "byteSize": 4854,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/hf_benchmarks.py",
+      "gitBlobSha": "60e840c1e1d2709e48aeaae268a5377d2b32a0bc",
+      "byteSize": 20086,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/train_dpo_example.py",
+      "gitBlobSha": "84c66f996b06d92a66a34f035de3984cf5d8cb98",
+      "byteSize": 3118,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/train_grpo_example.py",
+      "gitBlobSha": "db6bcbd839a7009aec169b290fc6583cf37162cb",
+      "byteSize": 2384,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/train_sft_example.py",
+      "gitBlobSha": "e20233be552794829a2a8d37aef071b6d2500cbd",
+      "byteSize": 3343,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-llm-trainer/scripts/unsloth_sft_example.py",
+      "gitBlobSha": "7ee9fc2ba5a59274c53fae5414882eec8f608840",
+      "byteSize": 16854,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-local-models/SKILL.md",
+      "gitBlobSha": "ece849559de75eaa8e9709a51e0e957e6ae630d3",
+      "byteSize": 3780,
+      "readStatus": "observed",
+      "contentSha256": "814640db1d5f2f274aec09d66b3589ed5a0fdcfaf536afd508b1d757dcae1534"
+    },
+    {
+      "path": "skills/huggingface-local-models/references/hardware.md",
+      "gitBlobSha": "33c15b41a23df195d4a5cb4ebe25c479fb8a6210",
+      "byteSize": 623,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-local-models/references/hub-discovery.md",
+      "gitBlobSha": "4f286ef4a14e078b98dda09561b720fd02c5bbd2",
+      "byteSize": 5310,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-local-models/references/quantization.md",
+      "gitBlobSha": "2099976e25b87074b0d879a9dec82e2bd19f6002",
+      "byteSize": 6136,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/SKILL.md",
+      "gitBlobSha": "c1d0cbbfa60999ced1f97e136af5010ab86c814c",
+      "byteSize": 33828,
+      "readStatus": "observed",
+      "contentSha256": "7192d4a44172609eb073334e0410aff1d3b9134f82b94f1329435ca7fcfa0ad2"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/adapting-to-the-lora.md",
+      "gitBlobSha": "d6749ece222e7d284908f06a156fc485559664b0",
+      "byteSize": 13826,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/base-models/krea-2.md",
+      "gitBlobSha": "085c69e72cc80f00ef6368cc38fce88f85bb6531",
+      "byteSize": 4086,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/base-models/ltx.md",
+      "gitBlobSha": "c3f30d95a6447a5f7e6a628711fba1899dc9f0b8",
+      "byteSize": 15390,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/base-models/qwen-image.md",
+      "gitBlobSha": "77a58c2c399ebc5f7135493d58996f8fdfac44a9",
+      "byteSize": 7467,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/creative-mode.md",
+      "gitBlobSha": "46017253efd9a31ad6b343347631da09aafbae7e",
+      "byteSize": 19151,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/tasks.md",
+      "gitBlobSha": "e2d2bbc9334174d95141921c1a90278d2da5154a",
+      "byteSize": 10312,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-lora-space-builder/references/zerogpu-and-publishing.md",
+      "gitBlobSha": "05df4dd444302902fe8ce7c9eea96fe3d85a4b14",
+      "byteSize": 14583,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/SKILL.md",
+      "gitBlobSha": "01b7db0cb9e30912eda8aa2b73a744c17ab1e176",
+      "byteSize": 16704,
+      "readStatus": "observed",
+      "contentSha256": "04b59406cf88054ab365f5bbbc57fe2e2fcb369e942dff2841c4f4297318c353"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/examples/example_usage.md",
+      "gitBlobSha": "8f855bde7a415b54128b1852ad29a4e7fa49539b",
+      "byteSize": 8478,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/references/quick_reference.md",
+      "gitBlobSha": "8bf8a417572a3b64b67abbc5308c424fd4a6378f",
+      "byteSize": 4499,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/scripts/paper_manager.py",
+      "gitBlobSha": "1fcf0922e6a894ea46b14fa06635279c9d7bb484",
+      "byteSize": 21926,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/templates/arxiv.md",
+      "gitBlobSha": "c003030399cc9cb8ba1a09e71266acb4de292ee6",
+      "byteSize": 7318,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/templates/ml-report.md",
+      "gitBlobSha": "f39a5fe1851f09ff7645aabdd3f82c400f89d2d2",
+      "byteSize": 6865,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/templates/modern.md",
+      "gitBlobSha": "bf84e55455d4393e78593cf02c07240116fb8c9e",
+      "byteSize": 6431,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-paper-publisher/templates/standard.md",
+      "gitBlobSha": "d35ff043b1977cf2ef7d49d02bcde64b524e6e93",
+      "byteSize": 3180,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-papers/SKILL.md",
+      "gitBlobSha": "e65fc90acabc30208883238ec89a27c4cdc1b57e",
+      "byteSize": 9348,
+      "readStatus": "observed",
+      "contentSha256": "985c2d5c7261aba2b157811cde0c2b30134663694a4ab701280de28f941eb3b2"
+    },
+    {
+      "path": "skills/huggingface-spaces/README.md",
+      "gitBlobSha": "4c8197f4861879178b95c0788d66bad558db4842",
+      "byteSize": 412,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/SKILL.md",
+      "gitBlobSha": "9c054c071bc4d2bc2ba1d67b96b0d93825a559ce",
+      "byteSize": 16939,
+      "readStatus": "observed",
+      "contentSha256": "a029dd0bb1eb23d731e1aee2e7fcdc54ab343e4ac6b076e207ee181531cf9337"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/3d-cuda-extensions.md",
+      "gitBlobSha": "58b79f152f954d9bc7fcdf001b5183d5eb7434c7",
+      "byteSize": 9342,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/3d-generation.md",
+      "gitBlobSha": "76f7db8395b5e09914b806ac3b45b38d2cad0102",
+      "byteSize": 8760,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/3d-gsplat.md",
+      "gitBlobSha": "00121b940ea78576ffe249ec98724b4983442906",
+      "byteSize": 7376,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/3d-models.md",
+      "gitBlobSha": "cbd20785c42a7c3afbb3e39d2a34c74c83645252",
+      "byteSize": 20120,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/3d-outputs.md",
+      "gitBlobSha": "d33c807c41683216ab11c50154389b2ff6cc44be",
+      "byteSize": 9553,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/buckets.md",
+      "gitBlobSha": "24bf08c78ef6766f31efc78e5d8fd79344c65f53",
+      "byteSize": 4384,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/debugging.md",
+      "gitBlobSha": "dcb77f0e642fd87df09eb5c427fdc38572e13d77",
+      "byteSize": 11562,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/gradio.md",
+      "gitBlobSha": "b888fec4bb3f695238514e7e2765169718384114",
+      "byteSize": 9423,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/grants.md",
+      "gitBlobSha": "e849dc40ff556bab7159f3631dbdabb0edd5521b",
+      "byteSize": 2643,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/inference-providers.md",
+      "gitBlobSha": "4cfc93da032a36dacd71343ad96b4baa51aed0a3",
+      "byteSize": 3271,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/known-errors.md",
+      "gitBlobSha": "b8bf6c167849fc157bdbf40d54c4fd20b480065f",
+      "byteSize": 13250,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/requirements.md",
+      "gitBlobSha": "ecc1faaa4091b38280bd0a94cbe323c8f598b3dd",
+      "byteSize": 11520,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-spaces/references/zerogpu.md",
+      "gitBlobSha": "d25cbf7c43bff28fdae4e167899d547c9dbe99a9",
+      "byteSize": 21401,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/SKILL.md",
+      "gitBlobSha": "0634af706451240f82faf0871a15b0faac5f39a2",
+      "byteSize": 5905,
+      "readStatus": "observed",
+      "contentSha256": "2846b591259b134a5978073e4da477a06275d7a10893ce1383a0a3920c3ff1e1"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/baseline_hf_api.py",
+      "gitBlobSha": "fa5b9bdfbbab1dd411d24f9fb2189ebb1f396ef5",
+      "byteSize": 1369,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/baseline_hf_api.sh",
+      "gitBlobSha": "2d4d5f289cb0d339ab26907b2d48ccdd470468f3",
+      "byteSize": 707,
+      "readStatus": "observed",
+      "contentSha256": "e907072abecb84fadbc08fc5f6f970aedf04a22a06e6a0892a1ff1f8fb17dd6b"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/baseline_hf_api.tsx",
+      "gitBlobSha": "3f273718220dcd8949280ccc1332988b4538132b",
+      "byteSize": 1265,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/find_models_by_paper.sh",
+      "gitBlobSha": "93e923a9e9be10f56d54868f837e163095e9d87f",
+      "byteSize": 7695,
+      "readStatus": "observed",
+      "contentSha256": "4723961e173aaa5ac1f4a7196b06f1637768b9b73e992163586f0dd2bbe5e2d2"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/hf_enrich_models.sh",
+      "gitBlobSha": "877088160b3acb3fb632e9b61ae8313b28e3526a",
+      "byteSize": 2267,
+      "readStatus": "observed",
+      "contentSha256": "bd30e29cf0c868a19c960264c25723b3fd26a031fcb71a432d0691dc051333f3"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/hf_model_card_frontmatter.sh",
+      "gitBlobSha": "ded41c12de4e0910acfca52d48ddc5fead66fecb",
+      "byteSize": 4548,
+      "readStatus": "observed",
+      "contentSha256": "32e3d372a8dba24a8065f2b2d641b1f3fd69c00f6259aa49e713e80a6310f94d"
+    },
+    {
+      "path": "skills/huggingface-tool-builder/references/hf_model_papers_auth.sh",
+      "gitBlobSha": "fcd5b1f85d7c7d95c19386969018e320d1ed2cef",
+      "byteSize": 4840,
+      "readStatus": "observed",
+      "contentSha256": "8dc349a00091fab9f32df1acbe81f6ad39b6676d3bbdefe06497a5f7da7148df"
+    },
+    {
+      "path": "skills/huggingface-trackio/SKILL.md",
+      "gitBlobSha": "df231aa06d661bf031aaad00dfa286ca83df4940",
+      "byteSize": 5128,
+      "readStatus": "observed",
+      "contentSha256": "540f52974f4f77c2455a7b37ed983da0dbfb0f5af3d2c482e4736f14f1cc8724"
+    },
+    {
+      "path": "skills/huggingface-trackio/references/alerts.md",
+      "gitBlobSha": "d2d46a1fd3b15aa9d87e1891599baa66017fb81b",
+      "byteSize": 5950,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-trackio/references/logging_metrics.md",
+      "gitBlobSha": "1bd5e437270921de4f39490c5469942e4ab725e6",
+      "byteSize": 5576,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-trackio/references/retrieving_metrics.md",
+      "gitBlobSha": "0a144047fa2a43e0acb05f369947995463533ba9",
+      "byteSize": 8707,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/SKILL.md",
+      "gitBlobSha": "5a2c554b04218a9c411c184fd749ffb6eb0daabe",
+      "byteSize": 30195,
+      "readStatus": "observed",
+      "contentSha256": "c7aba4de75fa6595ffdaf5c50136786e8346aba0c9ff0261eaee656af4a3b0d9"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/finetune_sam2_trainer.md",
+      "gitBlobSha": "1cff003682c7fff725dc6cde1be7402b10f0a081",
+      "byteSize": 6432,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/hub_saving.md",
+      "gitBlobSha": "269a48b403e8c86cf665a098f448d6f390f5847f",
+      "byteSize": 16949,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/image_classification_training_notebook.md",
+      "gitBlobSha": "04a412802dda1498e5548abea563121aa3a82a32",
+      "byteSize": 11075,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/object_detection_training_notebook.md",
+      "gitBlobSha": "8f506d07eef1d6b25787a07ecec9eb2805fc5d1c",
+      "byteSize": 29917,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/reliability_principles.md",
+      "gitBlobSha": "223d4b6d8e77a8e02b13e5a85eb272b5b7f9ddf1",
+      "byteSize": 9487,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/references/timm_trainer.md",
+      "gitBlobSha": "046afc42b972e8dfe9ef193ee8dd3c80e08a46fa",
+      "byteSize": 3547,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/scripts/dataset_inspector.py",
+      "gitBlobSha": "b7207b8ee69ece6d88a72f9898bf78a5d4b46837",
+      "byteSize": 31851,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/scripts/estimate_cost.py",
+      "gitBlobSha": "f8c1a45172c5f686ddeac4e43efb2cded0b85970",
+      "byteSize": 7400,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/scripts/image_classification_training.py",
+      "gitBlobSha": "df5f913bf6338bff1d0b168b10bf71b13526baee",
+      "byteSize": 13385,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/scripts/object_detection_training.py",
+      "gitBlobSha": "63345332e8890b00134f48fbb29dc0b37f65290d",
+      "byteSize": 27371,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-vision-trainer/scripts/sam_segmentation_training.py",
+      "gitBlobSha": "0b544db52f1b5c31a4c14cfa1b5bbec8e54d2c21",
+      "byteSize": 13946,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-zerogpu/SKILL.md",
+      "gitBlobSha": "7171d2b71c94eab597cbd8a4b38ba5ca489276af",
+      "byteSize": 18278,
+      "readStatus": "observed",
+      "contentSha256": "829659aec34224970fe7ed619729fdc7849fc5dd696e2000256c3ee0b517eff7"
+    },
+    {
+      "path": "skills/huggingface-zerogpu/references/concurrency.md",
+      "gitBlobSha": "f4c49cc2b076b67f1381b5968cea36161cf51ac8",
+      "byteSize": 2564,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-zerogpu/references/cuda-and-deps.md",
+      "gitBlobSha": "9a36319de830ce63a16ecbf933d0b68b7568cf3c",
+      "byteSize": 4802,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-zerogpu/references/how-quota-works.md",
+      "gitBlobSha": "4aeea42864b61464354cb168b1adfd8b02af76a1",
+      "byteSize": 3887,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/huggingface-zerogpu/references/how-zerogpu-works.md",
+      "gitBlobSha": "2cfcee6b66b97fe4ece4204ffee9309524b96f12",
+      "byteSize": 4820,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/SKILL.md",
+      "gitBlobSha": "6af33bdea3fd59e540cc852b65d515f282cd4a21",
+      "byteSize": 8979,
+      "readStatus": "observed",
+      "contentSha256": "8195c00c438d8f57a23002f0db6ee5a2f7bbb6ecdb39207449399b1b5e872c69"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/base_model_selection.md",
+      "gitBlobSha": "d483173c71c72ee5a958596211754e296b8c5f76",
+      "byteSize": 7667,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/dataset_formats.md",
+      "gitBlobSha": "b1f5c648fce0189c32c0b9b72ae630ff1496a2b4",
+      "byteSize": 6508,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/evaluators_cross_encoder.md",
+      "gitBlobSha": "6f406e3172d2f11d36c54b8d7755eb41008247e0",
+      "byteSize": 5625,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/evaluators_sentence_transformer.md",
+      "gitBlobSha": "f85e14a4527b693857da9a22bb6c5b796924539e",
+      "byteSize": 6010,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/evaluators_sparse_encoder.md",
+      "gitBlobSha": "28bdfd08cecd34aedc51bf4668db2dcba1b291b9",
+      "byteSize": 5056,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/hardware_guide.md",
+      "gitBlobSha": "7a2abe182ff2d03603ecf43229b0f3b945f9b7e2",
+      "byteSize": 6061,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/hf_jobs_execution.md",
+      "gitBlobSha": "6d5170d910e5ce7ca8d14c4b98e3bffd35ab6ed8",
+      "byteSize": 7302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/losses_cross_encoder.md",
+      "gitBlobSha": "670e8fd1c9bdb207eb1fad1ad60783059c07c5dc",
+      "byteSize": 9567,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/losses_sentence_transformer.md",
+      "gitBlobSha": "b5998f249a4cbf3e05077986cbe48e6a73e9c713",
+      "byteSize": 10997,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/losses_sparse_encoder.md",
+      "gitBlobSha": "5b4c622fa7f8b0a2f23d158b8db815ed62c8f9e3",
+      "byteSize": 5183,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/model_architectures.md",
+      "gitBlobSha": "2c47a3794b8015e7ddbad27c8a849d5872156ecf",
+      "byteSize": 9217,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/prompts_and_instructions.md",
+      "gitBlobSha": "a7bbe28435f60b5ed9c4b8c107aa8fffddfb999b",
+      "byteSize": 6558,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/training_args.md",
+      "gitBlobSha": "57dc7af1a09e2a23bae69d462d9f63ab3f52f9ae",
+      "byteSize": 15321,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/references/troubleshooting.md",
+      "gitBlobSha": "627d0e7834b77cd6b82add41532895203371ae3a",
+      "byteSize": 13273,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/mine_hard_negatives.py",
+      "gitBlobSha": "3bbb1a8c20e6ab116fd1f6346f2f11c74dc7980b",
+      "byteSize": 8460,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_cross_encoder_distillation_example.py",
+      "gitBlobSha": "638f3a69df647e68b24e5bc43c11646e3bfdccf8",
+      "byteSize": 9412,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_cross_encoder_example.py",
+      "gitBlobSha": "9ee21998f852b751dbc6f7b1f08aad0a2e268095",
+      "byteSize": 9232,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_cross_encoder_listwise_example.py",
+      "gitBlobSha": "24f31e9f1ecc30925a4f9905a59d26126ccfc3c9",
+      "byteSize": 10416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_distillation_example.py",
+      "gitBlobSha": "ffbd9715853c358479c373c9848710c279f4a15c",
+      "byteSize": 12232,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_example.py",
+      "gitBlobSha": "ab50b965ca1bd7394d8b9b116208c19f965e56a4",
+      "byteSize": 7722,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_make_multilingual_example.py",
+      "gitBlobSha": "6d4728e950f9bbb76205563e83bf89639aa7166b",
+      "byteSize": 11825,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_matryoshka_example.py",
+      "gitBlobSha": "8461cf6fcaa59e249324e0a07588bec9b41eecc4",
+      "byteSize": 7302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_multi_dataset_example.py",
+      "gitBlobSha": "dbd32d739654e280ca3eea0feeeb4396d1b6ba37",
+      "byteSize": 10121,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_static_embedding_example.py",
+      "gitBlobSha": "46bf621e4ad17a0af679869dc932f631a7bcb20a",
+      "byteSize": 10519,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sentence_transformer_with_lora_example.py",
+      "gitBlobSha": "8e0e20ff561bb7614f3dea6cd8bb4821f55528c6",
+      "byteSize": 10576,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sparse_encoder_distillation_example.py",
+      "gitBlobSha": "3b19212355b39b7daffeceb38a353a6cb762c82b",
+      "byteSize": 9655,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/train-sentence-transformers/scripts/train_sparse_encoder_example.py",
+      "gitBlobSha": "a2849c4e22e3fbdf60e06e0fa6a97e940fabc2cf",
+      "byteSize": 8259,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/SKILL.md",
+      "gitBlobSha": "bc62aa1a63bc31ea9aea9456fed65b334e5010bd",
+      "byteSize": 24911,
+      "readStatus": "observed",
+      "contentSha256": "241ef15a39acbdf1d610acab683c0f76500d7c021c9c0303e6bb2c751ac3d395"
+    },
+    {
+      "path": "skills/transformers-js/references/CACHE.md",
+      "gitBlobSha": "6f97b2cdd54b256df3d874f9372b2890341b44c4",
+      "byteSize": 9195,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/CONFIGURATION.md",
+      "gitBlobSha": "77c40a5e647e574d183a0cf3fbefa5a5216aab54",
+      "byteSize": 11043,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/EXAMPLES.md",
+      "gitBlobSha": "b254d863f6060c49c25be577d4c479a31de26866",
+      "byteSize": 15691,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/MODEL_ARCHITECTURES.md",
+      "gitBlobSha": "5660913316b7e60fe7fe721f61e7b5f3e856524e",
+      "byteSize": 5590,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/MODEL_REGISTRY.md",
+      "gitBlobSha": "763fd674e1cd04a361604ffee5ddd7ee8b0e97f2",
+      "byteSize": 6052,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/PIPELINE_OPTIONS.md",
+      "gitBlobSha": "80e9bbbe73f57d1a3252c5dc119915cb61e4a25e",
+      "byteSize": 14950,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/transformers-js/references/TEXT_GENERATION.md",
+      "gitBlobSha": "d99f6d2ff101d6545e4001a8f7f79848692266c0",
+      "byteSize": 7876,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/trl-training/SKILL.md",
+      "gitBlobSha": "1941385812d82abbbe1f466aa1204e0f8d775ea9",
+      "byteSize": 8871,
+      "readStatus": "observed",
+      "contentSha256": "cfdec413fcf030f29205042cb8c56a0c5404f637919839704d7da5d04cb1958f"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/plugin.json",
+          "contentSha256": "ea18dfdd62c324120ad60b6f6ffe0a26a38440f578c8bcc72f527929e7571d64"
+        },
+        {
+          "path": ".cursor-plugin/plugin.json",
+          "contentSha256": "93d7463ff088cdfefee4e7a61ef97bbdaec040282dd5ec2c93011b21f7a4e073"
+        },
+        {
+          "path": "LICENSE",
+          "contentSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "contentSha256": "d06eb06ed9e640e26b7db6de509e92e1785d2f9e08810cd4eaaba74f33e4cc6e"
+        },
+        {
+          "path": ".claude-plugin/plugin.json",
+          "contentSha256": "ea18dfdd62c324120ad60b6f6ffe0a26a38440f578c8bcc72f527929e7571d64"
+        },
+        {
+          "path": ".cursor-plugin/marketplace.json",
+          "contentSha256": "d06eb06ed9e640e26b7db6de509e92e1785d2f9e08810cd4eaaba74f33e4cc6e"
+        },
+        {
+          "path": ".cursor-plugin/plugin.json",
+          "contentSha256": "93d7463ff088cdfefee4e7a61ef97bbdaec040282dd5ec2c93011b21f7a4e073"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".mcp.json",
+          "contentSha256": "678ac749a219fdf813731cc94d46101f6aeb78f7d2f0afc376ab8619e5c74b57"
+        },
+        {
+          "path": "scripts/AGENTS_TEMPLATE.md",
+          "contentSha256": "4c29a57083b69e810eb05f9f061ee919266754346a3db2bdd70f4a2d0c35cc1d"
+        },
+        {
+          "path": "scripts/UV_RULES.md",
+          "contentSha256": "91c6a9ef445e41443237fbbf4348e9fcd18dbb16f7e412774c20894038611264"
+        },
+        {
+          "path": "scripts/build_skill_distribution.py",
+          "contentSha256": "93a09bbbd12d4e49330b7d38b9585354d91055a0d5477dfb29d7230e51e7db96"
+        },
+        {
+          "path": "scripts/build_skills_index.py",
+          "contentSha256": "c18a6ac8436a73265ad1c738ee97742ff04089ecf38dc0e8603379e3a823a52e"
+        },
+        {
+          "path": "scripts/generate_agents.py",
+          "contentSha256": "692acd82bbd10f116946397ed3712e89b3c1fac730b908cddc910c6851c53a79"
+        },
+        {
+          "path": "scripts/generate_cursor_plugin.py",
+          "contentSha256": "27164be30c4d196721a02cf12be136bce7924b662bea3fb11af5cd652956d73f"
+        },
+        {
+          "path": "scripts/plugin_versions.py",
+          "contentSha256": "76c5425e1bb154576de26deb8c7bcd3d16e68761c76d8274b737f8047407ddaa"
+        },
+        {
+          "path": "scripts/publish.sh",
+          "contentSha256": "e2cc503648e2f16ac1b94c9a48eb914f0a909032a7fc2ff299640f0f1d061cfa"
+        },
+        {
+          "path": "scripts/run_skills_help.py",
+          "contentSha256": "5d3442223646e349e0820de5772a7330a8f076b2d896511ef4c5802676ba0020"
+        },
+        {
+          "path": "scripts/skills_index_queries.json",
+          "contentSha256": "d5083bae144cd3aa160a2cec22bd051e166713cd5bb270329bc644671a9b11ee"
+        },
+        {
+          "path": "skills/huggingface-tool-builder/references/baseline_hf_api.sh",
+          "contentSha256": "e907072abecb84fadbc08fc5f6f970aedf04a22a06e6a0892a1ff1f8fb17dd6b"
+        },
+        {
+          "path": "skills/huggingface-tool-builder/references/find_models_by_paper.sh",
+          "contentSha256": "4723961e173aaa5ac1f4a7196b06f1637768b9b73e992163586f0dd2bbe5e2d2"
+        },
+        {
+          "path": "skills/huggingface-tool-builder/references/hf_enrich_models.sh",
+          "contentSha256": "bd30e29cf0c868a19c960264c25723b3fd26a031fcb71a432d0691dc051333f3"
+        },
+        {
+          "path": "skills/huggingface-tool-builder/references/hf_model_card_frontmatter.sh",
+          "contentSha256": "32e3d372a8dba24a8065f2b2d641b1f3fd69c00f6259aa49e713e80a6310f94d"
+        },
+        {
+          "path": "skills/huggingface-tool-builder/references/hf_model_papers_auth.sh",
+          "contentSha256": "8dc349a00091fab9f32df1acbe81f6ad39b6676d3bbdefe06497a5f7da7148df"
+        }
+      ]
+    }
+  }
+}

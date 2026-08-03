@@ -1,0 +1,47 @@
+schemaVersion: 2
+id: repository-to-implementation-plan
+domainId: software-engineering
+categoryIds:
+  - repository-context
+  - requirements
+  - specifications
+  - architecture
+outcome:
+  ko: 실제 저장소 근거와 명시된 요구사항을 사용해 범위, 명세, 아키텍처 선택지, 검증 계획과 사람 승인 경계가 있는 구현 계획을 만든다.
+  en: Produces an implementation plan from actual repository evidence and explicit requirements with scope, specifications, architecture options, verification, and human approval boundaries.
+inputs:
+  - Repository files, local instructions, relevant history, requested change, and observed current behavior
+  - Requirements, constraints, compatibility expectations, affected interfaces, and verification expectations
+outputs:
+  - An evidence-backed implementation plan with repository findings, scoped changes, alternatives, and dependencies
+  - A specification and architecture decision brief with tests, rollout considerations, and unresolved questions
+completionCriteria:
+  - Every proposed change traces to inspected repository evidence or a clearly labeled requirement assumption
+  - Scope, interfaces, dependencies, architecture alternatives, and verification steps are explicit and reviewable
+  - The plan does not modify the repository, expose secrets, or claim implementation and testing are complete
+routingProfileId: software-engineering
+requiredCapabilityIds:
+  - analyze-repository-context
+  - turn-requirements-into-specifications
+recommendedCapabilityIds:
+  - design-software-architecture
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: repository-to-implementation-plan-normal
+    type: normal
+    path: tests/evaluations/packs/repository-to-implementation-plan/normal.yaml
+  - id: repository-to-implementation-plan-boundary
+    type: boundary
+    path: tests/evaluations/packs/repository-to-implementation-plan/boundary.yaml
+  - id: repository-to-implementation-plan-refusal
+    type: refusal
+    path: tests/evaluations/packs/repository-to-implementation-plan/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

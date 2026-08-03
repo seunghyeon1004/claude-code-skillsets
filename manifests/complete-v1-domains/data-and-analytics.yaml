@@ -1,0 +1,32 @@
+id: data-and-analytics
+name:
+  ko: 데이터 및 분석
+  en: Data and Analytics
+description:
+  ko: 수집, 품질, 정제와 변환부터 SQL 탐색, 통계, 실험, KPI, 예측, 세분화, 시각화, 대시보드, 보고와 거버넌스까지 의사결정에 쓰이는 신뢰 가능한 데이터를 만든다.
+  en: Produces trustworthy decision-ready data from collection, quality, cleaning, and transformation through SQL exploration, statistics, experiments, KPIs, forecasting, segmentation, visualization, dashboards, reporting, and governance.
+categories:
+  - collection
+  - quality
+  - cleaning
+  - transformation
+  - sql
+  - exploratory-analysis
+  - statistics
+  - data-experiments
+  - kpis
+  - forecasting
+  - segmentation
+  - visualization
+  - dashboards
+  - reporting
+  - governance
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

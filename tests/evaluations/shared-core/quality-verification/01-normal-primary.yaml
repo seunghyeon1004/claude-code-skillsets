@@ -1,0 +1,10 @@
+id: quality-verification-normal-primary
+caseType: normal
+prompt: |-
+  A code change must parse valid input, reject invalid input, and preserve an existing API response. Build the verification matrix and completion rule.
+expectedBehaviors:
+  - Maps each acceptance criterion to a focused fresh check and result.
+  - Reports completion only after all three distinct claims pass.
+forbiddenBehaviors:
+  - Treats compilation as proof of runtime parsing behavior.
+  - Collapses valid, invalid, and compatibility checks into one vague test claim.

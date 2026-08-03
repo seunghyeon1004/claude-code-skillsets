@@ -1,0 +1,1441 @@
+{
+  "domains": [
+    {
+      "id": "research-and-intelligence",
+      "categoryIds": [
+        "source-discovery",
+        "web-research",
+        "academic-research",
+        "patent-research",
+        "market-research",
+        "competitive-intelligence",
+        "customer-research",
+        "interview-analysis",
+        "trend-detection",
+        "fact-checking",
+        "source-evaluation",
+        "evidence-synthesis"
+      ],
+      "capabilities": [
+        {
+          "id": "source-discovery-and-web-research",
+          "categoryIds": [
+            "source-discovery",
+            "web-research"
+          ]
+        },
+        {
+          "id": "academic-evidence-research",
+          "categoryIds": [
+            "academic-research"
+          ]
+        },
+        {
+          "id": "patent-landscape-research",
+          "categoryIds": [
+            "patent-research"
+          ]
+        },
+        {
+          "id": "analyze-markets-competitors-and-trends",
+          "categoryIds": [
+            "market-research",
+            "competitive-intelligence",
+            "trend-detection"
+          ]
+        },
+        {
+          "id": "analyze-customer-research",
+          "categoryIds": [
+            "customer-research",
+            "interview-analysis"
+          ]
+        },
+        {
+          "id": "verify-sources-and-claims",
+          "categoryIds": [
+            "fact-checking",
+            "source-evaluation"
+          ]
+        },
+        {
+          "id": "synthesize-cited-evidence",
+          "categoryIds": [
+            "evidence-synthesis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strategy-and-decision",
+      "categoryIds": [
+        "problem-framing",
+        "goals-and-metrics",
+        "opportunity-assessment",
+        "business-models",
+        "scenario-planning",
+        "strategy-prioritization",
+        "decision-records",
+        "execution-strategy",
+        "risk-analysis",
+        "strategy-review"
+      ],
+      "capabilities": [
+        {
+          "id": "frame-strategic-problems-and-opportunities",
+          "categoryIds": [
+            "problem-framing",
+            "opportunity-assessment"
+          ]
+        },
+        {
+          "id": "define-strategic-goals-and-metrics",
+          "categoryIds": [
+            "goals-and-metrics"
+          ]
+        },
+        {
+          "id": "design-business-and-execution-strategy",
+          "categoryIds": [
+            "business-models",
+            "execution-strategy"
+          ]
+        },
+        {
+          "id": "model-strategic-scenarios-and-risks",
+          "categoryIds": [
+            "scenario-planning",
+            "risk-analysis"
+          ]
+        },
+        {
+          "id": "govern-strategic-decisions",
+          "categoryIds": [
+            "strategy-prioritization",
+            "decision-records",
+            "strategy-review"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing-and-publishing",
+      "categoryIds": [
+        "ideation",
+        "outlining",
+        "long-form-writing",
+        "blogs",
+        "newsletters",
+        "technical-writing",
+        "business-writing",
+        "copywriting",
+        "editing",
+        "proofreading",
+        "citation-verification",
+        "translation",
+        "localization",
+        "cms-publishing"
+      ],
+      "capabilities": [
+        {
+          "id": "develop-content-ideas-and-outlines",
+          "categoryIds": [
+            "ideation",
+            "outlining"
+          ]
+        },
+        {
+          "id": "draft-long-form-editorial-content",
+          "categoryIds": [
+            "long-form-writing",
+            "blogs",
+            "newsletters"
+          ]
+        },
+        {
+          "id": "produce-technical-and-business-writing",
+          "categoryIds": [
+            "technical-writing",
+            "business-writing"
+          ]
+        },
+        {
+          "id": "craft-conversion-copy",
+          "categoryIds": [
+            "copywriting"
+          ]
+        },
+        {
+          "id": "edit-verify-and-proofread-content",
+          "categoryIds": [
+            "editing",
+            "proofreading",
+            "citation-verification"
+          ]
+        },
+        {
+          "id": "translate-and-localize-content",
+          "categoryIds": [
+            "translation",
+            "localization"
+          ]
+        },
+        {
+          "id": "publish-content-to-cms",
+          "categoryIds": [
+            "cms-publishing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketing-and-growth",
+      "categoryIds": [
+        "icp",
+        "personas",
+        "positioning",
+        "messaging",
+        "offers",
+        "offer-pricing",
+        "content-strategy",
+        "seo",
+        "email",
+        "lifecycle",
+        "funnels",
+        "cro",
+        "paid-acquisition",
+        "customer-retention",
+        "measurement"
+      ],
+      "capabilities": [
+        {
+          "id": "define-ideal-customers-and-personas",
+          "categoryIds": [
+            "icp",
+            "personas"
+          ]
+        },
+        {
+          "id": "create-market-positioning-and-messaging",
+          "categoryIds": [
+            "positioning",
+            "messaging"
+          ]
+        },
+        {
+          "id": "design-and-price-marketing-offers",
+          "categoryIds": [
+            "offers",
+            "offer-pricing"
+          ]
+        },
+        {
+          "id": "plan-content-and-search-growth",
+          "categoryIds": [
+            "content-strategy",
+            "seo"
+          ]
+        },
+        {
+          "id": "operate-email-and-lifecycle-marketing",
+          "categoryIds": [
+            "email",
+            "lifecycle"
+          ]
+        },
+        {
+          "id": "design-and-optimize-conversion-funnels",
+          "categoryIds": [
+            "funnels",
+            "cro"
+          ]
+        },
+        {
+          "id": "execute-paid-acquisition",
+          "categoryIds": [
+            "paid-acquisition"
+          ]
+        },
+        {
+          "id": "retain-customers-and-measure-growth",
+          "categoryIds": [
+            "customer-retention",
+            "measurement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion-and-distribution",
+      "categoryIds": [
+        "launch-promotion",
+        "social-distribution",
+        "channel-adaptation",
+        "content-repurposing",
+        "pr",
+        "media-pitching",
+        "influencer-work",
+        "community",
+        "outreach",
+        "campaign-operations",
+        "performance-feedback"
+      ],
+      "capabilities": [
+        {
+          "id": "plan-launch-promotion",
+          "categoryIds": [
+            "launch-promotion"
+          ]
+        },
+        {
+          "id": "adapt-repurpose-and-distribute-content",
+          "categoryIds": [
+            "social-distribution",
+            "channel-adaptation",
+            "content-repurposing"
+          ]
+        },
+        {
+          "id": "secure-earned-media-coverage",
+          "categoryIds": [
+            "pr",
+            "media-pitching"
+          ]
+        },
+        {
+          "id": "coordinate-influencer-and-community-promotion",
+          "categoryIds": [
+            "influencer-work",
+            "community"
+          ]
+        },
+        {
+          "id": "conduct-targeted-outreach",
+          "categoryIds": [
+            "outreach"
+          ]
+        },
+        {
+          "id": "operate-and-optimize-campaigns",
+          "categoryIds": [
+            "campaign-operations",
+            "performance-feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sales-and-customer",
+      "categoryIds": [
+        "account-research",
+        "lead-discovery",
+        "qualification",
+        "discovery",
+        "proposals",
+        "rfps",
+        "demos",
+        "crm",
+        "negotiation",
+        "customer-onboarding",
+        "support",
+        "customer-health",
+        "renewal",
+        "expansion",
+        "voc"
+      ],
+      "capabilities": [
+        {
+          "id": "research-accounts-and-discover-leads",
+          "categoryIds": [
+            "account-research",
+            "lead-discovery"
+          ]
+        },
+        {
+          "id": "qualify-opportunities-through-discovery",
+          "categoryIds": [
+            "qualification",
+            "discovery"
+          ]
+        },
+        {
+          "id": "create-proposals-and-rfp-responses",
+          "categoryIds": [
+            "proposals",
+            "rfps"
+          ]
+        },
+        {
+          "id": "demonstrate-and-negotiate-solutions",
+          "categoryIds": [
+            "demos",
+            "negotiation"
+          ]
+        },
+        {
+          "id": "maintain-customer-relationship-records",
+          "categoryIds": [
+            "crm"
+          ]
+        },
+        {
+          "id": "onboard-and-support-customers",
+          "categoryIds": [
+            "customer-onboarding",
+            "support"
+          ]
+        },
+        {
+          "id": "monitor-renew-and-expand-accounts",
+          "categoryIds": [
+            "customer-health",
+            "renewal",
+            "expansion"
+          ]
+        },
+        {
+          "id": "capture-voice-of-customer",
+          "categoryIds": [
+            "voc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-management",
+      "categoryIds": [
+        "problem-discovery",
+        "user-needs",
+        "product-principles",
+        "prds",
+        "user-stories",
+        "scope",
+        "product-prioritization",
+        "roadmaps",
+        "prototype-validation",
+        "product-experiments",
+        "product-metrics",
+        "launch-readiness"
+      ],
+      "capabilities": [
+        {
+          "id": "discover-customer-problems-and-needs",
+          "categoryIds": [
+            "problem-discovery",
+            "user-needs"
+          ]
+        },
+        {
+          "id": "define-product-principles-and-requirements",
+          "categoryIds": [
+            "product-principles",
+            "prds",
+            "user-stories"
+          ]
+        },
+        {
+          "id": "shape-and-prioritize-product-scope",
+          "categoryIds": [
+            "scope",
+            "product-prioritization"
+          ]
+        },
+        {
+          "id": "build-evidence-based-product-roadmaps",
+          "categoryIds": [
+            "roadmaps"
+          ]
+        },
+        {
+          "id": "validate-products-with-prototypes-and-experiments",
+          "categoryIds": [
+            "prototype-validation",
+            "product-experiments"
+          ]
+        },
+        {
+          "id": "measure-products-and-assess-launch-readiness",
+          "categoryIds": [
+            "product-metrics",
+            "launch-readiness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-management",
+      "categoryIds": [
+        "project-definition",
+        "work-breakdown",
+        "estimation",
+        "schedules",
+        "dependencies",
+        "project-resources",
+        "meetings",
+        "status-reporting",
+        "decisions",
+        "change",
+        "risk",
+        "stakeholder-communication",
+        "retrospectives"
+      ],
+      "capabilities": [
+        {
+          "id": "define-and-decompose-project-work",
+          "categoryIds": [
+            "project-definition",
+            "work-breakdown"
+          ]
+        },
+        {
+          "id": "estimate-and-schedule-project-work",
+          "categoryIds": [
+            "estimation",
+            "schedules"
+          ]
+        },
+        {
+          "id": "coordinate-project-dependencies-and-resources",
+          "categoryIds": [
+            "dependencies",
+            "project-resources"
+          ]
+        },
+        {
+          "id": "facilitate-meetings-and-record-decisions",
+          "categoryIds": [
+            "meetings",
+            "decisions"
+          ]
+        },
+        {
+          "id": "report-project-status-to-stakeholders",
+          "categoryIds": [
+            "status-reporting",
+            "stakeholder-communication"
+          ]
+        },
+        {
+          "id": "control-project-change-and-risk",
+          "categoryIds": [
+            "change",
+            "risk"
+          ]
+        },
+        {
+          "id": "run-project-retrospectives",
+          "categoryIds": [
+            "retrospectives"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software-engineering",
+      "categoryIds": [
+        "repository-context",
+        "requirements",
+        "specifications",
+        "architecture",
+        "frontend",
+        "backend",
+        "mobile",
+        "apis",
+        "databases",
+        "testing",
+        "debugging",
+        "review",
+        "refactoring",
+        "software-performance",
+        "software-accessibility",
+        "documentation",
+        "release-readiness"
+      ],
+      "capabilities": [
+        {
+          "id": "analyze-repository-context",
+          "categoryIds": [
+            "repository-context"
+          ]
+        },
+        {
+          "id": "turn-requirements-into-specifications",
+          "categoryIds": [
+            "requirements",
+            "specifications"
+          ]
+        },
+        {
+          "id": "design-software-architecture",
+          "categoryIds": [
+            "architecture"
+          ]
+        },
+        {
+          "id": "implement-accessible-web-interfaces",
+          "categoryIds": [
+            "frontend",
+            "software-accessibility"
+          ]
+        },
+        {
+          "id": "implement-mobile-applications",
+          "categoryIds": [
+            "mobile"
+          ]
+        },
+        {
+          "id": "implement-backend-services-and-apis",
+          "categoryIds": [
+            "backend",
+            "apis"
+          ]
+        },
+        {
+          "id": "design-and-evolve-databases",
+          "categoryIds": [
+            "databases"
+          ]
+        },
+        {
+          "id": "test-and-debug-software",
+          "categoryIds": [
+            "testing",
+            "debugging"
+          ]
+        },
+        {
+          "id": "review-refactor-and-optimize-software",
+          "categoryIds": [
+            "review",
+            "refactoring",
+            "software-performance"
+          ]
+        },
+        {
+          "id": "document-and-prepare-software-releases",
+          "categoryIds": [
+            "documentation",
+            "release-readiness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-and-security",
+      "categoryIds": [
+        "development-environments",
+        "ci-cd",
+        "containers",
+        "iac",
+        "cloud",
+        "deployment",
+        "rollback",
+        "observability",
+        "sre",
+        "security-incident-response",
+        "secrets",
+        "dependency-security",
+        "application-security",
+        "threat-modeling",
+        "recovery"
+      ],
+      "capabilities": [
+        {
+          "id": "provision-reproducible-development-environments",
+          "categoryIds": [
+            "development-environments"
+          ]
+        },
+        {
+          "id": "package-and-provision-cloud-infrastructure",
+          "categoryIds": [
+            "containers",
+            "iac",
+            "cloud"
+          ]
+        },
+        {
+          "id": "automate-safe-software-delivery",
+          "categoryIds": [
+            "ci-cd",
+            "deployment",
+            "rollback"
+          ]
+        },
+        {
+          "id": "observe-and-operate-reliable-services",
+          "categoryIds": [
+            "observability",
+            "sre"
+          ]
+        },
+        {
+          "id": "respond-to-security-incidents-and-recover",
+          "categoryIds": [
+            "security-incident-response",
+            "recovery"
+          ]
+        },
+        {
+          "id": "protect-secrets-and-software-dependencies",
+          "categoryIds": [
+            "secrets",
+            "dependency-security"
+          ]
+        },
+        {
+          "id": "assess-application-threats-and-security",
+          "categoryIds": [
+            "application-security",
+            "threat-modeling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-agents-and-automation",
+      "categoryIds": [
+        "use-case-fit",
+        "model-selection",
+        "prompting",
+        "context",
+        "rag",
+        "mcp",
+        "tool-calls",
+        "single-agents",
+        "multi-agent-systems",
+        "memory",
+        "evaluation",
+        "guardrails",
+        "cost",
+        "latency",
+        "monitoring"
+      ],
+      "capabilities": [
+        {
+          "id": "assess-ai-use-cases-and-models",
+          "categoryIds": [
+            "use-case-fit",
+            "model-selection"
+          ]
+        },
+        {
+          "id": "design-prompts-and-grounding-context",
+          "categoryIds": [
+            "prompting",
+            "context"
+          ]
+        },
+        {
+          "id": "build-retrieval-augmented-generation",
+          "categoryIds": [
+            "rag"
+          ]
+        },
+        {
+          "id": "connect-models-to-tools-and-mcp",
+          "categoryIds": [
+            "mcp",
+            "tool-calls"
+          ]
+        },
+        {
+          "id": "design-single-and-multi-agent-systems",
+          "categoryIds": [
+            "single-agents",
+            "multi-agent-systems"
+          ]
+        },
+        {
+          "id": "implement-stateful-agent-memory",
+          "categoryIds": [
+            "memory"
+          ]
+        },
+        {
+          "id": "evaluate-guard-and-monitor-ai-systems",
+          "categoryIds": [
+            "evaluation",
+            "guardrails",
+            "monitoring"
+          ]
+        },
+        {
+          "id": "optimize-ai-cost-and-latency",
+          "categoryIds": [
+            "cost",
+            "latency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-and-analytics",
+      "categoryIds": [
+        "collection",
+        "quality",
+        "cleaning",
+        "transformation",
+        "sql",
+        "exploratory-analysis",
+        "statistics",
+        "data-experiments",
+        "kpis",
+        "forecasting",
+        "segmentation",
+        "visualization",
+        "dashboards",
+        "reporting",
+        "governance"
+      ],
+      "capabilities": [
+        {
+          "id": "build-data-collection-and-transformation-pipelines",
+          "categoryIds": [
+            "collection",
+            "transformation"
+          ]
+        },
+        {
+          "id": "validate-and-clean-data",
+          "categoryIds": [
+            "quality",
+            "cleaning"
+          ]
+        },
+        {
+          "id": "query-and-explore-data",
+          "categoryIds": [
+            "sql",
+            "exploratory-analysis"
+          ]
+        },
+        {
+          "id": "apply-statistics-and-experimental-analysis",
+          "categoryIds": [
+            "statistics",
+            "data-experiments"
+          ]
+        },
+        {
+          "id": "define-kpis-and-forecast-outcomes",
+          "categoryIds": [
+            "kpis",
+            "forecasting"
+          ]
+        },
+        {
+          "id": "segment-and-compare-populations",
+          "categoryIds": [
+            "segmentation"
+          ]
+        },
+        {
+          "id": "visualize-data-and-build-dashboards",
+          "categoryIds": [
+            "visualization",
+            "dashboards"
+          ]
+        },
+        {
+          "id": "produce-governed-analytical-reports",
+          "categoryIds": [
+            "reporting",
+            "governance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design-and-brand",
+      "categoryIds": [
+        "briefs",
+        "ux-research-application",
+        "information-architecture",
+        "user-flows",
+        "wireframes",
+        "ui",
+        "design-systems",
+        "prototypes",
+        "web-design",
+        "brand",
+        "visual-identity",
+        "creative",
+        "design-accessibility",
+        "developer-handoff"
+      ],
+      "capabilities": [
+        {
+          "id": "translate-briefs-and-research-into-ux-structure",
+          "categoryIds": [
+            "briefs",
+            "ux-research-application",
+            "information-architecture"
+          ]
+        },
+        {
+          "id": "map-and-prototype-user-experiences",
+          "categoryIds": [
+            "user-flows",
+            "wireframes",
+            "prototypes"
+          ]
+        },
+        {
+          "id": "design-accessible-user-interfaces",
+          "categoryIds": [
+            "ui",
+            "design-accessibility"
+          ]
+        },
+        {
+          "id": "build-design-systems-and-developer-handoffs",
+          "categoryIds": [
+            "design-systems",
+            "developer-handoff"
+          ]
+        },
+        {
+          "id": "design-responsive-web-experiences",
+          "categoryIds": [
+            "web-design"
+          ]
+        },
+        {
+          "id": "define-brands-and-visual-identities",
+          "categoryIds": [
+            "brand",
+            "visual-identity"
+          ]
+        },
+        {
+          "id": "produce-brand-aligned-creative",
+          "categoryIds": [
+            "creative"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "video-and-audio",
+      "categoryIds": [
+        "video-research",
+        "concepts",
+        "scripts",
+        "storyboards",
+        "shot-lists",
+        "recording-preparation",
+        "rough-cuts",
+        "fine-editing",
+        "motion-graphics",
+        "captions",
+        "voice-cleanup",
+        "mixing",
+        "music",
+        "sound-effects",
+        "thumbnails",
+        "repurposing",
+        "quality-control",
+        "export"
+      ],
+      "capabilities": [
+        {
+          "id": "research-and-develop-media-concepts",
+          "categoryIds": [
+            "video-research",
+            "concepts"
+          ]
+        },
+        {
+          "id": "write-and-visualize-video-narratives",
+          "categoryIds": [
+            "scripts",
+            "storyboards"
+          ]
+        },
+        {
+          "id": "plan-and-prepare-recording",
+          "categoryIds": [
+            "shot-lists",
+            "recording-preparation"
+          ]
+        },
+        {
+          "id": "assemble-and-refine-video-edits",
+          "categoryIds": [
+            "rough-cuts",
+            "fine-editing"
+          ]
+        },
+        {
+          "id": "create-motion-graphics-and-thumbnails",
+          "categoryIds": [
+            "motion-graphics",
+            "thumbnails"
+          ]
+        },
+        {
+          "id": "produce-accessible-captions",
+          "categoryIds": [
+            "captions"
+          ]
+        },
+        {
+          "id": "clean-and-mix-audio",
+          "categoryIds": [
+            "voice-cleanup",
+            "mixing"
+          ]
+        },
+        {
+          "id": "source-and-integrate-music-and-effects",
+          "categoryIds": [
+            "music",
+            "sound-effects"
+          ]
+        },
+        {
+          "id": "repurpose-and-deliver-quality-controlled-media",
+          "categoryIds": [
+            "repurposing",
+            "quality-control",
+            "export"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "documents-and-knowledge",
+      "categoryIds": [
+        "documents",
+        "spreadsheets",
+        "presentations",
+        "pdfs",
+        "templates",
+        "conversion",
+        "ocr",
+        "tables",
+        "charts",
+        "meeting-records",
+        "notes",
+        "knowledge-bases",
+        "search",
+        "sop-documentation",
+        "classification",
+        "archiving"
+      ],
+      "capabilities": [
+        {
+          "id": "author-documents-from-reusable-templates",
+          "categoryIds": [
+            "documents",
+            "templates"
+          ]
+        },
+        {
+          "id": "build-data-rich-spreadsheets",
+          "categoryIds": [
+            "spreadsheets",
+            "tables",
+            "charts"
+          ]
+        },
+        {
+          "id": "create-presentations",
+          "categoryIds": [
+            "presentations"
+          ]
+        },
+        {
+          "id": "convert-extract-and-process-pdfs",
+          "categoryIds": [
+            "pdfs",
+            "conversion",
+            "ocr"
+          ]
+        },
+        {
+          "id": "capture-meeting-records-and-notes",
+          "categoryIds": [
+            "meeting-records",
+            "notes"
+          ]
+        },
+        {
+          "id": "build-and-search-knowledge-bases",
+          "categoryIds": [
+            "knowledge-bases",
+            "search"
+          ]
+        },
+        {
+          "id": "document-standard-operating-procedures",
+          "categoryIds": [
+            "sop-documentation"
+          ]
+        },
+        {
+          "id": "classify-and-archive-records",
+          "categoryIds": [
+            "classification",
+            "archiving"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business-operations",
+      "categoryIds": [
+        "processes",
+        "sops",
+        "repetitive-work-automation",
+        "handoffs",
+        "service-operations",
+        "operations-quality",
+        "procurement",
+        "vendors",
+        "operations-resources",
+        "operational-metrics",
+        "issues",
+        "changes",
+        "emergency-response"
+      ],
+      "capabilities": [
+        {
+          "id": "map-and-standardize-operational-processes",
+          "categoryIds": [
+            "processes",
+            "sops"
+          ]
+        },
+        {
+          "id": "automate-repetitive-operational-work",
+          "categoryIds": [
+            "repetitive-work-automation"
+          ]
+        },
+        {
+          "id": "design-and-coordinate-operational-handoffs",
+          "categoryIds": [
+            "handoffs"
+          ]
+        },
+        {
+          "id": "run-and-assure-service-operations",
+          "categoryIds": [
+            "service-operations",
+            "operations-quality"
+          ]
+        },
+        {
+          "id": "manage-procurement-vendors-and-resources",
+          "categoryIds": [
+            "procurement",
+            "vendors",
+            "operations-resources"
+          ]
+        },
+        {
+          "id": "measure-and-improve-operations",
+          "categoryIds": [
+            "operational-metrics",
+            "issues",
+            "changes"
+          ]
+        },
+        {
+          "id": "coordinate-emergency-operations",
+          "categoryIds": [
+            "emergency-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance-and-accounting",
+      "categoryIds": [
+        "budgets",
+        "cash-flow",
+        "costs",
+        "receipts",
+        "invoicing",
+        "collections",
+        "bookkeeping-assistance",
+        "financial-statements",
+        "forecasts",
+        "unit-economics",
+        "profitability",
+        "fundraising",
+        "tax-preparation",
+        "management-reporting"
+      ],
+      "capabilities": [
+        {
+          "id": "plan-budgets-and-cash-flow",
+          "categoryIds": [
+            "budgets",
+            "cash-flow"
+          ]
+        },
+        {
+          "id": "analyze-costs-unit-economics-and-profitability",
+          "categoryIds": [
+            "costs",
+            "unit-economics",
+            "profitability"
+          ]
+        },
+        {
+          "id": "process-receipts-invoices-and-collections",
+          "categoryIds": [
+            "receipts",
+            "invoicing",
+            "collections"
+          ]
+        },
+        {
+          "id": "assist-bookkeeping-and-statement-preparation",
+          "categoryIds": [
+            "bookkeeping-assistance",
+            "financial-statements"
+          ]
+        },
+        {
+          "id": "forecast-and-report-financial-performance",
+          "categoryIds": [
+            "forecasts",
+            "management-reporting"
+          ]
+        },
+        {
+          "id": "prepare-fundraising-financials",
+          "categoryIds": [
+            "fundraising"
+          ]
+        },
+        {
+          "id": "assist-with-tax-preparation",
+          "categoryIds": [
+            "tax-preparation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "commerce",
+      "categoryIds": [
+        "product-research",
+        "product-planning",
+        "catalogs",
+        "listings",
+        "commerce-pricing",
+        "merchandising",
+        "stores",
+        "marketplaces",
+        "inventory",
+        "orders",
+        "shipping",
+        "returns",
+        "promotions",
+        "reviews",
+        "revenue-analysis"
+      ],
+      "capabilities": [
+        {
+          "id": "research-and-plan-commerce-products",
+          "categoryIds": [
+            "product-research",
+            "product-planning"
+          ]
+        },
+        {
+          "id": "manage-product-catalogs-and-listings",
+          "categoryIds": [
+            "catalogs",
+            "listings"
+          ]
+        },
+        {
+          "id": "optimize-pricing-and-merchandising",
+          "categoryIds": [
+            "commerce-pricing",
+            "merchandising"
+          ]
+        },
+        {
+          "id": "operate-stores-and-marketplaces",
+          "categoryIds": [
+            "stores",
+            "marketplaces"
+          ]
+        },
+        {
+          "id": "manage-inventory-orders-and-fulfillment",
+          "categoryIds": [
+            "inventory",
+            "orders",
+            "shipping"
+          ]
+        },
+        {
+          "id": "manage-post-purchase-returns-and-reviews",
+          "categoryIds": [
+            "returns",
+            "reviews"
+          ]
+        },
+        {
+          "id": "run-promotions-and-analyze-revenue",
+          "categoryIds": [
+            "promotions",
+            "revenue-analysis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "people-and-training",
+      "categoryIds": [
+        "workforce-planning",
+        "roles",
+        "job-descriptions",
+        "candidates",
+        "interviews",
+        "hiring-evaluation",
+        "employee-onboarding",
+        "people-performance",
+        "feedback",
+        "careers",
+        "organizational-policy",
+        "curricula",
+        "learning-materials",
+        "assessment"
+      ],
+      "capabilities": [
+        {
+          "id": "plan-workforce-and-roles",
+          "categoryIds": [
+            "workforce-planning",
+            "roles"
+          ]
+        },
+        {
+          "id": "create-job-descriptions-and-manage-candidates",
+          "categoryIds": [
+            "job-descriptions",
+            "candidates"
+          ]
+        },
+        {
+          "id": "structure-interviews-and-hiring-evaluations",
+          "categoryIds": [
+            "interviews",
+            "hiring-evaluation"
+          ]
+        },
+        {
+          "id": "onboard-and-develop-employees",
+          "categoryIds": [
+            "employee-onboarding",
+            "careers"
+          ]
+        },
+        {
+          "id": "support-performance-and-feedback-cycles",
+          "categoryIds": [
+            "people-performance",
+            "feedback"
+          ]
+        },
+        {
+          "id": "draft-organizational-people-policies",
+          "categoryIds": [
+            "organizational-policy"
+          ]
+        },
+        {
+          "id": "design-learning-programs-and-assessments",
+          "categoryIds": [
+            "curricula",
+            "learning-materials",
+            "assessment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-risk-and-compliance",
+      "categoryIds": [
+        "legal-research-assistance",
+        "contract-drafting-assistance",
+        "contract-review-assistance",
+        "policies",
+        "privacy",
+        "intellectual-property",
+        "regulatory-mapping",
+        "compliance-checklists",
+        "risk-registers",
+        "audit-evidence",
+        "compliance-incident-response",
+        "records-retention",
+        "deletion"
+      ],
+      "capabilities": [
+        {
+          "id": "assist-with-legal-research",
+          "categoryIds": [
+            "legal-research-assistance"
+          ]
+        },
+        {
+          "id": "assist-with-contract-drafting-and-review",
+          "categoryIds": [
+            "contract-drafting-assistance",
+            "contract-review-assistance"
+          ]
+        },
+        {
+          "id": "maintain-legal-and-compliance-policies",
+          "categoryIds": [
+            "policies"
+          ]
+        },
+        {
+          "id": "assess-privacy-and-intellectual-property-risk",
+          "categoryIds": [
+            "privacy",
+            "intellectual-property"
+          ]
+        },
+        {
+          "id": "map-regulations-to-compliance-checklists",
+          "categoryIds": [
+            "regulatory-mapping",
+            "compliance-checklists"
+          ]
+        },
+        {
+          "id": "maintain-risk-registers-and-audit-evidence",
+          "categoryIds": [
+            "risk-registers",
+            "audit-evidence"
+          ]
+        },
+        {
+          "id": "coordinate-compliance-incident-response",
+          "categoryIds": [
+            "compliance-incident-response"
+          ]
+        },
+        {
+          "id": "govern-records-retention-and-deletion",
+          "categoryIds": [
+            "records-retention",
+            "deletion"
+          ]
+        }
+      ]
+    }
+  ]
+}

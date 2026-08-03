@@ -1,0 +1,52 @@
+schemaVersion: 2
+id: question-to-cited-research-brief
+domainId: research-and-intelligence
+categoryIds:
+  - source-discovery
+  - web-research
+  - fact-checking
+  - source-evaluation
+  - evidence-synthesis
+  - academic-research
+  - patent-research
+outcome:
+  ko: 조사 질문을 출처 날짜, 주장별 인용, 사실과 추론의 구분, 미확인 사항이 포함된 검증 가능한 연구 브리프로 전환한다.
+  en: Turns a research question into a verifiable brief with source dates, claim-level citations, separated facts and inferences, and explicit unresolved points.
+inputs:
+  - A bounded research question and intended decision context
+  - Relevant time range, geography, audience, and source constraints
+outputs:
+  - A cited research brief with claim-level evidence links and source dates
+  - A source-quality register separating facts, inferences, conflicts, and unknowns
+completionCriteria:
+  - Every material factual claim has a traceable source, publication date, and access date
+  - Facts, analyst inferences, conflicting evidence, and unresolved questions are visibly separated
+  - The brief states scope limits and refuses conclusions that available evidence cannot support
+routingProfileId: research-and-intelligence
+requiredCapabilityIds:
+  - source-discovery-and-web-research
+  - verify-sources-and-claims
+  - synthesize-cited-evidence
+recommendedCapabilityIds:
+  - academic-evidence-research
+  - patent-landscape-research
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: question-to-cited-research-brief-normal
+    type: normal
+    path: tests/evaluations/packs/question-to-cited-research-brief/normal.yaml
+  - id: question-to-cited-research-brief-boundary
+    type: boundary
+    path: tests/evaluations/packs/question-to-cited-research-brief/boundary.yaml
+  - id: question-to-cited-research-brief-refusal
+    type: refusal
+    path: tests/evaluations/packs/question-to-cited-research-brief/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

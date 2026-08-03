@@ -1,0 +1,17 @@
+{
+  "name": "shared-core",
+  "description": "Shared workflow foundations for Claude Code skillsets",
+  "version": "0.1.0",
+  "author": {
+    "name": "seunghyeon1004"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/seunghyeon1004/claude-code-skillsets",
+  "keywords": [
+    "workflow",
+    "verification",
+    "privacy",
+    "provenance"
+  ],
+  "skills": "./skills/"
+}

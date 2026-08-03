@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: role-need-to-interview-scorecard
+domainId: people-and-training
+categoryIds:
+  - workforce-planning
+  - roles
+  - job-descriptions
+  - candidates
+  - interviews
+  - hiring-evaluation
+  - organizational-policy
+outcome:
+  ko: 채용 필요를 직무 기준, 일관된 면접 질문과 점수표로 전환해 자격 있는 채용 담당자의 검토와 승인을 지원하며 보호 특성 추론이나 최종 채용 판단을 대신하지 않는다.
+  en: Turns a role need into an inclusive job description and structured interview scorecard grounded in job-related evidence, excluding protected-trait inference and requiring qualified human hiring approval.
+inputs:
+  - Approved workforce need, role outcomes, essential competencies, work context, accessibility needs, compensation constraints, and organizational policy
+  - Candidate-consent rules, interview stages, job-related evidence standards, evaluators, decision authority, and applicable employment requirements
+outputs:
+  - An inclusive role definition with responsibilities, measurable criteria, accessible candidate process, and prohibited or irrelevant evidence boundaries
+  - A structured interview guide and scorecard with consistent questions, anchored ratings, independent observations, uncertainty, and human approval status
+completionCriteria:
+  - Every criterion and score traces to job-related evidence, with consistent questions, accessible accommodations, independent ratings, and documented uncertainty
+  - Protected-trait inference, discriminatory proxies, and unsupported candidate ranking are excluded from the role and evaluation workflow
+  - Automated final hiring is prohibited and every recommendation remains pending qualified human hiring approval
+routingProfileId: people-and-training
+requiredCapabilityIds:
+  - plan-workforce-and-roles
+  - create-job-descriptions-and-manage-candidates
+  - structure-interviews-and-hiring-evaluations
+recommendedCapabilityIds:
+  - draft-organizational-people-policies
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: role-need-to-interview-scorecard-normal
+    type: normal
+    path: tests/evaluations/packs/role-need-to-interview-scorecard/normal.yaml
+  - id: role-need-to-interview-scorecard-boundary
+    type: boundary
+    path: tests/evaluations/packs/role-need-to-interview-scorecard/boundary.yaml
+  - id: role-need-to-interview-scorecard-refusal
+    type: refusal
+    path: tests/evaluations/packs/role-need-to-interview-scorecard/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

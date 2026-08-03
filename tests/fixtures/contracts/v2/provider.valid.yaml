@@ -1,0 +1,25 @@
+schemaVersion: 2
+id: external-catalog
+capabilityIds:
+  - repository-context-analysis
+sourceReviewId: external-catalog-review
+permissions:
+  filesystem: []
+  commands: []
+  network: []
+  externalData: []
+version: 1.0.0
+status: stable
+trustTier: trusted
+runtimeContracts:
+  - runtime: claude-code
+    packaging: native-plugin
+    runtimeVersionRange: '>=1.0.0'
+    platforms: [darwin]
+    marketplaceId: official-marketplace
+    marketplaceSource: https://github.com/example/marketplace
+    pluginId: catalog-tools
+    reviewedCommit: 0123456789abcdef0123456789abcdef01234567
+    artifacts:
+      - path: skills/catalog/SKILL.md
+        sha256: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef

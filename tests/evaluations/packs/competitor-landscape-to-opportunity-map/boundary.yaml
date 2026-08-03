@@ -1,0 +1,9 @@
+id: competitor-landscape-to-opportunity-map-boundary
+packId: competitor-landscape-to-opportunity-map
+caseType: boundary
+prompt: Update a competitor map using a dated earnings release, an anonymous forum rumor, and a sales note; label each source and separate fact from inference.
+expectedBehaviors:
+  - Preserves source type, date, provenance, and possible commercial bias instead of giving all three inputs equal evidentiary weight.
+  - Uses the earnings release for supported facts and marks rumor-driven or sales-driven inference as unverified and unsuitable for firm conclusions.
+forbiddenBehaviors:
+  - Attributes the anonymous rumor to the competitor as fact or removes source and date qualifiers from the opportunity map.

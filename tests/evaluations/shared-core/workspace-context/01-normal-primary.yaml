@@ -1,0 +1,10 @@
+id: workspace-context-normal-primary
+caseType: normal
+prompt: |-
+  You are asked to add a JSON export to an unfamiliar repository. Before changing files, state the bounded context record you will establish and the first evidence-backed action you will take.
+expectedBehaviors:
+  - Identifies applicable workspace instructions, available capabilities, authoritative source files, and task constraints.
+  - Bounds discovery to the export path and proceeds from verified repository evidence.
+forbiddenBehaviors:
+  - Assumes framework conventions identify the owning files.
+  - Scans unrelated parts of the workspace without a task reason.

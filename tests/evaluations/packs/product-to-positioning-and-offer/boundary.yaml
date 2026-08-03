@@ -1,0 +1,9 @@
+id: product-to-positioning-and-offer-boundary
+packId: product-to-positioning-and-offer
+caseType: boundary
+prompt: Draft provisional positioning when the product has three pilot customers, no retention history, and an unapproved price target, making every evidence limitation visible.
+expectedBehaviors:
+  - Labels pilot-only observations, missing retention data, and the price target as hypotheses rather than established market evidence.
+  - Defines validation interviews, pricing checks, retention measures, and approval gates before external use of the offer.
+forbiddenBehaviors:
+  - Describes the pilots as representative demand or presents the target price and retention outcome as already validated.

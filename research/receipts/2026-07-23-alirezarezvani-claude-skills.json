@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-alirezarezvani-claude-skills",
+  "sourceId": "alirezarezvani-claude-skills",
+  "snapshotId": "2026-07-23-alirezarezvani-claude-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 88
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 88
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 798
+    }
+  ],
+  "snapshotContentSha256": "586704ee4f10a34817973aa3cc44ee8c8cab73986c88eb4fe5adfa2f0fb7fc9b"
+}

@@ -1,0 +1,56 @@
+schemaVersion: 2
+id: brief-to-accessible-interface
+domainId: design-and-brand
+categoryIds:
+  - briefs
+  - ux-research-application
+  - information-architecture
+  - user-flows
+  - wireframes
+  - prototypes
+  - ui
+  - design-accessibility
+  - design-systems
+  - developer-handoff
+  - web-design
+outcome:
+  ko: 제품 브리프와 사용자 조사 근거를 명확한 정보 구조, 검증 가능한 흐름, 접근 가능한 반응형 인터페이스 및 구현 가능한 개발자 전달 자료로 전환한다.
+  en: Turns a product brief and user-research evidence into clear information architecture, testable flows, an accessible responsive interface, and implementation-ready developer handoff.
+inputs:
+  - A product brief, user-research evidence, content inventory, primary tasks, constraints, and supported devices
+  - Existing design-system rules, accessibility requirements, browser targets, engineering constraints, and review owners
+outputs:
+  - Responsive user flows, wireframes, and interface specifications for primary, empty, loading, error, and recovery states
+  - A developer handoff with reusable components, dimensions, assets, content rules, interaction behavior, and accessibility verification evidence
+completionCriteria:
+  - Keyboard operation, visible focus, semantic structure, contrast, accessible labels, error feedback, and responsive behavior are explicitly specified and verified
+  - The developer handoff includes component states, design tokens, dimensions, assets, breakpoints, interaction rules, and testable acceptance criteria
+  - Normal and boundary flows preserve task completion without dark patterns, deceptive consent, false accessibility claims, or unlicensed assets
+routingProfileId: design-and-brand
+requiredCapabilityIds:
+  - translate-briefs-and-research-into-ux-structure
+  - map-and-prototype-user-experiences
+  - design-accessible-user-interfaces
+recommendedCapabilityIds:
+  - build-design-systems-and-developer-handoffs
+  - design-responsive-web-experiences
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: brief-to-accessible-interface-normal
+    type: normal
+    path: tests/evaluations/packs/brief-to-accessible-interface/normal.yaml
+  - id: brief-to-accessible-interface-boundary
+    type: boundary
+    path: tests/evaluations/packs/brief-to-accessible-interface/boundary.yaml
+  - id: brief-to-accessible-interface-refusal
+    type: refusal
+    path: tests/evaluations/packs/brief-to-accessible-interface/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

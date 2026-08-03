@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v2/pack.schema.json",
+  "title": "CompletePackManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "domainId", "categoryIds", "outcome", "inputs", "outputs", "completionCriteria", "routingProfileId", "requiredCapabilityIds", "recommendedCapabilityIds", "optionalCapabilityIds", "platforms", "minimumProviderTrust", "assuranceProfile", "scenarios", "replacesPackIds", "version", "status"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "id": { "$ref": "#/$defs/kebabCaseId" },
+    "domainId": { "$ref": "#/$defs/domainId" },
+    "categoryIds": { "$ref": "#/$defs/nonEmptyIdArray" },
+    "outcome": { "$ref": "#/$defs/localizedText" },
+    "inputs": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "outputs": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "completionCriteria": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "routingProfileId": { "$ref": "#/$defs/domainId" },
+    "requiredCapabilityIds": { "$ref": "#/$defs/nonEmptyIdArray" },
+    "recommendedCapabilityIds": { "$ref": "#/$defs/idArray" },
+    "optionalCapabilityIds": { "$ref": "#/$defs/idArray" },
+    "platforms": { "$ref": "#/$defs/nonEmptyPlatformArray" },
+    "minimumProviderTrust": { "const": "trusted" },
+    "assuranceProfile": { "enum": ["standard", "high-impact"] },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/scenario" },
+      "allOf": [
+        { "contains": { "type": "object", "required": ["type"], "properties": { "type": { "const": "normal" } } } },
+        { "contains": { "type": "object", "required": ["type"], "properties": { "type": { "const": "boundary" } } } },
+        { "contains": { "type": "object", "required": ["type"], "properties": { "type": { "const": "refusal" } } } }
+      ]
+    },
+    "replacesPackIds": { "$ref": "#/$defs/packIdArray" },
+    "version": { "$ref": "#/$defs/semver" },
+    "status": { "$ref": "#/$defs/releaseStatus" }
+  },
+  "$defs": {
+    "kebabCaseId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "domainId": { "enum": ["research-and-intelligence", "strategy-and-decision", "writing-and-publishing", "marketing-and-growth", "promotion-and-distribution", "sales-and-customer", "product-management", "project-management", "software-engineering", "devops-and-security", "ai-agents-and-automation", "data-and-analytics", "design-and-brand", "video-and-audio", "documents-and-knowledge", "business-operations", "finance-and-accounting", "commerce", "people-and-training", "legal-risk-and-compliance"] },
+    "packId": { "enum": ["question-to-cited-research-brief", "competitor-landscape-to-opportunity-map", "customer-interviews-to-insights", "evidence-to-strategic-decision", "idea-to-edited-article", "source-to-multilingual-publication", "product-to-positioning-and-offer", "keyword-to-ranked-content", "launch-plan-to-multichannel-campaign", "long-form-to-social-distribution", "account-research-to-personalized-outreach", "discovery-call-to-proposal", "customer-problem-to-validated-prd", "prd-to-prioritized-roadmap", "project-brief-to-execution-board", "repository-to-implementation-plan", "spec-to-tested-feature", "bug-report-to-verified-fix", "service-to-ci-cd-deployment", "incident-alert-to-postmortem", "application-to-security-review", "use-case-to-agent-design", "prototype-to-evaluated-agent", "raw-data-to-validated-dataset", "business-question-to-dashboard", "brief-to-accessible-interface", "brand-strategy-to-visual-system", "topic-to-recording-ready-script", "raw-footage-to-published-video", "long-video-to-multiplatform-clips", "meeting-to-decisions-and-actions", "source-files-to-polished-document", "manual-process-to-maintained-sop", "repetitive-work-to-approved-automation", "transactions-to-management-report", "product-idea-to-store-listing", "role-need-to-interview-scorecard", "expertise-to-training-program", "contract-to-risk-and-revision-brief", "regulation-to-compliance-checklist"] },
+    "idArray": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/kebabCaseId" } },
+    "packIdArray": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/packId" } },
+    "nonEmptyIdArray": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/kebabCaseId" } },
+    "nonEmptyStringArray": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "nonEmptyPlatformArray": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["darwin", "linux", "win32"] } },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": { "ko": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "path"],
+      "properties": {
+        "id": { "$ref": "#/$defs/kebabCaseId" },
+        "type": { "enum": ["normal", "boundary", "refusal"] },
+        "path": { "type": "string", "minLength": 1 }
+      }
+    },
+    "semver": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-((?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?$" },
+    "releaseStatus": { "type": "string", "enum": ["draft", "beta", "stable", "deprecated", "blocked"] }
+  }
+}

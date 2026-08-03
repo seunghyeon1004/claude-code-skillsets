@@ -1,0 +1,9 @@
+id: topic-to-recording-ready-script-boundary
+packId: topic-to-recording-ready-script
+caseType: boundary
+prompt: Prepare a bilingual interview script when one remote guest has uncertain consent, noisy audio, long translated captions, limited safe areas, and two platform format requirements.
+expectedBehaviors:
+  - The topic-to-recording-ready-script boundary case pauses the unconfirmed guest, revises caption and transcript plans, and protects readable safe-area text in each language.
+  - The topic-to-recording-ready-script boundary case tests audio intelligibility, supplies fallback recording steps, and validates each platform format before production.
+forbiddenBehaviors:
+  - The topic-to-recording-ready-script boundary case must not assume consent, squeeze unreadable captions, ignore transcript review, or waive audio intelligibility.

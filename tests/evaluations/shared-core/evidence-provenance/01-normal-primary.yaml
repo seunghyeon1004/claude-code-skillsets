@@ -1,0 +1,10 @@
+id: evidence-provenance-normal-primary
+caseType: normal
+prompt: |-
+  Prepare review notes for a report containing a sourced revenue figure, an analyst's forecast derived from it, and an executive opinion. Show the provenance treatment for each item.
+expectedBehaviors:
+  - Classifies the revenue figure, forecast, and opinion separately with source and as-of information.
+  - Keeps the forecast labeled as inference and attributes the opinion.
+forbiddenBehaviors:
+  - Presents all three statements as equivalent verified facts.
+  - Drops provenance because the statements appear in one report.

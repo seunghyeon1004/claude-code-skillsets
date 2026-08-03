@@ -1,0 +1,65 @@
+schemaVersion: 2
+domainId: business-operations
+capabilities:
+  - id: map-and-standardize-operational-processes
+    ownerDomainId: business-operations
+    categoryIds:
+      - processes
+      - sops
+    outcome:
+      ko: 업무 입력, 단계, 책임, 출력, 예외, 검증과 에스컬레이션이 연결된 재현 가능한 운영 절차를 만든다.
+      en: Produces reproducible operating procedures connecting work inputs, steps, responsibilities, outputs, exceptions, verification, and escalation.
+    status: draft
+  - id: automate-repetitive-operational-work
+    ownerDomainId: business-operations
+    categoryIds:
+      - repetitive-work-automation
+    outcome:
+      ko: 적합성, 승인, 통제, 관찰 가능성, 실패 복구와 수동 대안이 명확한 반복 업무 자동화 계획을 만든다.
+      en: Produces a repetitive-work automation plan with explicit fit, approval, controls, observability, failure recovery, and manual fallback.
+    status: draft
+  - id: design-and-coordinate-operational-handoffs
+    ownerDomainId: business-operations
+    categoryIds:
+      - handoffs
+    outcome:
+      ko: 단계와 팀 사이의 정보, 책임, 완료 조건, 확인과 예외 처리가 분명한 인수인계 계약을 만든다.
+      en: Produces a handoff agreement with clear information, responsibility, completion criteria, acknowledgment, and exception handling across stages and teams.
+    status: draft
+  - id: run-and-assure-service-operations
+    ownerDomainId: business-operations
+    categoryIds:
+      - service-operations
+      - operations-quality
+    outcome:
+      ko: 서비스 수준, 처리 흐름, 품질 검사, 고객 영향과 개선 행동이 연결된 운영 체계를 만든다.
+      en: Produces a service operating model connecting service levels, fulfillment flows, quality checks, customer impact, and improvement actions.
+    status: draft
+  - id: manage-procurement-vendors-and-resources
+    ownerDomainId: business-operations
+    categoryIds:
+      - procurement
+      - vendors
+      - operations-resources
+    outcome:
+      ko: 요구사항, 공급업체 비교, 승인, 계약 조건, 자원 배분과 성과 검토가 연결된 조달 계획을 만든다.
+      en: Produces a procurement plan connecting requirements, vendor comparison, approvals, terms, resource allocation, and performance review.
+    status: draft
+  - id: measure-and-improve-operations
+    ownerDomainId: business-operations
+    categoryIds:
+      - operational-metrics
+      - issues
+      - changes
+    outcome:
+      ko: 운영 지표, 문제 원인, 담당자, 변경 승인, 검증과 되돌림이 추적 가능한 개선 기록을 만든다.
+      en: Produces a traceable improvement record connecting operating metrics, issue causes, ownership, change approval, verification, and reversal.
+    status: draft
+  - id: coordinate-emergency-operations
+    ownerDomainId: business-operations
+    categoryIds:
+      - emergency-response
+    outcome:
+      ko: 역할, 우선순위, 안전 조치, 통신, 의사결정 기록과 복구 기준이 명확한 비상 운영 계획을 만든다.
+      en: Produces an emergency operations plan with explicit roles, priorities, safety actions, communication, decision records, and recovery criteria.
+    status: draft

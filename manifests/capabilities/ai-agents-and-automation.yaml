@@ -1,0 +1,74 @@
+schemaVersion: 2
+domainId: ai-agents-and-automation
+capabilities:
+  - id: assess-ai-use-cases-and-models
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - use-case-fit
+      - model-selection
+    outcome:
+      ko: 사용자 문제, 위험, 품질, 비용과 지연 시간 요구에 맞는 AI 활용 사례와 모델 선택 근거를 만든다.
+      en: Produces AI use-case and model-selection rationale aligned with user problems, risk, quality, cost, and latency requirements.
+    status: draft
+  - id: design-prompts-and-grounding-context
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - prompting
+      - context
+    outcome:
+      ko: 목표, 제약, 형식과 필요한 근거 맥락을 명시한 재현 가능한 모델 지시 체계를 만든다.
+      en: Produces reproducible model instructions with explicit goals, constraints, formats, and required grounding context.
+    status: draft
+  - id: build-retrieval-augmented-generation
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - rag
+    outcome:
+      ko: 관련 출처를 검색, 선택, 인용하고 응답 근거를 검증하는 검색 증강 생성 흐름을 만든다.
+      en: Produces a retrieval-augmented generation flow that retrieves, selects, cites, and verifies relevant response evidence.
+    status: draft
+  - id: connect-models-to-tools-and-mcp
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - mcp
+      - tool-calls
+    outcome:
+      ko: 입력 검증, 권한, 오류 처리와 결과 확인이 있는 모델 도구 및 MCP 연결 계약을 만든다.
+      en: Produces model tool and MCP connection contracts with input validation, authorization, error handling, and result verification.
+    status: draft
+  - id: design-single-and-multi-agent-systems
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - single-agents
+      - multi-agent-systems
+    outcome:
+      ko: 목표, 역할, 경계, 전달물, 조정과 중단 조건이 명확한 단일 및 다중 에이전트 설계를 만든다.
+      en: Produces single and multi-agent designs with explicit goals, roles, boundaries, handoffs, coordination, and stop conditions.
+    status: draft
+  - id: implement-stateful-agent-memory
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - memory
+    outcome:
+      ko: 필요한 상태를 안전하게 저장, 검색, 갱신, 만료해 작업 맥락을 유지하는 에이전트 메모리를 만든다.
+      en: Produces agent memory that safely stores, retrieves, updates, and expires needed state to preserve task context.
+    status: draft
+  - id: evaluate-guard-and-monitor-ai-systems
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - evaluation
+      - guardrails
+      - monitoring
+    outcome:
+      ko: 품질 평가, 허용 범위, 거부 조건과 운영 신호가 연결된 AI 시스템 검증 체계를 만든다.
+      en: Produces an AI validation system connecting quality evaluation, allowed scope, refusal conditions, and operational signals.
+    status: draft
+  - id: optimize-ai-cost-and-latency
+    ownerDomainId: ai-agents-and-automation
+    categoryIds:
+      - cost
+      - latency
+    outcome:
+      ko: 품질 목표를 유지하면서 모델, 도구와 실행 경로의 비용 및 응답 시간을 측정하고 최적화한다.
+      en: Measures and optimizes model, tool, and execution-path cost and response time while preserving quality targets.
+    status: draft

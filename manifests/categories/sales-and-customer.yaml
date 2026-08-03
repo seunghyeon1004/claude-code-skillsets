@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: sales-and-customer
+categories:
+  - id: account-research
+    name:
+      ko: 계정 조사
+      en: Account research
+    description:
+      ko: 대상 조직의 사업, 우선순위, 이해관계자, 최근 변화를 근거와 함께 조사한다.
+      en: Researches a target organization's business, priorities, stakeholders, and recent changes with evidence.
+    status: draft
+  - id: lead-discovery
+    name:
+      ko: 리드 발굴
+      en: Lead discovery
+    description:
+      ko: 적합성 조건과 검증 가능한 신호를 사용해 잠재 고객을 식별한다.
+      en: Identifies prospective customers using fit criteria and verifiable signals.
+    status: draft
+  - id: qualification
+    name:
+      ko: 기회 검증
+      en: Qualification
+    description:
+      ko: 문제, 영향, 시급성, 권한, 예산과 다음 단계로 영업 기회의 적합성을 평가한다.
+      en: Assesses opportunity fit through problem, impact, urgency, authority, budget, and next steps.
+    status: draft
+  - id: discovery
+    name:
+      ko: 디스커버리
+      en: Discovery
+    description:
+      ko: 질문과 확인을 통해 고객의 현재 상태, 목표, 제약, 의사결정 과정을 파악한다.
+      en: Uses questions and confirmation to understand customer context, goals, constraints, and decision process.
+    status: draft
+  - id: proposals
+    name:
+      ko: 제안서
+      en: Proposals
+    description:
+      ko: 고객 문제와 기대 결과를 범위, 접근법, 조건, 근거가 있는 제안으로 전환한다.
+      en: Converts customer problems and desired outcomes into proposals with scope, approach, terms, and evidence.
+    status: draft
+  - id: rfps
+    name:
+      ko: 제안 요청서 대응
+      en: RFP responses
+    description:
+      ko: 제안 요청서 요구사항을 추적 가능한 답변, 증빙, 예외 사항으로 대응한다.
+      en: Responds to request-for-proposal requirements with traceable answers, evidence, and exceptions.
+    status: draft
+  - id: demos
+    name:
+      ko: 데모
+      en: Demos
+    description:
+      ko: 고객 시나리오와 성공 기준에 맞춘 검증 가능한 제품 시연을 구성한다.
+      en: Structures verifiable product demonstrations around customer scenarios and success criteria.
+    status: draft
+  - id: crm
+    name:
+      ko: 고객 관계 기록
+      en: Customer relationship records
+    description:
+      ko: 고객 상호작용, 단계, 담당자, 약속, 다음 행동을 일관된 기록으로 유지한다.
+      en: Maintains consistent records of interactions, stages, owners, commitments, and next actions.
+    status: draft
+  - id: negotiation
+    name:
+      ko: 협상
+      en: Negotiation
+    description:
+      ko: 목표, 양보 범위, 대안, 조건, 승인 경계를 명확히 하여 협상을 준비한다.
+      en: Prepares negotiations with explicit goals, concessions, alternatives, terms, and approval boundaries.
+    status: draft
+  - id: customer-onboarding
+    name:
+      ko: 고객 온보딩
+      en: Customer onboarding
+    description:
+      ko: 고객이 합의된 가치에 도달하도록 단계, 책임, 자료, 확인 지점을 설계한다.
+      en: Designs steps, ownership, materials, and checkpoints that lead customers to agreed value.
+    status: draft
+  - id: support
+    name:
+      ko: 고객 지원
+      en: Customer support
+    description:
+      ko: 고객 문제를 재현하고 우선순위화해 해결과 후속 안내까지 추적한다.
+      en: Reproduces and prioritizes customer issues and tracks resolution and follow-up communication.
+    status: draft
+  - id: customer-health
+    name:
+      ko: 고객 건강도
+      en: Customer health
+    description:
+      ko: 사용, 성과, 관계, 위험 신호를 결합해 고객 상태를 평가한다.
+      en: Assesses customer condition by combining usage, outcomes, relationship, and risk signals.
+    status: draft
+  - id: renewal
+    name:
+      ko: 갱신
+      en: Renewal
+    description:
+      ko: 실현 가치, 미해결 위험, 조건, 일정에 근거해 갱신을 준비한다.
+      en: Prepares renewals from realized value, unresolved risks, terms, and timing.
+    status: draft
+  - id: expansion
+    name:
+      ko: 고객 확장
+      en: Expansion
+    description:
+      ko: 검증된 추가 요구와 가치 근거를 바탕으로 확장 기회를 평가한다.
+      en: Evaluates expansion opportunities from validated additional needs and value evidence.
+    status: draft
+  - id: voc
+    name:
+      ko: 고객의 소리
+      en: Voice of customer
+    description:
+      ko: 고객 피드백을 출처, 빈도, 영향, 반례와 함께 구조화한다.
+      en: Structures customer feedback with source, frequency, impact, and counterexamples.
+    status: draft

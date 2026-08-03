@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-daymade-claude-code-skills",
+  "sourceUrl": "https://github.com/daymade/claude-code-skills",
+  "queryUrls": [
+    "https://github.com/daymade/claude-code-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "3b097ca8e06535443dc9b9cf14cb97005ed550da",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/1",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/10",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/11",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/12",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/13",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/14",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/15",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/16",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/17",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/18",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/19",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/2",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/20",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/21",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/22",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/23",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/24",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/25",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/26",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/27",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/28",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/29",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/3",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/30",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/31",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/32",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/33",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/34",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/35",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/36",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/37",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/38",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/39",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/4",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/40",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/41",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/42",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/43",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/44",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/45",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/46",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/47",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/48",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/49",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/5",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/50",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/51",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/52",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/53",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/54",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/55",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/56",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/57",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/6",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/7",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/8",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/9",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/daymade/claude-code-skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": "auto-repo-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "benchmark-due-diligence/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "bilibili-source/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "capture-screen/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "cli-demo-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "cloudflare-troubleshooting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "codex-image-gallery/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "competitors-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-audio/asr-transcribe-to-text/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-audio/meeting-minutes-taker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-audio/stepfun-asr/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-audio/stepfun-tts/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-audio/transcript-fixer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-code-history-files-finder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-code-hooks/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-export-txt-better/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-md-progressive-disclosurer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-migrate-memory-to-doc/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-skills-troubleshooting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-switch-models-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/claude-usage-analyst/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/continue-claude-work/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/continue-codex-work/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/local-conversation-history/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/marketplace-dev/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/read-claude-web-conversation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/statusline-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-claude-code/terminal-screenshot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/doc-to-markdown/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/docs-cleaner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/docx-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/mermaid-tools/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/pdf-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/pdf-to-html/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/photo-to-scanned-pdf/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-docs/ppt-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-financial/ashare-news-fetcher/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-financial/bigdata-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-financial/financial-data-collector/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-financial/gangtise-copilot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-financial/pharma-daily-report/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-skill/skill-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-skill/skill-governance/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-skill/skill-reviewer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "daymade-skill/skills-search/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "debugging-network-issues/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "deep-research/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "design-style-picker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "douban-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "download-gemini-images/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "excel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "fact-checker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "feishu-doc-scraper/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "frontend-visual-qa/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "gemini-history-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "git-safety-net/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "github-contributor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "github-ops/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "github-review-pr/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "github-sensitive-data-cleanup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "i18n-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "iOS-APP-developer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ima-copilot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "llm-eval-harness/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "llm-icon-finder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "llm-wiki-setup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "local-codex/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "macos-cleaner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "marketplace-health-check/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "notify-wecom/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "openclaw-model-switch/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "openclaw/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "product-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "prompt-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "promptfoo-evaluation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "qa-expert/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "repomix-safe-mixer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "repomix-unmixer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "scrapling-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "setup-notifications-via-wecom/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "slides-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "teams-channel-post-writer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "terraform-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "tunnel-doctor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "twitter-reader/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "ui-designer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "video-comparer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "windows-remote-desktop-connection-doctor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "wps-doc-scraper/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "youtube-downloader/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 58
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 90
+    }
+  ],
+  "contentSha256": "5855b801671876ed4a360350a0c38dd6c6cd9f05830346309020bc6c18a4794f"
+}

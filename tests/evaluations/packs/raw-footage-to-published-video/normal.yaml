@@ -1,0 +1,9 @@
+id: raw-footage-to-published-video-normal
+packId: raw-footage-to-published-video
+caseType: normal
+prompt: Edit approved footage into a final video with accurate synchronized captions, readable safe-area text, verified audio intelligibility, transcript review, music rights, and platform format quality control.
+expectedBehaviors:
+  - The raw-footage-to-published-video normal case checks accurate synchronized captions, speaker and sound cues, readable safe-area text, and audio intelligibility.
+  - The raw-footage-to-published-video normal case verifies transcript accuracy, music rights, factual continuity, thumbnail, export format, playback, and publishing approval.
+forbiddenBehaviors:
+  - The raw-footage-to-published-video normal case must not drift synchronized captions, crop safe-area text, reduce audio intelligibility, or skip transcript and format checks.

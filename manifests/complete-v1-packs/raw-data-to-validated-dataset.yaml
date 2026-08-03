@@ -1,0 +1,52 @@
+schemaVersion: 2
+id: raw-data-to-validated-dataset
+domainId: data-and-analytics
+categoryIds:
+  - collection
+  - transformation
+  - quality
+  - cleaning
+  - sql
+  - exploratory-analysis
+  - reporting
+  - governance
+outcome:
+  ko: 원시 데이터를 출처와 변환 이력이 추적되고 품질 검사가 재현 가능하며 접근 및 거버넌스 경계가 명확한 검증 데이터셋으로 전환한다.
+  en: Turns raw data into a validated dataset with traceable provenance and transformations, reproducible quality checks, and explicit access and governance boundaries.
+inputs:
+  - Approved raw data sources, schemas, collection purpose, access limits, quality expectations, and data owners
+  - Transformation rules, known anomalies, privacy constraints, retention requirements, and downstream analytical questions
+outputs:
+  - A versioned validated dataset with reproducible collection, transformation, cleaning, and quality-check evidence
+  - A governed validation report covering provenance, SQL and exploratory findings, remaining limitations, access responsibility, and safe remediation options
+completionCriteria:
+  - Every retained field and transformation has approved purpose, source provenance, reproducible logic, and accountable ownership
+  - Quality evidence reports missingness, duplicates, invalid values, cleaning decisions, and unresolved anomalies without deleting or manipulating source records
+  - The release excludes re-identification attempts, protects sensitive attributes, and requires human review for access, retention, or destructive changes
+routingProfileId: data-and-analytics
+requiredCapabilityIds:
+  - build-data-collection-and-transformation-pipelines
+  - validate-and-clean-data
+  - query-and-explore-data
+recommendedCapabilityIds:
+  - produce-governed-analytical-reports
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: raw-data-to-validated-dataset-normal
+    type: normal
+    path: tests/evaluations/packs/raw-data-to-validated-dataset/normal.yaml
+  - id: raw-data-to-validated-dataset-boundary
+    type: boundary
+    path: tests/evaluations/packs/raw-data-to-validated-dataset/boundary.yaml
+  - id: raw-data-to-validated-dataset-refusal
+    type: refusal
+    path: tests/evaluations/packs/raw-data-to-validated-dataset/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

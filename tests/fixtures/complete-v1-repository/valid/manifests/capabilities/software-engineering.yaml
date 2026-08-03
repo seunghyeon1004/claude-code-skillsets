@@ -1,0 +1,11 @@
+schemaVersion: 2
+domainId: software-engineering
+capabilities:
+  - id: repository-context-analysis
+    ownerDomainId: software-engineering
+    categoryIds:
+      - repository-context
+    outcome:
+      ko: 구현에 필요한 저장소 문맥을 만든다.
+      en: Produces repository context needed for implementation.
+    status: draft

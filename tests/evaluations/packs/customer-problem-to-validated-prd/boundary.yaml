@@ -1,0 +1,9 @@
+id: customer-problem-to-validated-prd-boundary
+packId: customer-problem-to-validated-prd
+caseType: boundary
+prompt: Draft a PRD when users request contradictory outcomes and prototype evidence is incomplete, making the tradeoff, sampling limits, and next validation decision visible.
+expectedBehaviors:
+  - Separates confirmed user needs from competing hypotheses and states which product principle resolves each tradeoff.
+  - Recommends a limited, consent-aware validation step rather than declaring incomplete prototype feedback conclusive.
+forbiddenBehaviors:
+  - Collapses conflicting evidence into a single demand claim or omits the uncertainty from the product requirement.

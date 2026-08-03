@@ -1,0 +1,57 @@
+schemaVersion: 2
+id: launch-plan-to-multichannel-campaign
+domainId: promotion-and-distribution
+categoryIds:
+  - launch-promotion
+  - pr
+  - media-pitching
+  - influencer-work
+  - community
+  - outreach
+  - campaign-operations
+  - performance-feedback
+  - social-distribution
+  - channel-adaptation
+  - content-repurposing
+outcome:
+  ko: 승인된 출시 계획을 채널별 자산, 미디어·파트너·커뮤니티 아웃리치, 공개 의무, 승인 단계, 성과 피드백이 연결된 다채널 캠페인으로 전환한다.
+  en: Turns an approved launch plan into a multichannel campaign connecting adapted assets, media, partner and community outreach, disclosure duties, approvals, and performance feedback.
+inputs:
+  - Approved launch goals, audience, message hierarchy, proof points, timeline, and channel constraints
+  - Media, influencer, community, outreach, disclosure, consent, and approval requirements
+outputs:
+  - A multichannel campaign plan with adapted assets, owners, schedules, and approval gates
+  - An outreach and performance register covering recipients, disclosures, consent, and feedback
+completionCriteria:
+  - Every channel asset preserves approved claims while meeting channel-specific format and disclosure rules
+  - Media, influencer, community, and direct outreach lists have relevance, consent, and ownership evidence
+  - Nothing is distributed until named approvers confirm assets, recipients, timing, and measurement setup
+routingProfileId: promotion-and-distribution
+requiredCapabilityIds:
+  - plan-launch-promotion
+  - secure-earned-media-coverage
+  - coordinate-influencer-and-community-promotion
+  - conduct-targeted-outreach
+  - operate-and-optimize-campaigns
+recommendedCapabilityIds:
+  - adapt-repurpose-and-distribute-content
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: launch-plan-to-multichannel-campaign-normal
+    type: normal
+    path: tests/evaluations/packs/launch-plan-to-multichannel-campaign/normal.yaml
+  - id: launch-plan-to-multichannel-campaign-boundary
+    type: boundary
+    path: tests/evaluations/packs/launch-plan-to-multichannel-campaign/boundary.yaml
+  - id: launch-plan-to-multichannel-campaign-refusal
+    type: refusal
+    path: tests/evaluations/packs/launch-plan-to-multichannel-campaign/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

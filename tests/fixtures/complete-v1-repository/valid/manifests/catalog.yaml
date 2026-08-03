@@ -1,0 +1,11 @@
+schemaVersion: 2
+releaseTarget: complete-private-v1
+domainIds:
+  - software-engineering
+categoryIds:
+  - repository-context
+capabilityIds:
+  - repository-context-analysis
+initialPackIds:
+  - repository-to-implementation-plan
+replacements: []

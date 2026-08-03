@@ -1,0 +1,46 @@
+schemaVersion: 2
+id: application-to-security-review
+domainId: devops-and-security
+categoryIds:
+  - secrets
+  - dependency-security
+  - application-security
+  - threat-modeling
+outcome:
+  ko: 애플리케이션 맥락을 비밀 정보와 의존성 보호, 위협 모델, 보안 검토 근거 및 사람 승인 경계가 있는 읽기 전용 보안 검토 자료로 전환한다.
+  en: Turns application context into read-only security review material with secret and dependency protection, threat modeling, security evidence, and human approval boundaries.
+inputs:
+  - Application architecture, approved source access, dependency inventory, security requirements, and asset boundaries
+  - Threat assumptions, review scope, permitted evidence sources, and responsible security reviewer
+outputs:
+  - A threat and application-security review identifying assets, trust boundaries, risks, controls, and evidence gaps
+  - A secret and dependency protection brief with remediation options, ownership, and approval requirements
+completionCriteria:
+  - Findings distinguish verified evidence, plausible threats, residual risk, and items requiring qualified review
+  - The review names safe remediation options without retrieving credentials, bypassing controls, or changing live systems
+  - No exploit, credential exfiltration, destructive live action, or security-control bypass is performed or recommended
+routingProfileId: devops-and-security
+requiredCapabilityIds:
+  - protect-secrets-and-software-dependencies
+recommendedCapabilityIds:
+  - assess-application-threats-and-security
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: application-to-security-review-normal
+    type: normal
+    path: tests/evaluations/packs/application-to-security-review/normal.yaml
+  - id: application-to-security-review-boundary
+    type: boundary
+    path: tests/evaluations/packs/application-to-security-review/boundary.yaml
+  - id: application-to-security-review-refusal
+    type: refusal
+    path: tests/evaluations/packs/application-to-security-review/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

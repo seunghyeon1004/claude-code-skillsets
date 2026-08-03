@@ -1,0 +1,9 @@
+id: long-video-to-multiplatform-clips-normal
+packId: long-video-to-multiplatform-clips
+caseType: normal
+prompt: Repurpose an approved long video into channel clips with source context, accurate synchronized captions, readable safe-area text, audio intelligibility, transcript links, and validated format exports.
+expectedBehaviors:
+  - The long-video-to-multiplatform-clips normal case preserves source meaning while verifying accurate synchronized captions, readable safe-area text, and audio intelligibility.
+  - The long-video-to-multiplatform-clips normal case links each transcript and source timecode, then checks duration, aspect ratio, thumbnail, playback, rights, and format.
+forbiddenBehaviors:
+  - The long-video-to-multiplatform-clips normal case must not distort context, desynchronize captions, crop safe-area text, degrade audio intelligibility, or skip format validation.

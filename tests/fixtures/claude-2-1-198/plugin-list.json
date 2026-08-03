@@ -1,0 +1,43 @@
+[
+  {
+    "enabled": true,
+    "id": "versioned-plugin@claude-plugins-official",
+    "installPath": "/Users/example/.claude/plugins/cache/claude-plugins-official/versioned-plugin/3.3.8",
+    "installedAt": "2026-07-30T00:00:00.000Z",
+    "lastUpdated": "2026-07-30T00:00:00.000Z",
+    "scope": "user",
+    "version": "3.3.8"
+  },
+  {
+    "enabled": true,
+    "id": "unversioned-plugin@claude-plugins-official",
+    "installPath": "/Users/example/.claude/plugins/cache/claude-plugins-official/unversioned-plugin/unknown",
+    "installedAt": "2026-07-30T00:00:00.000Z",
+    "lastUpdated": "2026-07-30T00:00:00.000Z",
+    "scope": "user",
+    "version": "unknown"
+  },
+  {
+    "enabled": true,
+    "id": "opaque-version-plugin@claude-plugins-official",
+    "installPath": "/Users/example/.claude/plugins/cache/claude-plugins-official/opaque-version-plugin/37d627244c53",
+    "installedAt": "2026-07-30T00:00:00.000Z",
+    "lastUpdated": "2026-07-30T00:00:00.000Z",
+    "scope": "user",
+    "version": "37d627244c53"
+  },
+  {
+    "enabled": false,
+    "id": "disabled-plugin@claude-plugins-official",
+    "installPath": "/Users/example/.claude/plugins/cache/claude-plugins-official/disabled-plugin/1.0.0",
+    "installedAt": "2026-07-30T00:00:00.000Z",
+    "lastUpdated": "2026-07-30T00:00:00.000Z",
+    "mcpServers": {
+      "example": {
+        "type": "stdio"
+      }
+    },
+    "scope": "user",
+    "version": "1.0.0"
+  }
+]

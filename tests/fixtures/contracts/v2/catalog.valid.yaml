@@ -1,0 +1,27 @@
+schemaVersion: 2
+releaseTarget: complete-private-v1
+domainIds:
+  - software-engineering
+categoryIds:
+  - repository-context
+capabilityIds:
+  - repository-context-analysis
+initialPackIds:
+  - repository-to-implementation-plan
+replacements:
+  - replacementPackId: spec-to-tested-feature
+    replacesPackIds:
+      - repository-to-implementation-plan
+    decisionRef: architecture-review-2026
+    reviewer: catalog-maintainer
+    requiredCategoryIds:
+      - repository-context
+    requiredCapabilityIds:
+      - repository-context-analysis
+    requiredPlatforms:
+      - darwin
+      - linux
+      - win32
+    minimumTrust: trusted
+    evaluationRefs:
+      - replacement-evaluation

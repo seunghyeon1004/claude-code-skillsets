@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "skillset-manager-maintenance-policy-v1",
+  "cli": {
+    "version": "2.1.198",
+    "syntaxEvidence": {
+      "kind": "official-claude-cli-help-v1",
+      "source": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+      "digest": "31ed0d5289fc6d6cf0e03af89f36cc22d0518ffc0e291283001817bd8a0abf5c"
+    },
+    "verificationCommand": "claude plugin list --json"
+  },
+  "transactionAdapters": {
+    "update": null,
+    "remove": null
+  },
+  "reviews": []
+}

@@ -1,0 +1,55 @@
+schemaVersion: 2
+id: use-case-to-agent-design
+domainId: ai-agents-and-automation
+categoryIds:
+  - use-case-fit
+  - model-selection
+  - prompting
+  - context
+  - mcp
+  - tool-calls
+  - single-agents
+  - multi-agent-systems
+  - cost
+  - latency
+outcome:
+  ko: AI 활용 사례를 적합한 모델, 근거 맥락, 승인된 도구 계약, 명시적 에이전트 경계와 비용 및 지연 시간 예산이 있는 구현 가능한 설계로 전환한다.
+  en: Turns an AI use case into an implementable design with a suitable model, grounded context, approved tool contracts, explicit agent boundaries, and cost and latency budgets.
+inputs:
+  - A user problem, success measures, representative tasks, risk constraints, and available evidence
+  - Approved model options, tool and MCP inventory, authorization boundaries, and operating budgets
+outputs:
+  - An evidence-linked AI use-case assessment with model-selection rationale and measurable quality targets
+  - A single-agent or multi-agent design covering prompts, grounding context, tool contracts, handoffs, stop conditions, cost, latency, and human approval gates
+completionCriteria:
+  - The design distinguishes supported model capabilities, assumptions, unresolved evidence gaps, and conditions that make the use case unsuitable
+  - Every tool and MCP path names validated inputs, least-privilege authorization, read-only or sandbox defaults, failure handling, and human approval before live action
+  - Agent roles, handoffs, stop conditions, prompt-injection defenses, quality targets, cost limits, and latency limits are testable before implementation
+routingProfileId: ai-agents-and-automation
+requiredCapabilityIds:
+  - assess-ai-use-cases-and-models
+  - design-prompts-and-grounding-context
+  - connect-models-to-tools-and-mcp
+  - design-single-and-multi-agent-systems
+recommendedCapabilityIds:
+  - optimize-ai-cost-and-latency
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: use-case-to-agent-design-normal
+    type: normal
+    path: tests/evaluations/packs/use-case-to-agent-design/normal.yaml
+  - id: use-case-to-agent-design-boundary
+    type: boundary
+    path: tests/evaluations/packs/use-case-to-agent-design/boundary.yaml
+  - id: use-case-to-agent-design-refusal
+    type: refusal
+    path: tests/evaluations/packs/use-case-to-agent-design/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

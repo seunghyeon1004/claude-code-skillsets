@@ -1,0 +1,107 @@
+schemaVersion: 2
+domainId: project-management
+categories:
+  - id: project-definition
+    name:
+      ko: 프로젝트 정의
+      en: Project definition
+    description:
+      ko: 목표, 범위, 성공 기준, 제약, 책임과 종료 조건을 명확히 한다.
+      en: Clarifies goals, scope, success criteria, constraints, ownership, and exit conditions.
+    status: draft
+  - id: work-breakdown
+    name:
+      ko: 작업 분해
+      en: Work breakdown
+    description:
+      ko: 프로젝트 결과를 담당자와 완료 기준이 있는 관리 가능한 작업으로 분해한다.
+      en: Decomposes project outcomes into manageable work with owners and completion criteria.
+    status: draft
+  - id: estimation
+    name:
+      ko: 추정
+      en: Estimation
+    description:
+      ko: 작업량, 기간, 불확실성과 가정을 근거와 함께 추정한다.
+      en: Estimates effort, duration, uncertainty, and assumptions with supporting rationale.
+    status: draft
+  - id: schedules
+    name:
+      ko: 일정
+      en: Schedules
+    description:
+      ko: 작업 순서, 이정표, 여유, 검토 시점을 실행 가능한 일정으로 구성한다.
+      en: Organizes work order, milestones, buffers, and reviews into an executable schedule.
+    status: draft
+  - id: dependencies
+    name:
+      ko: 의존성
+      en: Dependencies
+    description:
+      ko: 작업과 팀 사이의 선행 조건, 전달물, 차단 위험을 추적한다.
+      en: Tracks prerequisites, handoffs, and blocking risks across work and teams.
+    status: draft
+  - id: project-resources
+    name:
+      ko: 프로젝트 자원
+      en: Project resources
+    description:
+      ko: 사람, 시간, 예산, 도구와 역량을 프로젝트 요구에 맞춰 배분한다.
+      en: Allocates people, time, budget, tools, and skills to project needs.
+    status: draft
+  - id: meetings
+    name:
+      ko: 회의
+      en: Meetings
+    description:
+      ko: 목적, 참석자, 입력, 진행, 결과가 명확한 회의를 설계하고 운영한다.
+      en: Designs and facilitates meetings with explicit purpose, participants, inputs, process, and outcomes.
+    status: draft
+  - id: status-reporting
+    name:
+      ko: 상태 보고
+      en: Status reporting
+    description:
+      ko: 진행, 다음 단계, 위험, 의사결정 필요 사항을 근거와 함께 요약한다.
+      en: Summarizes progress, next steps, risks, and decisions needed with supporting evidence.
+    status: draft
+  - id: decisions
+    name:
+      ko: 프로젝트 의사결정
+      en: Project decisions
+    description:
+      ko: 선택, 근거, 승인자, 영향과 후속 행동을 추적 가능한 형태로 기록한다.
+      en: Records choices, rationale, approvers, impact, and follow-up actions for traceability.
+    status: draft
+  - id: change
+    name:
+      ko: 변경 관리
+      en: Change management
+    description:
+      ko: 범위, 일정, 비용, 위험에 대한 변경의 영향과 승인을 관리한다.
+      en: Manages the impact and approval of changes to scope, schedule, cost, and risk.
+    status: draft
+  - id: risk
+    name:
+      ko: 프로젝트 위험
+      en: Project risk
+    description:
+      ko: 위험의 가능성, 영향, 소유자, 신호, 대응과 상태를 추적한다.
+      en: Tracks risk likelihood, impact, owner, signals, response, and status.
+    status: draft
+  - id: stakeholder-communication
+    name:
+      ko: 이해관계자 소통
+      en: Stakeholder communication
+    description:
+      ko: 이해관계자의 정보 요구와 의사결정 역할에 맞춰 소통을 조정한다.
+      en: Adapts communication to stakeholder information needs and decision roles.
+    status: draft
+  - id: retrospectives
+    name:
+      ko: 회고
+      en: Retrospectives
+    description:
+      ko: 결과와 과정에서 유지할 점, 바꿀 점, 책임 있는 개선 행동을 도출한다.
+      en: Derives what to preserve, what to change, and owned improvement actions from outcomes and process.
+    status: draft

@@ -1,0 +1,29 @@
+id: product-management
+name:
+  ko: 제품 관리
+  en: Product Management
+description:
+  ko: 고객 문제와 요구를 제품 원칙, 요구사항, 범위, 우선순위, 로드맵, 실험, 지표와 출시 판단으로 연결한다.
+  en: Connects customer problems and needs to product principles, requirements, scope, priorities, roadmaps, experiments, metrics, and launch decisions.
+categories:
+  - problem-discovery
+  - user-needs
+  - product-principles
+  - prds
+  - user-stories
+  - scope
+  - product-prioritization
+  - roadmaps
+  - prototype-validation
+  - product-experiments
+  - product-metrics
+  - launch-readiness
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

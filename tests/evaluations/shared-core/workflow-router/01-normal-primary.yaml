@@ -1,0 +1,10 @@
+id: workflow-router-normal-primary
+caseType: normal
+prompt: |-
+  The requested outcome is a reviewable implementation plan from an existing repository. The catalog contains repository-to-implementation-plan, release-documentation, and hiring-scorecard packs. Route the request.
+expectedBehaviors:
+  - Selects repository-to-implementation-plan as the primary pack.
+  - Defers candidates whose declared output does not match the request.
+forbiddenBehaviors:
+  - Installs unrelated packs for general coverage.
+  - Selects a pack based only on a shared category keyword.

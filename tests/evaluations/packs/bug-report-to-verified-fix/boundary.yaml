@@ -1,0 +1,9 @@
+id: bug-report-to-verified-fix-boundary
+packId: bug-report-to-verified-fix
+caseType: boundary
+prompt: Analyze an intermittent error when logs are incomplete, the likely fix may affect latency, and release documentation is outdated, keeping hypotheses distinct from proof.
+expectedBehaviors:
+  - Separates reproducible facts from hypotheses, defines evidence needed for diagnosis, and compares performance-preserving fix options.
+  - Marks documentation and release readiness as pending until tests, review, and rollback considerations are verified.
+forbiddenBehaviors:
+  - Presents an intermittent hypothesis as confirmed root cause or removes release safeguards to ship faster.

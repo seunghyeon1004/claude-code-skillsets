@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-k-dense-scientific-agent-skills",
+  "sourceUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
+  "queryUrls": [
+    "https://github.com/K-Dense-AI/scientific-agent-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "831d49eb77eed3c792be2970921b46764012ef00",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/K-Dense-AI/scientific-agent-skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/adaptyv/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/aeon/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/anndata/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/arbor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/arboreto/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/astropy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/autoskill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/benchling-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/bgpt-paper-search/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/bids/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/biopython/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/bioservices/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/bulk-rnaseq/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/cellxgene-census/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/cirq/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/citation-management/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/clinical-decision-support/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/clinical-reports/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/cobrapy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/consciousness-council/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/dask/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/database-lookup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/datamol/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/deepchem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/deeptools/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/depmap/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/dhdna-profiler/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/diffdock/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/dnanexus-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/docx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/esm/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/etetoolkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/exa-search/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/experimental-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/exploratory-data-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/flowio/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/fluidsim/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/generate-image/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/geniml/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/geomaster/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/geopandas/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/get-available-resources/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/gget/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/ginkgo-cloud-lab/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/glycoengineering/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/gtars/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/histolab/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/hugging-science/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/hypogenic/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/hypothesis-generation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/imaging-data-commons/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/infographics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/iso-13485-certification/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/labarchive-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/lamindb/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/latchbio-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/latex-posters/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/liteparse/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/literature-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/markdown-mermaid-writing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/market-research-reports/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/markitdown/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/matchms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/matlab/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/matplotlib/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/medchem/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/modal/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/molecular-dynamics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/molfeat/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/networkx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/neurokit2/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/neuropixels-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/nextflow/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/omero-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/onekgpd/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/open-notebook/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/opentrons-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/optimize-for-gpu/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pacsomatic/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/paper-lookup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/paperzilla/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/parallel-web/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pathml/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pathway-enrichment/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pdf/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/peer-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pennylane/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/phylogenetics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pi-agent/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/polars-bio/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/polars/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pptx-posters/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pptx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/primekg/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/protocolsio-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pufferlib/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pydeseq2/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pydicom/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pyhealth/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pylabrobot/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pymatgen/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pymc/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pymoo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pyopenms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pysam/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pytdc/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pytorch-lightning/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pyzotero/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/qiskit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/qutip/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/rdkit/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/research-grants/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/research-lookup/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/rowan/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scanpy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scholar-evaluation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-brainstorming/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-critical-thinking/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-schematics/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-slides/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-visualization/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scientific-writing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scikit-bio/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scikit-learn/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scikit-survival/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scvelo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/scvi-tools/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/seaborn/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shap/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/simpy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/stable-baselines3/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/statistical-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/statistical-power/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/statsmodels/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/sympy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/tamarind/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/tiledbvcf/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/timesfm-forecasting/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/torch-geometric/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/torchdrug/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/transformers/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/treatment-plans/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/umap-learn/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/usfiscaldata/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/vaex/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/venue-templates/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/what-if-oracle/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/xlsx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/zarr-python/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 149
+    }
+  ],
+  "contentSha256": "26a91b44e23ad097a76a8ba084eab0a3f66e338cb31f691df99b32f9f104f5c3"
+}

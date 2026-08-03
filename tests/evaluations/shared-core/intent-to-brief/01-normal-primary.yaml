@@ -1,0 +1,10 @@
+id: intent-to-brief-normal-primary
+caseType: normal
+prompt: |-
+  A user says, "Make onboarding better," and provides interview notes but no artifact or completion criteria. Produce the working brief you would use before implementation.
+expectedBehaviors:
+  - Defines goal, deliverable, audience, inputs, constraints, and observable completion criteria.
+  - Labels inferred values as assumptions and missing path-changing values as open.
+forbiddenBehaviors:
+  - Converts interview themes directly into confirmed requirements.
+  - Uses subjective quality language as the definition of done.

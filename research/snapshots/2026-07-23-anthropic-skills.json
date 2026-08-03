@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-anthropic-skills",
+  "sourceUrl": "https://github.com/anthropics/skills",
+  "queryUrls": [
+    "https://github.com/anthropics/skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/1",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/2",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/anthropics/skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/algorithmic-art/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/brand-guidelines/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/canvas-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/claude-api/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/doc-coauthoring/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/docx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/frontend-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/internal-comms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/mcp-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pdf/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/pptx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/skill-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/slack-gif-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/theme-factory/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/web-artifacts-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/webapp-testing/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/xlsx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "template/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 3
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 18
+    }
+  ],
+  "contentSha256": "cf2b1e8206fb84c75ea867ee5c88282b5a61cac5820dccc053db3a578927107e"
+}

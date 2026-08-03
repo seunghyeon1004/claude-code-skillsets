@@ -1,0 +1,66 @@
+schemaVersion: 2
+domainId: design-and-brand
+capabilities:
+  - id: translate-briefs-and-research-into-ux-structure
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - briefs
+      - ux-research-application
+      - information-architecture
+    outcome:
+      ko: 브리프와 사용자 조사 근거를 우선순위, 정보 구조와 검증 가능한 UX 방향으로 전환한다.
+      en: Converts briefs and user-research evidence into priorities, information architecture, and a verifiable UX direction.
+    status: draft
+  - id: map-and-prototype-user-experiences
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - user-flows
+      - wireframes
+      - prototypes
+    outcome:
+      ko: 사용자 목표, 상태, 오류 경로와 핵심 상호작용을 시험 가능한 흐름, 와이어프레임과 프로토타입으로 만든다.
+      en: Produces testable flows, wireframes, and prototypes for user goals, states, error paths, and key interactions.
+    status: draft
+  - id: design-accessible-user-interfaces
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - ui
+      - design-accessibility
+    outcome:
+      ko: 명확한 계층, 상태, 피드백과 접근성 검증 기준을 갖춘 사용자 인터페이스를 설계한다.
+      en: Designs user interfaces with clear hierarchy, state, feedback, and accessibility verification criteria.
+    status: draft
+  - id: build-design-systems-and-developer-handoffs
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - design-systems
+      - developer-handoff
+    outcome:
+      ko: 재사용 가능한 디자인 시스템과 구현에 필요한 상태, 자산, 규칙, 치수 및 검증 기준을 전달한다.
+      en: Produces reusable design systems and communicates implementation states, assets, rules, dimensions, and verification criteria.
+    status: draft
+  - id: design-responsive-web-experiences
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - web-design
+    outcome:
+      ko: 다양한 화면 크기와 브라우저에서 목적과 정보 구조를 유지하는 반응형 웹 경험을 설계한다.
+      en: Designs responsive web experiences that preserve purpose and information architecture across screen sizes and browsers.
+    status: draft
+  - id: define-brands-and-visual-identities
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - brand
+      - visual-identity
+    outcome:
+      ko: 대상, 약속, 차별점과 목소리를 색상, 타이포그래피, 이미지 원칙으로 연결한 브랜드 체계를 만든다.
+      en: Produces brand systems that connect audience, promise, differentiation, and voice to color, typography, and imagery principles.
+    status: draft
+  - id: produce-brand-aligned-creative
+    ownerDomainId: design-and-brand
+    categoryIds:
+      - creative
+    outcome:
+      ko: 브랜드 원칙, 메시지와 채널 목적에 맞는 검토 가능한 창의적 시각 자산을 제작한다.
+      en: Produces reviewable creative visual assets aligned with brand principles, message, and channel purpose.
+    status: draft

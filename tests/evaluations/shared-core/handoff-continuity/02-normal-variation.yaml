@@ -1,0 +1,10 @@
+id: handoff-continuity-normal-partial
+caseType: normal
+prompt: |-
+  An incident is mitigated but a feature flag remains on and one broad check has not run. Produce the shift handoff with the next checkpoint.
+expectedBehaviors:
+  - Marks the outcome partial and records the flag, missing check, owner, and next checkpoint.
+  - Separates verified mitigation evidence from unresolved completion work.
+forbiddenBehaviors:
+  - Reports the incident resolved while temporary state remains.
+  - Omits the unrun check from the continuation record.

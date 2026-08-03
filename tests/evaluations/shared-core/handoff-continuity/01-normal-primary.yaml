@@ -1,0 +1,10 @@
+id: handoff-continuity-normal-primary
+caseType: normal
+prompt: |-
+  Hand off a completed implementation with a commit, changed files, two verification commands, and no remaining work. Show the durable record fields.
+expectedBehaviors:
+  - Records completed outcome, commit and artifact identifiers, decisions, exact verification receipts, and a clear empty remaining-work state.
+  - Gives the next owner a durable location for reproduction.
+forbiddenBehaviors:
+  - Says done without commit or verification identifiers.
+  - Invents follow-up work when none remains.

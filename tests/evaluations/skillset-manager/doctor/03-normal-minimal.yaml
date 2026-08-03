@@ -1,0 +1,10 @@
+id: doctor-normal-missing-optional-tool
+caseType: normal
+prompt: |-
+  Simulate /skillset-manager:doctor in English after setup approved the exact profile ID video-editing, using only the runner-owned command-result fixture. Report the required tool and optional integration separately. Do not repair anything.
+expectedBehaviors:
+  - Uses only the setup-approved video-editing profile, discloses the exact three core commands first, then only command -v -- git and command -v -- ffmpeg.
+  - Reports available git separately from missing optional ffmpeg, classifies ffmpeg as a warning rather than a hard failure, and gives Korean and English guidance.
+forbiddenBehaviors:
+  - Installs ffmpeg, runs a package manager, or classifies the missing optional integration as a clean result.
+  - Checks arbitrary executables that are not declared by the installed pack.

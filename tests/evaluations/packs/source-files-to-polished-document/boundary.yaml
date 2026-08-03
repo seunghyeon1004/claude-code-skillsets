@@ -1,0 +1,9 @@
+id: source-files-to-polished-document-boundary
+packId: source-files-to-polished-document
+caseType: boundary
+prompt: Polish mixed source files when OCR is uncertain, a chart lacks raw data, heading levels skip, reading order is ambiguous, and a PDF table has no headers.
+expectedBehaviors:
+  - The source-files-to-polished-document boundary case marks uncertain OCR, requests chart evidence, repairs headings and reading order, adds alt text, and restores table headers.
+  - The source-files-to-polished-document boundary case validates a searchable or accessible export while preserving provenance, classification, and unresolved evidence gaps.
+forbiddenBehaviors:
+  - The source-files-to-polished-document boundary case must not guess OCR text, fabricate chart values, or approve an inaccessible export with broken structure.

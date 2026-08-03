@@ -1,0 +1,56 @@
+schemaVersion: 2
+domainId: promotion-and-distribution
+capabilities:
+  - id: plan-launch-promotion
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - launch-promotion
+    outcome:
+      ko: 출시 목표, 대상, 메시지, 일정, 채널을 연결한 실행 가능한 프로모션 계획을 만든다.
+      en: Produces an executable promotion plan connecting launch goals, audiences, messages, timing, and channels.
+    status: draft
+  - id: adapt-repurpose-and-distribute-content
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - social-distribution
+      - channel-adaptation
+      - content-repurposing
+    outcome:
+      ko: 원본의 핵심을 보존하면서 채널별 형식과 이용 맥락에 맞춘 배포 자산을 만든다.
+      en: Produces distribution assets adapted to channel formats and usage contexts while preserving the source's core meaning.
+    status: draft
+  - id: secure-earned-media-coverage
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - pr
+      - media-pitching
+    outcome:
+      ko: 검증 가능한 공적 서사, 대상 매체, 맞춤 피치, 후속 자료가 포함된 미디어 패키지를 만든다.
+      en: Produces an earned-media package with a verifiable public narrative, target outlets, tailored pitches, and supporting materials.
+    status: draft
+  - id: coordinate-influencer-and-community-promotion
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - influencer-work
+      - community
+    outcome:
+      ko: 적합성, 공개 의무, 참여자 가치, 성과 조건이 명확한 협업 및 커뮤니티 계획을 만든다.
+      en: Produces an influencer and community plan with clear fit, disclosure duties, participant value, and performance terms.
+    status: draft
+  - id: conduct-targeted-outreach
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - outreach
+    outcome:
+      ko: 대상의 맥락, 개인화 근거, 동의, 후속 기준이 명확한 아웃리치 계획을 만든다.
+      en: Produces an outreach plan with explicit recipient context, personalization evidence, consent, and follow-up criteria.
+    status: draft
+  - id: operate-and-optimize-campaigns
+    ownerDomainId: promotion-and-distribution
+    categoryIds:
+      - campaign-operations
+      - performance-feedback
+    outcome:
+      ko: 일정, 자산, 승인, 담당자, 성과 피드백이 연결된 캠페인 운영 기록을 만든다.
+      en: Produces a campaign operating record connecting schedules, assets, approvals, owners, and performance feedback.
+    status: draft

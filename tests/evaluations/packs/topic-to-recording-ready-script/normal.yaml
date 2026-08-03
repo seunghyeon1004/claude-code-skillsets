@@ -1,0 +1,9 @@
+id: topic-to-recording-ready-script-normal
+packId: topic-to-recording-ready-script
+caseType: normal
+prompt: Prepare a sourced educational topic for recording with a factual script, storyboard, caption and transcript plan, readable safe-area text, audio intelligibility checks, and target format details.
+expectedBehaviors:
+  - The topic-to-recording-ready-script normal case links claims to sources and defines caption timing, speaker cues, transcript ownership, and recording corrections.
+  - The topic-to-recording-ready-script normal case specifies readable safe-area text, audio intelligibility tests, consent, rights, rehearsal, and every delivery format.
+forbiddenBehaviors:
+  - The topic-to-recording-ready-script normal case must not omit the caption or transcript workflow, place unreadable safe-area text, or accept poor audio intelligibility.

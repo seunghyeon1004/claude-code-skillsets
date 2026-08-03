@@ -1,0 +1,107 @@
+schemaVersion: 2
+domainId: business-operations
+categories:
+  - id: processes
+    name:
+      ko: 운영 프로세스
+      en: Operational processes
+    description:
+      ko: 업무의 입력, 단계, 책임, 출력과 통제를 일관된 흐름으로 설계한다.
+      en: Designs inputs, steps, responsibilities, outputs, and controls as a consistent operating flow.
+    status: draft
+  - id: sops
+    name:
+      ko: 표준 운영 절차
+      en: Standard operating procedures
+    description:
+      ko: 반복 업무의 정상 경로, 예외, 검증과 에스컬레이션을 재현 가능한 절차로 정의한다.
+      en: Defines normal paths, exceptions, verification, and escalation for repeated work as reproducible procedures.
+    status: draft
+  - id: repetitive-work-automation
+    name:
+      ko: 반복 업무 자동화
+      en: Repetitive work automation
+    description:
+      ko: 반복 작업의 적합성, 통제, 승인, 실패 복구를 검토한 뒤 안전하게 자동화한다.
+      en: Automates repeated tasks after reviewing fit, controls, approvals, and failure recovery.
+    status: draft
+  - id: handoffs
+    name:
+      ko: 업무 인수인계
+      en: Operational handoffs
+    description:
+      ko: 팀과 단계 사이에 필요한 정보, 책임, 완료 조건과 확인 절차를 명확히 한다.
+      en: Clarifies information, responsibility, completion conditions, and acknowledgment across teams and stages.
+    status: draft
+  - id: service-operations
+    name:
+      ko: 서비스 운영
+      en: Service operations
+    description:
+      ko: 서비스 요청, 처리 흐름, 수준 목표와 고객 영향을 지속적으로 관리한다.
+      en: Manages service requests, fulfillment flows, service-level objectives, and customer impact continuously.
+    status: draft
+  - id: operations-quality
+    name:
+      ko: 운영 품질
+      en: Operations quality
+    description:
+      ko: 운영 결과의 정확성, 일관성, 적시성과 결함 원인을 측정하고 개선한다.
+      en: Measures and improves the accuracy, consistency, timeliness, and defect causes of operational results.
+    status: draft
+  - id: procurement
+    name:
+      ko: 조달
+      en: Procurement
+    description:
+      ko: 요구사항, 비교 기준, 승인, 구매 조건과 수령 검증을 연결한다.
+      en: Connects requirements, comparison criteria, approvals, purchase terms, and receipt verification.
+    status: draft
+  - id: vendors
+    name:
+      ko: 공급업체 관리
+      en: Vendor management
+    description:
+      ko: 공급업체의 적합성, 성과, 의존성, 위험과 갱신 조건을 추적한다.
+      en: Tracks vendor fit, performance, dependencies, risks, and renewal conditions.
+    status: draft
+  - id: operations-resources
+    name:
+      ko: 운영 자원
+      en: Operations resources
+    description:
+      ko: 운영 수요에 맞춰 인력, 시간, 도구, 시설과 예비 용량을 계획한다.
+      en: Plans people, time, tools, facilities, and reserve capacity against operational demand.
+    status: draft
+  - id: operational-metrics
+    name:
+      ko: 운영 지표
+      en: Operational metrics
+    description:
+      ko: 처리량, 품질, 시간, 비용과 고객 영향을 일관된 지표로 관찰한다.
+      en: Observes throughput, quality, time, cost, and customer impact through consistent metrics.
+    status: draft
+  - id: issues
+    name:
+      ko: 운영 문제
+      en: Operational issues
+    description:
+      ko: 운영 문제의 영향, 원인, 담당자, 해결 상태와 재발 방지를 추적한다.
+      en: Tracks operational issue impact, cause, ownership, resolution status, and recurrence prevention.
+    status: draft
+  - id: changes
+    name:
+      ko: 운영 변경
+      en: Operational changes
+    description:
+      ko: 변경의 목적, 영향, 승인, 배포, 검증과 되돌림 조건을 관리한다.
+      en: Manages change purpose, impact, approval, rollout, verification, and reversal conditions.
+    status: draft
+  - id: emergency-response
+    name:
+      ko: 비상 대응
+      en: Emergency response
+    description:
+      ko: 긴급 상황에서 역할, 우선순위, 통신, 안전 조치와 복구 기준을 조정한다.
+      en: Coordinates roles, priorities, communication, safety actions, and recovery criteria during emergencies.
+    status: draft

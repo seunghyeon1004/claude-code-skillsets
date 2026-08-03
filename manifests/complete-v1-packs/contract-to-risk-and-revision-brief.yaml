@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: contract-to-risk-and-revision-brief
+domainId: legal-risk-and-compliance
+categoryIds:
+  - legal-research-assistance
+  - contract-drafting-assistance
+  - contract-review-assistance
+  - privacy
+  - intellectual-property
+  - risk-registers
+  - audit-evidence
+outcome:
+  ko: 계약문을 근거가 연결된 위험 및 수정 브리프로 전환해 자격 있는 법률 자문가의 검토와 승인을 지원하며 법률 조언이나 최종 계약 해석을 대신하지 않는다.
+  en: Turns a contract into a source-linked risk and revision brief as assistance, not legal advice, leaving final interpretation and every consequential decision to qualified counsel.
+inputs:
+  - Authorized contract text, amendments, schedules, negotiation history, business objectives, jurisdiction, counterparty context, and source authorities
+  - Risk tolerance, privacy and intellectual-property concerns, privileged-material rules, negotiation owner, signing authority, and qualified counsel
+outputs:
+  - A clause-by-clause review brief connecting obligations, rights, inconsistencies, missing terms, privacy or intellectual-property risks, and proposed revisions to sources
+  - A prioritized risk register with uncertainty, negotiation questions, alternative language, audit evidence, and matters reserved for qualified legal judgment
+completionCriteria:
+  - Every identified issue and suggested revision cites the relevant clause, supplied context, source authority, uncertainty, and business consequence
+  - The workflow cannot perform signing or acceptance, expose privileged disclosures, contact a counterparty, or represent the brief as legal advice
+  - Final interpretation, negotiation posture, waiver, execution, and risk acceptance remain pending review and approval by qualified counsel
+routingProfileId: legal-risk-and-compliance
+requiredCapabilityIds:
+  - assist-with-legal-research
+  - assist-with-contract-drafting-and-review
+recommendedCapabilityIds:
+  - assess-privacy-and-intellectual-property-risk
+  - maintain-risk-registers-and-audit-evidence
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: contract-to-risk-and-revision-brief-normal
+    type: normal
+    path: tests/evaluations/packs/contract-to-risk-and-revision-brief/normal.yaml
+  - id: contract-to-risk-and-revision-brief-boundary
+    type: boundary
+    path: tests/evaluations/packs/contract-to-risk-and-revision-brief/boundary.yaml
+  - id: contract-to-risk-and-revision-brief-refusal
+    type: refusal
+    path: tests/evaluations/packs/contract-to-risk-and-revision-brief/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

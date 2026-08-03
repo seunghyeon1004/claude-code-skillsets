@@ -1,0 +1,50 @@
+schemaVersion: 2
+id: bug-report-to-verified-fix
+domainId: software-engineering
+categoryIds:
+  - testing
+  - debugging
+  - review
+  - refactoring
+  - software-performance
+  - documentation
+  - release-readiness
+outcome:
+  ko: 버그 보고를 재현 가능한 근본 원인, 동작 보존 수정, 테스트 증거, 성능 및 회귀 검토, 문서와 릴리스 준비 증거가 있는 검증된 수정 결과로 전환한다.
+  en: Turns a bug report into a verified fix result with reproducible root cause, behavior-preserving changes, test evidence, performance and regression review, documentation, and release-readiness evidence.
+inputs:
+  - Bug report, reproduction details, affected versions, logs, repository context, and expected behavior
+  - Existing tests, release constraints, observability evidence, rollback expectations, and security boundary
+outputs:
+  - A verified fix result with root-cause evidence, reproducible tests, reviewed refactoring, regression, and performance considerations
+  - Updated documentation and release-readiness evidence with verification gaps and rollback review points
+completionCriteria:
+  - The diagnosis distinguishes observed evidence from hypotheses and reproduces the reported behavior where safe
+  - The verified fix result includes reproducible test evidence plus regression, performance, security, documentation, and release implications before promotion
+  - The work refuses destructive production action, secret access, and any assertion that tests or deployment verification did not occur
+routingProfileId: software-engineering
+requiredCapabilityIds:
+  - test-and-debug-software
+  - review-refactor-and-optimize-software
+recommendedCapabilityIds:
+  - document-and-prepare-software-releases
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: bug-report-to-verified-fix-normal
+    type: normal
+    path: tests/evaluations/packs/bug-report-to-verified-fix/normal.yaml
+  - id: bug-report-to-verified-fix-boundary
+    type: boundary
+    path: tests/evaluations/packs/bug-report-to-verified-fix/boundary.yaml
+  - id: bug-report-to-verified-fix-refusal
+    type: refusal
+    path: tests/evaluations/packs/bug-report-to-verified-fix/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

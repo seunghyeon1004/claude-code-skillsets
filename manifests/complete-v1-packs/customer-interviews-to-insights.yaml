@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: customer-interviews-to-insights
+domainId: research-and-intelligence
+categoryIds:
+  - customer-research
+  - interview-analysis
+  - fact-checking
+  - source-evaluation
+  - evidence-synthesis
+  - source-discovery
+  - web-research
+outcome:
+  ko: 고객 인터뷰를 발언 출처와 날짜, 반복 패턴, 반례, 사실과 해석의 구분이 추적되는 검증 가능한 인사이트로 전환한다.
+  en: Turns customer interviews into verifiable insights with traceable speaker sources and dates, recurring patterns, counterexamples, and separated observations and interpretations.
+inputs:
+  - Consented interview transcripts or notes with dates and participant context
+  - Research questions, sampling limits, redaction requirements, and decision context
+outputs:
+  - An evidence-linked insight report with anonymized quotations, patterns, and counterexamples
+  - A research limitations register covering sample bias, missing evidence, and unresolved questions
+completionCriteria:
+  - Every insight traces to dated interview evidence without exposing unnecessary personal information
+  - Participant statements and observed facts are separated from researcher inference and generalization
+  - Claims beyond the sample are qualified, contradicted evidence is retained, and unsupported certainty is refused
+routingProfileId: research-and-intelligence
+requiredCapabilityIds:
+  - analyze-customer-research
+  - verify-sources-and-claims
+  - synthesize-cited-evidence
+recommendedCapabilityIds:
+  - source-discovery-and-web-research
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: customer-interviews-to-insights-normal
+    type: normal
+    path: tests/evaluations/packs/customer-interviews-to-insights/normal.yaml
+  - id: customer-interviews-to-insights-boundary
+    type: boundary
+    path: tests/evaluations/packs/customer-interviews-to-insights/boundary.yaml
+  - id: customer-interviews-to-insights-refusal
+    type: refusal
+    path: tests/evaluations/packs/customer-interviews-to-insights/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

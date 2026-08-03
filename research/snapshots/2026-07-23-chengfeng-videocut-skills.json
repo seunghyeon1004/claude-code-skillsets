@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-chengfeng-videocut-skills",
+  "sourceUrl": "https://github.com/Agentchengfeng/chengfeng-videocut-skills",
+  "queryUrls": [
+    "https://github.com/Agentchengfeng/chengfeng-videocut-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "e2cc73dce613c0701b3e02dc4a7c2f5f567ad7b3",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/Agentchengfeng/chengfeng-videocut-skills"
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/chengfeng-videocut/skills/cut-talking-head/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/chengfeng-videocut/skills/finish-talking-head/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 2
+    }
+  ],
+  "contentSha256": "0677f4155fee7dd3efad95e9948e74aca39393f918eb704485eb1d84eaaca8de"
+}

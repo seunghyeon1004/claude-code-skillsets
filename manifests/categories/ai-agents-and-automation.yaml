@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: ai-agents-and-automation
+categories:
+  - id: use-case-fit
+    name:
+      ko: 활용 사례 적합성
+      en: Use-case fit
+    description:
+      ko: 자동화가 사용자 문제, 업무 흐름, 위험과 기대 결과에 실제로 적합한지 판단한다.
+      en: Determines whether automation fits the user problem, workflow, risk, and expected outcome.
+    status: draft
+  - id: model-selection
+    name:
+      ko: 모델 선택
+      en: Model selection
+    description:
+      ko: 품질, 비용, 지연 시간, 데이터 경계와 도구 요구에 맞는 모델을 선택한다.
+      en: Selects models that fit quality, cost, latency, data-boundary, and tooling requirements.
+    status: draft
+  - id: prompting
+    name:
+      ko: 프롬프팅
+      en: Prompting
+    description:
+      ko: 목표, 제약, 형식, 예시와 실패 처리를 명시한 재현 가능한 지시를 설계한다.
+      en: Designs reproducible instructions with explicit goals, constraints, formats, examples, and failure handling.
+    status: draft
+  - id: context
+    name:
+      ko: 맥락 관리
+      en: Context management
+    description:
+      ko: 작업에 필요한 정보만 정확한 시점에 제공하도록 맥락을 선택하고 구성한다.
+      en: Selects and structures context so only needed information is available at the right time.
+    status: draft
+  - id: rag
+    name:
+      ko: 검색 증강 생성
+      en: Retrieval-augmented generation
+    description:
+      ko: 관련 근거를 검색하고 인용 가능한 맥락으로 연결해 모델 응답을 보강한다.
+      en: Retrieves relevant evidence and connects it as citable context that grounds model responses.
+    status: draft
+  - id: mcp
+    name:
+      ko: 모델 컨텍스트 프로토콜
+      en: Model Context Protocol
+    description:
+      ko: 모델과 외부 시스템 사이의 도구, 자원, 프롬프트 연결을 명확한 계약으로 구성한다.
+      en: Connects model tools, resources, and prompts to external systems through explicit contracts.
+    status: draft
+  - id: tool-calls
+    name:
+      ko: 도구 호출
+      en: Tool calls
+    description:
+      ko: 입력 검증, 권한, 오류와 결과 확인을 포함해 모델의 도구 실행을 통제한다.
+      en: Controls model tool execution with input validation, authorization, errors, and result verification.
+    status: draft
+  - id: single-agents
+    name:
+      ko: 단일 에이전트
+      en: Single agents
+    description:
+      ko: 하나의 에이전트가 목표를 계획하고 도구를 사용하며 결과를 검증하는 흐름을 설계한다.
+      en: Designs flows where one agent plans toward a goal, uses tools, and verifies results.
+    status: draft
+  - id: multi-agent-systems
+    name:
+      ko: 다중 에이전트 시스템
+      en: Multi-agent systems
+    description:
+      ko: 여러 에이전트의 역할, 경계, 전달물, 조정과 중단 조건을 명확히 정의한다.
+      en: Defines clear roles, boundaries, handoffs, coordination, and stop conditions across multiple agents.
+    status: draft
+  - id: memory
+    name:
+      ko: 에이전트 메모리
+      en: Agent memory
+    description:
+      ko: 세션과 장기 상태를 저장, 검색, 갱신, 만료하는 방식을 목적과 위험에 맞게 설계한다.
+      en: Designs how session and long-term state is stored, retrieved, updated, and expired for purpose and risk.
+    status: draft
+  - id: evaluation
+    name:
+      ko: 평가
+      en: Evaluation
+    description:
+      ko: 대표 과제, 기대 결과, 측정 기준과 회귀 검사를 사용해 AI 품질을 평가한다.
+      en: Evaluates AI quality with representative tasks, expected results, measurements, and regression checks.
+    status: draft
+  - id: guardrails
+    name:
+      ko: 가드레일
+      en: Guardrails
+    description:
+      ko: 허용 범위, 거부 조건, 승인 단계와 안전한 대체 경로를 시스템에 명시한다.
+      en: Makes allowed scope, refusal conditions, approval steps, and safe fallback paths explicit in the system.
+    status: draft
+  - id: cost
+    name:
+      ko: 비용
+      en: Cost
+    description:
+      ko: 모델, 도구, 검색과 실행 비용을 측정하고 예산과 품질 목표 안에서 관리한다.
+      en: Measures and manages model, tool, retrieval, and execution cost within budget and quality targets.
+    status: draft
+  - id: latency
+    name:
+      ko: 지연 시간
+      en: Latency
+    description:
+      ko: 사용자 경험과 운영 목표에 맞게 응답 시간, 대기열과 병렬 실행을 최적화한다.
+      en: Optimizes response time, queues, and parallel execution for user experience and operational targets.
+    status: draft
+  - id: monitoring
+    name:
+      ko: 모니터링
+      en: Monitoring
+    description:
+      ko: 품질, 안전, 비용, 지연 시간과 실패 신호를 관찰해 운영 상태를 설명한다.
+      en: Observes quality, safety, cost, latency, and failure signals to explain operational state.
+    status: draft

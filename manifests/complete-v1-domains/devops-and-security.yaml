@@ -1,0 +1,32 @@
+id: devops-and-security
+name:
+  ko: 데브옵스 및 보안
+  en: DevOps and Security
+description:
+  ko: 재현 가능한 개발 환경과 인프라부터 안전한 배포, 관찰 가능성, 신뢰성, 사고 대응, 비밀과 의존성 보호, 애플리케이션 보안과 복구까지 운영 위험을 관리한다.
+  en: Manages operational risk from reproducible development environments and infrastructure through safe delivery, observability, reliability, incident response, secret and dependency protection, application security, and recovery.
+categories:
+  - development-environments
+  - ci-cd
+  - containers
+  - iac
+  - cloud
+  - deployment
+  - rollback
+  - observability
+  - sre
+  - security-incident-response
+  - secrets
+  - dependency-security
+  - application-security
+  - threat-modeling
+  - recovery
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

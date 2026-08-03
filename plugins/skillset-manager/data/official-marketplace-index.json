@@ -1,0 +1,1143 @@
+{
+  "schemaVersion": 1,
+  "pathKind": "official-listing-delegated",
+  "marketplace": {
+    "id": "claude-plugins-official",
+    "source": "anthropics/claude-plugins-official",
+    "repository": "https://github.com/anthropics/claude-plugins-official",
+    "inspectedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+    "manifestPath": ".claude-plugin/marketplace.json",
+    "manifestSha256": "64b111d8c1716c062a285ed63eade42f56e2e79ac95859a994d586f573a20e5e",
+    "sourceUrl": "https://raw.githubusercontent.com/anthropics/claude-plugins-official/e3e378cbbb205673a5d7254ded32679cafa6179d/.claude-plugin/marketplace.json",
+    "pluginCount": 272,
+    "listingStatus": "marketplace-listed",
+    "individualSafetyReview": "not-complete"
+  },
+  "notices": {
+    "listing": {
+      "ko": "공식 마켓플레이스 등재는 확인됐지만 개별 플러그인의 안전성 검토 완료를 뜻하지 않습니다.",
+      "en": "Official marketplace listing is confirmed, but it does not mean the individual plugin safety review is complete."
+    },
+    "safety": {
+      "ko": "각 후보의 개별 안전성 검토 상태는 완료되지 않았습니다.",
+      "en": "Individual safety review is not complete for each candidate."
+    }
+  },
+  "executionStatus": "not-executed",
+  "decisionAuthority": "none",
+  "nextAction": "use-decision-plan",
+  "domains": [
+    {
+      "id": "research-and-intelligence",
+      "name": {
+        "ko": "리서치 및 인텔리전스",
+        "en": "Research and Intelligence"
+      },
+      "candidates": [
+        {
+          "name": "exa",
+          "description": "Exa AI web search, deep research, and content extraction. Provides MCP tools and research skills for comprehensive web search, people discovery, company research, academic papers, and more.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "685aaa990c120a1e009fbbb8bc809128cedc957a"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "web-research-search"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for web research and retrieval."
+            }
+          ]
+        },
+        {
+          "name": "tavily",
+          "description": "Build AI applications with real-time web data using Tavily's search, extract, crawl, and research APIs.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "ea5e8201b0d3ed9c10b70b71187589bd761fe2d2"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for web research and search."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strategy-and-decision",
+      "name": {
+        "ko": "전략 및 의사결정",
+        "en": "Strategy and Decision"
+      },
+      "candidates": [
+        {
+          "name": "aws-startup-advisor",
+          "description": "Personalized architecture, cost, security, and migration guidance for startups. From day-one account setup and security baselines to production-ready infrastructure, cost optimization, and beyond. Includes AWS Activate Credits eligibility, 60+ exclusive startup offers, and multi-account multi-region support. Built on expertise from AWS Startup Solutions Architects and patterns from 350,000+ startups.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "084d44e1dedab244c938a2eb37bd613a9643b223"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for startup strategy guidance."
+            }
+          ]
+        },
+        {
+          "name": "miro",
+          "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "85c2c7347542b3ce185eb1d2793f8d79ad485c63"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for collaborative strategic planning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing-and-publishing",
+      "name": {
+        "ko": "글쓰기 및 출판",
+        "en": "Writing and Publishing"
+      },
+      "candidates": [
+        {
+          "name": "sanity",
+          "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "af54474c21b00aee8e2fa2855b8ff6ef8a0cf41c"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "writing-content-publishing"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for structured content publishing."
+            }
+          ]
+        },
+        {
+          "name": "mintlify",
+          "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "acd6d2e0128c4f235d55cfb8d8c91ecbdd5df8cc"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for documentation publishing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketing-and-growth",
+      "name": {
+        "ko": "마케팅 및 성장",
+        "en": "Marketing and Growth"
+      },
+      "candidates": [
+        {
+          "name": "posthog",
+          "description": "Access PostHog analytics, feature flags, experiments, error tracking, and insights directly from Claude Code.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "00579b8a86d9caecbda117b1b3999858f785c3dd"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for growth and product analytics."
+            }
+          ]
+        },
+        {
+          "name": "windsor-ai",
+          "description": "Connect Claude Code to 325+ business data sources via Windsor.ai. Query marketing, sales, CRM, ecommerce, finance, and analytics data from Google Ads, Meta, HubSpot, Salesforce, Shopify, Stripe, and hundreds more — directly from your terminal.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "8a4fed5425bd43f6f57f4543d7acfc0593616846"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "marketing-growth-analytics"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for marketing analytics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion-and-distribution",
+      "name": {
+        "ko": "프로모션 및 배포",
+        "en": "Promotion and Distribution"
+      },
+      "candidates": [
+        {
+          "name": "postiz",
+          "description": "Social media automation CLI for scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms including X, LinkedIn, Reddit, YouTube, TikTok, Instagram, and more",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "41c5a9dbd6b2776863e7c05c22e7a385c208321c"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for social distribution workflows."
+            }
+          ]
+        },
+        {
+          "name": "spotify-ads-api",
+          "description": "Manage Spotify ad campaigns with natural language. Create campaigns, ad sets, ads, pull reports, and handle OAuth — all through conversation.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "1421ab69a67f8b0d48d96cdbe277a4a1a92b8d10"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for advertising distribution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sales-and-customer",
+      "name": {
+        "ko": "영업 및 고객",
+        "en": "Sales and Customer"
+      },
+      "candidates": [
+        {
+          "name": "apollo",
+          "description": "Prospect, enrich leads, load outreach sequences, and query sales analytics with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "2adde980e45f421b7e9383d92870455627936bce"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for sales intelligence."
+            }
+          ]
+        },
+        {
+          "name": "monday-crm",
+          "description": "Run your monday CRM in plain language. Build a pipeline from scratch, start the day with a ranked deal briefing, spin up a forecast dashboard, audit board health, clean up messy data in bulk, and turn meeting notes into deal updates. Every skill writes back into monday as a real update, doc, or dashboard. Built on the official monday MCP connector.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "fc64cf88c2fd9e3081f70fa8bbfb6d2bbee809a8"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "sales-crm-customer"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for CRM workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-management",
+      "name": {
+        "ko": "제품 관리",
+        "en": "Product Management"
+      },
+      "candidates": [
+        {
+          "name": "amplitude",
+          "description": "Use Amplitude as an expert analyst — instrument Amplitude, discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "05ce0a91cbf3188f1512e324bd9663cc0e23f34a"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for evidence-led product decisions."
+            }
+          ]
+        },
+        {
+          "name": "linear",
+          "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for product issue planning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-management",
+      "name": {
+        "ko": "프로젝트 관리",
+        "en": "Project Management"
+      },
+      "candidates": [
+        {
+          "name": "asana",
+          "description": "Asana project management integration. Create and manage tasks, search projects, update assignments, track progress, and integrate your development workflow with Asana's work management platform.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "project-task-management"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for project and task management."
+            }
+          ]
+        },
+        {
+          "name": "atlassian",
+          "description": "Connect to Atlassian products including Jira and Confluence. Search and create issues, access documentation, manage sprints, and integrate your development workflow with Atlassian's collaboration tools.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "f22e7075136a62baa7c10200a64884f83bf3ebe1"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for project tracking workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software-engineering",
+      "name": {
+        "ko": "소프트웨어 엔지니어링",
+        "en": "Software Engineering"
+      },
+      "candidates": [
+        {
+          "name": "feature-dev",
+          "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "software-delivery"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for feature implementation."
+            }
+          ]
+        },
+        {
+          "name": "superpowers",
+          "description": "Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teaches Claude how to author and test new skills.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "d884ae04edebef577e82ff7c4e143debd0bbec99"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "software-delivery"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for systematic debugging and test-driven development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-and-security",
+      "name": {
+        "ko": "데브옵스 및 보안",
+        "en": "DevOps and Security"
+      },
+      "candidates": [
+        {
+          "name": "aws-agents-for-devsecops",
+          "description": "Investigate incidents, review code and execute UAT for release readiness, scan code for vulnerabilities, and run penetration tests with AWS DevOps Agent and AWS Security Agent.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "08025af3d27a1eb7c18fe06bf451df8b110e9e0e"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "devops-security-operations"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for DevSecOps workflows."
+            }
+          ]
+        },
+        {
+          "name": "buildkite",
+          "description": "Official Buildkite skills for Claude Code, Cursor, and other AI coding agents — pipelines, migration, preflight, agent runtime, CLI, and API",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "5bbd53d496b9dd5cd7b3e0a2d8345daa333c3f4e"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "devops-security-operations"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for CI/CD operations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-agents-and-automation",
+      "name": {
+        "ko": "AI 에이전트 및 자동화",
+        "en": "AI Agents and Automation"
+      },
+      "candidates": [
+        {
+          "name": "agent-sdk-dev",
+          "description": "Development kit for working with the Claude Agent SDK",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "agent-development"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for agent SDK development workflows."
+            }
+          ]
+        },
+        {
+          "name": "feature-dev",
+          "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for autonomous implementation workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-and-analytics",
+      "name": {
+        "ko": "데이터 및 분석",
+        "en": "Data and Analytics"
+      },
+      "candidates": [
+        {
+          "name": "bigquery-data-analytics",
+          "description": "Connect, query, and generate data insights for BigQuery datasets and data.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "7b89e74199b1f1432fa020605d5a6dbedbe8210a"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "analytics-data-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for warehouse analytics."
+            }
+          ]
+        },
+        {
+          "name": "amplitude",
+          "description": "Use Amplitude as an expert analyst — instrument Amplitude, discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "05ce0a91cbf3188f1512e324bd9663cc0e23f34a"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for product analytics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design-and-brand",
+      "name": {
+        "ko": "디자인 및 브랜드",
+        "en": "Design and Brand"
+      },
+      "candidates": [
+        {
+          "name": "figma",
+          "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "07316dd2920d61303ca0e52812b31f5f341e7b15"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "design-creative-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for product and brand design workflows."
+            }
+          ]
+        },
+        {
+          "name": "canva",
+          "description": "Create, edit, review, resize, and brand-check Canva designs with the Canva MCP server.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "b56291ea0a36d0a941e1478b47959be5f1771dee"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "design-creative-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for branded creative production."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "video-and-audio",
+      "name": {
+        "ko": "영상 및 오디오",
+        "en": "Video and Audio"
+      },
+      "candidates": [
+        {
+          "name": "runway-api",
+          "description": "Video generation at scale. Generate videos, images, and audio with Runway's API — batch ad campaigns, product videos, multishot stories, and creative iteration. Supports seedance2, gen4.5, veo3, Nano, Banana Pro, and more.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "16353db3500ea5e346460755205991081567902a"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "video-audio-media"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for video generation workflows."
+            }
+          ]
+        },
+        {
+          "name": "canva",
+          "description": "Create, edit, review, resize, and brand-check Canva designs with the Canva MCP server.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "b56291ea0a36d0a941e1478b47959be5f1771dee"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for video and media production."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "documents-and-knowledge",
+      "name": {
+        "ko": "문서 및 지식",
+        "en": "Documents and Knowledge"
+      },
+      "candidates": [
+        {
+          "name": "notion",
+          "description": "Notion workspace integration. Search pages, create and update documents, manage databases, and access your team's knowledge base directly from Claude Code for seamless documentation workflows.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "9847f2aa1a15f25df35ed1fb7b4557dbb60cd651"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "documents-knowledge-base"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for workspace knowledge management."
+            }
+          ]
+        },
+        {
+          "name": "box",
+          "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "172a8273f5d532c13ef6a3057e50c30e5368a2aa"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for document management."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business-operations",
+      "name": {
+        "ko": "비즈니스 운영",
+        "en": "Business Operations"
+      },
+      "candidates": [
+        {
+          "name": "airtable",
+          "description": "Airtable is the database and operations layer for your agents — whether running product, marketing, sales, ops, HR, or a custom business app. It combines structured data with multiplayer visual surfaces (grid, kanban, calendar, gallery, timeline) humans and agents share — plus sync integrations to Jira, Salesforce, Zendesk, Google Drive, Databricks, and the rest of your stack, all backed by enterprise governance. This plugin makes Claude fluent in Airtable: creating bases and schema, working with records, and sharing UI for collaboration. Bundles the official Airtable MCP server.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "812ee67f1fd3d76fb45ff8df40afaa0448602ba8"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for structured operational workflows."
+            }
+          ]
+        },
+        {
+          "name": "asana",
+          "description": "Asana project management integration. Create and manage tasks, search projects, update assignments, track progress, and integrate your development workflow with Asana's work management platform.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "business-work-management"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for cross-functional work operations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance-and-accounting",
+      "name": {
+        "ko": "재무 및 회계",
+        "en": "Finance and Accounting"
+      },
+      "candidates": [
+        {
+          "name": "airwallex-agentos",
+          "description": "Bring Airwallex's global financial infrastructure to Claude. Orchestrate actions across your account in plain language, e.g., set up invoices from a PO, onboard suppliers from invoices, and check current cash position across currencies. AgentOS bundles pre-built finance Skills with MCP servers. A public CLI connects your agent to Airwallex's capabilities.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "b0bd2c3d65da47e39db8c779501119376d91c431"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "finance-accounting-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for finance operations."
+            }
+          ]
+        },
+        {
+          "name": "carta-cap-table",
+          "description": "Carta Cap Table plugin — skills and hooks for querying cap tables, grants, SAFEs, 409A valuations, waterfall scenarios, and more",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "651a08ae95ae3986ac508d24a7e541131ed72d87"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "finance-accounting-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for cap table workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "commerce",
+      "name": {
+        "ko": "커머스",
+        "en": "Commerce"
+      },
+      "candidates": [
+        {
+          "name": "shopify-ai-toolkit",
+          "description": "Shopify's AI Toolkit provides 18 development skills for building on the Shopify platform, covering documentation search, API schema access, GraphQL and Liquid code validation, Hydrogen storefronts, Polaris UI extensions, store management via CLI, and onboarding guidance for both developers and merchants.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "556811e94dd45c795abe5c0b1bf6b5a4b098149d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "commerce-platform"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for Shopify commerce workflows."
+            }
+          ]
+        },
+        {
+          "name": "stripe",
+          "description": "Stripe development plugin for Claude",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "curated-override",
+              "reason": "Curated for commerce payment workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "people-and-training",
+      "name": {
+        "ko": "인사 및 교육",
+        "en": "People and Training"
+      },
+      "candidates": [
+        {
+          "name": "learn-with-coursera",
+          "description": "Turn any learning intent into a personalized Coursera experience. Asks three quick questions (topic, familiarity, preferred format), searches Coursera's catalog, and delivers the right next step — a course, hands-on project, short video, or live roleplay — then maps a path forward. Requires the Coursera connector for catalog tools.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "ac28fd6ebf8584e3ee196159bd6d4514fa07de0f"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "learning-training"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for structured learning."
+            }
+          ]
+        },
+        {
+          "name": "learning-output-style",
+          "description": "Interactive learning mode that requests meaningful code contributions at decision points (mimics the unshipped Learning output style)",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "marketplace-commit",
+            "sha": "e3e378cbbb205673a5d7254ded32679cafa6179d"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "learning-training"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for guided learning sessions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-risk-and-compliance",
+      "name": {
+        "ko": "법무, 위험 및 컴플라이언스",
+        "en": "Legal, Risk, and Compliance"
+      },
+      "candidates": [
+        {
+          "name": "legalzoom",
+          "description": "Attorney guidance and legal tools for business and personal needs. AI-powered document review identifies critical risks and important clauses, advises when to engage an attorney, and routes to LegalZoom's network when professional expertise is needed.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "legal-compliance-risk"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for legal workflows."
+            }
+          ]
+        },
+        {
+          "name": "vanta",
+          "description": "The Vanta plugin connects Claude Code to Vanta's security and compliance platform through the Vanta MCP server. It combines Vanta's test-specific remediation intelligence with your local repository context to help you fix compliance failures faster.",
+          "listingStatus": "marketplace-listed",
+          "individualSafetyReview": "not-complete",
+          "sourcePin": {
+            "kind": "external-sha",
+            "sha": "345d86b55faa649e955b7ea5569cf52d8425c2d5"
+          },
+          "permissions": "unknown",
+          "license": "unknown",
+          "trust": "unknown",
+          "dependencies": "unknown",
+          "reviewedVersionVerification": "unavailable",
+          "classificationRoutes": [
+            {
+              "kind": "name-description-rule",
+              "ruleId": "legal-compliance-risk"
+            },
+            {
+              "kind": "curated-override",
+              "reason": "Curated for compliance workflows."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "waveId": "W1",
+    "total": 33,
+    "required": 26,
+    "recommendedOnly": 7
+  },
+  {
+    "waveId": "W2",
+    "total": 38,
+    "required": 23,
+    "recommendedOnly": 15
+  },
+  {
+    "waveId": "W3",
+    "total": 40,
+    "required": 32,
+    "recommendedOnly": 8
+  },
+  {
+    "waveId": "W4",
+    "total": 36,
+    "required": 20,
+    "recommendedOnly": 16
+  }
+]

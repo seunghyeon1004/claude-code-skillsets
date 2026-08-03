@@ -1,0 +1,115 @@
+schemaVersion: 2
+domainId: finance-and-accounting
+categories:
+  - id: budgets
+    name:
+      ko: 예산
+      en: Budgets
+    description:
+      ko: 목표, 가정, 수입, 지출과 책임을 기간별 재무 계획으로 구조화한다.
+      en: Structures goals, assumptions, income, spending, and ownership into a period-based financial plan.
+    status: draft
+  - id: cash-flow
+    name:
+      ko: 현금 흐름
+      en: Cash flow
+    description:
+      ko: 현금 유입과 유출의 시점, 잔액, 부족 위험과 대응 시나리오를 분석한다.
+      en: Analyzes timing of cash inflows and outflows, balances, shortfall risks, and response scenarios.
+    status: draft
+  - id: costs
+    name:
+      ko: 비용
+      en: Costs
+    description:
+      ko: 직접비와 간접비의 발생 원인, 배부 기준과 변화 요인을 추적한다.
+      en: Tracks cost drivers, allocation bases, and changes across direct and indirect costs.
+    status: draft
+  - id: receipts
+    name:
+      ko: 영수증
+      en: Receipts
+    description:
+      ko: 거래 증빙의 금액, 날짜, 거래처, 분류와 원본 연결을 확인한다.
+      en: Verifies transaction evidence for amount, date, counterparty, classification, and source linkage.
+    status: draft
+  - id: invoicing
+    name:
+      ko: 청구서 발행
+      en: Invoicing
+    description:
+      ko: 제공 내역, 가격, 세금, 지급 조건과 추적 번호가 정확한 청구서를 준비한다.
+      en: Prepares invoices with accurate delivery details, pricing, tax, payment terms, and traceable identifiers.
+    status: draft
+  - id: collections
+    name:
+      ko: 미수금 회수
+      en: Collections
+    description:
+      ko: 미지급 잔액, 기한, 접촉 기록, 분쟁과 회수 상태를 추적한다.
+      en: Tracks unpaid balances, due dates, contact history, disputes, and collection status.
+    status: draft
+  - id: bookkeeping-assistance
+    name:
+      ko: 장부 기록 지원
+      en: Bookkeeping assistance
+    description:
+      ko: 거래를 근거 문서와 계정 기준에 연결해 검토 가능한 장부 기록을 지원한다.
+      en: Supports reviewable bookkeeping by linking transactions to evidence and account rules.
+    status: draft
+  - id: financial-statements
+    name:
+      ko: 재무제표
+      en: Financial statements
+    description:
+      ko: 원장과 조정 근거를 바탕으로 재무 상태와 성과를 일관된 보고서로 구성한다.
+      en: Structures financial position and performance reports from ledgers and reconciliation evidence.
+    status: draft
+  - id: forecasts
+    name:
+      ko: 재무 예측
+      en: Financial forecasts
+    description:
+      ko: 명시된 가정과 시나리오를 사용해 미래 수입, 비용과 현금 상태를 추정한다.
+      en: Estimates future revenue, costs, and cash positions using explicit assumptions and scenarios.
+    status: draft
+  - id: unit-economics
+    name:
+      ko: 단위 경제성
+      en: Unit economics
+    description:
+      ko: 고객 또는 거래 단위의 수익, 변동비, 획득비와 회수 기간을 분석한다.
+      en: Analyzes revenue, variable cost, acquisition cost, and payback at customer or transaction level.
+    status: draft
+  - id: profitability
+    name:
+      ko: 수익성
+      en: Profitability
+    description:
+      ko: 제품, 고객, 채널 또는 기간별 수익과 비용을 비교해 이익 기여를 분석한다.
+      en: Analyzes profit contribution by comparing revenue and costs across products, customers, channels, or periods.
+    status: draft
+  - id: fundraising
+    name:
+      ko: 자금 조달
+      en: Fundraising
+    description:
+      ko: 자금 필요, 사용 계획, 재무 가정과 투자자 검토 자료를 일관되게 준비한다.
+      en: Prepares consistent evidence for funding needs, use of funds, financial assumptions, and investor review.
+    status: draft
+  - id: tax-preparation
+    name:
+      ko: 세무 준비
+      en: Tax preparation
+    description:
+      ko: 신고 검토를 위해 거래, 증빙, 분류와 미확인 항목을 정리한다.
+      en: Organizes transactions, evidence, classifications, and unresolved items for filing review.
+    status: draft
+  - id: management-reporting
+    name:
+      ko: 경영 보고
+      en: Management reporting
+    description:
+      ko: 의사결정에 필요한 재무 성과, 차이, 가정과 위험을 정기 보고로 전달한다.
+      en: Communicates financial performance, variances, assumptions, and risks for management decisions.
+    status: draft

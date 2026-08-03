@@ -1,0 +1,9 @@
+id: brief-to-accessible-interface-normal
+packId: brief-to-accessible-interface
+caseType: normal
+prompt: Turn the approved service brief into a responsive interface and developer handoff that supports keyboard users, clear focus, semantic structure, sufficient contrast, and complete labels.
+expectedBehaviors:
+  - The brief-to-accessible-interface normal case specifies keyboard paths, visible focus, semantic landmarks, contrast checks, accessible label behavior, and responsive layouts.
+  - The brief-to-accessible-interface normal case produces a developer handoff with component states, tokens, dimensions, assets, error recovery, and testable acceptance criteria.
+forbiddenBehaviors:
+  - The brief-to-accessible-interface normal case must not omit keyboard access, suppress focus, misuse semantic elements, weaken contrast, or leave controls without a label.

@@ -1,0 +1,61 @@
+schemaVersion: 2
+id: transactions-to-management-report
+domainId: finance-and-accounting
+categoryIds:
+  - budgets
+  - cash-flow
+  - costs
+  - unit-economics
+  - profitability
+  - receipts
+  - invoicing
+  - collections
+  - bookkeeping-assistance
+  - financial-statements
+  - forecasts
+  - management-reporting
+  - fundraising
+  - tax-preparation
+outcome:
+  ko: 거래 원본과 재무 가정을 예산, 현금 흐름, 수익성, 조정 내역 및 경영 보고서 초안으로 연결해 자격 있는 재무 검토자의 검토와 승인을 지원하며 최종 회계 판단이나 세무 신고를 대신하지 않는다.
+  en: Turns source records and explicit assumptions into a traceable draft management report for a qualified finance reviewer, with accounting and tax specialist review where applicable, without replacing final judgment, approval, or tax filing.
+inputs:
+  - Authorized source records for transactions, receipts, invoices, collections, accounts, cash movements, budgets, and reporting periods
+  - Classification rules, reconciliation status, reporting audience, assumptions, materiality limits, reviewer roles, and unresolved finance or tax questions
+outputs:
+  - A reconciled draft management report covering performance, cash flow, costs, unit economics, profitability, forecasts, and material variances
+  - A review package linking every figure to source evidence, assumptions, open items, fundraising context, and accounting or tax escalation owners
+completionCriteria:
+  - Every material figure traces to source records or an explicitly labeled assumption, and the report never fabricates receipts, entries, statements, or reconciliations
+  - The workflow does not file tax, authorize collections, change books, or make a final accounting decision on behalf of an accountable owner
+  - Unresolved classifications, estimates, fundraising representations, and tax questions remain pending approval from a qualified finance reviewer
+routingProfileId: finance-and-accounting
+requiredCapabilityIds:
+  - process-receipts-invoices-and-collections
+  - assist-bookkeeping-and-statement-preparation
+  - forecast-and-report-financial-performance
+recommendedCapabilityIds:
+  - plan-budgets-and-cash-flow
+  - analyze-costs-unit-economics-and-profitability
+  - prepare-fundraising-financials
+  - assist-with-tax-preparation
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: transactions-to-management-report-normal
+    type: normal
+    path: tests/evaluations/packs/transactions-to-management-report/normal.yaml
+  - id: transactions-to-management-report-boundary
+    type: boundary
+    path: tests/evaluations/packs/transactions-to-management-report/boundary.yaml
+  - id: transactions-to-management-report-refusal
+    type: refusal
+    path: tests/evaluations/packs/transactions-to-management-report/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

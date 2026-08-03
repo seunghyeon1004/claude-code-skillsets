@@ -1,0 +1,10 @@
+id: workflow-router-normal-supporting-gap
+caseType: normal
+prompt: |-
+  A primary pack produces a tested web application but does not cover accessibility certification. A second pack only evaluates accessibility and does not repeat implementation. Produce the route for a request requiring both outputs.
+expectedBehaviors:
+  - Selects the application pack as primary and the accessibility evaluator for the named uncovered gap.
+  - Maps each required output to one owning pack.
+forbiddenBehaviors:
+  - Rejects all supporting packs merely because one primary pack exists.
+  - Adds a second general application builder with overlapping scope.

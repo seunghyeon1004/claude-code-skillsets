@@ -1,0 +1,107 @@
+schemaVersion: 2
+domainId: legal-risk-and-compliance
+categories:
+  - id: legal-research-assistance
+    name:
+      ko: 법률 조사 지원
+      en: Legal research assistance
+    description:
+      ko: 관할, 쟁점, 권위 있는 출처와 불확실성을 구분해 법률 검토 자료를 준비한다.
+      en: Prepares legal review material by distinguishing jurisdiction, issues, authoritative sources, and uncertainty.
+    status: draft
+  - id: contract-drafting-assistance
+    name:
+      ko: 계약서 작성 지원
+      en: Contract drafting assistance
+    description:
+      ko: 합의한 상업 조건, 책임, 예외와 미확정 사항을 검토 가능한 계약 초안에 반영한다.
+      en: Reflects agreed commercial terms, responsibilities, exceptions, and unresolved points in a reviewable contract draft.
+    status: draft
+  - id: contract-review-assistance
+    name:
+      ko: 계약서 검토 지원
+      en: Contract review assistance
+    description:
+      ko: 계약 조항의 의무, 권리, 위험, 불일치와 협상 쟁점을 추적 가능하게 정리한다.
+      en: Structures contract obligations, rights, risks, inconsistencies, and negotiation issues traceably.
+    status: draft
+  - id: policies
+    name:
+      ko: 법무 및 컴플라이언스 정책
+      en: Legal and compliance policies
+    description:
+      ko: 적용 범위, 책임, 통제, 예외, 승인과 갱신 기준이 명확한 정책을 지원한다.
+      en: Supports policies with explicit scope, responsibilities, controls, exceptions, approval, and update criteria.
+    status: draft
+  - id: privacy
+    name:
+      ko: 개인정보 보호
+      en: Privacy
+    description:
+      ko: 개인정보의 수집, 사용, 공유, 보관과 권리 요청 흐름을 목적과 통제에 연결한다.
+      en: Connects personal-data collection, use, sharing, retention, and rights requests to purposes and controls.
+    status: draft
+  - id: intellectual-property
+    name:
+      ko: 지식재산
+      en: Intellectual property
+    description:
+      ko: 창작물, 발명, 상표, 라이선스와 소유권 근거를 식별하고 검토 쟁점을 정리한다.
+      en: Identifies works, inventions, marks, licenses, ownership evidence, and review issues.
+    status: draft
+  - id: regulatory-mapping
+    name:
+      ko: 규제 매핑
+      en: Regulatory mapping
+    description:
+      ko: 적용 가능한 요구사항을 업무, 시스템, 책임자와 근거 위치에 연결한다.
+      en: Maps applicable requirements to activities, systems, owners, and evidence locations.
+    status: draft
+  - id: compliance-checklists
+    name:
+      ko: 컴플라이언스 체크리스트
+      en: Compliance checklists
+    description:
+      ko: 규제 요구를 수행 단계, 증거, 담당자와 검토 주기가 있는 확인 항목으로 전환한다.
+      en: Converts regulatory requirements into checks with actions, evidence, owners, and review cycles.
+    status: draft
+  - id: risk-registers
+    name:
+      ko: 위험 등록부
+      en: Risk registers
+    description:
+      ko: 위험의 원인, 영향, 가능성, 통제, 담당자와 잔여 위험을 일관되게 추적한다.
+      en: Tracks risk causes, impacts, likelihood, controls, owners, and residual risk consistently.
+    status: draft
+  - id: audit-evidence
+    name:
+      ko: 감사 증거
+      en: Audit evidence
+    description:
+      ko: 통제 수행을 입증하는 원본, 시점, 소유자, 무결성과 추적 정보를 준비한다.
+      en: Prepares source, timing, ownership, integrity, and traceability information proving control performance.
+    status: draft
+  - id: compliance-incident-response
+    name:
+      ko: 컴플라이언스 사고 대응
+      en: Compliance incident response
+    description:
+      ko: 의심 사고의 사실, 영향, 증거 보존, 보고, 시정과 후속 검토를 조정한다.
+      en: Coordinates facts, impact, evidence preservation, reporting, remediation, and follow-up review for suspected incidents.
+    status: draft
+  - id: records-retention
+    name:
+      ko: 기록 보존
+      en: Records retention
+    description:
+      ko: 기록 유형별 보존 근거, 기간, 보류, 접근과 폐기 조건을 관리한다.
+      en: Manages retention basis, periods, holds, access, and disposal conditions by record type.
+    status: draft
+  - id: deletion
+    name:
+      ko: 기록 삭제
+      en: Record deletion
+    description:
+      ko: 승인, 보존 의무, 범위, 검증과 증거를 확인한 뒤 기록 삭제를 통제한다.
+      en: Controls record deletion after confirming approval, retention duties, scope, verification, and evidence.
+    status: draft

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "huggingface-skills",
+  "repository": "https://github.com/huggingface/skills",
+  "queryUrls": [
+    "https://github.com/huggingface/skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

@@ -1,0 +1,74 @@
+schemaVersion: 2
+domainId: data-and-analytics
+capabilities:
+  - id: build-data-collection-and-transformation-pipelines
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - collection
+      - transformation
+    outcome:
+      ko: 출처와 목적이 추적 가능하고 분석용으로 재현 가능한 데이터 수집 및 변환 파이프라인을 만든다.
+      en: Produces data collection and transformation pipelines with traceable provenance and reproducible analytical outputs.
+    status: draft
+  - id: validate-and-clean-data
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - quality
+      - cleaning
+    outcome:
+      ko: 품질 기준에 따라 결측, 중복, 오류와 불일치를 식별하고 검증 가능한 정제 결과를 만든다.
+      en: Produces verifiable cleaned data by identifying missing values, duplicates, errors, and inconsistencies against quality criteria.
+    status: draft
+  - id: query-and-explore-data
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - sql
+      - exploratory-analysis
+    outcome:
+      ko: 검토 가능한 SQL과 탐색 결과로 분포, 관계, 예외와 다음 분석 가설을 설명한다.
+      en: Explains distributions, relationships, exceptions, and next analytical hypotheses with reviewable SQL and exploratory results.
+    status: draft
+  - id: apply-statistics-and-experimental-analysis
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - statistics
+      - data-experiments
+    outcome:
+      ko: 가정, 표본, 불확실성과 효과 크기를 밝힌 통계 및 데이터 실험 분석을 만든다.
+      en: Produces statistical and data-experiment analysis with explicit assumptions, samples, uncertainty, and effect size.
+    status: draft
+  - id: define-kpis-and-forecast-outcomes
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - kpis
+      - forecasting
+    outcome:
+      ko: 목표에 연결된 KPI 정의와 가정, 범위, 불확실성이 명시된 예측 결과를 만든다.
+      en: Produces goal-linked KPI definitions and forecasts with explicit assumptions, scope, and uncertainty.
+    status: draft
+  - id: segment-and-compare-populations
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - segmentation
+    outcome:
+      ko: 의미 있는 집단 구분과 행동 및 결과 차이에 대한 근거 기반 비교를 만든다.
+      en: Produces evidence-based comparisons of meaningful population segments, behavior, and outcomes.
+    status: draft
+  - id: visualize-data-and-build-dashboards
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - visualization
+      - dashboards
+    outcome:
+      ko: 핵심 질문과 지표의 추세, 비교, 예외와 최신성을 명확히 보여 주는 시각화 및 대시보드를 만든다.
+      en: Produces visualizations and dashboards that clearly show key questions, metric trends, comparisons, exceptions, and freshness.
+    status: draft
+  - id: produce-governed-analytical-reports
+    ownerDomainId: data-and-analytics
+    categoryIds:
+      - reporting
+      - governance
+    outcome:
+      ko: 근거, 해석, 한계, 권장 행동과 데이터 소유 및 접근 책임이 연결된 분석 보고서를 만든다.
+      en: Produces analytical reports connecting evidence, interpretation, limits, recommended action, and data ownership and access responsibility.
+    status: draft

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "id": "shopify-ai-toolkit-codex-darwin",
+  "reviewId": "shopify-ai-toolkit-test-approved",
+  "providerId": "shopify-ai-toolkit-test-fixture",
+  "snapshotId": "2026-07-28-shopify-ai-toolkit-test-fixture",
+  "observedAt": "2026-07-28T00:00:00Z",
+  "artifactPath": "research/evidence/artifacts/codex-darwin-compatibility.json",
+  "artifactSha256": "cb58bc880cae4f183b87e3ea0e96fb06f5e685a02f39cc8063ed4a8e9d03fcbc",
+  "outcome": "passed",
+  "summary": "Validated Codex compatibility on darwin.",
+  "kind": "compatibility",
+  "scope": {
+    "runtime": "codex",
+    "platform": "darwin",
+    "capabilityId": null
+  },
+  "reviewedCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d"
+}

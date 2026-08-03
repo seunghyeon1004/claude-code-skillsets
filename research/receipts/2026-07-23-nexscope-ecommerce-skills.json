@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-nexscope-ecommerce-skills",
+  "sourceId": "nexscope-ecommerce-skills",
+  "snapshotId": "2026-07-23-nexscope-ecommerce-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "56f3288dd1ba3ae7cae43d369115a915229e510b",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 162
+    }
+  ],
+  "snapshotContentSha256": "0bfeb62a2057dfff1e6f513a1ba7a69d1811d80ef1a1f49924d93eae656ab4fa"
+}

@@ -1,0 +1,57 @@
+schemaVersion: 2
+domainId: product-management
+capabilities:
+  - id: discover-customer-problems-and-needs
+    ownerDomainId: product-management
+    categoryIds:
+      - problem-discovery
+      - user-needs
+    outcome:
+      ko: 사용자 행동과 근거에서 원인, 영향, 미충족 요구가 검증된 문제 정의를 만든다.
+      en: Produces a validated problem definition with causes, impact, and unmet needs grounded in user evidence.
+    status: draft
+  - id: define-product-principles-and-requirements
+    ownerDomainId: product-management
+    categoryIds:
+      - product-principles
+      - prds
+      - user-stories
+    outcome:
+      ko: 제품 판단 원칙과 문제, 요구사항, 사용자 가치, 인수 조건이 연결된 요구사항 기준을 만든다.
+      en: Produces requirements that connect product principles, problems, user value, and acceptance conditions.
+    status: draft
+  - id: shape-and-prioritize-product-scope
+    ownerDomainId: product-management
+    categoryIds:
+      - scope
+      - product-prioritization
+    outcome:
+      ko: 포함과 제외, 의존성, 가치, 비용, 위험의 근거가 있는 우선순위 제품 범위를 만든다.
+      en: Produces prioritized product scope with evidence for inclusions, exclusions, dependencies, value, cost, and risk.
+    status: draft
+  - id: build-evidence-based-product-roadmaps
+    ownerDomainId: product-management
+    categoryIds:
+      - roadmaps
+    outcome:
+      ko: 결과, 가설, 의존성, 검증 시점과 변경 조건이 명확한 근거 기반 로드맵을 만든다.
+      en: Produces an evidence-based roadmap with explicit outcomes, hypotheses, dependencies, validation points, and change triggers.
+    status: draft
+  - id: validate-products-with-prototypes-and-experiments
+    ownerDomainId: product-management
+    categoryIds:
+      - prototype-validation
+      - product-experiments
+    outcome:
+      ko: 프로토타입과 실험을 통해 사용성 및 가치 가설, 측정 방법, 결과를 추적 가능한 검증 기록으로 만든다.
+      en: Produces a traceable validation record of usability and value hypotheses, measures, and results from prototypes and experiments.
+    status: draft
+  - id: measure-products-and-assess-launch-readiness
+    ownerDomainId: product-management
+    categoryIds:
+      - product-metrics
+      - launch-readiness
+    outcome:
+      ko: 제품 성과 지표와 품질, 운영, 지원, 위험 상태를 연결한 출시 준비 판단을 만든다.
+      en: Produces a launch-readiness decision connecting product metrics with quality, operations, support, and risk status.
+    status: draft

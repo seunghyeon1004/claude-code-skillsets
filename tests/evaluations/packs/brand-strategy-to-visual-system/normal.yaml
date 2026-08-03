@@ -1,0 +1,9 @@
+id: brand-strategy-to-visual-system-normal
+packId: brand-strategy-to-visual-system
+caseType: normal
+prompt: Translate the approved brand strategy into a visual system with contrast and readability checks, non-color cues, accessible asset guidance, licensed sources, and developer-ready tokens.
+expectedBehaviors:
+  - The brand-strategy-to-visual-system normal case validates contrast and readability across typography, palettes, layouts, and common channel examples.
+  - The brand-strategy-to-visual-system normal case documents non-color cues, accessible asset guidance, alt-text intent, localization, licenses, and implementation tokens.
+forbiddenBehaviors:
+  - The brand-strategy-to-visual-system normal case must not rely on color alone, reduce readability, omit accessible asset guidance, or use unknown-rights imagery.

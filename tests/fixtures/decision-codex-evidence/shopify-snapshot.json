@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-28-shopify-ai-toolkit-test-fixture",
+  "sourceUrl": "https://github.com/Shopify/Shopify-AI-Toolkit.git",
+  "queryUrls": [
+    "https://github.com/Shopify/Shopify-AI-Toolkit.git"
+  ],
+  "observedAt": "2026-07-28T00:00:00Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": ".claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/Shopify/Shopify-AI-Toolkit.git"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/0",
+      "sourceUrl": "https://github.com/Shopify/shopify-ai-toolkit"
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-admin/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-app-store-review/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-custom-data/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-customer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-dev/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-functions/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-hydrogen/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-liquid/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-onboarding-dev/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-onboarding-merchant/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-partner/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-payments-apps/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-polaris-admin-extensions/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-polaris-app-home/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-polaris-checkout-extensions/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-polaris-customer-account-extensions/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-pos-ui/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-storefront-graphql/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/shopify-use-shopify-cli/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skills/ucp/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 2
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 20
+    }
+  ],
+  "contentSha256": "0fb50757d47ecf1a1e4175ae3c04f4f3b60d3a79bf1fdc457600c885b3c93cf0"
+}

@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 3,
+  "diffs": [
+    {
+      "schemaVersion": 3,
+      "sourceId": "alirezarezvani-claude-skills",
+      "currentEvidenceId": "observation-20260803015057-alirezarezvani-claude-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "anthropic-plugins-official",
+      "currentEvidenceId": "observation-20260803015057-anthropic-plugins-official",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "anthropic-skills",
+      "currentEvidenceId": "observation-20260803015057-anthropic-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "chengfeng-videocut-skills",
+      "currentEvidenceId": "observation-20260803015057-chengfeng-videocut-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "composio-awesome-claude-skills",
+      "currentEvidenceId": "observation-20260803015057-composio-awesome-claude-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "coreyhaines31-marketingskills",
+      "currentEvidenceId": "observation-20260803015057-coreyhaines31-marketingskills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "daymade-claude-code-skills",
+      "currentEvidenceId": "observation-20260803015057-daymade-claude-code-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "deanpeters-product-manager-skills",
+      "currentEvidenceId": "observation-20260803015057-deanpeters-product-manager-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "huggingface-skills",
+      "currentEvidenceId": "observation-20260803015057-huggingface-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "jeremylongshore-plugins-plus-skills",
+      "currentEvidenceId": "observation-20260803015057-jeremylongshore-plugins-plus-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "k-dense-scientific-agent-skills",
+      "currentEvidenceId": "observation-20260803015057-k-dense-scientific-agent-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "kepano-obsidian-skills",
+      "currentEvidenceId": "observation-20260803015057-kepano-obsidian-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "nexscope-ecommerce-skills",
+      "currentEvidenceId": "observation-20260803015057-nexscope-ecommerce-skills",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "obra-superpowers",
+      "currentEvidenceId": "observation-20260803015057-obra-superpowers",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "wshobson-agents",
+      "currentEvidenceId": "observation-20260803015057-wshobson-agents",
+      "previousEvidenceId": null,
+      "status": "baseline",
+      "skillPaths": "baseline",
+      "manifest": "baseline",
+      "source": "baseline",
+      "fields": {
+        "license": "baseline",
+        "permissions": "baseline",
+        "ownership": "baseline",
+        "dependencies": "baseline",
+        "executableSurface": "baseline"
+      }
+    }
+  ]
+}

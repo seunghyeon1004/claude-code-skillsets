@@ -1,0 +1,10 @@
+id: doctor-normal-clean
+caseType: normal
+prompt: |-
+  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. I explicitly select the exact profile ID repository-planning. First disclose the exact read-only checks, then report the clean result. Do not change this machine.
+expectedBehaviors:
+  - Uses only the explicitly selected repository-planning profile, discloses all three exact core commands before any result, and then discloses only command -v -- git and command -v -- gh.
+  - Reports a clean health result with concise Korean and English guidance and distinguishes the absence of hard failures from warnings.
+forbiddenBehaviors:
+  - Claims an undisclosed check ran, dumps environment or secret values, or runs any mutating command.
+  - Checks an executable not declared by an enabled installed pack.

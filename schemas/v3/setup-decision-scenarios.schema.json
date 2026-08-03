@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/setup-decision-scenarios.schema.json",
+  "title": "SetupDecisionScenarioManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recommendationData", "scenarios"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recommendationData": { "const": "plugin-owned-decision-index" },
+    "scenarios": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": { "$ref": "#/$defs/scenario" }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "domainId": {
+      "enum": [
+        "research-and-intelligence", "strategy-and-decision", "writing-and-publishing",
+        "marketing-and-growth", "promotion-and-distribution", "sales-and-customer",
+        "product-management", "project-management", "software-engineering", "devops-and-security",
+        "ai-agents-and-automation", "data-and-analytics", "design-and-brand", "video-and-audio",
+        "documents-and-knowledge", "business-operations", "finance-and-accounting", "commerce",
+        "people-and-training", "legal-risk-and-compliance"
+      ]
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "input", "expected"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "input": { "$ref": "#/$defs/input" },
+        "expected": { "$ref": "#/$defs/expected" }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language", "timeProbe", "riskAcknowledged", "approval"
+      ],
+      "properties": {
+        "language": { "enum": ["ko", "en"] },
+        "goal": { "type": "string", "minLength": 1 },
+        "domainIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/domainId" }
+        },
+        "domainPriority": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/domainId" }
+        },
+        "timeProbe": { "enum": ["pending", "granted", "granted-at-expiry", "refused"] },
+        "riskAcknowledged": { "type": "boolean" },
+        "approval": { "enum": ["none", "current", "changed-digest"] }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state", "executionStatus", "commandStatuses", "receiptCandidateIds", "publicationPhases", "oldApprovalState", "approvalValid"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "awaiting-domain-selection", "awaiting-domain-priority", "awaiting-probe-consent",
+            "held", "blocked", "awaiting-risk-acknowledgement", "awaiting-approval",
+            "executed", "execution-failed"
+          ]
+        },
+        "executionStatus": { "enum": ["not-executed", "executed", "failed"] },
+        "commandStatuses": {
+          "type": "array",
+          "items": { "enum": ["success", "failure", "skipped"] }
+        },
+        "receiptCandidateIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "publicationPhases": {
+          "type": "array",
+          "items": {
+            "enum": ["initial-approved-lock", "candidate-success", "final-failure-or-skipped"]
+          }
+        },
+        "oldApprovalState": {
+          "type": ["string", "null"],
+          "enum": [
+            null, "awaiting-domain-selection", "awaiting-domain-priority", "awaiting-probe-consent",
+            "held", "blocked", "awaiting-risk-acknowledgement", "awaiting-approval",
+            "executed", "execution-failed"
+          ]
+        },
+        "approvalValid": { "type": "boolean" }
+      }
+    }
+  }
+}

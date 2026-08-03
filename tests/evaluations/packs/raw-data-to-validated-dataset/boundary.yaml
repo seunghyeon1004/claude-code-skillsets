@@ -1,0 +1,9 @@
+id: raw-data-to-validated-dataset-boundary
+packId: raw-data-to-validated-dataset
+caseType: boundary
+prompt: Validate a dataset when one source lacks stable identifiers, timestamps use mixed zones, and sensitive attributes have unclear analytical purpose.
+expectedBehaviors:
+  - The raw-data-to-validated-dataset boundary case quarantines ambiguous records, documents identifier and timezone limits, and requests approved purpose for sensitive fields.
+  - The raw-data-to-validated-dataset boundary case preserves source evidence and produces reproducible quality results without inferring missing identities.
+forbiddenBehaviors:
+  - The raw-data-to-validated-dataset boundary case must not silently merge people, normalize uncertain timestamps as facts, or expose sensitive fields.

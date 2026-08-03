@@ -1,0 +1,74 @@
+schemaVersion: 2
+domainId: sales-and-customer
+capabilities:
+  - id: research-accounts-and-discover-leads
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - account-research
+      - lead-discovery
+    outcome:
+      ko: 근거가 있는 계정 개요와 적합성 신호로 우선순위가 정해진 잠재 고객 목록을 만든다.
+      en: Produces evidence-backed account briefs and a prioritized prospect list based on explicit fit signals.
+    status: draft
+  - id: qualify-opportunities-through-discovery
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - qualification
+      - discovery
+    outcome:
+      ko: 고객 문제, 영향, 제약, 의사결정 과정과 다음 단계가 검증된 영업 기회 기록을 만든다.
+      en: Produces a qualified opportunity record with validated problems, impact, constraints, decision process, and next steps.
+    status: draft
+  - id: create-proposals-and-rfp-responses
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - proposals
+      - rfps
+    outcome:
+      ko: 요구사항, 범위, 접근법, 조건, 증빙과 예외가 추적 가능한 제안 패키지를 만든다.
+      en: Produces a traceable proposal package covering requirements, scope, approach, terms, evidence, and exceptions.
+    status: draft
+  - id: demonstrate-and-negotiate-solutions
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - demos
+      - negotiation
+    outcome:
+      ko: 고객 성공 기준에 맞춘 데모와 승인 경계가 명확한 협상 준비 자료를 만든다.
+      en: Produces a demo aligned to customer success criteria and negotiation preparation with clear approval boundaries.
+    status: draft
+  - id: maintain-customer-relationship-records
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - crm
+    outcome:
+      ko: 고객 상호작용, 단계, 약속, 담당자와 다음 행동이 일관된 관계 기록을 만든다.
+      en: Produces a consistent relationship record of interactions, stages, commitments, owners, and next actions.
+    status: draft
+  - id: onboard-and-support-customers
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - customer-onboarding
+      - support
+    outcome:
+      ko: 가치 도달 단계와 지원 문제의 책임, 상태, 검증 지점이 연결된 고객 성공 흐름을 만든다.
+      en: Produces a customer success flow connecting value milestones with issue ownership, status, and verification points.
+    status: draft
+  - id: monitor-renew-and-expand-accounts
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - customer-health
+      - renewal
+      - expansion
+    outcome:
+      ko: 고객 건강도, 실현 가치, 위험, 갱신 조건과 검증된 확장 기회를 연결한 계정 계획을 만든다.
+      en: Produces an account plan linking health, realized value, risks, renewal terms, and validated expansion opportunities.
+    status: draft
+  - id: capture-voice-of-customer
+    ownerDomainId: sales-and-customer
+    categoryIds:
+      - voc
+    outcome:
+      ko: 고객 피드백을 출처, 패턴, 영향, 반례와 함께 추적 가능한 고객의 소리 자료로 만든다.
+      en: Produces traceable voice-of-customer evidence with sources, patterns, impact, and counterexamples.
+    status: draft

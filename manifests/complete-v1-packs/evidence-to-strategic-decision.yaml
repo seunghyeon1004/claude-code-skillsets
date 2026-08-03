@@ -1,0 +1,55 @@
+schemaVersion: 2
+id: evidence-to-strategic-decision
+domainId: strategy-and-decision
+categoryIds:
+  - problem-framing
+  - opportunity-assessment
+  - goals-and-metrics
+  - scenario-planning
+  - risk-analysis
+  - strategy-prioritization
+  - decision-records
+  - strategy-review
+  - business-models
+  - execution-strategy
+outcome:
+  ko: 근거와 불확실성을 전략 선택지, 측정 목표, 시나리오 위험, 사람 승인 경계가 명시된 추적 가능한 결정 기록으로 전환한다.
+  en: Turns evidence and uncertainty into a traceable decision record with strategic options, measurable goals, scenario risks, and explicit human approval boundaries.
+inputs:
+  - Decision question, accountable decision owner, constraints, and decision deadline
+  - Available evidence, stakeholder perspectives, assumptions, and risk tolerance
+outputs:
+  - A strategic decision record comparing options, assumptions, tradeoffs, and rejected alternatives
+  - A human approval brief with metrics, execution checkpoints, review triggers, and unresolved uncertainty
+completionCriteria:
+  - Evidence, assumptions, and uncertainty are separated for every material strategic option
+  - Consequential tradeoffs, risk scenarios, business logic, and execution dependencies are documented
+  - The accountable human explicitly approves the decision and its review triggers before execution
+routingProfileId: strategy-and-decision
+requiredCapabilityIds:
+  - frame-strategic-problems-and-opportunities
+  - define-strategic-goals-and-metrics
+  - model-strategic-scenarios-and-risks
+  - govern-strategic-decisions
+recommendedCapabilityIds:
+  - design-business-and-execution-strategy
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: evidence-to-strategic-decision-normal
+    type: normal
+    path: tests/evaluations/packs/evidence-to-strategic-decision/normal.yaml
+  - id: evidence-to-strategic-decision-boundary
+    type: boundary
+    path: tests/evaluations/packs/evidence-to-strategic-decision/boundary.yaml
+  - id: evidence-to-strategic-decision-refusal
+    type: refusal
+    path: tests/evaluations/packs/evidence-to-strategic-decision/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

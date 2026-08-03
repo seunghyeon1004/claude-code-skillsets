@@ -1,0 +1,9 @@
+id: business-question-to-dashboard-normal
+packId: business-question-to-dashboard
+caseType: normal
+prompt: Create a quarterly retention dashboard with governed KPI definitions, reviewable queries, statistical uncertainty, fair segment comparisons, and accessible delivery for all decision makers.
+expectedBehaviors:
+  - The business-question-to-dashboard normal case gives every visual an accessible label and a table or text alternative with source, freshness, and uncertainty.
+  - The business-question-to-dashboard normal case uses color-independent encoding for status and comparisons while documenting statistics, forecasts, segments, and governance.
+forbiddenBehaviors:
+  - The business-question-to-dashboard normal case must not use color alone, omit accessible label text, or replace the table or text alternative with decorative charts.

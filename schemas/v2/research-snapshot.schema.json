@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v2/research-snapshot.schema.json",
+  "title": "ResearchSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "sourceUrl", "queryUrls", "observedAt", "inspectedRef", "inspectedCommit", "collectionMethod", "toolVersion", "entries", "countMetrics", "contentSha256"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "id": { "$ref": "#/$defs/kebabCaseId" },
+    "sourceUrl": { "$ref": "#/$defs/httpsUrl" },
+    "queryUrls": { "$ref": "#/$defs/httpsUrlArray" },
+    "observedAt": { "$ref": "#/$defs/dateTime" },
+    "inspectedRef": { "type": "string", "minLength": 1 },
+    "inspectedCommit": { "$ref": "#/$defs/sha1" },
+    "collectionMethod": { "const": "git-tree-and-marketplace-v1" },
+    "toolVersion": { "$ref": "#/$defs/semver" },
+    "entries": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/entry" } },
+    "countMetrics": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/countMetric" } },
+    "contentSha256": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "kebabCaseId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "entryKind": { "enum": ["marketplace-entry", "plugin-manifest", "skill-file", "repository-record"] },
+    "httpsUrl": { "type": "string", "pattern": "^https://(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?::[0-9]+)?(?:/[^\\s]*)?(?:\\?[^\\s#]*)?(?:#[^\\s]*)?$" },
+    "httpsUrlArray": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/httpsUrl" } },
+    "sha1": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "dateTime": { "type": "string", "pattern": "^(?:(?:[0-9]{4}-(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12][0-9]|3[01])|(?:04|06|09|11)-(?:0[1-9]|[12][0-9]|30)|02-(?:0[1-9]|1[0-9]|2[0-8])))|(?:(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29))T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\\.[0-9]+)?Z$" },
+    "semver": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-((?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?$" },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "address", "sourceUrl"],
+      "properties": {
+        "kind": { "$ref": "#/$defs/entryKind" },
+        "address": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "oneOf": [{ "$ref": "#/$defs/httpsUrl" }, { "type": "null" }] }
+      }
+    },
+    "countMetric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reportedCount", "reportedCountSourceUrl", "independentlyCountedTotal"],
+      "properties": {
+        "kind": { "$ref": "#/$defs/entryKind" },
+        "reportedCount": { "oneOf": [{ "type": "integer", "minimum": 0 }, { "type": "null" }] },
+        "reportedCountSourceUrl": { "oneOf": [{ "$ref": "#/$defs/httpsUrl" }, { "type": "null" }] },
+        "independentlyCountedTotal": { "type": "integer", "minimum": 0 }
+      },
+      "oneOf": [
+        { "properties": { "reportedCount": { "type": "null" }, "reportedCountSourceUrl": { "type": "null" } } },
+        { "properties": { "reportedCount": { "type": "integer" }, "reportedCountSourceUrl": { "$ref": "#/$defs/httpsUrl" } } }
+      ]
+    }
+  }
+}

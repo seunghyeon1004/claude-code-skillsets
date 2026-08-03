@@ -1,0 +1,48 @@
+schemaVersion: 2
+id: account-research-to-personalized-outreach
+domainId: sales-and-customer
+categoryIds:
+  - account-research
+  - lead-discovery
+  - qualification
+  - discovery
+  - crm
+outcome:
+  ko: 공개 근거, 적합성 신호와 동의를 바탕으로 개인 정보와 CRM 권한을 존중하는 맞춤형 계정 조사 및 아웃리치 초안을 만든다.
+  en: Produces account research and personalized outreach drafts that respect public evidence, fit signals, consent, personal data, and CRM authorization.
+inputs:
+  - Target account list, publicly available sources, and permitted contact channels
+  - Ideal customer criteria, outreach objective, consent records, and CRM access boundary
+outputs:
+  - Evidence-linked account briefs with qualification signals, discovery questions, and uncertainty notes
+  - Personalized outreach drafts and CRM update proposals awaiting authorized human review
+completionCriteria:
+  - Each claim is traceable to a permitted source and distinguishes observed evidence from inference
+  - Personalization uses only authorized information and records consent or contact-channel limitations
+  - CRM changes remain proposed until an authorized operator reviews and performs them
+routingProfileId: sales-and-customer
+requiredCapabilityIds:
+  - research-accounts-and-discover-leads
+  - qualify-opportunities-through-discovery
+recommendedCapabilityIds:
+  - maintain-customer-relationship-records
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: account-research-to-personalized-outreach-normal
+    type: normal
+    path: tests/evaluations/packs/account-research-to-personalized-outreach/normal.yaml
+  - id: account-research-to-personalized-outreach-boundary
+    type: boundary
+    path: tests/evaluations/packs/account-research-to-personalized-outreach/boundary.yaml
+  - id: account-research-to-personalized-outreach-refusal
+    type: refusal
+    path: tests/evaluations/packs/account-research-to-personalized-outreach/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

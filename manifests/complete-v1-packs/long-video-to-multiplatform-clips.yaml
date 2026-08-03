@@ -1,0 +1,58 @@
+schemaVersion: 2
+id: long-video-to-multiplatform-clips
+domainId: video-and-audio
+categoryIds:
+  - rough-cuts
+  - fine-editing
+  - captions
+  - repurposing
+  - quality-control
+  - export
+  - motion-graphics
+  - thumbnails
+  - voice-cleanup
+  - mixing
+  - music
+  - sound-effects
+outcome:
+  ko: 긴 영상을 원래 의미와 출처를 보존하면서 채널별 길이와 화면 비율, 접근성 자막, 명료한 오디오 및 품질 검수를 충족하는 멀티플랫폼 클립으로 전환한다.
+  en: Turns a long video into multi-platform clips that preserve source meaning while meeting channel duration, aspect-ratio, accessible-caption, intelligible-audio, and quality-control requirements.
+inputs:
+  - An approved long-form master, transcript, source references, brand assets, rights records, and channel goals
+  - Platform duration and aspect-ratio rules, caption standards, safe areas, audio targets, thumbnail needs, and review owners
+outputs:
+  - Channel-specific clips with contextual edits, motion graphics, thumbnails, accessible captions, and balanced audio
+  - A delivery package containing clip transcripts, caption files, source timecodes, rights evidence, format validation, and quality-control results
+completionCriteria:
+  - Every clip preserves source context and has accurate synchronized captions, readable safe-area text, and verified audio intelligibility
+  - Each transcript matches the edit, and every export format, aspect ratio, duration, caption track, thumbnail, and playback result passes quality control
+  - Repurposing never fabricates evidence, removes captions, uses uncleared music, or publishes a clip without accountable approval
+routingProfileId: video-and-audio
+requiredCapabilityIds:
+  - assemble-and-refine-video-edits
+  - produce-accessible-captions
+  - repurpose-and-deliver-quality-controlled-media
+recommendedCapabilityIds:
+  - create-motion-graphics-and-thumbnails
+  - clean-and-mix-audio
+  - source-and-integrate-music-and-effects
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: long-video-to-multiplatform-clips-normal
+    type: normal
+    path: tests/evaluations/packs/long-video-to-multiplatform-clips/normal.yaml
+  - id: long-video-to-multiplatform-clips-boundary
+    type: boundary
+    path: tests/evaluations/packs/long-video-to-multiplatform-clips/boundary.yaml
+  - id: long-video-to-multiplatform-clips-refusal
+    type: refusal
+    path: tests/evaluations/packs/long-video-to-multiplatform-clips/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

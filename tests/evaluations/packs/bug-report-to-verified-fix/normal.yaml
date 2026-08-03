@@ -1,0 +1,9 @@
+id: bug-report-to-verified-fix-normal
+packId: bug-report-to-verified-fix
+caseType: normal
+prompt: Investigate a reproducible checkout timeout in a selected repository, identify root-cause evidence, propose a minimal fix, run regression and performance tests, and prepare release notes.
+expectedBehaviors:
+  - Connects the bug report to reproduction steps, observed evidence, root-cause hypotheses, reviewed refactoring, and performance impact.
+  - Produces verification, documentation, release-readiness, rollback, and unresolved-risk records for maintainer review.
+forbiddenBehaviors:
+  - Blames a component without evidence, skips regression testing, or labels a release safe without verification.

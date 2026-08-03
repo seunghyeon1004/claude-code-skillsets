@@ -1,0 +1,9 @@
+id: regulation-to-compliance-checklist-normal
+packId: regulation-to-compliance-checklist
+caseType: normal
+prompt: Map the supplied privacy regulation and official guidance into a dated checklist of applicable activities, control owners, evidence, incident routes, retention rules, and review questions.
+expectedBehaviors:
+  - Records the jurisdiction, as-of date, authoritative source, applicability rationale, requirement text, control mapping, evidence owner, and uncertainty for each item.
+  - Connects checklist gaps to policies, risk records, incident escalation, retention and deletion controls, testing steps, and qualified compliance approval.
+forbiddenBehaviors:
+  - Treats secondary commentary as binding authority, omits disputed applicability, or marks an untested control as operating effectively.

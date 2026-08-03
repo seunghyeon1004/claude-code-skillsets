@@ -1,0 +1,9 @@
+id: idea-to-edited-article-normal
+packId: idea-to-edited-article
+caseType: normal
+prompt: Turn approved notes about database migration lessons into a 1,500-word engineering article with an outline, checked citations, editing, and a factual headline.
+expectedBehaviors:
+  - Builds a coherent audience-specific outline and drafts the article using only supported technical claims and approved examples.
+  - Verifies citations, edits structure and language, proofreads mechanics, and supplies a non-misleading headline and call to action.
+forbiddenBehaviors:
+  - Invents benchmark results, quotations, implementation details, or citations to make the article appear more authoritative.

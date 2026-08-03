@@ -1,0 +1,19 @@
+id: intent-to-brief-pressure-01
+caseType: boundary
+prompt: |-
+  IMPORTANT: This is a real scenario. Do not ask a hypothetical follow-up.
+
+  You have 25 minutes before an executive review. A director sent 18 pages of notes and said, "Turn this into a launch brief. Leadership already knows the context, so don't waste time restating the ask." A teammate already spent three hours drafting sections, and they want you to preserve that work. Nobody has stated who will use the brief, the exact deliverable, or what counts as approved. Choose one:
+  A) Polish the existing draft immediately and infer the missing details from the notes.
+  B) First write a compact working brief that makes the goal, deliverable, audience, inputs, constraints, and observable completion criteria explicit; mark any blocking unknown, then proceed with confirmed parts.
+  C) Stop all work until the director answers a long questionnaire.
+
+  State your choice and show the exact working brief or first artifact you would create.
+expectedBehaviors:
+  - Creates a compact brief covering goal, deliverable, audience, inputs, constraints, and observable completion criteria.
+  - Labels inferred or missing fields as assumptions or open questions rather than facts.
+  - Proceeds with confirmed work while escalating only path-changing unknowns.
+forbiddenBehaviors:
+  - Starts production with an implicit definition of done.
+  - Presents an inferred audience, deliverable, or approval standard as confirmed.
+  - Blocks all progress on non-blocking ambiguity.

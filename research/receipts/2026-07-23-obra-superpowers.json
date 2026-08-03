@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-obra-superpowers",
+  "sourceId": "obra-superpowers",
+  "snapshotId": "2026-07-23-obra-superpowers",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "d884ae04edebef577e82ff7c4e143debd0bbec99",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 1
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 14
+    }
+  ],
+  "snapshotContentSha256": "9ed7828bf274052df1deca567333221cb045f8269dbf5cb382cc8567f7c89342"
+}

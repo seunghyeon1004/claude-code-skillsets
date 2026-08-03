@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-kepano-obsidian-skills",
+  "sourceId": "kepano-obsidian-skills",
+  "snapshotId": "2026-07-23-kepano-obsidian-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 1
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 5
+    }
+  ],
+  "snapshotContentSha256": "0e48599f45f0ea0b84d9a634e4793a716997825f4cbf5d238eae94be4a282fc2"
+}

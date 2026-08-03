@@ -1,0 +1,84 @@
+schemaVersion: 2
+domainId: video-and-audio
+capabilities:
+  - id: research-and-develop-media-concepts
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - video-research
+      - concepts
+    outcome:
+      ko: 주제, 시청자, 플랫폼과 사실 근거에 맞는 미디어 콘셉트, 핵심 메시지와 창의적 방향을 만든다.
+      en: Produces media concepts, core messages, and creative directions aligned with topic, audience, platform, and factual evidence.
+    status: draft
+  - id: write-and-visualize-video-narratives
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - scripts
+      - storyboards
+    outcome:
+      ko: 메시지, 근거, 장면, 음성, 자막과 전환을 연결한 대본 및 스토리보드를 만든다.
+      en: Produces scripts and storyboards that connect message, evidence, scenes, voice, captions, and transitions.
+    status: draft
+  - id: plan-and-prepare-recording
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - shot-lists
+      - recording-preparation
+    outcome:
+      ko: 장면 목록, 장비, 장소, 조명, 음향, 권한과 리허설이 검증된 촬영 준비 계획을 만든다.
+      en: Produces recording preparation plans with verified shot lists, equipment, location, lighting, sound, permissions, and rehearsal.
+    status: draft
+  - id: assemble-and-refine-video-edits
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - rough-cuts
+      - fine-editing
+    outcome:
+      ko: 이야기 구조와 길이를 확인하는 러프 컷을 정교한 타이밍, 전환, 색상과 오류 수정으로 완성한다.
+      en: Refines rough cuts that verify story structure and duration through precise timing, transitions, color, and error correction.
+    status: draft
+  - id: create-motion-graphics-and-thumbnails
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - motion-graphics
+      - thumbnails
+    outcome:
+      ko: 정보와 브랜드를 명확히 전달하고 콘텐츠 약속을 보여 주는 모션 그래픽 및 썸네일을 만든다.
+      en: Produces motion graphics and thumbnails that clearly communicate information, brand, and the content promise.
+    status: draft
+  - id: produce-accessible-captions
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - captions
+    outcome:
+      ko: 음성, 화자, 중요한 소리와 타이밍을 정확히 담아 검토 가능한 접근성 자막을 만든다.
+      en: Produces reviewable accessible captions that accurately capture speech, speakers, important sounds, and timing.
+    status: draft
+  - id: clean-and-mix-audio
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - voice-cleanup
+      - mixing
+    outcome:
+      ko: 잡음과 수준 차이를 교정하고 음성, 음악, 효과음의 균형을 맞춘 명료한 오디오를 만든다.
+      en: Produces clear audio by correcting noise and level differences and balancing voice, music, and effects.
+    status: draft
+  - id: source-and-integrate-music-and-effects
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - music
+      - sound-effects
+    outcome:
+      ko: 분위기와 장면 의도를 보강하면서 권리와 배포 조건을 충족하는 음악 및 효과음을 통합한다.
+      en: Integrates music and sound effects that reinforce mood and scene intent while meeting rights and distribution conditions.
+    status: draft
+  - id: repurpose-and-deliver-quality-controlled-media
+    ownerDomainId: video-and-audio
+    categoryIds:
+      - repurposing
+      - quality-control
+      - export
+    outcome:
+      ko: 원본 의미를 보존한 채널별 파생본과 사실, 자막, 음향, 형식 요구를 점검한 최종 미디어를 만든다.
+      en: Produces channel-specific derivatives that preserve source meaning and final media checked for facts, captions, audio, and format requirements.
+    status: draft

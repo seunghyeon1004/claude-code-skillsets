@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "candidateCommit": "0123456789abcdef0123456789abcdef01234567",
+  "catalogFingerprint": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "repositoryVisibility": "PUBLIC",
+  "evidence": [
+    { "id": "darwin-clean-install", "platform": "darwin", "status": "proven" },
+    { "id": "linux-clean-install", "platform": "linux", "status": "proven" },
+    { "id": "win32-clean-install", "platform": "win32", "status": "proven" }
+  ],
+  "criticalFindings": 0,
+  "importantFindings": 0
+}

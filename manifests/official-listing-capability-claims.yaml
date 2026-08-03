@@ -1,0 +1,614 @@
+schemaVersion: 1
+compatibilityAttestation:
+  id: official-claude-code-darwin
+  sourceId: anthropic-plugins-official
+  runtime: claude-code
+  platform: darwin
+  compatibility: verified
+  kind: official-source-bound-inference
+  observedAt: 2026-07-29T00:00:00Z
+  reviewedAt: 2026-07-29T00:00:00Z
+  expiresAt: 2026-08-07T00:00:00Z
+  sourceUrls:
+    - https://github.com/anthropics/claude-plugins-official/blob/e3e378cbbb205673a5d7254ded32679cafa6179d/.claude-plugin/marketplace.json
+    - https://code.claude.com/docs/en/overview
+  disclosures:
+    - compatibility-inference:not-install-smoke
+    - individual-safety-review:not-complete
+    - target-unknown:claude-code/linux
+    - target-unknown:claude-code/win32
+candidates:
+  - pluginName: exa
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/97
+    sourcePin:
+      kind: external-sha
+      sha: 685aaa990c120a1e009fbbb8bc809128cedc957a
+    assignments:
+      - domainId: research-and-intelligence
+        capabilityClaims:
+          - id: exa-web-research
+            capabilityId: source-discovery-and-web-research
+            support: direct
+            listingExcerpt: web search, deep research, and content extraction
+            listingExcerptSha256: 09dab1e121770e2d929b578bfcd751fb6e7f041229845fdc0eb47e8b945bb113
+          - id: exa-source-verification
+            capabilityId: verify-sources-and-claims
+            support: related
+            listingExcerpt: deep research
+            listingExcerptSha256: 351db50587d0530b9fed8cb808c8f2af1e4742f0cca45c73d7608ce5acb89cf9
+          - id: exa-cited-synthesis
+            capabilityId: synthesize-cited-evidence
+            support: related
+            listingExcerpt: content extraction
+            listingExcerptSha256: 0738212728a3258c8896f60b7aaca40582ecc4b38be5b3f67007bac46df74608
+  - pluginName: feature-dev
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/102
+    sourcePin:
+      kind: marketplace-commit
+      sha: e3e378cbbb205673a5d7254ded32679cafa6179d
+    assignments:
+      - domainId: software-engineering
+        capabilityClaims:
+          - id: feature-dev-repository-exploration
+            capabilityId: analyze-repository-context
+            support: direct
+            listingExcerpt: codebase exploration
+            listingExcerptSha256: d05a319cfceae9ca250f459428898e39c021f3602a58dd3c295e7a026c83c76c
+          - id: feature-dev-requirements-specification
+            capabilityId: turn-requirements-into-specifications
+            support: related
+            listingExcerpt: architecture design
+            listingExcerptSha256: 2cf659c030b6d79edc6660b77d21c0e1444ce9d89a3bb68ccc3d3824aa1e773c
+  - pluginName: superpowers
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/240
+    sourcePin:
+      kind: external-sha
+      sha: d884ae04edebef577e82ff7c4e143debd0bbec99
+    assignments:
+      - domainId: software-engineering
+        capabilityClaims:
+          - id: superpowers-debugging-tdd
+            capabilityId: test-and-debug-software
+            support: direct
+            listingExcerpt: systematic debugging, and red/green TDD
+            listingExcerptSha256: c02144d7b84a53e54a5f28f2c8d580fe60d5627b2781b0b8fdf2dd23fc8f1fd2
+  - pluginName: aws-startup-advisor
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/30
+    sourcePin:
+      kind: external-sha
+      sha: 084d44e1dedab244c938a2eb37bd613a9643b223
+    assignments:
+      - domainId: strategy-and-decision
+        capabilityClaims:
+          - id: aws-startup-advisor-frame-strategic-problems-and-opportunities
+            capabilityId: frame-strategic-problems-and-opportunities
+            support: related
+            listingExcerpt: Personalized architecture, cost, security, and migration guidance for startups
+            listingExcerptSha256: bc101305814453ca3bbc92eb01693b0822c5f4e286e04cbe5276cc387da4b177
+  - pluginName: sanity
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/213
+    sourcePin:
+      kind: external-sha
+      sha: af54474c21b00aee8e2fa2855b8ff6ef8a0cf41c
+    assignments:
+      - domainId: writing-and-publishing
+        capabilityClaims:
+          - id: sanity-publish-content-to-cms
+            capabilityId: publish-content-to-cms
+            support: related
+            listingExcerpt: Query and author content
+            listingExcerptSha256: 54aa8e8bcea015bf34f42d954c89cdc7a61c10a80e8afbc675a3b3c2e15f77b2
+  - pluginName: mintlify
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/157
+    sourcePin:
+      kind: external-sha
+      sha: acd6d2e0128c4f235d55cfb8d8c91ecbdd5df8cc
+    assignments:
+      - domainId: writing-and-publishing
+        capabilityClaims:
+          - id: mintlify-edit-verify-and-proofread-content
+            capabilityId: edit-verify-and-proofread-content
+            support: related
+            listingExcerpt: Convert non-markdown files into properly formatted MDX pages, add and modify content
+            listingExcerptSha256: 5844be4083a6008ec4a6c1ab6e3bbe78b3c09f9271d1cf82c9cf209b810f5033
+  - pluginName: posthog
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/185
+    sourcePin:
+      kind: external-sha
+      sha: 00579b8a86d9caecbda117b1b3999858f785c3dd
+    assignments:
+      - domainId: marketing-and-growth
+        capabilityClaims:
+          - id: posthog-design-and-optimize-conversion-funnels
+            capabilityId: design-and-optimize-conversion-funnels
+            support: related
+            listingExcerpt: analytics, feature flags, experiments, error tracking, and insights
+            listingExcerptSha256: d53a16355b584797f88d3fbf70e800e0d5551cdb3c52487a5d632c1efa5e91c8
+  - pluginName: windsor-ai
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/260
+    sourcePin:
+      kind: external-sha
+      sha: 8a4fed5425bd43f6f57f4543d7acfc0593616846
+    assignments:
+      - domainId: marketing-and-growth
+        capabilityClaims:
+          - id: windsor-ai-retain-customers-and-measure-growth
+            capabilityId: retain-customers-and-measure-growth
+            support: related
+            listingExcerpt: Query marketing, sales, CRM, ecommerce, finance, and analytics data from Google Ads, Meta, HubSpot, Salesforce, Shopify, Stripe
+            listingExcerptSha256: 9c9ea53821a9c883277604c5d3612acbbfbef59132cb0debfe6417f27e030026
+      - domainId: commerce
+        capabilityClaims:
+          - id: windsor-ai-run-promotions-and-analyze-revenue
+            capabilityId: run-promotions-and-analyze-revenue
+            support: related
+            listingExcerpt: Query marketing, sales, CRM, ecommerce, finance, and analytics data from Google Ads, Meta, HubSpot, Salesforce, Shopify, Stripe
+            listingExcerptSha256: 9c9ea53821a9c883277604c5d3612acbbfbef59132cb0debfe6417f27e030026
+  - pluginName: postiz
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/186
+    sourcePin:
+      kind: external-sha
+      sha: 41c5a9dbd6b2776863e7c05c22e7a385c208321c
+    assignments:
+      - domainId: promotion-and-distribution
+        capabilityClaims:
+          - id: postiz-plan-launch-promotion
+            capabilityId: plan-launch-promotion
+            support: related
+            listingExcerpt: scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms
+            listingExcerptSha256: dd8e9b64d1818cd757b6a7057142c23bc71d7d33463817e8f0cb840d125475cf
+          - id: postiz-adapt-repurpose-and-distribute-content
+            capabilityId: adapt-repurpose-and-distribute-content
+            support: related
+            listingExcerpt: scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms
+            listingExcerptSha256: dd8e9b64d1818cd757b6a7057142c23bc71d7d33463817e8f0cb840d125475cf
+  - pluginName: spotify-ads-api
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/234
+    sourcePin:
+      kind: external-sha
+      sha: 1421ab69a67f8b0d48d96cdbe277a4a1a92b8d10
+    assignments:
+      - domainId: promotion-and-distribution
+        capabilityClaims:
+          - id: spotify-ads-api-operate-and-optimize-campaigns
+            capabilityId: operate-and-optimize-campaigns
+            support: related
+            listingExcerpt: Create campaigns, ad sets, ads, pull reports, and handle OAuth
+            listingExcerptSha256: 000196b39d7e36f3bfd1ae59465f1e0fc48cff5a9a758064f71e42153d991daf
+  - pluginName: apollo
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/14
+    sourcePin:
+      kind: external-sha
+      sha: 2adde980e45f421b7e9383d92870455627936bce
+    assignments:
+      - domainId: sales-and-customer
+        capabilityClaims:
+          - id: apollo-research-accounts-and-discover-leads
+            capabilityId: research-accounts-and-discover-leads
+            support: related
+            listingExcerpt: Prospect, enrich leads, load outreach sequences, and query sales analytics
+            listingExcerptSha256: 9d1c7cd30e1c41888940404915c7051848e2f803f3436d7d7b8b97374811569c
+          - id: apollo-qualify-opportunities-through-discovery
+            capabilityId: qualify-opportunities-through-discovery
+            support: related
+            listingExcerpt: Prospect, enrich leads, load outreach sequences, and query sales analytics
+            listingExcerptSha256: 9d1c7cd30e1c41888940404915c7051848e2f803f3436d7d7b8b97374811569c
+  - pluginName: monday-crm
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/161
+    sourcePin:
+      kind: external-sha
+      sha: fc64cf88c2fd9e3081f70fa8bbfb6d2bbee809a8
+    assignments:
+      - domainId: sales-and-customer
+        capabilityClaims:
+          - id: monday-crm-maintain-customer-relationship-records
+            capabilityId: maintain-customer-relationship-records
+            support: direct
+            listingExcerpt: turn meeting notes into deal updates
+            listingExcerptSha256: 2960937ed23115a9c5b85f43da5977838f8f46fcd3eeda15650930778f929d11
+  - pluginName: amplitude
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/13
+    sourcePin:
+      kind: external-sha
+      sha: 05ce0a91cbf3188f1512e324bd9663cc0e23f34a
+    assignments:
+      - domainId: product-management
+        capabilityClaims:
+          - id: amplitude-discover-customer-problems-and-needs
+            capabilityId: discover-customer-problems-and-needs
+            support: inferred
+            listingExcerpt: discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts
+            listingExcerptSha256: 25ef361415bdf43f1b72a570a0955cf7beabe2ce2a07082c6507c64e11289f40
+          - id: amplitude-validate-products-with-prototypes-and-experiments
+            capabilityId: validate-products-with-prototypes-and-experiments
+            support: related
+            listingExcerpt: discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts
+            listingExcerptSha256: 25ef361415bdf43f1b72a570a0955cf7beabe2ce2a07082c6507c64e11289f40
+          - id: amplitude-measure-products-and-assess-launch-readiness
+            capabilityId: measure-products-and-assess-launch-readiness
+            support: related
+            listingExcerpt: discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts
+            listingExcerptSha256: 25ef361415bdf43f1b72a570a0955cf7beabe2ce2a07082c6507c64e11289f40
+  - pluginName: linear
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/138
+    sourcePin:
+      kind: marketplace-commit
+      sha: e3e378cbbb205673a5d7254ded32679cafa6179d
+    assignments:
+      - domainId: product-management
+        capabilityClaims:
+          - id: linear-shape-and-prioritize-product-scope
+            capabilityId: shape-and-prioritize-product-scope
+            support: related
+            listingExcerpt: Create issues, manage projects, update statuses, search across workspaces
+            listingExcerptSha256: 0b618c834925bf1c9e48ea8a53cb6d3d230eccec1aaa013e55c3c5934bb85b57
+          - id: linear-build-evidence-based-product-roadmaps
+            capabilityId: build-evidence-based-product-roadmaps
+            support: related
+            listingExcerpt: Create issues, manage projects, update statuses, search across workspaces
+            listingExcerptSha256: 0b618c834925bf1c9e48ea8a53cb6d3d230eccec1aaa013e55c3c5934bb85b57
+  - pluginName: asana
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/17
+    sourcePin:
+      kind: marketplace-commit
+      sha: e3e378cbbb205673a5d7254ded32679cafa6179d
+    assignments:
+      - domainId: project-management
+        capabilityClaims:
+          - id: asana-define-and-decompose-project-work
+            capabilityId: define-and-decompose-project-work
+            support: related
+            listingExcerpt: Create and manage tasks, search projects, update assignments, track progress
+            listingExcerptSha256: 74557a955c930701b2182c63eae279fcc86de164cf58f54007f7ba1abff4f483
+          - id: asana-coordinate-project-dependencies-and-resources
+            capabilityId: coordinate-project-dependencies-and-resources
+            support: related
+            listingExcerpt: Create and manage tasks, search projects, update assignments, track progress
+            listingExcerptSha256: 74557a955c930701b2182c63eae279fcc86de164cf58f54007f7ba1abff4f483
+          - id: asana-report-project-status-to-stakeholders
+            capabilityId: report-project-status-to-stakeholders
+            support: related
+            listingExcerpt: Create and manage tasks, search projects, update assignments, track progress
+            listingExcerptSha256: 74557a955c930701b2182c63eae279fcc86de164cf58f54007f7ba1abff4f483
+  - pluginName: atlassian
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/20
+    sourcePin:
+      kind: external-sha
+      sha: f22e7075136a62baa7c10200a64884f83bf3ebe1
+    assignments:
+      - domainId: project-management
+        capabilityClaims:
+          - id: atlassian-facilitate-meetings-and-record-decisions
+            capabilityId: facilitate-meetings-and-record-decisions
+            support: related
+            listingExcerpt: Search and create issues, access documentation, manage sprints
+            listingExcerptSha256: 7c215619e6a17e42da14bde9b74fd592d34b8a1887f9a560d6f98564b64730c9
+          - id: atlassian-control-project-change-and-risk
+            capabilityId: control-project-change-and-risk
+            support: related
+            listingExcerpt: Search and create issues, access documentation, manage sprints
+            listingExcerptSha256: 7c215619e6a17e42da14bde9b74fd592d34b8a1887f9a560d6f98564b64730c9
+  - pluginName: aws-agents-for-devsecops
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/24
+    sourcePin:
+      kind: external-sha
+      sha: 08025af3d27a1eb7c18fe06bf451df8b110e9e0e
+    assignments:
+      - domainId: devops-and-security
+        capabilityClaims:
+          - id: aws-agents-for-devsecops-respond-to-security-incidents-and-recover
+            capabilityId: respond-to-security-incidents-and-recover
+            support: related
+            listingExcerpt: Investigate incidents, review code and execute UAT for release readiness, scan code for vulnerabilities, and run penetration tests
+            listingExcerptSha256: d866c35e87637e6ac6c429066f48f718fdb419f2c2c06b709c96bf538e675c8f
+          - id: aws-agents-for-devsecops-assess-application-threats-and-security
+            capabilityId: assess-application-threats-and-security
+            support: inferred
+            listingExcerpt: Investigate incidents, review code and execute UAT for release readiness, scan code for vulnerabilities, and run penetration tests
+            listingExcerptSha256: d866c35e87637e6ac6c429066f48f718fdb419f2c2c06b709c96bf538e675c8f
+  - pluginName: buildkite
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/42
+    sourcePin:
+      kind: external-sha
+      sha: 5bbd53d496b9dd5cd7b3e0a2d8345daa333c3f4e
+    assignments:
+      - domainId: devops-and-security
+        capabilityClaims:
+          - id: buildkite-automate-safe-software-delivery
+            capabilityId: automate-safe-software-delivery
+            support: related
+            listingExcerpt: pipelines, migration, preflight, agent runtime, CLI, and API
+            listingExcerptSha256: 3cb3f51c849c707aaae901367f8786344a1e27a044f06910f14021f460c8d4fd
+  - pluginName: aws-agents
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/23
+    sourcePin:
+      kind: external-sha
+      sha: 851e0346e51c10afc96f1fb1c167a8a55134df79
+    assignments:
+      - domainId: ai-agents-and-automation
+        capabilityClaims:
+          - id: aws-agents-connect-models-to-tools-and-mcp
+            capabilityId: connect-models-to-tools-and-mcp
+            support: related
+            listingExcerpt: connecting tools, memory, policies, evaluation, debugging, and production hardening
+            listingExcerptSha256: a2ddab9c93d0ab5938435e59d589fc0283d9557e0e9f8e494262a54ecb5f5299
+          - id: aws-agents-design-single-and-multi-agent-systems
+            capabilityId: design-single-and-multi-agent-systems
+            support: related
+            listingExcerpt: Build, deploy, and operate AI agents on AWS
+            listingExcerptSha256: ded267bcc8b8788680eb44332a660a9e99ce5a60dd7bdb2bd9a5e52e37b543a9
+          - id: aws-agents-implement-stateful-agent-memory
+            capabilityId: implement-stateful-agent-memory
+            support: related
+            listingExcerpt: connecting tools, memory, policies, evaluation, debugging, and production hardening
+            listingExcerptSha256: a2ddab9c93d0ab5938435e59d589fc0283d9557e0e9f8e494262a54ecb5f5299
+          - id: aws-agents-evaluate-guard-and-monitor-ai-systems
+            capabilityId: evaluate-guard-and-monitor-ai-systems
+            support: related
+            listingExcerpt: connecting tools, memory, policies, evaluation, debugging, and production hardening
+            listingExcerptSha256: a2ddab9c93d0ab5938435e59d589fc0283d9557e0e9f8e494262a54ecb5f5299
+  - pluginName: mlflow
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/160
+    sourcePin:
+      kind: external-sha
+      sha: c33bb3d303a2c6113bbaed6dbfe756e88e80f1df
+    assignments:
+      - domainId: ai-agents-and-automation
+        capabilityClaims:
+          - id: mlflow-evaluate-guard-and-monitor-ai-systems
+            capabilityId: evaluate-guard-and-monitor-ai-systems
+            support: related
+            listingExcerpt: tracing, evaluating, and improving AI agents
+            listingExcerptSha256: e23daa59f757129f3e83b9cf74aaa74e5cd1ff763a309c7562d3c6c53b04c521
+  - pluginName: data-agent-kit-starter-pack
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/80
+    sourcePin:
+      kind: external-sha
+      sha: b5d4964a1fa82ca2f67faa16ee808265aa3a0cb6
+    assignments:
+      - domainId: data-and-analytics
+        capabilityClaims:
+          - id: data-agent-kit-starter-pack-build-data-collection-and-transformation-pipelines
+            capabilityId: build-data-collection-and-transformation-pipelines
+            support: inferred
+            listingExcerpt: architect complex data pipelines, transform data with dbt, write Spark and BigQuery SQL notebooks, and orchestrate end-to-end workflows
+            listingExcerptSha256: 0d88cd74b7f0307b822c5d03b16937a0401762a2cb2b68c310e3bbc746a448d9
+          - id: data-agent-kit-starter-pack-query-and-explore-data
+            capabilityId: query-and-explore-data
+            support: inferred
+            listingExcerpt: architect complex data pipelines, transform data with dbt, write Spark and BigQuery SQL notebooks, and orchestrate end-to-end workflows
+            listingExcerptSha256: 0d88cd74b7f0307b822c5d03b16937a0401762a2cb2b68c310e3bbc746a448d9
+  - pluginName: atlan
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/19
+    sourcePin:
+      kind: external-sha
+      sha: 86bb1ad27f80e189b328333d2271b360ae579f2b
+    assignments:
+      - domainId: data-and-analytics
+        capabilityClaims:
+          - id: atlan-validate-and-clean-data
+            capabilityId: validate-and-clean-data
+            support: related
+            listingExcerpt: lineage traversal, glossary management, data quality rules
+            listingExcerptSha256: b8db13908157e64b9b3cc1b7206dbad98ca60abc8893b456fd0b4c9458ecf061
+          - id: atlan-produce-governed-analytical-reports
+            capabilityId: produce-governed-analytical-reports
+            support: related
+            listingExcerpt: Search, explore, govern, and manage your data assets
+            listingExcerptSha256: 9ee2add88de81ff5cd0851be92370ce27bfba6e34fc307c9d26f253b4d992320
+  - pluginName: figma
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/104
+    sourcePin:
+      kind: external-sha
+      sha: 07316dd2920d61303ca0e52812b31f5f341e7b15
+    assignments:
+      - domainId: design-and-brand
+        capabilityClaims:
+          - id: figma-map-and-prototype-user-experiences
+            capabilityId: map-and-prototype-user-experiences
+            support: related
+            listingExcerpt: extract component information, read design tokens, and translate designs into code
+            listingExcerptSha256: 7adac4c7e1370f48c3d5d5282d4ea40e0c3da0f5e23d9316a7c4856558698cf7
+          - id: figma-build-design-systems-and-developer-handoffs
+            capabilityId: build-design-systems-and-developer-handoffs
+            support: related
+            listingExcerpt: extract component information, read design tokens, and translate designs into code
+            listingExcerptSha256: 7adac4c7e1370f48c3d5d5282d4ea40e0c3da0f5e23d9316a7c4856558698cf7
+          - id: figma-design-responsive-web-experiences
+            capabilityId: design-responsive-web-experiences
+            support: related
+            listingExcerpt: extract component information, read design tokens, and translate designs into code
+            listingExcerptSha256: 7adac4c7e1370f48c3d5d5282d4ea40e0c3da0f5e23d9316a7c4856558698cf7
+  - pluginName: canva
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/43
+    sourcePin:
+      kind: external-sha
+      sha: b56291ea0a36d0a941e1478b47959be5f1771dee
+    assignments:
+      - domainId: design-and-brand
+        capabilityClaims:
+          - id: canva-define-brands-and-visual-identities
+            capabilityId: define-brands-and-visual-identities
+            support: related
+            listingExcerpt: Create, edit, review, resize, and brand-check Canva designs
+            listingExcerptSha256: fc990dc424cf79e13a08942cd1130f1ec4e08209419b6ad9dd632ea21e612938
+          - id: canva-produce-brand-aligned-creative
+            capabilityId: produce-brand-aligned-creative
+            support: related
+            listingExcerpt: Create, edit, review, resize, and brand-check Canva designs
+            listingExcerptSha256: fc990dc424cf79e13a08942cd1130f1ec4e08209419b6ad9dd632ea21e612938
+  - pluginName: runway-api
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/210
+    sourcePin:
+      kind: external-sha
+      sha: 16353db3500ea5e346460755205991081567902a
+    assignments:
+      - domainId: video-and-audio
+        capabilityClaims:
+          - id: runway-api-research-and-develop-media-concepts
+            capabilityId: research-and-develop-media-concepts
+            support: related
+            listingExcerpt: batch ad campaigns, product videos, multishot stories, and creative iteration
+            listingExcerptSha256: 67ecb35e6278d30e6046bc3074e91dd4c609ddf047623852e85efcadc2757338
+  - pluginName: hyperframes
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/125
+    sourcePin:
+      kind: external-sha
+      sha: c39f3cf924bb5109bfc0b36f3d7b99a4cb397322
+    assignments:
+      - domainId: video-and-audio
+        capabilityClaims:
+          - id: hyperframes-create-motion-graphics-and-thumbnails
+            capabilityId: create-motion-graphics-and-thumbnails
+            support: related
+            listingExcerpt: animations, captions, voiceovers, audio-reactive visuals, and website-to-video capture
+            listingExcerptSha256: cfe9d00fb60fa4ae78eb496089e8d9e389a3d15c110033d15ffd766b98927a68
+          - id: hyperframes-produce-accessible-captions
+            capabilityId: produce-accessible-captions
+            support: related
+            listingExcerpt: animations, captions, voiceovers, audio-reactive visuals, and website-to-video capture
+            listingExcerptSha256: cfe9d00fb60fa4ae78eb496089e8d9e389a3d15c110033d15ffd766b98927a68
+          - id: hyperframes-repurpose-and-deliver-quality-controlled-media
+            capabilityId: repurpose-and-deliver-quality-controlled-media
+            support: related
+            listingExcerpt: Write HTML, render video
+            listingExcerptSha256: 614a162636e1fee424a27d44144f364cdbac57690f26414c466194cad3119636
+  - pluginName: notion
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/169
+    sourcePin:
+      kind: external-sha
+      sha: 9847f2aa1a15f25df35ed1fb7b4557dbb60cd651
+    assignments:
+      - domainId: documents-and-knowledge
+        capabilityClaims:
+          - id: notion-author-documents-from-reusable-templates
+            capabilityId: author-documents-from-reusable-templates
+            support: related
+            listingExcerpt: Search pages, create and update documents, manage databases, and access your team's knowledge base
+            listingExcerptSha256: 75b34a2a034ca251a70945731344d21dd2596dcfa733664703010cefd19bd38b
+          - id: notion-capture-meeting-records-and-notes
+            capabilityId: capture-meeting-records-and-notes
+            support: related
+            listingExcerpt: Search pages, create and update documents, manage databases, and access your team's knowledge base
+            listingExcerptSha256: 75b34a2a034ca251a70945731344d21dd2596dcfa733664703010cefd19bd38b
+          - id: notion-build-and-search-knowledge-bases
+            capabilityId: build-and-search-knowledge-bases
+            support: inferred
+            listingExcerpt: Search pages, create and update documents, manage databases, and access your team's knowledge base
+            listingExcerptSha256: 75b34a2a034ca251a70945731344d21dd2596dcfa733664703010cefd19bd38b
+          - id: notion-document-standard-operating-procedures
+            capabilityId: document-standard-operating-procedures
+            support: related
+            listingExcerpt: Search pages, create and update documents, manage databases, and access your team's knowledge base
+            listingExcerptSha256: 75b34a2a034ca251a70945731344d21dd2596dcfa733664703010cefd19bd38b
+  - pluginName: carbone-skill
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/44
+    sourcePin:
+      kind: external-sha
+      sha: 52cd97e4ff35490440c066822739e466fab47901
+    assignments:
+      - domainId: documents-and-knowledge
+        capabilityClaims:
+          - id: carbone-skill-author-documents-from-reusable-templates
+            capabilityId: author-documents-from-reusable-templates
+            support: related
+            listingExcerpt: complete templating language reference
+            listingExcerptSha256: 77cf2b8af83b94d724dd10cf15786d8ff4702e909da2e3aeee613ceac9244610
+          - id: carbone-skill-build-data-rich-spreadsheets
+            capabilityId: build-data-rich-spreadsheets
+            support: related
+            listingExcerpt: all output formats (DOCX, XLSX, PPTX, ODT, HTML, Markdown, PDF)
+            listingExcerptSha256: 8b6d9cf9cfe4d82304eb24e670978fb51d1138d0790d849b7cd39fee0c42c657
+          - id: carbone-skill-create-presentations
+            capabilityId: create-presentations
+            support: related
+            listingExcerpt: all output formats (DOCX, XLSX, PPTX, ODT, HTML, Markdown, PDF)
+            listingExcerptSha256: 8b6d9cf9cfe4d82304eb24e670978fb51d1138d0790d849b7cd39fee0c42c657
+  - pluginName: airtable
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/6
+    sourcePin:
+      kind: external-sha
+      sha: 812ee67f1fd3d76fb45ff8df40afaa0448602ba8
+    assignments:
+      - domainId: business-operations
+        capabilityClaims:
+          - id: airtable-map-and-standardize-operational-processes
+            capabilityId: map-and-standardize-operational-processes
+            support: related
+            listingExcerpt: database and operations layer for your agents — whether running product, marketing, sales, ops, HR
+            listingExcerptSha256: f227d5731ad96afae17436c0368cbb770acde7e2e1052fbfce170303a538ff9d
+          - id: airtable-design-and-coordinate-operational-handoffs
+            capabilityId: design-and-coordinate-operational-handoffs
+            support: related
+            listingExcerpt: structured data with multiplayer visual surfaces
+            listingExcerptSha256: 3a8550f255391ab4441bf5224773f1c64e49d8f15da52c13cc751197e03ea9d9
+  - pluginName: zapier
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/265
+    sourcePin:
+      kind: external-sha
+      sha: 217d65a980f9b75536babf89ba64bf03ad95beea
+    assignments:
+      - domainId: business-operations
+        capabilityClaims:
+          - id: zapier-automate-repetitive-operational-work
+            capabilityId: automate-repetitive-operational-work
+            support: related
+            listingExcerpt: Discover, enable, and execute Zapier actions
+            listingExcerptSha256: 4980114267f0d6a70b7fb44363e1b3fe6edf849cd5b22fbc5b146b17052c328a
+  - pluginName: airwallex-agentos
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/7
+    sourcePin:
+      kind: external-sha
+      sha: b0bd2c3d65da47e39db8c779501119376d91c431
+    assignments:
+      - domainId: finance-and-accounting
+        capabilityClaims:
+          - id: airwallex-agentos-plan-budgets-and-cash-flow
+            capabilityId: plan-budgets-and-cash-flow
+            support: related
+            listingExcerpt: set up invoices from a PO, onboard suppliers from invoices, and check current cash position across currencies
+            listingExcerptSha256: 61131f5335b0172236a1c2e7e01afaa1b2b3511983ef8f8c1e0ed9e2bdbb5cf3
+          - id: airwallex-agentos-process-receipts-invoices-and-collections
+            capabilityId: process-receipts-invoices-and-collections
+            support: related
+            listingExcerpt: set up invoices from a PO, onboard suppliers from invoices, and check current cash position across currencies
+            listingExcerptSha256: 61131f5335b0172236a1c2e7e01afaa1b2b3511983ef8f8c1e0ed9e2bdbb5cf3
+  - pluginName: carta-investors
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/47
+    sourcePin:
+      kind: external-sha
+      sha: a6c97d0e25b6c559adb905dd4a6d11ce478aec86
+    assignments:
+      - domainId: finance-and-accounting
+        capabilityClaims:
+          - id: carta-investors-forecast-and-report-financial-performance
+            capabilityId: forecast-and-report-financial-performance
+            support: related
+            listingExcerpt: querying investor data, performance benchmarks, regulatory reporting, AGM deck generation, brand extraction
+            listingExcerptSha256: f5a1d182cfb911585af8af5d419759f86a5aaa5a61bed94059a188ee299fdfa5
+  - pluginName: learn-with-coursera
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/135
+    sourcePin:
+      kind: external-sha
+      sha: ac28fd6ebf8584e3ee196159bd6d4514fa07de0f
+    assignments:
+      - domainId: people-and-training
+        capabilityClaims:
+          - id: learn-with-coursera-design-learning-programs-and-assessments
+            capabilityId: design-learning-programs-and-assessments
+            support: related
+            listingExcerpt: delivers the right next step — a course, hands-on project, short video, or live roleplay — then maps a path forward
+            listingExcerptSha256: c4d15fd43ba71ebada341fb48618f580fd2425f176a3018beda0f35f9d2b783f
+  - pluginName: legalzoom
+    marketplaceReference: research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/137
+    sourcePin:
+      kind: external-sha
+      sha: f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8
+    assignments:
+      - domainId: legal-risk-and-compliance
+        capabilityClaims:
+          - id: legalzoom-assist-with-contract-drafting-and-review
+            capabilityId: assist-with-contract-drafting-and-review
+            support: related
+            listingExcerpt: document review identifies critical risks and important clauses, advises when to engage an attorney
+            listingExcerptSha256: 6362eb5617058aea664140e98b08f331a947449f8c75d45b06225f809540ec22

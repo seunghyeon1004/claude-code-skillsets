@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-28-shopify-ai-toolkit-test-fixture",
+  "sourceId": "shopify-ai-toolkit-test-fixture",
+  "snapshotId": "2026-07-28-shopify-ai-toolkit-test-fixture",
+  "observedAt": "2026-07-28T00:00:00Z",
+  "inspectedCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 1
+    },
+    {
+      "kind": "repository-record",
+      "count": 2
+    },
+    {
+      "kind": "skill-file",
+      "count": 20
+    }
+  ],
+  "snapshotContentSha256": "0fb50757d47ecf1a1e4175ae3c04f4f3b60d3a79bf1fdc457600c885b3c93cf0"
+}

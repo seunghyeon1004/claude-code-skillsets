@@ -1,0 +1,50 @@
+schemaVersion: 2
+id: customer-problem-to-validated-prd
+domainId: product-management
+categoryIds:
+  - problem-discovery
+  - user-needs
+  - product-principles
+  - prds
+  - user-stories
+  - prototype-validation
+  - product-experiments
+outcome:
+  ko: 고객 문제와 사용자 요구의 근거를 제품 원칙, PRD, 사용자 스토리, 프로토타입 및 윤리적 검증 계획으로 전환한다.
+  en: Turns evidence about customer problems and user needs into product principles, a PRD, user stories, prototypes, and an ethical validation plan.
+inputs:
+  - Customer research evidence, user feedback, constraints, and unresolved problem statements
+  - Product principles, technical feasibility context, privacy limits, and experiment guardrails
+outputs:
+  - A PRD with evidence-linked user needs, assumptions, user stories, and measurable success criteria
+  - Prototype and experiment plans that define consent, safeguards, comparison logic, and human launch review
+completionCriteria:
+  - The PRD separates validated evidence, hypotheses, scope assumptions, and questions requiring further research
+  - Prototype and experiment plans avoid manipulative treatment and specify participant protections and stopping conditions
+  - Product claims and experiment results remain pending accountable product review before launch approval
+routingProfileId: product-management
+requiredCapabilityIds:
+  - discover-customer-problems-and-needs
+  - define-product-principles-and-requirements
+recommendedCapabilityIds:
+  - validate-products-with-prototypes-and-experiments
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: customer-problem-to-validated-prd-normal
+    type: normal
+    path: tests/evaluations/packs/customer-problem-to-validated-prd/normal.yaml
+  - id: customer-problem-to-validated-prd-boundary
+    type: boundary
+    path: tests/evaluations/packs/customer-problem-to-validated-prd/boundary.yaml
+  - id: customer-problem-to-validated-prd-refusal
+    type: refusal
+    path: tests/evaluations/packs/customer-problem-to-validated-prd/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

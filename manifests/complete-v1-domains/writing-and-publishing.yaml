@@ -1,0 +1,31 @@
+id: writing-and-publishing
+name:
+  ko: 글쓰기 및 출판
+  en: Writing and Publishing
+description:
+  ko: 아이디어와 근거를 독자와 채널에 맞는 정확한 콘텐츠로 발전시키고 편집, 현지화, 출판까지 완결한다.
+  en: Develops ideas and evidence into accurate audience-specific content and carries it through editing, localization, and publication.
+categories:
+  - ideation
+  - outlining
+  - long-form-writing
+  - blogs
+  - newsletters
+  - technical-writing
+  - business-writing
+  - copywriting
+  - editing
+  - proofreading
+  - citation-verification
+  - translation
+  - localization
+  - cms-publishing
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

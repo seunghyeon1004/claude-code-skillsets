@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "daymade-claude-code-skills",
+  "repository": "https://github.com/daymade/claude-code-skills",
+  "queryUrls": [
+    "https://github.com/daymade/claude-code-skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

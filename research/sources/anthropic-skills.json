@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "anthropic-skills",
+  "repository": "https://github.com/anthropics/skills",
+  "queryUrls": [
+    "https://github.com/anthropics/skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

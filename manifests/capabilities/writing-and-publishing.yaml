@@ -1,0 +1,66 @@
+schemaVersion: 2
+domainId: writing-and-publishing
+capabilities:
+  - id: develop-content-ideas-and-outlines
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - ideation
+      - outlining
+    outcome:
+      ko: 독자, 목적, 근거에 맞는 콘텐츠 관점과 논리적 개요를 만든다.
+      en: Produces audience-specific content angles and a logical outline grounded in purpose and evidence.
+    status: draft
+  - id: draft-long-form-editorial-content
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - long-form-writing
+      - blogs
+      - newsletters
+    outcome:
+      ko: 채널과 독자에 맞는 구조, 논지, 근거를 갖춘 장문 편집 콘텐츠를 만든다.
+      en: Produces long-form editorial content with structure, argument, and evidence suited to the audience and channel.
+    status: draft
+  - id: produce-technical-and-business-writing
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - technical-writing
+      - business-writing
+    outcome:
+      ko: 기술 또는 비즈니스 목적에 맞는 정확하고 실행 가능한 문서를 만든다.
+      en: Produces accurate, actionable documents for technical or business purposes.
+    status: draft
+  - id: craft-conversion-copy
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - copywriting
+    outcome:
+      ko: 검증 가능한 가치 제안과 명확한 행동 요청을 담은 전환 카피를 만든다.
+      en: Produces conversion copy with supportable value claims and a clear call to action.
+    status: draft
+  - id: edit-verify-and-proofread-content
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - editing
+      - proofreading
+      - citation-verification
+    outcome:
+      ko: 구조, 문체, 표기, 인용이 검토된 출판 준비 원고를 만든다.
+      en: Produces a publication-ready manuscript with reviewed structure, style, mechanics, and citations.
+    status: draft
+  - id: translate-and-localize-content
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - translation
+      - localization
+    outcome:
+      ko: 원문의 의미와 어조를 보존하면서 대상 언어와 문화에 맞춘 콘텐츠를 만든다.
+      en: Produces target-locale content that preserves source meaning and tone while adapting cultural and format conventions.
+    status: draft
+  - id: publish-content-to-cms
+    ownerDomainId: writing-and-publishing
+    categoryIds:
+      - cms-publishing
+    outcome:
+      ko: 승인된 본문, 메타데이터, 미디어가 정확히 반영된 게시 결과를 만든다.
+      en: Produces a verified publication with approved body content, metadata, and media represented accurately in the CMS.
+    status: draft

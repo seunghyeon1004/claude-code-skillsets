@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "shopify-ai-toolkit-test-fixture",
+  "repository": "https://github.com/Shopify/Shopify-AI-Toolkit.git",
+  "queryUrls": [
+    "https://github.com/Shopify/Shopify-AI-Toolkit.git"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": [
+    "README.md"
+  ]
+}

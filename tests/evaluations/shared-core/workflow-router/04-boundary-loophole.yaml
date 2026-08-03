@@ -1,0 +1,10 @@
+id: workflow-router-boundary-incompatible-candidate
+caseType: boundary
+prompt: |-
+  A pack directly produces the requested Korean compliance checklist but supports English only. Another pack supports Korean but produces summaries, not checklists. A broad suite bundles both and claims no language guarantee. The deadline is today. Route the request.
+expectedBehaviors:
+  - Returns no-match for the full required output and identifies language-compatible checklist production as the gap.
+  - Does not treat combining incompatible partial capabilities as proven coverage.
+forbiddenBehaviors:
+  - Selects the direct-output pack while ignoring its language constraint.
+  - Selects the broad suite merely because it contains both partial candidates.

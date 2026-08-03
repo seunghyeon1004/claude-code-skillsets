@@ -1,0 +1,1471 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-nexscope-ecommerce-skills",
+  "sourceId": "nexscope-ecommerce-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "56f3288dd1ba3ae7cae43d369115a915229e510b",
+  "blobs": [
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "a1bd81c3b782ffd8ef462ae689e123b4aa82edb1",
+      "byteSize": 512,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "87a40598bec6f6d53d1704216d9e9931af2c98b2",
+      "byteSize": 1067,
+      "readStatus": "observed",
+      "contentSha256": "ea4c0fa8d65010101a252d82ac6ac399a5000dcaaa5d6bc116383b6f5488bfbf"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "40433f0270c00551a96413b64fd3fd081b1ba8ac",
+      "byteSize": 27158,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "affiliate-marketing-strategy/SKILL.md",
+      "gitBlobSha": "dda1037d3123d0682f2e9cfff971408c85572a18",
+      "byteSize": 1149,
+      "readStatus": "observed",
+      "contentSha256": "d5065ed2453aae39a99c457cc5f522ee8a50bd57d8804da660f95bae9c3b116a"
+    },
+    {
+      "path": "api-monitoring/SKILL.md",
+      "gitBlobSha": "a801e2a9e95877a5881b2d9904853a6072b89199",
+      "byteSize": 1700,
+      "readStatus": "observed",
+      "contentSha256": "639b8475a685a288e71282462f0053de131f523f25577c469215c1f98ac706d1"
+    },
+    {
+      "path": "banner.png",
+      "gitBlobSha": "e91a9743122cd0f20f46d4b5035dc129547ea6fe",
+      "byteSize": 850594,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-monitoring/SKILL.md",
+      "gitBlobSha": "9b157ac98e57ba9ca95538236342502c468c35a5",
+      "byteSize": 3973,
+      "readStatus": "observed",
+      "contentSha256": "8143cd6d7f48dd3f7ae5f593f95401a81d8ec6333e37bf7a806e00b1a8fd1542"
+    },
+    {
+      "path": "brand-monitoring/scripts/monitor.py",
+      "gitBlobSha": "187b32683bc37ebe4dcbcadc45a527abc2db63ef",
+      "byteSize": 22943,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-monitoring/scripts/scrapers.py",
+      "gitBlobSha": "c54439a48a522209a815dd9d0fddcf61d746c9c2",
+      "byteSize": 8073,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-amazon/SKILL.md",
+      "gitBlobSha": "970592bf561974fbfb0c3d8904a54441ad6e6939",
+      "byteSize": 3254,
+      "readStatus": "observed",
+      "contentSha256": "e8b8522a030a9100342e917ecf2c4b7c10b906718d58723e8f1c5932b8f43411"
+    },
+    {
+      "path": "brand-protection/brand-protection-amazon/scripts/detector.py",
+      "gitBlobSha": "37e694ba1bca545ef52c2b82a5ac0cc34a4aaf3e",
+      "byteSize": 22416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-amazon/scripts/templates.py",
+      "gitBlobSha": "915c857166d2dd5092b4fc160c1ba4c298f615c2",
+      "byteSize": 15448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-ebay/SKILL.md",
+      "gitBlobSha": "d6e177ab90ed2567c2625bd0f2315cb47b11cf4d",
+      "byteSize": 3064,
+      "readStatus": "observed",
+      "contentSha256": "f42c532b2329782067680ce492d71494041f513df7db1e985ae85becf310508b"
+    },
+    {
+      "path": "brand-protection/brand-protection-ebay/scripts/detector.py",
+      "gitBlobSha": "37e694ba1bca545ef52c2b82a5ac0cc34a4aaf3e",
+      "byteSize": 22416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-ebay/scripts/templates.py",
+      "gitBlobSha": "915c857166d2dd5092b4fc160c1ba4c298f615c2",
+      "byteSize": 15448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-shopify/SKILL.md",
+      "gitBlobSha": "8be84c67beae19569c3a81bc1e13e1d1fa96b9e0",
+      "byteSize": 3407,
+      "readStatus": "observed",
+      "contentSha256": "199e66ce2a700225de347f51d998972a87d39d284284d853f5ece1188fa6e2a6"
+    },
+    {
+      "path": "brand-protection/brand-protection-shopify/scripts/detector.py",
+      "gitBlobSha": "37e694ba1bca545ef52c2b82a5ac0cc34a4aaf3e",
+      "byteSize": 22416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-shopify/scripts/templates.py",
+      "gitBlobSha": "915c857166d2dd5092b4fc160c1ba4c298f615c2",
+      "byteSize": 15448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-tiktok/SKILL.md",
+      "gitBlobSha": "44fd44c01bf2c488939824d2cfaaf514c35a7333",
+      "byteSize": 3170,
+      "readStatus": "observed",
+      "contentSha256": "a11314060a5b4cc2d9a79ad940b71a97b39e9fe330210f0f57a499a854cb7593"
+    },
+    {
+      "path": "brand-protection/brand-protection-tiktok/scripts/detector.py",
+      "gitBlobSha": "37e694ba1bca545ef52c2b82a5ac0cc34a4aaf3e",
+      "byteSize": 22416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-tiktok/scripts/templates.py",
+      "gitBlobSha": "915c857166d2dd5092b4fc160c1ba4c298f615c2",
+      "byteSize": 15448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-walmart/SKILL.md",
+      "gitBlobSha": "9e5db217e5b996bcadd59623e58d0ca655b814db",
+      "byteSize": 3147,
+      "readStatus": "observed",
+      "contentSha256": "a293a620e5407002dda997aeb89e28fd6a786c9602decc6fa07bbf5b7942239a"
+    },
+    {
+      "path": "brand-protection/brand-protection-walmart/scripts/detector.py",
+      "gitBlobSha": "37e694ba1bca545ef52c2b82a5ac0cc34a4aaf3e",
+      "byteSize": 22416,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "brand-protection/brand-protection-walmart/scripts/templates.py",
+      "gitBlobSha": "915c857166d2dd5092b4fc160c1ba4c298f615c2",
+      "byteSize": 15448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "competitive-pricing-strategy/SKILL.md",
+      "gitBlobSha": "72b940da2d5512205a05b5e0354cf6d5cf660a70",
+      "byteSize": 11059,
+      "readStatus": "observed",
+      "contentSha256": "5ea0026b6ad208098bc621375fa62483399cc2d4ab770a0d717f3cdb70287255"
+    },
+    {
+      "path": "competitive-pricing-strategy/agents/openai.yaml",
+      "gitBlobSha": "a91554f96cb47855bae0656cf0496707b3679ecc",
+      "byteSize": 250,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "competitor-price-analysis/SKILL.md",
+      "gitBlobSha": "11c43904b8e4df3c1c8e214a19e1e0f59ea291df",
+      "byteSize": 10511,
+      "readStatus": "observed",
+      "contentSha256": "a4d0dbe58ca2ecfbe06ef94717147184b0a9c07f1ed76486f638eb5a9d505579"
+    },
+    {
+      "path": "competitor-price-tracker/SKILL.md",
+      "gitBlobSha": "13e45480cf48a85b8fa9d72a7bc6ea8b3a71cff8",
+      "byteSize": 2311,
+      "readStatus": "observed",
+      "contentSha256": "fce94eec07fd5b9c6adf1e467275e491a483fd4175dca3425515490802e9b071"
+    },
+    {
+      "path": "conversion-rate-optimization/SKILL.md",
+      "gitBlobSha": "ca193f57f8104c95f6caec152d1d51f4bc372bc3",
+      "byteSize": 1135,
+      "readStatus": "observed",
+      "contentSha256": "8c8815336665c4d585b14b1bbbdb72185a108e1b98740074181be419e4ed97c6"
+    },
+    {
+      "path": "cross-border-ecommerce/SKILL.md",
+      "gitBlobSha": "4bfb95eb0af960b6bacb835d0a84763ab0478c3a",
+      "byteSize": 36728,
+      "readStatus": "observed",
+      "contentSha256": "624dfad2ee2ba64688ef21dd06cef35bc5a0b88968db10976af0be40a95bc58a"
+    },
+    {
+      "path": "customer-feedback-analysis/SKILL.md",
+      "gitBlobSha": "d7d9bec2d51a9ba840a1b8b4b977156ebe78f35c",
+      "byteSize": 1774,
+      "readStatus": "observed",
+      "contentSha256": "7b564e72ca0e25477b95b4a67b7c6ca74440b2030017bed16ec2dc3bbc753327"
+    },
+    {
+      "path": "domain-monitoring/SKILL.md",
+      "gitBlobSha": "8f5111795803ab9817259f1c0877b5e9137fe2af",
+      "byteSize": 1701,
+      "readStatus": "observed",
+      "contentSha256": "1c432226f86552921dd60ccc7fe159c8bad1a33a78bb00dad9e8d7c83712d2a9"
+    },
+    {
+      "path": "dropshipping-product-research/SKILL.md",
+      "gitBlobSha": "3fc5f5254efe9dd653b6b0e1a4cf1720f4b1bf4d",
+      "byteSize": 2454,
+      "readStatus": "observed",
+      "contentSha256": "b30b90653a015e29159dacea685645ede5f89e34e3c53b446e15ccfc2d2b8cd3"
+    },
+    {
+      "path": "dynamic-pricing-ecommerce/SKILL.md",
+      "gitBlobSha": "d9493a828208e4a69e476e1d64316f609029f5a7",
+      "byteSize": 12959,
+      "readStatus": "observed",
+      "contentSha256": "3fcda8bd74109948c7af826b96c2cb841353aaf91922aca0aeb800b03e6f9008"
+    },
+    {
+      "path": "dynamic-pricing-ecommerce/agents/openai.yaml",
+      "gitBlobSha": "409ab600a2e9f70789311c79d7b1056413de38cc",
+      "byteSize": 263,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "ebay-advertising/SKILL.md",
+      "gitBlobSha": "957852ac9d0de17e1aaa64d534d228ad187c2c12",
+      "byteSize": 1131,
+      "readStatus": "observed",
+      "contentSha256": "1aa8f8f6cde0b5b64ab18a5924a2356b76c12e7223541cd47338070cbc124ca1"
+    },
+    {
+      "path": "ebay-product-research/SKILL.md",
+      "gitBlobSha": "aab4080f1bc5ca1f3c8da92ab2022a090145120f",
+      "byteSize": 1050,
+      "readStatus": "observed",
+      "contentSha256": "2eeaba579f7a2d932e1d68cc485da87fe2d28699d59b94238e5270a5fee145f5"
+    },
+    {
+      "path": "ebay-seller-guide/SKILL.md",
+      "gitBlobSha": "c170bbe61e9e623c67a497f55fe2bd8ba1bc7f03",
+      "byteSize": 1129,
+      "readStatus": "observed",
+      "contentSha256": "c9b8490784f9a31581ec7d2d17d382f2d5a0e4616eba4fc9eac0829d53ad35f4"
+    },
+    {
+      "path": "ebay-seller-tools/SKILL.md",
+      "gitBlobSha": "705264f0962ba5f891deca0394b190ba705d272b",
+      "byteSize": 1029,
+      "readStatus": "observed",
+      "contentSha256": "f188324d2610826983593be7fcf5831b8ef295727d8bc0e5149dedd7c22722ac"
+    },
+    {
+      "path": "ebay-seo/SKILL.md",
+      "gitBlobSha": "703b43825fad7dc60179b8f77c7ea5d10a6ebbd9",
+      "byteSize": 1080,
+      "readStatus": "observed",
+      "contentSha256": "11ae58a9e74cebe2a5047e90b7456eff8172221af102036f7594fa4743892c66"
+    },
+    {
+      "path": "ecommerce-ab-testing/SKILL.md",
+      "gitBlobSha": "252483f7588a80011aba5fb1ba81f4a8ec02fbee",
+      "byteSize": 1129,
+      "readStatus": "observed",
+      "contentSha256": "6bb37355b4f343f35b26a3555ca92e3cf91ab57771b6d65f9b4d7f7cd16c42f8"
+    },
+    {
+      "path": "ecommerce-branding/SKILL.md",
+      "gitBlobSha": "f2d8119028500fc1b5bc2cd07bfdf587e2a47978",
+      "byteSize": 2370,
+      "readStatus": "observed",
+      "contentSha256": "59c4c79f76dbdedbe6e4e0ea0ecc1db863c45e39c3a39a3b3128a177b8ff76f6"
+    },
+    {
+      "path": "ecommerce-business-plan/SKILL.md",
+      "gitBlobSha": "4f797af4c5e4029176c5c57b60272cd466d2cbd7",
+      "byteSize": 2415,
+      "readStatus": "observed",
+      "contentSha256": "8ab42c59a3dc23b3dfccd565cc4491d5d111a86238c6464b99199e7c58b6737a"
+    },
+    {
+      "path": "ecommerce-checkout-optimization/SKILL.md",
+      "gitBlobSha": "9f60c62c62a43f76636ea9d83a039c46e1c060d8",
+      "byteSize": 2429,
+      "readStatus": "observed",
+      "contentSha256": "7c757dee99be0b35008506d3454596ec2936bebcd5fcb488eae1f94628b6f940"
+    },
+    {
+      "path": "ecommerce-competitor-analysis/SKILL.md",
+      "gitBlobSha": "0209051b385bec48fa2965704143b4ec80b5d82a",
+      "byteSize": 13598,
+      "readStatus": "observed",
+      "contentSha256": "e65bce6c2c1daab8c78be201ca83a0fe8ad67ccd0072c667329dcb2e55c5ed08"
+    },
+    {
+      "path": "ecommerce-content-marketing/SKILL.md",
+      "gitBlobSha": "c7adb9592e6128fc91a90739816e685d34d3d7be",
+      "byteSize": 21199,
+      "readStatus": "observed",
+      "contentSha256": "dd617915a4535453068c82cfc43e8a7b06f6809b5f1b457d87ec73933d34dd12"
+    },
+    {
+      "path": "ecommerce-customer-retention/SKILL.md",
+      "gitBlobSha": "d0173061b43c1f038127909d05cfce5aac194115",
+      "byteSize": 1109,
+      "readStatus": "observed",
+      "contentSha256": "7fd9d1a683b48a86245564244e92061b4b6025fb79ff9f4279212fde15a438cd"
+    },
+    {
+      "path": "ecommerce-email-marketing-builder/SKILL.md",
+      "gitBlobSha": "b63acb14634f6d4aec6cab9268d0d24fe72f6046",
+      "byteSize": 25272,
+      "readStatus": "observed",
+      "contentSha256": "f36feb25a0e6ba299fb038ce062433f214c056701b32fe4a2ada0ff80df6714f"
+    },
+    {
+      "path": "ecommerce-feed-management/SKILL.md",
+      "gitBlobSha": "de55d73c2e91070834082f0332a441cb754a7d58",
+      "byteSize": 1736,
+      "readStatus": "observed",
+      "contentSha256": "eb3bf8bfc4e59b2193e416736537db92059b56b43d61d9238e62ba6a1c1a7d48"
+    },
+    {
+      "path": "ecommerce-growth-strategy/SKILL.md",
+      "gitBlobSha": "83f677388aee61e4ad4d01372b7c3a962dbba589",
+      "byteSize": 22312,
+      "readStatus": "observed",
+      "contentSha256": "073f6252641779efdfb4e95822136018bfaf59034f8b77b50b486adb3b20a48a"
+    },
+    {
+      "path": "ecommerce-keyword-research/SKILL.md",
+      "gitBlobSha": "17cf1b77d73fe54180f0448c5f5ad5638e6fa176",
+      "byteSize": 2594,
+      "readStatus": "observed",
+      "contentSha256": "2c7a0fc0a71214d92090786c900f2c3d072b72a3b7b6bed69c3db011c910ce13"
+    },
+    {
+      "path": "ecommerce-landing-page/SKILL.md",
+      "gitBlobSha": "725d21bc1988216800dcc012420970b04ddedab9",
+      "byteSize": 2486,
+      "readStatus": "observed",
+      "contentSha256": "b3685198fa75b407bb97467438bf758a50f1d895bdbee0441e1ca4345ab77bf7"
+    },
+    {
+      "path": "ecommerce-marketing-strategy-builder/SKILL.md",
+      "gitBlobSha": "cb902804afe913c690723e7d950a16057a0f4e62",
+      "byteSize": 18478,
+      "readStatus": "observed",
+      "contentSha256": "b1db995abb7f43795053cb73b2ee09d7878806550467be904cf1787a1440c746"
+    },
+    {
+      "path": "ecommerce-personalization/SKILL.md",
+      "gitBlobSha": "d50cfd2b9015d31c6eb536573e8b2060654b9563",
+      "byteSize": 2487,
+      "readStatus": "observed",
+      "contentSha256": "35dc0e5e844331c0ae8518261e50a260dd3e56cb7e98be7522a2291a95c6eba3"
+    },
+    {
+      "path": "ecommerce-ppc-strategy-planner/SKILL.md",
+      "gitBlobSha": "918afedd6801f2e22d10a215d8373167696addd3",
+      "byteSize": 22396,
+      "readStatus": "observed",
+      "contentSha256": "97c82cf843b8d03aa4e07beacec9815f8ee4d06d599430b930fc23f520b037fa"
+    },
+    {
+      "path": "ecommerce-returns-management/SKILL.md",
+      "gitBlobSha": "b2d757dc23b716027eab8f9e40a482ebf8f17c7c",
+      "byteSize": 2420,
+      "readStatus": "observed",
+      "contentSha256": "2bcd2d6a127918ea45eb0ff0a167937661a00a3326b597a5603fb34b2bfdd17c"
+    },
+    {
+      "path": "ecommerce-shipping-rates/SKILL.md",
+      "gitBlobSha": "7166468c62421a3ef47ed6c4bb6631b3dc12b38c",
+      "byteSize": 2398,
+      "readStatus": "observed",
+      "contentSha256": "a83988105fad28642697c4a855426c803a4783167f93c99b0c79adfc5c1c0e0b"
+    },
+    {
+      "path": "ecommerce-social-media-marketing/SKILL.md",
+      "gitBlobSha": "1950b1af54b7ef251b2b3d3817ee4c65a301641a",
+      "byteSize": 19304,
+      "readStatus": "observed",
+      "contentSha256": "0958a73d56481dd5d6f0343bce5a9c1d1392a008df83e94b019092fc27c4e9da"
+    },
+    {
+      "path": "ecommerce-subscription-model/SKILL.md",
+      "gitBlobSha": "3ec07233939870d582967aeb4184016a42ce5da8",
+      "byteSize": 1109,
+      "readStatus": "observed",
+      "contentSha256": "f86f10ec860b748f70e9f2c8f03a6102f29e84a9ae4713184eb1b65ad8c1c402"
+    },
+    {
+      "path": "ecommerce-video-marketing/SKILL.md",
+      "gitBlobSha": "52831ad6f1fb47b9d0a863bdcb09f9ca8263e56f",
+      "byteSize": 1153,
+      "readStatus": "observed",
+      "contentSha256": "43e73096d6f9b75c1de93d042d115b66625a8204d19a370e39f74a4b6143e0cd"
+    },
+    {
+      "path": "etsy-advertising/SKILL.md",
+      "gitBlobSha": "c9ec501983b441ee09185c1e42e1bc56dde55332",
+      "byteSize": 1739,
+      "readStatus": "observed",
+      "contentSha256": "a25fa1f9e6c356d9157a2884b512f6608368fdb04d6535388cd353da55e10d0d"
+    },
+    {
+      "path": "etsy-competitor-analysis/SKILL.md",
+      "gitBlobSha": "ab43e870eaacef184196431fa269d6086ec8d5f8",
+      "byteSize": 1757,
+      "readStatus": "observed",
+      "contentSha256": "b38bb9a0530a5d43a583bbb9a62df452cc387d5867fe322a72ae3bac7437b14f"
+    },
+    {
+      "path": "etsy-custom-orders/SKILL.md",
+      "gitBlobSha": "115dc6c58bc7d30c676ac89c0c477d2c56b7c1ea",
+      "byteSize": 1737,
+      "readStatus": "observed",
+      "contentSha256": "e3f2620930a91b7fbfa0390447694346f0c68335d13bfad713ca2cc767fe6149"
+    },
+    {
+      "path": "etsy-digital-products/SKILL.md",
+      "gitBlobSha": "27900b4b5f25049610bcf9b6125a1c08007f7e23",
+      "byteSize": 1763,
+      "readStatus": "observed",
+      "contentSha256": "163eb4c033245f0174cee745dff97173773541eff7004c2aa3e72fd9edf42430"
+    },
+    {
+      "path": "etsy-keyword-research/SKILL.md",
+      "gitBlobSha": "e4891ca47639d4b7ca310c6593d33a61e3f0d83a",
+      "byteSize": 1759,
+      "readStatus": "observed",
+      "contentSha256": "0beaa11594870034025fb3568ba3e1941168697d424e0d4c7d26002ba0ee6a57"
+    },
+    {
+      "path": "etsy-listing-photography/SKILL.md",
+      "gitBlobSha": "ba2ee1995d7eece3b6dc81101c6bdfec7880d3a7",
+      "byteSize": 1787,
+      "readStatus": "observed",
+      "contentSha256": "96ecf0036dcc6d3f860a5a522d4821e1402c48695e6f38afb24c6ba389d7b023"
+    },
+    {
+      "path": "etsy-multi-shop/SKILL.md",
+      "gitBlobSha": "66907d24cdaf704a1c6393a4dc62e94aab96f5e3",
+      "byteSize": 1747,
+      "readStatus": "observed",
+      "contentSha256": "1756e4a3784569aa8d58646b9cd8057df1e1b7a1ce4cfc09e565c1d4c32be891"
+    },
+    {
+      "path": "etsy-offsite-ads/SKILL.md",
+      "gitBlobSha": "5cdd9786f9e03757de0ed77fc6be9ec93c6fd615",
+      "byteSize": 1711,
+      "readStatus": "observed",
+      "contentSha256": "468143ad837ffe45c12947908bc11785a750361fe78cd7937be6c86e0a9462ef"
+    },
+    {
+      "path": "etsy-pricing-strategy/SKILL.md",
+      "gitBlobSha": "5acda6b70788a38232ae2b0c5abeeff6bc6911eb",
+      "byteSize": 1793,
+      "readStatus": "observed",
+      "contentSha256": "a1d4194feb2aa8eb6d1c73d9e1c3beeb004bf6d2601bab4520622c97a80f6c6a"
+    },
+    {
+      "path": "etsy-print-on-demand/SKILL.md",
+      "gitBlobSha": "21d206b0da62a39e50e21fb79a554b552ed60752",
+      "byteSize": 1725,
+      "readStatus": "observed",
+      "contentSha256": "aacb546a6df377941c616f92c4ceac94bf05851f0ddb33baa3eef1db96295df6"
+    },
+    {
+      "path": "etsy-product-description/SKILL.md",
+      "gitBlobSha": "e1d3a090bc9fef94600b0179ff90a30ff88101d5",
+      "byteSize": 1759,
+      "readStatus": "observed",
+      "contentSha256": "731b59ef4f0c2223322a876c3009e7db41ae96ab7bfa1f74779233295fcc9dee"
+    },
+    {
+      "path": "etsy-review-strategy/SKILL.md",
+      "gitBlobSha": "e7ed4d67cef0895825ba0a336bac2a0e70acc7b4",
+      "byteSize": 1729,
+      "readStatus": "observed",
+      "contentSha256": "c83a10fa9b4b8cd84b4d0518a8a3f49b7d1dee783374ee7d976046d941919f45"
+    },
+    {
+      "path": "etsy-seasonal-strategy/SKILL.md",
+      "gitBlobSha": "07ef31b30f12793d24200f2bdde8943897fa050f",
+      "byteSize": 1781,
+      "readStatus": "observed",
+      "contentSha256": "a4aa118f533b1437d66a9328f52d5364408ebfc31dec11e543ed8263e7d35dc5"
+    },
+    {
+      "path": "etsy-seller-guide/SKILL.md",
+      "gitBlobSha": "896c94d77d04bea79c4285fdbb3b8728a7cf8630",
+      "byteSize": 1191,
+      "readStatus": "observed",
+      "contentSha256": "a98db84d91bcc42b3d4fe5a44950f5831cf7d4ed26b3f734f3fc8549caac40d3"
+    },
+    {
+      "path": "etsy-seo-tags/SKILL.md",
+      "gitBlobSha": "128c7708462e79510ac63b2e19b63047a871882a",
+      "byteSize": 1691,
+      "readStatus": "observed",
+      "contentSha256": "460f67d74c16a639ad2dee90a0aac995b88066a5acb5f069e66116b1c0b82ad2"
+    },
+    {
+      "path": "etsy-seo/SKILL.md",
+      "gitBlobSha": "14b706610e83ef592b3de8dc0abcc8884eda9c54",
+      "byteSize": 4277,
+      "readStatus": "observed",
+      "contentSha256": "0d8ff6019a498f3d9b12ca91af0e82fceb6b42ce40a3b958b95c7f558ccdfe97"
+    },
+    {
+      "path": "etsy-seo/scripts/analyzer.py",
+      "gitBlobSha": "c673a5af86281ca233cad4b4866dc695647af3ae",
+      "byteSize": 22732,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "etsy-shipping-strategy/SKILL.md",
+      "gitBlobSha": "9b2cfc9c7652fec416a9bc372b403a8f39b32e59",
+      "byteSize": 1763,
+      "readStatus": "observed",
+      "contentSha256": "6569db6dd96155256f7233ef0361c081fbd085cff084c506709a85f1443159b4"
+    },
+    {
+      "path": "etsy-shop-analytics/SKILL.md",
+      "gitBlobSha": "ab37b34d916cd995b66bcf38f39726f9d2dc920d",
+      "byteSize": 1733,
+      "readStatus": "observed",
+      "contentSha256": "77ac54596a1c633a7f4956a88717243b3988f4be2af9bd5319d881a03a453c62"
+    },
+    {
+      "path": "etsy-shop-branding/SKILL.md",
+      "gitBlobSha": "d50207d5a1bafeec29c0c42299ed9c6fdbe38d98",
+      "byteSize": 1725,
+      "readStatus": "observed",
+      "contentSha256": "e7ec733e899b570f0a4fdbe85aeb323531218741247590636226178af387d6eb"
+    },
+    {
+      "path": "etsy-shop-setup/SKILL.md",
+      "gitBlobSha": "bdf9ed7248634cc4e00b936bd51dcc9f5703a1d2",
+      "byteSize": 1709,
+      "readStatus": "observed",
+      "contentSha256": "cbe4fd90cc93461452ed58148616c0a08a0b1559d0146f5113811c11477e5f46"
+    },
+    {
+      "path": "etsy-social-media-marketing/SKILL.md",
+      "gitBlobSha": "d87e15bcdfdbd2f2a710565bd067a17521e841db",
+      "byteSize": 1791,
+      "readStatus": "observed",
+      "contentSha256": "9409c497b76fee35f646aeaca3adef8cf7b5bf0d66f4a2f203d867ca5b711817"
+    },
+    {
+      "path": "etsy-star-seller/SKILL.md",
+      "gitBlobSha": "fa433167a3f5eaa3a83c2196b3736a0eb9d3ef36",
+      "byteSize": 1735,
+      "readStatus": "observed",
+      "contentSha256": "e277e5dfc8b98354148ed6d106b7ff1c725c9a1e86be171c76d601edfc4cf6e8"
+    },
+    {
+      "path": "file-integrity-monitoring/SKILL.md",
+      "gitBlobSha": "4264591cfd0bab60f94f72d0cf992c6dac15435f",
+      "byteSize": 1737,
+      "readStatus": "observed",
+      "contentSha256": "9c0ead47b6d3e8cd39aad5a1a02ea951917dc0b174cc4c2a3bda4f869e3e0f17"
+    },
+    {
+      "path": "google-shopping-optimization/SKILL.md",
+      "gitBlobSha": "96ae0a11f4396745745849715494b6e880a17443",
+      "byteSize": 2411,
+      "readStatus": "observed",
+      "contentSha256": "4df65441245c7bb5fda6ee4fe296a3899df75c01a599b38b4639c5ed0aebfddb"
+    },
+    {
+      "path": "influencer-outreach/SKILL.md",
+      "gitBlobSha": "cfa0411196f45d92b1ae0db68956120e6e8b8ea2",
+      "byteSize": 1179,
+      "readStatus": "observed",
+      "contentSha256": "f578ca20f4e25a851810fd2410ab18b9da6325a04417e8e12a28f28cd3357851"
+    },
+    {
+      "path": "inventory-tracking-software/SKILL.md",
+      "gitBlobSha": "452929bc53212485c916c43d9fafeab55ec9ef42",
+      "byteSize": 1767,
+      "readStatus": "observed",
+      "contentSha256": "067b0a829f18e64c1241cdf0decdb66a6fe1abaf705b83bbde4acde53e62043c"
+    },
+    {
+      "path": "localization-testing/SKILL.md",
+      "gitBlobSha": "9b3cbf639e588f8ba5454a5a79433c526be0a164",
+      "byteSize": 1779,
+      "readStatus": "observed",
+      "contentSha256": "d5d09d60143c95c96f78f46712b05185aff60e23fc9fdf4bfd92e1bb35729b4e"
+    },
+    {
+      "path": "market-gap-analysis/SKILL.md",
+      "gitBlobSha": "f229ddcb0e2fd58d2db5da9314153ec1d921c942",
+      "byteSize": 2338,
+      "readStatus": "observed",
+      "contentSha256": "63dfd620ad7aca156cbb578d7aafe76bb45d42aa33d42e8a7bd16ef7fa399845"
+    },
+    {
+      "path": "minimum-advertised-price/SKILL.md",
+      "gitBlobSha": "a33a41b1c06221110f2ce0a35e244b2c1955f46b",
+      "byteSize": 1814,
+      "readStatus": "observed",
+      "contentSha256": "54910787b937211d51e9ea07b8614ab29c54f9561c0a460c9d431fe84f1f8113"
+    },
+    {
+      "path": "multichannel-ecommerce/SKILL.md",
+      "gitBlobSha": "2f903db2f5c61e38b03e7e5fd3ce85f63cd668c1",
+      "byteSize": 1232,
+      "readStatus": "observed",
+      "contentSha256": "ebd77d68d8cc3fc3eac8b9247a9363e5e376143991edbd94e43cff2edc56ee86"
+    },
+    {
+      "path": "omnichannel-ecommerce/SKILL.md",
+      "gitBlobSha": "fff19103e08185b8f26121afa99f554476d35e86",
+      "byteSize": 1122,
+      "readStatus": "observed",
+      "contentSha256": "45bcf2e1942d22dce5dad50b873f86d5ae4d24dea50ad59edf835b3dbcba97af"
+    },
+    {
+      "path": "online-reputation-management/SKILL.md",
+      "gitBlobSha": "22f75e52046a765072a881c70760a0f44bfd44dc",
+      "byteSize": 1767,
+      "readStatus": "observed",
+      "contentSha256": "162b82ebaf974c455de2d084c6ea6793a87e905493be9bb211d775c9aaedf92f"
+    },
+    {
+      "path": "price-optimization-tool/SKILL.md",
+      "gitBlobSha": "bcc01c5348d8efbaea1e6f20b379cc2c92540720",
+      "byteSize": 13086,
+      "readStatus": "observed",
+      "contentSha256": "88a77fa9afaa5b6dc93145536c328db2846baacaa14d2d3093d15824086ea4bb"
+    },
+    {
+      "path": "price-optimization-tool/agents/openai.yaml",
+      "gitBlobSha": "49a51e4f063a99c9930b930837f1cc3bc178d81e",
+      "byteSize": 248,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "product-description-generator/SKILL.md",
+      "gitBlobSha": "1370d32d6d84dd21ef325d56d73e6399306d937f",
+      "byteSize": 13629,
+      "readStatus": "observed",
+      "contentSha256": "2c868d8c6d436d2f10c48da44ae92ae76aa1e68cb5dcc0ca4122c9ee4beccc69"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-amazon/SKILL.md",
+      "gitBlobSha": "d64927631cdb3253330a4358653f5cc8b88f0fbf",
+      "byteSize": 5008,
+      "readStatus": "observed",
+      "contentSha256": "95874f8d90952f9f7af0bd55d2038f1a33a30d832150cabccbd0bd65154b5b13"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-amazon/scripts/analyzer.py",
+      "gitBlobSha": "28049d8ee39cbda268014442d7f769c8e330170e",
+      "byteSize": 30185,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-ebay/SKILL.md",
+      "gitBlobSha": "4fec3220009bb41b90267055773822fa6684c5bb",
+      "byteSize": 3836,
+      "readStatus": "observed",
+      "contentSha256": "9f6c3d7d2674939f27ebd243290ea44dcf0a88c3f74a7fe447b90c80fdc0a6aa"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-ebay/scripts/analyzer.py",
+      "gitBlobSha": "28049d8ee39cbda268014442d7f769c8e330170e",
+      "byteSize": 30185,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-shopify/SKILL.md",
+      "gitBlobSha": "4ecf48dd8b85b7cdd4ca99e3aec7d910e1755871",
+      "byteSize": 4218,
+      "readStatus": "observed",
+      "contentSha256": "eeb231b9bcd62b447dbbad9c44aed9adfcf733f91cccbc421e1561738ec18288"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-shopify/scripts/analyzer.py",
+      "gitBlobSha": "28049d8ee39cbda268014442d7f769c8e330170e",
+      "byteSize": 30185,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-tiktok/SKILL.md",
+      "gitBlobSha": "0229565711f19e49e2123371f53411ff3794567f",
+      "byteSize": 4405,
+      "readStatus": "observed",
+      "contentSha256": "57be618bdfd07c17f8fd19e8a05ee4ba9b6bf291b6c0dda4a750f28b5ade1797"
+    },
+    {
+      "path": "product-differentiation/product-differentiation-tiktok/scripts/analyzer.py",
+      "gitBlobSha": "28049d8ee39cbda268014442d7f769c8e330170e",
+      "byteSize": 30185,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "product-launch-strategy/SKILL.md",
+      "gitBlobSha": "bc76a3b0f18954f9abeb49aa47077f139326f9d1",
+      "byteSize": 2475,
+      "readStatus": "observed",
+      "contentSha256": "663c40dac8b9e9e637af0abd94026d36dbfa616aedffd15660d3ecb7794a6659"
+    },
+    {
+      "path": "product-page-seo/SKILL.md",
+      "gitBlobSha": "d9e05f92dd7b518517b846766b3ed6f73fa6dd7e",
+      "byteSize": 2414,
+      "readStatus": "observed",
+      "contentSha256": "84c1a1835a4838ca86008dae6acbc18829c33f5f8fc306db4535cbde5f39dc0b"
+    },
+    {
+      "path": "product-review-analysis/SKILL.md",
+      "gitBlobSha": "6d53fe9450ace49550c1c20a17fbd684e044ba72",
+      "byteSize": 14267,
+      "readStatus": "observed",
+      "contentSha256": "f685d0447460df78b0b2b0b057ed4eb52e473257f03bca5564df7a9c890efeaa"
+    },
+    {
+      "path": "product-title-optimization/SKILL.md",
+      "gitBlobSha": "6e73ff0457d12f03c22d8c8bf9f529e2b24cab35",
+      "byteSize": 2428,
+      "readStatus": "observed",
+      "contentSha256": "49f35dabe9d611c401e2f80bba1a1beb3043dfc87725fa4c86d34bee51194654"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-amazon/SKILL.md",
+      "gitBlobSha": "a51025718a3c0319f83b25a248322c1c0b658340",
+      "byteSize": 6924,
+      "readStatus": "observed",
+      "contentSha256": "f4386322b573b5cfd1a8b250734400f07c1ce6b7d73482640a964fe5a0706e29"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-amazon/scripts/calculator.py",
+      "gitBlobSha": "1bb6fa3330d62d8d70f48a182096349c1d5695a0",
+      "byteSize": 18816,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-shopify/SKILL.md",
+      "gitBlobSha": "9729067a42e031f2137362ef26e41514c244b62f",
+      "byteSize": 2775,
+      "readStatus": "observed",
+      "contentSha256": "876018d50a5c9cee88be2c7784b8ec79cc3b7be59f21be58bee2cd0972635c96"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-shopify/scripts/calculator.py",
+      "gitBlobSha": "1bb6fa3330d62d8d70f48a182096349c1d5695a0",
+      "byteSize": 18816,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-tiktok/SKILL.md",
+      "gitBlobSha": "8841a0ec09c94ead25d6a1ca47acb12c43b9ab4f",
+      "byteSize": 2878,
+      "readStatus": "observed",
+      "contentSha256": "9deca408422ae6c240fb16e8045bed9a691981635776ef539b2dfcc0f55e7f10"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-tiktok/scripts/calculator.py",
+      "gitBlobSha": "1bb6fa3330d62d8d70f48a182096349c1d5695a0",
+      "byteSize": 18816,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-walmart/SKILL.md",
+      "gitBlobSha": "82bf991343c0620e0526ec0f91d1119f5bd23228",
+      "byteSize": 2419,
+      "readStatus": "observed",
+      "contentSha256": "941bf7f8537914fd53c546069780646d50643bc97466804e1e2a749cef4a710e"
+    },
+    {
+      "path": "profit-margin-calculator/profit-margin-calculator-walmart/scripts/calculator.py",
+      "gitBlobSha": "1bb6fa3330d62d8d70f48a182096349c1d5695a0",
+      "byteSize": 18816,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "public-status-page/SKILL.md",
+      "gitBlobSha": "1de9b5ed6c8b60553f7d82dbb3dc07bfe91c91a9",
+      "byteSize": 1743,
+      "readStatus": "observed",
+      "contentSha256": "f8c73939cf99d48da2553479cccb8d2b8d1cf1180c32356d1c3282375b4acf41"
+    },
+    {
+      "path": "restock-alert/SKILL.md",
+      "gitBlobSha": "182a00c338d26a912d02ea5cd5a87f55c23453dc",
+      "byteSize": 1645,
+      "readStatus": "observed",
+      "contentSha256": "4a22459e02492e4c954dd81c11743ceefb1bd6d03af2e51f3ef53c1b881b97df"
+    },
+    {
+      "path": "review-checker/amazon-review-checker/SKILL.md",
+      "gitBlobSha": "69a41b9a19b194bf3e0a55180375acf6d5b55feb",
+      "byteSize": 3668,
+      "readStatus": "observed",
+      "contentSha256": "31f9d556505c94189e3b562931a6f09aeb070fbd7df40b96380ab48d18cee51a"
+    },
+    {
+      "path": "review-checker/amazon-review-checker/scripts/analyzer.py",
+      "gitBlobSha": "91c53f18e36fe4e84331893e9819df6b333f891a",
+      "byteSize": 28503,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/amazon-review-checker/scripts/parser.py",
+      "gitBlobSha": "32aa1dda9258ef14ae3de357dcbbe3a26d5c7dcd",
+      "byteSize": 10160,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/amazon-review-checker/scripts/report_html.py",
+      "gitBlobSha": "038a43b02c4c9500c6903d96ff80b74b7ffa6be5",
+      "byteSize": 13817,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/ebay-review-checker/SKILL.md",
+      "gitBlobSha": "b6b927ca14db3f8f3c3f7234d799a9e02d242547",
+      "byteSize": 2543,
+      "readStatus": "observed",
+      "contentSha256": "a046a86f9630b7b7e2465eb13b5e23520cae6ae93e51b18045b983c53c5db458"
+    },
+    {
+      "path": "review-checker/ebay-review-checker/scripts/analyzer.py",
+      "gitBlobSha": "91c53f18e36fe4e84331893e9819df6b333f891a",
+      "byteSize": 28503,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/ebay-review-checker/scripts/parser.py",
+      "gitBlobSha": "32aa1dda9258ef14ae3de357dcbbe3a26d5c7dcd",
+      "byteSize": 10160,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/ebay-review-checker/scripts/report_html.py",
+      "gitBlobSha": "038a43b02c4c9500c6903d96ff80b74b7ffa6be5",
+      "byteSize": 13817,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/walmart-review-checker/SKILL.md",
+      "gitBlobSha": "cf3db73f3ede76edcd1dbb62933204aafe1c753b",
+      "byteSize": 2602,
+      "readStatus": "observed",
+      "contentSha256": "cd23e3805d270105b9376b67a579f31264b212c5e460252709bb10a586d47a00"
+    },
+    {
+      "path": "review-checker/walmart-review-checker/scripts/analyzer.py",
+      "gitBlobSha": "91c53f18e36fe4e84331893e9819df6b333f891a",
+      "byteSize": 28503,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/walmart-review-checker/scripts/parser.py",
+      "gitBlobSha": "32aa1dda9258ef14ae3de357dcbbe3a26d5c7dcd",
+      "byteSize": 10160,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-checker/walmart-review-checker/scripts/report_html.py",
+      "gitBlobSha": "038a43b02c4c9500c6903d96ff80b74b7ffa6be5",
+      "byteSize": 13817,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "review-monitoring/SKILL.md",
+      "gitBlobSha": "3ca8281ef08bbfcff6dec17b57cc096a5c62c59e",
+      "byteSize": 2368,
+      "readStatus": "observed",
+      "contentSha256": "7f6fcba043f793b61e6abb222bc4089f51f939a7abb1368d9af74415ce398909"
+    },
+    {
+      "path": "sales-tracking-tool/SKILL.md",
+      "gitBlobSha": "6fc0f4eae2d863cf8ff04205f464f1b9478cb821",
+      "byteSize": 2325,
+      "readStatus": "observed",
+      "contentSha256": "22850921c30f2aeea05299d804a25f408c833708a3c74b0f45b2eaf760325ec9"
+    },
+    {
+      "path": "share-of-shelf/SKILL.md",
+      "gitBlobSha": "680e892a6b70614064ca1395da0867e154ee7f68",
+      "byteSize": 1703,
+      "readStatus": "observed",
+      "contentSha256": "faa55c823f7e554d8e826bc30fc223577d6129edf682c1efd6face59ee59a114"
+    },
+    {
+      "path": "shopify-ab-testing/SKILL.md",
+      "gitBlobSha": "b4ac9592de0db94f14e44e58f14cea910e9de117",
+      "byteSize": 1157,
+      "readStatus": "observed",
+      "contentSha256": "0134053906c26d3a4190883fc88408f40602ef95bf0acb18b76fdad5bfc4ee1a"
+    },
+    {
+      "path": "shopify-analytics-guide/SKILL.md",
+      "gitBlobSha": "571db505b6ede77468a3e4ad8cd50cfeea10562d",
+      "byteSize": 1078,
+      "readStatus": "observed",
+      "contentSha256": "d9877b4bd11717e4451681b0d13609b8564f27e5b9f08f3deca4a24699bb794f"
+    },
+    {
+      "path": "shopify-app-recommendations/SKILL.md",
+      "gitBlobSha": "f250d54dc87c0ed4ac1eb3b7d52259cbecb34c41",
+      "byteSize": 1922,
+      "readStatus": "observed",
+      "contentSha256": "a4b17b8baa2c4aaaadc28783b42114c5998789dfcf53250b3433b29feeac256b"
+    },
+    {
+      "path": "shopify-blog-strategy/SKILL.md",
+      "gitBlobSha": "6114056005349a465db48dd3dad6866f489284aa",
+      "byteSize": 1874,
+      "readStatus": "observed",
+      "contentSha256": "a6c6526a1c520ac7f9d7c0d1dcba090765f864ab7405780ecdb8cf63de712e63"
+    },
+    {
+      "path": "shopify-cart-abandonment/SKILL.md",
+      "gitBlobSha": "1977649b37c99a576a5ffeab99fb75ca1692baa2",
+      "byteSize": 1896,
+      "readStatus": "observed",
+      "contentSha256": "3cee0e9689b6aa14a6293f9dd7368c3f4737097f77ad96fdc37b2beba9ef1d04"
+    },
+    {
+      "path": "shopify-checkout-customization/SKILL.md",
+      "gitBlobSha": "de742316247875e92e0e811b60a8a1a87aeac64b",
+      "byteSize": 1936,
+      "readStatus": "observed",
+      "contentSha256": "e989e55245b332dde8e23d599234efdbe4f1e74013048dc05240c549c0f142da"
+    },
+    {
+      "path": "shopify-conversion-optimization/SKILL.md",
+      "gitBlobSha": "5905776bdbc990391ff7e4b51ca0efe5e18382ab",
+      "byteSize": 1167,
+      "readStatus": "observed",
+      "contentSha256": "7577721e44437c3852fdf8570f00df6b32345f5892ee9f85363108e3376389ae"
+    },
+    {
+      "path": "shopify-dropshipping/SKILL.md",
+      "gitBlobSha": "e8d935b219d32b5c9dd9fe76e8842f821164a82a",
+      "byteSize": 1874,
+      "readStatus": "observed",
+      "contentSha256": "9a8243182426dd2ec5ea7fcc1fa72270bb3c208eea8016403e4c0832c3012a3b"
+    },
+    {
+      "path": "shopify-email-flows/SKILL.md",
+      "gitBlobSha": "efa33584e73f62db21db551f0ce7217417f5203f",
+      "byteSize": 1858,
+      "readStatus": "observed",
+      "contentSha256": "cb109726b4368d16e32b8610b1bc8ef5dfc707e608acd4bc0ad088bec9ebcaed"
+    },
+    {
+      "path": "shopify-facebook-instagram-shop/SKILL.md",
+      "gitBlobSha": "6b04fd0e52846fb1101b465c4d612b10ae07e29b",
+      "byteSize": 1946,
+      "readStatus": "observed",
+      "contentSha256": "b302ba1484c9af6246b9856050ccedcf437c0afea7c3846f6bd4a42e4da5950e"
+    },
+    {
+      "path": "shopify-google-channel/SKILL.md",
+      "gitBlobSha": "59b3f4f81047fe6344ec9e6b69da8f74b3c7d394",
+      "byteSize": 1874,
+      "readStatus": "observed",
+      "contentSha256": "bf80b392d4c7f534ec11596d0626fdb70fb13dc5a8fb2fb333b3b47f759e3357"
+    },
+    {
+      "path": "shopify-international/SKILL.md",
+      "gitBlobSha": "05407de044c55c7dc333262b6f88bdae2f074e46",
+      "byteSize": 1928,
+      "readStatus": "observed",
+      "contentSha256": "a97fe760cc0e8c7c9a6988d3c68e9275a29dfd98bdb0adc16e820a01f2a2c9b2"
+    },
+    {
+      "path": "shopify-inventory-management/SKILL.md",
+      "gitBlobSha": "c531c52f83077777651280631f4824e4af126dca",
+      "byteSize": 1934,
+      "readStatus": "observed",
+      "contentSha256": "963972295d749457c8b7a9da6a1a9573751206f6daff4736e1d7f88e12978429"
+    },
+    {
+      "path": "shopify-landing-page-builder/SKILL.md",
+      "gitBlobSha": "a823d9083a538501d6ade8d8daea7bb71352a5b7",
+      "byteSize": 1918,
+      "readStatus": "observed",
+      "contentSha256": "6442ee5bb60b8c689d08981f2f52957f5be2bd6359722e86d62919f56c37cfa5"
+    },
+    {
+      "path": "shopify-loyalty-program/SKILL.md",
+      "gitBlobSha": "293206c8a12b6a522d5416944ff4b48a31a0b695",
+      "byteSize": 1870,
+      "readStatus": "observed",
+      "contentSha256": "ecee1dadde7920be6ea3e3788889bf59f7511cfb16743458e50bdb9506aa9860"
+    },
+    {
+      "path": "shopify-marketing/SKILL.md",
+      "gitBlobSha": "392b07f10252b70631b73f950faa61a1b49267b0",
+      "byteSize": 15387,
+      "readStatus": "observed",
+      "contentSha256": "9411e8f928f0d0648277faf5bb7ac2af264eb5f629b0d3c61c48d8c76306d75c"
+    },
+    {
+      "path": "shopify-migration/SKILL.md",
+      "gitBlobSha": "9f213f01d7e9cc4cd410d22f6471036c33da9e68",
+      "byteSize": 1842,
+      "readStatus": "observed",
+      "contentSha256": "278a51627b257f8408b1ffb5de5158e92a510965a50a4eec6b48c47167361f72"
+    },
+    {
+      "path": "shopify-page-speed/SKILL.md",
+      "gitBlobSha": "abfc1ea69d9b55c676fe95551234400c38e8efcc",
+      "byteSize": 1690,
+      "readStatus": "observed",
+      "contentSha256": "4b1b772ded5c8073c11f607f7ad0b33176d3e4bf853efcb472183cd582d3ae2e"
+    },
+    {
+      "path": "shopify-product-photography-guide/SKILL.md",
+      "gitBlobSha": "575c270208267436eebcbb0574e8bdf40a0715f5",
+      "byteSize": 1952,
+      "readStatus": "observed",
+      "contentSha256": "1387107fd2ee89595816b1a7eb58e19763c216fba52251292c9fa20fe0e53882"
+    },
+    {
+      "path": "shopify-seo/SKILL.md",
+      "gitBlobSha": "3cba20b3671231d07531eb7552b275b727124f98",
+      "byteSize": 1113,
+      "readStatus": "observed",
+      "contentSha256": "76ccad7d28cef2530b70811c9e2c6d5d3d71ef61ba3ac97e9c3cb6273d21a6e0"
+    },
+    {
+      "path": "shopify-speed-optimization/SKILL.md",
+      "gitBlobSha": "97596f8c3bc166a7342df48e4ab4032e8cfae338",
+      "byteSize": 1904,
+      "readStatus": "observed",
+      "contentSha256": "1a1f1d4ff760af8519d7ab4d3bb7576e948e84113dc5ff154d99e950e2093456"
+    },
+    {
+      "path": "shopify-store-setup/SKILL.md",
+      "gitBlobSha": "c2ac961adf9bfd284c1713d6696eaa930257b01f",
+      "byteSize": 1106,
+      "readStatus": "observed",
+      "contentSha256": "2d0145ade67f3da4e3c7ac4a4f9d93ac549f8a92fa3add0f6fa0253f2f4a2183"
+    },
+    {
+      "path": "shopify-subscription-setup/SKILL.md",
+      "gitBlobSha": "33ddb20f28d8393d6b44e9ed0d9618f24f5755f9",
+      "byteSize": 1910,
+      "readStatus": "observed",
+      "contentSha256": "8f099e6bfcda3ca1c29be69e7a19148c168d04fed4453191c8ac4e6614611251"
+    },
+    {
+      "path": "shopify-tax-compliance/SKILL.md",
+      "gitBlobSha": "b007b788c4a11024108a7808e736dcd42f10d061",
+      "byteSize": 1864,
+      "readStatus": "observed",
+      "contentSha256": "2199b0c471d2e98065456209d178caecbc5fb4cbd481de2c076110d1379fc34a"
+    },
+    {
+      "path": "shopify-theme-optimization/SKILL.md",
+      "gitBlobSha": "f3836d6ff61281398b65e5981c47db2e9b8eab96",
+      "byteSize": 1914,
+      "readStatus": "observed",
+      "contentSha256": "3d84c32be35de56fddd5c68458743ca0da210c297b2c368e73715863f56a24ef"
+    },
+    {
+      "path": "shopify-upsell-cross-sell/SKILL.md",
+      "gitBlobSha": "b8e97695549cb75f191a2cd18559ca2f0ce7564c",
+      "byteSize": 1920,
+      "readStatus": "observed",
+      "contentSha256": "af983e08639c78b605e524d3ae081cc4d8dd0fdd81d80031fa804908d680b4e8"
+    },
+    {
+      "path": "shopify-wholesale-channel/SKILL.md",
+      "gitBlobSha": "b7d6032128a676212bfa0fe1f5187b681cce9e53",
+      "byteSize": 1888,
+      "readStatus": "observed",
+      "contentSha256": "19a60967da9c6b08aaa488711fb6cb93229aad2a734ea597201cdff7ce660835"
+    },
+    {
+      "path": "shoppable-video/SKILL.md",
+      "gitBlobSha": "4a97d7bd22aa8c5b5d82f7310c60451daf127c9e",
+      "byteSize": 1125,
+      "readStatus": "observed",
+      "contentSha256": "d392b8f6c6d5f3380245b145091727e011081779d59ff9363dcd02ab6201512c"
+    },
+    {
+      "path": "social-media-monitor/SKILL.md",
+      "gitBlobSha": "ed8dae602887e7cc2d324d5b2d2725e55daed3b0",
+      "byteSize": 2347,
+      "readStatus": "observed",
+      "contentSha256": "3a1a17bcc4b1942d905179d0846d5a36f4d1ccdc6ed24ad9b3bd79ffd187ab03"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-amazon/SKILL.md",
+      "gitBlobSha": "3254aff3c2b7fb69fe081832565fb62bfcaaf1a7",
+      "byteSize": 3484,
+      "readStatus": "observed",
+      "contentSha256": "5d0024dbcfe4f2fddaa270af3a1e09cbdd0a409e00eb4c8a370615002b044c10"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-amazon/scripts/calculator.py",
+      "gitBlobSha": "8c3234540cc216572fe231d4d0d89cfd311a3286",
+      "byteSize": 20107,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-amazon/scripts/report_doc.py",
+      "gitBlobSha": "e7d536c601c199af91a7141d2edf39fc274db935",
+      "byteSize": 5437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-amazon/scripts/report_html.py",
+      "gitBlobSha": "b67663c7303c5736fcbed999d335733ce4032c7a",
+      "byteSize": 9620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-shopify/SKILL.md",
+      "gitBlobSha": "f30c0cf1965e1f81121a313c94eedeb4684840dd",
+      "byteSize": 5246,
+      "readStatus": "observed",
+      "contentSha256": "da1dde82e43d238206425ead18aeaccf985dddc57bcb747e74a230905b77f40a"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-shopify/scripts/calculator.py",
+      "gitBlobSha": "8c3234540cc216572fe231d4d0d89cfd311a3286",
+      "byteSize": 20107,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-shopify/scripts/report_doc.py",
+      "gitBlobSha": "e7d536c601c199af91a7141d2edf39fc274db935",
+      "byteSize": 5437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-shopify/scripts/report_html.py",
+      "gitBlobSha": "b67663c7303c5736fcbed999d335733ce4032c7a",
+      "byteSize": 9620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-tiktok/SKILL.md",
+      "gitBlobSha": "c8861a075fff224f7fcd7e200a52f6b0c0b5b849",
+      "byteSize": 4236,
+      "readStatus": "observed",
+      "contentSha256": "f58d0618033ba185f6ca9b1813c2926369bd1a66b30a79456cc27372f6d273f9"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-tiktok/scripts/calculator.py",
+      "gitBlobSha": "8c3234540cc216572fe231d4d0d89cfd311a3286",
+      "byteSize": 20107,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-tiktok/scripts/report_doc.py",
+      "gitBlobSha": "e7d536c601c199af91a7141d2edf39fc274db935",
+      "byteSize": 5437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-tiktok/scripts/report_html.py",
+      "gitBlobSha": "b67663c7303c5736fcbed999d335733ce4032c7a",
+      "byteSize": 9620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-walmart/SKILL.md",
+      "gitBlobSha": "8d36050f748f24dafea1f52f28c121125dfb84bf",
+      "byteSize": 3489,
+      "readStatus": "observed",
+      "contentSha256": "637c02dfbb542e5b0f390ac3423ff4f8e6db95ea92a822233b3b9ae07ecad3ed"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-walmart/scripts/calculator.py",
+      "gitBlobSha": "8c3234540cc216572fe231d4d0d89cfd311a3286",
+      "byteSize": 20107,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-walmart/scripts/report_doc.py",
+      "gitBlobSha": "e7d536c601c199af91a7141d2edf39fc274db935",
+      "byteSize": 5437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "supply-chain-optimization/supply-chain-optimization-walmart/scripts/report_html.py",
+      "gitBlobSha": "b67663c7303c5736fcbed999d335733ce4032c7a",
+      "byteSize": 9620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "synthetic-monitoring/SKILL.md",
+      "gitBlobSha": "ecd8186b70f2daab573a668071943027b8e01a66",
+      "byteSize": 1692,
+      "readStatus": "observed",
+      "contentSha256": "be1e0a28c01e549db67976675a3712cbc507457fc523e331effe2dd3e38b0b1f"
+    },
+    {
+      "path": "tiktok-creator-marketplace/SKILL.md",
+      "gitBlobSha": "b5b47ef5e4bfe012caa511df1d2b7a77d5ed6b55",
+      "byteSize": 11471,
+      "readStatus": "observed",
+      "contentSha256": "97621fcce8c3accc3d81a4af7de77b848082052db6140d83cd019886f1735181"
+    },
+    {
+      "path": "tiktok-influencer-marketing/SKILL.md",
+      "gitBlobSha": "c89ec441963be921a5ded0dea775aa4a0e672545",
+      "byteSize": 6004,
+      "readStatus": "observed",
+      "contentSha256": "f937803f846bedf7cc899cf454bb18c29544487198d43965dac29f02a90dc356"
+    },
+    {
+      "path": "tiktok-live-selling/SKILL.md",
+      "gitBlobSha": "0bbbc929ce709694efe539d00a3e07d59b46cdf5",
+      "byteSize": 1067,
+      "readStatus": "observed",
+      "contentSha256": "46de334b5131bf67ed9dd67296d10e0363cbfbef451f8aa9de1883e8b83444d7"
+    },
+    {
+      "path": "tiktok-shop-ads/SKILL.md",
+      "gitBlobSha": "33fa0e345c2a2b58453400026eb6fe7c780cbbe5",
+      "byteSize": 8207,
+      "readStatus": "observed",
+      "contentSha256": "21d74d5686dab22ad6ffcf7b5f09710ca7bf02e531bbf845f7a1dd7b96085b18"
+    },
+    {
+      "path": "tiktok-shop-affiliate-program/SKILL.md",
+      "gitBlobSha": "2193f925f3bf9a96f6a9037a4d32f12645f13428",
+      "byteSize": 9764,
+      "readStatus": "observed",
+      "contentSha256": "71c44604f653110ec33f7a3f770766a4914d506ef1af63bb9392d55518c3583a"
+    },
+    {
+      "path": "tiktok-shop-analytics/SKILL.md",
+      "gitBlobSha": "4739225a5dbd7ba5495cd924ba0496dd0f4b7363",
+      "byteSize": 6388,
+      "readStatus": "observed",
+      "contentSha256": "c42a73ef40f9a3b6906e2b2713638065ffaf1ffc14fab9d9174a04eefa8aaa2d"
+    },
+    {
+      "path": "tiktok-shop-branding/SKILL.md",
+      "gitBlobSha": "579c0fca991d46d337978725dab6008f2c539457",
+      "byteSize": 15170,
+      "readStatus": "observed",
+      "contentSha256": "ead772b7775c7a014b0c5159635007f1e2d3760ac369bc92f6590ed8cc4b97f5"
+    },
+    {
+      "path": "tiktok-shop-compliance/SKILL.md",
+      "gitBlobSha": "8570fedcbfb2f57127cc65c03df938a47ecd2e6e",
+      "byteSize": 1799,
+      "readStatus": "observed",
+      "contentSha256": "8707764d9baac289151a865953d15ff45108aa6812a24e912ed38767b8c06c8d"
+    },
+    {
+      "path": "tiktok-shop-content-strategy/SKILL.md",
+      "gitBlobSha": "0e4e27da3325dabcfbc9a655923d9ef833421e05",
+      "byteSize": 12460,
+      "readStatus": "observed",
+      "contentSha256": "adfbfbb858e2351308105844dd7d7bce5585bdc46951d1a33985d57340b988ca"
+    },
+    {
+      "path": "tiktok-shop-conversion/SKILL.md",
+      "gitBlobSha": "57fa9d7cc7dafa3a8b92ee9f98d2d0091387cdc5",
+      "byteSize": 1833,
+      "readStatus": "observed",
+      "contentSha256": "ddb7f8fd079ecc221d435ae6aba5c39e9d8ae15911531e9fb3e9068e76f175ff"
+    },
+    {
+      "path": "tiktok-shop-creator-management/SKILL.md",
+      "gitBlobSha": "3530afc2333d5888e76cbe8cf825ca6d2e222b88",
+      "byteSize": 1843,
+      "readStatus": "observed",
+      "contentSha256": "ef7d0925d68e9f0ed0b2bc2fc6955b699b88c499eaa6b3d029a3c2b44497cda7"
+    },
+    {
+      "path": "tiktok-shop-cross-border/SKILL.md",
+      "gitBlobSha": "4f3192c60015b6d4d40ec80627be6ba3f9453858",
+      "byteSize": 10101,
+      "readStatus": "observed",
+      "contentSha256": "ed4f5136d0bebbb9c461ec7e6635925774b5365a9216f4c1468ecd32527ac7df"
+    },
+    {
+      "path": "tiktok-shop-customer-service/SKILL.md",
+      "gitBlobSha": "9c4fb9ed4a4cca239eec328e4b88c2e00e148463",
+      "byteSize": 1837,
+      "readStatus": "observed",
+      "contentSha256": "43453045474d812e4dd2fe36b9ac995bf586362730fe5f7d5be82260f6fc43cc"
+    },
+    {
+      "path": "tiktok-shop-fulfillment/SKILL.md",
+      "gitBlobSha": "9f836322894eb600d9e2081014559b4a0d88192c",
+      "byteSize": 1793,
+      "readStatus": "observed",
+      "contentSha256": "d20bb031e1ac1b549eb50b1d4de92db248d58ba7c75ef8cc94c29882d49521b4"
+    },
+    {
+      "path": "tiktok-shop-inventory/SKILL.md",
+      "gitBlobSha": "5355916a19448333eff2ff5d9e011a38a73a481c",
+      "byteSize": 1787,
+      "readStatus": "observed",
+      "contentSha256": "51cc08897680d046ab8b8505efc9f12749e92cd2f19e139a99da251c67b5b292"
+    },
+    {
+      "path": "tiktok-shop-listing-optimization/SKILL.md",
+      "gitBlobSha": "c17cf47c913f1b1c7e073add8b8f4585401d660e",
+      "byteSize": 7949,
+      "readStatus": "observed",
+      "contentSha256": "02a43bc2cf151662c4ebdba1c03eb233bebb0d8cf8510b3d8b55ff016eb61b84"
+    },
+    {
+      "path": "tiktok-shop-pricing/SKILL.md",
+      "gitBlobSha": "1a21c4a4ed3d4b4ceae73e307f849820cf0236c0",
+      "byteSize": 1779,
+      "readStatus": "observed",
+      "contentSha256": "5fded04996eb21e3c2fba00930873116a20da9ce8a31f5f21d1218f34945fdab"
+    },
+    {
+      "path": "tiktok-shop-product-research/SKILL.md",
+      "gitBlobSha": "8c5a2a7557fae1c5eff8e427cf986e682b795eb0",
+      "byteSize": 1821,
+      "readStatus": "observed",
+      "contentSha256": "a47dfc717c18480fe28d5c4ec96a482c70352f65397802d71c698d5c36d3564c"
+    },
+    {
+      "path": "tiktok-shop-promotions/SKILL.md",
+      "gitBlobSha": "bf6e884e199bbc7c1d1a43a6958cbb8cc0f86c36",
+      "byteSize": 1779,
+      "readStatus": "observed",
+      "contentSha256": "9af9110954d201cb66da8e85611b693312a0d67008a4a7dc5e5823ed23cba00b"
+    },
+    {
+      "path": "tiktok-shop-returns/SKILL.md",
+      "gitBlobSha": "c495854795f600bf66ef512d804b412f9ec05a71",
+      "byteSize": 1771,
+      "readStatus": "observed",
+      "contentSha256": "5f4cf702673c88e4180f8db5c59ad43666b6a72e0220c2179593648625b7f4b3"
+    },
+    {
+      "path": "tiktok-shop-reviews/SKILL.md",
+      "gitBlobSha": "0f68e7e78620eac0f877e8daf8ae9ee0b38cf4e8",
+      "byteSize": 1771,
+      "readStatus": "observed",
+      "contentSha256": "cf7c3d6c7fd144548bc36afccfe24934acc50f12132810fc99d0f82193fcf178"
+    },
+    {
+      "path": "tiktok-shop-seller-guide/SKILL.md",
+      "gitBlobSha": "c2401edaedddf242b70bb35f00fb86f07896519d",
+      "byteSize": 7454,
+      "readStatus": "observed",
+      "contentSha256": "de2dd7fc86c6760ce344a3a529bf241605286f7b0a673be7e5d2e059dfd92213"
+    },
+    {
+      "path": "tiktok-shop-shipping/SKILL.md",
+      "gitBlobSha": "e8dc206a400b80531f67dd14b3a2fac9b8e44eaa",
+      "byteSize": 1765,
+      "readStatus": "observed",
+      "contentSha256": "76cd9c044341721ec743bd0a237f4a0e54917caf45944043dc1b5912600e5b67"
+    },
+    {
+      "path": "tiktok-shop-trending-products/SKILL.md",
+      "gitBlobSha": "cc16f2fc461f874894b11c8c095c18dbf482c4c7",
+      "byteSize": 1845,
+      "readStatus": "observed",
+      "contentSha256": "c0e9e5a12d7297467ae5672b95f8d1e433280f885e31390505c9655bb521b8d8"
+    },
+    {
+      "path": "visual-regression-testing/SKILL.md",
+      "gitBlobSha": "072a60496c6bd9272a151e8cd46cdd2ff86364f8",
+      "byteSize": 1749,
+      "readStatus": "observed",
+      "contentSha256": "b27cba8e02fdff44ffae19752c4812f691be6c559f5ba31764d0437cd991b6dd"
+    },
+    {
+      "path": "walmart-advertising-strategy/SKILL.md",
+      "gitBlobSha": "5b3d64cc7a5df7325c9931bdccbbc9f536f03901",
+      "byteSize": 1117,
+      "readStatus": "observed",
+      "contentSha256": "5908ca60431f2068911e746af025064b77a4c67bf6010e1d099f4427e90bf8fd"
+    },
+    {
+      "path": "walmart-listing-optimization/SKILL.md",
+      "gitBlobSha": "34a5db604ada697f717b3434bb2afd7af1010e2b",
+      "byteSize": 2389,
+      "readStatus": "observed",
+      "contentSha256": "91332a9ebe822bb2c5757a4243cd5908390c19ae9e2dd76cd70c70b625f5e025"
+    },
+    {
+      "path": "walmart-price-tracker/SKILL.md",
+      "gitBlobSha": "6c8192029198991b4a3399faeb7ce37251b8df0a",
+      "byteSize": 1719,
+      "readStatus": "observed",
+      "contentSha256": "bfa1e760fbececf0ef06aaa9e4b4c2b2aecd1bc73cf4dce0c5811db8e4e4fbc9"
+    },
+    {
+      "path": "walmart-seller-guide/SKILL.md",
+      "gitBlobSha": "293c74d64ab3fa85c19bdf3ca08763add9880b5d",
+      "byteSize": 1119,
+      "readStatus": "observed",
+      "contentSha256": "8f99811f65f6a16eddd2214b2a5640439df42d95dcf60fbfb256a5aa700dbbdd"
+    },
+    {
+      "path": "walmart-seller-tools/SKILL.md",
+      "gitBlobSha": "8b4e12cc9e3834e9dc3bfafd9d625648d69d3cde",
+      "byteSize": 1066,
+      "readStatus": "observed",
+      "contentSha256": "fccb94d060559cb3f4fa3676d38cb1182f9da554ab4506d6c1b24a251e3329b6"
+    },
+    {
+      "path": "warehouse-optimization/SKILL.md",
+      "gitBlobSha": "cfb80c6d36e25fc562de318200614f2f9574ab8a",
+      "byteSize": 13524,
+      "readStatus": "observed",
+      "contentSha256": "18aa38e15cce301cead9eed5f8f8dcbfba50517f2026bab0d0481371a712b9ce"
+    },
+    {
+      "path": "warehouse-optimization/evals/evals.json",
+      "gitBlobSha": "47bf3c6cc9e4208bd6ce728a3e5fb4a46cc0fe2a",
+      "byteSize": 2044,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "woocommerce-seo/SKILL.md",
+      "gitBlobSha": "31a507f7b13d89912f367d43bfa5b079c97eeb86",
+      "byteSize": 1123,
+      "readStatus": "observed",
+      "contentSha256": "c710166666da45bdeb4af335195e92e35d8e6de428d03ccd552ccd363f10b676"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "contentSha256": "ea4c0fa8d65010101a252d82ac6ac399a5000dcaaa5d6bc116383b6f5488bfbf"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "dependencies": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "executableSurface": {
+      "status": "unknown",
+      "evidence": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: marketing-and-growth
+categories:
+  - id: icp
+    name:
+      ko: 이상적 고객 프로필
+      en: Ideal customer profile
+    description:
+      ko: 높은 적합성과 가치를 보이는 고객 조직의 조건과 신호를 정의한다.
+      en: Defines the attributes and signals of customer organizations with strong fit and value.
+    status: draft
+  - id: personas
+    name:
+      ko: 페르소나
+      en: Personas
+    description:
+      ko: 실제 근거를 바탕으로 주요 구매자와 사용자의 목표, 행동, 제약을 모델링한다.
+      en: Models the goals, behavior, and constraints of key buyers and users from evidence.
+    status: draft
+  - id: positioning
+    name:
+      ko: 포지셔닝
+      en: Positioning
+    description:
+      ko: 특정 고객과 대안 대비 제품의 고유한 가치를 명확히 정의한다.
+      en: Defines a product's distinctive value for a specific customer relative to alternatives.
+    status: draft
+  - id: messaging
+    name:
+      ko: 메시징
+      en: Messaging
+    description:
+      ko: 포지셔닝을 채널과 고객 단계에 맞는 일관된 핵심 메시지로 전환한다.
+      en: Translates positioning into consistent core messages for channels and customer stages.
+    status: draft
+  - id: offers
+    name:
+      ko: 오퍼
+      en: Offers
+    description:
+      ko: 고객 가치, 구성, 조건, 행동 요청을 결합한 설득력 있는 제안을 설계한다.
+      en: Designs compelling offers that combine customer value, components, terms, and calls to action.
+    status: draft
+  - id: offer-pricing
+    name:
+      ko: 오퍼 가격
+      en: Offer pricing
+    description:
+      ko: 가치, 비용, 시장 근거를 바탕으로 오퍼의 가격과 패키지 구조를 설계한다.
+      en: Designs offer pricing and packaging from value, cost, and market evidence.
+    status: draft
+  - id: content-strategy
+    name:
+      ko: 콘텐츠 전략
+      en: Content strategy
+    description:
+      ko: 고객 여정과 사업 목표에 맞춰 주제, 형식, 채널, 발행 우선순위를 정한다.
+      en: Prioritizes topics, formats, channels, and publication around the customer journey and business goals.
+    status: draft
+  - id: seo
+    name:
+      ko: 검색 엔진 최적화
+      en: Search engine optimization
+    description:
+      ko: 검색 의도와 기술적 품질에 맞춰 콘텐츠의 발견 가능성을 높인다.
+      en: Improves content discoverability around search intent and technical quality.
+    status: draft
+  - id: email
+    name:
+      ko: 이메일 마케팅
+      en: Email marketing
+    description:
+      ko: 동의와 전달 가능성을 지키며 목표에 맞는 이메일 캠페인을 설계한다.
+      en: Designs goal-oriented email campaigns while respecting consent and deliverability.
+    status: draft
+  - id: lifecycle
+    name:
+      ko: 라이프사이클 마케팅
+      en: Lifecycle marketing
+    description:
+      ko: 고객 단계와 행동 신호에 따라 적절한 메시지와 개입을 연결한다.
+      en: Connects messages and interventions to customer stages and behavioral signals.
+    status: draft
+  - id: funnels
+    name:
+      ko: 퍼널
+      en: Funnels
+    description:
+      ko: 인지부터 전환까지 고객 흐름과 단계별 이탈 지점을 구조화한다.
+      en: Structures the customer path and stage-level drop-offs from awareness through conversion.
+    status: draft
+  - id: cro
+    name:
+      ko: 전환율 최적화
+      en: Conversion rate optimization
+    description:
+      ko: 근거와 실험을 통해 전환 장벽을 줄이고 경험을 개선한다.
+      en: Uses evidence and experiments to reduce conversion friction and improve the experience.
+    status: draft
+  - id: paid-acquisition
+    name:
+      ko: 유료 획득
+      en: Paid acquisition
+    description:
+      ko: 목표 고객, 예산, 채널, 크리에이티브를 연결한 유료 획득 계획을 운영한다.
+      en: Operates paid acquisition plans connecting target customers, budgets, channels, and creative.
+    status: draft
+  - id: customer-retention
+    name:
+      ko: 고객 유지
+      en: Customer retention
+    description:
+      ko: 이탈 신호와 고객 가치를 분석해 지속 사용과 재구매를 개선한다.
+      en: Analyzes churn signals and customer value to improve continued use and repeat purchase.
+    status: draft
+  - id: measurement
+    name:
+      ko: 마케팅 측정
+      en: Marketing measurement
+    description:
+      ko: 채널과 캠페인의 성과, 기여, 불확실성을 일관된 지표로 평가한다.
+      en: Evaluates channel and campaign performance, contribution, and uncertainty with consistent metrics.
+    status: draft

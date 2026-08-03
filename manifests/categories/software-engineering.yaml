@@ -1,0 +1,139 @@
+schemaVersion: 2
+domainId: software-engineering
+categories:
+  - id: repository-context
+    name:
+      ko: 저장소 맥락
+      en: Repository context
+    description:
+      ko: 저장소 구조, 지침, 변경 이력, 현재 동작과 제약을 실제 파일에서 파악한다.
+      en: Establishes repository structure, instructions, history, current behavior, and constraints from actual files.
+    status: draft
+  - id: requirements
+    name:
+      ko: 요구사항
+      en: Requirements
+    description:
+      ko: 요청된 결과, 사용자 요구, 제약, 비기능 조건과 성공 기준을 명확히 한다.
+      en: Clarifies requested outcomes, user needs, constraints, nonfunctional conditions, and success criteria.
+    status: draft
+  - id: specifications
+    name:
+      ko: 명세
+      en: Specifications
+    description:
+      ko: 요구사항을 인터페이스, 상태, 오류, 경계와 검증 방법이 있는 구현 계약으로 전환한다.
+      en: Converts requirements into implementation contracts covering interfaces, state, errors, boundaries, and verification.
+    status: draft
+  - id: architecture
+    name:
+      ko: 소프트웨어 아키텍처
+      en: Software architecture
+    description:
+      ko: 책임, 경계, 데이터 흐름, 의존성과 운영 제약을 반영한 구조를 설계한다.
+      en: Designs structure around responsibilities, boundaries, data flow, dependencies, and operational constraints.
+    status: draft
+  - id: frontend
+    name:
+      ko: 프론트엔드
+      en: Frontend
+    description:
+      ko: 사용자 흐름과 상태를 반응형 인터페이스 및 명확한 상호작용으로 구현한다.
+      en: Implements user flows and state as responsive interfaces with clear interactions.
+    status: draft
+  - id: backend
+    name:
+      ko: 백엔드
+      en: Backend
+    description:
+      ko: 비즈니스 규칙, 데이터 처리, 권한, 오류와 운영 요구를 서비스로 구현한다.
+      en: Implements business rules, data processing, authorization, errors, and operational needs as services.
+    status: draft
+  - id: mobile
+    name:
+      ko: 모바일
+      en: Mobile
+    description:
+      ko: 기기 제약, 플랫폼 관습, 오프라인 상태와 권한을 고려한 모바일 경험을 구현한다.
+      en: Implements mobile experiences around device constraints, platform conventions, offline state, and permissions.
+    status: draft
+  - id: apis
+    name:
+      ko: API
+      en: APIs
+    description:
+      ko: 명확한 계약, 검증, 인증, 오류, 버전 관리가 있는 서비스 인터페이스를 설계한다.
+      en: Designs service interfaces with clear contracts, validation, authentication, errors, and versioning.
+    status: draft
+  - id: databases
+    name:
+      ko: 데이터베이스
+      en: Databases
+    description:
+      ko: 데이터 무결성, 접근 패턴, 마이그레이션, 성능과 복구 요구에 맞는 저장 구조를 설계한다.
+      en: Designs storage for integrity, access patterns, migrations, performance, and recovery needs.
+    status: draft
+  - id: testing
+    name:
+      ko: 소프트웨어 테스트
+      en: Software testing
+    description:
+      ko: 정상, 경계, 실패 경로에서 요구 동작을 재현 가능하게 검증한다.
+      en: Verifies required behavior reproducibly across normal, boundary, and failure paths.
+    status: draft
+  - id: debugging
+    name:
+      ko: 디버깅
+      en: Debugging
+    description:
+      ko: 증상을 재현하고 증거를 좁혀 근본 원인과 수정 효과를 확인한다.
+      en: Reproduces symptoms, narrows evidence, and confirms root cause and fix effect.
+    status: draft
+  - id: review
+    name:
+      ko: 코드 리뷰
+      en: Code review
+    description:
+      ko: 변경의 정확성, 회귀 위험, 보안, 유지보수성과 검증 부족을 근거로 평가한다.
+      en: Evaluates changes for correctness, regression risk, security, maintainability, and missing verification.
+    status: draft
+  - id: refactoring
+    name:
+      ko: 리팩터링
+      en: Refactoring
+    description:
+      ko: 외부 동작을 보존하면서 구조, 중복, 경계와 이해 가능성을 개선한다.
+      en: Improves structure, duplication, boundaries, and comprehensibility while preserving external behavior.
+    status: draft
+  - id: software-performance
+    name:
+      ko: 소프트웨어 성능
+      en: Software performance
+    description:
+      ko: 측정된 병목을 기준으로 지연, 처리량, 자원 사용을 개선하고 회귀를 방지한다.
+      en: Improves latency, throughput, and resource use from measured bottlenecks and guards against regressions.
+    status: draft
+  - id: software-accessibility
+    name:
+      ko: 소프트웨어 접근성
+      en: Software accessibility
+    description:
+      ko: 키보드, 보조 기술, 대비, 의미 구조와 다양한 사용자 요구를 인터페이스에 반영한다.
+      en: Builds keyboard, assistive technology, contrast, semantic structure, and diverse user needs into interfaces.
+    status: draft
+  - id: documentation
+    name:
+      ko: 소프트웨어 문서화
+      en: Software documentation
+    description:
+      ko: 설치, 사용, 계약, 결정, 운영과 문제 해결 정보를 현재 코드와 일치하게 유지한다.
+      en: Keeps setup, usage, contracts, decisions, operations, and troubleshooting aligned with current code.
+    status: draft
+  - id: release-readiness
+    name:
+      ko: 릴리스 준비도
+      en: Release readiness
+    description:
+      ko: 테스트, 마이그레이션, 보안, 관찰 가능성, 문서, 롤백과 승인 증거를 확인한다.
+      en: Confirms tests, migrations, security, observability, documentation, rollback, and approval evidence.
+    status: draft

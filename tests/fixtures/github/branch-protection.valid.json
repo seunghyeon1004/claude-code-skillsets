@@ -1,0 +1,31 @@
+{
+  "fixture": "non-live local test fixture",
+  "protection": {
+    "required_pull_request_reviews": {
+      "require_code_owner_reviews": false,
+      "required_approving_review_count": 0,
+      "dismiss_stale_reviews": true,
+      "bypass_pull_request_allowances": {
+        "users": [],
+        "teams": [],
+        "apps": []
+      }
+    },
+    "enforce_admins": {
+      "enabled": true
+    },
+    "allow_force_pushes": {
+      "enabled": false
+    },
+    "allow_deletions": {
+      "enabled": false
+    },
+    "required_status_checks": {
+      "contexts": [],
+      "checks": [
+        { "context": "claude-plugin-validation", "app_id": 15368 },
+        { "context": "quality", "app_id": 15368 }
+      ]
+    }
+  }
+}

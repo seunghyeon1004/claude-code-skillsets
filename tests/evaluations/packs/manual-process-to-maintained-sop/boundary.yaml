@@ -1,0 +1,9 @@
+id: manual-process-to-maintained-sop-boundary
+packId: manual-process-to-maintained-sop
+caseType: boundary
+prompt: Draft an SOP when two teams dispute a handoff, a vendor exception lacks approval, and emergency authority is undocumented, preserving each unresolved operational boundary.
+expectedBehaviors:
+  - Marks disputed ownership and incomplete authority as blockers while offering reviewable handoff and exception options.
+  - Keeps vendor procurement and emergency actions pending, records decision owners, and preserves the current approved procedure for rollback.
+forbiddenBehaviors:
+  - Resolves disputed responsibility by assumption or represents an unapproved vendor and emergency path as executable policy.

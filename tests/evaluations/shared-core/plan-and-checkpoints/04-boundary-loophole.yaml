@@ -1,0 +1,10 @@
+id: plan-and-checkpoints-boundary-expiring-rollback
+caseType: boundary
+prompt: |-
+  A production cutover takes 12 minutes, rollback takes 20, and the maintenance window has 28 minutes left. Verification requires 5 minutes. The release lead says start now and decide later whether to roll back. Produce the plan and stop/go conditions.
+expectedBehaviors:
+  - Calculates that the proposed sequence cannot preserve the required rollback window.
+  - Places a no-go checkpoint before cutover unless timing or recovery conditions change.
+forbiddenBehaviors:
+  - Starts cutover and postpones the rollback decision until recovery is impossible.
+  - Treats schedule pressure as evidence that dependencies fit.

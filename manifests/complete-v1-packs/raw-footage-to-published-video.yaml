@@ -1,0 +1,58 @@
+schemaVersion: 2
+id: raw-footage-to-published-video
+domainId: video-and-audio
+categoryIds:
+  - rough-cuts
+  - fine-editing
+  - motion-graphics
+  - thumbnails
+  - captions
+  - voice-cleanup
+  - mixing
+  - music
+  - sound-effects
+  - repurposing
+  - quality-control
+  - export
+outcome:
+  ko: 원본 영상을 이야기와 사실을 보존하는 편집, 접근 가능한 자막, 명료한 오디오, 권리 확인된 음악과 최종 품질 검수를 거친 승인 가능한 게시 영상으로 전환한다.
+  en: Turns raw footage into an approval-ready published video through meaning-preserving editing, accessible captions, intelligible audio, rights-cleared music, and final quality control.
+inputs:
+  - Raw footage, edit brief, verified factual references, brand assets, consent records, and target platform specifications
+  - Caption and transcript requirements, audio references, music and effects licenses, thumbnail needs, and publishing approver
+outputs:
+  - A refined master video with motion graphics, thumbnail, accessible captions, mixed audio, and documented rights provenance
+  - Platform-ready export files, transcript, caption files, format validation, quality-control report, and explicit publishing approval record
+completionCriteria:
+  - Accurate synchronized captions identify speakers and meaningful sounds, while readable safe-area text remains legible across target viewports
+  - Audio intelligibility, transcript accuracy, music rights, factual continuity, export format, and platform playback pass documented quality control
+  - Publishing remains unapproved until the accountable reviewer accepts the master, thumbnail, captions, transcript, rights evidence, and final format
+routingProfileId: video-and-audio
+requiredCapabilityIds:
+  - assemble-and-refine-video-edits
+  - produce-accessible-captions
+  - clean-and-mix-audio
+  - source-and-integrate-music-and-effects
+recommendedCapabilityIds:
+  - create-motion-graphics-and-thumbnails
+  - repurpose-and-deliver-quality-controlled-media
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: raw-footage-to-published-video-normal
+    type: normal
+    path: tests/evaluations/packs/raw-footage-to-published-video/normal.yaml
+  - id: raw-footage-to-published-video-boundary
+    type: boundary
+    path: tests/evaluations/packs/raw-footage-to-published-video/boundary.yaml
+  - id: raw-footage-to-published-video-refusal
+    type: refusal
+    path: tests/evaluations/packs/raw-footage-to-published-video/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/source-diff.schema.json",
+  "title": "SourceDiff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "sourceId", "currentEvidenceId", "previousEvidenceId", "status", "skillPaths", "manifest", "source", "fields"],
+  "properties": {
+    "schemaVersion": { "const": 3 },
+    "sourceId": { "$ref": "#/$defs/id" },
+    "currentEvidenceId": { "$ref": "#/$defs/id" },
+    "previousEvidenceId": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+    "status": { "$ref": "#/$defs/status" },
+    "skillPaths": { "$ref": "#/$defs/status" },
+    "manifest": { "$ref": "#/$defs/status" },
+    "source": { "$ref": "#/$defs/status" },
+    "fields": { "$ref": "#/$defs/fields" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "status": { "enum": ["baseline", "unchanged", "changed", "unknown"] },
+    "fields": { "type": "object", "additionalProperties": false, "required": ["license", "permissions", "ownership", "dependencies", "executableSurface"], "properties": { "license": { "$ref": "#/$defs/status" }, "permissions": { "$ref": "#/$defs/status" }, "ownership": { "$ref": "#/$defs/status" }, "dependencies": { "$ref": "#/$defs/status" }, "executableSurface": { "$ref": "#/$defs/status" } } }
+  }
+}

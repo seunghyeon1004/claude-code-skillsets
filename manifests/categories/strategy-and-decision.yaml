@@ -1,0 +1,83 @@
+schemaVersion: 2
+domainId: strategy-and-decision
+categories:
+  - id: problem-framing
+    name:
+      ko: 문제 정의
+      en: Problem framing
+    description:
+      ko: 증상, 원인, 제약, 이해관계자를 구분해 해결할 문제를 명확히 한다.
+      en: Clarifies the problem by separating symptoms, causes, constraints, and stakeholders.
+    status: draft
+  - id: goals-and-metrics
+    name:
+      ko: 목표 및 지표
+      en: Goals and metrics
+    description:
+      ko: 전략 목표를 측정 가능한 결과와 선행 및 후행 지표로 연결한다.
+      en: Connects strategic goals to measurable outcomes and leading and lagging indicators.
+    status: draft
+  - id: opportunity-assessment
+    name:
+      ko: 기회 평가
+      en: Opportunity assessment
+    description:
+      ko: 기회의 가치, 실행 가능성, 시급성, 대안 비용을 비교한다.
+      en: Compares opportunity value, feasibility, urgency, and opportunity cost.
+    status: draft
+  - id: business-models
+    name:
+      ko: 비즈니스 모델
+      en: Business models
+    description:
+      ko: 고객 가치, 수익 구조, 핵심 활동과 비용의 작동 방식을 설계한다.
+      en: Designs how customer value, revenue, key activities, and costs work together.
+    status: draft
+  - id: scenario-planning
+    name:
+      ko: 시나리오 계획
+      en: Scenario planning
+    description:
+      ko: 핵심 불확실성에 따른 복수의 미래와 대응 선택지를 모델링한다.
+      en: Models multiple futures and response options around critical uncertainties.
+    status: draft
+  - id: strategy-prioritization
+    name:
+      ko: 전략 우선순위화
+      en: Strategy prioritization
+    description:
+      ko: 기대 효과, 비용, 위험, 의존성을 기준으로 전략 선택지의 순서를 정한다.
+      en: Orders strategic options by expected impact, cost, risk, and dependencies.
+    status: draft
+  - id: decision-records
+    name:
+      ko: 의사결정 기록
+      en: Decision records
+    description:
+      ko: 선택한 안, 근거, 기각한 대안, 재검토 조건을 추적 가능하게 기록한다.
+      en: Records the choice, rationale, rejected alternatives, and review triggers for traceability.
+    status: draft
+  - id: execution-strategy
+    name:
+      ko: 실행 전략
+      en: Execution strategy
+    description:
+      ko: 전략을 단계, 책임, 자원, 검증 지점이 있는 실행 경로로 전환한다.
+      en: Converts strategy into an execution path with phases, ownership, resources, and validation points.
+    status: draft
+  - id: risk-analysis
+    name:
+      ko: 위험 분석
+      en: Risk analysis
+    description:
+      ko: 위험의 가능성, 영향, 신호, 완화책을 구조적으로 평가한다.
+      en: Assesses risk likelihood, impact, signals, and mitigations systematically.
+    status: draft
+  - id: strategy-review
+    name:
+      ko: 전략 검토
+      en: Strategy review
+    description:
+      ko: 실제 성과와 새로운 근거를 기준으로 전략 가정과 방향을 재검토한다.
+      en: Reassesses strategic assumptions and direction against results and new evidence.
+    status: draft

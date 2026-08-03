@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "k-dense-scientific-agent-skills",
+  "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+  "queryUrls": [
+    "https://github.com/K-Dense-AI/scientific-agent-skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

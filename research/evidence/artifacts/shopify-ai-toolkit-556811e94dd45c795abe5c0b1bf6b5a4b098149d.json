@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-source-capability-evidence",
+  "candidate": {
+    "id": "shopify-ai-toolkit",
+    "sourceId": "anthropic-plugins-official",
+    "officialBaseline": {
+      "reference": "research/marketplaces/claude-plugins-official-e3e378c.json#/plugins/226",
+      "marketplaceManifestSha256": "64b111d8c1716c062a285ed63eade42f56e2e79ac95859a994d586f573a20e5e",
+      "pluginName": "shopify-ai-toolkit",
+      "sourceUrl": "https://github.com/Shopify/Shopify-AI-Toolkit.git",
+      "sourceCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d",
+      "sourceBlobs": [
+        {
+          "path": "README.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/README.md",
+          "contentSha256": "af1b941c36d5c18a0a2d72046776c177d6c7694c7fc28ef1d1c224532ebac8f9"
+        },
+        {
+          "path": "skills/shopify-admin/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-admin/SKILL.md",
+          "contentSha256": "552ee5fc54aa76ffe1c074b545276ecef7fc38a10f602fc8ed9eba39dd50c532"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+        },
+        {
+          "path": "LICENSE",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/LICENSE",
+          "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+        }
+      ]
+    }
+  },
+  "sourceBlobs": [
+    {
+      "path": "README.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/README.md",
+      "contentSha256": "af1b941c36d5c18a0a2d72046776c177d6c7694c7fc28ef1d1c224532ebac8f9"
+    },
+    {
+      "path": "skills/shopify-admin/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-admin/SKILL.md",
+      "contentSha256": "552ee5fc54aa76ffe1c074b545276ecef7fc38a10f602fc8ed9eba39dd50c532"
+    },
+    {
+      "path": "skills/shopify-use-shopify-cli/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-use-shopify-cli/SKILL.md",
+      "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+    },
+    {
+      "path": "LICENSE",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/LICENSE",
+      "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "shopify-ai-toolkit-store-operations",
+      "capabilityId": "operate-stores-and-marketplaces",
+      "support": "direct",
+      "sourceBlobs": [
+        {
+          "path": "README.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/README.md",
+          "contentSha256": "af1b941c36d5c18a0a2d72046776c177d6c7694c7fc28ef1d1c224532ebac8f9"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+        }
+      ],
+      "claim": "The pinned toolkit describes store management through CLI store execution, and its CLI skill covers store-scoped reads and writes."
+    },
+    {
+      "id": "shopify-ai-toolkit-catalog-listings",
+      "capabilityId": "manage-product-catalogs-and-listings",
+      "support": "direct",
+      "sourceBlobs": [
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+        }
+      ],
+      "claim": "The pinned CLI skill explicitly covers product reads and product changes, including lookup-oriented store operations."
+    },
+    {
+      "id": "shopify-ai-toolkit-promotion-revenue",
+      "capabilityId": "run-promotions-and-analyze-revenue",
+      "support": "inferred",
+      "sourceBlobs": [
+        {
+          "path": "skills/shopify-admin/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-admin/SKILL.md",
+          "contentSha256": "552ee5fc54aa76ffe1c074b545276ecef7fc38a10f602fc8ed9eba39dd50c532"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+        }
+      ],
+      "claim": "Inference only: the pinned Admin GraphQL authoring and validated store query or mutation execution surfaces can express promotion and revenue operations; this is not a smoke result."
+    }
+  ],
+  "disclosures": [
+    "not-an-install-smoke",
+    "not-an-individual-safety-review",
+    "privacy-telemetry-review:not-complete",
+    "telemetry-default-on",
+    "telemetry-endpoint:https://shopify.dev/mcp/usage",
+    "telemetry-data:tool-skill-model-client-search-validation-code-context-artifact-revision-user-prompt-session-hook-events",
+    "license:MIT"
+  ]
+}

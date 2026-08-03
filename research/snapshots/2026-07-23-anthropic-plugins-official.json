@@ -1,0 +1,1762 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-anthropic-plugins-official",
+  "sourceUrl": "https://github.com/anthropics/claude-plugins-official",
+  "queryUrls": [
+    "https://github.com/anthropics/claude-plugins-official"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/main",
+  "inspectedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/1",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/10",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/100",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/101",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/102",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/103",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/104",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/105",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/106",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/107",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/108",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/109",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/11",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/110",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/111",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/112",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/113",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/114",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/115",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/116",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/117",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/118",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/119",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/12",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/120",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/121",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/122",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/123",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/124",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/125",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/126",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/127",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/128",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/129",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/13",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/130",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/131",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/132",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/133",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/134",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/135",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/136",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/137",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/138",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/139",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/14",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/140",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/141",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/142",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/143",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/144",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/145",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/146",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/147",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/148",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/149",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/15",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/150",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/151",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/152",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/153",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/154",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/155",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/156",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/157",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/158",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/159",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/16",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/160",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/161",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/162",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/163",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/164",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/165",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/166",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/167",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/168",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/169",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/17",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/170",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/171",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/172",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/173",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/174",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/175",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/176",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/177",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/178",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/179",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/18",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/180",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/181",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/182",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/183",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/184",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/185",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/186",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/187",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/188",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/189",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/19",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/190",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/191",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/192",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/193",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/194",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/195",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/196",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/197",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/198",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/199",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/2",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/20",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/200",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/201",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/202",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/203",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/204",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/205",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/206",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/207",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/208",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/209",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/21",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/210",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/211",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/212",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/213",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/214",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/215",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/216",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/217",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/218",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/219",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/22",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/220",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/221",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/222",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/223",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/224",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/225",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/226",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/227",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/228",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/229",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/23",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/230",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/231",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/232",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/233",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/234",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/235",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/236",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/237",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/238",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/239",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/24",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/240",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/241",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/242",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/243",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/244",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/245",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/246",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/247",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/248",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/249",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/25",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/250",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/251",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/252",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/253",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/254",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/255",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/256",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/257",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/258",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/259",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/26",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/260",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/261",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/262",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/263",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/264",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/265",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/266",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/267",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/268",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/269",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/27",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/270",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/271",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/28",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/29",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/3",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/30",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/31",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/32",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/33",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/34",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/35",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/36",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/37",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/38",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/39",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/4",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/40",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/41",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/42",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/43",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/44",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/45",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/46",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/47",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/48",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/49",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/5",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/50",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/51",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/52",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/53",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/54",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/55",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/56",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/57",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/58",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/59",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/6",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/60",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/61",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/62",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/63",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/64",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/65",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/66",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/67",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/68",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/69",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/7",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/70",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/71",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/72",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/73",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/74",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/75",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/76",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/77",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/78",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/79",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/8",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/80",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/81",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/82",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/83",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/84",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/85",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/86",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/87",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/88",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/89",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/9",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/90",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/91",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/92",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/93",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/94",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/95",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/96",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/97",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/98",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/99",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/asana/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/context7/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/discord/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/fakechat/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/firebase/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/github/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/gitlab/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/greptile/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/imessage/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/laravel-boost/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/linear/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/playwright/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/serena/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/telegram/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "external_plugins/terraform/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/agent-sdk-dev/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/claude-code-setup/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/claude-md-management/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/claude-security/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/code-modernization/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/code-review/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/code-simplifier/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/commit-commands/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/cwc-makers/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/example-plugin/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/explanatory-output-style/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/feature-dev/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/frontend-design/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/hookify/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/learning-output-style/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/math-olympiad/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/mcp-server-dev/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/mcp-tunnels/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/playground/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/plugin-dev/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/pr-review-toolkit/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/project-artifact/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/ralph-loop/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/security-guidance/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/skill-creator/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/anthropics/claude-plugins-official"
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/discord/skills/access/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/discord/skills/configure/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/imessage/skills/access/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/imessage/skills/configure/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/telegram/skills/access/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "external_plugins/telegram/skills/configure/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/claude-code-setup/skills/claude-automation-recommender/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/claude-md-management/skills/claude-md-improver/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/claude-security/skills/claude-security/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/cwc-makers/skills/cardputer-buddy/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/cwc-makers/skills/m5-onboard/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/example-plugin/skills/example-command/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/example-plugin/skills/example-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/hookify/skills/writing-rules/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/math-olympiad/skills/math-olympiad/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/mcp-server-dev/skills/build-mcp-app/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/mcp-server-dev/skills/build-mcp-server/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/mcp-server-dev/skills/build-mcpb/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/playground/skills/playground/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/agent-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/command-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/hook-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/mcp-integration/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/plugin-settings/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/plugin-structure/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/plugin-dev/skills/skill-development/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/project-artifact/skills/project-artifact/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/receipts/skills/receipts/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/session-report/skills/session-report/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/skill-creator/skills/skill-creator/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 272
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 40
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 31
+    }
+  ],
+  "contentSha256": "355696da746e58e1e197be509236d8f8e6a7c5f8f7437c1a71ff32896c866c05"
+}

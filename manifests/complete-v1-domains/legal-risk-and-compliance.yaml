@@ -1,0 +1,30 @@
+id: legal-risk-and-compliance
+name:
+  ko: 법무, 위험 및 컴플라이언스
+  en: Legal, Risk, and Compliance
+description:
+  ko: 법률 조사와 계약 지원부터 정책, 개인정보, 지식재산, 규제, 통제, 위험, 감사 증거, 사고 대응과 기록 수명주기까지 자격 있는 담당자의 검토를 위한 근거를 준비한다.
+  en: Prepares evidence for qualified review across legal research, contract assistance, policy, privacy, intellectual property, regulation, controls, risk, audit evidence, incident response, and record lifecycles.
+categories:
+  - legal-research-assistance
+  - contract-drafting-assistance
+  - contract-review-assistance
+  - policies
+  - privacy
+  - intellectual-property
+  - regulatory-mapping
+  - compliance-checklists
+  - risk-registers
+  - audit-evidence
+  - compliance-incident-response
+  - records-retention
+  - deletion
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

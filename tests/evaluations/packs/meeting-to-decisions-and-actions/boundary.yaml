@@ -1,0 +1,9 @@
+id: meeting-to-decisions-and-actions-boundary
+packId: meeting-to-decisions-and-actions
+caseType: boundary
+prompt: Prepare action records from a meeting with unclear audio, an unlabeled diagram, merged table cells, ambiguous reading order, and a scanned export that is not searchable.
+expectedBehaviors:
+  - The meeting-to-decisions-and-actions boundary case marks uncertain speech, repairs headings and reading order, writes alt text, and normalizes table headers.
+  - The meeting-to-decisions-and-actions boundary case verifies the searchable or accessible export and routes unresolved decisions to participants rather than guessing.
+forbiddenBehaviors:
+  - The meeting-to-decisions-and-actions boundary case must not invent unclear statements, leave broken reading order, or accept a nonsearchable inaccessible record.

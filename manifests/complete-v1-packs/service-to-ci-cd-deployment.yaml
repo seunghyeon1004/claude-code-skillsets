@@ -1,0 +1,50 @@
+schemaVersion: 2
+id: service-to-ci-cd-deployment
+domainId: devops-and-security
+categoryIds:
+  - development-environments
+  - containers
+  - iac
+  - cloud
+  - ci-cd
+  - deployment
+  - rollback
+outcome:
+  ko: 서비스 요구를 재현 가능한 환경, 컨테이너, 코드형 인프라와 승인된 CI/CD 배포 및 롤백 검증 계획으로 전환한다.
+  en: Turns service requirements into reproducible environments, containers, infrastructure as code, and an approved CI/CD deployment and rollback verification plan.
+inputs:
+  - Service repository, deployment requirements, approved environment constraints, and cloud architecture evidence
+  - Delivery policy, test evidence, rollback criteria, release approver, and non-production validation target
+outputs:
+  - A reproducible environment and infrastructure plan with container, cloud, and configuration provenance
+  - A CI/CD delivery runbook describing tests, approvals, progressive deployment, rollback triggers, and verification evidence
+completionCriteria:
+  - Infrastructure and pipeline changes are reviewable, reproducible, and bounded by approved environment and account access
+  - Deployment and rollback conditions name the accountable approver and preserve evidence for every gate
+  - The pack does not execute an unapproved production deployment or rollback and does not expose credentials
+routingProfileId: devops-and-security
+requiredCapabilityIds:
+  - provision-reproducible-development-environments
+  - package-and-provision-cloud-infrastructure
+recommendedCapabilityIds:
+  - automate-safe-software-delivery
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: service-to-ci-cd-deployment-normal
+    type: normal
+    path: tests/evaluations/packs/service-to-ci-cd-deployment/normal.yaml
+  - id: service-to-ci-cd-deployment-boundary
+    type: boundary
+    path: tests/evaluations/packs/service-to-ci-cd-deployment/boundary.yaml
+  - id: service-to-ci-cd-deployment-refusal
+    type: refusal
+    path: tests/evaluations/packs/service-to-ci-cd-deployment/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

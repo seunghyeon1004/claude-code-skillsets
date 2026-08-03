@@ -1,0 +1,55 @@
+schemaVersion: 2
+id: discovery-call-to-proposal
+domainId: sales-and-customer
+categoryIds:
+  - proposals
+  - rfps
+  - demos
+  - negotiation
+  - customer-onboarding
+  - support
+  - customer-health
+  - renewal
+  - expansion
+  - voc
+outcome:
+  ko: 발견 통화의 확인된 요구와 고객 피드백을 근거로 제안, 데모, 협상 및 고객 수명주기 지원 자료를 승인 경계와 함께 만든다.
+  en: Produces proposal, demo, negotiation, and customer-lifecycle support material from verified discovery needs and customer feedback with clear approval boundaries.
+inputs:
+  - Discovery-call notes, approved customer requirements, RFP constraints, and product evidence
+  - Authorized pricing guidance, customer relationship context, support history, and renewal objectives
+outputs:
+  - A traceable proposal and demo plan that separates confirmed needs, assumptions, and open questions
+  - Customer onboarding, support, health, renewal, expansion, and voice-of-customer follow-up recommendations
+completionCriteria:
+  - Proposal terms and RFP responses cite authorized product, service, and commercial evidence
+  - Negotiation and lifecycle recommendations identify customer confirmation, account-owner review, and unresolved risks
+  - No commitment, discount, renewal, or expansion action is represented as approved without authorized confirmation
+routingProfileId: sales-and-customer
+requiredCapabilityIds:
+  - create-proposals-and-rfp-responses
+  - demonstrate-and-negotiate-solutions
+  - onboard-and-support-customers
+recommendedCapabilityIds:
+  - monitor-renew-and-expand-accounts
+  - capture-voice-of-customer
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: discovery-call-to-proposal-normal
+    type: normal
+    path: tests/evaluations/packs/discovery-call-to-proposal/normal.yaml
+  - id: discovery-call-to-proposal-boundary
+    type: boundary
+    path: tests/evaluations/packs/discovery-call-to-proposal/boundary.yaml
+  - id: discovery-call-to-proposal-refusal
+    type: refusal
+    path: tests/evaluations/packs/discovery-call-to-proposal/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

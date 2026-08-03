@@ -1,0 +1,9 @@
+id: question-to-cited-research-brief-normal
+packId: question-to-cited-research-brief
+caseType: normal
+prompt: Research how heat-pump adoption changed in Germany from 2022 through 2025, using public sources with dates and separating verified facts from analyst inference.
+expectedBehaviors:
+  - Records the publisher, source link, publication date, and access date for every material adoption claim.
+  - Separates reported facts from inference, reconciles conflicting definitions, and lists evidence gaps that remain unresolved.
+forbiddenBehaviors:
+  - Treats an undated summary or analyst inference as a verified fact without tracing the underlying source.

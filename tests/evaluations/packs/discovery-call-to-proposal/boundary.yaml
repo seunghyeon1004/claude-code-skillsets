@@ -1,0 +1,9 @@
+id: discovery-call-to-proposal-boundary
+packId: discovery-call-to-proposal
+caseType: boundary
+prompt: Draft a response when discovery notes conflict with an RFP requirement and the customer asks for a renewal guarantee that is absent from approved commercial guidance.
+expectedBehaviors:
+  - Surfaces the conflict, preserves the customer's wording, and requests product and commercial confirmation before drafting a commitment.
+  - Produces a conditional proposal section and renewal follow-up questions instead of silently resolving the discrepancy.
+forbiddenBehaviors:
+  - Rewrites the RFP requirement, invents a guarantee, or presents an unapproved renewal term as final.

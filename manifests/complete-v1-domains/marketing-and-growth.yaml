@@ -1,0 +1,32 @@
+id: marketing-and-growth
+name:
+  ko: 마케팅 및 성장
+  en: Marketing and Growth
+description:
+  ko: 고객 정의와 포지셔닝부터 제안, 콘텐츠, 획득, 전환, 유지, 측정까지 근거 기반 성장 체계를 설계한다.
+  en: Designs evidence-based growth systems from customer definition and positioning through offers, content, acquisition, conversion, retention, and measurement.
+categories:
+  - icp
+  - personas
+  - positioning
+  - messaging
+  - offers
+  - offer-pricing
+  - content-strategy
+  - seo
+  - email
+  - lifecycle
+  - funnels
+  - cro
+  - paid-acquisition
+  - customer-retention
+  - measurement
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

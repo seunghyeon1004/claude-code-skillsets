@@ -1,0 +1,126 @@
+Third-party notices for skillset-manager
+=========================================
+
+This package includes bundled code from the following dependencies. The package
+name, version, license, copyright notice, and license terms are reproduced
+below from the build inputs used for this release.
+
+Anthropic Claude Plugins Official Marketplace Metadata - Apache License 2.0
+----------------------------------------------------------------------------
+
+This package also contains transformed metadata derived from the Anthropic
+`claude-plugins-official` repository:
+
+- Upstream: https://github.com/anthropics/claude-plugins-official
+- Pinned commit: e3e378cbbb205673a5d7254ded32679cafa6179d
+- Upstream source: .claude-plugin/marketplace.json
+- Packaged transformed artifacts:
+  - data/official-marketplace-index.json
+  - data/decision-index.json
+  - data/install-index.json
+- Upstream license: Apache License 2.0
+  https://github.com/anthropics/claude-plugins-official/blob/e3e378cbbb205673a5d7254ded32679cafa6179d/LICENSE
+
+Change notice: these packaged artifacts are normalized, reduced, and projected
+marketplace metadata created for deterministic discovery, provenance, and
+decision checks. Field selection, ordering, capability evidence, provenance
+metadata, and digest fields were added or transformed by this project. They are
+not verbatim copies of the upstream manifest and do not include upstream plugin
+or skill implementations. The Apache License 2.0 terms are reproduced in this
+plugin package's LICENSE file.
+
+Anthropic and Claude are trademarks of Anthropic PBC. This independent community
+project is not affiliated with or endorsed by Anthropic.
+
+Shopify AI Toolkit - metadata and hash notice
+----------------------------------------------
+
+No Shopify README, SKILL, or other source implementation is redistributed in
+this package. The referenced upstream Shopify AI Toolkit source is pinned at
+commit 556811e94dd45c795abe5c0b1bf6b5a4b098149d. The broker retains source
+identity metadata and content hashes only. The source is licensed under the MIT
+License:
+https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/556811e94dd45c795abe5c0b1bf6b5a4b098149d/LICENSE
+
+ajv 8.20.0 - MIT
+Copyright (c) 2015-2021 Evgeny Poberezkin
+
+The MIT License (MIT)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+fast-deep-equal 3.1.3 - MIT
+Copyright (c) 2017 Evgeny Poberezkin
+
+The MIT License text above applies.
+
+fast-uri 3.1.4 - BSD-3-Clause
+Copyright (c) 2011-2021, Gary Court until https://github.com/garycourt/uri-js/commit/a1acf730b4bba3f1097c9f52e7d9d3aba8cdcaae
+Copyright (c) 2021-present The Fastify team <https://github.com/fastify/fastify#team>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * The names of any contributors may not be used to endorse or promote
+      products derived from this software without specific prior written
+      permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The complete list of contributors can be found at:
+- https://github.com/garycourt/uri-js/graphs/contributors
+
+json-schema-traverse 1.0.0 - MIT
+Copyright (c) 2017 Evgeny Poberezkin
+
+The MIT License text above applies.
+
+semver 7.8.5 - ISC
+Copyright (c) Isaac Z. Schlueter and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+
+yaml 2.9.0 - ISC
+Copyright Eemeli Aro <eemeli@gmail.com>
+
+The ISC License text above applies.

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v2/source-review-backlog.schema.json",
+  "title": "SourceReviewBacklog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidates"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "candidates": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/candidate" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "httpsRepository": { "type": "string", "pattern": "^https://[^/@?#:]+(?:\\.[^/@?#:]+)+(?:/[^?#]*)?$" },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "relativePath": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.?(?:/|$))(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*[\\\\\\u0000-\\u001f])[A-Za-z0-9._/-]+$" },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domainId", "representativeSkillPath"],
+      "properties": {
+        "domainId": { "$ref": "#/$defs/id" },
+        "representativeSkillPath": { "$ref": "#/$defs/relativePath" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "sourceRepository", "status", "snapshotId", "observedAt", "inspectedCommit", "snapshotContentSha256", "representativeSkillPaths", "domainClassifications", "reclassification"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "sourceRepository": { "$ref": "#/$defs/httpsRepository" },
+        "status": { "const": "review-required" },
+        "snapshotId": { "$ref": "#/$defs/id" },
+        "observedAt": { "$ref": "#/$defs/dateTime" },
+        "inspectedCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "snapshotContentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "representativeSkillPaths": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/relativePath" }
+        },
+        "domainClassifications": {
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/classification" }
+        },
+        "reclassification": { "const": "next-research-observation" }
+      }
+    }
+  }
+}

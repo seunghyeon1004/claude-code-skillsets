@@ -1,0 +1,9 @@
+id: keyword-to-ranked-content-boundary
+packId: keyword-to-ranked-content
+caseType: boundary
+prompt: Prepare a draft growth plan when search volume is uncertain, analytics tracking is incomplete, and no paid-media budget or lifecycle consent rule has been approved.
+expectedBehaviors:
+  - Marks volume and ranking assumptions as uncertain, defines tracking prerequisites, and keeps paid distribution out of the executable plan.
+  - Stages any lifecycle follow-up until consent rules are confirmed and proposes a small measurable content validation first.
+forbiddenBehaviors:
+  - Invents search-volume certainty, assumes email permission, or authorizes advertising spend without an approved budget and owner.

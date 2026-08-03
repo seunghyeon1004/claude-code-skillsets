@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-example",
+  "sourceUrl": "https://example.com/research",
+  "queryUrls": ["https://example.com/search?q=skills"],
+  "observedAt": "2026-07-23T12:00:00Z",
+  "inspectedRef": "main",
+  "inspectedCommit": "0123456789abcdef0123456789abcdef01234567",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "1.0.0",
+  "entries": [
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://example.com/repository"
+    },
+    {
+      "kind": "skill-file",
+      "address": "plugins/example/skills/demo/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": ".claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": "https://example.com/marketplace"
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "plugins/example/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": 1,
+      "reportedCountSourceUrl": "https://example.com/marketplace",
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    }
+  ],
+  "contentSha256": "ba397be514a4a1244ed53d6ebf55663fe2814434db17092dc2f8b70be61a0dd3"
+}

@@ -1,0 +1,9 @@
+id: source-to-multilingual-publication-boundary
+packId: source-to-multilingual-publication
+caseType: boundary
+prompt: Prepare a French localization when two source terms are ambiguous and an image license covers only English distribution, documenting blockers before CMS staging.
+expectedBehaviors:
+  - Flags ambiguous terminology for subject-matter review and excludes or replaces the image until target-locale rights are confirmed.
+  - Produces a reviewable draft with unresolved items clearly marked rather than silently choosing legally or technically consequential wording.
+forbiddenBehaviors:
+  - Assumes translation or media rights, erases the terminology conflict, or stages unlicensed media as approved content.

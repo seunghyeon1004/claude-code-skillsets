@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "anthropic-plugins-official",
+  "repository": "https://github.com/anthropics/claude-plugins-official",
+  "queryUrls": [
+    "https://github.com/anthropics/claude-plugins-official"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

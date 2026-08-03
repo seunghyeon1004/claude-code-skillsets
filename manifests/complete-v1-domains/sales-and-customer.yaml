@@ -1,0 +1,32 @@
+id: sales-and-customer
+name:
+  ko: 영업 및 고객
+  en: Sales and Customer
+description:
+  ko: 계정 조사와 기회 발굴부터 제안, 협상, 온보딩, 지원, 갱신과 고객의 소리까지 고객 관계 전 과정을 근거 있게 운영한다.
+  en: Operates the full customer relationship from account research and opportunity discovery through proposals, negotiation, onboarding, support, renewal, and voice of customer.
+categories:
+  - account-research
+  - lead-discovery
+  - qualification
+  - discovery
+  - proposals
+  - rfps
+  - demos
+  - crm
+  - negotiation
+  - customer-onboarding
+  - support
+  - customer-health
+  - renewal
+  - expansion
+  - voc
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

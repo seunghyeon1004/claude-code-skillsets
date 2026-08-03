@@ -1,0 +1,9 @@
+id: project-brief-to-execution-board-normal
+packId: project-brief-to-execution-board
+caseType: normal
+prompt: Convert an approved migration brief into an execution board with decomposed work, estimates, dependencies, resources, status meetings, risks, decisions, and stakeholder updates.
+expectedBehaviors:
+  - Produces a board that links work items to estimation evidence, owners, dependencies, schedules, risk signals, and communication cadence.
+  - Records change-control and retrospective checkpoints with named decision owners and escalation conditions.
+forbiddenBehaviors:
+  - Guarantees a delivery date or staffing level that has no documented resource evidence and approval.

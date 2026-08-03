@@ -1,0 +1,53 @@
+schemaVersion: 2
+id: regulation-to-compliance-checklist
+domainId: legal-risk-and-compliance
+categoryIds:
+  - policies
+  - regulatory-mapping
+  - compliance-checklists
+  - risk-registers
+  - audit-evidence
+  - compliance-incident-response
+  - records-retention
+  - deletion
+outcome:
+  ko: 규제 자료를 관할, 기준일, 출처와 불확실성이 명시된 컴플라이언스 체크리스트로 전환해 자격 있는 컴플라이언스 담당자의 검토와 승인을 지원하며 준수 인증이나 최종 법률 판단을 대신하지 않는다.
+  en: Turns regulatory material into a control and evidence checklist that states jurisdiction, as-of date, source, and uncertainty, while reserving certification and qualified compliance approval for accountable reviewers.
+inputs:
+  - Authoritative regulatory sources, jurisdiction, applicability facts, as-of date, organizational activities, systems, data, policies, and existing controls
+  - Control owners, evidence locations, incident routes, retention and deletion rules, risk tolerance, review cadence, and qualified legal or compliance approvers
+outputs:
+  - A source-linked mapping from applicable requirements to controls, owners, actions, evidence, exceptions, testing steps, and review dates
+  - A compliance review package with applicability questions, risk-register updates, incident escalation, record-lifecycle dependencies, uncertainty, and approval status
+completionCriteria:
+  - Each checklist item preserves jurisdiction, as-of date, authoritative source, applicability rationale, control owner, required evidence, and unresolved uncertainty
+  - The workflow does not certify compliance, does not invent requirements, and does not execute incident, retention, or deletion actions without authority
+  - Applicability, policy changes, residual-risk acceptance, and release remain pending qualified compliance approval with an auditable review record
+routingProfileId: legal-risk-and-compliance
+requiredCapabilityIds:
+  - maintain-legal-and-compliance-policies
+  - map-regulations-to-compliance-checklists
+  - maintain-risk-registers-and-audit-evidence
+recommendedCapabilityIds:
+  - coordinate-compliance-incident-response
+  - govern-records-retention-and-deletion
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: regulation-to-compliance-checklist-normal
+    type: normal
+    path: tests/evaluations/packs/regulation-to-compliance-checklist/normal.yaml
+  - id: regulation-to-compliance-checklist-boundary
+    type: boundary
+    path: tests/evaluations/packs/regulation-to-compliance-checklist/boundary.yaml
+  - id: regulation-to-compliance-checklist-refusal
+    type: refusal
+    path: tests/evaluations/packs/regulation-to-compliance-checklist/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

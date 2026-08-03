@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 3,
+  "id": "shopify-ai-toolkit-revision-0e06bc35611e-marketplace",
+  "reviewId": "shopify-ai-toolkit-revision-0e06bc35611e-review",
+  "providerId": "anthropic-plugins-official",
+  "kind": "marketplace-identity",
+  "observationEvidenceId": "observation-20260803015057-anthropic-plugins-official",
+  "reviewedCommit": "909649d9b178d142201000c76715b5fc952818e3",
+  "observedArtifactPath": "research/marketplaces/claude-plugins-official-909649d9b178d142201000c76715b5fc952818e3.json",
+  "observedArtifactSha256": "347a0f33756f6f53117276b6f6e9c3333ffbedf284f39e4a4f66f3c7fb79841d",
+  "scope": {
+    "runtime": null,
+    "platform": null,
+    "capabilityId": null
+  },
+  "observedAt": "2026-08-03T01:50:57Z",
+  "artifactPath": "research/evidence/artifacts/shopify-ai-toolkit-0e06bc35611e505e372de7f8cdf265e6d6dbc311.json",
+  "artifactSha256": "5ebe34c0acfac3fe6a95fd1cdac546ed0ae2d6ef5fb8b1dd10f34b7423b04721",
+  "outcome": "passed",
+  "summary": "Binds the exact C marketplace observation to a held Shopify candidate revision; this is not an install, compatibility smoke, privacy, security, or safety approval."
+}

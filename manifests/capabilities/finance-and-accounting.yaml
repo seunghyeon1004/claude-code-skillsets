@@ -1,0 +1,66 @@
+schemaVersion: 2
+domainId: finance-and-accounting
+capabilities:
+  - id: plan-budgets-and-cash-flow
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - budgets
+      - cash-flow
+    outcome:
+      ko: 목표, 가정, 수입, 지출, 현금 시점, 부족 위험과 대응 시나리오가 연결된 재무 계획을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a financial plan connecting goals, assumptions, income, spending, cash timing, shortfall risks, and response scenarios. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: analyze-costs-unit-economics-and-profitability
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - costs
+      - unit-economics
+      - profitability
+    outcome:
+      ko: 비용 동인, 고객 또는 거래 단위 경제성, 제품과 채널별 이익 기여를 근거와 가정에 연결한 분석을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces an analysis connecting cost drivers, customer or transaction unit economics, and profit contribution by product and channel to evidence and assumptions. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: process-receipts-invoices-and-collections
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - receipts
+      - invoicing
+      - collections
+    outcome:
+      ko: 거래 증빙, 정확한 청구, 지급 조건, 미수금 상태와 분쟁을 추적 가능한 처리 기록으로 연결한다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a traceable processing record connecting transaction evidence, accurate invoicing, payment terms, receivable status, and disputes. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: assist-bookkeeping-and-statement-preparation
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - bookkeeping-assistance
+      - financial-statements
+    outcome:
+      ko: 거래, 증빙, 계정 분류, 조정 항목과 재무제표 초안을 연결한 검토 자료를 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces review material connecting transactions, evidence, account classifications, reconciliation items, and draft financial statements. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: forecast-and-report-financial-performance
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - forecasts
+      - management-reporting
+    outcome:
+      ko: 명시된 가정과 시나리오를 실제 성과, 차이, 위험과 연결한 재무 예측 및 경영 보고를 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces financial forecasts and management reporting that connect explicit assumptions and scenarios to actual performance, variances, and risks. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: prepare-fundraising-financials
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - fundraising
+    outcome:
+      ko: 자금 필요, 사용 계획, 재무 가정, 성과 근거와 미확인 사항이 일관된 자금 조달 검토 자료를 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces consistent fundraising review material covering funding needs, use of funds, financial assumptions, performance evidence, and unresolved items. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: assist-with-tax-preparation
+    ownerDomainId: finance-and-accounting
+    categoryIds:
+      - tax-preparation
+    outcome:
+      ko: 거래, 원본 증빙, 분류 근거, 기간과 미확인 항목을 신고 검토용 준비 자료로 정리한다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces filing-review preparation material organizing transactions, source evidence, classification rationale, periods, and unresolved items. It supports qualified human review and does not replace final judgment or approval.
+    status: draft

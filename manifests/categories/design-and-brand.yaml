@@ -1,0 +1,115 @@
+schemaVersion: 2
+domainId: design-and-brand
+categories:
+  - id: briefs
+    name:
+      ko: 디자인 브리프
+      en: Design briefs
+    description:
+      ko: 문제, 대상 사용자, 목표, 제약과 성공 기준을 디자인 작업의 공통 기준으로 정리한다.
+      en: Frames problem, users, goals, constraints, and success criteria as a shared design brief.
+    status: draft
+  - id: ux-research-application
+    name:
+      ko: UX 조사 적용
+      en: UX research application
+    description:
+      ko: 사용자 조사에서 나온 근거를 우선순위와 설계 결정에 연결한다.
+      en: Connects evidence from user research to priorities and design decisions.
+    status: draft
+  - id: information-architecture
+    name:
+      ko: 정보 구조
+      en: Information architecture
+    description:
+      ko: 콘텐츠, 기능과 탐색 경로를 사용자가 이해할 수 있는 구조로 조직한다.
+      en: Organizes content, functionality, and navigation into structures users can understand.
+    status: draft
+  - id: user-flows
+    name:
+      ko: 사용자 흐름
+      en: User flows
+    description:
+      ko: 사용자가 목표를 이루는 단계, 상태, 선택과 오류 경로를 시각화한다.
+      en: Maps the steps, states, choices, and error paths users take to reach a goal.
+    status: draft
+  - id: wireframes
+    name:
+      ko: 와이어프레임
+      en: Wireframes
+    description:
+      ko: 정보 우선순위와 상호작용 구조를 검토할 수 있는 저충실도 화면을 만든다.
+      en: Creates low-fidelity screens for reviewing information priority and interaction structure.
+    status: draft
+  - id: ui
+    name:
+      ko: 사용자 인터페이스
+      en: User interface
+    description:
+      ko: 명확한 계층, 상태와 피드백을 갖춘 일관된 화면과 상호작용을 설계한다.
+      en: Designs consistent screens and interactions with clear hierarchy, state, and feedback.
+    status: draft
+  - id: design-systems
+    name:
+      ko: 디자인 시스템
+      en: Design systems
+    description:
+      ko: 재사용 가능한 토큰, 구성 요소, 패턴과 사용 지침으로 일관성을 유지한다.
+      en: Maintains consistency with reusable tokens, components, patterns, and usage guidance.
+    status: draft
+  - id: prototypes
+    name:
+      ko: 프로토타입
+      en: Prototypes
+    description:
+      ko: 핵심 가설과 상호작용을 사용자와 이해관계자가 시험할 수 있는 형태로 구현한다.
+      en: Implements key hypotheses and interactions in forms users and stakeholders can test.
+    status: draft
+  - id: web-design
+    name:
+      ko: 웹 디자인
+      en: Web design
+    description:
+      ko: 다양한 화면 크기와 브라우저에서 이해 가능하고 반응하는 웹 경험을 설계한다.
+      en: Designs web experiences that remain understandable and responsive across screen sizes and browsers.
+    status: draft
+  - id: brand
+    name:
+      ko: 브랜드 전략
+      en: Brand strategy
+    description:
+      ko: 대상, 약속, 차별점과 목소리를 연결해 브랜드의 전략적 방향을 정의한다.
+      en: Defines strategic brand direction by connecting audience, promise, differentiation, and voice.
+    status: draft
+  - id: visual-identity
+    name:
+      ko: 시각 정체성
+      en: Visual identity
+    description:
+      ko: 색상, 타이포그래피, 이미지와 그래픽 원칙으로 인식 가능한 브랜드 체계를 만든다.
+      en: Creates recognizable brand systems through color, typography, imagery, and graphic principles.
+    status: draft
+  - id: creative
+    name:
+      ko: 크리에이티브 제작
+      en: Creative production
+    description:
+      ko: 브랜드 원칙과 채널 목적에 맞는 설득력 있는 시각 자산을 제작한다.
+      en: Produces persuasive visual assets aligned with brand principles and channel purpose.
+    status: draft
+  - id: design-accessibility
+    name:
+      ko: 디자인 접근성
+      en: Design accessibility
+    description:
+      ko: 대비, 구조, 텍스트, 입력과 이해 가능성을 포괄하는 접근성 설계를 검증한다.
+      en: Verifies accessible design across contrast, structure, text, input, and comprehensibility.
+    status: draft
+  - id: developer-handoff
+    name:
+      ko: 개발 인계
+      en: Developer handoff
+    description:
+      ko: 구현에 필요한 상태, 규칙, 자산, 치수와 검증 기준을 개발자에게 명확히 전달한다.
+      en: Communicates required states, rules, assets, dimensions, and verification criteria clearly to developers.
+    status: draft

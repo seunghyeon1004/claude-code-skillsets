@@ -1,0 +1,32 @@
+id: commerce
+name:
+  ko: 커머스
+  en: Commerce
+description:
+  ko: 제품 조사와 기획부터 카탈로그, 목록, 가격, 머천다이징, 판매 채널, 재고, 주문, 배송, 반품, 프로모션, 리뷰와 매출 분석까지 상거래 운영을 연결한다.
+  en: Connects commerce operations from product research and planning through catalogs, listings, pricing, merchandising, sales channels, inventory, orders, shipping, returns, promotions, reviews, and revenue analysis.
+categories:
+  - product-research
+  - product-planning
+  - catalogs
+  - listings
+  - commerce-pricing
+  - merchandising
+  - stores
+  - marketplaces
+  - inventory
+  - orders
+  - shipping
+  - returns
+  - promotions
+  - reviews
+  - revenue-analysis
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

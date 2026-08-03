@@ -1,0 +1,53 @@
+schemaVersion: 2
+id: spec-to-tested-feature
+domainId: software-engineering
+categoryIds:
+  - frontend
+  - software-accessibility
+  - mobile
+  - backend
+  - apis
+  - databases
+  - testing
+  - debugging
+outcome:
+  ko: 검토된 명세를 접근 가능한 인터페이스, 모바일 및 서비스 구현, 데이터 변경과 재현 가능한 테스트 증거가 연결된 기능 작업으로 전환한다.
+  en: Turns a reviewed specification into feature work connecting accessible interfaces, mobile and service implementation, data changes, and reproducible test evidence.
+inputs:
+  - Approved specification, interface contracts, repository conventions, data constraints, and supported platforms
+  - Test strategy, accessibility expectations, security constraints, and non-production verification environment
+outputs:
+  - A feature implementation record covering interfaces, services, APIs, storage changes, and compatibility notes
+  - Test and debugging evidence for normal, boundary, failure, accessibility, and platform-specific behavior
+completionCriteria:
+  - Implementation decisions preserve the reviewed specification and record any approved deviation or unresolved ambiguity
+  - Tests reproduce normal, boundary, and failure behavior without using production credentials or secret values
+  - The result does not bypass security controls, perform destructive changes, or claim unexecuted verification passed
+routingProfileId: software-engineering
+requiredCapabilityIds:
+  - implement-accessible-web-interfaces
+  - implement-backend-services-and-apis
+  - test-and-debug-software
+recommendedCapabilityIds:
+  - implement-mobile-applications
+  - design-and-evolve-databases
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: spec-to-tested-feature-normal
+    type: normal
+    path: tests/evaluations/packs/spec-to-tested-feature/normal.yaml
+  - id: spec-to-tested-feature-boundary
+    type: boundary
+    path: tests/evaluations/packs/spec-to-tested-feature/boundary.yaml
+  - id: spec-to-tested-feature-refusal
+    type: refusal
+    path: tests/evaluations/packs/spec-to-tested-feature/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

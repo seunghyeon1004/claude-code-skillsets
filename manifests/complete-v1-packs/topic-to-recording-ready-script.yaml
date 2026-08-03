@@ -1,0 +1,49 @@
+schemaVersion: 2
+id: topic-to-recording-ready-script
+domainId: video-and-audio
+categoryIds:
+  - video-research
+  - concepts
+  - scripts
+  - storyboards
+  - shot-lists
+  - recording-preparation
+outcome:
+  ko: 주제와 근거를 시청자 및 플랫폼에 맞는 콘셉트, 사실 확인된 대본과 스토리보드, 권한과 접근성 준비가 포함된 촬영 계획으로 전환한다.
+  en: Turns a topic and evidence into an audience- and platform-aligned concept, fact-checked script and storyboard, and a recording plan with permissions and accessibility preparation.
+inputs:
+  - A topic, target audience, channel format, verified sources, message goals, and factual constraints
+  - Available presenters, locations, equipment, schedule, budget, rights status, and accessibility requirements
+outputs:
+  - A recording-ready script and storyboard linking claims, sources, scenes, voice, caption intent, and transitions
+  - A shot list and production plan covering permissions, equipment, lighting, sound, rehearsal, transcript workflow, and format checks
+completionCriteria:
+  - Claims and quotations remain linked to verified sources, while the caption plan and transcript plan preserve spoken meaning and important sounds
+  - Storyboard overlays specify readable safe-area text, and recording tests confirm audio intelligibility for every presenter and location
+  - The recording plan verifies consent, asset and music rights, equipment, rehearsal, fallback shots, accessibility ownership, and target format before production
+routingProfileId: video-and-audio
+requiredCapabilityIds:
+  - research-and-develop-media-concepts
+  - write-and-visualize-video-narratives
+recommendedCapabilityIds:
+  - plan-and-prepare-recording
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: topic-to-recording-ready-script-normal
+    type: normal
+    path: tests/evaluations/packs/topic-to-recording-ready-script/normal.yaml
+  - id: topic-to-recording-ready-script-boundary
+    type: boundary
+    path: tests/evaluations/packs/topic-to-recording-ready-script/boundary.yaml
+  - id: topic-to-recording-ready-script-refusal
+    type: refusal
+    path: tests/evaluations/packs/topic-to-recording-ready-script/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

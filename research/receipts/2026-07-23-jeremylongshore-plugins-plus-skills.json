@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-jeremylongshore-plugins-plus-skills",
+  "sourceId": "jeremylongshore-plugins-plus-skills",
+  "snapshotId": "2026-07-23-jeremylongshore-plugins-plus-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "4fdcab59171f5b4c44487356ba022210bdce1168",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 987
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 628
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 5602
+    }
+  ],
+  "snapshotContentSha256": "f732f0c07683cf29b7ab4e1708ff41b91e70804bf2240420401773ed5fa1ff9b"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-daymade-claude-code-skills",
+  "sourceId": "daymade-claude-code-skills",
+  "snapshotId": "2026-07-23-daymade-claude-code-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "3b097ca8e06535443dc9b9cf14cb97005ed550da",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 58
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 90
+    }
+  ],
+  "snapshotContentSha256": "5855b801671876ed4a360350a0c38dd6c6cd9f05830346309020bc6c18a4794f"
+}

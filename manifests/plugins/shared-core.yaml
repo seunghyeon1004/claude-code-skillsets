@@ -1,0 +1,21 @@
+id: shared-core
+name:
+  ko: 공용 코어
+  en: Shared core
+source: ./plugins/shared-core
+marketplace: claude-code-skillsets
+trustTier: verified
+permissions:
+  filesystem:
+    - user-selected workspace files
+  commands:
+    - user-approved verification commands
+  network:
+    - user-approved source retrieval
+  externalData:
+    - user-provided sources
+version: 0.1.0
+status: beta
+requiredDependencies: []
+recommendedDependencies: []
+optionalDependencies: []

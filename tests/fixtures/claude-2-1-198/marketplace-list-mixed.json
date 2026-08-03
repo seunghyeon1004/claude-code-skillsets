@@ -1,0 +1,14 @@
+[
+  {
+    "installLocation": "/Users/example/.claude/plugins/marketplaces/community-marketplace",
+    "name": "community-marketplace",
+    "source": "git",
+    "url": "https://github.com/example/community-marketplace.git"
+  },
+  {
+    "installLocation": "/Users/example/.claude/plugins/marketplaces/claude-plugins-official",
+    "name": "claude-plugins-official",
+    "repo": "anthropics/claude-plugins-official",
+    "source": "github"
+  }
+]

@@ -1,0 +1,60 @@
+schemaVersion: 2
+id: project-brief-to-execution-board
+domainId: project-management
+categoryIds:
+  - project-definition
+  - work-breakdown
+  - estimation
+  - schedules
+  - dependencies
+  - project-resources
+  - meetings
+  - status-reporting
+  - decisions
+  - change
+  - risk
+  - stakeholder-communication
+  - retrospectives
+outcome:
+  ko: 프로젝트 브리프를 근거 있는 작업 분해, 일정, 자원, 위험, 변경 통제와 이해관계자 검토가 연결된 실행 보드로 전환한다.
+  en: Turns a project brief into an execution board connecting evidence-based decomposition, schedule, resources, risk, change control, and stakeholder review.
+inputs:
+  - Project objective, scope boundary, dependencies, known risks, stakeholders, and delivery constraints
+  - Available capacity evidence, estimation basis, decision owners, and change-control process
+outputs:
+  - An execution board with work breakdown, estimates, schedule, dependencies, owners, and status cadence
+  - A decision, risk, change, communication, and retrospective record with explicit approval and escalation points
+completionCriteria:
+  - Schedule and resource estimates identify their evidence, confidence, dependencies, and assumptions
+  - Changes, risks, decisions, and stakeholder commitments have named owners and recorded approval boundaries
+  - The board does not promise dates, capacity, or scope that an accountable project authority has not approved
+routingProfileId: project-management
+requiredCapabilityIds:
+  - define-and-decompose-project-work
+  - estimate-and-schedule-project-work
+  - coordinate-project-dependencies-and-resources
+  - facilitate-meetings-and-record-decisions
+recommendedCapabilityIds:
+  - report-project-status-to-stakeholders
+  - control-project-change-and-risk
+  - run-project-retrospectives
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: project-brief-to-execution-board-normal
+    type: normal
+    path: tests/evaluations/packs/project-brief-to-execution-board/normal.yaml
+  - id: project-brief-to-execution-board-boundary
+    type: boundary
+    path: tests/evaluations/packs/project-brief-to-execution-board/boundary.yaml
+  - id: project-brief-to-execution-board-refusal
+    type: refusal
+    path: tests/evaluations/packs/project-brief-to-execution-board/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

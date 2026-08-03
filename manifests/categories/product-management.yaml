@@ -1,0 +1,99 @@
+schemaVersion: 2
+domainId: product-management
+categories:
+  - id: problem-discovery
+    name:
+      ko: 문제 발견
+      en: Problem discovery
+    description:
+      ko: 사용자 행동과 근거에서 해결할 가치가 있는 문제와 원인을 식별한다.
+      en: Identifies valuable problems and causes from user behavior and evidence.
+    status: draft
+  - id: user-needs
+    name:
+      ko: 사용자 요구
+      en: User needs
+    description:
+      ko: 사용자의 목표, 작업, 제약, 미충족 요구를 검증 가능한 형태로 정의한다.
+      en: Defines user goals, jobs, constraints, and unmet needs in a verifiable form.
+    status: draft
+  - id: product-principles
+    name:
+      ko: 제품 원칙
+      en: Product principles
+    description:
+      ko: 반복되는 제품 판단을 안내할 명확한 우선순위와 경계를 정한다.
+      en: Establishes clear priorities and boundaries that guide recurring product decisions.
+    status: draft
+  - id: prds
+    name:
+      ko: 제품 요구사항 문서
+      en: Product requirements documents
+    description:
+      ko: 문제, 대상, 범위, 요구사항, 성공 기준, 위험을 하나의 검토 가능한 문서로 연결한다.
+      en: Connects problem, audience, scope, requirements, success criteria, and risks in a reviewable document.
+    status: draft
+  - id: user-stories
+    name:
+      ko: 사용자 스토리
+      en: User stories
+    description:
+      ko: 사용자 목표와 가치를 명확한 맥락 및 인수 조건이 있는 작업으로 표현한다.
+      en: Expresses user goals and value as work with clear context and acceptance conditions.
+    status: draft
+  - id: scope
+    name:
+      ko: 제품 범위
+      en: Product scope
+    description:
+      ko: 포함, 제외, 의존성, 제약과 단계별 경계를 명시한다.
+      en: States inclusions, exclusions, dependencies, constraints, and phased boundaries.
+    status: draft
+  - id: product-prioritization
+    name:
+      ko: 제품 우선순위화
+      en: Product prioritization
+    description:
+      ko: 사용자 가치, 사업 효과, 비용, 위험, 근거 강도로 선택지의 순서를 정한다.
+      en: Orders options by user value, business impact, cost, risk, and evidence strength.
+    status: draft
+  - id: roadmaps
+    name:
+      ko: 제품 로드맵
+      en: Product roadmaps
+    description:
+      ko: 제품 결과, 가설, 의존성, 검증 시점을 시간에 따른 방향으로 구성한다.
+      en: Organizes outcomes, hypotheses, dependencies, and validation points into a time-aware direction.
+    status: draft
+  - id: prototype-validation
+    name:
+      ko: 프로토타입 검증
+      en: Prototype validation
+    description:
+      ko: 프로토타입으로 핵심 사용성, 이해도, 가치 가설을 검증한다.
+      en: Tests core usability, comprehension, and value hypotheses with prototypes.
+    status: draft
+  - id: product-experiments
+    name:
+      ko: 제품 실험
+      en: Product experiments
+    description:
+      ko: 가설, 대상, 측정 방법, 중단 조건을 명시한 제품 실험을 설계한다.
+      en: Designs product experiments with explicit hypotheses, audience, measures, and stop conditions.
+    status: draft
+  - id: product-metrics
+    name:
+      ko: 제품 지표
+      en: Product metrics
+    description:
+      ko: 제품 가치와 행동 변화를 측정하는 선행 및 후행 지표를 정의한다.
+      en: Defines leading and lagging measures of product value and behavior change.
+    status: draft
+  - id: launch-readiness
+    name:
+      ko: 출시 준비도
+      en: Launch readiness
+    description:
+      ko: 품질, 운영, 지원, 측정, 위험과 되돌리기 준비 상태를 평가한다.
+      en: Assesses readiness across quality, operations, support, measurement, risk, and rollback.
+    status: draft

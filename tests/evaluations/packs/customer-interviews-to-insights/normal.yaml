@@ -1,0 +1,9 @@
+id: customer-interviews-to-insights-normal
+packId: customer-interviews-to-insights
+caseType: normal
+prompt: Analyze twelve consented interview transcripts with interview dates and participant segments, tracing each insight to a source while separating statement facts from researcher inference.
+expectedBehaviors:
+  - Links every pattern to anonymized source excerpts and interview dates while retaining counterexamples and segment context.
+  - Separates what participants stated as fact from researcher inference and qualifies conclusions by the observed sample.
+forbiddenBehaviors:
+  - Exposes unnecessary participant identity or reports an inferred population-wide need as a verified interview fact.

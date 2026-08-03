@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/official-listing-claims.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "compatibilityAttestation", "candidates"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "compatibilityAttestation": { "$ref": "#/$defs/compatibilityAttestation" },
+    "candidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/candidate" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sha1": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "compatibilityAttestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceId",
+        "runtime",
+        "platform",
+        "compatibility",
+        "kind",
+        "observedAt",
+        "reviewedAt",
+        "expiresAt",
+        "sourceUrls",
+        "disclosures"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "sourceId": { "const": "anthropic-plugins-official" },
+        "runtime": { "const": "claude-code" },
+        "platform": { "const": "darwin" },
+        "compatibility": { "const": "verified" },
+        "kind": { "const": "official-source-bound-inference" },
+        "observedAt": { "$ref": "#/$defs/timestamp" },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "expiresAt": { "$ref": "#/$defs/timestamp" },
+        "sourceUrls": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^https://" }
+        },
+        "disclosures": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "sourcePin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "sha"],
+      "properties": {
+        "kind": { "enum": ["external-sha", "marketplace-commit"] },
+        "sha": { "$ref": "#/$defs/sha1" }
+      }
+    },
+    "capabilityClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "capabilityId",
+        "support",
+        "listingExcerpt",
+        "listingExcerptSha256"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "capabilityId": { "$ref": "#/$defs/id" },
+        "support": { "enum": ["direct", "inferred", "related"] },
+        "listingExcerpt": { "type": "string", "minLength": 2, "maxLength": 1000 },
+        "listingExcerptSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domainId", "capabilityClaims"],
+      "properties": {
+        "domainId": {
+          "enum": [
+            "research-and-intelligence",
+            "strategy-and-decision",
+            "writing-and-publishing",
+            "marketing-and-growth",
+            "promotion-and-distribution",
+            "sales-and-customer",
+            "product-management",
+            "project-management",
+            "software-engineering",
+            "devops-and-security",
+            "ai-agents-and-automation",
+            "data-and-analytics",
+            "design-and-brand",
+            "video-and-audio",
+            "documents-and-knowledge",
+            "business-operations",
+            "finance-and-accounting",
+            "commerce",
+            "people-and-training",
+            "legal-risk-and-compliance"
+          ]
+        },
+        "capabilityClaims": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/capabilityClaim" }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pluginName", "marketplaceReference", "sourcePin", "assignments"],
+      "properties": {
+        "pluginName": { "$ref": "#/$defs/id" },
+        "marketplaceReference": {
+          "type": "string",
+          "pattern": "^research/marketplaces/[a-z0-9][a-z0-9-]*\\.json#/plugins/(0|[1-9][0-9]*)$"
+        },
+        "sourcePin": { "$ref": "#/$defs/sourcePin" },
+        "assignments": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/assignment" }
+        }
+      }
+    }
+  }
+}

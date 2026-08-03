@@ -1,0 +1,35 @@
+id: skillset-manager
+name:
+  ko: 스킬셋 관리자
+  en: Skillset manager
+description:
+  ko: "Anthropic 공식 Marketplace 등재는 안전성 인증이 아닙니다. v0.1: darwin + 정확한 Claude Code 2.1.198; 0/20 실행 가능, 20/20 검토 대기·발견 전용. 정확한 설치는 별도 승인 후에만 실행하며 로컬 영수증을 기록합니다."
+  en: "Anthropic official Marketplace listing is not safety certification. v0.1: darwin + exact Claude Code 2.1.198; 0/20 executable, 20/20 review-held discovery-only. Exact install occurs only after separate approval; a local receipt is recorded."
+source: ./plugins/skillset-manager
+marketplace: claude-code-skillsets
+trustTier: verified
+permissions:
+  filesystem:
+    - plugin-owned install index
+    - user-scoped setup lock and same-directory temporary file
+  commands:
+    - claude --version
+    - claude plugin marketplace list
+    - claude plugin marketplace list --json
+    - claude plugin list --json
+    - command -v -- declared executable
+    - claude plugin install approved plugin
+    - claude plugin marketplace add separately approved exact marketplace source
+    - atomic rename of approved setup lock temporary file
+  network:
+    - configured Claude Code marketplaces during approved installation
+  externalData: []
+version: 0.1.2
+status: beta
+requiredDependencies:
+  - name: shared-core
+    reason:
+      ko: 설치 워크플로의 공용 안전 및 검증 절차
+      en: Shared safety and verification workflow for installation
+recommendedDependencies: []
+optionalDependencies: []

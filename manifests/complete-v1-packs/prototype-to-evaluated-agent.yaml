@@ -1,0 +1,57 @@
+schemaVersion: 2
+id: prototype-to-evaluated-agent
+domainId: ai-agents-and-automation
+categoryIds:
+  - rag
+  - memory
+  - evaluation
+  - guardrails
+  - monitoring
+  - mcp
+  - tool-calls
+  - single-agents
+  - multi-agent-systems
+  - cost
+  - latency
+outcome:
+  ko: AI 프로토타입을 출처가 검증된 검색, 개인정보 보호 메모리, 안전한 도구 경계, 재현 가능한 평가, 가드레일과 운영 모니터링이 있는 검증된 에이전트로 전환한다.
+  en: Turns an AI prototype into an evaluated agent with source-verified retrieval, privacy-preserving memory, safe tool boundaries, reproducible evaluation, guardrails, and operational monitoring.
+inputs:
+  - A runnable agent prototype, evaluation tasks, grounding sources, tool contracts, and known failure cases
+  - Memory privacy and retention rules, quality thresholds, monitoring signals, cost targets, latency targets, and accountable reviewers
+outputs:
+  - A sandboxed evaluated agent with cited retrieval, scoped memory, validated tool calls, and explicit human approval boundaries
+  - An evaluation report with reproducible cases, failure evidence, guardrail results, monitoring thresholds, cost and latency measurements, and release recommendation
+completionCriteria:
+  - Retrieval answers cite verified sources, memory records purpose and expiry, and privacy-sensitive state is excluded or protected under approved retention rules
+  - Evaluation results retain failures and uncertainty, demonstrate guardrail and prompt-injection handling, and never turn a false evaluation pass into release evidence
+  - Tool calls remain read-only or sandboxed until human approval, while monitoring, rollback, cost, and latency thresholds are verified before any live action
+routingProfileId: ai-agents-and-automation
+requiredCapabilityIds:
+  - build-retrieval-augmented-generation
+  - implement-stateful-agent-memory
+  - evaluate-guard-and-monitor-ai-systems
+recommendedCapabilityIds:
+  - connect-models-to-tools-and-mcp
+  - design-single-and-multi-agent-systems
+  - optimize-ai-cost-and-latency
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: prototype-to-evaluated-agent-normal
+    type: normal
+    path: tests/evaluations/packs/prototype-to-evaluated-agent/normal.yaml
+  - id: prototype-to-evaluated-agent-boundary
+    type: boundary
+    path: tests/evaluations/packs/prototype-to-evaluated-agent/boundary.yaml
+  - id: prototype-to-evaluated-agent-refusal
+    type: refusal
+    path: tests/evaluations/packs/prototype-to-evaluated-agent/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

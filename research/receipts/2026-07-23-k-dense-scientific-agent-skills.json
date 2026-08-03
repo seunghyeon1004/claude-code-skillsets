@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-k-dense-scientific-agent-skills",
+  "sourceId": "k-dense-scientific-agent-skills",
+  "snapshotId": "2026-07-23-k-dense-scientific-agent-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "831d49eb77eed3c792be2970921b46764012ef00",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 149
+    }
+  ],
+  "snapshotContentSha256": "26a91b44e23ad097a76a8ba084eab0a3f66e338cb31f691df99b32f9f104f5c3"
+}

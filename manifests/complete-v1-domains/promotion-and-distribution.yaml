@@ -1,0 +1,28 @@
+id: promotion-and-distribution
+name:
+  ko: 프로모션 및 배포
+  en: Promotion and Distribution
+description:
+  ko: 출시와 콘텐츠를 채널별 형식으로 전환하고 미디어, 인플루언서, 커뮤니티, 아웃리치를 통해 일관되게 배포하고 개선한다.
+  en: Adapts launches and content for each channel and distributes them consistently through media, influencers, communities, and outreach with performance feedback.
+categories:
+  - launch-promotion
+  - social-distribution
+  - channel-adaptation
+  - content-repurposing
+  - pr
+  - media-pitching
+  - influencer-work
+  - community
+  - outreach
+  - campaign-operations
+  - performance-feedback
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

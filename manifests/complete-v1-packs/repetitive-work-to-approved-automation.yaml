@@ -1,0 +1,46 @@
+schemaVersion: 2
+id: repetitive-work-to-approved-automation
+domainId: business-operations
+categoryIds:
+  - repetitive-work-automation
+  - operational-metrics
+  - issues
+  - changes
+outcome:
+  ko: 반복 업무를 실행 전 미리보기, 명시적 승인, 관찰 가능한 지표, 감사 기록, 실패 중단, 롤백과 수동 대안이 있는 승인된 자동화 계획으로 전환한다.
+  en: Turns repetitive work into an approved automation plan with pre-execution preview, explicit approval, observable metrics, audit records, failure stops, rollback, and a manual fallback.
+inputs:
+  - Repetitive workflow samples, data boundaries, error history, frequency, operators, and expected outcomes
+  - Tool permissions, write scope, approval owner, monitoring signals, rollback evidence, and manual fallback
+outputs:
+  - A bounded automation specification with preview, approval, execution, validation, stop, and rollback stages
+  - An audit and operations plan covering metrics, issues, approved changes, ownership, and manual recovery
+completionCriteria:
+  - Unauthorized writes and tool execution are impossible before a complete preview and explicit owner approval
+  - Every approved run emits an audit record with inputs, outputs, changes, validation, operator, and timestamps
+  - Failure signals stop execution and invoke a tested rollback or documented manual fallback without widening scope
+routingProfileId: business-operations
+requiredCapabilityIds:
+  - automate-repetitive-operational-work
+  - measure-and-improve-operations
+recommendedCapabilityIds: []
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: repetitive-work-to-approved-automation-normal
+    type: normal
+    path: tests/evaluations/packs/repetitive-work-to-approved-automation/normal.yaml
+  - id: repetitive-work-to-approved-automation-boundary
+    type: boundary
+    path: tests/evaluations/packs/repetitive-work-to-approved-automation/boundary.yaml
+  - id: repetitive-work-to-approved-automation-refusal
+    type: refusal
+    path: tests/evaluations/packs/repetitive-work-to-approved-automation/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

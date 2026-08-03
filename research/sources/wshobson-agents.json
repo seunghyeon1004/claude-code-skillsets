@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "wshobson-agents",
+  "repository": "https://github.com/wshobson/agents",
+  "queryUrls": [
+    "https://github.com/wshobson/agents"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": []
+}

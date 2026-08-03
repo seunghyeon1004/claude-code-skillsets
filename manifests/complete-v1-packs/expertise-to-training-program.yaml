@@ -1,0 +1,50 @@
+schemaVersion: 2
+id: expertise-to-training-program
+domainId: people-and-training
+categoryIds:
+  - employee-onboarding
+  - careers
+  - people-performance
+  - feedback
+  - curricula
+  - learning-materials
+  - assessment
+outcome:
+  ko: 전문가 지식을 교육과 평가 프로그램으로 전환해 자격 있는 교육 담당자의 검토와 승인을 지원하며 내용 정확성, 평가 공정성 또는 개인정보 판단을 대신하지 않는다.
+  en: Turns expert knowledge into an accessible training program with explicit subject-matter accuracy, assessment fairness, privacy, and qualified human review boundaries.
+inputs:
+  - Validated expert knowledge, learner profiles, role context, learning objectives, prerequisites, accessibility needs, and delivery constraints
+  - Assessment purpose, fairness criteria, privacy limits, feedback process, onboarding or career context, reviewers, and update triggers
+outputs:
+  - A sequenced curriculum with accessible learning materials, demonstrations, practice, facilitator notes, and source-linked accuracy checks
+  - A reviewable assessment and improvement package with scoring guidance, fairness analysis, privacy controls, feedback loops, and qualified approvals
+completionCriteria:
+  - Subject-matter accuracy traces to reviewed expert sources, versioned examples, and named owners who resolve conflicting or outdated guidance
+  - Assessment fairness is checked across relevant learner needs, privacy is protected, and unsupported performance or career inferences are excluded
+  - Release and consequential learner decisions remain subject to qualified human review, documented feedback, accessibility checks, and approval
+routingProfileId: people-and-training
+requiredCapabilityIds:
+  - design-learning-programs-and-assessments
+recommendedCapabilityIds:
+  - onboard-and-develop-employees
+  - support-performance-and-feedback-cycles
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: expertise-to-training-program-normal
+    type: normal
+    path: tests/evaluations/packs/expertise-to-training-program/normal.yaml
+  - id: expertise-to-training-program-boundary
+    type: boundary
+    path: tests/evaluations/packs/expertise-to-training-program/boundary.yaml
+  - id: expertise-to-training-program-refusal
+    type: refusal
+    path: tests/evaluations/packs/expertise-to-training-program/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

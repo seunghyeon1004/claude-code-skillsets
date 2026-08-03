@@ -1,0 +1,17 @@
+id: software-engineering
+name:
+  ko: 소프트웨어 엔지니어링
+  en: Software Engineering
+description:
+  ko: 저장소 분석과 구현 계획을 지원한다.
+  en: Supports repository analysis and implementation planning.
+categories:
+  - repository-context
+languages:
+  - ko
+  - en
+regions: []
+maintainers:
+  - complete-v1
+version: 0.1.0
+status: draft

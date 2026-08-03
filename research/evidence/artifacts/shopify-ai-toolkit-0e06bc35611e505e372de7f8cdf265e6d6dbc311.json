@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-source-capability-evidence",
+  "candidate": {
+    "id": "shopify-ai-toolkit",
+    "candidateRevisionId": "shopify-ai-toolkit-revision-0e06bc35611e",
+    "sourceId": "anthropic-plugins-official",
+    "officialBaseline": {
+      "reference": "research/marketplaces/claude-plugins-official-909649d9b178d142201000c76715b5fc952818e3.json#/plugins/230",
+      "marketplaceManifestSha256": "d580b5d2fa473fdbfc8792ece117f6a3a92d4bb12356ab17beb2f3cc5f7b0316",
+      "pluginName": "shopify-ai-toolkit",
+      "sourceUrl": "https://github.com/Shopify/Shopify-AI-Toolkit.git",
+      "sourceCommit": "0e06bc35611e505e372de7f8cdf265e6d6dbc311",
+      "sourceBlobs": [
+        {
+          "path": "README.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/README.md",
+          "contentSha256": "6a3a6a2cb72aa12e191d9c1d07b97a2f25f75b4d143b805119a00121c09f48c3"
+        },
+        {
+          "path": "skills/shopify-admin/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-admin/SKILL.md",
+          "contentSha256": "c3eaa9f6b30bd912afdfd8b79c1ab45a79bf07352abd429e56baefaafdc75a07"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "ddcae8c1461b205ef891c8b0b480d30b3be2d1c41d6c24485b2b2b77170b8e44"
+        },
+        {
+          "path": "skills/shopify-shopifyql/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/SKILL.md",
+          "contentSha256": "51b2d3f493501309ccb0cf15ad5dda7aaee17b33c880ee4501e9e67e6986dc99"
+        },
+        {
+          "path": "skills/shopify-shopifyql/scripts/log_skill_use.mjs",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/scripts/log_skill_use.mjs",
+          "contentSha256": "0e2d107da6c9ed8efde7cfdd7adabb87238129a8c6c4c8b91ee099d2ce427985"
+        },
+        {
+          "path": "skills/shopify-shopifyql/scripts/search_docs.mjs",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/scripts/search_docs.mjs",
+          "contentSha256": "e5721d8640e1fca18424f3b6588383c46efded5734d123be3289158f839d9b61"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/scripts/log_skill_use.mjs",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/scripts/log_skill_use.mjs",
+          "contentSha256": "d7faade7e27b58a5ce92a4005fdf24a04bf7fed0c382e18fc549728666c6c82e"
+        },
+        {
+          "path": "skills/shopify-onboarding-merchant/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-onboarding-merchant/SKILL.md",
+          "contentSha256": "8dca7463ccf33a06e1748c9d78846d100abbe353a9e52614de50a9e552cb30ca"
+        },
+        {
+          "path": "hooks/README.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/hooks/README.md",
+          "contentSha256": "a61f3580f2f894ad25e8c3edb30b1020eee610b1eb6b741ae9f811504ef18ea9"
+        },
+        {
+          "path": "hooks/scripts/track-telemetry.sh",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/hooks/scripts/track-telemetry.sh",
+          "contentSha256": "2b7476c8d74bda7f593031811a3c1526b75b0cbe71728ffa2decba41e7c59c57"
+        },
+        {
+          "path": "package.json",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/package.json",
+          "contentSha256": "e2efcaac4ade347a186823e684a734640025df94fee1a6341269a0894e23a656"
+        },
+        {
+          "path": "LICENSE",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/LICENSE",
+          "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+        }
+      ]
+    }
+  },
+  "sourceBlobs": [
+    {
+      "path": "README.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/README.md",
+      "contentSha256": "6a3a6a2cb72aa12e191d9c1d07b97a2f25f75b4d143b805119a00121c09f48c3"
+    },
+    {
+      "path": "skills/shopify-admin/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-admin/SKILL.md",
+      "contentSha256": "c3eaa9f6b30bd912afdfd8b79c1ab45a79bf07352abd429e56baefaafdc75a07"
+    },
+    {
+      "path": "skills/shopify-use-shopify-cli/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/SKILL.md",
+      "contentSha256": "ddcae8c1461b205ef891c8b0b480d30b3be2d1c41d6c24485b2b2b77170b8e44"
+    },
+    {
+      "path": "skills/shopify-shopifyql/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/SKILL.md",
+      "contentSha256": "51b2d3f493501309ccb0cf15ad5dda7aaee17b33c880ee4501e9e67e6986dc99"
+    },
+    {
+      "path": "skills/shopify-shopifyql/scripts/log_skill_use.mjs",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/scripts/log_skill_use.mjs",
+      "contentSha256": "0e2d107da6c9ed8efde7cfdd7adabb87238129a8c6c4c8b91ee099d2ce427985"
+    },
+    {
+      "path": "skills/shopify-shopifyql/scripts/search_docs.mjs",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/scripts/search_docs.mjs",
+      "contentSha256": "e5721d8640e1fca18424f3b6588383c46efded5734d123be3289158f839d9b61"
+    },
+    {
+      "path": "skills/shopify-use-shopify-cli/scripts/log_skill_use.mjs",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/scripts/log_skill_use.mjs",
+      "contentSha256": "d7faade7e27b58a5ce92a4005fdf24a04bf7fed0c382e18fc549728666c6c82e"
+    },
+    {
+      "path": "skills/shopify-onboarding-merchant/SKILL.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-onboarding-merchant/SKILL.md",
+      "contentSha256": "8dca7463ccf33a06e1748c9d78846d100abbe353a9e52614de50a9e552cb30ca"
+    },
+    {
+      "path": "hooks/README.md",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/hooks/README.md",
+      "contentSha256": "a61f3580f2f894ad25e8c3edb30b1020eee610b1eb6b741ae9f811504ef18ea9"
+    },
+    {
+      "path": "hooks/scripts/track-telemetry.sh",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/hooks/scripts/track-telemetry.sh",
+      "contentSha256": "2b7476c8d74bda7f593031811a3c1526b75b0cbe71728ffa2decba41e7c59c57"
+    },
+    {
+      "path": "package.json",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/package.json",
+      "contentSha256": "e2efcaac4ade347a186823e684a734640025df94fee1a6341269a0894e23a656"
+    },
+    {
+      "path": "LICENSE",
+      "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/LICENSE",
+      "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "shopify-ai-toolkit-store-operations-0e06bc35611e",
+      "capabilityId": "operate-stores-and-marketplaces",
+      "support": "direct",
+      "sourceBlobs": [
+        {
+          "path": "README.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/README.md",
+          "contentSha256": "6a3a6a2cb72aa12e191d9c1d07b97a2f25f75b4d143b805119a00121c09f48c3"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "ddcae8c1461b205ef891c8b0b480d30b3be2d1c41d6c24485b2b2b77170b8e44"
+        },
+        {
+          "path": "skills/shopify-onboarding-merchant/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-onboarding-merchant/SKILL.md",
+          "contentSha256": "8dca7463ccf33a06e1748c9d78846d100abbe353a9e52614de50a9e552cb30ca"
+        }
+      ],
+      "claim": "The pinned toolkit directly documents authenticated Shopify store reads and writes, validated CLI execution, preview-store creation, and agent-run store opening."
+    },
+    {
+      "id": "shopify-ai-toolkit-catalog-listings-0e06bc35611e",
+      "capabilityId": "manage-product-catalogs-and-listings",
+      "support": "direct",
+      "sourceBlobs": [
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "ddcae8c1461b205ef891c8b0b480d30b3be2d1c41d6c24485b2b2b77170b8e44"
+        }
+      ],
+      "claim": "The pinned CLI skill directly documents product reads, changes, and validated store operations."
+    },
+    {
+      "id": "shopify-ai-toolkit-promotion-revenue-0e06bc35611e",
+      "capabilityId": "run-promotions-and-analyze-revenue",
+      "support": "inferred",
+      "sourceBlobs": [
+        {
+          "path": "skills/shopify-admin/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-admin/SKILL.md",
+          "contentSha256": "c3eaa9f6b30bd912afdfd8b79c1ab45a79bf07352abd429e56baefaafdc75a07"
+        },
+        {
+          "path": "skills/shopify-use-shopify-cli/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-use-shopify-cli/SKILL.md",
+          "contentSha256": "ddcae8c1461b205ef891c8b0b480d30b3be2d1c41d6c24485b2b2b77170b8e44"
+        },
+        {
+          "path": "skills/shopify-shopifyql/SKILL.md",
+          "immutableRawUrl": "https://raw.githubusercontent.com/Shopify/Shopify-AI-Toolkit/0e06bc35611e505e372de7f8cdf265e6d6dbc311/skills/shopify-shopifyql/SKILL.md",
+          "contentSha256": "51b2d3f493501309ccb0cf15ad5dda7aaee17b33c880ee4501e9e67e6986dc99"
+        }
+      ],
+      "claim": "ShopifyQL directly covers sales and revenue analytics, but the combined capability also requires running promotions and is therefore inference only."
+    }
+  ],
+  "audit": {
+    "mode": "read-only-no-install-no-execute",
+    "reviewedAt": "2026-08-03T02:30:05Z",
+    "sourceAuditPath": "research/audits/shopify-ai-toolkit-0e06bc35611e.md",
+    "sourceAuditSha256": "5cc86258d8282c883f70801903c665f49c1f2f4067fbeabc05a6eee2fd4f38bd",
+    "selectionState": "review-required",
+    "selectionObservedAt": "2026-08-03T01:50:57Z",
+    "selectionSha256": "6279da5c3c70a8dbcd49a67f6a46c321dd5944d53ae685a8480c1f9524c4ff23",
+    "marketplaceCommit": "909649d9b178d142201000c76715b5fc952818e3",
+    "marketplaceManifestSha256": "d580b5d2fa473fdbfc8792ece117f6a3a92d4bb12356ab17beb2f3cc5f7b0316",
+    "marketplacePluginIndex": 230,
+    "previousSourceCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d",
+    "sourceCommit": "0e06bc35611e505e372de7f8cdf265e6d6dbc311",
+    "installSmokeRun": false,
+    "safetySmokeRun": false,
+    "installApproved": false,
+    "executionApproved": false
+  },
+  "heldReasons": [
+    "official-marketplace-selection:review-required",
+    "source-drift:556811e94dd45c795abe5c0b1bf6b5a4b098149d->0e06bc35611e505e372de7f8cdf265e6d6dbc311",
+    "privacy-telemetry-review:not-complete",
+    "individual-safety-review:not-complete",
+    "install-smoke:not-run",
+    "authentication-review:not-complete",
+    "authentication-scopes-and-revocation:not-complete",
+    "cost-review:not-complete",
+    "dependency-review:not-complete",
+    "trust-review:not-complete",
+    "telemetry-default-on:queries-responses-errors-code-context-optional-prompt",
+    "hooks:telemetry-activation",
+    "mutation-surface:allow-mutations",
+    "preview-store-and-browser-open:not-smoke-tested",
+    "dynamic-install-surface:shopify-cli-at-latest",
+    "dynamic-install-surface:hermes-raw-main",
+    "dynamic-install-surface:pi-git",
+    "dynamic-install-surface:npx-skills-add"
+  ],
+  "disclosures": [
+    "not-an-install-smoke",
+    "not-an-individual-safety-review",
+    "privacy-telemetry-review:not-complete",
+    "authentication-review:not-complete",
+    "cost-review:not-complete",
+    "dependency-review:not-complete",
+    "trust-review:not-complete",
+    "telemetry-default-on",
+    "telemetry-endpoint:https://shopify.dev/mcp/usage",
+    "telemetry-data:tool-skill-version",
+    "telemetry-data:model-client-version-when-supplied",
+    "telemetry-data:artifact-and-revision-identifiers",
+    "telemetry-data:queries-responses-errors-validation-code-context-identifiers-optional-prompt-hook-events",
+    "local-prompt-stash:${TMPDIR:-/tmp}/shopify-ai-toolkit-telemetry-<uid>/<session>.prompt",
+    "local-prompt-stash-mode:0600",
+    "local-prompt-stash-retention:pruned-only-on-next-user-prompt-submit-after-24h",
+    "local-prompt-stash-reuse:subsequent-shopify-skill-activation",
+    "local-prompt-stash-delete-after-transmit:not-immediate",
+    "telemetry-opt-out:OPT_OUT_INSTRUMENTATION=true",
+    "execution-surface:shopify-store-auth-scopes-execute-allow-mutations-create-preview-browser-open",
+    "upstream-install-surface:shopify-cli-at-latest-hermes-raw-main-pi-git-npx-skills-add-not-approved-by-broker",
+    "license:MIT"
+  ]
+}

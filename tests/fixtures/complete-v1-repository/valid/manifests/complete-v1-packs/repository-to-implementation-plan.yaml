@@ -1,0 +1,38 @@
+schemaVersion: 2
+id: repository-to-implementation-plan
+domainId: software-engineering
+categoryIds:
+  - repository-context
+outcome:
+  ko: 저장소를 구현 계획으로 전환한다.
+  en: Turns a repository into an implementation plan.
+inputs:
+  - repository
+outputs:
+  - implementation plan
+completionCriteria:
+  - plan names affected files
+routingProfileId: software-engineering
+requiredCapabilityIds:
+  - repository-context-analysis
+recommendedCapabilityIds: []
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: repository-to-implementation-plan-normal
+    type: normal
+    path: tests/evaluations/packs/repository-to-implementation-plan/normal.yaml
+  - id: repository-to-implementation-plan-boundary
+    type: boundary
+    path: tests/evaluations/packs/repository-to-implementation-plan/boundary.yaml
+  - id: repository-to-implementation-plan-refusal
+    type: refusal
+    path: tests/evaluations/packs/repository-to-implementation-plan/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

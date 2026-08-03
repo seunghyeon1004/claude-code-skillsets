@@ -1,0 +1,74 @@
+schemaVersion: 2
+domainId: marketing-and-growth
+capabilities:
+  - id: define-ideal-customers-and-personas
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - icp
+      - personas
+    outcome:
+      ko: 근거가 명시된 이상적 고객 프로필과 구매자 및 사용자 페르소나를 만든다.
+      en: Produces evidence-backed ideal customer profiles and buyer and user personas.
+    status: draft
+  - id: create-market-positioning-and-messaging
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - positioning
+      - messaging
+    outcome:
+      ko: 대상 고객과 대안 대비 가치를 명확히 하는 포지셔닝과 메시지 체계를 만든다.
+      en: Produces positioning and a message system that clarifies value for the target customer relative to alternatives.
+    status: draft
+  - id: design-and-price-marketing-offers
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - offers
+      - offer-pricing
+    outcome:
+      ko: 고객 가치, 구성, 조건, 가격 근거가 연결된 시장 제안을 만든다.
+      en: Produces a market offer connecting customer value, components, terms, and pricing rationale.
+    status: draft
+  - id: plan-content-and-search-growth
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - content-strategy
+      - seo
+    outcome:
+      ko: 고객 여정과 검색 의도에 맞춘 콘텐츠 우선순위, 발행 계획, 발견성 기준을 만든다.
+      en: Produces content priorities, a publication plan, and discoverability criteria aligned to customer journeys and search intent.
+    status: draft
+  - id: operate-email-and-lifecycle-marketing
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - email
+      - lifecycle
+    outcome:
+      ko: 고객 단계와 행동 신호에 맞춘 동의 기반 이메일 및 라이프사이클 흐름을 만든다.
+      en: Produces consent-aware email and lifecycle flows aligned to customer stages and behavioral signals.
+    status: draft
+  - id: design-and-optimize-conversion-funnels
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - funnels
+      - cro
+    outcome:
+      ko: 단계별 전환, 이탈, 개선 가설과 검증 방법이 정의된 퍼널을 만든다.
+      en: Produces a funnel with stage conversions, drop-offs, improvement hypotheses, and validation methods defined.
+    status: draft
+  - id: execute-paid-acquisition
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - paid-acquisition
+    outcome:
+      ko: 대상, 예산, 채널, 크리에이티브, 중단 기준이 명확한 유료 획득 계획을 만든다.
+      en: Produces a paid acquisition plan with explicit audience, budget, channels, creative, and stop criteria.
+    status: draft
+  - id: retain-customers-and-measure-growth
+    ownerDomainId: marketing-and-growth
+    categoryIds:
+      - customer-retention
+      - measurement
+    outcome:
+      ko: 유지와 성장 성과를 일관된 지표로 측정하고 이탈 완화 행동으로 연결하는 분석을 만든다.
+      en: Produces an analysis that measures retention and growth consistently and links churn signals to mitigation actions.
+    status: draft

@@ -1,0 +1,1 @@
+{"action":"review-required-hold","operation":"remove","reasons":["current installed identity does not exactly match the managed receipt"],"commands":[],"stateChanges":[],"requiresFreshApproval":false,"approvalBinding":null,"preservesPriorIdentityOnFailure":false,"preview":null}

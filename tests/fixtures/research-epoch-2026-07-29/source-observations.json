@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 3,
+  "observations": [
+    {
+      "schemaVersion": 3,
+      "sourceId": "alirezarezvani-claude-skills",
+      "latestEvidenceId": "legacy-2026-07-23-alirezarezvani-claude-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
+      "representativePaths": [
+        "business-operations/skills/process-mapper/SKILL.md",
+        "engineering/skills/mcp-server-builder/SKILL.md",
+        "engineering/skills/sql-database-assistant/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "business-operations",
+        "data-and-analytics"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "anthropic-plugins-official",
+      "latestEvidenceId": "legacy-2026-07-23-anthropic-plugins-official",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+      "representativePaths": [
+        "external_plugins/discord/skills/access/SKILL.md",
+        "external_plugins/discord/skills/configure/SKILL.md",
+        "external_plugins/imessage/skills/access/SKILL.md"
+      ],
+      "provisionalDomainIds": [],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "anthropic-skills",
+      "latestEvidenceId": "legacy-2026-07-23-anthropic-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb",
+      "representativePaths": [
+        "skills/claude-api/SKILL.md",
+        "skills/mcp-builder/SKILL.md",
+        "skills/pdf/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "documents-and-knowledge",
+        "software-engineering"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "chengfeng-videocut-skills",
+      "latestEvidenceId": "legacy-2026-07-23-chengfeng-videocut-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "e2cc73dce613c0701b3e02dc4a7c2f5f567ad7b3",
+      "representativePaths": [
+        "plugins/chengfeng-videocut/skills/cut-talking-head/SKILL.md",
+        "plugins/chengfeng-videocut/skills/finish-talking-head/SKILL.md"
+      ],
+      "provisionalDomainIds": [],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "composio-awesome-claude-skills",
+      "latestEvidenceId": "legacy-2026-07-23-composio-awesome-claude-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "92568c1edaff1bde5371154f036d959346c145a8",
+      "representativePaths": [
+        "composio-skills/aero-workflow-automation/SKILL.md",
+        "composio-skills/agent-mail-automation/SKILL.md",
+        "composio-skills/zoho-inventory-automation/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "business-operations",
+        "commerce"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "coreyhaines31-marketingskills",
+      "latestEvidenceId": "legacy-2026-07-23-coreyhaines31-marketingskills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "c21a984a56da10fb6085e6334f6f60929220a4da",
+      "representativePaths": [
+        "skills/ai-seo/SKILL.md",
+        "skills/customer-research/SKILL.md",
+        "skills/influencer-marketing/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "marketing-and-growth",
+        "promotion-and-distribution",
+        "research-and-intelligence"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "daymade-claude-code-skills",
+      "latestEvidenceId": "legacy-2026-07-23-daymade-claude-code-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "3b097ca8e06535443dc9b9cf14cb97005ed550da",
+      "representativePaths": [
+        "daymade-docs/pdf-creator/SKILL.md",
+        "deep-research/SKILL.md",
+        "terraform-skill/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "devops-and-security",
+        "documents-and-knowledge",
+        "research-and-intelligence"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "deanpeters-product-manager-skills",
+      "latestEvidenceId": "legacy-2026-07-23-deanpeters-product-manager-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "99710188c134acf590a02c0e4ee1f431e60004cf",
+      "representativePaths": [
+        "skills/company-research/SKILL.md",
+        "skills/prd-development/SKILL.md",
+        "skills/problem-framing-canvas/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "product-management",
+        "research-and-intelligence",
+        "strategy-and-decision"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "huggingface-skills",
+      "latestEvidenceId": "legacy-2026-07-23-huggingface-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "86cdeee824b73e504198b6005bb113552cdfa7ba",
+      "representativePaths": [
+        "hf-mcp/skills/hf-mcp/SKILL.md",
+        "skills/hf-cli/SKILL.md",
+        "skills/hf-cloud-sagemaker-deployment-planner/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "devops-and-security"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "jeremylongshore-plugins-plus-skills",
+      "latestEvidenceId": "legacy-2026-07-23-jeremylongshore-plugins-plus-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "4fdcab59171f5b4c44487356ba022210bdce1168",
+      "representativePaths": [
+        "plugins/ai-agency/tonone/skills/lens-dashboard/SKILL.md",
+        "plugins/ai-ml/ai-sdk-agents/skills/orchestrating-multi-agent-systems/SKILL.md",
+        "plugins/database/freshie-inventory-manager/skills/freshie-inventory/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "commerce",
+        "data-and-analytics"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "k-dense-scientific-agent-skills",
+      "latestEvidenceId": "legacy-2026-07-23-k-dense-scientific-agent-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "831d49eb77eed3c792be2970921b46764012ef00",
+      "representativePaths": [
+        "skills/exploratory-data-analysis/SKILL.md",
+        "skills/market-research-reports/SKILL.md",
+        "skills/pdf/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "data-and-analytics",
+        "documents-and-knowledge",
+        "research-and-intelligence"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "kepano-obsidian-skills",
+      "latestEvidenceId": "legacy-2026-07-23-kepano-obsidian-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+      "representativePaths": [
+        "skills/defuddle/SKILL.md",
+        "skills/json-canvas/SKILL.md",
+        "skills/obsidian-bases/SKILL.md"
+      ],
+      "provisionalDomainIds": [],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "nexscope-ecommerce-skills",
+      "latestEvidenceId": "legacy-2026-07-23-nexscope-ecommerce-skills",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "56f3288dd1ba3ae7cae43d369115a915229e510b",
+      "representativePaths": [
+        "conversion-rate-optimization/SKILL.md",
+        "cross-border-ecommerce/SKILL.md",
+        "product-review-analysis/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "commerce",
+        "marketing-and-growth",
+        "product-management"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "obra-superpowers",
+      "latestEvidenceId": "legacy-2026-07-23-obra-superpowers",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "d884ae04edebef577e82ff7c4e143debd0bbec99",
+      "representativePaths": [
+        "skills/brainstorming/SKILL.md",
+        "skills/dispatching-parallel-agents/SKILL.md",
+        "skills/receiving-code-review/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "software-engineering"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
+      "sourceId": "wshobson-agents",
+      "latestEvidenceId": "legacy-2026-07-23-wshobson-agents",
+      "previousEvidenceId": null,
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "c4b82b0ad771190355eb8e204b1329732a18449a",
+      "representativePaths": [
+        "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+        "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+        "plugins/llm-application-dev/skills/llm-evaluation/SKILL.md"
+      ],
+      "provisionalDomainIds": [
+        "ai-agents-and-automation",
+        "data-and-analytics",
+        "design-and-brand"
+      ],
+      "fields": {
+        "license": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "permissions": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "ownership": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "dependencies": {
+          "status": "unknown",
+          "evidence": []
+        },
+        "executableSurface": {
+          "status": "unknown",
+          "evidence": []
+        }
+      }
+    }
+  ]
+}

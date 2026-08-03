@@ -1,0 +1,52 @@
+schemaVersion: 2
+id: product-to-positioning-and-offer
+domainId: marketing-and-growth
+categoryIds:
+  - icp
+  - personas
+  - positioning
+  - messaging
+  - offers
+  - offer-pricing
+  - customer-retention
+  - measurement
+outcome:
+  ko: 제품 근거를 이상적 고객, 차별화 포지셔닝, 검증 가능한 메시지, 가격 근거가 있는 제안, 유지 및 측정 계획으로 전환한다.
+  en: Turns product evidence into ideal-customer definitions, differentiated positioning, supportable messaging, a priced offer, and a retention and measurement plan.
+inputs:
+  - Product capabilities, customer evidence, alternatives, constraints, and approved proof points
+  - Commercial goals, pricing boundaries, target segments, and measurement baseline
+outputs:
+  - An evidence-backed ideal customer profile, personas, positioning, and message hierarchy
+  - A priced offer with terms, proof requirements, retention hypotheses, and measurement plan
+completionCriteria:
+  - Target customer and persona claims trace to supplied evidence rather than invented attributes
+  - Positioning, messages, offer components, and pricing rationale remain within approved proof
+  - Retention assumptions and success metrics have baselines, owners, and validation checkpoints
+routingProfileId: marketing-and-growth
+requiredCapabilityIds:
+  - define-ideal-customers-and-personas
+  - create-market-positioning-and-messaging
+  - design-and-price-marketing-offers
+recommendedCapabilityIds:
+  - retain-customers-and-measure-growth
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: product-to-positioning-and-offer-normal
+    type: normal
+    path: tests/evaluations/packs/product-to-positioning-and-offer/normal.yaml
+  - id: product-to-positioning-and-offer-boundary
+    type: boundary
+    path: tests/evaluations/packs/product-to-positioning-and-offer/boundary.yaml
+  - id: product-to-positioning-and-offer-refusal
+    type: refusal
+    path: tests/evaluations/packs/product-to-positioning-and-offer/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

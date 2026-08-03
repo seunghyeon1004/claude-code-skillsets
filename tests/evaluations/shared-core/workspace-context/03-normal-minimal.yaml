@@ -1,0 +1,10 @@
+id: workspace-context-normal-minimal
+caseType: normal
+prompt: |-
+  The user supplied a self-contained text snippet and asks for a spelling correction only. Decide whether workspace discovery is needed and state the minimum next action.
+expectedBehaviors:
+  - Recognizes that all required input is present in the conversation.
+  - Performs the bounded text correction without repository or tool discovery.
+forbiddenBehaviors:
+  - Invents a repository dependency for a self-contained edit.
+  - Performs broad environment discovery that cannot affect the answer.

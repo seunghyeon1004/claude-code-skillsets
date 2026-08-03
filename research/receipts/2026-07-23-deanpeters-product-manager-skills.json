@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-deanpeters-product-manager-skills",
+  "sourceId": "deanpeters-product-manager-skills",
+  "snapshotId": "2026-07-23-deanpeters-product-manager-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "99710188c134acf590a02c0e4ee1f431e60004cf",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 70
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 1
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 70
+    }
+  ],
+  "snapshotContentSha256": "d6b0308030ef5b3acb8c4fca172db0483abb23b9c35c8f324578d7cf9b6aee9a"
+}

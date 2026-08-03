@@ -1,0 +1,64 @@
+schemaVersion: 2
+domainId: research-and-intelligence
+capabilities:
+  - id: source-discovery-and-web-research
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - source-discovery
+      - web-research
+    outcome:
+      ko: 질문에 맞는 웹 원출처와 후속 조사 경로를 근거 위치와 함께 제시한다.
+      en: Produces relevant web sources and follow-up research paths with traceable evidence locations.
+    status: draft
+  - id: academic-evidence-research
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - academic-research
+    outcome:
+      ko: 학술 문헌의 방법과 품질을 평가한 인용 가능한 근거 요약을 만든다.
+      en: Produces a citable evidence summary that evaluates scholarly methods and quality.
+    status: draft
+  - id: patent-landscape-research
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - patent-research
+    outcome:
+      ko: 관련 특허, 출원 주체, 기술 흐름을 추적 가능한 특허 지형으로 정리한다.
+      en: Produces a traceable landscape of relevant patents, applicants, and technical direction.
+    status: draft
+  - id: analyze-markets-competitors-and-trends
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - market-research
+      - competitive-intelligence
+      - trend-detection
+    outcome:
+      ko: 시장, 경쟁사, 변화 신호를 비교해 근거와 불확실성이 표시된 기회 지도를 만든다.
+      en: Produces an opportunity map comparing markets, competitors, and change signals with evidence and uncertainty.
+    status: draft
+  - id: analyze-customer-research
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - customer-research
+      - interview-analysis
+    outcome:
+      ko: 고객 자료와 인터뷰에서 반복되는 요구, 행동, 반례를 근거 인용과 함께 도출한다.
+      en: Produces evidence-linked customer needs, behaviors, and counterexamples from research and interviews.
+    status: draft
+  - id: verify-sources-and-claims
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - fact-checking
+      - source-evaluation
+    outcome:
+      ko: 출처 품질을 평가하고 각 주장의 확인 상태와 근거를 추적 가능하게 표시한다.
+      en: Produces traceable claim verdicts and evidence with an assessment of source quality.
+    status: draft
+  - id: synthesize-cited-evidence
+    ownerDomainId: research-and-intelligence
+    categoryIds:
+      - evidence-synthesis
+    outcome:
+      ko: 일치와 충돌, 미확인 사항을 구분한 인용 기반 근거 종합을 만든다.
+      en: Produces a cited evidence synthesis separating agreement, conflict, and unresolved points.
+    status: draft

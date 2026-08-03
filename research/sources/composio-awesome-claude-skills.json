@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "sourceId": "composio-awesome-claude-skills",
+  "repository": "https://github.com/ComposioHQ/awesome-claude-skills",
+  "queryUrls": [
+    "https://github.com/ComposioHQ/awesome-claude-skills"
+  ],
+  "reportedCountClaims": [],
+  "markdownIndexPaths": [
+    "README.md"
+  ]
+}

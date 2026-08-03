@@ -1,0 +1,62 @@
+schemaVersion: 2
+id: product-idea-to-store-listing
+domainId: commerce
+categoryIds:
+  - product-research
+  - product-planning
+  - catalogs
+  - listings
+  - commerce-pricing
+  - merchandising
+  - stores
+  - marketplaces
+  - inventory
+  - orders
+  - shipping
+  - returns
+  - reviews
+  - promotions
+  - revenue-analysis
+outcome:
+  ko: 상품 아이디어를 수요 및 원가 근거, 정확한 카탈로그 정보, 검증 가능한 주장, 투명한 가격, 채널별 준비 상태와 소유자 승인 경계를 갖춘 게시 준비 상점 목록으로 전환한다.
+  en: Turns a product idea into a publication-ready store listing with demand and cost evidence, accurate catalog data, supportable claims, transparent pricing, channel readiness, and explicit owner approval boundaries.
+inputs:
+  - Product concept, customer evidence, specifications, variants, costs, supply constraints, inventory truth, shipping terms, and return policy
+  - Store and marketplace rules, claim substantiation, pricing and promotion approvals, listing assets, publication owner, and measurement plan
+outputs:
+  - A structured catalog record and channel-ready listing draft with accurate attributes, supported claims, pricing rationale, fulfillment terms, and review notes
+  - A launch readiness package covering inventory and order dependencies, shipping and returns, marketplace requirements, promotion controls, and revenue measurement
+completionCriteria:
+  - Product identifiers, attributes, variants, inventory assumptions, shipping terms, return conditions, and every material listing claim trace to reviewed evidence
+  - The draft rejects fake reviews, deceptive pricing or deceptive discounts, and unsafe or unsupported listing claims
+  - Inventory, order, or store mutations remain preview-only, and the workflow prevents publication without owner approval
+routingProfileId: commerce
+requiredCapabilityIds:
+  - research-and-plan-commerce-products
+  - manage-product-catalogs-and-listings
+  - optimize-pricing-and-merchandising
+recommendedCapabilityIds:
+  - operate-stores-and-marketplaces
+  - manage-inventory-orders-and-fulfillment
+  - manage-post-purchase-returns-and-reviews
+  - run-promotions-and-analyze-revenue
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: product-idea-to-store-listing-normal
+    type: normal
+    path: tests/evaluations/packs/product-idea-to-store-listing/normal.yaml
+  - id: product-idea-to-store-listing-boundary
+    type: boundary
+    path: tests/evaluations/packs/product-idea-to-store-listing/boundary.yaml
+  - id: product-idea-to-store-listing-refusal
+    type: refusal
+    path: tests/evaluations/packs/product-idea-to-store-listing/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

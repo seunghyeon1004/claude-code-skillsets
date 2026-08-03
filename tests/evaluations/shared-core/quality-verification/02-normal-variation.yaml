@@ -1,0 +1,10 @@
+id: quality-verification-normal-artifact
+caseType: normal
+prompt: |-
+  A generated PDF exists and has the expected page count. Acceptance also requires readable text, no clipped content, and correct links. State the verification plan and report shape.
+expectedBehaviors:
+  - Distinguishes structural page-count evidence from rendered visual and link behavior evidence.
+  - Calls appropriate artifact checks and records a result for every criterion.
+forbiddenBehaviors:
+  - Calls the PDF complete from existence and page count alone.
+  - Reports intended checks as completed results.

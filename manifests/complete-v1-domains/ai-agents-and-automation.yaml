@@ -1,0 +1,32 @@
+id: ai-agents-and-automation
+name:
+  ko: AI 에이전트 및 자동화
+  en: AI Agents and Automation
+description:
+  ko: 활용 사례와 모델 선택부터 프롬프트, 맥락, 검색 증강 생성, 도구 연결, 단일 및 다중 에이전트, 메모리, 평가, 가드레일, 비용, 지연 시간과 모니터링까지 신뢰할 수 있는 AI 자동화 시스템을 설계한다.
+  en: Designs reliable AI automation systems from use-case and model selection through prompting, context, retrieval, tools, single and multi-agent systems, memory, evaluation, guardrails, cost, latency, and monitoring.
+categories:
+  - use-case-fit
+  - model-selection
+  - prompting
+  - context
+  - rag
+  - mcp
+  - tool-calls
+  - single-agents
+  - multi-agent-systems
+  - memory
+  - evaluation
+  - guardrails
+  - cost
+  - latency
+  - monitoring
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

@@ -1,0 +1,2613 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-anthropic-skills",
+  "sourceId": "anthropic-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
+  "blobs": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "gitBlobSha": "03d8e71c46e567e210a397ef12e949737f7d66c1",
+      "byteSize": 1606,
+      "readStatus": "observed",
+      "contentSha256": "af3ab8f818400d66a1febda92d700d2561d4c26a750a89cb770e5b096627f0bc"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "4ff6017419e28a4f54da2c777bc5b3fa4740921c",
+      "byteSize": 40,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "eb54ee8b92f2d40b4b26569be0772be3c1e23156",
+      "byteSize": 5552,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "gitBlobSha": "ffef92c48b351a3ed036556ed32dda934e8cf41a",
+      "byteSize": 46162,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/algorithmic-art/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/algorithmic-art/SKILL.md",
+      "gitBlobSha": "634f6fa42e4e697fa6afd293acd7fb8246574876",
+      "byteSize": 19769,
+      "readStatus": "observed",
+      "contentSha256": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef"
+    },
+    {
+      "path": "skills/algorithmic-art/templates/generator_template.js",
+      "gitBlobSha": "e263fbde985cd4b84b28e6a8eaf07fca3fcd3557",
+      "byteSize": 7826,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/algorithmic-art/templates/viewer.html",
+      "gitBlobSha": "630cc1f62df51deac69b3246b2dfeb1e68dae024",
+      "byteSize": 20844,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/brand-guidelines/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/brand-guidelines/SKILL.md",
+      "gitBlobSha": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59",
+      "byteSize": 2235,
+      "readStatus": "observed",
+      "contentSha256": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe"
+    },
+    {
+      "path": "skills/canvas-design/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/canvas-design/SKILL.md",
+      "gitBlobSha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c",
+      "byteSize": 11939,
+      "readStatus": "observed",
+      "contentSha256": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/ArsenalSC-OFL.txt",
+      "gitBlobSha": "1dad6ca6de2b041ef35c0f5009239ede4567e1f4",
+      "byteSize": 4373,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/ArsenalSC-Regular.ttf",
+      "gitBlobSha": "fe5409b22e6b22a0ce80c65bdbb333d7d96e7a6a",
+      "byteSize": 165848,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BigShoulders-Bold.ttf",
+      "gitBlobSha": "fc5f8fddee4c9e5810b1ab0e518a69acee3d2c50",
+      "byteSize": 94528,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BigShoulders-OFL.txt",
+      "gitBlobSha": "b220280e780d0b52a1efb259f44f332cfa9dcab4",
+      "byteSize": 4397,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BigShoulders-Regular.ttf",
+      "gitBlobSha": "de8308ce32f3d6759e491dcdce37f65f538d6ac7",
+      "byteSize": 94396,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Boldonse-OFL.txt",
+      "gitBlobSha": "1890cb1c226f32e581a9ca30cb06e01f2d251168",
+      "byteSize": 4390,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Boldonse-Regular.ttf",
+      "gitBlobSha": "43fa30affce39b3649e6e94122fbe17cc5536dd2",
+      "byteSize": 77168,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf",
+      "gitBlobSha": "f3b1deda1c594859a1f5197644142f73e2a85868",
+      "byteSize": 90952,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BricolageGrotesque-OFL.txt",
+      "gitBlobSha": "fc2b2167c3ccc6fa6f41ab38cb5bde9b3b808769",
+      "byteSize": 4403,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BricolageGrotesque-Regular.ttf",
+      "gitBlobSha": "0674ae3e4fc8c3f7baa53dbb582dd420ea73f224",
+      "byteSize": 90920,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/CrimsonPro-Bold.ttf",
+      "gitBlobSha": "58730fb4c7b999b46537d613ab629b8e465251ad",
+      "byteSize": 107352,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/CrimsonPro-Italic.ttf",
+      "gitBlobSha": "786a1bd66d38006d94a7cb96db1f93a2f439b08e",
+      "byteSize": 108828,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/CrimsonPro-OFL.txt",
+      "gitBlobSha": "f976fdc910257e3de8f4b24475963edb81b6ba46",
+      "byteSize": 4394,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/CrimsonPro-Regular.ttf",
+      "gitBlobSha": "f5666b9beb8fb808ee56e78726a5b754e67d1ae7",
+      "byteSize": 106696,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/DMMono-OFL.txt",
+      "gitBlobSha": "5b17f0c628c0a76ceb057e1b44d0112ab9a63ad2",
+      "byteSize": 4392,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/DMMono-Regular.ttf",
+      "gitBlobSha": "7efe813da72c7b1c0294cae782e88f262ecb75be",
+      "byteSize": 48852,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/EricaOne-OFL.txt",
+      "gitBlobSha": "490d012017f42bee136a3d3cb0d79ef9c3ba4561",
+      "byteSize": 4410,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/EricaOne-Regular.ttf",
+      "gitBlobSha": "8bd91d11773f5b035a9e6b6d1bab2e59b08051e3",
+      "byteSize": 24872,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf",
+      "gitBlobSha": "736ff7c3b1483081322cacc7c64e0995b52d8af6",
+      "byteSize": 78304,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/GeistMono-OFL.txt",
+      "gitBlobSha": "679a685a2343079632b0dd836fecb7cefbea6f0d",
+      "byteSize": 4388,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/GeistMono-Regular.ttf",
+      "gitBlobSha": "1a30262ab749ea7a56aedd91410d8be3787db548",
+      "byteSize": 78232,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Gloock-OFL.txt",
+      "gitBlobSha": "363acd33d9e37e60b9941229448244b6a2d22461",
+      "byteSize": 4381,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Gloock-Regular.ttf",
+      "gitBlobSha": "3e58c4e455cc143e9b02d05fdcb054fac62ed7ab",
+      "byteSize": 95156,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf",
+      "gitBlobSha": "247979caeb26c286a33cfd33234188d370c1c0ff",
+      "byteSize": 136008,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexMono-OFL.txt",
+      "gitBlobSha": "e423b74780b16934a073769bd147d46479ceb8b2",
+      "byteSize": 4363,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexMono-Regular.ttf",
+      "gitBlobSha": "601ae945ebe1a717ac3ab7ed393288975da83b32",
+      "byteSize": 133796,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexSerif-Bold.ttf",
+      "gitBlobSha": "78f6e500de7faaec05bbbc60ccfc81083440b1c8",
+      "byteSize": 161000,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexSerif-BoldItalic.ttf",
+      "gitBlobSha": "369b89d261b2d6d186e46b49a5b1959d9e95b5d4",
+      "byteSize": 169840,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexSerif-Italic.ttf",
+      "gitBlobSha": "a4d859a77f0e52e36bf699cf55469c31a4664c18",
+      "byteSize": 170004,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexSerif-Regular.ttf",
+      "gitBlobSha": "35f454ceac6b101ea3f9bed9f57a68a61519b401",
+      "byteSize": 160380,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-Bold.ttf",
+      "gitBlobSha": "f602dcef23bb96d8d2f5c74c595ecf400c5ec722",
+      "byteSize": 68084,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-BoldItalic.ttf",
+      "gitBlobSha": "122b27305b6de88f6946bb171c055bd428124fc3",
+      "byteSize": 70004,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-Italic.ttf",
+      "gitBlobSha": "4b98fb8dd753453f6e355a6dd1d4f483961c4017",
+      "byteSize": 69900,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-OFL.txt",
+      "gitBlobSha": "4bb99142f612dfaa0053377934b47e466800b20e",
+      "byteSize": 4403,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-Regular.ttf",
+      "gitBlobSha": "14c6113cdd3abcfa360f8d27bb42034aa91accc0",
+      "byteSize": 68028,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf",
+      "gitBlobSha": "8fa958d9baf94bdf86c45d5340dc2ba171e2eb2c",
+      "byteSize": 70868,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSerif-Regular.ttf",
+      "gitBlobSha": "976303184a522174d92bc8d1a82d7960850a94b0",
+      "byteSize": 69312,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Italiana-OFL.txt",
+      "gitBlobSha": "ba8af215bb486cc7f3f9acfa5df895d5ba2d89ae",
+      "byteSize": 4394,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Italiana-Regular.ttf",
+      "gitBlobSha": "a9b828c0f308eaf07a172cbf2aae823e0f762210",
+      "byteSize": 27184,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf",
+      "gitBlobSha": "1926c804b95bcd44835689b0ddf1ac10d0b7a805",
+      "byteSize": 114828,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/JetBrainsMono-OFL.txt",
+      "gitBlobSha": "5ceee0025da23d2cd5fd14b28569708a8db4db2b",
+      "byteSize": 4399,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/JetBrainsMono-Regular.ttf",
+      "gitBlobSha": "436c982ff3209357305892181e61565d1e01d439",
+      "byteSize": 114904,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Jura-Light.ttf",
+      "gitBlobSha": "dffbb3397409ebc91d53f4c4b29b7988c26a49f6",
+      "byteSize": 154308,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Jura-Medium.ttf",
+      "gitBlobSha": "4bf91a33951b960e4d579eb2e57cce624e4aec0a",
+      "byteSize": 154488,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Jura-OFL.txt",
+      "gitBlobSha": "64ad4c67d29fb44d037a400881c3c7a3d227cacf",
+      "byteSize": 4380,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/LibreBaskerville-OFL.txt",
+      "gitBlobSha": "8c531fa56848a48577f9aa3b3e8051f3682e87f4",
+      "byteSize": 4449,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/LibreBaskerville-Regular.ttf",
+      "gitBlobSha": "c1abc2645f623b8ab8d71724df32746b1aa627aa",
+      "byteSize": 147584,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-Bold.ttf",
+      "gitBlobSha": "edae21eb689cda1c1a7b7b1a69277b3c01112a4c",
+      "byteSize": 133828,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-BoldItalic.ttf",
+      "gitBlobSha": "12dea8c6f5f3af6c7e066b9c6ae5c8b33741e45e",
+      "byteSize": 140332,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-Italic.ttf",
+      "gitBlobSha": "e24b69b26b0e14a48fdbb65fd29db51ce1e95aad",
+      "byteSize": 139328,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-OFL.txt",
+      "gitBlobSha": "4cf1b950d308edaee72401989e45410ea99e76a4",
+      "byteSize": 4423,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-Regular.ttf",
+      "gitBlobSha": "dc751db00dc171fc19737d9da800d7a583bb2c6d",
+      "byteSize": 133888,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NationalPark-Bold.ttf",
+      "gitBlobSha": "f4d7c021b6e0edd88bb152d8cee73154efa086c1",
+      "byteSize": 79208,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NationalPark-OFL.txt",
+      "gitBlobSha": "f4ec3fba915df6e072b72fed691f1032d440544d",
+      "byteSize": 4399,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NationalPark-Regular.ttf",
+      "gitBlobSha": "e4cbfbf5eb9569b2f0bcfe2f55ea1625123fc14c",
+      "byteSize": 76424,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NothingYouCouldDo-OFL.txt",
+      "gitBlobSha": "c81eccdee9a75cebdd400cc39ff5a0bb7bd1eaa3",
+      "byteSize": 4363,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NothingYouCouldDo-Regular.ttf",
+      "gitBlobSha": "b086bced91e7b587e8cbe5d7e13e3363e18bc812",
+      "byteSize": 32020,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Outfit-Bold.ttf",
+      "gitBlobSha": "f9f2f72afdee8011d61048072576ceee2f95ea60",
+      "byteSize": 55392,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Outfit-OFL.txt",
+      "gitBlobSha": "fd0cb995c0cadfa28394e7f9b88b7e43c783b453",
+      "byteSize": 4389,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Outfit-Regular.ttf",
+      "gitBlobSha": "3939ab246e0736f7283a571a458db274088ed7b6",
+      "byteSize": 54912,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PixelifySans-Medium.ttf",
+      "gitBlobSha": "95cd372534b533c9cb7ce35b782f0623ecb4de00",
+      "byteSize": 51072,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PixelifySans-OFL.txt",
+      "gitBlobSha": "b02d1b6767c0cd44a3a3afeddef03778f10e6ad2",
+      "byteSize": 4395,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PoiretOne-OFL.txt",
+      "gitBlobSha": "607bdad3fd41bf7915b74271cd4c67f3319c00e6",
+      "byteSize": 4366,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PoiretOne-Regular.ttf",
+      "gitBlobSha": "b339511b02ea2c25722c8c975e7018e8efcaa217",
+      "byteSize": 45244,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/RedHatMono-Bold.ttf",
+      "gitBlobSha": "a6e3cf157ad71c0620620c9da48a8c8d0ca26cdf",
+      "byteSize": 34420,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/RedHatMono-OFL.txt",
+      "gitBlobSha": "16cf394bb1bd5100686703ebc4a3772a568e0e6a",
+      "byteSize": 4394,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/RedHatMono-Regular.ttf",
+      "gitBlobSha": "3bf6a698bbb3ab2caefdd2cd0456fc08b35ecf1d",
+      "byteSize": 34488,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Silkscreen-OFL.txt",
+      "gitBlobSha": "a1fe7d5fbe4182d1071a23f8a8c46b9766eec81c",
+      "byteSize": 4394,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Silkscreen-Regular.ttf",
+      "gitBlobSha": "8abaa7c500d4555073f9e303ec2e5e343d3b8f3f",
+      "byteSize": 31960,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/SmoochSans-Medium.ttf",
+      "gitBlobSha": "0af9ead07bc2b95a691a63c72d328595b93183a0",
+      "byteSize": 59704,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/SmoochSans-OFL.txt",
+      "gitBlobSha": "4c2f033ac0e041f61d88d255c4bb02ee28b6f3cb",
+      "byteSize": 4396,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Tektur-Medium.ttf",
+      "gitBlobSha": "34fc797195169923bad8e76181d60ae02019fef0",
+      "byteSize": 76248,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Tektur-OFL.txt",
+      "gitBlobSha": "2cad55f1b2d239571560773c92801166cb2be635",
+      "byteSize": 4385,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Tektur-Regular.ttf",
+      "gitBlobSha": "f280fba407441453779b16f7021a286219421486",
+      "byteSize": 75604,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf",
+      "gitBlobSha": "5c97989292020632435b96e6622c74b1f1c6e5cd",
+      "byteSize": 191304,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-BoldItalic.ttf",
+      "gitBlobSha": "54418b8a6303d1b0cd6b6a206ca3014eba71bc3a",
+      "byteSize": 175772,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-Italic.ttf",
+      "gitBlobSha": "40529b68f7784c96872fa7ed9bfb46d72bf699e2",
+      "byteSize": 174280,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-OFL.txt",
+      "gitBlobSha": "070f3416c4767c3396120b5942627f6d3d5bab10",
+      "byteSize": 4397,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf",
+      "gitBlobSha": "d24586cc0336949d49a1c2bf3fb3b306c47b431e",
+      "byteSize": 188916,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/YoungSerif-OFL.txt",
+      "gitBlobSha": "f09443cbe4dfca41153edf6f9dd8fd63138a24b3",
+      "byteSize": 4398,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/YoungSerif-Regular.ttf",
+      "gitBlobSha": "f454fbedd4c8b00833d17fffa1f89acb5149b02c",
+      "byteSize": 105136,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/claude-api/SKILL.md",
+      "gitBlobSha": "6ddbf0b48d0a55a3065ae870556c9d77fc310a58",
+      "byteSize": 71590,
+      "readStatus": "observed",
+      "contentSha256": "dec5113c74b754a462aa43f47dfdf8e4739d1b411bd81596d86c113399d6f94e"
+    },
+    {
+      "path": "skills/claude-api/csharp/claude-api/README.md",
+      "gitBlobSha": "9891518ce61d770dfcdd4bd245b7943ec040b345",
+      "byteSize": 18448,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/csharp/claude-api/batches.md",
+      "gitBlobSha": "c066bef6c9f616f53a9d287dbc544bcf4bb4889e",
+      "byteSize": 413,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/csharp/claude-api/files-api.md",
+      "gitBlobSha": "a4232bd76da82fa1cab3d2c8c73d754653393439",
+      "byteSize": 679,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/csharp/claude-api/streaming.md",
+      "gitBlobSha": "d06c9d32fd451f61e969cdf80120bf5a8ca0a70f",
+      "byteSize": 793,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/csharp/claude-api/tool-use.md",
+      "gitBlobSha": "4ce6124304cbd8ba0496ba41f51390d9aad317e3",
+      "byteSize": 6022,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/curl/examples.md",
+      "gitBlobSha": "ba93ea217106efc931cc9db623e321d245ecffdf",
+      "byteSize": 9201,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/curl/managed-agents.md",
+      "gitBlobSha": "72ee208dabb202e1f33c0667d54c36e747b98bf7",
+      "byteSize": 7630,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/go/claude-api/README.md",
+      "gitBlobSha": "958582c333497d797f06b253b08840f553aff367",
+      "byteSize": 7780,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/go/claude-api/files-api.md",
+      "gitBlobSha": "edf3c01316e3d9d9e97cc09d24e898f6e673fdd1",
+      "byteSize": 713,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/go/claude-api/streaming.md",
+      "gitBlobSha": "61ec32f620e8600d7e722a804fc2f5829a4fa3ff",
+      "byteSize": 1039,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/go/claude-api/tool-use.md",
+      "gitBlobSha": "45fff7d94dac1d8086d585d9835527b9c37725ee",
+      "byteSize": 8435,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/go/managed-agents/README.md",
+      "gitBlobSha": "d5cdc5e3e4665b5e9dcde584b3a899203fad5977",
+      "byteSize": 18949,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/java/claude-api/README.md",
+      "gitBlobSha": "57aeb67c644088e226e0a608049f5435c171e9a3",
+      "byteSize": 11322,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/java/claude-api/files-api.md",
+      "gitBlobSha": "84cf74cc4565bcfd9843a327a5c997779cbd380c",
+      "byteSize": 969,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/java/claude-api/streaming.md",
+      "gitBlobSha": "921e9475f8652b1a1a826be31be506d5154d945d",
+      "byteSize": 661,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/java/claude-api/tool-use.md",
+      "gitBlobSha": "caf45b58f7c7d3de69db8eedf4b36dacc84ba17a",
+      "byteSize": 9542,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/java/managed-agents/README.md",
+      "gitBlobSha": "56814c8cf36e4f8f870fcda90f29313a191109ff",
+      "byteSize": 16956,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/claude-api/README.md",
+      "gitBlobSha": "41b3714b4a66a000f0c5cbd6aff1329eecb51802",
+      "byteSize": 6123,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/claude-api/batches.md",
+      "gitBlobSha": "7c0db9c0fee71409d22d2daea53c9a976c6caf26",
+      "byteSize": 447,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/claude-api/files-api.md",
+      "gitBlobSha": "3fb617975eefcda978113a1664f7c89c1058ff35",
+      "byteSize": 241,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/claude-api/streaming.md",
+      "gitBlobSha": "0a90596b636c29cbd081f35ace1ed8777fc70166",
+      "byteSize": 682,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/claude-api/tool-use.md",
+      "gitBlobSha": "ffd66ca51b873a80cc553caf40feda5ab556c4d9",
+      "byteSize": 8099,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/php/managed-agents/README.md",
+      "gitBlobSha": "fc63d9888525238f7dccf0eddefae4f0f7be648d",
+      "byteSize": 13526,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/claude-api/README.md",
+      "gitBlobSha": "06e8fba7e5eba6b1a59bb0f221d9722ab29258f8",
+      "byteSize": 19376,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/claude-api/batches.md",
+      "gitBlobSha": "e917f57a453d5ba5c748dac259c7bed6bdffc8b6",
+      "byteSize": 5586,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/claude-api/files-api.md",
+      "gitBlobSha": "05778ddb024bb707d77e93d59db9d628573ce298",
+      "byteSize": 4373,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/claude-api/streaming.md",
+      "gitBlobSha": "e0a88fd4c6c6356df516c0d64ad038f1d50604a7",
+      "byteSize": 6548,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/claude-api/tool-use.md",
+      "gitBlobSha": "ac467bfbd5a10bbdb0840211e3baab776d56b0a3",
+      "byteSize": 19419,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/python/managed-agents/README.md",
+      "gitBlobSha": "cb97bfa4754aa4fe3dc12a61aacbf880c6a05dc1",
+      "byteSize": 10357,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/ruby/claude-api/README.md",
+      "gitBlobSha": "2a0466854785521eb5d9cdcc24f9253716fcb98f",
+      "byteSize": 4481,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/ruby/claude-api/streaming.md",
+      "gitBlobSha": "2de9260aa8b8b830c6aa270ee4c7c5df53a2cae0",
+      "byteSize": 235,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/ruby/claude-api/tool-use.md",
+      "gitBlobSha": "70914b9ee9c702cf9e2e54eb35e94751113f2b65",
+      "byteSize": 1063,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/ruby/managed-agents/README.md",
+      "gitBlobSha": "4b58dc96d8f4ecc73a4685f36fcfe3876e431c57",
+      "byteSize": 10460,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/agent-design.md",
+      "gitBlobSha": "d310578b3701477451b57da0010692426a3deb7e",
+      "byteSize": 8506,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/anthropic-cli.md",
+      "gitBlobSha": "7a47885f1f2a3d060a58e5abf76435e91b421824",
+      "byteSize": 16210,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/claude-platform-on-aws.md",
+      "gitBlobSha": "098db27ab4c508c51a5b470be5f803c75ab66be3",
+      "byteSize": 3878,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/error-codes.md",
+      "gitBlobSha": "56059ec37602d184d9cd5a9f0f00f7fe816a43fc",
+      "byteSize": 12182,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/live-sources.md",
+      "gitBlobSha": "ccceae2f0d74e12196a658afa783db3894c696fb",
+      "byteSize": 18929,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-api-reference.md",
+      "gitBlobSha": "4c11f3f47f6c833ba4491c9c6da061cdf3f8efe7",
+      "byteSize": 32146,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-client-patterns.md",
+      "gitBlobSha": "9290e345271f83398a1e854965543e2f1de10fd3",
+      "byteSize": 10162,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-core.md",
+      "gitBlobSha": "12a1b8699d8e8ef6623dbca35f0e8e9c5d8bc5d6",
+      "byteSize": 24040,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-environments.md",
+      "gitBlobSha": "d528f57d6eaf68b37855a0c7bfe5504c933b34ca",
+      "byteSize": 11808,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-events.md",
+      "gitBlobSha": "e22f71843bb3a34897844fea65a121c79341e455",
+      "byteSize": 18521,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-memory.md",
+      "gitBlobSha": "1b59052ec9455bf5675c0d70bf05eba64cf57826",
+      "byteSize": 10006,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-multiagent.md",
+      "gitBlobSha": "3b741994731c77e7acf47a3daaa826025e41e32e",
+      "byteSize": 9626,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-onboarding.md",
+      "gitBlobSha": "2fab247525d265f2924df342718c2ba7e84b6f01",
+      "byteSize": 10384,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-outcomes.md",
+      "gitBlobSha": "edfdefeb3cc622e07b58845128c736e0f04a4089",
+      "byteSize": 6674,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-overview.md",
+      "gitBlobSha": "a2a88c0549e42ac6e5b136f4adad6e75176efa66",
+      "byteSize": 11550,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-scheduled-deployments.md",
+      "gitBlobSha": "389a74665df40b51acb95ca0e326a39ff7c77b5e",
+      "byteSize": 7640,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-self-hosted-sandboxes.md",
+      "gitBlobSha": "497b103b0847200cfed4e4a573f10d4b1a63c282",
+      "byteSize": 10181,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-tools.md",
+      "gitBlobSha": "fb1ef9717b8560bd3d54777cf4e05b3810997e15",
+      "byteSize": 20725,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/managed-agents-webhooks.md",
+      "gitBlobSha": "28ce2f2bf40fc86d7f2d3e6db3915da113413e7d",
+      "byteSize": 10431,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/model-migration.md",
+      "gitBlobSha": "07a871da26275c14c50e6b6bac4d63261e8662e3",
+      "byteSize": 175673,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/models.md",
+      "gitBlobSha": "97727f79b7154653399732fceed76cc18d4b6182",
+      "byteSize": 12146,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/platform-availability.md",
+      "gitBlobSha": "4f50a44192f54bc96fa3bfa97e7745f0f453c4ac",
+      "byteSize": 5945,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/prompt-caching.md",
+      "gitBlobSha": "a2289ea42636611e24df8a86dd7e79a34026a7a0",
+      "byteSize": 16291,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/token-counting.md",
+      "gitBlobSha": "237372d5ec6d768ff9f0d012eadb823a74b8476b",
+      "byteSize": 1604,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/shared/tool-use-concepts.md",
+      "gitBlobSha": "23a58777c0259ce152949c2d7aeddb1164491adf",
+      "byteSize": 32204,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/claude-api/README.md",
+      "gitBlobSha": "115d20d7aafd10d87c080d8ef36a292648158d57",
+      "byteSize": 15179,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/claude-api/batches.md",
+      "gitBlobSha": "71155c7e58997929736e1c69cfd76d05e8ace503",
+      "byteSize": 2592,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/claude-api/files-api.md",
+      "gitBlobSha": "11a8f8df85b0c5fab3e54b3aded0fb22fef4f553",
+      "byteSize": 2259,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/claude-api/streaming.md",
+      "gitBlobSha": "096099ee37109209438273a2fe0256bcaf38d2bc",
+      "byteSize": 5843,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/claude-api/tool-use.md",
+      "gitBlobSha": "dc34f3d8bfc6aee8f814bfa8bb2a1f1341e62ee5",
+      "byteSize": 19116,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/claude-api/typescript/managed-agents/README.md",
+      "gitBlobSha": "23439d103581c8e23d78d67e8118d9a560d0a158",
+      "byteSize": 9824,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/doc-coauthoring/SKILL.md",
+      "gitBlobSha": "a5a69839ef4a161131d80b6daef10037a9686f4a",
+      "byteSize": 15815,
+      "readStatus": "observed",
+      "contentSha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4"
+    },
+    {
+      "path": "skills/docx/LICENSE.txt",
+      "gitBlobSha": "c55ab42224874608473643de0a85736b7fec0730",
+      "byteSize": 1467,
+      "readStatus": "observed",
+      "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+    },
+    {
+      "path": "skills/docx/SKILL.md",
+      "gitBlobSha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+      "byteSize": 6911,
+      "readStatus": "observed",
+      "contentSha256": "8017469ea95fb7d28225c62daf8e2f3492a7b516fc64c18c28977cbf8980b7fe"
+    },
+    {
+      "path": "skills/docx/scripts/__init__.py",
+      "gitBlobSha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "byteSize": 1,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/accept_changes.py",
+      "gitBlobSha": "8e363161915d3720409bb8b6ef9bc4ade33b64e4",
+      "byteSize": 4051,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/comment.py",
+      "gitBlobSha": "46ed5f52eb639934a8ead383976eecc2a6867fa7",
+      "byteSize": 14054,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/merge_runs.py",
+      "gitBlobSha": "4c7c1bf261b1ec3febe4112e30f46c2aa9f4a141",
+      "byteSize": 9398,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/helpers/__init__.py",
+      "gitBlobSha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+      "byteSize": 3358,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/helpers/pptx_chart.py",
+      "gitBlobSha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+      "byteSize": 5862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/helpers/pptx_slide.py",
+      "gitBlobSha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+      "byteSize": 1675,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/helpers/pptx_theme.py",
+      "gitBlobSha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "byteSize": 3510,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "gitBlobSha": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "byteSize": 74984,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "gitBlobSha": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "byteSize": 6956,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "gitBlobSha": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "byteSize": 51302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "gitBlobSha": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "byteSize": 624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "gitBlobSha": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "byteSize": 152039,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "gitBlobSha": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "byteSize": 1231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "byteSize": 8862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "byteSize": 14795,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "gitBlobSha": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "byteSize": 83612,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "gitBlobSha": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "byteSize": 1269,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "gitBlobSha": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "byteSize": 7328,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "gitBlobSha": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "byteSize": 6382,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "gitBlobSha": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "byteSize": 1248,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "gitBlobSha": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "byteSize": 880,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "gitBlobSha": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "byteSize": 2608,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "gitBlobSha": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "byteSize": 3507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "gitBlobSha": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "byteSize": 7507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "gitBlobSha": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "byteSize": 23313,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "gitBlobSha": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "byteSize": 1367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "gitBlobSha": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "byteSize": 242277,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "gitBlobSha": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "byteSize": 26148,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "gitBlobSha": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "byteSize": 25279,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "gitBlobSha": "dd079e603f5770176212776a1d565b108875cf64",
+      "byteSize": 535,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "byteSize": 5712,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "byteSize": 4010,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "gitBlobSha": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "byteSize": 171367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "gitBlobSha": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "byteSize": 4646,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "gitBlobSha": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "byteSize": 1963,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "gitBlobSha": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "byteSize": 2515,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "gitBlobSha": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "byteSize": 2856,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "gitBlobSha": "56497467120b52b742756379959d4b2536be6df7",
+      "byteSize": 1344,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/mce/mc.xsd",
+      "gitBlobSha": "ef725457cf39116672e285d021be69b7ad022574",
+      "byteSize": 3127,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "gitBlobSha": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "byteSize": 26549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "gitBlobSha": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "byteSize": 3745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "gitBlobSha": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "byteSize": 901,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "gitBlobSha": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "byteSize": 1778,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "gitBlobSha": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "byteSize": 1002,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "gitBlobSha": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "byteSize": 600,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "gitBlobSha": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "byteSize": 745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/soffice.py",
+      "gitBlobSha": "0b4c99deca54013c550458c9244ee63eea748dca",
+      "byteSize": 5927,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validate.py",
+      "gitBlobSha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+      "byteSize": 6142,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validators/__init__.py",
+      "gitBlobSha": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "byteSize": 336,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validators/base.py",
+      "gitBlobSha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+      "byteSize": 33756,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validators/docx.py",
+      "gitBlobSha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+      "byteSize": 17482,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validators/pptx.py",
+      "gitBlobSha": "318f0e61483972fb08e02be39c94331dba46445e",
+      "byteSize": 15966,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/office/validators/redlining.py",
+      "gitBlobSha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+      "byteSize": 11231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/templates/comments.xml",
+      "gitBlobSha": "cd01a7d7155f9a78cf3d11470e2ce2b5ccdac640",
+      "byteSize": 2603,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/templates/commentsExtended.xml",
+      "gitBlobSha": "411003cc485356c560e29687ca359d64cd89d4b4",
+      "byteSize": 2611,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/templates/commentsExtensible.xml",
+      "gitBlobSha": "f5572d710826dd7a1f455af7487e2157ef01ada0",
+      "byteSize": 2707,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/templates/commentsIds.xml",
+      "gitBlobSha": "32f1629f2a8bb9aafebb0699349d0d799edce9f3",
+      "byteSize": 2619,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/docx/scripts/templates/people.xml",
+      "gitBlobSha": "3803d2de0faa635687a48947b52ab98b9655f631",
+      "byteSize": 115,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/frontend-design/LICENSE.txt",
+      "gitBlobSha": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+      "byteSize": 10174,
+      "readStatus": "observed",
+      "contentSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "skills/frontend-design/SKILL.md",
+      "gitBlobSha": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
+      "byteSize": 8260,
+      "readStatus": "observed",
+      "contentSha256": "1608ea77fbb6fc30d13a97d12cfa8ebf31358d40f0dd97beed24829d6b3f45dd"
+    },
+    {
+      "path": "skills/internal-comms/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/internal-comms/SKILL.md",
+      "gitBlobSha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b",
+      "byteSize": 1511,
+      "readStatus": "observed",
+      "contentSha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475"
+    },
+    {
+      "path": "skills/internal-comms/examples/3p-updates.md",
+      "gitBlobSha": "5329bfbf3b47035946a3995dd63025799b582f8c",
+      "byteSize": 3274,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/internal-comms/examples/company-newsletter.md",
+      "gitBlobSha": "4997a072b62ed7f65a9fd113903db3d9eba34b98",
+      "byteSize": 3295,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/internal-comms/examples/faq-answers.md",
+      "gitBlobSha": "395262a860636434593cd3c3da258000231ea4f6",
+      "byteSize": 2366,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/internal-comms/examples/general-comms.md",
+      "gitBlobSha": "0ea977018ca8167d39bfc9adb253f80336819578",
+      "byteSize": 602,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/mcp-builder/SKILL.md",
+      "gitBlobSha": "8a1a77a47d141967b246adb4da4f91037578ff7d",
+      "byteSize": 9092,
+      "readStatus": "observed",
+      "contentSha256": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
+    },
+    {
+      "path": "skills/mcp-builder/reference/evaluation.md",
+      "gitBlobSha": "87e9bb78840fac113d93b4a27ab5b229a18cf226",
+      "byteSize": 21663,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/reference/mcp_best_practices.md",
+      "gitBlobSha": "b9d343cc3ae89b1fc139dae96bdb2b7e29ba3648",
+      "byteSize": 7330,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/reference/node_mcp_server.md",
+      "gitBlobSha": "f6e5df982adc0848bf261c47ab8d65a1e0469391",
+      "byteSize": 28550,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/reference/python_mcp_server.md",
+      "gitBlobSha": "cf7ec996d2e6e3655bc75ff6902738d03a37334e",
+      "byteSize": 25099,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/scripts/connections.py",
+      "gitBlobSha": "ffcd0da3fbe1539320d022017ae83b61a9587a5c",
+      "byteSize": 4875,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/scripts/evaluation.py",
+      "gitBlobSha": "41778569c45a458e0eea839b8917692ad65be2d5",
+      "byteSize": 12579,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/scripts/example_evaluation.xml",
+      "gitBlobSha": "41e4459b5af861e61f1ca87d2f8f5ab5543dc054",
+      "byteSize": 1194,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/mcp-builder/scripts/requirements.txt",
+      "gitBlobSha": "e73e5d1e356edafadb9dc9243e6f300f2c5529b3",
+      "byteSize": 29,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/LICENSE.txt",
+      "gitBlobSha": "c55ab42224874608473643de0a85736b7fec0730",
+      "byteSize": 1467,
+      "readStatus": "observed",
+      "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+    },
+    {
+      "path": "skills/pdf/SKILL.md",
+      "gitBlobSha": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
+      "byteSize": 8072,
+      "readStatus": "observed",
+      "contentSha256": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c"
+    },
+    {
+      "path": "skills/pdf/forms.md",
+      "gitBlobSha": "6e7e1e0d9e6ae17215db3e130aea3c3c546487e6",
+      "byteSize": 11854,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/reference.md",
+      "gitBlobSha": "41400bf4fc67f15fb062d43695ec92f078226023",
+      "byteSize": 16692,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/check_bounding_boxes.py",
+      "gitBlobSha": "2cc5e348f359b7aa7179e6a26772dacfdbbeba53",
+      "byteSize": 2774,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/check_fillable_fields.py",
+      "gitBlobSha": "36dfb9513e2f54e051820b58c3cdd1f09bc6ff37",
+      "byteSize": 268,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/convert_pdf_to_images.py",
+      "gitBlobSha": "7939cef56c1220dd9dd0d04ec9594b2fe089ee74",
+      "byteSize": 1008,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/create_validation_image.py",
+      "gitBlobSha": "10eadd8124b1f94f9b1a78708c2d947a3f6773e7",
+      "byteSize": 1258,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/extract_form_field_info.py",
+      "gitBlobSha": "64cd4703a4af80bf6abe16f4c3065d8abd55d173",
+      "byteSize": 4300,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/extract_form_structure.py",
+      "gitBlobSha": "f219e7d5b5e30616b2259abb924253afd0240aee",
+      "byteSize": 3945,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/fill_fillable_fields.py",
+      "gitBlobSha": "51c2600f3895723cac15ec3ffcd8a482e42f95d7",
+      "byteSize": 3819,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pdf/scripts/fill_pdf_form_with_annotations.py",
+      "gitBlobSha": "b430069fd016cff11560d0f2b95c63074736e5e4",
+      "byteSize": 3235,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/LICENSE.txt",
+      "gitBlobSha": "c55ab42224874608473643de0a85736b7fec0730",
+      "byteSize": 1467,
+      "readStatus": "observed",
+      "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+    },
+    {
+      "path": "skills/pptx/SKILL.md",
+      "gitBlobSha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+      "byteSize": 20796,
+      "readStatus": "observed",
+      "contentSha256": "a7ff03e2c85b636f55232a6b1555f5dd90216b7a1a359ab289d8364e6acbc6a0"
+    },
+    {
+      "path": "skills/pptx/scripts/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/add_slide.py",
+      "gitBlobSha": "f013ea94d1785c8cf767fb69284ffb5b8dd9d390",
+      "byteSize": 14537,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/clean.py",
+      "gitBlobSha": "551dd23192f6eae8e79d4b59b08a3cd9d10feadd",
+      "byteSize": 10415,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/helpers/__init__.py",
+      "gitBlobSha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+      "byteSize": 3358,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/helpers/pptx_chart.py",
+      "gitBlobSha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+      "byteSize": 5862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/helpers/pptx_slide.py",
+      "gitBlobSha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+      "byteSize": 1675,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/helpers/pptx_theme.py",
+      "gitBlobSha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "byteSize": 3510,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "gitBlobSha": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "byteSize": 74984,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "gitBlobSha": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "byteSize": 6956,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "gitBlobSha": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "byteSize": 51302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "gitBlobSha": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "byteSize": 624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "gitBlobSha": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "byteSize": 152039,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "gitBlobSha": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "byteSize": 1231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "byteSize": 8862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "byteSize": 14795,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "gitBlobSha": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "byteSize": 83612,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "gitBlobSha": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "byteSize": 1269,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "gitBlobSha": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "byteSize": 7328,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "gitBlobSha": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "byteSize": 6382,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "gitBlobSha": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "byteSize": 1248,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "gitBlobSha": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "byteSize": 880,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "gitBlobSha": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "byteSize": 2608,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "gitBlobSha": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "byteSize": 3507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "gitBlobSha": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "byteSize": 7507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "gitBlobSha": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "byteSize": 23313,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "gitBlobSha": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "byteSize": 1367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "gitBlobSha": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "byteSize": 242277,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "gitBlobSha": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "byteSize": 26148,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "gitBlobSha": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "byteSize": 25279,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "gitBlobSha": "dd079e603f5770176212776a1d565b108875cf64",
+      "byteSize": 535,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "byteSize": 5712,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "byteSize": 4010,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "gitBlobSha": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "byteSize": 171367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "gitBlobSha": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "byteSize": 4646,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "gitBlobSha": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "byteSize": 1963,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "gitBlobSha": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "byteSize": 2515,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "gitBlobSha": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "byteSize": 2856,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "gitBlobSha": "56497467120b52b742756379959d4b2536be6df7",
+      "byteSize": 1344,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/mce/mc.xsd",
+      "gitBlobSha": "ef725457cf39116672e285d021be69b7ad022574",
+      "byteSize": 3127,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "gitBlobSha": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "byteSize": 26549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "gitBlobSha": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "byteSize": 3745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "gitBlobSha": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "byteSize": 901,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "gitBlobSha": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "byteSize": 1778,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "gitBlobSha": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "byteSize": 1002,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "gitBlobSha": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "byteSize": 600,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "gitBlobSha": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "byteSize": 745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/soffice.py",
+      "gitBlobSha": "0b4c99deca54013c550458c9244ee63eea748dca",
+      "byteSize": 5927,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validate.py",
+      "gitBlobSha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+      "byteSize": 6142,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validators/__init__.py",
+      "gitBlobSha": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "byteSize": 336,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validators/base.py",
+      "gitBlobSha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+      "byteSize": 33756,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validators/docx.py",
+      "gitBlobSha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+      "byteSize": 17482,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validators/pptx.py",
+      "gitBlobSha": "318f0e61483972fb08e02be39c94331dba46445e",
+      "byteSize": 15966,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/office/validators/redlining.py",
+      "gitBlobSha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+      "byteSize": 11231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pptx/scripts/thumbnail.py",
+      "gitBlobSha": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7",
+      "byteSize": 9802,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/skill-creator/SKILL.md",
+      "gitBlobSha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+      "byteSize": 33168,
+      "readStatus": "observed",
+      "contentSha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+    },
+    {
+      "path": "skills/skill-creator/agents/analyzer.md",
+      "gitBlobSha": "14e41d6068635f4dd3fb878fd1626312395dda63",
+      "byteSize": 10376,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/agents/comparator.md",
+      "gitBlobSha": "80e00eb45db3ee53a132fc2ba97fd59a7339e563",
+      "byteSize": 7287,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/agents/grader.md",
+      "gitBlobSha": "558ab05c0a9a8bb062ef4c51823d4d76c3acf7c4",
+      "byteSize": 9049,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/assets/eval_review.html",
+      "gitBlobSha": "938ff32aed9bffabf723bd5492d720f4736c8e4d",
+      "byteSize": 7058,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/eval-viewer/generate_review.py",
+      "gitBlobSha": "7fa5978631fed1ed545591dbb2b0eb21ce3f3d08",
+      "byteSize": 16365,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/eval-viewer/viewer.html",
+      "gitBlobSha": "6d8e96348a02e66c3363d2ff3b3ae58ac11e6382",
+      "byteSize": 44998,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/references/schemas.md",
+      "gitBlobSha": "b6eeaa2d4a34c1653069585c6c5603da39a5bdbe",
+      "byteSize": 12061,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/aggregate_benchmark.py",
+      "gitBlobSha": "3e66e8c105be9bab9f0e9c61f0d1482619401580",
+      "byteSize": 14386,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/generate_report.py",
+      "gitBlobSha": "959e30a0014ec165c41a2bb7420b7dfe1416bbac",
+      "byteSize": 12847,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/improve_description.py",
+      "gitBlobSha": "06bcec76122446986e3610c20a39c466de36f495",
+      "byteSize": 11116,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/package_skill.py",
+      "gitBlobSha": "f48eac444656ddc41204aac1760a217951ce609e",
+      "byteSize": 4234,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/quick_validate.py",
+      "gitBlobSha": "ed8e1dddce77b16af13c6f36b3fe86c4ac7c590c",
+      "byteSize": 3972,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_eval.py",
+      "gitBlobSha": "e58c70bea39d5b252a1e819f242bbdcdf20e8b87",
+      "byteSize": 11464,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_loop.py",
+      "gitBlobSha": "30a263d674ef19de11c756d6f7537f91a421909e",
+      "byteSize": 13605,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-creator/scripts/utils.py",
+      "gitBlobSha": "51b6a07dd57174197a937034b7eecebd5768ff8a",
+      "byteSize": 1661,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/slack-gif-creator/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/slack-gif-creator/SKILL.md",
+      "gitBlobSha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
+      "byteSize": 7841,
+      "readStatus": "observed",
+      "contentSha256": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22"
+    },
+    {
+      "path": "skills/slack-gif-creator/core/easing.py",
+      "gitBlobSha": "772fa830235dac37ba995ee66778111f59c2ee31",
+      "byteSize": 6265,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/slack-gif-creator/core/frame_composer.py",
+      "gitBlobSha": "1afe434811bd4a8a1bdb4df7961147f2c9afd130",
+      "byteSize": 4548,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/slack-gif-creator/core/gif_builder.py",
+      "gitBlobSha": "5759f144fe3cef50f3dfd3b8911e612e80099cea",
+      "byteSize": 9847,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/slack-gif-creator/core/validators.py",
+      "gitBlobSha": "a6f5bdf28ddd0a9613f2e076e37d940e03ad997c",
+      "byteSize": 3785,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/slack-gif-creator/requirements.txt",
+      "gitBlobSha": "8bc4493e9163cb513d4be38ab9fe5c1ff763e0d7",
+      "byteSize": 66,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/theme-factory/SKILL.md",
+      "gitBlobSha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
+      "byteSize": 3124,
+      "readStatus": "observed",
+      "contentSha256": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552"
+    },
+    {
+      "path": "skills/theme-factory/theme-showcase.pdf",
+      "gitBlobSha": "24495d145c95917aba3a3445f7105444b6f7cfcc",
+      "byteSize": 124310,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/arctic-frost.md",
+      "gitBlobSha": "e9f1eb0574e377ec8be59a71a1c206958f8b253e",
+      "byteSize": 544,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/botanical-garden.md",
+      "gitBlobSha": "0c95bf7349c26996c7d43d6c0276a285287a9ffe",
+      "byteSize": 519,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/desert-rose.md",
+      "gitBlobSha": "ea7c74eb80794fe15f870e12c5588b2a988f77a1",
+      "byteSize": 496,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/forest-canopy.md",
+      "gitBlobSha": "90c2b26518d8d7ff1d58981def5e93e2eca01780",
+      "byteSize": 506,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/golden-hour.md",
+      "gitBlobSha": "ed8fc256f4e9b2dfffd46e82fdc451c32f87dbb1",
+      "byteSize": 528,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/midnight-galaxy.md",
+      "gitBlobSha": "97e1c5f380eba51cd8956ec96114629c6540b76e",
+      "byteSize": 513,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/modern-minimalist.md",
+      "gitBlobSha": "6bd26a29beb09e663a1c049f5f8ec86189ae2db2",
+      "byteSize": 549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/ocean-depths.md",
+      "gitBlobSha": "b675126f53c49af7b6c3e00793a6d4773fb77af6",
+      "byteSize": 555,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/sunset-boulevard.md",
+      "gitBlobSha": "df799a0cc0e61c9226e52725afb45a1c6388f242",
+      "byteSize": 558,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/theme-factory/themes/tech-innovation.md",
+      "gitBlobSha": "e029a435fb02647e6fd0b440618ae21f326d35e1",
+      "byteSize": 547,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/web-artifacts-builder/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/web-artifacts-builder/SKILL.md",
+      "gitBlobSha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
+      "byteSize": 3087,
+      "readStatus": "observed",
+      "contentSha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8"
+    },
+    {
+      "path": "skills/web-artifacts-builder/scripts/bundle-artifact.sh",
+      "gitBlobSha": "c13d229e0523623a23f979771ccf99ac149c8bfb",
+      "byteSize": 1517,
+      "readStatus": "observed",
+      "contentSha256": "abf0e480bf6585b56fab8526a407dfb7dc740812bddd70c636e1e8f3df5f9618"
+    },
+    {
+      "path": "skills/web-artifacts-builder/scripts/init-artifact.sh",
+      "gitBlobSha": "7d1022d88bec529f00ef385e10ed6084601d710b",
+      "byteSize": 9924,
+      "readStatus": "observed",
+      "contentSha256": "355e5dd4382aaaee91f01f1627eaeab30b2676ffa8d9b3ec328a1ae450ebccaa"
+    },
+    {
+      "path": "skills/web-artifacts-builder/scripts/shadcn-components.tar.gz",
+      "gitBlobSha": "cdbe7cdd1e724a7c9840387e17a6a7f26d3477e1",
+      "byteSize": 19967,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/webapp-testing/LICENSE.txt",
+      "gitBlobSha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "byteSize": 11345,
+      "readStatus": "observed",
+      "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/webapp-testing/SKILL.md",
+      "gitBlobSha": "4726215301db64a0cc4d41fc3219c61f37a30f4a",
+      "byteSize": 3913,
+      "readStatus": "observed",
+      "contentSha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    {
+      "path": "skills/webapp-testing/examples/console_logging.py",
+      "gitBlobSha": "9329b5e232ed53d944bfe95e750070117d31b9ab",
+      "byteSize": 1027,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/webapp-testing/examples/element_discovery.py",
+      "gitBlobSha": "917ba72f52421a1b324f93ae8e38af72010a87b9",
+      "byteSize": 1463,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/webapp-testing/examples/static_html_automation.py",
+      "gitBlobSha": "90bbedcc08cdb345c74fb938ebad02c0baf56603",
+      "byteSize": 953,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/webapp-testing/scripts/with_server.py",
+      "gitBlobSha": "431f2eba16b268b7f3e2ae4daae9db41c0289b6d",
+      "byteSize": 3693,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/LICENSE.txt",
+      "gitBlobSha": "c55ab42224874608473643de0a85736b7fec0730",
+      "byteSize": 1467,
+      "readStatus": "observed",
+      "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+    },
+    {
+      "path": "skills/xlsx/SKILL.md",
+      "gitBlobSha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+      "byteSize": 8598,
+      "readStatus": "observed",
+      "contentSha256": "6712b39718fe815054abca9c3ee72f989613e6f771c8a5c58f30a65a6c905622"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/helpers/__init__.py",
+      "gitBlobSha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+      "byteSize": 3358,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/helpers/pptx_chart.py",
+      "gitBlobSha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+      "byteSize": 5862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/helpers/pptx_slide.py",
+      "gitBlobSha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+      "byteSize": 1675,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/helpers/pptx_theme.py",
+      "gitBlobSha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "byteSize": 3510,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "gitBlobSha": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "byteSize": 74984,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "gitBlobSha": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "byteSize": 6956,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "gitBlobSha": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "byteSize": 51302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "gitBlobSha": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "byteSize": 624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "gitBlobSha": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "byteSize": 152039,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "gitBlobSha": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "byteSize": 1231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "byteSize": 8862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "byteSize": 14795,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "gitBlobSha": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "byteSize": 83612,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "gitBlobSha": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "byteSize": 1269,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "gitBlobSha": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "byteSize": 7328,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "gitBlobSha": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "byteSize": 6382,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "gitBlobSha": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "byteSize": 1248,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "gitBlobSha": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "byteSize": 880,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "gitBlobSha": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "byteSize": 2608,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "gitBlobSha": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "byteSize": 3507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "gitBlobSha": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "byteSize": 7507,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "gitBlobSha": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "byteSize": 23313,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "gitBlobSha": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "byteSize": 1367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "gitBlobSha": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "byteSize": 242277,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "gitBlobSha": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "byteSize": 26148,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "gitBlobSha": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "byteSize": 25279,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "gitBlobSha": "dd079e603f5770176212776a1d565b108875cf64",
+      "byteSize": 535,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "gitBlobSha": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "byteSize": 5712,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "gitBlobSha": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "byteSize": 4010,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "gitBlobSha": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "byteSize": 171367,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "gitBlobSha": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "byteSize": 4646,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "gitBlobSha": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "byteSize": 1963,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "gitBlobSha": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "byteSize": 2515,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "gitBlobSha": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "byteSize": 2856,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "gitBlobSha": "56497467120b52b742756379959d4b2536be6df7",
+      "byteSize": 1344,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/mce/mc.xsd",
+      "gitBlobSha": "ef725457cf39116672e285d021be69b7ad022574",
+      "byteSize": 3127,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "gitBlobSha": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "byteSize": 26549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "gitBlobSha": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "byteSize": 3745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "gitBlobSha": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "byteSize": 901,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "gitBlobSha": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "byteSize": 1778,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "gitBlobSha": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "byteSize": 1002,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "gitBlobSha": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "byteSize": 600,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "gitBlobSha": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "byteSize": 745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/soffice.py",
+      "gitBlobSha": "0b4c99deca54013c550458c9244ee63eea748dca",
+      "byteSize": 5927,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validate.py",
+      "gitBlobSha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+      "byteSize": 6142,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validators/__init__.py",
+      "gitBlobSha": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "byteSize": 336,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validators/base.py",
+      "gitBlobSha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+      "byteSize": 33756,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validators/docx.py",
+      "gitBlobSha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+      "byteSize": 17482,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validators/pptx.py",
+      "gitBlobSha": "318f0e61483972fb08e02be39c94331dba46445e",
+      "byteSize": 15966,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/office/validators/redlining.py",
+      "gitBlobSha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+      "byteSize": 11231,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/xlsx/scripts/recalc.py",
+      "gitBlobSha": "6232be2deea56cc97c1d8996e4d68adf2457059c",
+      "byteSize": 10670,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "spec/agent-skills-spec.md",
+      "gitBlobSha": "772512097afe01955bd635c46b71cd351ce42e9a",
+      "byteSize": 87,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "template/SKILL.md",
+      "gitBlobSha": "50a4f9b104357d96361e257adb70454604cd15c0",
+      "byteSize": 140,
+      "readStatus": "observed",
+      "contentSha256": "eb685d91de039ed864fbd790cddf31684b017fd4a34ee1a55760d8d7cdbadefa"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "skills/algorithmic-art/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/brand-guidelines/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/canvas-design/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/claude-api/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/docx/LICENSE.txt",
+          "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+        },
+        {
+          "path": "skills/frontend-design/LICENSE.txt",
+          "contentSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "skills/internal-comms/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/mcp-builder/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/pdf/LICENSE.txt",
+          "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+        },
+        {
+          "path": "skills/pptx/LICENSE.txt",
+          "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+        },
+        {
+          "path": "skills/skill-creator/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/slack-gif-creator/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/theme-factory/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/web-artifacts-builder/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/webapp-testing/LICENSE.txt",
+          "contentSha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "skills/xlsx/LICENSE.txt",
+          "contentSha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "contentSha256": "af3ab8f818400d66a1febda92d700d2561d4c26a750a89cb770e5b096627f0bc"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "skills/web-artifacts-builder/scripts/bundle-artifact.sh",
+          "contentSha256": "abf0e480bf6585b56fab8526a407dfb7dc740812bddd70c636e1e8f3df5f9618"
+        },
+        {
+          "path": "skills/web-artifacts-builder/scripts/init-artifact.sh",
+          "contentSha256": "355e5dd4382aaaee91f01f1627eaeab30b2676ffa8d9b3ec328a1ae450ebccaa"
+        }
+      ]
+    }
+  }
+}

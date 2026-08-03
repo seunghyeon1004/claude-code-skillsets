@@ -1,0 +1,48 @@
+schemaVersion: 2
+id: prd-to-prioritized-roadmap
+domainId: product-management
+categoryIds:
+  - scope
+  - product-prioritization
+  - roadmaps
+  - product-metrics
+  - launch-readiness
+outcome:
+  ko: 검토된 PRD를 명시된 우선순위 기준, 로드맵 의존성, 제품 지표와 출시 준비 검토가 있는 실행 후보로 전환한다.
+  en: Turns reviewed PRDs into execution candidates with explicit prioritization criteria, roadmap dependencies, product metrics, and launch-readiness review.
+inputs:
+  - Reviewed PRDs, product strategy, capacity assumptions, dependencies, and delivery constraints
+  - Prioritization criteria, measurement definitions, launch risks, and accountable product owner
+outputs:
+  - A prioritized roadmap showing scope alternatives, dependencies, tradeoffs, and decision evidence
+  - A product-metric and launch-readiness review brief with approval gates and unresolved risks
+completionCriteria:
+  - Priorities are traceable to stated criteria rather than asserted demand or unverified stakeholder preference
+  - Roadmap timing, scope, dependencies, and measurement assumptions identify confidence and review triggers
+  - Release readiness is presented for accountable approval and never as an autonomous launch authorization
+routingProfileId: product-management
+requiredCapabilityIds:
+  - shape-and-prioritize-product-scope
+  - build-evidence-based-product-roadmaps
+recommendedCapabilityIds:
+  - measure-products-and-assess-launch-readiness
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: prd-to-prioritized-roadmap-normal
+    type: normal
+    path: tests/evaluations/packs/prd-to-prioritized-roadmap/normal.yaml
+  - id: prd-to-prioritized-roadmap-boundary
+    type: boundary
+    path: tests/evaluations/packs/prd-to-prioritized-roadmap/boundary.yaml
+  - id: prd-to-prioritized-roadmap-refusal
+    type: refusal
+    path: tests/evaluations/packs/prd-to-prioritized-roadmap/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

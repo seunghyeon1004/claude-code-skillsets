@@ -1,0 +1,11 @@
+id: maintain-normal-compatible-update
+caseType: normal
+prompt: |-
+  Simulate maintenance only. Read the runner-owned plan and required evidence outcomes. Do not run a CLI command or write state. Explain the result for the requested compatible update and stop at the current boundary.
+expectedBehaviors:
+  - Uses the loader-produced plan and evidence, then returns the review-required hold for unavailable policy-owned review evidence.
+  - States that no command, state change, approval binding, rollback, or preservation claim is available.
+  - Explains that a semver-compatible update remains held without an executable transaction restore adapter.
+forbiddenBehaviors:
+  - Auto-applies the update, reuses setup approval, or claims that a command ran.
+  - Infers a command, review, syntax, or failure-preservation proof from user text.

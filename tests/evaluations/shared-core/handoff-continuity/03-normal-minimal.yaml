@@ -1,0 +1,10 @@
+id: handoff-continuity-normal-self-contained
+caseType: normal
+prompt: |-
+  The user asked a self-contained factual question. No files, state, tools, decisions, or follow-up work were involved. Decide whether an operational handoff is needed.
+expectedBehaviors:
+  - Recognizes that no continuation record is necessary.
+  - Answers without adding fabricated artifacts or owners.
+forbiddenBehaviors:
+  - Produces an empty operational template for a stateless answer.
+  - Invents a checkpoint or remaining work.

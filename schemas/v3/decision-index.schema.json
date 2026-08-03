@@ -1,0 +1,449 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/decision-index.schema.json",
+  "title": "DecisionIndex",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "catalogVersion",
+    "observedThrough",
+    "catalogExpiresAt",
+    "profiles",
+    "candidates",
+    "candidateEvidence",
+    "intentFixtures",
+    "digest"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 3 },
+    "catalogVersion": { "type": "string", "minLength": 1 },
+    "observedThrough": { "type": "string", "minLength": 1 },
+    "catalogExpiresAt": { "type": "string", "minLength": 1 },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/profile" }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/candidate" }
+    },
+    "candidateEvidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/capabilityEvidence" }
+    },
+    "intentFixtures": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/intentFixture" }
+    },
+    "starterRoutes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/starterRoute" }
+    },
+    "digest": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "domainId", "phrases", "coreCapabilityId", "requiredCapabilityIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "domainId": { "$ref": "#/$defs/id" },
+        "phrases": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ko", "en"],
+          "properties": {
+            "ko": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "en": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "coreCapabilityId": { "$ref": "#/$defs/id" },
+        "requiredCapabilityIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "fieldEvidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "contentSha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "contentSha256": { "$ref": "#/$defs/sha256" }
+        }
+      }
+    },
+    "sensitiveString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["observed", "unknown", "not-applicable"] },
+        "value": { "type": "string" },
+        "evidence": { "$ref": "#/$defs/fieldEvidence" }
+      }
+    },
+    "sensitiveStringArray": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["observed", "unknown", "not-applicable"] },
+        "value": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "$ref": "#/$defs/fieldEvidence" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceId",
+        "skillPath",
+        "runtime",
+        "state",
+        "stateReasons",
+        "providedCapabilityIds",
+        "capabilityEvidenceIds",
+        "revisionBinding",
+        "permissions",
+        "license",
+        "trust",
+        "dependencies"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "candidateRevisionId": { "$ref": "#/$defs/id" },
+        "displayName": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "skillPath": { "type": ["string", "null"], "minLength": 1 },
+        "runtime": { "enum": ["claude-code", "codex"] },
+        "state": { "enum": ["eligible-with-disclosures", "held", "blocked"] },
+        "stateReasons": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "providedCapabilityIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "capabilityEvidenceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "revisionBinding": { "enum": ["exact", "unavailable"] },
+        "permissions": { "$ref": "#/$defs/sensitiveStringArray" },
+        "license": { "$ref": "#/$defs/sensitiveString" },
+        "trust": { "$ref": "#/$defs/sensitiveString" },
+        "dependencies": { "$ref": "#/$defs/sensitiveStringArray" },
+        "eligibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewExpiresAt", "targetExpiresAt"],
+          "properties": {
+            "reviewExpiresAt": { "type": ["string", "null"] },
+            "targetExpiresAt": { "$ref": "#/$defs/platformTimestamps" }
+          }
+        },
+        "ranking": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["targetEvidenceAt", "reviewedAt"],
+          "properties": {
+            "targetEvidenceAt": { "$ref": "#/$defs/platformTimestamps" },
+            "reviewedAt": { "type": ["string", "null"] }
+          }
+        },
+        "officialBaseline": { "$ref": "#/$defs/officialMarketplaceBaseline" },
+        "claudeInstall": { "$ref": "#/$defs/claudeInstall" },
+        "codexInstall": { "$ref": "#/$defs/codexInstall" }
+      }
+    },
+    "officialMarketplaceBaseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "marketplaceManifestSha256", "pluginName", "sourceUrl", "sourceCommit", "sourceBlobs"],
+      "properties": {
+        "reference": { "type": "string", "minLength": 1 },
+        "marketplaceManifestSha256": { "$ref": "#/$defs/sha256" },
+        "pluginName": { "$ref": "#/$defs/id" },
+        "sourceUrl": { "type": "string", "pattern": "^https://" },
+        "sourceCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "sourceBlobs": { "$ref": "#/$defs/immutableSourceBlobs" }
+      }
+    },
+    "immutableSourceBlobs": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "immutableRawUrl", "contentSha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "immutableRawUrl": { "type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/" },
+          "contentSha256": { "$ref": "#/$defs/sha256" }
+        }
+      }
+    },
+    "claudeInstall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "pluginName", "marketplaceId", "marketplaceSource", "scope", "argv"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/id" },
+        "pluginName": { "$ref": "#/$defs/id" },
+        "marketplaceId": { "$ref": "#/$defs/id" },
+        "marketplaceSource": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)$"
+        },
+        "scope": { "const": "user" },
+        "argv": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "claude" },
+            { "const": "plugin" },
+            { "const": "install" },
+            { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*@[a-z0-9]+(?:-[a-z0-9]+)*$" },
+            { "const": "--scope" },
+            { "const": "user" }
+          ],
+          "minItems": 6,
+          "maxItems": 6,
+          "items": false
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "candidateId",
+        "capabilityId",
+        "kind",
+        "current",
+        "reference",
+        "contentSha256"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "candidateId": { "$ref": "#/$defs/id" },
+        "candidateRevisionId": { "$ref": "#/$defs/id" },
+        "capabilityId": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["official-baseline", "official-listing", "observation"] },
+        "current": { "type": "boolean" },
+        "reference": { "type": "string", "minLength": 1 },
+        "contentSha256": { "$ref": "#/$defs/sha256" },
+        "artifactPath": { "type": "string", "pattern": "^research/evidence/artifacts/[^\\\\/]+(?:/[^\\\\/]+)*\\.json$" },
+        "artifactSha256": { "$ref": "#/$defs/sha256" },
+        "support": { "enum": ["direct", "inferred", "related"] },
+        "sourceBlobs": { "$ref": "#/$defs/sourceBlobs" },
+        "listingExcerpt": { "type": "string", "minLength": 2, "maxLength": 1000 },
+        "listingExcerptSha256": { "$ref": "#/$defs/sha256" }
+      },
+      "allOf": [{ "$ref": "#/$defs/listingEvidenceRules" }]
+    },
+    "capabilityEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "candidateId",
+        "capabilityId",
+        "kind",
+        "current",
+        "reference",
+        "contentSha256",
+        "candidate"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "candidateId": { "$ref": "#/$defs/id" },
+        "candidateRevisionId": { "$ref": "#/$defs/id" },
+        "capabilityId": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["official-baseline", "official-listing", "observation"] },
+        "current": { "type": "boolean" },
+        "reference": { "type": "string", "minLength": 1 },
+        "contentSha256": { "$ref": "#/$defs/sha256" },
+        "artifactPath": { "type": "string", "pattern": "^research/evidence/artifacts/[^\\\\/]+(?:/[^\\\\/]+)*\\.json$" },
+        "artifactSha256": { "$ref": "#/$defs/sha256" },
+        "support": { "enum": ["direct", "inferred", "related"] },
+        "sourceBlobs": { "$ref": "#/$defs/sourceBlobs" },
+        "listingExcerpt": { "type": "string", "minLength": 2, "maxLength": 1000 },
+        "listingExcerptSha256": { "$ref": "#/$defs/sha256" },
+        "candidate": { "$ref": "#/$defs/candidate" }
+      },
+      "allOf": [{ "$ref": "#/$defs/listingEvidenceRules" }]
+    },
+    "listingEvidenceRules": {
+      "if": {
+        "type": "object",
+        "properties": { "kind": { "const": "official-listing" } },
+        "required": ["kind"]
+      },
+      "then": {
+        "type": "object",
+        "required": ["support", "listingExcerpt", "listingExcerptSha256"],
+        "properties": {
+          "support": true,
+          "listingExcerpt": true,
+          "listingExcerptSha256": true,
+          "artifactPath": false,
+          "artifactSha256": false,
+          "sourceBlobs": false
+        }
+      },
+      "else": {
+        "type": "object",
+        "properties": {
+          "support": { "enum": ["direct", "inferred"] },
+          "listingExcerpt": false,
+          "listingExcerptSha256": false
+        }
+      }
+    },
+    "sourceBlobs": { "$ref": "#/$defs/immutableSourceBlobs" },
+    "codexInstall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "skillPath", "reviewDecisionId", "compatibilityEvidence", "targetPlatform"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^https://github\\.com/" },
+        "commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "skillPath": { "type": "string", "minLength": 1 },
+        "reviewDecisionId": { "type": "string", "minLength": 1 },
+        "compatibilityEvidence": { "type": "string", "minLength": 1 },
+        "targetPlatform": { "enum": ["darwin", "linux", "win32"] }
+      }
+    },
+    "intentFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "runtime", "platform", "asOf"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "runtime": { "enum": ["claude-code", "codex"] },
+        "platform": { "enum": ["darwin", "linux", "win32"] },
+        "asOf": { "type": "string", "minLength": 1 },
+        "goal": { "type": "string", "minLength": 1 },
+        "domainIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "domainPriority": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "starterRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainId",
+        "kind",
+        "orderedCandidateIds",
+        "smallestHonestProfile",
+        "directEvidenceIds",
+        "inferredEvidenceIds",
+        "unsupportedCapabilityIds",
+        "broadCoverageComplete"
+      ],
+      "properties": {
+        "domainId": { "$ref": "#/$defs/id" },
+        "kind": { "const": "starter-partial" },
+        "orderedCandidateIds": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "smallestHonestProfile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ko", "en"],
+          "properties": {
+            "ko": { "type": "string", "minLength": 1 },
+            "en": { "type": "string", "minLength": 1 }
+          }
+        },
+        "directEvidenceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "inferredEvidenceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "relatedEvidenceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "unsupportedCapabilityIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "broadCoverageComplete": { "const": false }
+      }
+    },
+    "platformTimestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "darwin": { "type": "string", "minLength": 1 },
+        "linux": { "type": "string", "minLength": 1 },
+        "win32": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

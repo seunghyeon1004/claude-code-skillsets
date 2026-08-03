@@ -1,0 +1,3303 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-anthropic-plugins-official",
+  "sourceId": "anthropic-plugins-official",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "909649d9b178d142201000c76715b5fc952818e3",
+  "blobs": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "gitBlobSha": "8e506610496580da4ff536f67cfd259aab438387",
+      "byteSize": 161310,
+      "readStatus": "observed",
+      "contentSha256": "d580b5d2fa473fdbfc8792ece117f6a3a92d4bb12356ab17beb2f3cc5f7b0316"
+    },
+    {
+      "path": ".github/policy/prompt.md",
+      "gitBlobSha": "2ddde29c3f49c6e42a1869643c1923af95fbda0a",
+      "byteSize": 7977,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/policy/schema.json",
+      "gitBlobSha": "a3e1489b65f5d452d10617787b34123076213d1d",
+      "byteSize": 1972,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/scripts/discover_bumps.py",
+      "gitBlobSha": "7bc23597499e9f6327e6aa81c4e7719c78871694",
+      "byteSize": 8360,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/scripts/external-pr-scope.js",
+      "gitBlobSha": "705a18a33059ab253368d1b2d72644e9f0b408b0",
+      "byteSize": 7281,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/scripts/validate-frontmatter.ts",
+      "gitBlobSha": "2aafe8f1477043731ea3fab67adb10fb014167ec",
+      "byteSize": 7345,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/bump-plugin-shas.yml",
+      "gitBlobSha": "371a4f1790facae13eb0f5430b0e3a49eda4b10f",
+      "byteSize": 4797,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/check-mcp-urls.yml",
+      "gitBlobSha": "a91b312bf27c75c947665001b50743ac7e3e8a41",
+      "byteSize": 6134,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/close-external-prs.yml",
+      "gitBlobSha": "21b2e2c7cb0750fcd45811460d7bd0c3d5156218",
+      "byteSize": 2795,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/external-pr-scope-guard.yml",
+      "gitBlobSha": "3d67296ff5ad8d21fc2a21a4d45bd993c291c628",
+      "byteSize": 2464,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/revert-failed-bumps.yml",
+      "gitBlobSha": "37cbb4ce44dc83812f6d1cd982cdee0af26dbf26",
+      "byteSize": 14275,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/scan-plugins.yml",
+      "gitBlobSha": "283698433ee7b929f31a61ea068746939b1a44b1",
+      "byteSize": 27032,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/validate-frontmatter.yml",
+      "gitBlobSha": "243455d8e7d5163010bc84a012bd7ab5e3840530",
+      "byteSize": 1515,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/validate-licenses.yml",
+      "gitBlobSha": "8376578c7ce342e29b55903acff115e9aae41066",
+      "byteSize": 1421,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".github/workflows/validate-plugins.yml",
+      "gitBlobSha": "490bec727bd43d98addb3986e896e3dc3e81606f",
+      "byteSize": 2727,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "d9c5ddbadfa72d7b677e5dc7ff290892036dbcac",
+      "byteSize": 19,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "43104e240ff500c762adebb0c31dc4b7ff7b50dd",
+      "byteSize": 3859,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/asana/.claude-plugin/plugin.json",
+      "gitBlobSha": "6ea850fba4ab25f2e944eb1da217e386dba51d12",
+      "byteSize": 276,
+      "readStatus": "observed",
+      "contentSha256": "9868aa330fbc3f81c26a720a7a190ec34ed6f12eb327495a7527325faae5aa0e"
+    },
+    {
+      "path": "external_plugins/asana/.mcp.json",
+      "gitBlobSha": "9a84bccf658ce300227ec59c01067bffc7abc1e8",
+      "byteSize": 79,
+      "readStatus": "observed",
+      "contentSha256": "841690911fca9d70422075080704f3b6a774b61f2952710b59ba2f6b9be196f1"
+    },
+    {
+      "path": "external_plugins/context7/.claude-plugin/plugin.json",
+      "gitBlobSha": "a53438cbedf16c7c150ae7f441ce91713adc5a86",
+      "byteSize": 262,
+      "readStatus": "observed",
+      "contentSha256": "c9a0bfcde1426a79d8609651bddbc5dcb49be18984e55d27042bf53139004137"
+    },
+    {
+      "path": "external_plugins/context7/.mcp.json",
+      "gitBlobSha": "6dec78d698460d2517afc7026d796c4dd9fc571a",
+      "byteSize": 90,
+      "readStatus": "observed",
+      "contentSha256": "ea6efadc895f4044fe29f0abdb7e5b6e2ce16daba6c5755887f65826df1b6d90"
+    },
+    {
+      "path": "external_plugins/discord/.claude-plugin/plugin.json",
+      "gitBlobSha": "6418b1ecfdcd8b1711bc05cb978bebd66f33cff4",
+      "byteSize": 290,
+      "readStatus": "observed",
+      "contentSha256": "3e559b00317540f96fe3b24aee4a816af8b43d648f6e1dd9896e59aa835cd3d8"
+    },
+    {
+      "path": "external_plugins/discord/.mcp.json",
+      "gitBlobSha": "081e9ee5c66b310fd259a2a96ad090a13c152ea4",
+      "byteSize": 165,
+      "readStatus": "observed",
+      "contentSha256": "01c15597e40a5999d7b1c15bd6f9656abc8a04d3a0956704a9dfd2df01b74960"
+    },
+    {
+      "path": "external_plugins/discord/.npmrc",
+      "gitBlobSha": "214c29d1395919ce175f26d140526368127981ba",
+      "byteSize": 37,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/discord/ACCESS.md",
+      "gitBlobSha": "550f06acb7eec0c22b5e35bd91cf90ae632aeec7",
+      "byteSize": 6599,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/discord/LICENSE",
+      "gitBlobSha": "0e00894bde3cb6eea4095a909d5f4a8a4f30c2c4",
+      "byteSize": 11344,
+      "readStatus": "observed",
+      "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+    },
+    {
+      "path": "external_plugins/discord/README.md",
+      "gitBlobSha": "f32c997bf955e62e6686228f0134f08bb3720653",
+      "byteSize": 4904,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/discord/bun.lock",
+      "gitBlobSha": "0227b3c45511846b7b89c5dc07ca02ef70ffd12f",
+      "byteSize": 23966,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/discord/package.json",
+      "gitBlobSha": "eac89c3befd8ebb90758a9acdf7f400de8c9f298",
+      "byteSize": 306,
+      "readStatus": "observed",
+      "contentSha256": "fa2ece9108aca2ae17e7b1909f468ee8f055e53a45882eb25108a3e394f17e46"
+    },
+    {
+      "path": "external_plugins/discord/server.ts",
+      "gitBlobSha": "0595fc7ecf2f974a7c7f4f743ab8d3b1dd7f0918",
+      "byteSize": 33549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/discord/skills/access/SKILL.md",
+      "gitBlobSha": "389065df51031eda1fe94e9050fb6985889a1f9b",
+      "byteSize": 4357,
+      "readStatus": "observed",
+      "contentSha256": "4fc3da872e033c37576a904b15a1bcac6b1ce6c7bc43f1f96abd7cad4855ac7a"
+    },
+    {
+      "path": "external_plugins/discord/skills/configure/SKILL.md",
+      "gitBlobSha": "a1e15f8b927ca7385a06ebf6eacacbd4e4acd527",
+      "byteSize": 4324,
+      "readStatus": "observed",
+      "contentSha256": "9364d7895d6f38b917a711128e7b391884fb8b8d69a62c7d72a81e95b6e2b948"
+    },
+    {
+      "path": "external_plugins/fakechat/.claude-plugin/plugin.json",
+      "gitBlobSha": "1f621f1628eb27383acd7d1748a0294ad0f97b1c",
+      "byteSize": 300,
+      "readStatus": "observed",
+      "contentSha256": "f8ab6ee13afeb0f988a1e48ac6c955efd671c9ed3a67b47ad8c6e1fd8a215f48"
+    },
+    {
+      "path": "external_plugins/fakechat/.mcp.json",
+      "gitBlobSha": "f9f04a674319e0a393c168504ee2307f164cbc5d",
+      "byteSize": 166,
+      "readStatus": "observed",
+      "contentSha256": "3917f449284d362f213a42e0d7ef3bb9a75db795b7909d6febdb1fd94d0df68e"
+    },
+    {
+      "path": "external_plugins/fakechat/.npmrc",
+      "gitBlobSha": "214c29d1395919ce175f26d140526368127981ba",
+      "byteSize": 37,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/fakechat/LICENSE",
+      "gitBlobSha": "0e00894bde3cb6eea4095a909d5f4a8a4f30c2c4",
+      "byteSize": 11344,
+      "readStatus": "observed",
+      "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+    },
+    {
+      "path": "external_plugins/fakechat/README.md",
+      "gitBlobSha": "0c957596643244f2971566d57a44438f09a30f14",
+      "byteSize": 1308,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/fakechat/bun.lock",
+      "gitBlobSha": "2497bc2901ebac0b5ae9960cd4ad98ba0783d460",
+      "byteSize": 19317,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/fakechat/package.json",
+      "gitBlobSha": "6755d68bc771af3112ae863539fc8742fe82b08f",
+      "byteSize": 333,
+      "readStatus": "observed",
+      "contentSha256": "e3e02600f8a2a35124a984070be5fb04303744fb77bb6cd2155434aac43bba02"
+    },
+    {
+      "path": "external_plugins/fakechat/server.ts",
+      "gitBlobSha": "f258a83ebbb0ddfbabfc674389308ab5c97a75c9",
+      "byteSize": 10547,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/firebase/.claude-plugin/plugin.json",
+      "gitBlobSha": "5d22b478275a2802ec5ff2e8ae75444f2908b689",
+      "byteSize": 281,
+      "readStatus": "observed",
+      "contentSha256": "72250fde24860d0b1ed3666ee056073bf389e784afba1b693f6596eceab83980"
+    },
+    {
+      "path": "external_plugins/firebase/.mcp.json",
+      "gitBlobSha": "a12b53113da3c10cda143095b2b0ac2fd3223852",
+      "byteSize": 97,
+      "readStatus": "observed",
+      "contentSha256": "c396d40ac1069deb3a92baf85786da37957dd1bed19ed2a4cfe3073261c5ca3a"
+    },
+    {
+      "path": "external_plugins/github/.claude-plugin/plugin.json",
+      "gitBlobSha": "4024e231e9b261c31137ff02ee436b4d543dddd9",
+      "byteSize": 271,
+      "readStatus": "observed",
+      "contentSha256": "86a6c2ffb21e8b1e1a74db18c26bdf7fbb46079a0b6a42e72d741b3cbba979c9"
+    },
+    {
+      "path": "external_plugins/github/.mcp.json",
+      "gitBlobSha": "46d47325a43efdb472b79ba48ad536499d81db63",
+      "byteSize": 178,
+      "readStatus": "observed",
+      "contentSha256": "b536ea03380d2f2f93f31c87a158e21e74cce5f664d20f7bdb81c6710418e06d"
+    },
+    {
+      "path": "external_plugins/gitlab/.claude-plugin/plugin.json",
+      "gitBlobSha": "5ac2823f7c6938a075d9ddf8b496d863904f5f76",
+      "byteSize": 254,
+      "readStatus": "observed",
+      "contentSha256": "986e551c1f4f6eb0029dfab23ea78cbaa2a9663f72b6d686cd72ff221e9c8747"
+    },
+    {
+      "path": "external_plugins/gitlab/.mcp.json",
+      "gitBlobSha": "88a5ead7f68146d45907cd2d94b8c2cdde031207",
+      "byteSize": 85,
+      "readStatus": "observed",
+      "contentSha256": "0d10a9cbe5cfe346c9f6bc1092d9be57eb326161ff73a50d88c0cd1b68ce5d26"
+    },
+    {
+      "path": "external_plugins/greptile/.claude-plugin/plugin.json",
+      "gitBlobSha": "6b054b4f11eac30d93a8af6d5565c15d6d1a7de7",
+      "byteSize": 357,
+      "readStatus": "observed",
+      "contentSha256": "f4badb91b1570e8acca0f52c1a8ef75845c08eaefca300fbc68641269e09d117"
+    },
+    {
+      "path": "external_plugins/greptile/.mcp.json",
+      "gitBlobSha": "adc0b7b404adaa36999e0f38cfcb0be30b098f76",
+      "byteSize": 162,
+      "readStatus": "observed",
+      "contentSha256": "ac2f0455a287ccbace82f8723c491015453dc003032fb24d44c9df37499b1656"
+    },
+    {
+      "path": "external_plugins/greptile/README.md",
+      "gitBlobSha": "26a54ffebe5a6245b2c87080b2cc713fcadaa809",
+      "byteSize": 1914,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/.claude-plugin/plugin.json",
+      "gitBlobSha": "22ad96c60625294106c760fc1be3fcce6a3e536b",
+      "byteSize": 319,
+      "readStatus": "observed",
+      "contentSha256": "ef21e0038966bb1cc80edbdc02b0e4e1b9ef757ab594673d33b0570f4abe2304"
+    },
+    {
+      "path": "external_plugins/imessage/.mcp.json",
+      "gitBlobSha": "ebf7c19ad0745116f41b78bebefba85640d38e32",
+      "byteSize": 166,
+      "readStatus": "observed",
+      "contentSha256": "3c3faf1e53fb79b3ecb0a4bb401b55baf21fea6dad1e363ff988a1490997c978"
+    },
+    {
+      "path": "external_plugins/imessage/.npmrc",
+      "gitBlobSha": "214c29d1395919ce175f26d140526368127981ba",
+      "byteSize": 37,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/ACCESS.md",
+      "gitBlobSha": "dc91ccafbbd3eb35a3c2da66340713d11e57d445",
+      "byteSize": 6764,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/LICENSE",
+      "gitBlobSha": "0e00894bde3cb6eea4095a909d5f4a8a4f30c2c4",
+      "byteSize": 11344,
+      "readStatus": "observed",
+      "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+    },
+    {
+      "path": "external_plugins/imessage/README.md",
+      "gitBlobSha": "53f666691d25606fd749eb60f57fc173d8771e05",
+      "byteSize": 4442,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/bun.lock",
+      "gitBlobSha": "c8bde716fde53df799aff7b580dcd77ea9a135ae",
+      "byteSize": 19345,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/package.json",
+      "gitBlobSha": "e05887914dc0363ad0b1480e9be03c64d75625ed",
+      "byteSize": 355,
+      "readStatus": "observed",
+      "contentSha256": "807e4bf09638421055e094950b75969a51933323c515818b1ffbfbc2670c990b"
+    },
+    {
+      "path": "external_plugins/imessage/server.ts",
+      "gitBlobSha": "9d095e3a2ef19fd50f186a1b925119abfae3764f",
+      "byteSize": 32245,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/imessage/skills/access/SKILL.md",
+      "gitBlobSha": "c197d80a0277bf3600fce43d963cefb060786115",
+      "byteSize": 4754,
+      "readStatus": "observed",
+      "contentSha256": "ac994a86aab3a2724651a13a62ee9deae985196c8687a33bb79c4b7898aa5be7"
+    },
+    {
+      "path": "external_plugins/imessage/skills/configure/SKILL.md",
+      "gitBlobSha": "fa6fec9df8f0e8b77c9a3a0c97cc0b73f889dcdd",
+      "byteSize": 3546,
+      "readStatus": "observed",
+      "contentSha256": "3afdc7e9faa36aa0ba9813dce68509c45014a75b316d366ba44c46ebd8b098aa"
+    },
+    {
+      "path": "external_plugins/laravel-boost/.claude-plugin/plugin.json",
+      "gitBlobSha": "b5998fdb7162820b66f591295ab68a23306736ec",
+      "byteSize": 295,
+      "readStatus": "observed",
+      "contentSha256": "bb195fa8dd2e0405155edf3233cee0467775306df3238eece559748e0285116f"
+    },
+    {
+      "path": "external_plugins/laravel-boost/.mcp.json",
+      "gitBlobSha": "be47cc4efadff04cf01fa21eda495756dc1a974f",
+      "byteSize": 88,
+      "readStatus": "observed",
+      "contentSha256": "f7aa15d771660f4f05a7d09075be432f2ce0a0fdd4848ba7c4a766bdcce6c093"
+    },
+    {
+      "path": "external_plugins/linear/.claude-plugin/plugin.json",
+      "gitBlobSha": "2a5d9e0a514ec14f5102371dcd62786dcac4af10",
+      "byteSize": 279,
+      "readStatus": "observed",
+      "contentSha256": "25d00b56e7789e19ce0d3b311a6686fb2e23a4dd91e3f1f3bb33e3aba684b390"
+    },
+    {
+      "path": "external_plugins/linear/.mcp.json",
+      "gitBlobSha": "f17db3b00329c9f980891497041c8380288b6a52",
+      "byteSize": 82,
+      "readStatus": "observed",
+      "contentSha256": "60bc954e5c2018171f5efa358ddbfa6062a63b456f8d7fa567fd926910030e9f"
+    },
+    {
+      "path": "external_plugins/playwright/.claude-plugin/plugin.json",
+      "gitBlobSha": "d81967e27002a354ac32cde5356d0e35ec89ead7",
+      "byteSize": 295,
+      "readStatus": "observed",
+      "contentSha256": "f2d7c0f611b93287ebb07454255d0cccf3a343d7095b7f8f763ff21d1995c096"
+    },
+    {
+      "path": "external_plugins/playwright/.mcp.json",
+      "gitBlobSha": "1d3b45099122890933f5c6b04e457cf8168ce4db",
+      "byteSize": 87,
+      "readStatus": "observed",
+      "contentSha256": "b6fd7e9ccee1682af353854195516826da6970026b68c86ad800ff4d931d3250"
+    },
+    {
+      "path": "external_plugins/serena/.claude-plugin/plugin.json",
+      "gitBlobSha": "be588cb4651d249e7c1a36a7bc29b60cc42d8afc",
+      "byteSize": 254,
+      "readStatus": "observed",
+      "contentSha256": "a046a275ba705b370ddabfdf85b337c6a07336983a3f0764e7623e64b7418ba0"
+    },
+    {
+      "path": "external_plugins/serena/.mcp.json",
+      "gitBlobSha": "6988146e5949d8c7286dd3bbb6afba5a98ac76f2",
+      "byteSize": 137,
+      "readStatus": "observed",
+      "contentSha256": "cacd90801da4e1d72a4eb2e2d1e5b9ee40dd1a5a23e921c6bbe683d502171817"
+    },
+    {
+      "path": "external_plugins/telegram/.claude-plugin/plugin.json",
+      "gitBlobSha": "e1edd215a64c503d01b74922acf78a1bce72f1fb",
+      "byteSize": 294,
+      "readStatus": "observed",
+      "contentSha256": "034ac185f5790fab4127ba5b8c3ece4b9df1bf3b3f0dd1c98062dc3c18bd3b2a"
+    },
+    {
+      "path": "external_plugins/telegram/.mcp.json",
+      "gitBlobSha": "cf7195be355a449610d8153bfae6c4c394403c38",
+      "byteSize": 166,
+      "readStatus": "observed",
+      "contentSha256": "0ee637b9a76aa35b3b9eb9a76b4b8fb036bc61651711e1af72badedde5e3c875"
+    },
+    {
+      "path": "external_plugins/telegram/.npmrc",
+      "gitBlobSha": "214c29d1395919ce175f26d140526368127981ba",
+      "byteSize": 37,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/telegram/ACCESS.md",
+      "gitBlobSha": "f762daf561baba3df6406e5bbe3038843810a7c2",
+      "byteSize": 7075,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/telegram/LICENSE",
+      "gitBlobSha": "0e00894bde3cb6eea4095a909d5f4a8a4f30c2c4",
+      "byteSize": 11344,
+      "readStatus": "observed",
+      "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+    },
+    {
+      "path": "external_plugins/telegram/README.md",
+      "gitBlobSha": "b8702148aff8bd690398e413dd590206092d4049",
+      "byteSize": 4494,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/telegram/bun.lock",
+      "gitBlobSha": "d5d5fb0b72c5d321a5010df126e90c7354bc8666",
+      "byteSize": 20129,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/telegram/package.json",
+      "gitBlobSha": "bdbbea6bcf6174beb79a624b4baa8fc7eedc18d0",
+      "byteSize": 302,
+      "readStatus": "observed",
+      "contentSha256": "364a9286a10497daeecce94607682f31de522413252209dd82778d8d9fff2b47"
+    },
+    {
+      "path": "external_plugins/telegram/server.ts",
+      "gitBlobSha": "23a21b06da426f6cfc4b86d24818128e09fed6ce",
+      "byteSize": 39746,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "external_plugins/telegram/skills/access/SKILL.md",
+      "gitBlobSha": "5f112cfe0297263f1c97d3a0215e0217528f3483",
+      "byteSize": 4280,
+      "readStatus": "observed",
+      "contentSha256": "c499635ef8a9a68cb166bb737a7f4d0620154d1bc9e96934cb8b630fadf22c86"
+    },
+    {
+      "path": "external_plugins/telegram/skills/configure/SKILL.md",
+      "gitBlobSha": "31ad2f3a9affebe51e64eebc6fd3cfad83bf5ddb",
+      "byteSize": 4024,
+      "readStatus": "observed",
+      "contentSha256": "7a58fa4efd09dd8323894e0e505bc21de11e657994710a3c535f9f5072fe36b3"
+    },
+    {
+      "path": "external_plugins/terraform/.claude-plugin/plugin.json",
+      "gitBlobSha": "8ed4540ccf50de3e73705d521bdf06810d0b426e",
+      "byteSize": 274,
+      "readStatus": "observed",
+      "contentSha256": "b8f0b65d4a2f4d8fe11fea591e3839071037ec86cfaa9ae09832bc2bb840e0a3"
+    },
+    {
+      "path": "external_plugins/terraform/.mcp.json",
+      "gitBlobSha": "a73e88ddbe63471df8d0d11af84743ea3b7a0c59",
+      "byteSize": 192,
+      "readStatus": "observed",
+      "contentSha256": "5dee84b3c21553c53422f4f005781904c02be6c32b00c46ae1949c61ddf1769c"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/.claude-plugin/plugin.json",
+      "gitBlobSha": "33634da31a1dfe5eb6be7af8106bfd86869a185f",
+      "byteSize": 167,
+      "readStatus": "observed",
+      "contentSha256": "92391d726e504750c844904072c127c0da08b7e5a4f88d7f7c36339b2a3da31e"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/README.md",
+      "gitBlobSha": "96ba373ef38f2465de7838947dd794c871b85c67",
+      "byteSize": 6397,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/agents/agent-sdk-verifier-py.md",
+      "gitBlobSha": "d4b70eadc30b84d4b0009091a68d02b343d7badb",
+      "byteSize": 5206,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/agents/agent-sdk-verifier-ts.md",
+      "gitBlobSha": "194b512ad67b76c9a58b80cf3f28acdfa6fb880f",
+      "byteSize": 5419,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/agent-sdk-dev/commands/new-sdk-app.md",
+      "gitBlobSha": "ca63dc29eef850b19f10dd6eec8347f52dcf33ba",
+      "byteSize": 7846,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/clangd-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/clangd-lsp/README.md",
+      "gitBlobSha": "59ef0fc1f24641189b7b901557938bdbf2e57241",
+      "byteSize": 780,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/.claude-plugin/plugin.json",
+      "gitBlobSha": "1cf9358769a5a73867812a54b96977f948f08f45",
+      "byteSize": 273,
+      "readStatus": "observed",
+      "contentSha256": "f5cc68a308d6a781596325a635272639e823dfaad6aa66494338715306d53fe6"
+    },
+    {
+      "path": "plugins/claude-code-setup/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/claude-code-setup/README.md",
+      "gitBlobSha": "7a2a58d944c06b6052a036164b778b8c2a07f5b8",
+      "byteSize": 1015,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/automation-recommender-example.png",
+      "gitBlobSha": "f383810c8957c9c2bf1054509c558b381eb3a447",
+      "byteSize": 545204,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/SKILL.md",
+      "gitBlobSha": "07712a231e19c498391dd819417136c89e142b81",
+      "byteSize": 10995,
+      "readStatus": "observed",
+      "contentSha256": "441c57e26f0931b64dd085deaad9213c4e3efea27d916dd7443cd33c7e338227"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/references/hooks-patterns.md",
+      "gitBlobSha": "17cdd5f342f265b4f15213c18f5836255cfd53d9",
+      "byteSize": 6316,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/references/mcp-servers.md",
+      "gitBlobSha": "85886d2c4c598280b33d18eecd51d6d1579298c5",
+      "byteSize": 8292,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/references/plugins-reference.md",
+      "gitBlobSha": "b36f0c53bee94b51f89591f6cef342e2e44bf4b4",
+      "byteSize": 3016,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/references/skills-reference.md",
+      "gitBlobSha": "76f8f4264a9cc63225f1ebfa711a0ee81e011fb4",
+      "byteSize": 9612,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-code-setup/skills/claude-automation-recommender/references/subagent-templates.md",
+      "gitBlobSha": "6f0335d898a29121d284a2a1cde8695059714526",
+      "byteSize": 5049,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/.claude-plugin/plugin.json",
+      "gitBlobSha": "871dca44192390fe4226e2fc799969c961fd108c",
+      "byteSize": 283,
+      "readStatus": "observed",
+      "contentSha256": "4617ec581bdf3f6d0e9879e8d9338a1fd46602b93bb6007d3ec5c1a18f8af66f"
+    },
+    {
+      "path": "plugins/claude-md-management/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/claude-md-management/README.md",
+      "gitBlobSha": "4dfaa38986e3e31b1998f6612188dc4b06fb3193",
+      "byteSize": 1084,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/claude-md-improver-example.png",
+      "gitBlobSha": "38ade52a762d65e4b054bbeb1fb0bd4d13bc4856",
+      "byteSize": 518778,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/commands/revise-claude-md.md",
+      "gitBlobSha": "b7f201db19ec485271945e350914e6ac5a8957bd",
+      "byteSize": 1357,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/revise-claude-md-example.png",
+      "gitBlobSha": "7a7e2343dc23a5423d065516fc913c8c072d024f",
+      "byteSize": 555521,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/skills/claude-md-improver/SKILL.md",
+      "gitBlobSha": "744444e4df385e9b9160e23fba02321062dfba9a",
+      "byteSize": 6028,
+      "readStatus": "observed",
+      "contentSha256": "b06c7420be08ca1c7f6d75f7f4709fdb787624a2d363e2f8052216d8c780f85b"
+    },
+    {
+      "path": "plugins/claude-md-management/skills/claude-md-improver/references/quality-criteria.md",
+      "gitBlobSha": "0853bb0f6640b0fa9d2e75901eb041a0192d36ae",
+      "byteSize": 2617,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/skills/claude-md-improver/references/templates.md",
+      "gitBlobSha": "35e613942e7818301f24892fc249e7117ea79a6e",
+      "byteSize": 3687,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-md-management/skills/claude-md-improver/references/update-guidelines.md",
+      "gitBlobSha": "04e7f8ea0bb1d398db8d8b6aecdc6e329d3c7563",
+      "byteSize": 3197,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/.claude-plugin/plugin.json",
+      "gitBlobSha": "eafb703f0b7ede13704ed9ca5aa4c42ee6a71fd4",
+      "byteSize": 580,
+      "readStatus": "observed",
+      "contentSha256": "3b60dc88457fbe0fce8ff2868b4a0d3374eac0cdc1e2fd9d5d1782e0a30cbee6"
+    },
+    {
+      "path": "plugins/claude-security/LICENSE",
+      "gitBlobSha": "76ab7e0acb6ce7ba636abfe57041762a2540e3af",
+      "byteSize": 1500,
+      "readStatus": "observed",
+      "contentSha256": "15d46b21bd3c8ead21dd4fe0f4b82a8d934b698cf6367b09c06211058fc4332d"
+    },
+    {
+      "path": "plugins/claude-security/README.md",
+      "gitBlobSha": "73fc0eecbfc3b36dfba55c8550500da992664ef4",
+      "byteSize": 8582,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/SECURITY.md",
+      "gitBlobSha": "99983e9b03de3bda1c101e68ae2e041b63dcf6a9",
+      "byteSize": 2015,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/claude-security.md",
+      "gitBlobSha": "13c543656dc1718dce482c12091f434e7875914b",
+      "byteSize": 3828,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/explore.md",
+      "gitBlobSha": "19ae23467a258f09e4200175c5d636fd49ff220e",
+      "byteSize": 2504,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/patch-generator.md",
+      "gitBlobSha": "a9083750dc075b32e89f70c0cf29c23f989751a8",
+      "byteSize": 4892,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/patch-verifier.md",
+      "gitBlobSha": "84fac57d33944f247f6f5cff066b5ae2b4cd5821",
+      "byteSize": 7404,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/scan-inventory.md",
+      "gitBlobSha": "29359728f0129f75620529eebd982e47045b1647",
+      "byteSize": 4141,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/scan-researcher.md",
+      "gitBlobSha": "eaf8ae6f16775aa48a76ff44d2f9a638afa19324",
+      "byteSize": 6437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/agents/scan-verifier.md",
+      "gitBlobSha": "c798d3276d5b60bf1f29fe2b793a30ccc2ecafeb",
+      "byteSize": 4100,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/hooks/banner_hook.sh",
+      "gitBlobSha": "da82a1208a291accf26b45c975e227495b393107",
+      "byteSize": 302,
+      "readStatus": "observed",
+      "contentSha256": "05e9eef43a6e201a9507a14bf6dd70dfded6a743ad5ac1cf4a91e60355b467e6"
+    },
+    {
+      "path": "plugins/claude-security/hooks/banner_notice.py",
+      "gitBlobSha": "030b626fb88726977a980b04a992a4be1e7c48c4",
+      "byteSize": 3753,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/hooks/hooks.json",
+      "gitBlobSha": "9608c949c3b17e2103ab120dfa083613fc649e1c",
+      "byteSize": 553,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/scripts/patch_artifacts.py",
+      "gitBlobSha": "f11d87aee17074f5faefe2e2fb9a3dac3df4b28f",
+      "byteSize": 34454,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/scripts/render_report.py",
+      "gitBlobSha": "a87b1922ddc1b737f382f37082ec8c87dec54e8a",
+      "byteSize": 24126,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/scripts/write_scan_meta.py",
+      "gitBlobSha": "6cf3bd83d00f98ed288c8c5eeac03f29f6061a43",
+      "byteSize": 8212,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/SKILL.md",
+      "gitBlobSha": "32619cabb43e40c3b358233f72780c201c0ee664",
+      "byteSize": 5130,
+      "readStatus": "observed",
+      "contentSha256": "e63503bfc43a4db9653fe14ff6fe7fe500109c911bf2217db357d7c3b354f10a"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/jobs/scan-changes.md",
+      "gitBlobSha": "2b7db19497c4089b914e20c552d4cfcbe6b0e444",
+      "byteSize": 20570,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/jobs/scan-codebase.md",
+      "gitBlobSha": "152b14686253e72ccbfe6c96af6da7ad5cab1e2c",
+      "byteSize": 21929,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/jobs/suggest-patches.md",
+      "gitBlobSha": "ec89b67780d7de205a91924cf0331ea042a1b4e3",
+      "byteSize": 24227,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/role.md",
+      "gitBlobSha": "3aa603bf305702380464f0b2fa7c1dc9fdd5f53a",
+      "byteSize": 10020,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/specs/patch-spec.md",
+      "gitBlobSha": "006e4f9d5423d3b998f1961edafe01254beb92c5",
+      "byteSize": 8241,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/skills/claude-security/specs/report-spec.md",
+      "gitBlobSha": "43f68752d88ed20e868922c536008f35af23c32d",
+      "byteSize": 7508,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/claude-security/workflows/scan.js",
+      "gitBlobSha": "dc3512083970a947abb7daf7c618cafbf1f1d61b",
+      "byteSize": 31932,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/.claude-plugin/plugin.json",
+      "gitBlobSha": "431fe9b3bae9faf384a9b60aeee9f8ae35230f18",
+      "byteSize": 579,
+      "readStatus": "observed",
+      "contentSha256": "ad13ae6855d8ee4fd518d1c2d1084137fb8084e111290e3b8850a4d69a8e9a73"
+    },
+    {
+      "path": "plugins/code-modernization/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/code-modernization/README.md",
+      "gitBlobSha": "2a14887553f25e2ee3a87913271b1efca40296e7",
+      "byteSize": 12508,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/architecture-critic.md",
+      "gitBlobSha": "a170dac190c76e91c9c4c299a4fa9678ff69af03",
+      "byteSize": 3052,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/business-rules-extractor.md",
+      "gitBlobSha": "dfd9ce46cdb11b0781015f11c7a1b191f1fb0bf4",
+      "byteSize": 3762,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/legacy-analyst.md",
+      "gitBlobSha": "aa99e18e40782503688a9fb14d008d59c5ebe549",
+      "byteSize": 3624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/scaffolder.md",
+      "gitBlobSha": "6bffce5ece038fcc9e605d2e0572c9a4c0f71b50",
+      "byteSize": 1918,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/security-auditor.md",
+      "gitBlobSha": "428bd9bcd0ce5a723c46e90f062c70b5193d4104",
+      "byteSize": 4916,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/test-engineer.md",
+      "gitBlobSha": "4ad2f22909e89ab14c89351a977c8af360b23148",
+      "byteSize": 2895,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/uplift-migrator.md",
+      "gitBlobSha": "463b5495a347124bea8f43f7d79e104e32aaaea4",
+      "byteSize": 4786,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/agents/version-delta-analyst.md",
+      "gitBlobSha": "e869817cd78cd5c8dde91fc2fe2819fb95af416e",
+      "byteSize": 7549,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/assets/topology-viewer-screenshot.jpg",
+      "gitBlobSha": "4407f6c8acbdb186cf6a58a62aaf59fab911b189",
+      "byteSize": 228387,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/assets/topology-viewer.html",
+      "gitBlobSha": "e2d2253a32e8b2995fc311651bf09a9b44701c1b",
+      "byteSize": 80947,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-assess.md",
+      "gitBlobSha": "67056b9d74b316620eaaf207dbb04e50f26fa5db",
+      "byteSize": 11334,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-brief.md",
+      "gitBlobSha": "1871ce1760d743ccf62e1718062d2ddfe876604f",
+      "byteSize": 8951,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-extract-rules.md",
+      "gitBlobSha": "8840ed4c100eda8bc83e4ce463e74648d6f9c922",
+      "byteSize": 5840,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-harden.md",
+      "gitBlobSha": "301790a81379cae157a7f984ea4ed2f8ae8f272e",
+      "byteSize": 7449,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-map.md",
+      "gitBlobSha": "afe248adb690e64d95499d24174ab59863235027",
+      "byteSize": 8825,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-preflight.md",
+      "gitBlobSha": "cd43388814681c870dbf0750756c0317e7d0d50e",
+      "byteSize": 12505,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-reimagine.md",
+      "gitBlobSha": "5b0ecb12ebe6a45c8ea0cd0abb379f8f083e93bd",
+      "byteSize": 6745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-status.md",
+      "gitBlobSha": "575c3c1f75032d12f306887738f6a3b1750a21dc",
+      "byteSize": 2998,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-transform.md",
+      "gitBlobSha": "d946b93f44e562d33ce3a127be2429a275003907",
+      "byteSize": 5879,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/commands/modernize-uplift.md",
+      "gitBlobSha": "8df350fc64901d6200a175eceb65a1071c911d0c",
+      "byteSize": 24386,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/extract-rules.js",
+      "gitBlobSha": "1a53552b383a6a5b5bbcacb35d15763ad7ea3a74",
+      "byteSize": 16725,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/harden-scan.js",
+      "gitBlobSha": "750f63ed7f4b1ec649d5ca1016004f99fad6c018",
+      "byteSize": 10674,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/portfolio-assess.js",
+      "gitBlobSha": "5095794a07981a2fa5824452a0bbe3a1e5364dd9",
+      "byteSize": 5868,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/reimagine-scaffold.js",
+      "gitBlobSha": "36a77f8a7220d788aee8c3ee11d04dc72cd84c9a",
+      "byteSize": 5254,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/uplift-deltas.js",
+      "gitBlobSha": "0b23219141de5a7a9a8c77ba647272ae370877c9",
+      "byteSize": 14206,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-modernization/workflows/uplift-migrate.js",
+      "gitBlobSha": "be7eb4bbf17e45b30d4156e583b5b134b16063e3",
+      "byteSize": 22516,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-review/.claude-plugin/plugin.json",
+      "gitBlobSha": "c48abfebfd8178c77596d85ec6f48a388d68ef58",
+      "byteSize": 234,
+      "readStatus": "observed",
+      "contentSha256": "61af303bf05e05338c82910405292059c932e51567d8cf368c40e77519d1c742"
+    },
+    {
+      "path": "plugins/code-review/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/code-review/README.md",
+      "gitBlobSha": "b0962f09a753dfabf19f38a5b2c73013d4d692f3",
+      "byteSize": 7321,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-review/commands/code-review.md",
+      "gitBlobSha": "c46e327f19b6bb59dbf9060e8c9961e701908350",
+      "byteSize": 7422,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/code-simplifier/.claude-plugin/plugin.json",
+      "gitBlobSha": "e8edbae4330809cc9202951db1c9d5f27c39ed76",
+      "byteSize": 271,
+      "readStatus": "observed",
+      "contentSha256": "f18fb26b2f03e95ad165a4333c73ecd292da18e74d2b89d89bd9848839f8d0e7"
+    },
+    {
+      "path": "plugins/code-simplifier/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/code-simplifier/agents/code-simplifier.md",
+      "gitBlobSha": "05e361b4ef1b688203251989707f8a924a9ed266",
+      "byteSize": 3129,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/commit-commands/.claude-plugin/plugin.json",
+      "gitBlobSha": "f585c2d05c5dc9ecb5bb6986c578118b44193e57",
+      "byteSize": 236,
+      "readStatus": "observed",
+      "contentSha256": "ad7e089b8ab209e4a4a72438dabe5db77c32de9d0131d91b1d4816233e1653a1"
+    },
+    {
+      "path": "plugins/commit-commands/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/commit-commands/README.md",
+      "gitBlobSha": "a918ec3ab9e41a539c76fe1e2652b32537c6950e",
+      "byteSize": 5908,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/commit-commands/commands/clean_gone.md",
+      "gitBlobSha": "57f0b6e3eaf82f0cafcc4692d135525bbb9a9f0d",
+      "byteSize": 1865,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/commit-commands/commands/commit-push-pr.md",
+      "gitBlobSha": "5ebdd02948511696aed8a317a7160d385e25db44",
+      "byteSize": 796,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/commit-commands/commands/commit.md",
+      "gitBlobSha": "31ef0790b704d5197843d54bdf3efcd112c54137",
+      "byteSize": 624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/csharp-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/csharp-lsp/README.md",
+      "gitBlobSha": "18b8cdf94b3ad3fc42de4cf6ca5bab282419e6d5",
+      "byteSize": 486,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/cwc-makers/.claude-plugin/plugin.json",
+      "gitBlobSha": "d5b3a42eeda537addb7956c1b2ee71ab74f93fe8",
+      "byteSize": 649,
+      "readStatus": "observed",
+      "contentSha256": "daea51ab5138181571bf207637ff431b4abc439110a0466ac016381f112a33b7"
+    },
+    {
+      "path": "plugins/cwc-makers/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/cwc-makers/README.md",
+      "gitBlobSha": "3f8702f3f76d8a03e0cd21da01dc732472eb40a7",
+      "byteSize": 1941,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/cwc-makers/commands/maker-setup.md",
+      "gitBlobSha": "bca4c01853585545fbb111a06d71cc86b05bd330",
+      "byteSize": 1396,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/cwc-makers/skills/cardputer-buddy/SKILL.md",
+      "gitBlobSha": "932033cb5bc61a89d1421633d494ac04e87a8e57",
+      "byteSize": 1887,
+      "readStatus": "observed",
+      "contentSha256": "dae31d1459c8ee7b4a03d04bf55485f4ece04bdd4f5a2650ad39eb3d07d9be10"
+    },
+    {
+      "path": "plugins/cwc-makers/skills/m5-onboard/SKILL.md",
+      "gitBlobSha": "ae4517ff17f1543804764d1340e00f1ab471791b",
+      "byteSize": 23913,
+      "readStatus": "observed",
+      "contentSha256": "c6ba88fd06f59a3e902fead2bb863b6834f189672cfcc75248941c23ae39bd2d"
+    },
+    {
+      "path": "plugins/example-plugin/.claude-plugin/plugin.json",
+      "gitBlobSha": "732639ca3278796e3d3640a1a8c2885b3847b985",
+      "byteSize": 270,
+      "readStatus": "observed",
+      "contentSha256": "a206f70e6dfdc1c59a341a1789d6d26bb59fe4f0ea8c383d7d1d369de2fe52cd"
+    },
+    {
+      "path": "plugins/example-plugin/.mcp.json",
+      "gitBlobSha": "3858666d92d20b6dcf850be7ea1ae441d5f95d90",
+      "byteSize": 91,
+      "readStatus": "observed",
+      "contentSha256": "0ec43f9a48daa81f756d40c8b846625da3a507e3ebf880eb74b6b39394f7409a"
+    },
+    {
+      "path": "plugins/example-plugin/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/example-plugin/README.md",
+      "gitBlobSha": "6f9f16b96b5ce6f4402ddf7ab316c24391947281",
+      "byteSize": 1881,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/example-plugin/commands/example-command.md",
+      "gitBlobSha": "5cf32af06f411c72c8e70f10dc763d79dd5f1681",
+      "byteSize": 1247,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/example-plugin/skills/example-command/SKILL.md",
+      "gitBlobSha": "a1793378ec4135b7638a97650492c6d80e3f9131",
+      "byteSize": 1226,
+      "readStatus": "observed",
+      "contentSha256": "d561981660827f3818b0daec456ae5b31894f68c22407d8c495a77b3105ba96d"
+    },
+    {
+      "path": "plugins/example-plugin/skills/example-skill/SKILL.md",
+      "gitBlobSha": "9e0e268cac50d1c4016dc7e1dc5cddde54f594fb",
+      "byteSize": 2725,
+      "readStatus": "observed",
+      "contentSha256": "87d90442621ace039aa3379805f99c3f95bf500e9f7b96f9e7876ac2dcf804f5"
+    },
+    {
+      "path": "plugins/explanatory-output-style/.claude-plugin/plugin.json",
+      "gitBlobSha": "1a98d12c320beebf471b5c0e515a07126e0f724f",
+      "byteSize": 290,
+      "readStatus": "observed",
+      "contentSha256": "cad0bd812d3fca8c90d10e13f9fdc8c73c2120c43edfc0e152e04e35e99ca86d"
+    },
+    {
+      "path": "plugins/explanatory-output-style/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/explanatory-output-style/README.md",
+      "gitBlobSha": "f7de63267245f6ea392a5484087082cfbafc89db",
+      "byteSize": 2470,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/explanatory-output-style/hooks-handlers/session-start.sh",
+      "gitBlobSha": "05547bed410c358570ac6bfb8f4443f046468bad",
+      "byteSize": 1468,
+      "readStatus": "observed",
+      "contentSha256": "58efe97b7f5ccd384e0ee12a2f3dd2e75a38df35841a1b27ea6d9eb833c28912"
+    },
+    {
+      "path": "plugins/explanatory-output-style/hooks/hooks.json",
+      "gitBlobSha": "2478dadf7e7bdf8e319eb59b7f3c66352622ea0c",
+      "byteSize": 323,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/feature-dev/.claude-plugin/plugin.json",
+      "gitBlobSha": "22f1bea8604d1b6324230da2280726664309088f",
+      "byteSize": 262,
+      "readStatus": "observed",
+      "contentSha256": "66e5b7724eae5bc5b24f18fafe4c425ba3763c543218ba1c68dcc22c589a99d9"
+    },
+    {
+      "path": "plugins/feature-dev/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/feature-dev/README.md",
+      "gitBlobSha": "eb1b6e7eeaec45f030303026dae07efd0ca0a05b",
+      "byteSize": 11697,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/feature-dev/agents/code-architect.md",
+      "gitBlobSha": "fcb78bfd11004048fa287ac52c55eb5c17855549",
+      "byteSize": 2259,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/feature-dev/agents/code-explorer.md",
+      "gitBlobSha": "e0f667ef65f7204399110214defd46ce062a1a51",
+      "byteSize": 2115,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/feature-dev/agents/code-reviewer.md",
+      "gitBlobSha": "7fb589cbd7140152fae41720e391290ba202e57e",
+      "byteSize": 2994,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/feature-dev/commands/feature-dev.md",
+      "gitBlobSha": "8bdeda3430e43afddbee79830db0f6ea9dfbf36a",
+      "byteSize": 5097,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/frontend-design/.claude-plugin/plugin.json",
+      "gitBlobSha": "6a1426c78e5ed0cca07858597c277b4a59b8989a",
+      "byteSize": 180,
+      "readStatus": "observed",
+      "contentSha256": "fd9a7db11f5dec771d9e29ad1d6a3298c12f04c81c3a6457099b81fe477d835d"
+    },
+    {
+      "path": "plugins/frontend-design/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/frontend-design/README.md",
+      "gitBlobSha": "00cd435c88bc23614422a12494488bd5b3bd255b",
+      "byteSize": 977,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/frontend-design/skills/frontend-design/LICENSE.txt",
+      "gitBlobSha": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+      "byteSize": 10174,
+      "readStatus": "observed",
+      "contentSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "gitBlobSha": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
+      "byteSize": 8260,
+      "readStatus": "observed",
+      "contentSha256": "1608ea77fbb6fc30d13a97d12cfa8ebf31358d40f0dd97beed24829d6b3f45dd"
+    },
+    {
+      "path": "plugins/gopls-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/gopls-lsp/README.md",
+      "gitBlobSha": "a5b8f8defc6842b03de1407b2036ee55a461195f",
+      "byteSize": 473,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/.claude-plugin/plugin.json",
+      "gitBlobSha": "657f3d8d2227162ec2d757a41751ed31b3e29fb0",
+      "byteSize": 210,
+      "readStatus": "observed",
+      "contentSha256": "926ed28095535263e3953ac30a3be8c034ff8e3efd1ce28c529cf6e0ba8e902b"
+    },
+    {
+      "path": "plugins/hookify/.gitignore",
+      "gitBlobSha": "6d5f8af5db0888ee53137f37be6f170298daf497",
+      "byteSize": 291,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/hookify/README.md",
+      "gitBlobSha": "1aca6cdfb71bbf67da11074f22b53c00d2ef4452",
+      "byteSize": 7710,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/agents/conversation-analyzer.md",
+      "gitBlobSha": "83aa9d062d8aff1b818682ec7ca6f5b8e4d80e77",
+      "byteSize": 5625,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/commands/configure.md",
+      "gitBlobSha": "ccc7e472b39b4a84c06d86735bf86dec4f5aa340",
+      "byteSize": 2863,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/commands/help.md",
+      "gitBlobSha": "ae6e94b1d714b05d728405fb5e496dd57f8bd6ba",
+      "byteSize": 4624,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/commands/hookify.md",
+      "gitBlobSha": "e5fc645a80f97014645fd91c04772af21a238c58",
+      "byteSize": 7667,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/commands/list.md",
+      "gitBlobSha": "d6f810fb5368ee6623afd427314e13db50bb7841",
+      "byteSize": 2020,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/core/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/core/config_loader.py",
+      "gitBlobSha": "fa2fc3e36fee0d886902d118a55ab12b08a0a876",
+      "byteSize": 9690,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/core/rule_engine.py",
+      "gitBlobSha": "51561c39e927ef53cabe56a2fa55054165e90d19",
+      "byteSize": 10711,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/examples/console-log-warning.local.md",
+      "gitBlobSha": "c9352e7530c11635a990df827185e07fac681b57",
+      "byteSize": 315,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/examples/dangerous-rm.local.md",
+      "gitBlobSha": "8226eb197a7b498aeb1ef113ef38a155e683363a",
+      "byteSize": 278,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/examples/require-tests-stop.local.md",
+      "gitBlobSha": "87039186caa4a0ebf27ddddc83881b5355001f50",
+      "byteSize": 500,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/examples/sensitive-files-warning.local.md",
+      "gitBlobSha": "ae92971d8edd561096814b7f98ef181b8169a997",
+      "byteSize": 421,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/hooks.json",
+      "gitBlobSha": "4aa457a28f4ee8db29aa4dfce4cd7b6b32098ab5",
+      "byteSize": 1036,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/posttooluse.py",
+      "gitBlobSha": "9c6ccd92f7ce9eaee64aad64f89e4cc96a4a501c",
+      "byteSize": 1622,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/pretooluse.py",
+      "gitBlobSha": "9aff51975f4eb014b91aa20f2ff6a07f21513304",
+      "byteSize": 1852,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/stop.py",
+      "gitBlobSha": "b922a883d21bcbc825c4ddc17019f2545ed54d3f",
+      "byteSize": 1403,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/hooks/userpromptsubmit.py",
+      "gitBlobSha": "6f54585b8f04489abb759e5e82f056a1b46998eb",
+      "byteSize": 1389,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/matchers/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/hookify/skills/writing-rules/SKILL.md",
+      "gitBlobSha": "58f9e6d1b4f37f52f936372ba0c65ab627fcf4e0",
+      "byteSize": 8423,
+      "readStatus": "observed",
+      "contentSha256": "2994b5d3152243b1a1cbf8358e9d7c18f290f31a23920647f31053c3efdf990d"
+    },
+    {
+      "path": "plugins/hookify/utils/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/jdtls-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/jdtls-lsp/README.md",
+      "gitBlobSha": "f5731cb45c6c2af1542542cf517d4512f7347b46",
+      "byteSize": 811,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/kotlin-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/kotlin-lsp/README.md",
+      "gitBlobSha": "43d251d7cdcdf180c7ec927d3da5eaddef674879",
+      "byteSize": 306,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/learning-output-style/.claude-plugin/plugin.json",
+      "gitBlobSha": "71e67fed7425cd93014d53cc4332c266acadfc6e",
+      "byteSize": 295,
+      "readStatus": "observed",
+      "contentSha256": "b207853e4f543d9ba6604590781687fec5eb129662f1587b1602445b4bb1e298"
+    },
+    {
+      "path": "plugins/learning-output-style/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/learning-output-style/README.md",
+      "gitBlobSha": "8a83ffdf60d3e312465a81f6fdaacf7d28b2e6f3",
+      "byteSize": 4687,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/learning-output-style/hooks-handlers/session-start.sh",
+      "gitBlobSha": "0489074abad81a48abf1ce6b3fe96ee91137f246",
+      "byteSize": 3564,
+      "readStatus": "observed",
+      "contentSha256": "2b2ef02fffeb9df6d587a3180ab3bb06e1364a75f70e2f534045b599b953731e"
+    },
+    {
+      "path": "plugins/learning-output-style/hooks/hooks.json",
+      "gitBlobSha": "7f66d5ec3183c32a2dcd98a6a3385dd16b3c1efe",
+      "byteSize": 320,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/lua-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/lua-lsp/README.md",
+      "gitBlobSha": "5e5e78c913613df3ce4fca4a9c41d540edcf3f0c",
+      "byteSize": 705,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/.claude-plugin/plugin.json",
+      "gitBlobSha": "5638d63519e075a0278050fce8c75238b4406247",
+      "byteSize": 356,
+      "readStatus": "observed",
+      "contentSha256": "8c74f63e67cb9cbea57752f12c8afe5dcab569ae978503f28b18b07416bcae73"
+    },
+    {
+      "path": "plugins/math-olympiad/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/math-olympiad/README.md",
+      "gitBlobSha": "e30b5296c78d4d8fb25ff10d1dd557fd180e81c3",
+      "byteSize": 1192,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/SKILL.md",
+      "gitBlobSha": "94a064d7902d9d5282e7e75228ed2b3934cac30f",
+      "byteSize": 19961,
+      "readStatus": "observed",
+      "contentSha256": "f697e195d343520f3db551bd4fb44c5120504ee2c47a9cc2016cd57767f23403"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/evals/trigger_eval.json",
+      "gitBlobSha": "db40aac4593bfd77acaccd4327805702c0b28eaa",
+      "byteSize": 2008,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/adversarial_prompts.md",
+      "gitBlobSha": "9694acdd826621203601924db0a6a4a89b92aebd",
+      "byteSize": 12571,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/attempt_agent.md",
+      "gitBlobSha": "4db36cbfd49f8fb9569bdba89636c0887215e3eb",
+      "byteSize": 1961,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/known_constructions.md",
+      "gitBlobSha": "f4b62b8f1399e573ea23a094e3aa9d7cd17d7608",
+      "byteSize": 2024,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/model_tier_defaults.md",
+      "gitBlobSha": "bed3a019029b1794b2868b423ce48bd849f4f650",
+      "byteSize": 2970,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/presentation_prompts.md",
+      "gitBlobSha": "3eb15301af99461e24fb7974450c67aaf9ecfb84",
+      "byteSize": 6150,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/solver_heuristics.md",
+      "gitBlobSha": "6469ddf3f0806a15bc1bc798a461d0be82a1854b",
+      "byteSize": 5998,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/references/verifier_patterns.md",
+      "gitBlobSha": "c6cd7e51a0e66188e1fd56bbd791d298f90b484f",
+      "byteSize": 8284,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/scripts/check_latex.sh",
+      "gitBlobSha": "08232baf436f2df162223436aa62a9311b07080b",
+      "byteSize": 205,
+      "readStatus": "observed",
+      "contentSha256": "052151934c82b7a5d91a5bb3ba2a1611f22fc661929cf819f7e3d954bdb22721"
+    },
+    {
+      "path": "plugins/math-olympiad/skills/math-olympiad/scripts/compile_pdf.sh",
+      "gitBlobSha": "83f76ad319eef6cfe0b66ad756e6a6dda02e4606",
+      "byteSize": 1485,
+      "readStatus": "observed",
+      "contentSha256": "1e990d377d79b1d08b993833e7dcce8c5c82ed5ab34ad72c009b42f2e068b243"
+    },
+    {
+      "path": "plugins/mcp-server-dev/.claude-plugin/plugin.json",
+      "gitBlobSha": "652e97fc3cce827ecb353da71e0af4a3299b0e9c",
+      "byteSize": 334,
+      "readStatus": "observed",
+      "contentSha256": "1c99fc6e35a0716a5b0adab482d13235feff3cf5e398497235bd7c250a1c19fe"
+    },
+    {
+      "path": "plugins/mcp-server-dev/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/mcp-server-dev/README.md",
+      "gitBlobSha": "158ec22e2510c3b43728e296a50ec829d95015ad",
+      "byteSize": 1547,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/SKILL.md",
+      "gitBlobSha": "c400abdb126d392a2fbbf11539fa1bebf5b0146a",
+      "byteSize": 19391,
+      "readStatus": "observed",
+      "contentSha256": "d2fd94f0096506469ec855c581e48293d35480e58e6405b2bfcdba0486a0c218"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/abuse-protection.md",
+      "gitBlobSha": "d383b5a9285d7c4fc28f26c923e3b2db7df79831",
+      "byteSize": 2412,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/apps-sdk-messages.md",
+      "gitBlobSha": "fc1fdbbab4951660c0e1ae23e0bbc5cb967368bf",
+      "byteSize": 8772,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/directory-checklist.md",
+      "gitBlobSha": "3184c72834c95f907d0b477d2fc8bc8374588ca3",
+      "byteSize": 1552,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/iframe-sandbox.md",
+      "gitBlobSha": "6a7e2a14bae6e9cb403e88d637bc1e6f86475f53",
+      "byteSize": 5188,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/payload-budgeting.md",
+      "gitBlobSha": "a005173646497eef7c3df0f40444a4778a3ebfdf",
+      "byteSize": 2175,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-app/references/widget-templates.md",
+      "gitBlobSha": "c07bef2d123800a0676e213f16124fcdd02f78ed",
+      "byteSize": 8924,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/SKILL.md",
+      "gitBlobSha": "5ab19c3ae3ee57d11f4cdd0a550f942207dc6a5c",
+      "byteSize": 12084,
+      "readStatus": "observed",
+      "contentSha256": "088cd04be7f03ebbdfd24973cbcbf93c7a2e09117c4bba7b2b06bcc3e0a556f6"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/auth.md",
+      "gitBlobSha": "56fcefbbe0e36d87c46d20c7ee9bc5bda71ebf28",
+      "byteSize": 5745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/deploy-cloudflare-workers.md",
+      "gitBlobSha": "2df110a0c6696d1304dff0739c425e9bd15f8bb3",
+      "byteSize": 3639,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/elicitation.md",
+      "gitBlobSha": "d1fede664afe797fee500f99514ebd2b87c20080",
+      "byteSize": 4728,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/remote-http-scaffold.md",
+      "gitBlobSha": "7a9afbb0f10fda94bfd38ad71616973816a96e00",
+      "byteSize": 7054,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/resources-and-prompts.md",
+      "gitBlobSha": "52749dd30f27c8ae1298557359e4529a035bdd7e",
+      "byteSize": 4090,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/server-capabilities.md",
+      "gitBlobSha": "b797f054b99f854fea8e353e3a136aaee612ada4",
+      "byteSize": 4673,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/tool-design.md",
+      "gitBlobSha": "8d4a4c548628c39156bb9dceab7891c8cf8b4e92",
+      "byteSize": 7054,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcp-server/references/versions.md",
+      "gitBlobSha": "81e2110ace13e8d5ee03dd39869289bb70520192",
+      "byteSize": 1108,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcpb/SKILL.md",
+      "gitBlobSha": "772097ddbbd78e8faaad2ff57dc7faa64c7a5ea3",
+      "byteSize": 7867,
+      "readStatus": "observed",
+      "contentSha256": "6bb90afd0415754e13f353ee5982d13857c14826edbcbdf5f1481fa5563cd56b"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcpb/references/local-security.md",
+      "gitBlobSha": "6fd756f7a78fa9b09317fe57f67abbd1a3a99295",
+      "byteSize": 5384,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-server-dev/skills/build-mcpb/references/manifest-schema.md",
+      "gitBlobSha": "0a42b84bfb874f765b03252c31a7e611f60cc887",
+      "byteSize": 5359,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-tunnels/.claude-plugin/plugin.json",
+      "gitBlobSha": "97c3032815bdf579519a9467630e5d2f8b8a8fbd",
+      "byteSize": 323,
+      "readStatus": "observed",
+      "contentSha256": "90ec77db16dbafeb4a9d16687b93eb7af24abe12569f1473916af074717d4091"
+    },
+    {
+      "path": "plugins/mcp-tunnels/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/mcp-tunnels/README.md",
+      "gitBlobSha": "e29331b06d206cdc54ff612e47bc9203564f3a65",
+      "byteSize": 4947,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/mcp-tunnels/commands/create-docker-mcp-tunnel.md",
+      "gitBlobSha": "c6897b7cdff040a3ce19d4eba955af253c406245",
+      "byteSize": 16293,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/php-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/php-lsp/README.md",
+      "gitBlobSha": "46ebfd93423b3f8dbbd11ebbfe9565f2746139c8",
+      "byteSize": 436,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/.claude-plugin/plugin.json",
+      "gitBlobSha": "12a6ef30f0cb54cf2278796727701ccb7ca398ef",
+      "byteSize": 277,
+      "readStatus": "observed",
+      "contentSha256": "2975f5ccac97a08db8a4f52f214057a0d784115dd55cbbd398ea2d871b3df0bb"
+    },
+    {
+      "path": "plugins/playground/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/playground/README.md",
+      "gitBlobSha": "61877d56d5e2b36e6ab09bcafb0d667a3ef4f24e",
+      "byteSize": 1258,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/SKILL.md",
+      "gitBlobSha": "e8b2da023f4bfb25907fb7a48e8234bbd0e1cb7d",
+      "byteSize": 3824,
+      "readStatus": "observed",
+      "contentSha256": "521a3d62211e5f47b65ed17b660e001b15cf8d88d058cbf31bc00e889bcb63cc"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/code-map.md",
+      "gitBlobSha": "152d9a43ecdec670cbc159115eaf099e4c2f1997",
+      "byteSize": 6196,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/concept-map.md",
+      "gitBlobSha": "83ef2307ae3b032fe520822cd2450d72e70aa15a",
+      "byteSize": 3644,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/data-explorer.md",
+      "gitBlobSha": "dde65467789c0416115f47834056820a5782c821",
+      "byteSize": 2817,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/design-playground.md",
+      "gitBlobSha": "1d2fefce1650251ed6bc5c8bf71cc6fd5ce1ebb7",
+      "byteSize": 2719,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/diff-review.md",
+      "gitBlobSha": "db18b2f2f5b3ea0d1666533fb6a1452ff2c9522d",
+      "byteSize": 5733,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/playground/skills/playground/templates/document-critique.md",
+      "gitBlobSha": "d99d77da69bfb6058964d48929508e33a6e64aaf",
+      "byteSize": 5154,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/.claude-plugin/plugin.json",
+      "gitBlobSha": "19cd8716ef775be365f0eea2645a1638d2e00547",
+      "byteSize": 267,
+      "readStatus": "observed",
+      "contentSha256": "1c3af7703695a2d4b6c33193cce1848e931aa27a8ef9fa64cc182e67b9c5dac9"
+    },
+    {
+      "path": "plugins/plugin-dev/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/plugin-dev/README.md",
+      "gitBlobSha": "a7f489e13dbce1ee3e003bbce776942a9dfb30a9",
+      "byteSize": 14590,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/agents/agent-creator.md",
+      "gitBlobSha": "17e380c9c2111c493093bac30203348617eb0a99",
+      "byteSize": 7488,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/agents/plugin-validator.md",
+      "gitBlobSha": "9ad19abe5264279e9f332272ec1fca0b7fd5c287",
+      "byteSize": 6678,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/agents/skill-reviewer.md",
+      "gitBlobSha": "04474cb56585fb174a80011f0657c87e5fe1fa00",
+      "byteSize": 6132,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/commands/create-plugin.md",
+      "gitBlobSha": "56f2a91801478fe1f93e9fb46b686b503263263f",
+      "byteSize": 15855,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/SKILL.md",
+      "gitBlobSha": "f4ea78d89bcee2febcce2285d9d41b3d17df3656",
+      "byteSize": 11168,
+      "readStatus": "observed",
+      "contentSha256": "6a2826571320828cc6f8f21ccd8e6eefd2bced62000c8c5e43a712c12e2d83a1"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/examples/agent-creation-prompt.md",
+      "gitBlobSha": "24da66aebebc8a1c202209cb2661a13688eba527",
+      "byteSize": 9838,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/examples/complete-agent-examples.md",
+      "gitBlobSha": "439615dbb649e86571949a2145473ac2ffc71116",
+      "byteSize": 13916,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/references/agent-creation-system-prompt.md",
+      "gitBlobSha": "756d29988682cac092a6a4f4ee0e2b43e7315bdf",
+      "byteSize": 9749,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/references/system-prompt-design.md",
+      "gitBlobSha": "6efa85468905d83f156d3d89d7ae5804dcb7eff4",
+      "byteSize": 9998,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/references/triggering-examples.md",
+      "gitBlobSha": "240442e0a881147edc6bc142874244dc26f00392",
+      "byteSize": 8868,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/agent-development/scripts/validate-agent.sh",
+      "gitBlobSha": "ca4dfd4b92d9e40bd7218803b8e0930ff5ee17d5",
+      "byteSize": 5796,
+      "readStatus": "observed",
+      "contentSha256": "d22e1292f997169fb745793dc50ebe3e9c6631603e1d77f04c2e79bb1fc63cba"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/README.md",
+      "gitBlobSha": "a5d303f20d80d201afd4c3a7257e2cebc6e6844f",
+      "byteSize": 7651,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/SKILL.md",
+      "gitBlobSha": "4c82f7e8472706bcde5a0605d6e04f6c05bf4704",
+      "byteSize": 19233,
+      "readStatus": "observed",
+      "contentSha256": "c55ad02cfe4cbb2a947eea3b1ed5fa1871e722d627c3c6792c3ed87c10c4d7a8"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/examples/plugin-commands.md",
+      "gitBlobSha": "e14ef4ddbb5f3d3d99423e002453e8539b0fadcf",
+      "byteSize": 13989,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/examples/simple-commands.md",
+      "gitBlobSha": "2348239c4de79ede58b2cb14618f6857c467085c",
+      "byteSize": 8675,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/advanced-workflows.md",
+      "gitBlobSha": "5e0d7b1dc8329d9a9c0168e4e498b3d7a424886b",
+      "byteSize": 13618,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/documentation-patterns.md",
+      "gitBlobSha": "3ea03ec83a2f88293ae34fd24ae7461ca6404d8c",
+      "byteSize": 14971,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/frontmatter-reference.md",
+      "gitBlobSha": "aa85294745429c8f1cdfd90e1bd61653b875d1bb",
+      "byteSize": 9162,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/interactive-commands.md",
+      "gitBlobSha": "e55bc38f4f09d8d65801582455e8c6eb1c710c3f",
+      "byteSize": 20980,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/marketplace-considerations.md",
+      "gitBlobSha": "03e706c6fc833c1022674206b44c6934555e8949",
+      "byteSize": 16437,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/plugin-features-reference.md",
+      "gitBlobSha": "c89e9060b42906dbb1e59300a7cc8d98051ad98f",
+      "byteSize": 14622,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/command-development/references/testing-strategies.md",
+      "gitBlobSha": "7b482fbe621a999b3a985c6a846aaa358a3824f6",
+      "byteSize": 14803,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/SKILL.md",
+      "gitBlobSha": "6317441bfe3fcb60ea0d611e3826c2c4147d65f0",
+      "byteSize": 16246,
+      "readStatus": "observed",
+      "contentSha256": "f47e2d42f6360294216a859ae0c30b93caafdd2b2e5ffc007489ba4ca447fa5c"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/examples/load-context.sh",
+      "gitBlobSha": "9754f321a7d6f7a1e9f23a0e4f74a84c5f81a35c",
+      "byteSize": 1690,
+      "readStatus": "observed",
+      "contentSha256": "0d614599e711c087b381a4ac7ee3c40758af1022669fc998649d199b9dfe15ed"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/examples/validate-bash.sh",
+      "gitBlobSha": "e36432441f6d541ac3a76a3cffdffa1edfa671d0",
+      "byteSize": 1304,
+      "readStatus": "observed",
+      "contentSha256": "348c58f4cf38a2e7080ea5272935a7658c7122d83dd6c52d0a1f2ef599c176ab"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/examples/validate-write.sh",
+      "gitBlobSha": "e665193329add13afda0355a6603e2b40c3034df",
+      "byteSize": 1222,
+      "readStatus": "observed",
+      "contentSha256": "89a8ef9bb7508e4819080e65834d6783afa5a5a614d458a3821b80a329eb32e5"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/references/advanced.md",
+      "gitBlobSha": "a84a38fbbf8c63c2f72a84c255a80016595ac22c",
+      "byteSize": 10148,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/references/migration.md",
+      "gitBlobSha": "587cae37e680a190b1f9c75232c639b33d36ea21",
+      "byteSize": 8299,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/references/patterns.md",
+      "gitBlobSha": "447538654d9439061799b6e08ccdabf80a4ff3a5",
+      "byteSize": 7144,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/scripts/README.md",
+      "gitBlobSha": "02a556fdbd9483426d994419a81c936da7e28a6d",
+      "byteSize": 3677,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/scripts/hook-linter.sh",
+      "gitBlobSha": "64f6041effc1c9ab182241b31814878952a3456e",
+      "byteSize": 4200,
+      "readStatus": "observed",
+      "contentSha256": "85a7d55488f8f38f9b98350b5cb597fb306432d5e61eaa3444e7226ca9309e0b"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/scripts/test-hook.sh",
+      "gitBlobSha": "527b119c4465a99b1d4f81f880ab76f69e0329bc",
+      "byteSize": 5336,
+      "readStatus": "observed",
+      "contentSha256": "ded642e811b4731f6a2c90c73b02e00c937511d9ee65236bb8cf9964f0069393"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
+      "gitBlobSha": "fed0a1f1d47b8efe9dff01796cc661b1582c1e85",
+      "byteSize": 5081,
+      "readStatus": "observed",
+      "contentSha256": "e7785d6c61d368f5ea5270c979753aea02f776f5b6aa220137ec4585abd720c2"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/SKILL.md",
+      "gitBlobSha": "aee6c05e147616817cde5aedcdc05cee3defeede",
+      "byteSize": 12519,
+      "readStatus": "observed",
+      "contentSha256": "2bcc3b5e93924d7632218f494890f6e6f75a9248138bc97070bc62aea942dd49"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/examples/http-server.json",
+      "gitBlobSha": "e96448fe9b8ba79e13ebb40be6914f62bb930d15",
+      "byteSize": 502,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/examples/sse-server.json",
+      "gitBlobSha": "e6ec71c60172acd2e7ebe4b5d202af84e071171b",
+      "byteSize": 413,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/examples/stdio-server.json",
+      "gitBlobSha": "60af1c69dd539cebe1ea7daad34181a68de063ac",
+      "byteSize": 686,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/references/authentication.md",
+      "gitBlobSha": "1d4ff3840f8086665838d5746f261d60c6966ace",
+      "byteSize": 10196,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/references/server-types.md",
+      "gitBlobSha": "4528953397fd690282ff1c079f1c52a2a34ac3b0",
+      "byteSize": 10613,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/mcp-integration/references/tool-usage.md",
+      "gitBlobSha": "986c2aadbc692f3fdfe0d28264da407d4aba2c9f",
+      "byteSize": 11674,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/SKILL.md",
+      "gitBlobSha": "3ab48bca0137d06557ef16d8b8448ab7de84f26f",
+      "byteSize": 12097,
+      "readStatus": "observed",
+      "contentSha256": "028b955244b937ebc1a5c268a12776b8ceae4cbfb60928fbca927227f4c8851d"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/examples/create-settings-command.md",
+      "gitBlobSha": "987e9a1948565e75e23f464fa70aa79015feec53",
+      "byteSize": 2177,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/examples/example-settings.md",
+      "gitBlobSha": "307289ddd099c38ec513530b826ce2ec50659a83",
+      "byteSize": 2930,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/examples/read-settings-hook.sh",
+      "gitBlobSha": "8f84ed69eabebc632872316a42671a86ff0a64ce",
+      "byteSize": 2205,
+      "readStatus": "observed",
+      "contentSha256": "627fce38d37d64c971401ecc85d548f060075670bcac52f65c92ca156e810c70"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/references/parsing-techniques.md",
+      "gitBlobSha": "7e83ae867f8f6cef2e2ae11f40fe6d1ccde10eb5",
+      "byteSize": 11513,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/references/real-world-examples.md",
+      "gitBlobSha": "73b6446cd9ae6ef0f9f91f78904acad03343f423",
+      "byteSize": 9492,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/scripts/parse-frontmatter.sh",
+      "gitBlobSha": "f247571baeabe6ec0e6899dd953ea98e13d78d2d",
+      "byteSize": 1269,
+      "readStatus": "observed",
+      "contentSha256": "1ab8c42d5a19e0b404af3c573d0267fc19b5987e1d7885f522066ffd76e54553"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-settings/scripts/validate-settings.sh",
+      "gitBlobSha": "e34e4323119fbc3050dd83177a7ca5faae68f5dd",
+      "byteSize": 2712,
+      "readStatus": "observed",
+      "contentSha256": "2f4975285cba7f16b82c764a95fe76d34ac488308ba6705c04561267da4f4f75"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/README.md",
+      "gitBlobSha": "3076046052483b5638c1c5818d6a19d5a87f3305",
+      "byteSize": 3210,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/SKILL.md",
+      "gitBlobSha": "6bcae94a524429d1fbdc37fb08f2bb7d58630d7c",
+      "byteSize": 13796,
+      "readStatus": "observed",
+      "contentSha256": "a2dbc1e5502aacb360d0ca74732cdd7be4f6a12a49edf4f2ade4134fbc026247"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/examples/advanced-plugin.md",
+      "gitBlobSha": "a7c069691ee0ddcd655f88ffbd0253dbe7f4229a",
+      "byteSize": 18746,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/examples/minimal-plugin.md",
+      "gitBlobSha": "27591dbcaff810375de507327d26911575029d62",
+      "byteSize": 1731,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/examples/standard-plugin.md",
+      "gitBlobSha": "d9031665564afc43ad19c07175f18bf7a84b1e1a",
+      "byteSize": 13310,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/references/component-patterns.md",
+      "gitBlobSha": "a58a7b4b0a3301aa1330ea4db77636ea8df41bd4",
+      "byteSize": 12086,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/plugin-structure/references/manifest-reference.md",
+      "gitBlobSha": "40c9c2f3633d54fe1ec9a119f7a00f7eea0e171a",
+      "byteSize": 12061,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/skill-development/SKILL.md",
+      "gitBlobSha": "1cb3bd90b29d0469d25c5df9ad72741ac1e2c4cd",
+      "byteSize": 22825,
+      "readStatus": "observed",
+      "contentSha256": "d51b4e20043b13e462aa86c47ea82d43e216eb292871538127f4b12a54e4944f"
+    },
+    {
+      "path": "plugins/plugin-dev/skills/skill-development/references/skill-creator-original.md",
+      "gitBlobSha": "40699358f2f8098e860838cd68b0382a31c72262",
+      "byteSize": 11547,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/.claude-plugin/plugin.json",
+      "gitBlobSha": "e81d7aa31085520620c26a086b8b1668abbb29a0",
+      "byteSize": 266,
+      "readStatus": "observed",
+      "contentSha256": "7aa64c91a9316ef3641df115414c07c7caee8f48368815dc2950483598321865"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/README.md",
+      "gitBlobSha": "e91cb7bed28ced8b6a48952abe430fba6deeae6d",
+      "byteSize": 7528,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/code-reviewer.md",
+      "gitBlobSha": "834b70c21f1f1bd4d01b8025bc830bf00887f2e7",
+      "byteSize": 3635,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/code-simplifier.md",
+      "gitBlobSha": "89a01c0b972f99fb33515de5f1e9ef1613dd9381",
+      "byteSize": 5292,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/comment-analyzer.md",
+      "gitBlobSha": "41ab074f50953c1f0fed5cf1972c9d2f36a97b31",
+      "byteSize": 4925,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/pr-test-analyzer.md",
+      "gitBlobSha": "05b342b9175af85c5d7404bac67f5c62da375aa2",
+      "byteSize": 4560,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/silent-failure-hunter.md",
+      "gitBlobSha": "b8a8dfa41e18ef6ac801ae64be38b2508aa04f44",
+      "byteSize": 7807,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/agents/type-design-analyzer.md",
+      "gitBlobSha": "9c17fec6b276cbe42f80b5e96e21e016b59c8e06",
+      "byteSize": 4999,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pr-review-toolkit/commands/review-pr.md",
+      "gitBlobSha": "021234cf7ac8c49964552b50650428727ea891a7",
+      "byteSize": 4997,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/project-artifact/.claude-plugin/plugin.json",
+      "gitBlobSha": "72a3b77f0a8bc8c2b1d245d8ade6cd949549a745",
+      "byteSize": 784,
+      "readStatus": "observed",
+      "contentSha256": "d695cb3444282368eea77028e515bea52883b7353764379fa3162f52e6f5accf"
+    },
+    {
+      "path": "plugins/project-artifact/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/project-artifact/README.md",
+      "gitBlobSha": "c514400824833de0ac3901566c11969ee23b54aa",
+      "byteSize": 1980,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/project-artifact/skills/project-artifact/SKILL.md",
+      "gitBlobSha": "135464f4d72c5cbeac59e0cb9f9279f5fa8de1e9",
+      "byteSize": 19952,
+      "readStatus": "observed",
+      "contentSha256": "5417e25c920250af113b8e3fe7bf749be71a5d32769a0120e61cd4be8e0ff54f"
+    },
+    {
+      "path": "plugins/project-artifact/skills/project-artifact/swe.md",
+      "gitBlobSha": "8802eabf224638acc7cf6a070813eff33f354438",
+      "byteSize": 5511,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/project-artifact/skills/project-artifact/template.html",
+      "gitBlobSha": "0ba8857170c77374ff72d65d788ac033495eea4f",
+      "byteSize": 20788,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/pyright-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/pyright-lsp/README.md",
+      "gitBlobSha": "b533046691206f754f0eef616f5cef1372eede80",
+      "byteSize": 564,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/.claude-plugin/plugin.json",
+      "gitBlobSha": "7e101a7c3003a9d372b218bbf57b186d473f8804",
+      "byteSize": 343,
+      "readStatus": "observed",
+      "contentSha256": "4a92d87b112e923659fec9f66848f97105c40027e52634b6fab00f932a49334e"
+    },
+    {
+      "path": "plugins/ralph-loop/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/ralph-loop/README.md",
+      "gitBlobSha": "1e1c9f9d6c0fe7c0d16ef74284931e31cd96c9f2",
+      "byteSize": 6054,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/commands/cancel-ralph.md",
+      "gitBlobSha": "89bddc2b77a0938fe8639c13fb63f009677745d4",
+      "byteSize": 738,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/commands/help.md",
+      "gitBlobSha": "b2391191935694da585c2adb322e6731f067943c",
+      "byteSize": 3227,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/commands/ralph-loop.md",
+      "gitBlobSha": "9441df990117e7e379826cef977f055636ab4304",
+      "byteSize": 916,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/hooks/hooks.json",
+      "gitBlobSha": "3f16550223e74a53d92acff676bf5e42b9b13ed8",
+      "byteSize": 291,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ralph-loop/hooks/stop-hook.sh",
+      "gitBlobSha": "7edf13b72411e3045595847718383b2b6aac9230",
+      "byteSize": 7533,
+      "readStatus": "observed",
+      "contentSha256": "13c547e77956e44f6af41d1be140f55da0e1ee3c55a540b530f48ee7c7ba9a11"
+    },
+    {
+      "path": "plugins/ralph-loop/scripts/setup-ralph-loop.sh",
+      "gitBlobSha": "d4f6e0fa259c6295bbea405a37257e9afc29d587",
+      "byteSize": 7044,
+      "readStatus": "observed",
+      "contentSha256": "042341b82911d25992888de4d229b0b5cebf1d8c68783996d322916197aafcff"
+    },
+    {
+      "path": "plugins/receipts/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/receipts/README.md",
+      "gitBlobSha": "9e2db44c8f6558780b53b1be69f9bb74f3b3e318",
+      "byteSize": 3648,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/receipts/assets/make-sample.mjs",
+      "gitBlobSha": "b9ee1fd5ef3aaa2471e809f743cdfc6e8e23b01e",
+      "byteSize": 7941,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/receipts/assets/sample-receipt.png",
+      "gitBlobSha": "d0be9f1e50b0ee80e17be37c9ddea5132fc19da5",
+      "byteSize": 264194,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/receipts/skills/receipts/SKILL.md",
+      "gitBlobSha": "93342c8a693646042ef80fb0e343ed557e2482e1",
+      "byteSize": 17254,
+      "readStatus": "observed",
+      "contentSha256": "5b2f407ff40639727310236f4b34986cacd4bf616c07d2e4198846726842e346"
+    },
+    {
+      "path": "plugins/receipts/skills/receipts/scripts/mine-transcripts.mjs",
+      "gitBlobSha": "41439c3514b8e487ee2832efe0851f2448740219",
+      "byteSize": 64768,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/ruby-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/ruby-lsp/README.md",
+      "gitBlobSha": "a28b77452618ff7a569b321f6fc65e5a620f448b",
+      "byteSize": 535,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/rust-analyzer-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/rust-analyzer-lsp/README.md",
+      "gitBlobSha": "7af3b186074744f2e1eb5790507ee0df274ea624",
+      "byteSize": 701,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/.claude-plugin/plugin.json",
+      "gitBlobSha": "f4cc218e6e307fde4cae842a6f4ac4860a2bb513",
+      "byteSize": 499,
+      "readStatus": "observed",
+      "contentSha256": "db666cced89437885ef824ca2bd804837d5477dce3c497d567cc6d0bcef89bc2"
+    },
+    {
+      "path": "plugins/security-guidance/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/security-guidance/README.md",
+      "gitBlobSha": "485f22fbb54739fb13b517caafbfa1838b2b619e",
+      "byteSize": 7219,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/_base.py",
+      "gitBlobSha": "ce051753750d92568128e7b6b981fafbd751109c",
+      "byteSize": 10176,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/diffstate.py",
+      "gitBlobSha": "3ce9da1bf3088bd15e02ecead114956ff4258274",
+      "byteSize": 20986,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/ensure_agent_sdk.py",
+      "gitBlobSha": "23312baae001d4d68640f312fefc3ae4783a0080",
+      "byteSize": 39414,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/extensibility.py",
+      "gitBlobSha": "a9c7f8fe5f3dc8d54eaa0e8043abe30b0ac9be7c",
+      "byteSize": 12240,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/gitutil.py",
+      "gitBlobSha": "4d771b42f05cbe8a0566a980229427fc4e441bf8",
+      "byteSize": 34900,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/hooks.json",
+      "gitBlobSha": "39dbac5773a2df936459835c9d0c6f68f7bcce50",
+      "byteSize": 4393,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/llm.py",
+      "gitBlobSha": "8b7feef8678e26bb79685ddd9bd5d364c78bccb5",
+      "byteSize": 115687,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/patterns.py",
+      "gitBlobSha": "8e749cadafe25fb861f141bfcbcb72194946515a",
+      "byteSize": 18474,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/review_api.py",
+      "gitBlobSha": "499336b96f6223a7c4a86f876cefd27492194c21",
+      "byteSize": 24763,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/security_reminder_hook.py",
+      "gitBlobSha": "d3f726e89e80622dbe87e6f815d38459aaa32f28",
+      "byteSize": 111593,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/session_state.py",
+      "gitBlobSha": "8dbadfd278a1287b097debffd0e05de7d7ab5ff8",
+      "byteSize": 5649,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/security-guidance/hooks/sg-python.sh",
+      "gitBlobSha": "9cf8cc07410808a7a5d84e0e8293ecdd8ebdac2e",
+      "byteSize": 5471,
+      "readStatus": "observed",
+      "contentSha256": "5584fce77fac3063829823cb0acfa70ad8f30252f93a09b01dd849e48597fe6a"
+    },
+    {
+      "path": "plugins/session-report/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/session-report/skills/session-report/SKILL.md",
+      "gitBlobSha": "c3eea47947ca093c858a86d4619e43175730892d",
+      "byteSize": 3149,
+      "readStatus": "observed",
+      "contentSha256": "ef0fbc4259a41b7fd61b517fb1c9a95f02b83ea3c79ba0b3afbeee4942570397"
+    },
+    {
+      "path": "plugins/session-report/skills/session-report/analyze-sessions.mjs",
+      "gitBlobSha": "1a5e593ce2250a74831c0552cdd17d571d26a649",
+      "byteSize": 28225,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/session-report/skills/session-report/template.html",
+      "gitBlobSha": "98a9910a9ebc82fb0af001f7327c59bc12529326",
+      "byteSize": 26382,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/.claude-plugin/plugin.json",
+      "gitBlobSha": "565b44d205103dd0947b2c2436c86e7361ca1ecb",
+      "byteSize": 378,
+      "readStatus": "observed",
+      "contentSha256": "658debd3e0bef690d15e948f0fbebb569eb172111f5e816b226537c911d75069"
+    },
+    {
+      "path": "plugins/skill-creator/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/skill-creator/README.md",
+      "gitBlobSha": "994c8606f9a03acfec2bba67791626121940c614",
+      "byteSize": 264,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/LICENSE.txt",
+      "gitBlobSha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+      "byteSize": 11357,
+      "readStatus": "observed",
+      "contentSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/SKILL.md",
+      "gitBlobSha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+      "byteSize": 33168,
+      "readStatus": "observed",
+      "contentSha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/agents/analyzer.md",
+      "gitBlobSha": "14e41d6068635f4dd3fb878fd1626312395dda63",
+      "byteSize": 10376,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/agents/comparator.md",
+      "gitBlobSha": "80e00eb45db3ee53a132fc2ba97fd59a7339e563",
+      "byteSize": 7287,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/agents/grader.md",
+      "gitBlobSha": "558ab05c0a9a8bb062ef4c51823d4d76c3acf7c4",
+      "byteSize": 9049,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/assets/eval_review.html",
+      "gitBlobSha": "938ff32aed9bffabf723bd5492d720f4736c8e4d",
+      "byteSize": 7058,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/eval-viewer/generate_review.py",
+      "gitBlobSha": "7fa5978631fed1ed545591dbb2b0eb21ce3f3d08",
+      "byteSize": 16365,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/eval-viewer/viewer.html",
+      "gitBlobSha": "6d8e96348a02e66c3363d2ff3b3ae58ac11e6382",
+      "byteSize": 44998,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/references/schemas.md",
+      "gitBlobSha": "b6eeaa2d4a34c1653069585c6c5603da39a5bdbe",
+      "byteSize": 12061,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/__init__.py",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "byteSize": 0,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/aggregate_benchmark.py",
+      "gitBlobSha": "3e66e8c105be9bab9f0e9c61f0d1482619401580",
+      "byteSize": 14386,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/generate_report.py",
+      "gitBlobSha": "959e30a0014ec165c41a2bb7420b7dfe1416bbac",
+      "byteSize": 12847,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/improve_description.py",
+      "gitBlobSha": "06bcec76122446986e3610c20a39c466de36f495",
+      "byteSize": 11116,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/package_skill.py",
+      "gitBlobSha": "f48eac444656ddc41204aac1760a217951ce609e",
+      "byteSize": 4234,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/quick_validate.py",
+      "gitBlobSha": "ed8e1dddce77b16af13c6f36b3fe86c4ac7c590c",
+      "byteSize": 3972,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/run_eval.py",
+      "gitBlobSha": "e58c70bea39d5b252a1e819f242bbdcdf20e8b87",
+      "byteSize": 11464,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/run_loop.py",
+      "gitBlobSha": "30a263d674ef19de11c756d6f7537f91a421909e",
+      "byteSize": 13605,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/skill-creator/skills/skill-creator/scripts/utils.py",
+      "gitBlobSha": "51b6a07dd57174197a937034b7eecebd5768ff8a",
+      "byteSize": 1661,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/swift-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/swift-lsp/README.md",
+      "gitBlobSha": "b58bd4722228dafa89e9af8cefed119ea88c60aa",
+      "byteSize": 602,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/typescript-lsp/LICENSE",
+      "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "byteSize": 11358,
+      "readStatus": "observed",
+      "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "plugins/typescript-lsp/README.md",
+      "gitBlobSha": "316c64563506e576307548857e09091b0c83d8df",
+      "byteSize": 692,
+      "readStatus": "unknown"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "external_plugins/discord/LICENSE",
+          "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+        },
+        {
+          "path": "external_plugins/discord/package.json",
+          "contentSha256": "fa2ece9108aca2ae17e7b1909f468ee8f055e53a45882eb25108a3e394f17e46"
+        },
+        {
+          "path": "external_plugins/fakechat/LICENSE",
+          "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+        },
+        {
+          "path": "external_plugins/fakechat/package.json",
+          "contentSha256": "e3e02600f8a2a35124a984070be5fb04303744fb77bb6cd2155434aac43bba02"
+        },
+        {
+          "path": "external_plugins/imessage/LICENSE",
+          "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+        },
+        {
+          "path": "external_plugins/imessage/package.json",
+          "contentSha256": "807e4bf09638421055e094950b75969a51933323c515818b1ffbfbc2670c990b"
+        },
+        {
+          "path": "external_plugins/telegram/LICENSE",
+          "contentSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+        },
+        {
+          "path": "external_plugins/telegram/package.json",
+          "contentSha256": "364a9286a10497daeecce94607682f31de522413252209dd82778d8d9fff2b47"
+        },
+        {
+          "path": "plugins/agent-sdk-dev/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/clangd-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/claude-code-setup/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/claude-md-management/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/claude-security/LICENSE",
+          "contentSha256": "15d46b21bd3c8ead21dd4fe0f4b82a8d934b698cf6367b09c06211058fc4332d"
+        },
+        {
+          "path": "plugins/code-modernization/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/code-review/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/code-simplifier/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/commit-commands/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/csharp-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/cwc-makers/.claude-plugin/plugin.json",
+          "contentSha256": "daea51ab5138181571bf207637ff431b4abc439110a0466ac016381f112a33b7"
+        },
+        {
+          "path": "plugins/cwc-makers/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/example-plugin/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/explanatory-output-style/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/feature-dev/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/frontend-design/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/frontend-design/skills/frontend-design/LICENSE.txt",
+          "contentSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "plugins/gopls-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/hookify/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/jdtls-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/kotlin-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/learning-output-style/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/lua-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/math-olympiad/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/mcp-server-dev/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/mcp-tunnels/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/php-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/playground/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/plugin-dev/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/pr-review-toolkit/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/project-artifact/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/pyright-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/ralph-loop/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/receipts/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/ruby-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/rust-analyzer-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/security-guidance/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/session-report/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/skill-creator/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/skill-creator/skills/skill-creator/LICENSE.txt",
+          "contentSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "plugins/swift-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "plugins/typescript-lsp/LICENSE",
+          "contentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "contentSha256": "d580b5d2fa473fdbfc8792ece117f6a3a92d4bb12356ab17beb2f3cc5f7b0316"
+        },
+        {
+          "path": "external_plugins/asana/.claude-plugin/plugin.json",
+          "contentSha256": "9868aa330fbc3f81c26a720a7a190ec34ed6f12eb327495a7527325faae5aa0e"
+        },
+        {
+          "path": "external_plugins/context7/.claude-plugin/plugin.json",
+          "contentSha256": "c9a0bfcde1426a79d8609651bddbc5dcb49be18984e55d27042bf53139004137"
+        },
+        {
+          "path": "external_plugins/firebase/.claude-plugin/plugin.json",
+          "contentSha256": "72250fde24860d0b1ed3666ee056073bf389e784afba1b693f6596eceab83980"
+        },
+        {
+          "path": "external_plugins/github/.claude-plugin/plugin.json",
+          "contentSha256": "86a6c2ffb21e8b1e1a74db18c26bdf7fbb46079a0b6a42e72d741b3cbba979c9"
+        },
+        {
+          "path": "external_plugins/gitlab/.claude-plugin/plugin.json",
+          "contentSha256": "986e551c1f4f6eb0029dfab23ea78cbaa2a9663f72b6d686cd72ff221e9c8747"
+        },
+        {
+          "path": "external_plugins/greptile/.claude-plugin/plugin.json",
+          "contentSha256": "f4badb91b1570e8acca0f52c1a8ef75845c08eaefca300fbc68641269e09d117"
+        },
+        {
+          "path": "external_plugins/laravel-boost/.claude-plugin/plugin.json",
+          "contentSha256": "bb195fa8dd2e0405155edf3233cee0467775306df3238eece559748e0285116f"
+        },
+        {
+          "path": "external_plugins/linear/.claude-plugin/plugin.json",
+          "contentSha256": "25d00b56e7789e19ce0d3b311a6686fb2e23a4dd91e3f1f3bb33e3aba684b390"
+        },
+        {
+          "path": "external_plugins/playwright/.claude-plugin/plugin.json",
+          "contentSha256": "f2d7c0f611b93287ebb07454255d0cccf3a343d7095b7f8f763ff21d1995c096"
+        },
+        {
+          "path": "external_plugins/serena/.claude-plugin/plugin.json",
+          "contentSha256": "a046a275ba705b370ddabfdf85b337c6a07336983a3f0764e7623e64b7418ba0"
+        },
+        {
+          "path": "external_plugins/terraform/.claude-plugin/plugin.json",
+          "contentSha256": "b8f0b65d4a2f4d8fe11fea591e3839071037ec86cfaa9ae09832bc2bb840e0a3"
+        },
+        {
+          "path": "plugins/agent-sdk-dev/.claude-plugin/plugin.json",
+          "contentSha256": "92391d726e504750c844904072c127c0da08b7e5a4f88d7f7c36339b2a3da31e"
+        },
+        {
+          "path": "plugins/claude-code-setup/.claude-plugin/plugin.json",
+          "contentSha256": "f5cc68a308d6a781596325a635272639e823dfaad6aa66494338715306d53fe6"
+        },
+        {
+          "path": "plugins/claude-md-management/.claude-plugin/plugin.json",
+          "contentSha256": "4617ec581bdf3f6d0e9879e8d9338a1fd46602b93bb6007d3ec5c1a18f8af66f"
+        },
+        {
+          "path": "plugins/claude-security/.claude-plugin/plugin.json",
+          "contentSha256": "3b60dc88457fbe0fce8ff2868b4a0d3374eac0cdc1e2fd9d5d1782e0a30cbee6"
+        },
+        {
+          "path": "plugins/code-modernization/.claude-plugin/plugin.json",
+          "contentSha256": "ad13ae6855d8ee4fd518d1c2d1084137fb8084e111290e3b8850a4d69a8e9a73"
+        },
+        {
+          "path": "plugins/code-review/.claude-plugin/plugin.json",
+          "contentSha256": "61af303bf05e05338c82910405292059c932e51567d8cf368c40e77519d1c742"
+        },
+        {
+          "path": "plugins/code-simplifier/.claude-plugin/plugin.json",
+          "contentSha256": "f18fb26b2f03e95ad165a4333c73ecd292da18e74d2b89d89bd9848839f8d0e7"
+        },
+        {
+          "path": "plugins/commit-commands/.claude-plugin/plugin.json",
+          "contentSha256": "ad7e089b8ab209e4a4a72438dabe5db77c32de9d0131d91b1d4816233e1653a1"
+        },
+        {
+          "path": "plugins/cwc-makers/.claude-plugin/plugin.json",
+          "contentSha256": "daea51ab5138181571bf207637ff431b4abc439110a0466ac016381f112a33b7"
+        },
+        {
+          "path": "plugins/example-plugin/.claude-plugin/plugin.json",
+          "contentSha256": "a206f70e6dfdc1c59a341a1789d6d26bb59fe4f0ea8c383d7d1d369de2fe52cd"
+        },
+        {
+          "path": "plugins/explanatory-output-style/.claude-plugin/plugin.json",
+          "contentSha256": "cad0bd812d3fca8c90d10e13f9fdc8c73c2120c43edfc0e152e04e35e99ca86d"
+        },
+        {
+          "path": "plugins/feature-dev/.claude-plugin/plugin.json",
+          "contentSha256": "66e5b7724eae5bc5b24f18fafe4c425ba3763c543218ba1c68dcc22c589a99d9"
+        },
+        {
+          "path": "plugins/frontend-design/.claude-plugin/plugin.json",
+          "contentSha256": "fd9a7db11f5dec771d9e29ad1d6a3298c12f04c81c3a6457099b81fe477d835d"
+        },
+        {
+          "path": "plugins/hookify/.claude-plugin/plugin.json",
+          "contentSha256": "926ed28095535263e3953ac30a3be8c034ff8e3efd1ce28c529cf6e0ba8e902b"
+        },
+        {
+          "path": "plugins/learning-output-style/.claude-plugin/plugin.json",
+          "contentSha256": "b207853e4f543d9ba6604590781687fec5eb129662f1587b1602445b4bb1e298"
+        },
+        {
+          "path": "plugins/math-olympiad/.claude-plugin/plugin.json",
+          "contentSha256": "8c74f63e67cb9cbea57752f12c8afe5dcab569ae978503f28b18b07416bcae73"
+        },
+        {
+          "path": "plugins/mcp-server-dev/.claude-plugin/plugin.json",
+          "contentSha256": "1c99fc6e35a0716a5b0adab482d13235feff3cf5e398497235bd7c250a1c19fe"
+        },
+        {
+          "path": "plugins/mcp-tunnels/.claude-plugin/plugin.json",
+          "contentSha256": "90ec77db16dbafeb4a9d16687b93eb7af24abe12569f1473916af074717d4091"
+        },
+        {
+          "path": "plugins/playground/.claude-plugin/plugin.json",
+          "contentSha256": "2975f5ccac97a08db8a4f52f214057a0d784115dd55cbbd398ea2d871b3df0bb"
+        },
+        {
+          "path": "plugins/plugin-dev/.claude-plugin/plugin.json",
+          "contentSha256": "1c3af7703695a2d4b6c33193cce1848e931aa27a8ef9fa64cc182e67b9c5dac9"
+        },
+        {
+          "path": "plugins/pr-review-toolkit/.claude-plugin/plugin.json",
+          "contentSha256": "7aa64c91a9316ef3641df115414c07c7caee8f48368815dc2950483598321865"
+        },
+        {
+          "path": "plugins/project-artifact/.claude-plugin/plugin.json",
+          "contentSha256": "d695cb3444282368eea77028e515bea52883b7353764379fa3162f52e6f5accf"
+        },
+        {
+          "path": "plugins/ralph-loop/.claude-plugin/plugin.json",
+          "contentSha256": "4a92d87b112e923659fec9f66848f97105c40027e52634b6fab00f932a49334e"
+        },
+        {
+          "path": "plugins/security-guidance/.claude-plugin/plugin.json",
+          "contentSha256": "db666cced89437885ef824ca2bd804837d5477dce3c497d567cc6d0bcef89bc2"
+        },
+        {
+          "path": "plugins/skill-creator/.claude-plugin/plugin.json",
+          "contentSha256": "658debd3e0bef690d15e948f0fbebb569eb172111f5e816b226537c911d75069"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "external_plugins/discord/package.json",
+          "contentSha256": "fa2ece9108aca2ae17e7b1909f468ee8f055e53a45882eb25108a3e394f17e46"
+        },
+        {
+          "path": "external_plugins/fakechat/package.json",
+          "contentSha256": "e3e02600f8a2a35124a984070be5fb04303744fb77bb6cd2155434aac43bba02"
+        },
+        {
+          "path": "external_plugins/imessage/package.json",
+          "contentSha256": "807e4bf09638421055e094950b75969a51933323c515818b1ffbfbc2670c990b"
+        },
+        {
+          "path": "external_plugins/telegram/package.json",
+          "contentSha256": "364a9286a10497daeecce94607682f31de522413252209dd82778d8d9fff2b47"
+        }
+      ]
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "external_plugins/discord/.mcp.json",
+          "contentSha256": "01c15597e40a5999d7b1c15bd6f9656abc8a04d3a0956704a9dfd2df01b74960"
+        },
+        {
+          "path": "external_plugins/discord/package.json",
+          "contentSha256": "fa2ece9108aca2ae17e7b1909f468ee8f055e53a45882eb25108a3e394f17e46"
+        },
+        {
+          "path": "external_plugins/fakechat/.mcp.json",
+          "contentSha256": "3917f449284d362f213a42e0d7ef3bb9a75db795b7909d6febdb1fd94d0df68e"
+        },
+        {
+          "path": "external_plugins/fakechat/package.json",
+          "contentSha256": "e3e02600f8a2a35124a984070be5fb04303744fb77bb6cd2155434aac43bba02"
+        },
+        {
+          "path": "external_plugins/imessage/.mcp.json",
+          "contentSha256": "3c3faf1e53fb79b3ecb0a4bb401b55baf21fea6dad1e363ff988a1490997c978"
+        },
+        {
+          "path": "external_plugins/imessage/package.json",
+          "contentSha256": "807e4bf09638421055e094950b75969a51933323c515818b1ffbfbc2670c990b"
+        },
+        {
+          "path": "external_plugins/telegram/.mcp.json",
+          "contentSha256": "0ee637b9a76aa35b3b9eb9a76b4b8fb036bc61651711e1af72badedde5e3c875"
+        },
+        {
+          "path": "external_plugins/telegram/package.json",
+          "contentSha256": "364a9286a10497daeecce94607682f31de522413252209dd82778d8d9fff2b47"
+        },
+        {
+          "path": "plugins/claude-security/hooks/banner_hook.sh",
+          "contentSha256": "05e9eef43a6e201a9507a14bf6dd70dfded6a743ad5ac1cf4a91e60355b467e6"
+        },
+        {
+          "path": "plugins/explanatory-output-style/hooks-handlers/session-start.sh",
+          "contentSha256": "58efe97b7f5ccd384e0ee12a2f3dd2e75a38df35841a1b27ea6d9eb833c28912"
+        },
+        {
+          "path": "plugins/learning-output-style/hooks-handlers/session-start.sh",
+          "contentSha256": "2b2ef02fffeb9df6d587a3180ab3bb06e1364a75f70e2f534045b599b953731e"
+        },
+        {
+          "path": "plugins/math-olympiad/skills/math-olympiad/scripts/check_latex.sh",
+          "contentSha256": "052151934c82b7a5d91a5bb3ba2a1611f22fc661929cf819f7e3d954bdb22721"
+        },
+        {
+          "path": "plugins/math-olympiad/skills/math-olympiad/scripts/compile_pdf.sh",
+          "contentSha256": "1e990d377d79b1d08b993833e7dcce8c5c82ed5ab34ad72c009b42f2e068b243"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/agent-development/scripts/validate-agent.sh",
+          "contentSha256": "d22e1292f997169fb745793dc50ebe3e9c6631603e1d77f04c2e79bb1fc63cba"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/examples/load-context.sh",
+          "contentSha256": "0d614599e711c087b381a4ac7ee3c40758af1022669fc998649d199b9dfe15ed"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/examples/validate-bash.sh",
+          "contentSha256": "348c58f4cf38a2e7080ea5272935a7658c7122d83dd6c52d0a1f2ef599c176ab"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/examples/validate-write.sh",
+          "contentSha256": "89a8ef9bb7508e4819080e65834d6783afa5a5a614d458a3821b80a329eb32e5"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/scripts/hook-linter.sh",
+          "contentSha256": "85a7d55488f8f38f9b98350b5cb597fb306432d5e61eaa3444e7226ca9309e0b"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/scripts/test-hook.sh",
+          "contentSha256": "ded642e811b4731f6a2c90c73b02e00c937511d9ee65236bb8cf9964f0069393"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
+          "contentSha256": "e7785d6c61d368f5ea5270c979753aea02f776f5b6aa220137ec4585abd720c2"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/plugin-settings/examples/read-settings-hook.sh",
+          "contentSha256": "627fce38d37d64c971401ecc85d548f060075670bcac52f65c92ca156e810c70"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/plugin-settings/scripts/parse-frontmatter.sh",
+          "contentSha256": "1ab8c42d5a19e0b404af3c573d0267fc19b5987e1d7885f522066ffd76e54553"
+        },
+        {
+          "path": "plugins/plugin-dev/skills/plugin-settings/scripts/validate-settings.sh",
+          "contentSha256": "2f4975285cba7f16b82c764a95fe76d34ac488308ba6705c04561267da4f4f75"
+        },
+        {
+          "path": "plugins/ralph-loop/hooks/stop-hook.sh",
+          "contentSha256": "13c547e77956e44f6af41d1be140f55da0e1ee3c55a540b530f48ee7c7ba9a11"
+        },
+        {
+          "path": "plugins/ralph-loop/scripts/setup-ralph-loop.sh",
+          "contentSha256": "042341b82911d25992888de4d229b0b5cebf1d8c68783996d322916197aafcff"
+        },
+        {
+          "path": "plugins/security-guidance/hooks/sg-python.sh",
+          "contentSha256": "5584fce77fac3063829823cb0acfa70ad8f30252f93a09b01dd849e48597fe6a"
+        }
+      ]
+    }
+  }
+}

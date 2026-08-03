@@ -1,0 +1,147 @@
+schemaVersion: 2
+domainId: video-and-audio
+categories:
+  - id: video-research
+    name:
+      ko: 영상 조사
+      en: Video research
+    description:
+      ko: 주제, 시청자, 사례, 플랫폼과 사실 근거를 조사해 영상 제작 방향을 정한다.
+      en: Researches topic, audience, examples, platforms, and factual evidence to guide video production.
+    status: draft
+  - id: concepts
+    name:
+      ko: 미디어 콘셉트
+      en: Media concepts
+    description:
+      ko: 목적과 시청자에 맞는 핵심 메시지, 형식, 관점과 창의적 방향을 정의한다.
+      en: Defines the central message, format, angle, and creative direction for purpose and audience.
+    status: draft
+  - id: scripts
+    name:
+      ko: 대본
+      en: Scripts
+    description:
+      ko: 장면과 음성의 흐름을 통해 메시지, 근거, 전환과 행동 요청을 구성한다.
+      en: Structures message, evidence, transitions, and calls to action through scene and voice flow.
+    status: draft
+  - id: storyboards
+    name:
+      ko: 스토리보드
+      en: Storyboards
+    description:
+      ko: 장면 순서, 화면 구성, 움직임, 자막과 전환을 제작 전에 시각화한다.
+      en: Visualizes scene order, composition, motion, captions, and transitions before production.
+    status: draft
+  - id: shot-lists
+    name:
+      ko: 촬영 목록
+      en: Shot lists
+    description:
+      ko: 필요한 장면, 구도, 움직임, 소리와 우선순위를 실행 가능한 목록으로 정리한다.
+      en: Organizes required scenes, framing, movement, sound, and priority into an executable list.
+    status: draft
+  - id: recording-preparation
+    name:
+      ko: 녹화 준비
+      en: Recording preparation
+    description:
+      ko: 장비, 조명, 음향, 장소, 권한과 리허설을 점검해 촬영 실패를 줄인다.
+      en: Checks equipment, lighting, sound, location, permissions, and rehearsal to reduce recording failure.
+    status: draft
+  - id: rough-cuts
+    name:
+      ko: 러프 컷
+      en: Rough cuts
+    description:
+      ko: 핵심 장면을 배열해 이야기 구조, 길이와 누락된 촬영 요소를 검토한다.
+      en: Arranges key footage to review story structure, duration, and missing production elements.
+    status: draft
+  - id: fine-editing
+    name:
+      ko: 정교 편집
+      en: Fine editing
+    description:
+      ko: 타이밍, 리듬, 전환, 색상과 세부 오류를 다듬어 완성도를 높인다.
+      en: Refines timing, pacing, transitions, color, and detailed errors to improve finish quality.
+    status: draft
+  - id: motion-graphics
+    name:
+      ko: 모션 그래픽
+      en: Motion graphics
+    description:
+      ko: 정보와 브랜드를 이해하기 쉽게 전달하는 애니메이션 그래픽을 설계한다.
+      en: Designs animated graphics that communicate information and brand clearly.
+    status: draft
+  - id: captions
+    name:
+      ko: 자막
+      en: Captions
+    description:
+      ko: 음성, 화자, 중요한 소리와 타이밍을 정확히 전달하는 접근 가능한 자막을 만든다.
+      en: Creates accessible captions that accurately convey speech, speakers, important sounds, and timing.
+    status: draft
+  - id: voice-cleanup
+    name:
+      ko: 음성 정리
+      en: Voice cleanup
+    description:
+      ko: 잡음, 불균형, 불명확한 발음과 수준 차이를 교정해 음성을 명료하게 만든다.
+      en: Corrects noise, imbalance, unclear speech, and level differences to make voice clear.
+    status: draft
+  - id: mixing
+    name:
+      ko: 오디오 믹싱
+      en: Audio mixing
+    description:
+      ko: 음성, 음악, 효과음과 침묵의 균형을 맞춰 의도와 이해 가능성을 유지한다.
+      en: Balances voice, music, effects, and silence to preserve intent and intelligibility.
+    status: draft
+  - id: music
+    name:
+      ko: 음악
+      en: Music
+    description:
+      ko: 분위기, 리듬, 권리와 배포 조건에 맞는 음악을 선택하고 배치한다.
+      en: Selects and places music that fits mood, pacing, rights, and distribution conditions.
+    status: draft
+  - id: sound-effects
+    name:
+      ko: 효과음
+      en: Sound effects
+    description:
+      ko: 장면의 의미와 행동을 보강하는 효과음을 적절한 권리와 수준으로 통합한다.
+      en: Integrates sound effects that reinforce scene meaning and action with appropriate rights and levels.
+    status: draft
+  - id: thumbnails
+    name:
+      ko: 썸네일
+      en: Thumbnails
+    description:
+      ko: 콘텐츠의 약속과 핵심 주제를 작은 화면에서도 명확히 전달하는 대표 이미지를 만든다.
+      en: Creates representative images that clearly convey the content promise and topic even at small sizes.
+    status: draft
+  - id: repurposing
+    name:
+      ko: 콘텐츠 재활용
+      en: Content repurposing
+    description:
+      ko: 원본의 의미와 근거를 보존하면서 각 채널 형식에 맞는 파생 콘텐츠를 만든다.
+      en: Creates channel-appropriate derivative content while preserving the original meaning and evidence.
+    status: draft
+  - id: quality-control
+    name:
+      ko: 품질 관리
+      en: Quality control
+    description:
+      ko: 사실, 편집, 자막, 음향, 브랜드와 기술 요구를 출시 전에 체계적으로 점검한다.
+      en: Systematically checks facts, editing, captions, audio, brand, and technical requirements before release.
+    status: draft
+  - id: export
+    name:
+      ko: 출력
+      en: Export
+    description:
+      ko: 대상 플랫폼의 형식, 해상도, 비트레이트, 자막과 메타데이터 요구에 맞게 산출한다.
+      en: Exports for platform requirements covering format, resolution, bitrate, captions, and metadata.
+    status: draft

@@ -1,0 +1,9 @@
+id: source-files-to-polished-document-normal
+packId: source-files-to-polished-document
+caseType: normal
+prompt: Combine approved documents, spreadsheets, slides, PDFs, and scans into a polished result with headings, reading order, alt text, table headers, and searchable or accessible export.
+expectedBehaviors:
+  - The source-files-to-polished-document normal case verifies narrative, OCR, calculations, charts, quotations, headings, reading order, and source provenance.
+  - The source-files-to-polished-document normal case provides alt text, table headers, classification, archive metadata, and searchable or accessible export checks.
+forbiddenBehaviors:
+  - The source-files-to-polished-document normal case must not change source meaning, omit headings, break reading order, discard alt text, or flatten table headers.

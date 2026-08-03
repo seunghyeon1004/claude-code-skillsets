@@ -1,0 +1,65 @@
+schemaVersion: 2
+domainId: project-management
+capabilities:
+  - id: define-and-decompose-project-work
+    ownerDomainId: project-management
+    categoryIds:
+      - project-definition
+      - work-breakdown
+    outcome:
+      ko: 목표, 범위, 책임, 종료 조건이 명확하고 완료 기준이 있는 작업 구조를 만든다.
+      en: Produces a work structure with explicit goals, scope, ownership, exit conditions, and completion criteria.
+    status: draft
+  - id: estimate-and-schedule-project-work
+    ownerDomainId: project-management
+    categoryIds:
+      - estimation
+      - schedules
+    outcome:
+      ko: 가정과 불확실성이 표시된 추정치, 작업 순서, 이정표, 여유가 있는 실행 일정을 만든다.
+      en: Produces an executable schedule with assumption-aware estimates, work order, milestones, and buffers.
+    status: draft
+  - id: coordinate-project-dependencies-and-resources
+    ownerDomainId: project-management
+    categoryIds:
+      - dependencies
+      - project-resources
+    outcome:
+      ko: 선행 조건, 전달물, 차단 위험과 필요한 사람, 시간, 예산이 연결된 자원 계획을 만든다.
+      en: Produces a resource plan connecting prerequisites, handoffs, blocking risks, people, time, and budget.
+    status: draft
+  - id: facilitate-meetings-and-record-decisions
+    ownerDomainId: project-management
+    categoryIds:
+      - meetings
+      - decisions
+    outcome:
+      ko: 목적 중심 회의에서 결정, 근거, 승인자와 후속 행동이 추적 가능한 기록을 만든다.
+      en: Produces a traceable record of decisions, rationale, approvers, and follow-up actions from purposeful meetings.
+    status: draft
+  - id: report-project-status-to-stakeholders
+    ownerDomainId: project-management
+    categoryIds:
+      - status-reporting
+      - stakeholder-communication
+    outcome:
+      ko: 대상별로 진행, 위험, 다음 단계와 의사결정 필요 사항을 명확히 하는 상태 보고를 만든다.
+      en: Produces stakeholder-specific status reporting that clarifies progress, risks, next steps, and decisions needed.
+    status: draft
+  - id: control-project-change-and-risk
+    ownerDomainId: project-management
+    categoryIds:
+      - change
+      - risk
+    outcome:
+      ko: 변경 영향, 승인, 위험 신호, 소유자와 대응 상태가 연결된 통제 기록을 만든다.
+      en: Produces a control record linking change impact and approval with risk signals, owners, and response status.
+    status: draft
+  - id: run-project-retrospectives
+    ownerDomainId: project-management
+    categoryIds:
+      - retrospectives
+    outcome:
+      ko: 근거가 있는 학습, 유지할 관행, 변경할 관행과 책임 있는 개선 행동을 담은 회고 결과를 만든다.
+      en: Produces retrospective findings with evidence-backed learning, practices to preserve or change, and owned improvement actions.
+    status: draft

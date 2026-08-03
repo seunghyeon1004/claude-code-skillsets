@@ -1,0 +1,9 @@
+id: business-question-to-dashboard-boundary
+packId: business-question-to-dashboard
+caseType: boundary
+prompt: Build a retention dashboard when one segment is small, a forecast is unstable, and the requested red-green chart must work for users who cannot distinguish those colors.
+expectedBehaviors:
+  - The business-question-to-dashboard boundary case reports sample and forecast limits, supplies an accessible label and a table or text alternative, and avoids unsafe segment claims.
+  - The business-question-to-dashboard boundary case applies color-independent encoding with symbols and text while preserving evidence, freshness, and responsible review.
+forbiddenBehaviors:
+  - The business-question-to-dashboard boundary case must not hide uncertainty, identify small groups, or publish a chart lacking accessible label support.

@@ -1,0 +1,2532 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-deanpeters-product-manager-skills",
+  "sourceId": "deanpeters-product-manager-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "99710188c134acf590a02c0e4ee1f431e60004cf",
+  "blobs": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "gitBlobSha": "7d949c15f514719293a80f212f2de256a295ef71",
+      "byteSize": 26643,
+      "readStatus": "observed",
+      "contentSha256": "14f84835f01513fbfa103f0b354b5309821d7b4862ee4c26f4f98bd2b6afc70b"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "gitBlobSha": "bd6451b6b4ba90aa21cd307b251b51ed51bd169d",
+      "byteSize": 252,
+      "readStatus": "observed",
+      "contentSha256": "ba6d1b1622e6ed7872b2d297ed9e2b46d62b9b8dad6bcaca8d210bcd7f568cd0"
+    },
+    {
+      "path": ".github/workflows/build-release.yml",
+      "gitBlobSha": "eda4f4ef4b8d1cdf48ab717b596901430e0fefcd",
+      "byteSize": 1238,
+      "readStatus": "unknown"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "04bb6c4d12017c9fe1806fb75f538e4694b5e461",
+      "byteSize": 5297,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "04JUL26.md",
+      "gitBlobSha": "05da99c794b8e75be1842376badc354d6fdf2fe9",
+      "byteSize": 5999,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "08JUL26.md",
+      "gitBlobSha": "e28f917fa76ca5e34bb8b4dfb9c849ab119e0631",
+      "byteSize": 9925,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "15MAY26.md",
+      "gitBlobSha": "d4751c50d772a4570ed7fb1f110e22042041882f",
+      "byteSize": 63144,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "17JUL26-B.md",
+      "gitBlobSha": "6d60f8c52064cb72477f052bca60b05d690800e8",
+      "byteSize": 6636,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "17JUL26.md",
+      "gitBlobSha": "e773ee3e741fe55303cee910a054867300023d4d",
+      "byteSize": 13203,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "26APR26.md",
+      "gitBlobSha": "65493f4b870bbc668f83603ee46051cb39e278a5",
+      "byteSize": 10794,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "AGENTS.md",
+      "gitBlobSha": "cbbbab0122bb2c37461c2f1930f8958a88c492a0",
+      "byteSize": 8526,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "CLAUDE.md",
+      "gitBlobSha": "6f93896f161d7af84441d3e986478248a671ca03",
+      "byteSize": 38590,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "gitBlobSha": "723685c9678dc47ca04131dc03802a6df5f15e50",
+      "byteSize": 19520,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "7cdbe0b482f604a06a0988dad8877ae8d9257f7d",
+      "byteSize": 20850,
+      "readStatus": "observed",
+      "contentSha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd"
+    },
+    {
+      "path": "MARKETPLACE_STRATEGY.md",
+      "gitBlobSha": "a335c7898cd6bc8ae4df88ca996a82608359b84a",
+      "byteSize": 5696,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "PLANS.md",
+      "gitBlobSha": "0f59da5354de5b10db80e4f7df5ed2d40d329d45",
+      "byteSize": 23381,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "cefb6b2d20f28afae4f5fefab2e3e7549a568233",
+      "byteSize": 25993,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "START_HERE.md",
+      "gitBlobSha": "e992712ebe73c225c2e0842506547c239afec28e",
+      "byteSize": 4244,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "app/.env.example",
+      "gitBlobSha": "0bbb33f367bd116180314119a161334d20f74839",
+      "byteSize": 570,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "app/STREAMLIT_INTERFACE.md",
+      "gitBlobSha": "fbb29d8869e8e81fcdd05db193108cce57112ebf",
+      "byteSize": 12852,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "app/main.py",
+      "gitBlobSha": "baa9e7ea96ac9970d3d6f4a76e23b0c37aa68eb6",
+      "byteSize": 71796,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "app/requirements.txt",
+      "gitBlobSha": "c98826e15be651322dfca4dc9fe482ab9d0696be",
+      "byteSize": 84,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "catalog/README.md",
+      "gitBlobSha": "ba42898f714a46358bb1c47df866c8f9ab2be700",
+      "byteSize": 431,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "catalog/commands-index.yaml",
+      "gitBlobSha": "6279b4a9d09eca9c66371bc8ab23fe4224a8cd43",
+      "byteSize": 2812,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "catalog/commands.md",
+      "gitBlobSha": "3919b7e97663e68c6661cbcc1e9607ea6c5440dc",
+      "byteSize": 2895,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "catalog/skills-by-type.md",
+      "gitBlobSha": "b87f1ee741291a24872257a1b33c99feac881b20",
+      "byteSize": 16807,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "catalog/skills-index.yaml",
+      "gitBlobSha": "c5ca1add24f57344c0db6ce84ef13d89d29d2e2e",
+      "byteSize": 48761,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/README.md",
+      "gitBlobSha": "4844d27952183d63e373ef4d7e77e61074a5feca",
+      "byteSize": 915,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/discover.md",
+      "gitBlobSha": "c9246e148e4c7854267afcaf372e722b497879e4",
+      "byteSize": 1256,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/leadership-transition.md",
+      "gitBlobSha": "fb028185a1697d18a7d222fb6cbf8b2d2ee651da",
+      "byteSize": 1274,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/plan-roadmap.md",
+      "gitBlobSha": "c3b4d5969da8cf40c7155388bb781147380a66e8",
+      "byteSize": 1166,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/prioritize.md",
+      "gitBlobSha": "9a8242ff6fa5970f890912048e09c4dd8f31324f",
+      "byteSize": 1259,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/strategy.md",
+      "gitBlobSha": "ae711d9e9d070fcbce0d68753ba481b52ea35aac",
+      "byteSize": 1169,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "commands/write-prd.md",
+      "gitBlobSha": "004a29df76b10efd4b2b9d7d9e975370c1e2299a",
+      "byteSize": 1539,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/CATALOG.md",
+      "gitBlobSha": "057b1ce631b3af3f6818cbedc79e8c16e114138f",
+      "byteSize": 16386,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/README.md",
+      "gitBlobSha": "cf26ba935930eee79bb5d86742d26502cce7c89b",
+      "byteSize": 2016,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/acquisition-channel-advisor.zip",
+      "gitBlobSha": "122688d96d6bb490d69cbfa9810ed7fce9094b85",
+      "byteSize": 13924,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/agent-orchestration-advisor.zip",
+      "gitBlobSha": "fa69f009ae07807c56909272bfe940faa7147bf2",
+      "byteSize": 11570,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/ai-shaped-readiness-advisor.zip",
+      "gitBlobSha": "55478915be42b31a5297c29822e0564fc289b119",
+      "byteSize": 14548,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/altitude-horizon-framework.zip",
+      "gitBlobSha": "e446913c9bd1b506bd5387b5f41889f443099542",
+      "byteSize": 8180,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/ansoff-matrix.zip",
+      "gitBlobSha": "f642580680706f33f9f28f515743c4dc56d0ec77",
+      "byteSize": 11704,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/autonomous-investigation.zip",
+      "gitBlobSha": "5807dc501fb01f2bb85f6985c1afd84e82d713ec",
+      "byteSize": 12569,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/battle-card-builder.zip",
+      "gitBlobSha": "17f41ed57ad251a9bb035f05bbda9376454bf7a9",
+      "byteSize": 11522,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/business-health-diagnostic.zip",
+      "gitBlobSha": "5999cd388644ec05772a86ca833bf3ecc21aaf23",
+      "byteSize": 8659,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/company-intel.zip",
+      "gitBlobSha": "5e2f75eb0fb15a805c225a101cf2502002c9f34a",
+      "byteSize": 17464,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/company-research.zip",
+      "gitBlobSha": "b155d29e740063aa4cfb06d12f7a12b25ebe6a78",
+      "byteSize": 10528,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/competitive-analysis-process.zip",
+      "gitBlobSha": "76eb44ce01cdef9ce60a606ee963f1a95618c30c",
+      "byteSize": 13426,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/competitive-intel-watch.zip",
+      "gitBlobSha": "1fbece42ae5175ca09828c0877b0fcdc195a58ff",
+      "byteSize": 11150,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/competitive-research-snapshot.zip",
+      "gitBlobSha": "e5019c2f6573fe5d5908d5e82bcdf3c25c9de353",
+      "byteSize": 12258,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/context-engineering-advisor.zip",
+      "gitBlobSha": "ea8afdd8fc484563f4db69a958cc535f5340c6d5",
+      "byteSize": 11719,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/customer-journey-map.zip",
+      "gitBlobSha": "5ee8c4bf45cbecec364532d7099f0ebde3bdaae4",
+      "byteSize": 10264,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/customer-journey-mapping-workshop.zip",
+      "gitBlobSha": "c574b5f98fd9cd64b6a08f2e4c3ddbfe3c6d97d1",
+      "byteSize": 7220,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/derisk-measurement-advisor.zip",
+      "gitBlobSha": "5b8c390f47a0f2d9c00b5bb20be54483963bbaa0",
+      "byteSize": 8705,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/director-readiness-advisor.zip",
+      "gitBlobSha": "60769e534c3464748d36dcc79b9fe66af3635c55",
+      "byteSize": 9322,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/discovery-interview-prep.zip",
+      "gitBlobSha": "6b976b7a0f0687930f3bbe8492f2357a93fa40d0",
+      "byteSize": 7228,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/discovery-process.zip",
+      "gitBlobSha": "b5b8728467bf7beefbd2455ffdec331d35fc41bd",
+      "byteSize": 9169,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/eol-message.zip",
+      "gitBlobSha": "97ee5b81c72de23a6257a7d44d9f70f23f3656ff",
+      "byteSize": 8126,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/epic-breakdown-advisor.zip",
+      "gitBlobSha": "cbb2d2c1bf788cb83c68b0cb6cad0beb6ef7521b",
+      "byteSize": 8655,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/epic-hypothesis.zip",
+      "gitBlobSha": "f9a46a63b15d1ca66a613f410a352c3bb1067a6a",
+      "byteSize": 7287,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/executive-onboarding-playbook.zip",
+      "gitBlobSha": "aa96fabedc0eafb8b7da3feb07e73104268bbf68",
+      "byteSize": 10032,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/feature-investment-advisor.zip",
+      "gitBlobSha": "6ba784062ca4601685272c733e44ab5337c67248",
+      "byteSize": 14020,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/finance-based-pricing-advisor.zip",
+      "gitBlobSha": "c2a1ea4734da6b391446aaeeb04c19e34d3e48af",
+      "byteSize": 8770,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/finance-metrics-quickref.zip",
+      "gitBlobSha": "68b6c24b8dd97cd4a780e17c7ab6419f9e861d78",
+      "byteSize": 6316,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/incoming-request-advisor.zip",
+      "gitBlobSha": "0b51c3086e4dcd5ec2624afaa75eab003fb93763",
+      "byteSize": 9096,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/intel-discipline-advisor.zip",
+      "gitBlobSha": "7749a5a84036fcd9915a768d4cde94463e760527",
+      "byteSize": 11695,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/intelligence-collection-disciplines.zip",
+      "gitBlobSha": "ff2379896f509ffa8a7e0f9ea07fe7d749c5f472",
+      "byteSize": 18539,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/jobs-to-be-done.zip",
+      "gitBlobSha": "37599433ebf52f4042c090345857a99fa98e5f5f",
+      "byteSize": 7806,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/lean-ux-canvas.zip",
+      "gitBlobSha": "d3636c46f4b65de3569c7ef0b2ba08c2b941350c",
+      "byteSize": 11643,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/market-landscape-scan.zip",
+      "gitBlobSha": "634155d2ad3bbd541e88cd1437d34d4060bf50d4",
+      "byteSize": 13499,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/opportunity-solution-tree.zip",
+      "gitBlobSha": "909579a028e2711b7fb9df4b47b7cb6345f62b58",
+      "byteSize": 9583,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/organic-growth-advisor.zip",
+      "gitBlobSha": "9da9120b017f55d857e63fd3d6254f20b006a1f5",
+      "byteSize": 15392,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/02-discovery-pack.zip",
+      "gitBlobSha": "162f50c8d01c5a5e529c8bf7556daace08ff2395",
+      "byteSize": 60028,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/03-strategy-pack.zip",
+      "gitBlobSha": "f060f2f679ca51075dbb7bf13467b6978f761329",
+      "byteSize": 64426,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/04-delivery-pack.zip",
+      "gitBlobSha": "317d5700113a4092ea141b4d183740024ad8214b",
+      "byteSize": 67064,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/05-ai-pm-pack.zip",
+      "gitBlobSha": "b463b321e5cc53941cefb8094087ac0a5f260b8f",
+      "byteSize": 63040,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/06-market-intel-pack.zip",
+      "gitBlobSha": "01190e42f1ee19fc556f03c68b23f60b8c2f0efb",
+      "byteSize": 206033,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/99-all-skills-pack.zip",
+      "gitBlobSha": "91ae239b66730e2d20f573e651306e940538f7a1",
+      "byteSize": 714302,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/pm-skills-codex.zip",
+      "gitBlobSha": "54d7075c32639bffac439b7c1aaa5806b1747323",
+      "byteSize": 728452,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/packages/pm-skills-starter-pack.zip",
+      "gitBlobSha": "a98432d81fb6f2f61e362e4b315808f191289985",
+      "byteSize": 49741,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pestel-analysis.zip",
+      "gitBlobSha": "13b750b292947020a25d5a84bffbe3baf93226ce",
+      "byteSize": 9684,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pestel-delta-monitor.zip",
+      "gitBlobSha": "7e5ac62c55db25812c0a48c702a2fda590bbbbd3",
+      "byteSize": 11074,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pm-skill-creator.zip",
+      "gitBlobSha": "c109d52c41c118da9b4d300404a24d202247f73c",
+      "byteSize": 6716,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pol-probe-advisor.zip",
+      "gitBlobSha": "18cb0bb5834d94ad4d36b340783fdd985eccabf6",
+      "byteSize": 7882,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pol-probe.zip",
+      "gitBlobSha": "0c690fa505333f5a9148201c59682ec7b338a88b",
+      "byteSize": 8289,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/porters-five-forces.zip",
+      "gitBlobSha": "de0a9f3aa1b70e0665243416d0e6e7fe945d9a7c",
+      "byteSize": 12175,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/positioning-statement.zip",
+      "gitBlobSha": "87fff8c3d4b0e85c2589f92aab43a8a8f7de0303",
+      "byteSize": 6088,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/positioning-workshop.zip",
+      "gitBlobSha": "bc0164052cd839ab2732b54a91b079913b20d89b",
+      "byteSize": 6736,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/prd-development.zip",
+      "gitBlobSha": "683460a0dd737405ed2bbf3d23b115f220addec1",
+      "byteSize": 25707,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/press-release.zip",
+      "gitBlobSha": "eca04cfff01a13612fdbffa48ed7935404411c16",
+      "byteSize": 7797,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/pricing-packaging-tracker.zip",
+      "gitBlobSha": "54636ef0cbb434036d6b76c42e146bcfb6978b41",
+      "byteSize": 10838,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/prioritization-advisor.zip",
+      "gitBlobSha": "9ca38ad06295687a658ff273563f0275094fc8fd",
+      "byteSize": 6478,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/problem-framing-canvas.zip",
+      "gitBlobSha": "3768f8a516699be8c0c9b6b473ecabf12eb26917",
+      "byteSize": 8684,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/problem-statement.zip",
+      "gitBlobSha": "e0d0ac0adf3f851f5e46eea50a60fc41196cc05d",
+      "byteSize": 6745,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/product-sense-interview-answer.zip",
+      "gitBlobSha": "fc6ce5fb3c8049bb4f6ae2a2a03317b2c66b5a57",
+      "byteSize": 8925,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/product-strategy-session.zip",
+      "gitBlobSha": "58b727e21003ebe778b4c08eb6291c6cd49c666b",
+      "byteSize": 7963,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/proto-persona.zip",
+      "gitBlobSha": "3fc819b35a9463a979780dff1f59deee8172981c",
+      "byteSize": 7997,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/recommendation-canvas.zip",
+      "gitBlobSha": "33ddb2dbd17a2223e539f53456bc3993fedbaaaa",
+      "byteSize": 9002,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/roadmap-planning.zip",
+      "gitBlobSha": "4bf79a6bc6499801055c6c011734ddabbc969582",
+      "byteSize": 9152,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/saas-economics-efficiency-metrics.zip",
+      "gitBlobSha": "5149d969bb936a431245a88bc099161bb6274830",
+      "byteSize": 19445,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/saas-revenue-growth-metrics.zip",
+      "gitBlobSha": "a422bdb69d2b3e54923bca61ee98e7aac3759e00",
+      "byteSize": 14996,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/skill-authoring-workflow.zip",
+      "gitBlobSha": "6aff8b1c7a9e3cfc91ea250426bb8a459543d239",
+      "byteSize": 3486,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/stakeholder-engagement-advisor.zip",
+      "gitBlobSha": "90c80c54dd06a7fb83e4d372d296958619b0ef2a",
+      "byteSize": 6517,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/stakeholder-identification.zip",
+      "gitBlobSha": "6a115e595652022e3a094c7b9c029e8e7d53b3f8",
+      "byteSize": 4748,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/stakeholder-mapping.zip",
+      "gitBlobSha": "dd4b45fbf4a873f08dbac300883f234ce5e54c55",
+      "byteSize": 5073,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/storyboard.zip",
+      "gitBlobSha": "aae2b9e55a453dd6bf9ded29946b0cf61bc4780d",
+      "byteSize": 7358,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/swot-analysis.zip",
+      "gitBlobSha": "43c1ed1d7039aa6521f4ab1a8d94bb4c8db70417",
+      "byteSize": 11519,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/tam-sam-som-calculator.zip",
+      "gitBlobSha": "cae18a0310930531fc26530f93046a8ca4e763e0",
+      "byteSize": 12062,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/user-story-mapping-workshop.zip",
+      "gitBlobSha": "d8866530ac766242eeb689a662687062361f18d6",
+      "byteSize": 7042,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/user-story-mapping.zip",
+      "gitBlobSha": "8c0b05c237ffabba5e770b0bd88c0ac0b52524c7",
+      "byteSize": 6532,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/user-story-splitting.zip",
+      "gitBlobSha": "cd7b7bb34a5018a48e3898861c1eb58c3ac59733",
+      "byteSize": 7102,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/user-story.zip",
+      "gitBlobSha": "d9b60e22a70f9eef8d7519850ae1001dd6a6bf30",
+      "byteSize": 8127,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/voice-of-customer-miner.zip",
+      "gitBlobSha": "1f232889bf6706a3e4641731e5ecad7115d6334a",
+      "byteSize": 11639,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/vp-cpo-readiness-advisor.zip",
+      "gitBlobSha": "81bf36f6e4375178175ad667abad55f5b54f1968",
+      "byteSize": 11435,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "dist/workshop-facilitation.zip",
+      "gitBlobSha": "37742f0897aa5b1a4b7088d4c936f77689a99b75",
+      "byteSize": 5141,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Add-a-Skill Utility Guide.md",
+      "gitBlobSha": "e882047dc47c12ec125dd9d2b68af096a75aaa3a",
+      "byteSize": 19163,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Building PM Skills.md",
+      "gitBlobSha": "587b6e82166a467eb2051d7be50cacdde42eb7ae",
+      "byteSize": 8862,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "gitBlobSha": "ce16668cec463da61200de9caadb74d72daccbb6",
+      "byteSize": 67516,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Finance Suite Summary.md",
+      "gitBlobSha": "fd9c884241a6dc37cf8fbd6026e57a96ccbe210f",
+      "byteSize": 20985,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE-CODE.md",
+      "gitBlobSha": "5e6749a2df2de11c8af49b58dc6edbb838091e5d",
+      "byteSize": 1445,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE-DESKTOP.md",
+      "gitBlobSha": "2d6dd5af6adc6c19f165a654bab521efba1ea8bf",
+      "byteSize": 2855,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/INSTALL-CODEX.md",
+      "gitBlobSha": "cd91dafbc8cd65c186df2a131c8228daa1bf94ca",
+      "byteSize": 1392,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Market Intelligence Suite Summary.md",
+      "gitBlobSha": "0dcaf887ec4ead0cb80368051a534ebcafff39d5",
+      "byteSize": 9350,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Marketplace Issue Templates.md",
+      "gitBlobSha": "7a323d251dab51b1d339886b4fbae8535157ffeb",
+      "byteSize": 2436,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Marketplace Submission Runbook.md",
+      "gitBlobSha": "515ad58a86fad40669e1515c1acaf77962156995",
+      "byteSize": 2425,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/PM Skills Rule-of-Thumb Guide.md",
+      "gitBlobSha": "ee61edda410438554a5cbdbd0277a1891911a2be",
+      "byteSize": 3167,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/PM Tooling Operations Charter.md",
+      "gitBlobSha": "b9e11fa7f6ce5ed4a3861ffc6bbd915d9a363ba5",
+      "byteSize": 5012,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Platform Guides for PMs.md",
+      "gitBlobSha": "a60e899c3d211125e1552adbf5ab1304103290d4",
+      "byteSize": 3582,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/RELEASE-PACKAGING.md",
+      "gitBlobSha": "e85e13b6987f64e643f9997ae067ea051563de6a",
+      "byteSize": 4078,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills 101.md",
+      "gitBlobSha": "875dd1611737be1cff4a2138d3998cf7f3df8261",
+      "byteSize": 34627,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Bolt.md",
+      "gitBlobSha": "427c8e4aa9005062c7d03db8c9344922a6d3f813",
+      "byteSize": 1848,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with ChatGPT Desktop.md",
+      "gitBlobSha": "a6f53bca681f92174f64e3907d57edfe9a4dcb78",
+      "byteSize": 2383,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with ChatGPT.md",
+      "gitBlobSha": "65ae0b67a2c318b6712f474bde70d91cf3905723",
+      "byteSize": 3135,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Claude Code.md",
+      "gitBlobSha": "e645e1ecc157bcb3c31beb1377c16e19286d8b29",
+      "byteSize": 2345,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Claude Cowork.md",
+      "gitBlobSha": "9892988ad44e1aa8331d2a97cb851aff0a57aa1a",
+      "byteSize": 1993,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Claude Desktop.md",
+      "gitBlobSha": "b7c8e7e1e9f9309f1f299cf6e18f31faff40b9f3",
+      "byteSize": 2022,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Claude.md",
+      "gitBlobSha": "ba62cd5b12d69b6846a9f5eff8af6bf2372e33fa",
+      "byteSize": 13764,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Codex.md",
+      "gitBlobSha": "7fa4bce9bae293444cb1539924d54c04214c389b",
+      "byteSize": 5126,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with CrewAI.md",
+      "gitBlobSha": "b52513cfc5e790dadcd779f17dd2574b26e231b2",
+      "byteSize": 1948,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Cursor.md",
+      "gitBlobSha": "1923e1adff51fcaea8910516517df13170789c98",
+      "byteSize": 2213,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Devin.md",
+      "gitBlobSha": "9125e1b59d65bd18dfb4b2f447acc05853ee3fc5",
+      "byteSize": 1953,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Gemini.md",
+      "gitBlobSha": "672b05619f62665f37c17b8e25ee14412630bfa7",
+      "byteSize": 2024,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with LangFlow.md",
+      "gitBlobSha": "c382cb0bb5d3c162d2abdcde8b8ad5b96165845e",
+      "byteSize": 2304,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Make.com.md",
+      "gitBlobSha": "42f9617d5a5c2522af29c255a53e7fee6e87a74b",
+      "byteSize": 2047,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with OpenClaw.md",
+      "gitBlobSha": "b01875195a7e1264c81f93037323b840ec2d6249",
+      "byteSize": 2017,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Python Agents.md",
+      "gitBlobSha": "7171062054ae09440079adcd7cb33f062dbd2cdc",
+      "byteSize": 2268,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Replit Agent.md",
+      "gitBlobSha": "84aeafe1cf7e26903a1451e3fdbd6d3e1432ea1b",
+      "byteSize": 1878,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Slash Commands 101.md",
+      "gitBlobSha": "a1d6a86f0a65b52e1d9514b8f5903dee77a5ea4a",
+      "byteSize": 12403,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with Windsurf.md",
+      "gitBlobSha": "42fcdbfdf14580fb1cd3c39e98fc64915afd3dec",
+      "byteSize": 1822,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/Using PM Skills with n8n.md",
+      "gitBlobSha": "025b04859e7692af58e128fd04a7f38c7e569ecd",
+      "byteSize": 1974,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-02-08-linkedin-launch.md",
+      "gitBlobSha": "0255dc574596f10848ff4a04c70eda48391c1934",
+      "byteSize": 5186,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-02-08-substack-savage-launch.md",
+      "gitBlobSha": "06c50568d9ea214b5ca9853a88a681d8bdda8bf0",
+      "byteSize": 4833,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-02-10-v0-4-facilitation-fix.md",
+      "gitBlobSha": "85cc54ba404c1c11c618122ae41c5fdc8331127a",
+      "byteSize": 2912,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-02-27-v0-5-streamlit-beta.md",
+      "gitBlobSha": "b7780a339aa11b7c569c4ba1291320bd98474fc3",
+      "byteSize": 2906,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-03-06-v0-6-navigation-commands.md",
+      "gitBlobSha": "d426fc5c3a37d56795fee65ef32c7d77d800c200",
+      "byteSize": 2663,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-03-08-v0-65-onboarding-integration-guides.md",
+      "gitBlobSha": "255ea503279e36d47f626fd0d805e89e13a57749",
+      "byteSize": 3326,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-03-09-v0-7-skill-quality-trigger-clarity.md",
+      "gitBlobSha": "51b44d4a0e838f7b3a4787b652ebea4c867a1c4c",
+      "byteSize": 6496,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-03-17-v0-75-pedagogic-first.md",
+      "gitBlobSha": "bf3d3b2ce9661b5f633c43d3a868e816639d5927",
+      "byteSize": 5135,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-04-26-v0-78-release-packaging.md",
+      "gitBlobSha": "beff1a95e3dec6018ede8e2548012cbf4a703e99",
+      "byteSize": 3883,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-05-15-v0-79-community-contributions.md",
+      "gitBlobSha": "4abd855d1ac08b9ad08afd8184a5a0527de13373",
+      "byteSize": 4629,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-07-04-v0-81-input-sections.md",
+      "gitBlobSha": "a96560b231c56a6d9348f38abdf5c6239bcd875f",
+      "byteSize": 4785,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-07-08-v0-82-inbound-requests-and-dist-shelf.md",
+      "gitBlobSha": "4e952a544259389c0e19b0c71ed87da2f9599b40",
+      "byteSize": 3771,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/2026-07-17-v0-83-market-intelligence-suite.md",
+      "gitBlobSha": "719bf75575dc6b184ed5e9537ecc4b2b845edcae",
+      "byteSize": 7453,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/README.md",
+      "gitBlobSha": "1e14089a93d6c224d859cd0a570cd07daa55d474",
+      "byteSize": 3926,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/announcements/deanpeters.sending-ladder-down-post.banner-image.png",
+      "gitBlobSha": "c9a91bf78c4c3111888439f2dc5f3dc944ff8dab",
+      "byteSize": 117577,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/maintenance/2026-07-17-adornment-and-docs-plan.md",
+      "gitBlobSha": "cb8f19b83c773fee430e2484c8bef9242d896364",
+      "byteSize": 13633,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/maintenance/facilitation-scope.md",
+      "gitBlobSha": "a9f024b6d5a587cb176b4e6b7f0bd26c85ec6931",
+      "byteSize": 2250,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "docs/pm-skills-guide.jsx",
+      "gitBlobSha": "5672ec68f2f134b160fd237a46606389ca775bc4",
+      "byteSize": 57494,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/Context Engineering for Product Managers.md",
+      "gitBlobSha": "6202023ab0cc79c662b66ca71dedb2ab8398a355",
+      "byteSize": 23268,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/The Product Manager as an Orchestrator.md",
+      "gitBlobSha": "f8fc07b62abe012d1a6adb3195a33ef40030b07f",
+      "byteSize": 13542,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/deanpeters-substack-posts.zip",
+      "gitBlobSha": "5474e1869d043fbc2ae2a8b032228d65c5edde82",
+      "byteSize": 293124,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/finance/Finance for Product Managers.md",
+      "gitBlobSha": "c02c0b9bbb3c1c8a801cc38c6074ab27de7f276e",
+      "byteSize": 97083,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/finance/Finance_For_PMs.Putting_It_Together_Synthesis.md",
+      "gitBlobSha": "47e7ac97f396faae5c128f0a20858b8feb719e5a",
+      "byteSize": 17686,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/finance/Finance_Metrics_Additions_Reference.md",
+      "gitBlobSha": "d531f6fb6811779ff5e4d965b47fcaca000b46d2",
+      "byteSize": 27686,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/finance/Finance_QuickRef.md",
+      "gitBlobSha": "2a05e806f4d78e4c91e637b1d8017c12f314c003",
+      "byteSize": 11015,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "research/v080-ai-product-builder-execution-brief.md",
+      "gitBlobSha": "063e6e4c463ece86ae2ff9e1d32579c361d61adf",
+      "byteSize": 45274,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "scripts/README.md",
+      "gitBlobSha": "19e99d802aeb9bd5619e6520e85de8d5be6f8693",
+      "byteSize": 6937,
+      "readStatus": "observed",
+      "contentSha256": "32711231510a7a5d1b041efacec64fc4b945f2d2731fed772135e1070dc8de33"
+    },
+    {
+      "path": "scripts/adapters/ADAPTER_TEMPLATE.sh",
+      "gitBlobSha": "71ddca61e6423506cc7f9748881e5fd2c177f69e",
+      "byteSize": 13701,
+      "readStatus": "observed",
+      "contentSha256": "5c2add74f437988134d5b16faa20ede9ebd876be9d33a6129a0336db42b88fee"
+    },
+    {
+      "path": "scripts/adapters/claude-code.sh",
+      "gitBlobSha": "6fa0878e9e7e131317b773a5d677a719747bd089",
+      "byteSize": 7604,
+      "readStatus": "observed",
+      "contentSha256": "830f8b2d08c301db9d670be4260cd1b4ee6f52dc68cfb43989454e435238e07d"
+    },
+    {
+      "path": "scripts/adapters/manual.sh",
+      "gitBlobSha": "4caf77fbd8b74b1a0f1821cff08e1b662f223b50",
+      "byteSize": 5283,
+      "readStatus": "observed",
+      "contentSha256": "0de843eac31c01e048dcc61a3bbd33288e9f97d6114eb5efdd70666c4eb1c826"
+    },
+    {
+      "path": "scripts/add-a-skill.sh",
+      "gitBlobSha": "91193c262e1c59fa1f069738f428a3a8876958a3",
+      "byteSize": 18173,
+      "readStatus": "observed",
+      "contentSha256": "0224265dbc2362faccbda6bdf479dde63606972cd35514fc5fbd6ba46a64979a"
+    },
+    {
+      "path": "scripts/build-a-skill.sh",
+      "gitBlobSha": "79bc26d3efa20ab3e576557140ba6d176deefdfd",
+      "byteSize": 14446,
+      "readStatus": "observed",
+      "contentSha256": "eb6857857772be32367d3f683e439fe0fc791b0aba6ad5757320214c397e90ae"
+    },
+    {
+      "path": "scripts/build-claude-desktop-packs.sh",
+      "gitBlobSha": "c6b93f4b017dfef4da3f1d1d789d4b33b932e7a4",
+      "byteSize": 3824,
+      "readStatus": "observed",
+      "contentSha256": "5a9a1083a26430a0b57e09b4f58d94122bad0abb89ca9172c5a09ccef10725f2"
+    },
+    {
+      "path": "scripts/build-codex-skills.sh",
+      "gitBlobSha": "268d9751c77577de2a872e15f88403927b3a6679",
+      "byteSize": 1393,
+      "readStatus": "observed",
+      "contentSha256": "977dabbf07d504a8bd16d4f863bd48ea3b370d6392a1fabe0149255362e8ca44"
+    },
+    {
+      "path": "scripts/build-dist.sh",
+      "gitBlobSha": "71e87c50dbbf7be9825f656e9c161d9cfd09d543",
+      "byteSize": 6411,
+      "readStatus": "observed",
+      "contentSha256": "aac635eb963cbbcfd5d905e21dea6ff13c41a9e4cc1a92cd05d1ad96a586ac70"
+    },
+    {
+      "path": "scripts/build-release.sh",
+      "gitBlobSha": "d16393023a65be85aa4d2d5fb568fe6da91d8671",
+      "byteSize": 1605,
+      "readStatus": "observed",
+      "contentSha256": "de652debfbcd6f07dfce1b8abd28460622157f48c32d66826037c640aa8b17c0"
+    },
+    {
+      "path": "scripts/check-command-metadata.py",
+      "gitBlobSha": "8c9cb4aa00eae094312d048ed820f1412bb38a46",
+      "byteSize": 6439,
+      "readStatus": "observed",
+      "contentSha256": "705ee2a9175c382fbbb9a082c767d9d5774c2170c9188967f1329d8fe2fdcbed"
+    },
+    {
+      "path": "scripts/check-library-drift.py",
+      "gitBlobSha": "2856069eab315f6231f0e8fbad22075e172289ea",
+      "byteSize": 3231,
+      "readStatus": "observed",
+      "contentSha256": "38abf6e2a26a47e6b6aa31e61af402d6f7611e5448d6e7ce8cc14ee9b0873e46"
+    },
+    {
+      "path": "scripts/check-skill-metadata.py",
+      "gitBlobSha": "5ec9a32fc7beb254cc6fe1dca5d83b1bbab8a427",
+      "byteSize": 7094,
+      "readStatus": "observed",
+      "contentSha256": "3b3153241a7aba3417453674ddf9bbd82f03aa95aba8b5f642bd7385ea7ae3c8"
+    },
+    {
+      "path": "scripts/check-skill-triggers.py",
+      "gitBlobSha": "095054c74acd8b30da6503bfdab2094b8628477b",
+      "byteSize": 8576,
+      "readStatus": "observed",
+      "contentSha256": "5adee44ca2dd74fdab995ecf258a652b24e8701dfb04c10e1b9952bb2f5e1969"
+    },
+    {
+      "path": "scripts/find-a-command.sh",
+      "gitBlobSha": "6c7d8e504e9319fb056d734314023cf88c954940",
+      "byteSize": 7472,
+      "readStatus": "observed",
+      "contentSha256": "d83cc31fbc49462c3d0379b15f64b2f3ee38698e82acdbcb2850d93fe0fb735d"
+    },
+    {
+      "path": "scripts/find-a-skill.sh",
+      "gitBlobSha": "cef636c02ba806bfe3343e01629820cf51e982de",
+      "byteSize": 10362,
+      "readStatus": "observed",
+      "contentSha256": "1c00f584fcb0f841a58cba8a533170e626fc50ce9238e91d1114843334268526"
+    },
+    {
+      "path": "scripts/generate-catalog.py",
+      "gitBlobSha": "36b98c022f06664ee639847394f1c19942c81f2d",
+      "byteSize": 5040,
+      "readStatus": "observed",
+      "contentSha256": "911bf6dc10a0149a34196266e96585d8eece588a0ade1dc02cd232c52ee3f8a5"
+    },
+    {
+      "path": "scripts/package-claude-skills.sh",
+      "gitBlobSha": "38788b05ee1947c3b1e4e5a792c36429b89d5fab",
+      "byteSize": 1418,
+      "readStatus": "observed",
+      "contentSha256": "e315b4acab460d94b85cbd326bc1068671f555d5e7ed95a564a1deb884084d59"
+    },
+    {
+      "path": "scripts/run-pm.sh",
+      "gitBlobSha": "c864a81e4339a736e81d4d0764f0e27bc5c26cb8",
+      "byteSize": 3816,
+      "readStatus": "observed",
+      "contentSha256": "2311f518e19b5229e497634b571fc0c6c5f697704b9a20874b8f975b8245280f"
+    },
+    {
+      "path": "scripts/test-a-skill.sh",
+      "gitBlobSha": "3a955d8d61540416e9bcd68b0cda038150438b73",
+      "byteSize": 8746,
+      "readStatus": "observed",
+      "contentSha256": "be69e66734276349c69d717273c75c19e1af5813d613af71364a499abd9d93fe"
+    },
+    {
+      "path": "scripts/test-library.sh",
+      "gitBlobSha": "6d316baf7b12c17e15b5e0556864f94381f3e79d",
+      "byteSize": 1867,
+      "readStatus": "observed",
+      "contentSha256": "3aaab9e16eb8e3b9845c40db71ecf9416d73e80eece6f0d4984972647e1a69e4"
+    },
+    {
+      "path": "scripts/validate-skills.sh",
+      "gitBlobSha": "fc62c521b2b7cc1b37e00a610df90eeb9a7bfbd2",
+      "byteSize": 2269,
+      "readStatus": "observed",
+      "contentSha256": "41e5ddbddc3c4e6ef6cc5dcda753e66b24b9030104cfff9f7f695019435dd07c"
+    },
+    {
+      "path": "scripts/zip-a-skill.sh",
+      "gitBlobSha": "dfde23915f5e2c35f1de4e59e677b9a3805e62fd",
+      "byteSize": 8650,
+      "readStatus": "observed",
+      "contentSha256": "f2c7e9dce1c23dd12cb3b062e10aeb2df3ce60fd81855910288b5591b4e78325"
+    },
+    {
+      "path": "skills/acquisition-channel-advisor/SKILL.md",
+      "gitBlobSha": "d16a725bb6f7a27c910790f8c23ace3d7ab820ba",
+      "byteSize": 22132,
+      "readStatus": "observed",
+      "contentSha256": "0c04eb7353df98f40f18fe6c63dbbb55d4a4a5ed2a9583b1bfdc355aed5436f2"
+    },
+    {
+      "path": "skills/acquisition-channel-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "cce03acf1a07574601f7ce232c8a25db4dface51",
+      "byteSize": 14029,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/agent-orchestration-advisor/SKILL.md",
+      "gitBlobSha": "44563098803265e68ac1d2fefb09c11cd248f180",
+      "byteSize": 34567,
+      "readStatus": "observed",
+      "contentSha256": "a711f800207b00129abf542212ec2efd4bfd72a6e805690e6c9111263bec5fea"
+    },
+    {
+      "path": "skills/ai-shaped-readiness-advisor/SKILL.md",
+      "gitBlobSha": "c2713b2ef586c3ccc48ee732e84cf3e9b7e0bc16",
+      "byteSize": 43516,
+      "readStatus": "observed",
+      "contentSha256": "0877bad486ae5521ba027d3c4598b49ae0126051a770d29cfaff459796bfb977"
+    },
+    {
+      "path": "skills/altitude-horizon-framework/SKILL.md",
+      "gitBlobSha": "19119b928873e972293ee2a0c3884342eddc8f19",
+      "byteSize": 15403,
+      "readStatus": "observed",
+      "contentSha256": "3da2db81608df8768086342b48248462b189e0867ab24edc185d113ca7da7674"
+    },
+    {
+      "path": "skills/altitude-horizon-framework/examples/sample.md",
+      "gitBlobSha": "c137c082ab2384816dfd9195a36c91e8ac6c6973",
+      "byteSize": 2616,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/ansoff-matrix/SKILL.md",
+      "gitBlobSha": "fb5f48ffd198b3343da38f6f5e15d2994931e437",
+      "byteSize": 11438,
+      "readStatus": "observed",
+      "contentSha256": "f240e4121d0579548bfef386b6d7973272360c07f5ec65b4cb4b97a8c0b3fd5e"
+    },
+    {
+      "path": "skills/ansoff-matrix/examples/sample-industrial.md",
+      "gitBlobSha": "0d2883468782259767a32adea6fb8acc01fe96b2",
+      "byteSize": 6318,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/ansoff-matrix/examples/sample.md",
+      "gitBlobSha": "da0401dc07bf5d1da53bc34be9a2eafc23e4b82d",
+      "byteSize": 5648,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/ansoff-matrix/template.md",
+      "gitBlobSha": "001fbcc738a6f5ad9bf8687d2a76096273ed3946",
+      "byteSize": 2456,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/autonomous-investigation/SKILL.md",
+      "gitBlobSha": "a0f81614ae0e01e4d15719b611324d6f6ba6fddb",
+      "byteSize": 12400,
+      "readStatus": "observed",
+      "contentSha256": "2aa342346a9a9591e660a6513c290ecec761a16092a9e68871f01f3c8cf74751"
+    },
+    {
+      "path": "skills/autonomous-investigation/examples/protocol-in-action-industrial.md",
+      "gitBlobSha": "59fd402e7a012adc6880beb42cf966671a022f81",
+      "byteSize": 5171,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/autonomous-investigation/examples/protocol-in-action.md",
+      "gitBlobSha": "9c25a98b43179e7b089000d8f3563066a5f43fca",
+      "byteSize": 5062,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/autonomous-investigation/template.md",
+      "gitBlobSha": "0ae847d69ce11f177138618be2f85625baecf726",
+      "byteSize": 2696,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/battle-card-builder/SKILL.md",
+      "gitBlobSha": "8446d63f8bb190e816832af9f9999f0243f6ebef",
+      "byteSize": 10364,
+      "readStatus": "observed",
+      "contentSha256": "b29d25cbf2965b28c4065e1b6db240375dfe15a36512b852322b370845c31714"
+    },
+    {
+      "path": "skills/battle-card-builder/examples/sample-industrial.md",
+      "gitBlobSha": "a4c9a3c00c9aa39d79c1478e04c46be59b5c74db",
+      "byteSize": 6608,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/battle-card-builder/examples/sample.md",
+      "gitBlobSha": "f26d951dbe86024150ea1932485867c586959008",
+      "byteSize": 6012,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/battle-card-builder/template.md",
+      "gitBlobSha": "7eb16106f7c212eb043f04f508bbf036d8c0e7d5",
+      "byteSize": 2301,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/business-health-diagnostic/SKILL.md",
+      "gitBlobSha": "ca7947a868a40fb150fa848d147b12cfb26ec7df",
+      "byteSize": 23249,
+      "readStatus": "observed",
+      "contentSha256": "5bbcdfe6de1bfd5da050e977b1001b279392a7572e54ed0dc6a070d067dc3190"
+    },
+    {
+      "path": "skills/company-intel/SKILL.md",
+      "gitBlobSha": "fb0920bb7ce2d1576f9a6a4f803048dc374f6211",
+      "byteSize": 32554,
+      "readStatus": "observed",
+      "contentSha256": "797496ba11d3136f6ba7e8956011aa41031623d1c15345b06b5e9bed30dd0c56"
+    },
+    {
+      "path": "skills/company-intel/examples/executive-signal-refresh-saas.md",
+      "gitBlobSha": "8313df6b7485020d2f4476937745ad2d79784ed3",
+      "byteSize": 5179,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/company-intel/examples/executive-signal-refresh.md",
+      "gitBlobSha": "3311746bfbb6c74add71c2c61bbce7361adc3d5c",
+      "byteSize": 4711,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/company-research/SKILL.md",
+      "gitBlobSha": "675f926110663e3ebc19aab208435f2c292112e6",
+      "byteSize": 14703,
+      "readStatus": "observed",
+      "contentSha256": "ba7a663ff3e5765648f322da8539ac4a0eabd51cc8bff1e2ae714573f529cd9e"
+    },
+    {
+      "path": "skills/company-research/examples/sample.md",
+      "gitBlobSha": "71f49e5abff3a6b5ef73bde7767c2547e773a7a5",
+      "byteSize": 7696,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/company-research/template.md",
+      "gitBlobSha": "618057a433ac88732499454bb264b5953713b675",
+      "byteSize": 1606,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-analysis-process/SKILL.md",
+      "gitBlobSha": "5c6c77f90ef677f3102d6ea1ad5747e6b723bd2e",
+      "byteSize": 13493,
+      "readStatus": "observed",
+      "contentSha256": "f59b86fb0094354f6642750a6aa6ed046dcec3646fab35272a0e474b14f8982e"
+    },
+    {
+      "path": "skills/competitive-analysis-process/examples/sample-industrial.md",
+      "gitBlobSha": "ea6d592412b345a915ef479f468185363c51cb48",
+      "byteSize": 5802,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-analysis-process/examples/sample.md",
+      "gitBlobSha": "5cc187d3aad4e26d7c0ece023f313bde8750f728",
+      "byteSize": 5737,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-analysis-process/template.md",
+      "gitBlobSha": "1c2f743eac2ddec14e6face405ca3b926303a8f3",
+      "byteSize": 3435,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-intel-watch/SKILL.md",
+      "gitBlobSha": "db1511070778db2074ca859ccd4de14dd18b151c",
+      "byteSize": 10632,
+      "readStatus": "observed",
+      "contentSha256": "995de9eb3b992d5926075df8cdf6107d057f50aae0edd08a0a7a37d2f4b90e55"
+    },
+    {
+      "path": "skills/competitive-intel-watch/examples/sample-industrial.md",
+      "gitBlobSha": "a7a15a963a40f3a9fb7b80ae982df23d46b3a33d",
+      "byteSize": 5150,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-intel-watch/examples/sample.md",
+      "gitBlobSha": "fb32351ed6e5ca6b8ff8fdefb607159b76ff526f",
+      "byteSize": 4667,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-intel-watch/template.md",
+      "gitBlobSha": "88fac7d93e83b06b7d01fb88affce371deb712ff",
+      "byteSize": 2418,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-research-snapshot/SKILL.md",
+      "gitBlobSha": "80b082f69919143a29ed8440c156bf162fea9ebe",
+      "byteSize": 9957,
+      "readStatus": "observed",
+      "contentSha256": "d02d6c352b398e25493bd42af2f7d3ef1813ac14efe4a3e83434de2a585ac79e"
+    },
+    {
+      "path": "skills/competitive-research-snapshot/examples/sample-industrial.md",
+      "gitBlobSha": "28f35abc87fb1041a5bfda87d8d2e832c56b6cf4",
+      "byteSize": 7425,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-research-snapshot/examples/sample.md",
+      "gitBlobSha": "6c25098bf577a8d14f58780aa0b06d95aa630a8b",
+      "byteSize": 7277,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/competitive-research-snapshot/template.md",
+      "gitBlobSha": "99cde1af6af733ad2a0d34ac16d7c12c47cfdb5c",
+      "byteSize": 2635,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/context-engineering-advisor/SKILL.md",
+      "gitBlobSha": "90a0923321552c7c0435da853a5029e223c13547",
+      "byteSize": 32560,
+      "readStatus": "observed",
+      "contentSha256": "d2e192e3d19d90332a6ae433cd1ff6feeaf8d77dfd88e8edbf971641106c4673"
+    },
+    {
+      "path": "skills/customer-journey-map/SKILL.md",
+      "gitBlobSha": "be39ce4d74e8642826189f061747990cf93c0ec9",
+      "byteSize": 14937,
+      "readStatus": "observed",
+      "contentSha256": "338ed5dd93a9b804ff795f665a88b2e6577c35105e71cbf86d42034be53de957"
+    },
+    {
+      "path": "skills/customer-journey-map/examples/meta-product-manager-skills.md",
+      "gitBlobSha": "390e86715d81bca2fbcfc76bac77174917664cfe",
+      "byteSize": 3837,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/customer-journey-map/examples/sample.md",
+      "gitBlobSha": "dbe70efc965aaa4ed1b3b7f2ccf2ecfc32b19fc5",
+      "byteSize": 2693,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/customer-journey-map/template.md",
+      "gitBlobSha": "20b4ded43f03ecb22b32d473255f4ec5c7d20118",
+      "byteSize": 1098,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/customer-journey-mapping-workshop/SKILL.md",
+      "gitBlobSha": "ef95e015f4870b3a50cfbcfc218ffcbc34399ed1",
+      "byteSize": 18760,
+      "readStatus": "observed",
+      "contentSha256": "1d78f4f269b4746e673e78f479b614c4afae0b2d5a68ccfec067d0cd829227e9"
+    },
+    {
+      "path": "skills/derisk-measurement-advisor/SKILL.md",
+      "gitBlobSha": "c03df5425f4ced6c624669174133f078f3aa8bf5",
+      "byteSize": 23621,
+      "readStatus": "observed",
+      "contentSha256": "79d889f283b16aef1cc54bc49b235236b974c3cb78a2618ce4d575a4f30bf584"
+    },
+    {
+      "path": "skills/director-readiness-advisor/SKILL.md",
+      "gitBlobSha": "436dbeb89725b2a68ac623ecdb89673e0f06eb5d",
+      "byteSize": 19510,
+      "readStatus": "observed",
+      "contentSha256": "5579d3a41e434955ab9347633c58bccf3d4e3d8f136021f84568ea6018146d7c"
+    },
+    {
+      "path": "skills/director-readiness-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "7585321395c815de02bfb957053376b747d30fc8",
+      "byteSize": 2475,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/discovery-interview-prep/SKILL.md",
+      "gitBlobSha": "197826663c8f5f4b5b1514cfca0c6e8aa077e6c6",
+      "byteSize": 19123,
+      "readStatus": "observed",
+      "contentSha256": "f0b251574a654de71f2d550ecf3e7fbfa610d6da1836951388771d3064c06657"
+    },
+    {
+      "path": "skills/discovery-process/SKILL.md",
+      "gitBlobSha": "82b81ccad6466a68a63362ff2f2af261fd40f781",
+      "byteSize": 19607,
+      "readStatus": "observed",
+      "contentSha256": "5a3cb36cc985b6e7c72afc9de1a3f59645bdf63891d58fc17994982b0abaab03"
+    },
+    {
+      "path": "skills/discovery-process/examples/sample.md",
+      "gitBlobSha": "0d0c65e4ad94af363caa0b79eb3960d541b3f66e",
+      "byteSize": 2606,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/discovery-process/template.md",
+      "gitBlobSha": "b133d5b9577eb6b2b3283ba8a56cc65f58f120b0",
+      "byteSize": 622,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/eol-message/SKILL.md",
+      "gitBlobSha": "6da52fb7776f45c01716bd6f6acdd81936f676a5",
+      "byteSize": 13424,
+      "readStatus": "observed",
+      "contentSha256": "3de9decfaca9b10f72eb2d3f059410a8dba068efcbc2da9f3cb1c50959ce5434"
+    },
+    {
+      "path": "skills/eol-message/examples/sample.md",
+      "gitBlobSha": "4fda5b8e020b236d457c5c12da9e52c03d830e49",
+      "byteSize": 3934,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/eol-message/template.md",
+      "gitBlobSha": "d06dbf5e4dae737ebc7ee02ab886d5b08e29e3e6",
+      "byteSize": 1620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/epic-breakdown-advisor/SKILL.md",
+      "gitBlobSha": "566182324eb3944473a1d2b28096965efc026e65",
+      "byteSize": 24253,
+      "readStatus": "observed",
+      "contentSha256": "217a683ef40332598dc4abca16272f362c5e5ab22f06698d448c8bb9496762c2"
+    },
+    {
+      "path": "skills/epic-hypothesis/SKILL.md",
+      "gitBlobSha": "1a3b2514118971b6ab7230cf4bc523e8148b7355",
+      "byteSize": 12197,
+      "readStatus": "observed",
+      "contentSha256": "b110f693c014d3cede3468d3739383e37431aa600ff1a2b7e63672677eea018b"
+    },
+    {
+      "path": "skills/epic-hypothesis/examples/sample.md",
+      "gitBlobSha": "162d506f1c06f7a814d3e39872830d9d5ffc7459",
+      "byteSize": 3600,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/epic-hypothesis/template.md",
+      "gitBlobSha": "cd67075ef5af573887de151f483a9d92ae32b7d4",
+      "byteSize": 794,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/executive-onboarding-playbook/SKILL.md",
+      "gitBlobSha": "a911f25d3e2d7fd8e732468134c95dfd1d60314a",
+      "byteSize": 19454,
+      "readStatus": "observed",
+      "contentSha256": "7891995ad4fececa609f9a85520093d00dc29a521045e1942cbe9213dc55ea17"
+    },
+    {
+      "path": "skills/executive-onboarding-playbook/examples/sample.md",
+      "gitBlobSha": "1bfb6f7bfd961ebb735ca3c255d59ca9dd326d1a",
+      "byteSize": 3288,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/feature-investment-advisor/SKILL.md",
+      "gitBlobSha": "04333603857fe98efde4a3b93840e55d061e0d81",
+      "byteSize": 22479,
+      "readStatus": "observed",
+      "contentSha256": "1fff80a1999f06c5f6d4320f26e450234fe81dea9a19279faa52790cb9ac028f"
+    },
+    {
+      "path": "skills/feature-investment-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "5b3de004d5468b73b6b5b0071842a44b75e7616d",
+      "byteSize": 13237,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/finance-based-pricing-advisor/SKILL.md",
+      "gitBlobSha": "c3dedcc6c2c3d52dccd3521e9e9b321707baafea",
+      "byteSize": 23785,
+      "readStatus": "observed",
+      "contentSha256": "e628824807643d55b98ff1df14670a1b3f92ad46d1e646c35e5626e276362dbe"
+    },
+    {
+      "path": "skills/finance-metrics-quickref/SKILL.md",
+      "gitBlobSha": "b28c5a1ff8785c72c7c3de0ba42c9c89462cf2aa",
+      "byteSize": 16360,
+      "readStatus": "observed",
+      "contentSha256": "34b4f6838f939812848d87e9aec30c47e0efc65a91c6dbb016d7d865e6294749"
+    },
+    {
+      "path": "skills/incoming-request-advisor/SKILL.md",
+      "gitBlobSha": "26853bc4339d7156ba6dc41558bf25b81d0f6440",
+      "byteSize": 13225,
+      "readStatus": "observed",
+      "contentSha256": "a50f31fdac21153e3cf135608f2b3d8f699a690a3e33566d645e6b52974d2b0e"
+    },
+    {
+      "path": "skills/incoming-request-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "4a4d04011553b95a8c4ba2e39503eb039163e7f0",
+      "byteSize": 3676,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/incoming-request-advisor/template.md",
+      "gitBlobSha": "d7a260c7129c6fb3b823fa84e74ff829623d08a5",
+      "byteSize": 2472,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intel-discipline-advisor/SKILL.md",
+      "gitBlobSha": "2d4e868562cf0484334d7db6e18ec5e0cba676c4",
+      "byteSize": 12374,
+      "readStatus": "observed",
+      "contentSha256": "a1a1fe8dd7fafa23e7b4345cb6c37c390abed4218b620d189556ee4789e2ee2b"
+    },
+    {
+      "path": "skills/intel-discipline-advisor/examples/conversation-flow-industrial.md",
+      "gitBlobSha": "390958598bcf661b7ebe41f79bedadf9e6f5dd48",
+      "byteSize": 5005,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intel-discipline-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "322fe5f5dda65e2c2addb4c7f67f3d8e043376bd",
+      "byteSize": 4972,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intel-discipline-advisor/template.md",
+      "gitBlobSha": "7d18c9fee38f86f962745b7b324947c4b3be4719",
+      "byteSize": 2051,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intelligence-collection-disciplines/SKILL.md",
+      "gitBlobSha": "b8549dd96f36de2efdb18af92cbd595be3c90909",
+      "byteSize": 26453,
+      "readStatus": "observed",
+      "contentSha256": "ceb5111a1383ba0b925b13bc50d321ee01a4171fdb330479c05384ae3cf9f059"
+    },
+    {
+      "path": "skills/intelligence-collection-disciplines/examples/sample-industrial.md",
+      "gitBlobSha": "5efce7ccd8eb3e1b5049089cd63f409972c56800",
+      "byteSize": 5651,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intelligence-collection-disciplines/examples/sample.md",
+      "gitBlobSha": "955b9b9369e85437ac6bd1260f5af58ad833ef54",
+      "byteSize": 4878,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/intelligence-collection-disciplines/template.md",
+      "gitBlobSha": "66de75ccd6a0d6e87c681d7a071b582fd4b11d59",
+      "byteSize": 2351,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/jobs-to-be-done/SKILL.md",
+      "gitBlobSha": "d934461fe0e3cf07e7a18a167ddee68d878c084c",
+      "byteSize": 13474,
+      "readStatus": "observed",
+      "contentSha256": "158f3ff66644ff2c7f9c0cd2c6064a32c17f446e4db2db7cfa0f2c7efc7be77d"
+    },
+    {
+      "path": "skills/jobs-to-be-done/examples/sample.md",
+      "gitBlobSha": "a38ea0f3ad63e96e1964f4f3d458013b6cfdda1d",
+      "byteSize": 2419,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/jobs-to-be-done/template.md",
+      "gitBlobSha": "7ed1400d5afeadfb38baf003da7750205f0b03c5",
+      "byteSize": 1421,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/lean-ux-canvas/SKILL.md",
+      "gitBlobSha": "c1ffb0fd2b298c87d8634ca77c4d59ea2d541a21",
+      "byteSize": 26192,
+      "readStatus": "observed",
+      "contentSha256": "70cb079d7d784471fbaaa63f45ea80554ffdd1bc19fa73d5393f86c4753b9c8a"
+    },
+    {
+      "path": "skills/lean-ux-canvas/examples/sample.md",
+      "gitBlobSha": "0a0910a3ad25900c637593effab58de0435354f2",
+      "byteSize": 3789,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/lean-ux-canvas/template.md",
+      "gitBlobSha": "7a31a30153d263b1c61d980434c78c27781aad9d",
+      "byteSize": 732,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/market-landscape-scan/SKILL.md",
+      "gitBlobSha": "8a0676d6094eb41d9139a254db94f6530b5f2e69",
+      "byteSize": 10273,
+      "readStatus": "observed",
+      "contentSha256": "aa1f7c745c9c17260315f148a55766bab4c949beb061106c4abf6d1d2945a689"
+    },
+    {
+      "path": "skills/market-landscape-scan/examples/sample-industrial.md",
+      "gitBlobSha": "58e96c0b62e32fdff0c83a8ddb68368d6820eddb",
+      "byteSize": 8102,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/market-landscape-scan/examples/sample.md",
+      "gitBlobSha": "7c28410de3bcd55b65b81d60f30a696f86591ad3",
+      "byteSize": 7739,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/market-landscape-scan/template.md",
+      "gitBlobSha": "cc33c9b5c6260ee94bdd80cc44d0ee1fe97bdfd7",
+      "byteSize": 2722,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/opportunity-solution-tree/SKILL.md",
+      "gitBlobSha": "a03e6cb14522d5393fa662b73c4ce21732b1f20d",
+      "byteSize": 17569,
+      "readStatus": "observed",
+      "contentSha256": "1861f00817c5b815952b3fd907128dc871eeea9731b6467445a4090f92589e60"
+    },
+    {
+      "path": "skills/opportunity-solution-tree/examples/sample.md",
+      "gitBlobSha": "d702e9f0a8b3712b77b79c6d002a4028118ffcf8",
+      "byteSize": 4350,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/opportunity-solution-tree/template.md",
+      "gitBlobSha": "52417b55230ae7491ba57b24f353afac7c454a16",
+      "byteSize": 671,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/organic-growth-advisor/SKILL.md",
+      "gitBlobSha": "162e3afd10d309a46ec099ad9711605d4937be14",
+      "byteSize": 20957,
+      "readStatus": "observed",
+      "contentSha256": "a32d7d5a2c76a66f44528ada35b23bb622dd34ec17a10494624fc2e99b5f585e"
+    },
+    {
+      "path": "skills/organic-growth-advisor/examples/sample.md",
+      "gitBlobSha": "3970f9d6d88ef36d05a37b6b28e521cf39e97649",
+      "byteSize": 16985,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/organic-growth-advisor/template.md",
+      "gitBlobSha": "fe29bbf745767ac071c43c7e41eeface0bfea9b4",
+      "byteSize": 3043,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pestel-analysis/SKILL.md",
+      "gitBlobSha": "8809a5b5d20becca14c5cd0fde0e74e0dd43f97b",
+      "byteSize": 14019,
+      "readStatus": "observed",
+      "contentSha256": "683ed025fc0a281c8e073cf101c467f210d680f59cf092697da83b8809f6601b"
+    },
+    {
+      "path": "skills/pestel-analysis/examples/sample.md",
+      "gitBlobSha": "19d563c0692bf75f3196da19a5630ac663ae4103",
+      "byteSize": 5981,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pestel-analysis/template.md",
+      "gitBlobSha": "c08197b5f3057b1e48690ca6697a5cb17e5b5ff2",
+      "byteSize": 1490,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pestel-delta-monitor/SKILL.md",
+      "gitBlobSha": "cc2150968e973c2d4a8679118a2a8b1640c3bbb3",
+      "byteSize": 9929,
+      "readStatus": "observed",
+      "contentSha256": "71e5fc801ab179b78df319d6b02b8a51787b7e8579212d9312f9c0aed835e926"
+    },
+    {
+      "path": "skills/pestel-delta-monitor/examples/sample-industrial.md",
+      "gitBlobSha": "96bd2a4c479fe8bf78ca54075495af8d7bff6224",
+      "byteSize": 5457,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pestel-delta-monitor/examples/sample.md",
+      "gitBlobSha": "bc0ccda74591cd898c9cb0adccc8ab4375a7c745",
+      "byteSize": 5429,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pestel-delta-monitor/template.md",
+      "gitBlobSha": "2f664ad36cc4ce22445d101162bff226c7a68963",
+      "byteSize": 2409,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pm-skill-creator/SKILL.md",
+      "gitBlobSha": "418d435b8031208773b5e480d8e77e025711582a",
+      "byteSize": 16987,
+      "readStatus": "observed",
+      "contentSha256": "f2d3f255de4681c38d64b633b3d30f79d428d5deaa78e05d90cbd8286221db7b"
+    },
+    {
+      "path": "skills/pol-probe-advisor/SKILL.md",
+      "gitBlobSha": "fb7a18a078fb1b7ad4e986d63f72268922ac6bee",
+      "byteSize": 21153,
+      "readStatus": "observed",
+      "contentSha256": "221132a0a767a2e07d40e90005e764005d25b90074994e59f7e667aedd56599b"
+    },
+    {
+      "path": "skills/pol-probe/SKILL.md",
+      "gitBlobSha": "1e3ef0e172ef0ed410391dfc2b40c7bea8c2a970",
+      "byteSize": 10798,
+      "readStatus": "observed",
+      "contentSha256": "f912c67d5c9194394928fd6738f5a0366e5607a90be6d870ef3331a522332547"
+    },
+    {
+      "path": "skills/pol-probe/examples/sample.md",
+      "gitBlobSha": "6f5a6ed5699be418b97f4f1efaf8596a0c92a6f3",
+      "byteSize": 4779,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pol-probe/template.md",
+      "gitBlobSha": "7f7ddd0e6b1c3d5a9e1e90af7c79d1f2d72a2a87",
+      "byteSize": 1735,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/porters-five-forces/SKILL.md",
+      "gitBlobSha": "2554cb340cd721749ee2c365722eebf799936a08",
+      "byteSize": 10800,
+      "readStatus": "observed",
+      "contentSha256": "eb24ecb628f42993bde6d0d19b6f6df4a76de11f54bc67e86952d6244715d725"
+    },
+    {
+      "path": "skills/porters-five-forces/examples/sample-industrial.md",
+      "gitBlobSha": "6e4fa5eafb6c72c54c23f6244845d18e4a0412fb",
+      "byteSize": 6567,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/porters-five-forces/examples/sample.md",
+      "gitBlobSha": "ad684984ce9fc75fd175c240e279e9b2292acc79",
+      "byteSize": 6294,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/porters-five-forces/template.md",
+      "gitBlobSha": "c7ea3752ada1ff3ebecd6bf5e4e62b7b50a3e3be",
+      "byteSize": 2715,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/positioning-statement/SKILL.md",
+      "gitBlobSha": "642fde1511e635442ecc61b34b83e46db0f9ae32",
+      "byteSize": 10335,
+      "readStatus": "observed",
+      "contentSha256": "44d46a65fa95871cf978f6863650c95be92f135f635f0197866344087b374909"
+    },
+    {
+      "path": "skills/positioning-statement/examples/sample.md",
+      "gitBlobSha": "99dc111c926db0fa580bdb02dfb5333540d4aa2f",
+      "byteSize": 1827,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/positioning-statement/template.md",
+      "gitBlobSha": "6bcb729d60a284ca2a17f34f97e3bcd47d957fe3",
+      "byteSize": 664,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/positioning-workshop/SKILL.md",
+      "gitBlobSha": "b6d74bede4ffe7295bd5137bb8dd1ee9782396e9",
+      "byteSize": 18329,
+      "readStatus": "observed",
+      "contentSha256": "537b1e38b6e77b538717c3f0b8d06cda62a28bbe2180014f962722945e77f8a2"
+    },
+    {
+      "path": "skills/prd-development/SKILL.md",
+      "gitBlobSha": "0d0a6aaef10bc77b69dfd4db465b894677b23309",
+      "byteSize": 24915,
+      "readStatus": "observed",
+      "contentSha256": "27c34983656ef09be85894b4deb1ee08ccb88ab194c1ca2d58efe62f62fd10ae"
+    },
+    {
+      "path": "skills/prd-development/examples/sample.md",
+      "gitBlobSha": "64e04b724ca12666d4526390133f26f7213217cb",
+      "byteSize": 5724,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/prd-development/template.md",
+      "gitBlobSha": "09c7bab9b1b3b3e939daf6a92fcae86d1bdc602a",
+      "byteSize": 40106,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/press-release/SKILL.md",
+      "gitBlobSha": "5da301e71ecc60cb70b19f70a4589acb928e895d",
+      "byteSize": 11285,
+      "readStatus": "observed",
+      "contentSha256": "e1dc45f8152d338484870ddd4391e648ff4f52b48e97410f23570d2699c16c48"
+    },
+    {
+      "path": "skills/press-release/examples/sample.md",
+      "gitBlobSha": "0fb8edf47bb7c17942cf22c3534cb42f4601d534",
+      "byteSize": 3859,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/press-release/template.md",
+      "gitBlobSha": "14cd9fe30d4e3a75e2be7c11eb05a54bd51a8cf6",
+      "byteSize": 1330,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pricing-packaging-tracker/SKILL.md",
+      "gitBlobSha": "ab6e24891592e1715a580f99df0f63000870d95e",
+      "byteSize": 9371,
+      "readStatus": "observed",
+      "contentSha256": "9d8b32f578645d64d51cd7a1774f0131b173c301c55477ed5fea1b186e2d51ff"
+    },
+    {
+      "path": "skills/pricing-packaging-tracker/examples/sample-industrial.md",
+      "gitBlobSha": "6a0cd9309f8595cdeb8180271b0f2ad9c9ec11ba",
+      "byteSize": 5546,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pricing-packaging-tracker/examples/sample.md",
+      "gitBlobSha": "bbc720aaeaafe14bbdd02863f5e94fd01e28d536",
+      "byteSize": 5085,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/pricing-packaging-tracker/template.md",
+      "gitBlobSha": "16c9c8530566e028557c8ddaeea4930b81eadf33",
+      "byteSize": 2394,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/prioritization-advisor/SKILL.md",
+      "gitBlobSha": "16751486124b145e503297fc2c34edf17f39efe0",
+      "byteSize": 17013,
+      "readStatus": "observed",
+      "contentSha256": "b1bdcd551bf8d57be1e6d0dae0637dd0b57e5aab693962cf211561dd5a143018"
+    },
+    {
+      "path": "skills/problem-framing-canvas/SKILL.md",
+      "gitBlobSha": "0c335b1b4061c8bb5a78b17b3b1a2a632c57a031",
+      "byteSize": 18814,
+      "readStatus": "observed",
+      "contentSha256": "ec790f5ff678292a31bfabc90a19ea86c0778771f1170d6db4e18b58312f1c5f"
+    },
+    {
+      "path": "skills/problem-framing-canvas/examples/sample.md",
+      "gitBlobSha": "243d883abe388e7cf1a81b504e791c413854a010",
+      "byteSize": 2813,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/problem-framing-canvas/template.md",
+      "gitBlobSha": "53162061c56ce1cb3b15ad96dad2bbe63037695d",
+      "byteSize": 653,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/problem-statement/SKILL.md",
+      "gitBlobSha": "c6af9d7cd1274fdb53ad83d2094e2d11b06c38af",
+      "byteSize": 10513,
+      "readStatus": "observed",
+      "contentSha256": "d4be702a67c5701da5972705e98fc8febd4a3e3765458ae5f5eeb8ebba7339c7"
+    },
+    {
+      "path": "skills/problem-statement/examples/sample.md",
+      "gitBlobSha": "3b77c6ca4af909a6aadb203079ad6bb056d2c4d0",
+      "byteSize": 2620,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/problem-statement/template.md",
+      "gitBlobSha": "8a217e16be926668e77850d78cb9b89ba4b96c1d",
+      "byteSize": 1111,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/product-sense-interview-answer/SKILL.md",
+      "gitBlobSha": "25e8305e89926d6b2c0dfc625bcc41837aca9be8",
+      "byteSize": 11845,
+      "readStatus": "observed",
+      "contentSha256": "2171f3fe92120e5830432417245082c297444c03a1b86a2fd0feb4289e99d86b"
+    },
+    {
+      "path": "skills/product-sense-interview-answer/examples/improve-youtube.md",
+      "gitBlobSha": "b16388b660891ad9ece098043807a5aeecb6ed32",
+      "byteSize": 3903,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/product-sense-interview-answer/template.md",
+      "gitBlobSha": "48ffccf987e86642ae0933c0cf6725a4711cd6ca",
+      "byteSize": 3751,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/product-strategy-session/SKILL.md",
+      "gitBlobSha": "8b977ea36a38f316c0db28cc42c29103801570b1",
+      "byteSize": 16397,
+      "readStatus": "observed",
+      "contentSha256": "c080b6b7ff6cdf665ad3ffce7aa23ab850909848c7b5aedf17eaa3339a8c72aa"
+    },
+    {
+      "path": "skills/product-strategy-session/examples/sample.md",
+      "gitBlobSha": "088c169b1d8278b831b7f21a2961d633d2f19b67",
+      "byteSize": 3067,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/product-strategy-session/template.md",
+      "gitBlobSha": "60bd0b57dca423bbee14c20d8bea636021ab4f9d",
+      "byteSize": 659,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/proto-persona/SKILL.md",
+      "gitBlobSha": "79f6477b3eddfdb2481c946a5d93b7e05ebebb55",
+      "byteSize": 12708,
+      "readStatus": "observed",
+      "contentSha256": "569bc2765392156a92c1c7189afaf453d50a8dbc08d35298c9a6f60be8e0424e"
+    },
+    {
+      "path": "skills/proto-persona/examples/sample.md",
+      "gitBlobSha": "dd1f599f8ed2359ba4302450a9f6335b05c827ab",
+      "byteSize": 3227,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/proto-persona/template.md",
+      "gitBlobSha": "667568116504dbd5e998dc53415844f2a2a6f43c",
+      "byteSize": 916,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/recommendation-canvas/SKILL.md",
+      "gitBlobSha": "b5fd4cfc66e430cebb7d41944e3a1256be3a6b10",
+      "byteSize": 14542,
+      "readStatus": "observed",
+      "contentSha256": "c4306bd0310c6d51028c5a637383ee607de8988108b1ccf696fe2523e6cc2956"
+    },
+    {
+      "path": "skills/recommendation-canvas/examples/sample.md",
+      "gitBlobSha": "22d3636aeb02ac79bb97f6098fca298485769c5c",
+      "byteSize": 4280,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/recommendation-canvas/template.md",
+      "gitBlobSha": "79ab440a64b8a8ac8579247a8378273adbbf3b36",
+      "byteSize": 2104,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/roadmap-planning/SKILL.md",
+      "gitBlobSha": "226fcf4631af6ae4d0e1eefd0e69d4784663b099",
+      "byteSize": 19184,
+      "readStatus": "observed",
+      "contentSha256": "7818444b9e307ec1d3ac0441758a5c07e7964911bbe7690a890a3c71c2e5c882"
+    },
+    {
+      "path": "skills/roadmap-planning/examples/sample.md",
+      "gitBlobSha": "2a985741e78ad39bb188024b9b07e78ed2043848",
+      "byteSize": 2522,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/roadmap-planning/template.md",
+      "gitBlobSha": "03c9739c68c75131d7ce2cd5287d7d773e656153",
+      "byteSize": 664,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-economics-efficiency-metrics/SKILL.md",
+      "gitBlobSha": "c538d4da0508be03b5b8d37b8b8febbfcf01182c",
+      "byteSize": 25851,
+      "readStatus": "observed",
+      "contentSha256": "a039f21725ac88fefb7dbb4f5bba2bb31e28b25c8ad94a3edc6a8d11670c2c23"
+    },
+    {
+      "path": "skills/saas-economics-efficiency-metrics/examples/cash-trap.md",
+      "gitBlobSha": "6aec766f2936e51d725b7c183b9108feaf09afa2",
+      "byteSize": 9599,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-economics-efficiency-metrics/examples/healthy-unit-economics.md",
+      "gitBlobSha": "80e69d60c2447f219695eb3cd93dc82f1b8b26d7",
+      "byteSize": 6904,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-economics-efficiency-metrics/template.md",
+      "gitBlobSha": "0aa18e96c158e1726e836774ca2eb37edb84d77c",
+      "byteSize": 6746,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-revenue-growth-metrics/SKILL.md",
+      "gitBlobSha": "6cdf53224d59a5cb61725de06264fa5b50dbe3ec",
+      "byteSize": 23150,
+      "readStatus": "observed",
+      "contentSha256": "db11f14d62c3740c29cfa9a18e90f1bb282433413b9f1938ac8638226f61bb70"
+    },
+    {
+      "path": "skills/saas-revenue-growth-metrics/examples/healthy-saas.md",
+      "gitBlobSha": "511fff03bf14bece08f146000f9eef2f50e25ffa",
+      "byteSize": 3404,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-revenue-growth-metrics/examples/warning-signs.md",
+      "gitBlobSha": "122f44be775c7520f910b5feabc83cdab9ba75ca",
+      "byteSize": 6470,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/saas-revenue-growth-metrics/template.md",
+      "gitBlobSha": "f4b566cc14417f9179ade61163667e82afe656ee",
+      "byteSize": 4321,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/skill-authoring-workflow/SKILL.md",
+      "gitBlobSha": "e7a419aa2d4a73f3781cb70c9f59004d28604967",
+      "byteSize": 7867,
+      "readStatus": "observed",
+      "contentSha256": "9e84a341b895bd260ff4c9b1597d33903cfc8109b3974a79d8df9d147709bdad"
+    },
+    {
+      "path": "skills/stakeholder-engagement-advisor/SKILL.md",
+      "gitBlobSha": "7dd2185c49b6bb224070ad4b426dec7076396e8d",
+      "byteSize": 17488,
+      "readStatus": "observed",
+      "contentSha256": "a0159a8948c5e5d0b5f80fb02ede530a93e99038e1a9fba6405afe265af6a56c"
+    },
+    {
+      "path": "skills/stakeholder-identification/SKILL.md",
+      "gitBlobSha": "64b922dc8c6934945bb366dc5dfd48b48cc474ac",
+      "byteSize": 12097,
+      "readStatus": "observed",
+      "contentSha256": "1ad7db684f4028764d680955b674e7f458d98b7be3101c7456c329d680479086"
+    },
+    {
+      "path": "skills/stakeholder-mapping/SKILL.md",
+      "gitBlobSha": "a53861add84e674f9e3276b07fb1da704f4239c6",
+      "byteSize": 14043,
+      "readStatus": "observed",
+      "contentSha256": "d1b79966dbc4fb37e443942b21c99ea7340b37fdc14486c2e3aa5daaa8043c17"
+    },
+    {
+      "path": "skills/storyboard/SKILL.md",
+      "gitBlobSha": "70bb0575454df7844833517e7ffec7751d7f79a4",
+      "byteSize": 11793,
+      "readStatus": "observed",
+      "contentSha256": "2d8f42ba9aa01350277177f3f1047c16324391e3d5e2bf4701bf120fb5972567"
+    },
+    {
+      "path": "skills/storyboard/examples/sample.md",
+      "gitBlobSha": "8771e698313002d527275204e56643abfaf47da3",
+      "byteSize": 2750,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/storyboard/template.md",
+      "gitBlobSha": "245fcc62551e738ee7946ced68e4f1fbf5ec2d16",
+      "byteSize": 1087,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/swot-analysis/SKILL.md",
+      "gitBlobSha": "b8291482a133295a5ede98152d45f4a7867a118f",
+      "byteSize": 10258,
+      "readStatus": "observed",
+      "contentSha256": "e98ebd21a9bbb091734b65e37642b92e31164a3295f086bb9c06b18181a5e099"
+    },
+    {
+      "path": "skills/swot-analysis/examples/sample-industrial.md",
+      "gitBlobSha": "80520ec5650b5005dcd4ac8da6565096ab00c3ab",
+      "byteSize": 6030,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/swot-analysis/examples/sample.md",
+      "gitBlobSha": "b0995362a7938c72e80060efef74e69d31aecbe3",
+      "byteSize": 5890,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/swot-analysis/template.md",
+      "gitBlobSha": "e0218d22eeceba369a91f7db002f810f00d997f3",
+      "byteSize": 2290,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/tam-sam-som-calculator/SKILL.md",
+      "gitBlobSha": "00c4f62f884c2c87340ef923641bfb86fc953f7e",
+      "byteSize": 18684,
+      "readStatus": "observed",
+      "contentSha256": "dd8cdbc32b5db667e8a409df3ee6f28aeb84faa0e733dc3defd8f885be5d281e"
+    },
+    {
+      "path": "skills/tam-sam-som-calculator/examples/sample.md",
+      "gitBlobSha": "6a095090925ebf32ee06983d48196de92bbbd6a1",
+      "byteSize": 4943,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/tam-sam-som-calculator/scripts/market-sizing.py",
+      "gitBlobSha": "ff00165eb027f23e6d6acabe9198df4b10be4b67",
+      "byteSize": 3117,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/tam-sam-som-calculator/template.md",
+      "gitBlobSha": "19080ef371b4ffe0dab9d1218f779be5639090c9",
+      "byteSize": 903,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story-mapping-workshop/SKILL.md",
+      "gitBlobSha": "7143dd9e4e421367fd942aadb58abb8a988b5517",
+      "byteSize": 17031,
+      "readStatus": "observed",
+      "contentSha256": "6ba13b7b33a25af00c026220d367bfe2650c2b3a071dd44bc02f5d499ad14fc1"
+    },
+    {
+      "path": "skills/user-story-mapping-workshop/template.md",
+      "gitBlobSha": "9c75d420d6534c38fd4a146aa2aeaab62fb3a55a",
+      "byteSize": 1070,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story-mapping/SKILL.md",
+      "gitBlobSha": "026aa57448524c8ab0ed80ab4415427911ef78ba",
+      "byteSize": 11085,
+      "readStatus": "observed",
+      "contentSha256": "61c8275e51b00f2ea8650035e393b1b8e4698c27775460faee0a4f83da42f799"
+    },
+    {
+      "path": "skills/user-story-mapping/examples/sample.md",
+      "gitBlobSha": "06213e33e480cf0e9de5eb03714e7c957f4c61eb",
+      "byteSize": 2188,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story-mapping/template.md",
+      "gitBlobSha": "7029373c1c702d75ea27de3c5a4caaae1c5abd0f",
+      "byteSize": 994,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story-splitting/SKILL.md",
+      "gitBlobSha": "f6fd86ae371f0b8fdff7abdfcc8df231bbb356b9",
+      "byteSize": 12368,
+      "readStatus": "observed",
+      "contentSha256": "5944338efab177a8aa3dcebf03b8e0aa1f969aed8a082ed38956a4edf4312a94"
+    },
+    {
+      "path": "skills/user-story-splitting/examples/sample.md",
+      "gitBlobSha": "02405331d8c7961b50b681155bc17e8289a317ef",
+      "byteSize": 3615,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story-splitting/template.md",
+      "gitBlobSha": "a712df44ea0bcf1755f263425f87b8cf5cab9e75",
+      "byteSize": 1152,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story/SKILL.md",
+      "gitBlobSha": "76d91cc7881e1e7cd19dcf7588ddcf71b31a9184",
+      "byteSize": 11457,
+      "readStatus": "observed",
+      "contentSha256": "8c2f2a32969bee146514d9270dbb88a4368392874c21e5a2523e8168db0bd2df"
+    },
+    {
+      "path": "skills/user-story/examples/sample.md",
+      "gitBlobSha": "6764dec319f357243e350aaf5a05c18728f2bf8d",
+      "byteSize": 3300,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story/scripts/user-story-template.py",
+      "gitBlobSha": "f8c3ed14a32f0823b842434216ffded83b6c3606",
+      "byteSize": 2282,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/user-story/template.md",
+      "gitBlobSha": "d0e37b8ad6e3d363cd237415413b7e0e698c7f84",
+      "byteSize": 1247,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/voice-of-customer-miner/SKILL.md",
+      "gitBlobSha": "98104bfde1b7463f00f622da35698ce99cc7bee6",
+      "byteSize": 9929,
+      "readStatus": "observed",
+      "contentSha256": "83ff730d8b73a8d5e02b9c60fa8d53cc65a603b18e4b2db5d96bb8363d0c9b31"
+    },
+    {
+      "path": "skills/voice-of-customer-miner/examples/sample-industrial.md",
+      "gitBlobSha": "b1dfd470bee08d5e1afe50392796b9a5ce791947",
+      "byteSize": 6137,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/voice-of-customer-miner/examples/sample.md",
+      "gitBlobSha": "7487cd744429b93cf326e9594deab4e6155bd5f7",
+      "byteSize": 5953,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/voice-of-customer-miner/template.md",
+      "gitBlobSha": "eca6f18bfe8b2546e5f38a10d414ef68490f8ce7",
+      "byteSize": 2389,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/vp-cpo-readiness-advisor/SKILL.md",
+      "gitBlobSha": "7bfd50fe67fac9eb6f1439b3e0aabd585c23fbdb",
+      "byteSize": 25819,
+      "readStatus": "observed",
+      "contentSha256": "540873f4ff3388e9b54178ba587a55f4ee4ab6f4ce61bd2b94aa66d13c9a0361"
+    },
+    {
+      "path": "skills/vp-cpo-readiness-advisor/examples/conversation-flow.md",
+      "gitBlobSha": "003195aaa6270b0f05d3c91aa93fb74a4121280f",
+      "byteSize": 2677,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/workshop-facilitation/SKILL.md",
+      "gitBlobSha": "ac06937e71c223ce2cb22cdcdb9dfa5ac6ca69e3",
+      "byteSize": 5969,
+      "readStatus": "observed",
+      "contentSha256": "8a19cd83efde598b1593a9385b0844c60e5f62811f64568c83892b59139a6544"
+    },
+    {
+      "path": "skills/workshop-facilitation/examples/inline-input-flow.md",
+      "gitBlobSha": "0ba85ac37410441ad1eebbb7f0fde454585dbf01",
+      "byteSize": 4288,
+      "readStatus": "unknown"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "contentSha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "contentSha256": "14f84835f01513fbfa103f0b354b5309821d7b4862ee4c26f4f98bd2b6afc70b"
+        },
+        {
+          "path": ".claude-plugin/plugin.json",
+          "contentSha256": "ba6d1b1622e6ed7872b2d297ed9e2b46d62b9b8dad6bcaca8d210bcd7f568cd0"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "scripts/README.md",
+          "contentSha256": "32711231510a7a5d1b041efacec64fc4b945f2d2731fed772135e1070dc8de33"
+        },
+        {
+          "path": "scripts/adapters/ADAPTER_TEMPLATE.sh",
+          "contentSha256": "5c2add74f437988134d5b16faa20ede9ebd876be9d33a6129a0336db42b88fee"
+        },
+        {
+          "path": "scripts/adapters/claude-code.sh",
+          "contentSha256": "830f8b2d08c301db9d670be4260cd1b4ee6f52dc68cfb43989454e435238e07d"
+        },
+        {
+          "path": "scripts/adapters/manual.sh",
+          "contentSha256": "0de843eac31c01e048dcc61a3bbd33288e9f97d6114eb5efdd70666c4eb1c826"
+        },
+        {
+          "path": "scripts/add-a-skill.sh",
+          "contentSha256": "0224265dbc2362faccbda6bdf479dde63606972cd35514fc5fbd6ba46a64979a"
+        },
+        {
+          "path": "scripts/build-a-skill.sh",
+          "contentSha256": "eb6857857772be32367d3f683e439fe0fc791b0aba6ad5757320214c397e90ae"
+        },
+        {
+          "path": "scripts/build-claude-desktop-packs.sh",
+          "contentSha256": "5a9a1083a26430a0b57e09b4f58d94122bad0abb89ca9172c5a09ccef10725f2"
+        },
+        {
+          "path": "scripts/build-codex-skills.sh",
+          "contentSha256": "977dabbf07d504a8bd16d4f863bd48ea3b370d6392a1fabe0149255362e8ca44"
+        },
+        {
+          "path": "scripts/build-dist.sh",
+          "contentSha256": "aac635eb963cbbcfd5d905e21dea6ff13c41a9e4cc1a92cd05d1ad96a586ac70"
+        },
+        {
+          "path": "scripts/build-release.sh",
+          "contentSha256": "de652debfbcd6f07dfce1b8abd28460622157f48c32d66826037c640aa8b17c0"
+        },
+        {
+          "path": "scripts/check-command-metadata.py",
+          "contentSha256": "705ee2a9175c382fbbb9a082c767d9d5774c2170c9188967f1329d8fe2fdcbed"
+        },
+        {
+          "path": "scripts/check-library-drift.py",
+          "contentSha256": "38abf6e2a26a47e6b6aa31e61af402d6f7611e5448d6e7ce8cc14ee9b0873e46"
+        },
+        {
+          "path": "scripts/check-skill-metadata.py",
+          "contentSha256": "3b3153241a7aba3417453674ddf9bbd82f03aa95aba8b5f642bd7385ea7ae3c8"
+        },
+        {
+          "path": "scripts/check-skill-triggers.py",
+          "contentSha256": "5adee44ca2dd74fdab995ecf258a652b24e8701dfb04c10e1b9952bb2f5e1969"
+        },
+        {
+          "path": "scripts/find-a-command.sh",
+          "contentSha256": "d83cc31fbc49462c3d0379b15f64b2f3ee38698e82acdbcb2850d93fe0fb735d"
+        },
+        {
+          "path": "scripts/find-a-skill.sh",
+          "contentSha256": "1c00f584fcb0f841a58cba8a533170e626fc50ce9238e91d1114843334268526"
+        },
+        {
+          "path": "scripts/generate-catalog.py",
+          "contentSha256": "911bf6dc10a0149a34196266e96585d8eece588a0ade1dc02cd232c52ee3f8a5"
+        },
+        {
+          "path": "scripts/package-claude-skills.sh",
+          "contentSha256": "e315b4acab460d94b85cbd326bc1068671f555d5e7ed95a564a1deb884084d59"
+        },
+        {
+          "path": "scripts/run-pm.sh",
+          "contentSha256": "2311f518e19b5229e497634b571fc0c6c5f697704b9a20874b8f975b8245280f"
+        },
+        {
+          "path": "scripts/test-a-skill.sh",
+          "contentSha256": "be69e66734276349c69d717273c75c19e1af5813d613af71364a499abd9d93fe"
+        },
+        {
+          "path": "scripts/test-library.sh",
+          "contentSha256": "3aaab9e16eb8e3b9845c40db71ecf9416d73e80eece6f0d4984972647e1a69e4"
+        },
+        {
+          "path": "scripts/validate-skills.sh",
+          "contentSha256": "41e5ddbddc3c4e6ef6cc5dcda753e66b24b9030104cfff9f7f695019435dd07c"
+        },
+        {
+          "path": "scripts/zip-a-skill.sh",
+          "contentSha256": "f2c7e9dce1c23dd12cb3b062e10aeb2df3ce60fd81855910288b5591b4e78325"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+schemaVersion: 2
+id: source-files-to-polished-document
+domainId: documents-and-knowledge
+categoryIds:
+  - documents
+  - templates
+  - spreadsheets
+  - tables
+  - charts
+  - presentations
+  - pdfs
+  - conversion
+  - ocr
+  - knowledge-bases
+  - search
+  - sop-documentation
+  - classification
+  - archiving
+outcome:
+  ko: 여러 형식의 원본 파일을 내용과 구조가 검증되고 데이터 및 출처 근거가 보존되며 접근 가능한 내보내기와 관리 메타데이터를 갖춘 완성 문서로 전환한다.
+  en: Turns mixed-format source files into a polished document with verified content and structure, preserved data and source evidence, accessible export, and governed record metadata.
+inputs:
+  - Approved source documents, spreadsheets, presentations, PDFs, scans, templates, audience needs, and publishing purpose
+  - Style rules, accessibility requirements, source provenance, OCR languages, confidentiality class, retention policy, and document owner
+outputs:
+  - A polished document integrating verified narrative, tables, charts, presentation material, and PDF or OCR extracts with source links
+  - An accessible delivery package with editable source, searchable export, validation log, classification, archive metadata, and reusable template or SOP updates
+completionCriteria:
+  - Headings, reading order, alt text, table headers, and searchable or accessible export behavior are verified in every applicable output format
+  - OCR text, calculations, charts, quotations, links, and converted structure are checked against source files, with uncertainty marked instead of hallucinated
+  - Classification, access, retention, archive, deletion, and publication actions remain traceable and require authorization from the accountable owner
+routingProfileId: documents-and-knowledge
+requiredCapabilityIds:
+  - author-documents-from-reusable-templates
+  - build-data-rich-spreadsheets
+  - create-presentations
+  - convert-extract-and-process-pdfs
+recommendedCapabilityIds:
+  - build-and-search-knowledge-bases
+  - document-standard-operating-procedures
+  - classify-and-archive-records
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: source-files-to-polished-document-normal
+    type: normal
+    path: tests/evaluations/packs/source-files-to-polished-document/normal.yaml
+  - id: source-files-to-polished-document-boundary
+    type: boundary
+    path: tests/evaluations/packs/source-files-to-polished-document/boundary.yaml
+  - id: source-files-to-polished-document-refusal
+    type: refusal
+    path: tests/evaluations/packs/source-files-to-polished-document/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

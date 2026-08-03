@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "id": "shopify-ai-toolkit-official-source",
+  "reviewId": "shopify-ai-toolkit-official-baseline",
+  "providerId": "shopify-ai-toolkit",
+  "snapshotId": "2026-07-23-anthropic-plugins-official",
+  "reviewedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+  "kind": "marketplace-identity",
+  "scope": {
+    "runtime": null,
+    "platform": null,
+    "capabilityId": null
+  },
+  "observedAt": "2026-07-29T00:00:00Z",
+  "artifactPath": "research/evidence/artifacts/shopify-ai-toolkit-556811e94dd45c795abe5c0b1bf6b5a4b098149d.json",
+  "artifactSha256": "c40bb7bdb542da9ac5c121e0e2847af1ace09cedc7f898b63423eb39547c579d",
+  "outcome": "passed",
+  "summary": "Binds the official marketplace entry to pinned upstream URLs, content hashes, telemetry and MIT license metadata without copying Shopify source blobs."
+}

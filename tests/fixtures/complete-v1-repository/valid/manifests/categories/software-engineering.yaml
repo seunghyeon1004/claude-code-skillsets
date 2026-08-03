@@ -1,0 +1,11 @@
+schemaVersion: 2
+domainId: software-engineering
+categories:
+  - id: repository-context
+    name:
+      ko: 저장소 문맥
+      en: Repository context
+    description:
+      ko: 저장소 구조와 지침을 파악한다.
+      en: Understands repository structure and instructions.
+    status: draft

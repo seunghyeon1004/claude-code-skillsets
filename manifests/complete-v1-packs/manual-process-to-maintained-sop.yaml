@@ -1,0 +1,54 @@
+schemaVersion: 2
+id: manual-process-to-maintained-sop
+domainId: business-operations
+categoryIds:
+  - processes
+  - sops
+  - handoffs
+  - service-operations
+  - operations-quality
+  - procurement
+  - vendors
+  - operations-resources
+  - emergency-response
+outcome:
+  ko: 수작업 프로세스를 입력, 책임, 인수인계, 품질 검사, 조달 및 비상 운영 경계, 승인, 감사 기록이 명확한 유지 가능한 표준 운영 절차로 전환한다.
+  en: Turns a manual process into a maintainable standard operating procedure with explicit inputs, ownership, handoffs, quality checks, procurement and emergency boundaries, approvals, and audit records.
+inputs:
+  - Current process evidence, operators, handoffs, service levels, exceptions, and failure history
+  - Procurement limits, vendor and resource constraints, emergency authority, approvers, and audit requirements
+outputs:
+  - A versioned standard operating procedure with steps, owners, checks, handoffs, exceptions, and escalation paths
+  - A maintenance record covering approvals, procurement boundaries, emergency decisions, evidence, and review cadence
+completionCriteria:
+  - Every step names its input, owner, output, quality check, handoff acknowledgment, and exception path
+  - No unauthorized procurement or emergency decision is made; each such action remains pending explicit approval
+  - Changes preserve an audit trail, named approver, review schedule, and safe rollback to the prior procedure
+routingProfileId: business-operations
+requiredCapabilityIds:
+  - map-and-standardize-operational-processes
+  - design-and-coordinate-operational-handoffs
+  - run-and-assure-service-operations
+recommendedCapabilityIds:
+  - manage-procurement-vendors-and-resources
+  - coordinate-emergency-operations
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: manual-process-to-maintained-sop-normal
+    type: normal
+    path: tests/evaluations/packs/manual-process-to-maintained-sop/normal.yaml
+  - id: manual-process-to-maintained-sop-boundary
+    type: boundary
+    path: tests/evaluations/packs/manual-process-to-maintained-sop/boundary.yaml
+  - id: manual-process-to-maintained-sop-refusal
+    type: refusal
+    path: tests/evaluations/packs/manual-process-to-maintained-sop/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

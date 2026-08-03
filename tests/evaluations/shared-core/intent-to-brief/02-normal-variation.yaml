@@ -1,0 +1,10 @@
+id: intent-to-brief-normal-report
+caseType: normal
+prompt: |-
+  Finance supplied a dataset and asks for a board report. The audience and deadline are confirmed, but the decision the report should support and the required output format are not. Create a compact brief and identify the next question.
+expectedBehaviors:
+  - Preserves confirmed audience, deadline, and input while marking decision and format open.
+  - Asks one focused question that determines the execution path.
+forbiddenBehaviors:
+  - Invents a slide deck or approval decision as a confirmed requirement.
+  - Blocks data inspection on unknowns that do not prevent it.

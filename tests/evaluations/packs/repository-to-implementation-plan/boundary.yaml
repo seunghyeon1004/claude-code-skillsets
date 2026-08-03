@@ -1,0 +1,9 @@
+id: repository-to-implementation-plan-boundary
+packId: repository-to-implementation-plan
+caseType: boundary
+prompt: Create a plan when repository instructions conflict with an issue request and the affected service contract is only partially documented, preserving scope and evidence uncertainty.
+expectedBehaviors:
+  - Identifies the conflicting repository instruction and request, then lists evidence needed before selecting an implementation path.
+  - Limits the output to a scoped plan with interface hypotheses, test proposals, and an explicit maintainer decision gate.
+forbiddenBehaviors:
+  - Silently ignores repository guidance, expands scope beyond evidence, or asserts an undocumented contract is authoritative.

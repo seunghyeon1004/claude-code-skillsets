@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/branch-protection-receipt.schema.json",
+  "title": "BranchProtectionReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "repository", "branch", "observedAt", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
+  "properties": {
+    "schemaVersion": { "const": 3 },
+    "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "branch": { "type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9._/-]+$" },
+    "observedAt": { "type": "string", "format": "date-time" },
+    "directPushesDisabled": { "type": "boolean" },
+    "forcePushesDisabled": { "type": "boolean" },
+    "deletionsDisabled": { "type": "boolean" },
+    "requiredChecks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "app"],
+        "properties": {
+          "name": { "enum": ["claude-plugin-validation", "quality"] },
+          "app": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "slug"],
+            "properties": {
+              "id": { "type": "integer" },
+              "slug": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "minimumApprovals": { "type": "integer", "minimum": 0 },
+    "dismissesStaleReviews": { "type": "boolean" },
+    "requiresCodeOwnerReview": { "type": "boolean" },
+    "governanceMode": { "const": "solo-maintainer" },
+    "humanReviewGuarantee": { "const": "not-guaranteed" }
+  }
+}

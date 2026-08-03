@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v2/research-context.schema.json",
+  "title": "ResearchEvaluationContext",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "asOf", "privateRcAt", "upstreamObservations"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "asOf": { "$ref": "#/$defs/dateTime" },
+    "privateRcAt": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+    "upstreamObservations": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "sha1": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "dateTime": { "type": "string", "pattern": "^(?:(?:[0-9]{4}-(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12][0-9]|3[01])|(?:04|06|09|11)-(?:0[1-9]|[12][0-9]|30)|02-(?:0[1-9]|1[0-9]|2[0-8])))|(?:(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29))T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\\.[0-9]+)?Z$" },
+    "observation": { "type": "object", "additionalProperties": false, "required": ["providerId", "snapshotId", "observedAt", "headCommit"], "properties": { "providerId": { "$ref": "#/$defs/id" }, "snapshotId": { "$ref": "#/$defs/id" }, "observedAt": { "$ref": "#/$defs/dateTime" }, "headCommit": { "$ref": "#/$defs/sha1" } } }
+  }
+}

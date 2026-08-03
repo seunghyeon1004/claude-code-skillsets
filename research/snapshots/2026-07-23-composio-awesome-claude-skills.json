@@ -1,0 +1,5087 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-composio-awesome-claude-skills",
+  "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills",
+  "queryUrls": [
+    "https://github.com/ComposioHQ/awesome-claude-skills"
+  ],
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedRef": "refs/heads/master",
+  "inspectedCommit": "92568c1edaff1bde5371154f036d959346c145a8",
+  "collectionMethod": "git-tree-and-marketplace-v1",
+  "toolVersion": "0.1.0",
+  "entries": [
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/0",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/1",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/10",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/100",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/101",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/102",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/103",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/104",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/105",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/106",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/11",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/12",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/13",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/14",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/15",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/16",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/17",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/18",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/19",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/2",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/20",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/21",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/22",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/23",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/24",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/25",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/26",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/27",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/28",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/29",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/3",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/30",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/31",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/32",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/33",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/34",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/35",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/36",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/37",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/38",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/39",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/4",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/40",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/41",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/42",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/43",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/44",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/45",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/46",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/47",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/48",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/49",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/5",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/50",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/51",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/52",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/53",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/54",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/55",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/56",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/57",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/58",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/59",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/6",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/60",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/61",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/62",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/63",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/64",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/65",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/66",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/67",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/68",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/69",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/7",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/70",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/71",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/72",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/73",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/74",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/75",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/76",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/77",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/78",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/79",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/8",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/80",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/81",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/82",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/83",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/84",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/85",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/86",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/87",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/88",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/89",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/9",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/90",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/91",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/92",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/93",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/94",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/95",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/96",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/97",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/98",
+      "sourceUrl": null
+    },
+    {
+      "kind": "marketplace-entry",
+      "address": "composio-skills/.claude-plugin/marketplace.json#/plugins/99",
+      "sourceUrl": null
+    },
+    {
+      "kind": "plugin-manifest",
+      "address": "connect-apps-plugin/.claude-plugin/plugin.json",
+      "sourceUrl": null
+    },
+    {
+      "kind": "repository-record",
+      "address": ".",
+      "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/0",
+      "sourceUrl": "https://github.com/anthropics/skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/1",
+      "sourceUrl": "https://github.com/smerchek/claude-epub-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/10",
+      "sourceUrl": "https://github.com/avelikiy/great_cto"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/11",
+      "sourceUrl": "https://github.com/conorluddy/ios-simulator-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/12",
+      "sourceUrl": "https://github.com/sanjay3290/ai-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/13",
+      "sourceUrl": "https://github.com/yvgude/lean-ctx"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/14",
+      "sourceUrl": "https://github.com/1NickPappas/move-code-quality-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/15",
+      "sourceUrl": "https://github.com/openweb-org/openweb"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/16",
+      "sourceUrl": "https://github.com/santiago-vargas-de-kruijf/claude-overkill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/17",
+      "sourceUrl": "https://github.com/lackeyjb/playwright-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/18",
+      "sourceUrl": "https://github.com/NeoLabHQ/context-engineering-kit"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/19",
+      "sourceUrl": "https://github.com/omkamal/pypict-claude-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/2",
+      "sourceUrl": "https://github.com/sboghossian/master-claude-for-legal"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/20",
+      "sourceUrl": "https://github.com/ykdojo/claude-code-tips"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/21",
+      "sourceUrl": "https://github.com/yusufkaraaslan/Skill_Seekers"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/22",
+      "sourceUrl": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/23",
+      "sourceUrl": "https://github.com/Anjos2/recursive-research"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/24",
+      "sourceUrl": "https://github.com/rampstackco/claude-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/25",
+      "sourceUrl": "https://github.com/michalparkola/tapestry-skills-for-claude-code"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/26",
+      "sourceUrl": "https://github.com/emaynard/claude-family-history-research-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/27",
+      "sourceUrl": "https://github.com/PleasePrompto/notebooklm-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/28",
+      "sourceUrl": "https://github.com/uxKero/anydesign"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/29",
+      "sourceUrl": "https://github.com/wholiver/swiftui-design-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/3",
+      "sourceUrl": "https://github.com/zxkane/aws-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/30",
+      "sourceUrl": "https://github.com/anandpareek-hub/pixelbin-claude-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/31",
+      "sourceUrl": "https://github.com/haunchen/n8n-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/32",
+      "sourceUrl": "https://github.com/rockscy/solo-skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/33",
+      "sourceUrl": "https://github.com/mhattingpete/claude-skills-marketplace"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/34",
+      "sourceUrl": "https://github.com/jthack/threat-hunting-with-sigma-rules-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/35",
+      "sourceUrl": "https://github.com/emory/ASD-AuDHD-PAI-Skills"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/4",
+      "sourceUrl": "https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/5",
+      "sourceUrl": "https://github.com/bluzername/claude-code-terminal-title"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/6",
+      "sourceUrl": "https://github.com/chrisvoncsefalvay/claude-d3js-skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/7",
+      "sourceUrl": "https://github.com/jthack/ffuf_claude_skill"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/8",
+      "sourceUrl": "https://github.com/obra/superpowers"
+    },
+    {
+      "kind": "repository-record",
+      "address": "README.md#link/9",
+      "sourceUrl": "https://github.com/LewisLiu007/full-page-screenshot"
+    },
+    {
+      "kind": "skill-file",
+      "address": "artifacts-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "brand-guidelines/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "canvas-design/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "changelog-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "competitive-ads-extractor/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/-21risk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/-2chat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ably-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/abstract-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/abuselpdb-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/abyssale-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/accelo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/accredible-certificates-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/acculynx-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/active-campaign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/addresszen-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/adobe-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/adrapid-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/adyntel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/aero-workflow-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/aeroleads-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/affinda-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/affinity-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agencyzoom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agent-mail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agentql-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agenty-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agiled-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/agility-cms-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ahrefs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ai-ml-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/aivoov-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/alchemy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/algodocs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/algolia-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/all-images-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/alpha-vantage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/altoviz-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/alttext-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/amara-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/amazon-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ambee-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ambient-weather-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/amcards-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/anchor-browser-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/anonyflow-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/anthropic-administrator-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/anthropic_administrator-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apaleo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apex27-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/api-bible-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/api-labz-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/api-ninjas-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/api-sports-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/api2pdf-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apiflash-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apilio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apipie-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apitemplate-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apiverve-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/apollo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/appcircle-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/appdrag-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/appointo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/appsflyer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/appveyor-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/aryn-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ascora-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ashby-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/asin-data-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/astica-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/async-interview-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/atlassian-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/attio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/auth0-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/autobound-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/autom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/axonaut-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ayrshare-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/backendless-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bannerbear-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bart-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/baselinker-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/baserow-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/basin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/battlenet-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/beaconchain-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/beaconstac-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/beamer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/beeminder-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bench-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/benchmark-email-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/benzinga-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bestbuy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/better-proposals-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/better-stack-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bidsketch-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/big-data-cloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bigmailer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bigml-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bigpicture-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bitquery-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bitwarden-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/blackbaud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/blackboard-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/blocknative-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/boldsign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bolna-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/boloforms-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bolt-iot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bonsai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bookingmood-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/booqable-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/borneo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/botbaba-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/botpress-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/botsonic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/botstar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bouncer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/boxhero-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/braintree-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brandfetch-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/breeze-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/breezy-hr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brex-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brex-staging-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brightdata-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brightpearl-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/brilliant-directories-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/browseai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/browser-tool-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/browserbase-tool-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/browserhub-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/browserless-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/btcpay-server-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bubble-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bugbug-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bugherd-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bugsnag-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/buildkite-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/builtwith-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/bunnycdn-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/byteforms-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cabinpanda-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cal-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/calendarhero-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/callerapi-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/callingly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/callpage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/campaign-cleaner-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/campayn-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/canny-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/canvas-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/capsule-crm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/capsule_crm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/carbone-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cardly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/castingwords-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cats-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cdr-platform-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/census-bureau-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/centralstationcrm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/certifier-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/chaser-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/chatbotkit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/chatfai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/chatwork-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/chmeetings-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cincopa-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/claid-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/classmarker-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/clearout-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/clickmeeting-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/clockify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudcart-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudconvert-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudflare-api-key-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudflare-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudflare-browser-rendering-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudinary-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudlayer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cloudpress-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coassemble-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/codacy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/codeinterpreter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/codereadr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coinbase-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coinmarketcal-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coinmarketcap-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coinranking-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/college-football-data-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/composio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/composio-search-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/connecteam-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/contentful-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/contentful-graphql-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/control-d-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/conversion-tools-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/convertapi-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/conveyor-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/convolo-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/corrently-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/countdown-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/coupa-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/craftmypdf-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/crowdin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/crustdata-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cults-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/curated-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/currents-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/customerio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/customgpt-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/customjs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/cutt-ly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/d2lbrightspace-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dadata-ru-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/daffy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dailybot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/datagma-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/datarobot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/deadline-funnel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/deel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/deepgram-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/demio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/desktime-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/detrack-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dialmycalls-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dialpad-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dictionary-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/diffbot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/digicert-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/digital-ocean-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/discordbot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dnsfilter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dock-certs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docker-hub-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docker_hub-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docmosis-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docnify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docsbot-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docsumo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docugenerate-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/documenso-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/documint-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docupilot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docupost-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/docuseal-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/doppler-marketing-automation-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/doppler-secretops-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dotsimple-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dovetail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dpd2-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/draftable-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dreamstudio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/drip-jobs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dripcel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dromo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dropbox-sign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dropcontact-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dungeon-fighter-online-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/dynamics365-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/echtpost-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/elevenlabs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/elorus-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/emailable-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/emaillistverify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/emailoctopus-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/emelia-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/encodian-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/endorsal-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/enginemailer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/enigma-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/entelligence-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/eodhd-apis-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/epic-games-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/esignatures-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/espocrm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/esputnik-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/etermin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/evenium-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/eventbrite-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/eventee-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/eventzilla-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/everhour-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/eversign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/exa-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/excel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/exist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/expofp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/extracta-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/facebook-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/faceup-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/factorial-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/feathery-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/felt-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fibery-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fidel-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/files-com-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fillout-forms-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fillout_forms-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/finage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/findymail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/finerworks-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fingertip-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/finmei-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fireberry-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/firecrawl-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fireflies-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/firmao-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fitbit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fixer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fixer-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/flexisign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/flowiseai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/flutterwave-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fluxguard-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/folk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fomo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/forcemanager-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/formbricks-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/formcarry-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/formdesk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/formsite-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/foursquare-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fraudlabs-pro-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/freshbooks-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/front-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/fullenrich-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gagelist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gamma-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gan-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gatherup-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gemini-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gender-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/genderapi-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/genderize-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/geoapify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/geocodio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/geokeo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/getform-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gift-up-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gigasheet-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/giphy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/givebutter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gladia-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gleap-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/globalping-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/go-to-webinar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/godial-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gong-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/goodbits-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/goody-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-address-validation-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-admin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-classroom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-cloud-vision-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-maps-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google-search-console-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google_admin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google_classroom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google_maps-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/google_search_console-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googleads-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googlebigquery-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googlecalendar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googledocs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googledrive-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googlemeet-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googlephotos-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googleslides-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googlesuper-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/googletasks-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gorgias-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gosquared-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/grafbase-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/graphhopper-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/griptape-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/grist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/groqcloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/gumroad-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/habitica-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hackernews-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/happy-scribe-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/harvest-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hashnode-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/helcim-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/helloleads-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/helpwise-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/here-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/heygen-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/heyreach-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/heyzine-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/highergov-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/highlevel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/honeybadger-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/honeyhive-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hookdeck-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hotspotsystem-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/html-to-image-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/humanitix-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/humanloop-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hunter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hypeauditor-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hyperbrowser-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hyperise-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/hystruct-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/icims-talent-cloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/icypeas-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/idea-scale-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/identitycheck-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ignisign-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/imagekit-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/imgbb-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/imgix-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/influxdb-cloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/insighto-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/instacart-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/instantly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/intelliprint-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/interzoid-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ip2location-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ip2location-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ip2proxy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ip2whois-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ipdata-co-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ipinfo-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/iqair-airvisual-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/jigsawstack-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/jobnimbus-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/jotform-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/jumpcloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/junglescout-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kadoa-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kaggle-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kaleido-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/keap-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/keen-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kickbox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/klipfolio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ko-fi-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kommo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kontent-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/kraken-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/l2s-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/labs64-netlicensing-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/landbot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/langbase-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lastpass-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/launch-darkly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/launch_darkly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/leadfeeder-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/leadoku-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/leiga-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lemlist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lemon-squeezy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lemon_squeezy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lessonspace-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lever-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lever-sandbox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/leverly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lexoffice-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/linguapop-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/linkhut-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/linkup-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/listclean-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/listennotes-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/livesession-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lmnt-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/lodgify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/logo-dev-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/loomio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/loyverse-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/magnetic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailbluster-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailboxlayer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailcheck-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailcoach-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailerlite-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailersend-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mails-so-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mailsoftly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/maintainx-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/many-chat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/many_chat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mapbox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mapulus-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mboum-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/melo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mem-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mem0-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/memberspot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/memberstack-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/membervault-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/metaads-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/metaphor-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mezmo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/microsoft-clarity-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/microsoft-tenant-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/microsoft_clarity-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/minerstat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/missive-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mistral-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mistral_ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mocean-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moco-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/modelry-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moneybird-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moonclerk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moosend-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mopinion-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/more-trees-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moxie-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/moz-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/msg91-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mural-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mx-technologies-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/mx-toolbox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nango-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nano-nets-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nasa-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nasdaq-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ncscale-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/needle-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/neon-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/netsuite-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/neuronwriter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/neutrino-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/neverbounce-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/new-relic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/new_relic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/news-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nextdns-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ngrok-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ninox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/nocrm-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/npm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ocr-web-service-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ocrspace-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/omnisend-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/oncehub-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/onedesk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/onepage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/onesignal-rest-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/onesignal-user-auth-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/onesignal_rest_api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/open-sea-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/openai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/opencage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/opengraph-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/openperplex-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/openrouter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/openweather-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/optimoroute-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/owl-protocol-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/page-x-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pandadoc-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/paradym-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/parallel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/parma-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/parsehub-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/parsera-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/parseur-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/passcreator-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/passslot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/payhip-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pdf-api-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pdf-co-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pdf4me-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pdfless-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pdfmonkey-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/peopledatalabs-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/perigon-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/perplexityai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/persistiq-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pexels-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/phantombuster-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/piggy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/piloterr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pilvio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pingdom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pipeline-crm-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/placekey-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/placid-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/plain-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/plasmic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/platerecognizer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/plisio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/polygon-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/polygon-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/poptin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/postgrid-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/postgrid-verify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/precoro-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/prerender-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/printautopilot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/prisma-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/prismic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/process-street-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/procfu-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/productboard-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/productlane-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/project-bubble-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/proofly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/proxiedmail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pushbullet-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/pushover-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/quaderno-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/qualaroo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/quickbooks-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/radar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rafflys-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ragic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/raisely-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ramp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ravenseotools-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/re-amaze-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/realphonevalidation-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/recallai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/recruitee-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/refiner-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/remarkety-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/remote-retrieval-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/remove-bg-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/renderform-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/repairshopr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/replicate-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/reply-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/reply-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/resend-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/respond-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/retailed-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/retellai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/retently-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rev-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/revolt-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ring-central-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ring_central-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rippling-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ritekit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rkvst-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rocketlane-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rootly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/rosette-text-analytics-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/route4me-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/safetyculture-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sage-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/salesforce-marketing-cloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/salesforce-service-cloud-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/salesmate-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sap-successfactors-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/satismeter-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/scrape-do-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/scrapegraph-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/scrapfly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/scrapingant-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/scrapingbee-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/screenshot-fyi-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/screenshotone-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/seat-geek-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/securitytrails-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/segmetrics-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/seismic-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/semanticscholar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/semrush-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendbird-ai-chabot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendbird-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendfox-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendlane-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendloop-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sendspark-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sensibo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/seqera-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/serpapi-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/serpdog-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/serply-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/servicem8-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sevdesk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/share-point-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/share_point-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/shipengine-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/short-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/short-menu-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/shortcut-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/shorten-rest-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/shortpixel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/shotstack-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sidetracker-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/signaturely-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/signpath-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/signwell-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/similarweb-digitalrank-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/similarweb_digitalrank_api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/simla-com-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/simple-analytics-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/simplesat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sitespeakai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/skyfire-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/slackbot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/smartproxy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/smartrecruiters-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sms-alert-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/smtp2go-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/smugmug-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/snowflake-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sourcegraph-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/splitwise-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/spoki-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/spondyr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/spotify-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/spotlightr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sslmate-cert-spotter-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/stack-exchange-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/stannp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/starton-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/statuscake-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/storeganise-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/storerocket-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/stormglass-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/strava-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/streamtime-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/supadata-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/superchat-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/supportbee-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/supportivekoala-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/survey-monkey-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/survey_monkey-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/svix-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/sympla-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/synthflow-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/taggun-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/talenthr-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tally-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tapfiliate-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tapform-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tavily-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/taxjar-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/teamcamp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/telnyx-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/teltel-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/templated-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/test-app-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/text-to-pdf-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/textcortex-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/textit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/textrazor-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/thanks-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/the-odds-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ticketmaster-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ticktick-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/timecamp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/timekit-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/timelinesai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/timelink-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/timely-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tinyurl-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tisane-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/toggl-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/token-metrics-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tomba-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tomtom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/toneden-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tpscheck-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/triggercmd-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/tripadvisor-content-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/turbot-pipes-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/turso-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/twelve-data-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/twitch-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/twocaptcha-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/typefully-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/typless-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/u301-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/unione-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/updown-io-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/uploadcare-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/uptimerobot-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/userlist-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/v0-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/venly-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/veo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/verifiedemail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/veriphone-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/vero-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/vestaboard-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/virustotal-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/visme-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/waboxapp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wachete-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/waiverfile-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wakatime-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wati-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wave-accounting-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wave_accounting-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/weathermap-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/webex-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/webscraping-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/webvizio-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/whautomate-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/winston-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wit-ai-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wiz-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/wolfram-alpha-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/woodpecker-co-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/workable-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/workday-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/workiom-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/worksnaps-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/writer-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/xero-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/y-gy-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/yandex-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/yelp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/ynab-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/yousearch-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zenrows-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zenserp-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zeplin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zerobounce-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-bigin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-books-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-desk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-inventory-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-invoice-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho-mail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_bigin-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_books-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_desk-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_inventory-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_invoice-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoho_mail-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zoominfo-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zylvie-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "composio-skills/zyte-api-automation/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "connect-apps/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "connect/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "content-research-writer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "developer-growth-analysis/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "document-skills/docx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "document-skills/pdf/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "document-skills/pptx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "document-skills/xlsx/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "domain-name-brainstormer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "file-organizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "image-enhancer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "internal-comms/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "invoice-organizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "langsmith-fetch/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "lead-research-assistant/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "mcp-builder/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "meeting-insights-analyzer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "raffle-winner-picker/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skill-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "skill-share/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "slack-gif-creator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "tailored-resume-generator/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "template-skill/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "theme-factory/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "twitter-algorithm-optimizer/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "video-downloader/SKILL.md",
+      "sourceUrl": null
+    },
+    {
+      "kind": "skill-file",
+      "address": "webapp-testing/SKILL.md",
+      "sourceUrl": null
+    }
+  ],
+  "countMetrics": [
+    {
+      "kind": "marketplace-entry",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 107
+    },
+    {
+      "kind": "plugin-manifest",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 1
+    },
+    {
+      "kind": "repository-record",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 37
+    },
+    {
+      "kind": "skill-file",
+      "reportedCount": null,
+      "reportedCountSourceUrl": null,
+      "independentlyCountedTotal": 864
+    }
+  ],
+  "contentSha256": "6230f8f041b7253ef845f988a21a3508f63d5c55f3e58ee03c984a7f49a435d3"
+}

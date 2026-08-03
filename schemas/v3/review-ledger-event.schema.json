@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/review-ledger-event.schema.json",
+  "title": "ReviewLedgerEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sequence", "id", "previousEventHash", "target", "disposition", "supersedes", "baseline", "reasonCode", "reason", "reviewedSensitiveFields", "runtimeEvidence", "reviewerId", "reviewedAt", "expiresAt", "eventHash"],
+  "properties": {
+    "sequence": { "type": "integer", "minimum": 1 },
+    "id": { "$ref": "#/$defs/id" },
+    "previousEventHash": { "anyOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }] },
+    "target": { "$ref": "#/$defs/target" },
+    "disposition": { "enum": ["approved", "held", "blocked"] },
+    "supersedes": { "anyOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+    "baseline": { "$ref": "#/$defs/baseline" },
+    "reasonCode": { "$ref": "#/$defs/id" },
+    "reason": { "$ref": "#/$defs/localizedText" },
+    "reviewedSensitiveFields": { "$ref": "#/$defs/reviewedSensitiveFields" },
+    "runtimeEvidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/runtimeEvidence" } },
+    "reviewerId": { "$ref": "#/$defs/id" },
+    "reviewedAt": { "$ref": "#/$defs/dateTime" },
+    "expiresAt": { "$ref": "#/$defs/dateTime" },
+    "eventHash": { "$ref": "#/$defs/sha256" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "sha1": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "skillPath"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/id" },
+        "skillPath": { "anyOf": [{ "$ref": "#/$defs/relativePath" }, { "type": "null" }] }
+      }
+    },
+    "relativePath": { "type": "string", "pattern": "^(?!/)(?!.*[\\u0000-\\u001F\\u007F-\\u009F\\\\])(?:(?!\\.{1,2}(?:/|$))[^/]+)(?:/(?:(?!\\.{1,2}(?:/|$))[^/]+))*$" },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshotId", "inspectedCommit", "contentSha256", "pathBlobSha", "inheritedEvidenceDigest"],
+      "properties": {
+        "snapshotId": { "$ref": "#/$defs/id" },
+        "inspectedCommit": { "$ref": "#/$defs/sha1" },
+        "contentSha256": { "$ref": "#/$defs/sha256" },
+        "pathBlobSha": { "anyOf": [{ "$ref": "#/$defs/sha1" }, { "type": "null" }] },
+        "inheritedEvidenceDigest": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": { "ko": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+    },
+    "evidenceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "contentSha256"],
+      "properties": { "path": { "$ref": "#/$defs/relativePath" }, "contentSha256": { "$ref": "#/$defs/sha256" } }
+    },
+    "stringEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["observed", "unknown", "not-applicable"] },
+        "value": { "type": "string" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceReference" } }
+      },
+      "allOf": [{ "if": { "properties": { "status": { "const": "observed" } } }, "then": { "properties": { "value": {} }, "required": ["value"] } }]
+    },
+    "stringArrayEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["observed", "unknown", "not-applicable"] },
+        "value": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceReference" } }
+      },
+      "allOf": [{ "if": { "properties": { "status": { "const": "observed" } } }, "then": { "properties": { "value": {} }, "required": ["value"] } }]
+    },
+    "reviewedSensitiveFields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["license", "permissions", "ownership", "trust", "dependencies", "executableSurface"],
+      "properties": {
+        "license": { "$ref": "#/$defs/stringEvidence" },
+        "permissions": { "$ref": "#/$defs/stringArrayEvidence" },
+        "ownership": { "$ref": "#/$defs/stringEvidence" },
+        "trust": { "$ref": "#/$defs/stringEvidence" },
+        "dependencies": { "$ref": "#/$defs/stringArrayEvidence" },
+        "executableSurface": { "$ref": "#/$defs/stringArrayEvidence" }
+      }
+    },
+    "runtimeEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime", "compatibility", "evidenceIds"],
+      "properties": {
+        "runtime": { "enum": ["claude-code", "codex"] },
+        "compatibility": { "enum": ["verified", "incompatible", "unknown"] },
+        "evidenceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } }
+      }
+    }
+  }
+}

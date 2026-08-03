@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": 1,
+  "indexFingerprint": "sha256:497ea2c1b8f4d311e4b3c83728f98bff07b13d4b88a9bd7e741aaec2b36c6538",
+  "marketplace": {
+    "id": "claude-code-skillsets",
+    "source": "seunghyeon1004/claude-code-skillsets"
+  },
+  "domains": [
+    {
+      "id": "ai-agents-and-automation",
+      "name": {
+        "ko": "AI 에이전트 및 자동화",
+        "en": "AI Agents and Automation"
+      },
+      "description": {
+        "ko": "활용 사례와 모델 선택부터 프롬프트, 맥락, 검색 증강 생성, 도구 연결, 단일 및 다중 에이전트, 메모리, 평가, 가드레일, 비용, 지연 시간과 모니터링까지 신뢰할 수 있는 AI 자동화 시스템을 설계한다.",
+        "en": "Designs reliable AI automation systems from use-case and model selection through prompting, context, retrieval, tools, single and multi-agent systems, memory, evaluation, guardrails, cost, latency, and monitoring."
+      },
+      "purposeIds": [
+        "context",
+        "cost",
+        "evaluation",
+        "guardrails",
+        "latency",
+        "mcp",
+        "memory",
+        "model-selection",
+        "monitoring",
+        "multi-agent-systems",
+        "prompting",
+        "rag",
+        "single-agents",
+        "tool-calls",
+        "use-case-fit"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "business-operations",
+      "name": {
+        "ko": "비즈니스 운영",
+        "en": "Business Operations"
+      },
+      "description": {
+        "ko": "프로세스와 표준 운영 절차부터 자동화, 인수인계, 서비스 품질, 조달, 자원, 지표, 문제와 비상 대응까지 일상 운영을 재현 가능하게 관리한다.",
+        "en": "Makes day-to-day operations reproducible across processes, standard operating procedures, automation, handoffs, service quality, procurement, resources, metrics, issues, and emergency response."
+      },
+      "purposeIds": [
+        "changes",
+        "emergency-response",
+        "handoffs",
+        "issues",
+        "operational-metrics",
+        "operations-quality",
+        "operations-resources",
+        "processes",
+        "procurement",
+        "repetitive-work-automation",
+        "service-operations",
+        "sops",
+        "vendors"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "commerce",
+      "name": {
+        "ko": "커머스",
+        "en": "Commerce"
+      },
+      "description": {
+        "ko": "제품 조사와 기획부터 카탈로그, 목록, 가격, 머천다이징, 판매 채널, 재고, 주문, 배송, 반품, 프로모션, 리뷰와 매출 분석까지 상거래 운영을 연결한다.",
+        "en": "Connects commerce operations from product research and planning through catalogs, listings, pricing, merchandising, sales channels, inventory, orders, shipping, returns, promotions, reviews, and revenue analysis."
+      },
+      "purposeIds": [
+        "catalogs",
+        "commerce-pricing",
+        "inventory",
+        "listings",
+        "marketplaces",
+        "merchandising",
+        "orders",
+        "product-planning",
+        "product-research",
+        "promotions",
+        "returns",
+        "revenue-analysis",
+        "reviews",
+        "shipping",
+        "stores"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "data-and-analytics",
+      "name": {
+        "ko": "데이터 및 분석",
+        "en": "Data and Analytics"
+      },
+      "description": {
+        "ko": "수집, 품질, 정제와 변환부터 SQL 탐색, 통계, 실험, KPI, 예측, 세분화, 시각화, 대시보드, 보고와 거버넌스까지 의사결정에 쓰이는 신뢰 가능한 데이터를 만든다.",
+        "en": "Produces trustworthy decision-ready data from collection, quality, cleaning, and transformation through SQL exploration, statistics, experiments, KPIs, forecasting, segmentation, visualization, dashboards, reporting, and governance."
+      },
+      "purposeIds": [
+        "cleaning",
+        "collection",
+        "dashboards",
+        "data-experiments",
+        "exploratory-analysis",
+        "forecasting",
+        "governance",
+        "kpis",
+        "quality",
+        "reporting",
+        "segmentation",
+        "sql",
+        "statistics",
+        "transformation",
+        "visualization"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "design-and-brand",
+      "name": {
+        "ko": "디자인 및 브랜드",
+        "en": "Design and Brand"
+      },
+      "description": {
+        "ko": "브리프와 사용자 조사부터 정보 구조, 사용자 흐름, 와이어프레임, 인터페이스, 디자인 시스템, 프로토타입, 웹 경험, 브랜드, 시각 정체성, 창작물, 접근성과 개발 인계까지 일관된 경험을 설계한다.",
+        "en": "Designs coherent experiences from briefs and user research through information architecture, flows, wireframes, interfaces, systems, prototypes, web design, brand, visual identity, creative work, accessibility, and developer handoff."
+      },
+      "purposeIds": [
+        "brand",
+        "briefs",
+        "creative",
+        "design-accessibility",
+        "design-systems",
+        "developer-handoff",
+        "information-architecture",
+        "prototypes",
+        "ui",
+        "user-flows",
+        "ux-research-application",
+        "visual-identity",
+        "web-design",
+        "wireframes"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "devops-and-security",
+      "name": {
+        "ko": "데브옵스 및 보안",
+        "en": "DevOps and Security"
+      },
+      "description": {
+        "ko": "재현 가능한 개발 환경과 인프라부터 안전한 배포, 관찰 가능성, 신뢰성, 사고 대응, 비밀과 의존성 보호, 애플리케이션 보안과 복구까지 운영 위험을 관리한다.",
+        "en": "Manages operational risk from reproducible development environments and infrastructure through safe delivery, observability, reliability, incident response, secret and dependency protection, application security, and recovery."
+      },
+      "purposeIds": [
+        "application-security",
+        "ci-cd",
+        "cloud",
+        "containers",
+        "dependency-security",
+        "deployment",
+        "development-environments",
+        "iac",
+        "observability",
+        "recovery",
+        "rollback",
+        "secrets",
+        "security-incident-response",
+        "sre",
+        "threat-modeling"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "documents-and-knowledge",
+      "name": {
+        "ko": "문서 및 지식",
+        "en": "Documents and Knowledge"
+      },
+      "description": {
+        "ko": "문서, 스프레드시트, 프레젠테이션과 PDF부터 템플릿, 변환, OCR, 표, 차트, 회의 기록, 노트, 지식 베이스, 검색, 표준 운영 절차, 분류와 보관까지 재사용 가능한 업무 지식을 만든다.",
+        "en": "Produces reusable operational knowledge from documents, spreadsheets, presentations, and PDFs through templates, conversion, OCR, tables, charts, meeting records, notes, knowledge bases, search, standard operating procedures, classification, and archiving."
+      },
+      "purposeIds": [
+        "archiving",
+        "charts",
+        "classification",
+        "conversion",
+        "documents",
+        "knowledge-bases",
+        "meeting-records",
+        "notes",
+        "ocr",
+        "pdfs",
+        "presentations",
+        "search",
+        "sop-documentation",
+        "spreadsheets",
+        "tables",
+        "templates"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "finance-and-accounting",
+      "name": {
+        "ko": "재무 및 회계",
+        "en": "Finance and Accounting"
+      },
+      "description": {
+        "ko": "예산, 현금 흐름, 거래 기록, 재무제표, 예측, 단위 경제성, 수익성, 자금 조달, 세무 준비와 경영 보고를 근거 기반으로 지원한다.",
+        "en": "Supports evidence-based budgeting, cash flow, transaction records, financial statements, forecasting, unit economics, profitability, fundraising, tax preparation, and management reporting."
+      },
+      "purposeIds": [
+        "bookkeeping-assistance",
+        "budgets",
+        "cash-flow",
+        "collections",
+        "costs",
+        "financial-statements",
+        "forecasts",
+        "fundraising",
+        "invoicing",
+        "management-reporting",
+        "profitability",
+        "receipts",
+        "tax-preparation",
+        "unit-economics"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "legal-risk-and-compliance",
+      "name": {
+        "ko": "법무, 위험 및 컴플라이언스",
+        "en": "Legal, Risk, and Compliance"
+      },
+      "description": {
+        "ko": "법률 조사와 계약 지원부터 정책, 개인정보, 지식재산, 규제, 통제, 위험, 감사 증거, 사고 대응과 기록 수명주기까지 자격 있는 담당자의 검토를 위한 근거를 준비한다.",
+        "en": "Prepares evidence for qualified review across legal research, contract assistance, policy, privacy, intellectual property, regulation, controls, risk, audit evidence, incident response, and record lifecycles."
+      },
+      "purposeIds": [
+        "audit-evidence",
+        "compliance-checklists",
+        "compliance-incident-response",
+        "contract-drafting-assistance",
+        "contract-review-assistance",
+        "deletion",
+        "intellectual-property",
+        "legal-research-assistance",
+        "policies",
+        "privacy",
+        "records-retention",
+        "regulatory-mapping",
+        "risk-registers"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "marketing-and-growth",
+      "name": {
+        "ko": "마케팅 및 성장",
+        "en": "Marketing and Growth"
+      },
+      "description": {
+        "ko": "고객 정의와 포지셔닝부터 제안, 콘텐츠, 획득, 전환, 유지, 측정까지 근거 기반 성장 체계를 설계한다.",
+        "en": "Designs evidence-based growth systems from customer definition and positioning through offers, content, acquisition, conversion, retention, and measurement."
+      },
+      "purposeIds": [
+        "content-strategy",
+        "cro",
+        "customer-retention",
+        "email",
+        "funnels",
+        "icp",
+        "lifecycle",
+        "measurement",
+        "messaging",
+        "offer-pricing",
+        "offers",
+        "paid-acquisition",
+        "personas",
+        "positioning",
+        "seo"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "people-and-training",
+      "name": {
+        "ko": "인사 및 교육",
+        "en": "People and Training"
+      },
+      "description": {
+        "ko": "인력 계획, 역할, 채용, 온보딩, 성과와 피드백, 경력, 조직 정책, 교육과 평가를 일관된 근거와 사람의 책임 있는 검토 아래 지원한다.",
+        "en": "Supports workforce planning, roles, hiring, onboarding, performance, feedback, careers, organizational policy, learning, and assessment with consistent evidence and accountable human review."
+      },
+      "purposeIds": [
+        "assessment",
+        "candidates",
+        "careers",
+        "curricula",
+        "employee-onboarding",
+        "feedback",
+        "hiring-evaluation",
+        "interviews",
+        "job-descriptions",
+        "learning-materials",
+        "organizational-policy",
+        "people-performance",
+        "roles",
+        "workforce-planning"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "product-management",
+      "name": {
+        "ko": "제품 관리",
+        "en": "Product Management"
+      },
+      "description": {
+        "ko": "고객 문제와 요구를 제품 원칙, 요구사항, 범위, 우선순위, 로드맵, 실험, 지표와 출시 판단으로 연결한다.",
+        "en": "Connects customer problems and needs to product principles, requirements, scope, priorities, roadmaps, experiments, metrics, and launch decisions."
+      },
+      "purposeIds": [
+        "launch-readiness",
+        "prds",
+        "problem-discovery",
+        "product-experiments",
+        "product-metrics",
+        "product-principles",
+        "product-prioritization",
+        "prototype-validation",
+        "roadmaps",
+        "scope",
+        "user-needs",
+        "user-stories"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "project-management",
+      "name": {
+        "ko": "프로젝트 관리",
+        "en": "Project Management"
+      },
+      "description": {
+        "ko": "프로젝트 정의와 작업 분해부터 일정, 의존성, 자원, 회의, 상태, 변경, 위험, 이해관계자 소통과 회고까지 실행을 조율한다.",
+        "en": "Coordinates execution from project definition and work breakdown through schedules, dependencies, resources, meetings, status, change, risk, stakeholder communication, and retrospectives."
+      },
+      "purposeIds": [
+        "change",
+        "decisions",
+        "dependencies",
+        "estimation",
+        "meetings",
+        "project-definition",
+        "project-resources",
+        "retrospectives",
+        "risk",
+        "schedules",
+        "stakeholder-communication",
+        "status-reporting",
+        "work-breakdown"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "promotion-and-distribution",
+      "name": {
+        "ko": "프로모션 및 배포",
+        "en": "Promotion and Distribution"
+      },
+      "description": {
+        "ko": "출시와 콘텐츠를 채널별 형식으로 전환하고 미디어, 인플루언서, 커뮤니티, 아웃리치를 통해 일관되게 배포하고 개선한다.",
+        "en": "Adapts launches and content for each channel and distributes them consistently through media, influencers, communities, and outreach with performance feedback."
+      },
+      "purposeIds": [
+        "campaign-operations",
+        "channel-adaptation",
+        "community",
+        "content-repurposing",
+        "influencer-work",
+        "launch-promotion",
+        "media-pitching",
+        "outreach",
+        "performance-feedback",
+        "pr",
+        "social-distribution"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "research-and-intelligence",
+      "name": {
+        "ko": "리서치 및 인텔리전스",
+        "en": "Research and Intelligence"
+      },
+      "description": {
+        "ko": "신뢰할 수 있는 출처를 탐색하고 평가해 시장, 고객, 학술 및 특허 근거를 검증 가능한 인사이트로 종합한다.",
+        "en": "Discovers and evaluates reliable sources to synthesize market, customer, academic, and patent evidence into verifiable insights."
+      },
+      "purposeIds": [
+        "academic-research",
+        "competitive-intelligence",
+        "customer-research",
+        "evidence-synthesis",
+        "fact-checking",
+        "interview-analysis",
+        "market-research",
+        "patent-research",
+        "source-discovery",
+        "source-evaluation",
+        "trend-detection",
+        "web-research"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "sales-and-customer",
+      "name": {
+        "ko": "영업 및 고객",
+        "en": "Sales and Customer"
+      },
+      "description": {
+        "ko": "계정 조사와 기회 발굴부터 제안, 협상, 온보딩, 지원, 갱신과 고객의 소리까지 고객 관계 전 과정을 근거 있게 운영한다.",
+        "en": "Operates the full customer relationship from account research and opportunity discovery through proposals, negotiation, onboarding, support, renewal, and voice of customer."
+      },
+      "purposeIds": [
+        "account-research",
+        "crm",
+        "customer-health",
+        "customer-onboarding",
+        "demos",
+        "discovery",
+        "expansion",
+        "lead-discovery",
+        "negotiation",
+        "proposals",
+        "qualification",
+        "renewal",
+        "rfps",
+        "support",
+        "voc"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "software-engineering",
+      "name": {
+        "ko": "소프트웨어 엔지니어링",
+        "en": "Software Engineering"
+      },
+      "description": {
+        "ko": "저장소 맥락과 요구사항부터 아키텍처, 구현, 데이터베이스, 테스트, 디버깅, 리뷰, 성능, 접근성, 문서화와 릴리스 준비까지 검증 가능한 소프트웨어 변경을 만든다.",
+        "en": "Produces verifiable software changes from repository context and requirements through architecture, implementation, databases, testing, debugging, review, performance, accessibility, documentation, and release readiness."
+      },
+      "purposeIds": [
+        "apis",
+        "architecture",
+        "backend",
+        "databases",
+        "debugging",
+        "documentation",
+        "frontend",
+        "mobile",
+        "refactoring",
+        "release-readiness",
+        "repository-context",
+        "requirements",
+        "review",
+        "software-accessibility",
+        "software-performance",
+        "specifications",
+        "testing"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "strategy-and-decision",
+      "name": {
+        "ko": "전략 및 의사결정",
+        "en": "Strategy and Decision"
+      },
+      "description": {
+        "ko": "문제와 기회를 구조화하고 목표, 선택지, 위험, 실행 근거를 연결해 검토 가능한 전략적 결정을 만든다.",
+        "en": "Frames problems and opportunities and connects goals, options, risks, and execution evidence into reviewable strategic decisions."
+      },
+      "purposeIds": [
+        "business-models",
+        "decision-records",
+        "execution-strategy",
+        "goals-and-metrics",
+        "opportunity-assessment",
+        "problem-framing",
+        "risk-analysis",
+        "scenario-planning",
+        "strategy-prioritization",
+        "strategy-review"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "video-and-audio",
+      "name": {
+        "ko": "영상 및 오디오",
+        "en": "Video and Audio"
+      },
+      "description": {
+        "ko": "영상 조사와 콘셉트부터 대본, 스토리보드, 촬영 준비, 편집, 모션 그래픽, 자막, 음성 정리, 믹싱, 음악, 효과음, 썸네일, 재활용, 품질 관리와 출력까지 배포 가능한 미디어를 제작한다.",
+        "en": "Produces publishable media from video research and concepts through scripts, storyboards, recording preparation, editing, motion graphics, captions, audio cleanup, mixing, music, effects, thumbnails, repurposing, quality control, and export."
+      },
+      "purposeIds": [
+        "captions",
+        "concepts",
+        "export",
+        "fine-editing",
+        "mixing",
+        "motion-graphics",
+        "music",
+        "quality-control",
+        "recording-preparation",
+        "repurposing",
+        "rough-cuts",
+        "scripts",
+        "shot-lists",
+        "sound-effects",
+        "storyboards",
+        "thumbnails",
+        "video-research",
+        "voice-cleanup"
+      ],
+      "profileIds": []
+    },
+    {
+      "id": "writing-and-publishing",
+      "name": {
+        "ko": "글쓰기 및 출판",
+        "en": "Writing and Publishing"
+      },
+      "description": {
+        "ko": "아이디어와 근거를 독자와 채널에 맞는 정확한 콘텐츠로 발전시키고 편집, 현지화, 출판까지 완결한다.",
+        "en": "Develops ideas and evidence into accurate audience-specific content and carries it through editing, localization, and publication."
+      },
+      "purposeIds": [
+        "blogs",
+        "business-writing",
+        "citation-verification",
+        "cms-publishing",
+        "copywriting",
+        "editing",
+        "ideation",
+        "localization",
+        "long-form-writing",
+        "newsletters",
+        "outlining",
+        "proofreading",
+        "technical-writing",
+        "translation"
+      ],
+      "profileIds": []
+    }
+  ],
+  "profiles": [],
+  "availability": [],
+  "researchPendingPacks": [
+    {
+      "id": "account-research-to-personalized-outreach",
+      "domainId": "sales-and-customer",
+      "labels": {
+        "ko": "공개 근거, 적합성 신호와 동의를 바탕으로 개인 정보와 CRM 권한을 존중하는 맞춤형 계정 조사 및 아웃리치 초안을 만든다.",
+        "en": "Produces account research and personalized outreach drafts that respect public evidence, fit signals, consent, personal data, and CRM authorization."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "application-to-security-review",
+      "domainId": "devops-and-security",
+      "labels": {
+        "ko": "애플리케이션 맥락을 비밀 정보와 의존성 보호, 위협 모델, 보안 검토 근거 및 사람 승인 경계가 있는 읽기 전용 보안 검토 자료로 전환한다.",
+        "en": "Turns application context into read-only security review material with secret and dependency protection, threat modeling, security evidence, and human approval boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "brand-strategy-to-visual-system",
+      "domainId": "design-and-brand",
+      "labels": {
+        "ko": "브랜드 전략을 차별화된 시각 정체성, 접근 가능한 자산 지침, 재사용 가능한 디자인 토큰과 검토 가능한 채널별 크리에이티브 체계로 전환한다.",
+        "en": "Turns brand strategy into a differentiated visual identity, accessible asset guidance, reusable design tokens, and reviewable channel-specific creative system."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "brief-to-accessible-interface",
+      "domainId": "design-and-brand",
+      "labels": {
+        "ko": "제품 브리프와 사용자 조사 근거를 명확한 정보 구조, 검증 가능한 흐름, 접근 가능한 반응형 인터페이스 및 구현 가능한 개발자 전달 자료로 전환한다.",
+        "en": "Turns a product brief and user-research evidence into clear information architecture, testable flows, an accessible responsive interface, and implementation-ready developer handoff."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "bug-report-to-verified-fix",
+      "domainId": "software-engineering",
+      "labels": {
+        "ko": "버그 보고를 재현 가능한 근본 원인, 동작 보존 수정, 테스트 증거, 성능 및 회귀 검토, 문서와 릴리스 준비 증거가 있는 검증된 수정 결과로 전환한다.",
+        "en": "Turns a bug report into a verified fix result with reproducible root cause, behavior-preserving changes, test evidence, performance and regression review, documentation, and release-readiness evidence."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "business-question-to-dashboard",
+      "domainId": "data-and-analytics",
+      "labels": {
+        "ko": "비즈니스 질문을 검토 가능한 쿼리, 통계와 불확실성, 공정한 세그먼트 비교, KPI 및 예측 근거가 연결된 접근 가능한 대시보드로 전환한다.",
+        "en": "Turns a business question into an accessible dashboard linked to reviewable queries, statistical uncertainty, fair segment comparisons, KPI definitions, and forecast evidence."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "competitor-landscape-to-opportunity-map",
+      "domainId": "research-and-intelligence",
+      "labels": {
+        "ko": "경쟁사와 시장 신호를 출처 날짜, 확인된 사실, 분석적 추론, 불확실성이 분리된 추적 가능한 기회 지도로 전환한다.",
+        "en": "Turns competitor and market signals into a traceable opportunity map that separates dated sources, verified facts, analytical inferences, and uncertainty."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "contract-to-risk-and-revision-brief",
+      "domainId": "legal-risk-and-compliance",
+      "labels": {
+        "ko": "계약문을 근거가 연결된 위험 및 수정 브리프로 전환해 자격 있는 법률 자문가의 검토와 승인을 지원하며 법률 조언이나 최종 계약 해석을 대신하지 않는다.",
+        "en": "Turns a contract into a source-linked risk and revision brief as assistance, not legal advice, leaving final interpretation and every consequential decision to qualified counsel."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "customer-interviews-to-insights",
+      "domainId": "research-and-intelligence",
+      "labels": {
+        "ko": "고객 인터뷰를 발언 출처와 날짜, 반복 패턴, 반례, 사실과 해석의 구분이 추적되는 검증 가능한 인사이트로 전환한다.",
+        "en": "Turns customer interviews into verifiable insights with traceable speaker sources and dates, recurring patterns, counterexamples, and separated observations and interpretations."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "customer-problem-to-validated-prd",
+      "domainId": "product-management",
+      "labels": {
+        "ko": "고객 문제와 사용자 요구의 근거를 제품 원칙, PRD, 사용자 스토리, 프로토타입 및 윤리적 검증 계획으로 전환한다.",
+        "en": "Turns evidence about customer problems and user needs into product principles, a PRD, user stories, prototypes, and an ethical validation plan."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "discovery-call-to-proposal",
+      "domainId": "sales-and-customer",
+      "labels": {
+        "ko": "발견 통화의 확인된 요구와 고객 피드백을 근거로 제안, 데모, 협상 및 고객 수명주기 지원 자료를 승인 경계와 함께 만든다.",
+        "en": "Produces proposal, demo, negotiation, and customer-lifecycle support material from verified discovery needs and customer feedback with clear approval boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "evidence-to-strategic-decision",
+      "domainId": "strategy-and-decision",
+      "labels": {
+        "ko": "근거와 불확실성을 전략 선택지, 측정 목표, 시나리오 위험, 사람 승인 경계가 명시된 추적 가능한 결정 기록으로 전환한다.",
+        "en": "Turns evidence and uncertainty into a traceable decision record with strategic options, measurable goals, scenario risks, and explicit human approval boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "expertise-to-training-program",
+      "domainId": "people-and-training",
+      "labels": {
+        "ko": "전문가 지식을 교육과 평가 프로그램으로 전환해 자격 있는 교육 담당자의 검토와 승인을 지원하며 내용 정확성, 평가 공정성 또는 개인정보 판단을 대신하지 않는다.",
+        "en": "Turns expert knowledge into an accessible training program with explicit subject-matter accuracy, assessment fairness, privacy, and qualified human review boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "idea-to-edited-article",
+      "domainId": "writing-and-publishing",
+      "labels": {
+        "ko": "초기 아이디어를 독자와 채널에 맞는 개요, 근거 있는 장문 원고, 검증된 인용, 편집된 제목과 행동 요청을 갖춘 출판 준비 글로 전환한다.",
+        "en": "Turns an initial idea into a publication-ready article with an audience-specific outline, evidence-backed long-form draft, verified citations, and edited headline and call to action."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "incident-alert-to-postmortem",
+      "domainId": "devops-and-security",
+      "labels": {
+        "ko": "경보를 관찰 가능성 근거, 신뢰성 영향, 보안 사고 대응, 복구 검증과 후속 학습이 있는 읽기 전용 사건 및 사후 분석 기록으로 전환한다.",
+        "en": "Turns an alert into a read-only incident and postmortem record with observability evidence, reliability impact, security response, recovery verification, and follow-up learning."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "keyword-to-ranked-content",
+      "domainId": "marketing-and-growth",
+      "labels": {
+        "ko": "검색어와 의도를 근거 있는 콘텐츠, 검색 발견성, 전환 경로, 동의 기반 후속 흐름, 제한된 유료 검증 계획으로 전환한다.",
+        "en": "Turns a keyword and its intent into evidence-backed content, search discoverability, a conversion path, consent-aware follow-up, and a bounded paid validation plan."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "launch-plan-to-multichannel-campaign",
+      "domainId": "promotion-and-distribution",
+      "labels": {
+        "ko": "승인된 출시 계획을 채널별 자산, 미디어·파트너·커뮤니티 아웃리치, 공개 의무, 승인 단계, 성과 피드백이 연결된 다채널 캠페인으로 전환한다.",
+        "en": "Turns an approved launch plan into a multichannel campaign connecting adapted assets, media, partner and community outreach, disclosure duties, approvals, and performance feedback."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "long-form-to-social-distribution",
+      "domainId": "promotion-and-distribution",
+      "labels": {
+        "ko": "승인된 장문 콘텐츠를 원문의 의미와 권리를 보존하는 채널별 소셜 자산, 게시 일정, 승인 기록, 성과 피드백 계획으로 전환한다.",
+        "en": "Turns approved long-form content into channel-specific social assets, a distribution schedule, approval records, and a feedback plan while preserving source meaning and rights."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "long-video-to-multiplatform-clips",
+      "domainId": "video-and-audio",
+      "labels": {
+        "ko": "긴 영상을 원래 의미와 출처를 보존하면서 채널별 길이와 화면 비율, 접근성 자막, 명료한 오디오 및 품질 검수를 충족하는 멀티플랫폼 클립으로 전환한다.",
+        "en": "Turns a long video into multi-platform clips that preserve source meaning while meeting channel duration, aspect-ratio, accessible-caption, intelligible-audio, and quality-control requirements."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "manual-process-to-maintained-sop",
+      "domainId": "business-operations",
+      "labels": {
+        "ko": "수작업 프로세스를 입력, 책임, 인수인계, 품질 검사, 조달 및 비상 운영 경계, 승인, 감사 기록이 명확한 유지 가능한 표준 운영 절차로 전환한다.",
+        "en": "Turns a manual process into a maintainable standard operating procedure with explicit inputs, ownership, handoffs, quality checks, procurement and emergency boundaries, approvals, and audit records."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "meeting-to-decisions-and-actions",
+      "domainId": "documents-and-knowledge",
+      "labels": {
+        "ko": "회의 자료와 승인된 기록을 근거가 연결된 결정, 담당자와 기한이 명확한 실행 항목, 검색 가능한 지식 및 재사용 가능한 운영 문서로 전환한다.",
+        "en": "Turns meeting material and approved records into evidence-linked decisions, owned and dated actions, searchable knowledge, and reusable operating documentation."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "prd-to-prioritized-roadmap",
+      "domainId": "product-management",
+      "labels": {
+        "ko": "검토된 PRD를 명시된 우선순위 기준, 로드맵 의존성, 제품 지표와 출시 준비 검토가 있는 실행 후보로 전환한다.",
+        "en": "Turns reviewed PRDs into execution candidates with explicit prioritization criteria, roadmap dependencies, product metrics, and launch-readiness review."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "product-idea-to-store-listing",
+      "domainId": "commerce",
+      "labels": {
+        "ko": "상품 아이디어를 수요 및 원가 근거, 정확한 카탈로그 정보, 검증 가능한 주장, 투명한 가격, 채널별 준비 상태와 소유자 승인 경계를 갖춘 게시 준비 상점 목록으로 전환한다.",
+        "en": "Turns a product idea into a publication-ready store listing with demand and cost evidence, accurate catalog data, supportable claims, transparent pricing, channel readiness, and explicit owner approval boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "product-to-positioning-and-offer",
+      "domainId": "marketing-and-growth",
+      "labels": {
+        "ko": "제품 근거를 이상적 고객, 차별화 포지셔닝, 검증 가능한 메시지, 가격 근거가 있는 제안, 유지 및 측정 계획으로 전환한다.",
+        "en": "Turns product evidence into ideal-customer definitions, differentiated positioning, supportable messaging, a priced offer, and a retention and measurement plan."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "project-brief-to-execution-board",
+      "domainId": "project-management",
+      "labels": {
+        "ko": "프로젝트 브리프를 근거 있는 작업 분해, 일정, 자원, 위험, 변경 통제와 이해관계자 검토가 연결된 실행 보드로 전환한다.",
+        "en": "Turns a project brief into an execution board connecting evidence-based decomposition, schedule, resources, risk, change control, and stakeholder review."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "prototype-to-evaluated-agent",
+      "domainId": "ai-agents-and-automation",
+      "labels": {
+        "ko": "AI 프로토타입을 출처가 검증된 검색, 개인정보 보호 메모리, 안전한 도구 경계, 재현 가능한 평가, 가드레일과 운영 모니터링이 있는 검증된 에이전트로 전환한다.",
+        "en": "Turns an AI prototype into an evaluated agent with source-verified retrieval, privacy-preserving memory, safe tool boundaries, reproducible evaluation, guardrails, and operational monitoring."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "question-to-cited-research-brief",
+      "domainId": "research-and-intelligence",
+      "labels": {
+        "ko": "조사 질문을 출처 날짜, 주장별 인용, 사실과 추론의 구분, 미확인 사항이 포함된 검증 가능한 연구 브리프로 전환한다.",
+        "en": "Turns a research question into a verifiable brief with source dates, claim-level citations, separated facts and inferences, and explicit unresolved points."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "raw-data-to-validated-dataset",
+      "domainId": "data-and-analytics",
+      "labels": {
+        "ko": "원시 데이터를 출처와 변환 이력이 추적되고 품질 검사가 재현 가능하며 접근 및 거버넌스 경계가 명확한 검증 데이터셋으로 전환한다.",
+        "en": "Turns raw data into a validated dataset with traceable provenance and transformations, reproducible quality checks, and explicit access and governance boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "raw-footage-to-published-video",
+      "domainId": "video-and-audio",
+      "labels": {
+        "ko": "원본 영상을 이야기와 사실을 보존하는 편집, 접근 가능한 자막, 명료한 오디오, 권리 확인된 음악과 최종 품질 검수를 거친 승인 가능한 게시 영상으로 전환한다.",
+        "en": "Turns raw footage into an approval-ready published video through meaning-preserving editing, accessible captions, intelligible audio, rights-cleared music, and final quality control."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "regulation-to-compliance-checklist",
+      "domainId": "legal-risk-and-compliance",
+      "labels": {
+        "ko": "규제 자료를 관할, 기준일, 출처와 불확실성이 명시된 컴플라이언스 체크리스트로 전환해 자격 있는 컴플라이언스 담당자의 검토와 승인을 지원하며 준수 인증이나 최종 법률 판단을 대신하지 않는다.",
+        "en": "Turns regulatory material into a control and evidence checklist that states jurisdiction, as-of date, source, and uncertainty, while reserving certification and qualified compliance approval for accountable reviewers."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "repetitive-work-to-approved-automation",
+      "domainId": "business-operations",
+      "labels": {
+        "ko": "반복 업무를 실행 전 미리보기, 명시적 승인, 관찰 가능한 지표, 감사 기록, 실패 중단, 롤백과 수동 대안이 있는 승인된 자동화 계획으로 전환한다.",
+        "en": "Turns repetitive work into an approved automation plan with pre-execution preview, explicit approval, observable metrics, audit records, failure stops, rollback, and a manual fallback."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "repository-to-implementation-plan",
+      "domainId": "software-engineering",
+      "labels": {
+        "ko": "실제 저장소 근거와 명시된 요구사항을 사용해 범위, 명세, 아키텍처 선택지, 검증 계획과 사람 승인 경계가 있는 구현 계획을 만든다.",
+        "en": "Produces an implementation plan from actual repository evidence and explicit requirements with scope, specifications, architecture options, verification, and human approval boundaries."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "role-need-to-interview-scorecard",
+      "domainId": "people-and-training",
+      "labels": {
+        "ko": "채용 필요를 직무 기준, 일관된 면접 질문과 점수표로 전환해 자격 있는 채용 담당자의 검토와 승인을 지원하며 보호 특성 추론이나 최종 채용 판단을 대신하지 않는다.",
+        "en": "Turns a role need into an inclusive job description and structured interview scorecard grounded in job-related evidence, excluding protected-trait inference and requiring qualified human hiring approval."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "service-to-ci-cd-deployment",
+      "domainId": "devops-and-security",
+      "labels": {
+        "ko": "서비스 요구를 재현 가능한 환경, 컨테이너, 코드형 인프라와 승인된 CI/CD 배포 및 롤백 검증 계획으로 전환한다.",
+        "en": "Turns service requirements into reproducible environments, containers, infrastructure as code, and an approved CI/CD deployment and rollback verification plan."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "source-files-to-polished-document",
+      "domainId": "documents-and-knowledge",
+      "labels": {
+        "ko": "여러 형식의 원본 파일을 내용과 구조가 검증되고 데이터 및 출처 근거가 보존되며 접근 가능한 내보내기와 관리 메타데이터를 갖춘 완성 문서로 전환한다.",
+        "en": "Turns mixed-format source files into a polished document with verified content and structure, preserved data and source evidence, accessible export, and governed record metadata."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "source-to-multilingual-publication",
+      "domainId": "writing-and-publishing",
+      "labels": {
+        "ko": "승인된 기술 또는 비즈니스 원문을 의미, 인용, 문화적 맥락, 게시 권한이 검토된 다국어 CMS 게시물로 전환한다.",
+        "en": "Turns approved technical or business source material into multilingual CMS publications with reviewed meaning, citations, cultural context, and publishing authorization."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "spec-to-tested-feature",
+      "domainId": "software-engineering",
+      "labels": {
+        "ko": "검토된 명세를 접근 가능한 인터페이스, 모바일 및 서비스 구현, 데이터 변경과 재현 가능한 테스트 증거가 연결된 기능 작업으로 전환한다.",
+        "en": "Turns a reviewed specification into feature work connecting accessible interfaces, mobile and service implementation, data changes, and reproducible test evidence."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "topic-to-recording-ready-script",
+      "domainId": "video-and-audio",
+      "labels": {
+        "ko": "주제와 근거를 시청자 및 플랫폼에 맞는 콘셉트, 사실 확인된 대본과 스토리보드, 권한과 접근성 준비가 포함된 촬영 계획으로 전환한다.",
+        "en": "Turns a topic and evidence into an audience- and platform-aligned concept, fact-checked script and storyboard, and a recording plan with permissions and accessibility preparation."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "transactions-to-management-report",
+      "domainId": "finance-and-accounting",
+      "labels": {
+        "ko": "거래 원본과 재무 가정을 예산, 현금 흐름, 수익성, 조정 내역 및 경영 보고서 초안으로 연결해 자격 있는 재무 검토자의 검토와 승인을 지원하며 최종 회계 판단이나 세무 신고를 대신하지 않는다.",
+        "en": "Turns source records and explicit assumptions into a traceable draft management report for a qualified finance reviewer, with accounting and tax specialist review where applicable, without replacing final judgment, approval, or tax filing."
+      },
+      "state": "research-pending"
+    },
+    {
+      "id": "use-case-to-agent-design",
+      "domainId": "ai-agents-and-automation",
+      "labels": {
+        "ko": "AI 활용 사례를 적합한 모델, 근거 맥락, 승인된 도구 계약, 명시적 에이전트 경계와 비용 및 지연 시간 예산이 있는 구현 가능한 설계로 전환한다.",
+        "en": "Turns an AI use case into an implementable design with a suitable model, grounded context, approved tool contracts, explicit agent boundaries, and cost and latency budgets."
+      },
+      "state": "research-pending"
+    }
+  ],
+  "executables": [],
+  "plugins": [
+    {
+      "id": "shared-core",
+      "name": {
+        "ko": "공용 코어",
+        "en": "Shared core"
+      },
+      "version": "0.1.0",
+      "source": "./plugins/shared-core",
+      "marketplace": "claude-code-skillsets",
+      "trustTier": "verified",
+      "permissions": {
+        "filesystem": [
+          "user-selected workspace files"
+        ],
+        "commands": [
+          "user-approved verification commands"
+        ],
+        "network": [
+          "user-approved source retrieval"
+        ],
+        "externalData": [
+          "user-provided sources"
+        ]
+      },
+      "requiredDependencies": [],
+      "installCommand": "claude plugin install shared-core@claude-code-skillsets --scope user",
+      "kind": "local",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "skillset-manager",
+      "name": {
+        "ko": "스킬셋 관리자",
+        "en": "Skillset manager"
+      },
+      "version": "0.1.2",
+      "source": "./plugins/skillset-manager",
+      "marketplace": "claude-code-skillsets",
+      "trustTier": "verified",
+      "permissions": {
+        "filesystem": [
+          "plugin-owned install index",
+          "user-scoped setup lock and same-directory temporary file"
+        ],
+        "commands": [
+          "atomic rename of approved setup lock temporary file",
+          "claude --version",
+          "claude plugin install approved plugin",
+          "claude plugin list --json",
+          "claude plugin marketplace add separately approved exact marketplace source",
+          "claude plugin marketplace list",
+          "claude plugin marketplace list --json",
+          "command -v -- declared executable"
+        ],
+        "network": [
+          "configured Claude Code marketplaces during approved installation"
+        ],
+        "externalData": []
+      },
+      "requiredDependencies": [
+        {
+          "id": "shared-core",
+          "marketplace": "claude-code-skillsets"
+        }
+      ],
+      "installCommand": "claude plugin install skillset-manager@claude-code-skillsets --scope user",
+      "kind": "local",
+      "license": "Apache-2.0"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-anthropic-plugins-official",
+  "sourceId": "anthropic-plugins-official",
+  "snapshotId": "2026-07-23-anthropic-plugins-official",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "e3e378cbbb205673a5d7254ded32679cafa6179d",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 272
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 40
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 31
+    }
+  ],
+  "snapshotContentSha256": "355696da746e58e1e197be509236d8f8e6a7c5f8f7437c1a71ff32896c866c05"
+}

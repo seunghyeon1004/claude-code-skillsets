@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-kepano-obsidian-skills",
+  "sourceId": "kepano-obsidian-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+  "blobs": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "gitBlobSha": "394733264c6e6cb9efdef2396d6f03d47fe45fd6",
+      "byteSize": 268,
+      "readStatus": "observed",
+      "contentSha256": "4f3e17d34008b8e5934c63e0803aca34e0107d3e4d922076c4dba5a61a5d2192"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "gitBlobSha": "07932b6148077cb9e76c6b819895d118fbd73e6a",
+      "byteSize": 481,
+      "readStatus": "observed",
+      "contentSha256": "07601fe9702d2fe59648a73f9c0b4596b10938a899f083c009d79a9f14f95c62"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "33d692ee84f4464f575f2d1e927f19cf1c8ccc57",
+      "byteSize": 1077,
+      "readStatus": "observed",
+      "contentSha256": "64c64d48361edfe8610016441bf593256ea9b67f133b00f47c55aa29ee878567"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "0303cbf40de6a1b6131f51cb49f5020d20f36c70",
+      "byteSize": 2565,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/defuddle/SKILL.md",
+      "gitBlobSha": "287b1fc5eca3d79a8c4081e0abd3c4e8f4eaafd7",
+      "byteSize": 1123,
+      "readStatus": "observed",
+      "contentSha256": "10673a4dc70a0a057612d443243ab7a5aa4abdd4a0fadc3f6eec5fd71ad5a971"
+    },
+    {
+      "path": "skills/json-canvas/SKILL.md",
+      "gitBlobSha": "8fb2c9de2bbba52b53ca243fbfdab650ee61711c",
+      "byteSize": 7624,
+      "readStatus": "observed",
+      "contentSha256": "97d1ae0728955c4203922753d5656890e5e4dd371b8306ea11884f9b510f1b85"
+    },
+    {
+      "path": "skills/json-canvas/references/EXAMPLES.md",
+      "gitBlobSha": "c94f99641d9d20f36dbb66e1e686432bb790cb00",
+      "byteSize": 6476,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/obsidian-bases/SKILL.md",
+      "gitBlobSha": "e857041265fb8ac9f6f7c6606f2dbc762c45a91d",
+      "byteSize": 13027,
+      "readStatus": "observed",
+      "contentSha256": "c0037f20926c7d8591cdd040365e4c0e4c0c4146386a506f28f241faee9a27d9"
+    },
+    {
+      "path": "skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+      "gitBlobSha": "047888deca657c2da5a56163b7156b9a423642cd",
+      "byteSize": 7538,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/obsidian-cli/SKILL.md",
+      "gitBlobSha": "0046c45abc11cbba48cee538e9cce9993a62747b",
+      "byteSize": 3183,
+      "readStatus": "observed",
+      "contentSha256": "b54257cdc0e5d04488b35b0c797bfe427b24359f0848d3c73924dcacf8da6358"
+    },
+    {
+      "path": "skills/obsidian-markdown/SKILL.md",
+      "gitBlobSha": "bca51a429c020a4cb6740a917517116e66d428b1",
+      "byteSize": 5367,
+      "readStatus": "observed",
+      "contentSha256": "7ad72e1f0a9081ed325e76b6402ad5de50a00e63e2341fd403a92f147234a007"
+    },
+    {
+      "path": "skills/obsidian-markdown/references/CALLOUTS.md",
+      "gitBlobSha": "c086824c64156d17731c94a7029d3496dadbaa04",
+      "byteSize": 1238,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/obsidian-markdown/references/EMBEDS.md",
+      "gitBlobSha": "668851abe0f056493e162f0a866762cced15c991",
+      "byteSize": 861,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "skills/obsidian-markdown/references/PROPERTIES.md",
+      "gitBlobSha": "e46a63abadd7c18224a79c2c9ea902bfb3e88bd6",
+      "byteSize": 1149,
+      "readStatus": "unknown"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/plugin.json",
+          "contentSha256": "07601fe9702d2fe59648a73f9c0b4596b10938a899f083c009d79a9f14f95c62"
+        },
+        {
+          "path": "LICENSE",
+          "contentSha256": "64c64d48361edfe8610016441bf593256ea9b67f133b00f47c55aa29ee878567"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "contentSha256": "4f3e17d34008b8e5934c63e0803aca34e0107d3e4d922076c4dba5a61a5d2192"
+        },
+        {
+          "path": ".claude-plugin/plugin.json",
+          "contentSha256": "07601fe9702d2fe59648a73f9c0b4596b10938a899f083c009d79a9f14f95c62"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "executableSurface": {
+      "status": "unknown",
+      "evidence": []
+    }
+  }
+}

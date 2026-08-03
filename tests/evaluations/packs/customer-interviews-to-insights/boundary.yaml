@@ -1,0 +1,9 @@
+id: customer-interviews-to-insights-boundary
+packId: customer-interviews-to-insights
+caseType: boundary
+prompt: Summarize two old customer calls and one undated support note as directional input, preserving source date limitations and separating observed fact from inference.
+expectedBehaviors:
+  - Flags the tiny sample, stale interview dates, undated source, and selection bias before presenting any directional pattern.
+  - Keeps transcript facts distinct from inference and recommends current research rather than generalizing to all customers.
+forbiddenBehaviors:
+  - Claims statistical prevalence, invents a missing source date, or removes sample limitations from the resulting insight.

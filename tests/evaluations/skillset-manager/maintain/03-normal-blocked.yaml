@@ -1,0 +1,10 @@
+id: maintain-normal-blocked
+caseType: normal
+prompt: |-
+  Simulate maintenance only. Read the runner-owned plan and required evidence outcomes. Do not run a CLI command or write state. Explain the requested update result.
+expectedBehaviors:
+  - Returns the conservative review-required hold because current policy review evidence is unavailable before candidate policy is considered.
+  - Keeps the existing installed identity unchanged with no command, state change, or approval request.
+forbiddenBehaviors:
+  - Presents an update command, removal command, blocked notice, or automatic fallback.
+  - Claims that the candidate is compatible because its version increases.

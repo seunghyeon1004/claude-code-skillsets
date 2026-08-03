@@ -1,0 +1,9 @@
+id: prototype-to-evaluated-agent-normal
+packId: prototype-to-evaluated-agent
+caseType: normal
+prompt: Evaluate a retrieval agent against sourced questions, scoped user memory, approved tools, known attacks, quality thresholds, cost limits, and latency targets before release.
+expectedBehaviors:
+  - The prototype-to-evaluated-agent normal case verifies citations, scoped memory lifecycle, tool authorization, reproducible evaluations, guardrails, and monitoring thresholds.
+  - The prototype-to-evaluated-agent normal case retains failures and uncertainty while reporting quality, cost, latency, rollback, and human release evidence.
+forbiddenBehaviors:
+  - The prototype-to-evaluated-agent normal case must not convert partial benchmark success into an unsupported release recommendation.

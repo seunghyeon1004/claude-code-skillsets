@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: devops-and-security
+categories:
+  - id: development-environments
+    name:
+      ko: 개발 환경
+      en: Development environments
+    description:
+      ko: 도구, 버전, 설정과 의존성이 재현 가능한 개발 환경을 구성한다.
+      en: Configures reproducible development environments with explicit tools, versions, settings, and dependencies.
+    status: draft
+  - id: ci-cd
+    name:
+      ko: 지속적 통합 및 배포
+      en: Continuous integration and delivery
+    description:
+      ko: 변경을 빌드, 테스트, 검증, 승인, 배포하는 자동화된 흐름을 설계한다.
+      en: Designs automated flows that build, test, verify, approve, and deliver changes.
+    status: draft
+  - id: containers
+    name:
+      ko: 컨테이너
+      en: Containers
+    description:
+      ko: 애플리케이션과 실행 의존성을 일관되고 최소화된 이미지로 패키징한다.
+      en: Packages applications and runtime dependencies into consistent, minimal images.
+    status: draft
+  - id: iac
+    name:
+      ko: 코드형 인프라
+      en: Infrastructure as code
+    description:
+      ko: 인프라 상태와 변경을 검토, 재현, 롤백 가능한 선언으로 관리한다.
+      en: Manages infrastructure state and changes as reviewable, reproducible, reversible declarations.
+    status: draft
+  - id: cloud
+    name:
+      ko: 클라우드
+      en: Cloud
+    description:
+      ko: 가용성, 보안, 비용과 운영 요구에 맞는 클라우드 자원을 설계한다.
+      en: Designs cloud resources around availability, security, cost, and operational requirements.
+    status: draft
+  - id: deployment
+    name:
+      ko: 배포
+      en: Deployment
+    description:
+      ko: 승인된 변경을 단계적으로 출시하고 상태와 결과를 검증한다.
+      en: Releases approved changes progressively and verifies their state and outcomes.
+    status: draft
+  - id: rollback
+    name:
+      ko: 롤백
+      en: Rollback
+    description:
+      ko: 실패한 변경에서 이전 안전 상태로 되돌리는 조건과 절차를 검증한다.
+      en: Verifies triggers and procedures that return failed changes to a prior safe state.
+    status: draft
+  - id: observability
+    name:
+      ko: 관찰 가능성
+      en: Observability
+    description:
+      ko: 로그, 지표, 추적으로 서비스 상태와 사용자 영향을 설명할 수 있게 한다.
+      en: Uses logs, metrics, and traces to explain service state and user impact.
+    status: draft
+  - id: sre
+    name:
+      ko: 사이트 신뢰성 엔지니어링
+      en: Site reliability engineering
+    description:
+      ko: 서비스 수준, 오류 예산, 용량, 반복 운영 작업으로 신뢰성을 관리한다.
+      en: Manages reliability through service levels, error budgets, capacity, and operational toil.
+    status: draft
+  - id: security-incident-response
+    name:
+      ko: 보안 사고 대응
+      en: Security incident response
+    description:
+      ko: 보안 사고를 탐지, 격리, 조사, 복구하고 증거와 교훈을 보존한다.
+      en: Detects, contains, investigates, and recovers from security incidents while preserving evidence and learning.
+    status: draft
+  - id: secrets
+    name:
+      ko: 비밀 정보 관리
+      en: Secrets management
+    description:
+      ko: 비밀 정보의 생성, 저장, 접근, 회전, 폐기와 노출 대응을 통제한다.
+      en: Controls secret creation, storage, access, rotation, disposal, and exposure response.
+    status: draft
+  - id: dependency-security
+    name:
+      ko: 의존성 보안
+      en: Dependency security
+    description:
+      ko: 소프트웨어 의존성의 출처, 취약점, 라이선스, 업데이트 위험을 평가한다.
+      en: Assesses software dependencies for provenance, vulnerabilities, licenses, and update risk.
+    status: draft
+  - id: application-security
+    name:
+      ko: 애플리케이션 보안
+      en: Application security
+    description:
+      ko: 인증, 권한, 입력, 데이터, 공급망과 운영 경계에서 취약점을 검토한다.
+      en: Reviews vulnerabilities across authentication, authorization, input, data, supply chain, and operational boundaries.
+    status: draft
+  - id: threat-modeling
+    name:
+      ko: 위협 모델링
+      en: Threat modeling
+    description:
+      ko: 자산, 신뢰 경계, 공격자, 위협, 완화책과 잔여 위험을 구조화한다.
+      en: Structures assets, trust boundaries, attackers, threats, mitigations, and residual risk.
+    status: draft
+  - id: recovery
+    name:
+      ko: 복구
+      en: Recovery
+    description:
+      ko: 백업, 복원, 연속성, 검증과 목표 복구 시간을 실제 증거로 확인한다.
+      en: Verifies backups, restoration, continuity, validation, and recovery objectives with actual evidence.
+    status: draft

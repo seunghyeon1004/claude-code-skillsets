@@ -1,0 +1,90 @@
+schemaVersion: 2
+domainId: software-engineering
+capabilities:
+  - id: analyze-repository-context
+    ownerDomainId: software-engineering
+    categoryIds:
+      - repository-context
+    outcome:
+      ko: 저장소 파일과 이력에서 구조, 지침, 현재 동작, 제약과 관련 변경 지점을 근거로 정리한다.
+      en: Produces evidence-backed repository context covering structure, instructions, current behavior, constraints, and relevant change points.
+    status: draft
+  - id: turn-requirements-into-specifications
+    ownerDomainId: software-engineering
+    categoryIds:
+      - requirements
+      - specifications
+    outcome:
+      ko: 사용자 결과와 제약을 인터페이스, 상태, 오류, 경계, 검증이 명시된 구현 명세로 전환한다.
+      en: Converts user outcomes and constraints into implementation specifications with interfaces, state, errors, boundaries, and verification.
+    status: draft
+  - id: design-software-architecture
+    ownerDomainId: software-engineering
+    categoryIds:
+      - architecture
+    outcome:
+      ko: 책임, 경계, 데이터 흐름, 의존성, 대안과 운영 제약이 설명된 소프트웨어 구조를 만든다.
+      en: Produces a software structure explaining responsibilities, boundaries, data flow, dependencies, alternatives, and operational constraints.
+    status: draft
+  - id: implement-accessible-web-interfaces
+    ownerDomainId: software-engineering
+    categoryIds:
+      - frontend
+      - software-accessibility
+    outcome:
+      ko: 사용자 흐름과 상태가 명확하고 키보드 및 보조 기술로 검증 가능한 반응형 웹 인터페이스를 만든다.
+      en: Produces responsive web interfaces with clear flows and state that are verifiable with keyboards and assistive technology.
+    status: draft
+  - id: implement-mobile-applications
+    ownerDomainId: software-engineering
+    categoryIds:
+      - mobile
+    outcome:
+      ko: 플랫폼 관습, 기기 제약, 권한과 오프라인 상태를 다루는 검증 가능한 모바일 동작을 만든다.
+      en: Produces verifiable mobile behavior that handles platform conventions, device constraints, permissions, and offline state.
+    status: draft
+  - id: implement-backend-services-and-apis
+    ownerDomainId: software-engineering
+    categoryIds:
+      - backend
+      - apis
+    outcome:
+      ko: 비즈니스 규칙과 권한을 명확한 API 계약, 검증, 오류, 운영 증거가 있는 서비스로 구현한다.
+      en: Implements business rules and authorization as services with clear API contracts, validation, errors, and operational evidence.
+    status: draft
+  - id: design-and-evolve-databases
+    ownerDomainId: software-engineering
+    categoryIds:
+      - databases
+    outcome:
+      ko: 무결성, 접근 패턴, 성능, 마이그레이션과 복구가 검증 가능한 데이터베이스 변경을 만든다.
+      en: Produces database changes with verifiable integrity, access patterns, performance, migration, and recovery.
+    status: draft
+  - id: test-and-debug-software
+    ownerDomainId: software-engineering
+    categoryIds:
+      - testing
+      - debugging
+    outcome:
+      ko: 증상과 원인을 재현하고 정상, 경계, 실패 경로에서 수정 효과를 증명하는 테스트 증거를 만든다.
+      en: Produces test evidence that reproduces symptoms and causes and proves fix behavior across normal, boundary, and failure paths.
+    status: draft
+  - id: review-refactor-and-optimize-software
+    ownerDomainId: software-engineering
+    categoryIds:
+      - review
+      - refactoring
+      - software-performance
+    outcome:
+      ko: 정확성, 회귀 위험, 구조와 측정된 성능을 검토해 동작을 보존하는 개선과 검증 결과를 만든다.
+      en: Produces behavior-preserving improvements and verification from review of correctness, regression risk, structure, and measured performance.
+    status: draft
+  - id: document-and-prepare-software-releases
+    ownerDomainId: software-engineering
+    categoryIds:
+      - documentation
+      - release-readiness
+    outcome:
+      ko: 현재 코드와 일치하는 문서와 테스트, 마이그레이션, 보안, 관찰, 롤백 증거가 있는 릴리스 판단을 만든다.
+      en: Produces current documentation and a release decision backed by test, migration, security, observability, and rollback evidence.
+    status: draft

@@ -1,0 +1,46 @@
+schemaVersion: 2
+id: incident-alert-to-postmortem
+domainId: devops-and-security
+categoryIds:
+  - observability
+  - sre
+  - security-incident-response
+  - recovery
+outcome:
+  ko: 경보를 관찰 가능성 근거, 신뢰성 영향, 보안 사고 대응, 복구 검증과 후속 학습이 있는 읽기 전용 사건 및 사후 분석 기록으로 전환한다.
+  en: Turns an alert into a read-only incident and postmortem record with observability evidence, reliability impact, security response, recovery verification, and follow-up learning.
+inputs:
+  - Alert details, timestamps, logs, metrics, traces, service objectives, and incident roles
+  - Approved incident process, evidence-retention rules, recovery criteria, and communication boundary
+outputs:
+  - A time-ordered incident record separating observed signals, hypotheses, actions, owners, and impact
+  - A postmortem draft with recovery evidence, contributing conditions, follow-up items, and human review gates
+completionCriteria:
+  - The record preserves raw evidence references and distinguishes facts from unverified incident hypotheses
+  - Recovery and follow-up actions identify authorization, service impact, validation, and accountable review owners
+  - The pack does not alter live systems, conceal evidence, or claim containment and recovery without approved verification
+routingProfileId: devops-and-security
+requiredCapabilityIds:
+  - observe-and-operate-reliable-services
+recommendedCapabilityIds:
+  - respond-to-security-incidents-and-recover
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: high-impact
+scenarios:
+  - id: incident-alert-to-postmortem-normal
+    type: normal
+    path: tests/evaluations/packs/incident-alert-to-postmortem/normal.yaml
+  - id: incident-alert-to-postmortem-boundary
+    type: boundary
+    path: tests/evaluations/packs/incident-alert-to-postmortem/boundary.yaml
+  - id: incident-alert-to-postmortem-refusal
+    type: refusal
+    path: tests/evaluations/packs/incident-alert-to-postmortem/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

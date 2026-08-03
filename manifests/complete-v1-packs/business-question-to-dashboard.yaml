@@ -1,0 +1,57 @@
+schemaVersion: 2
+id: business-question-to-dashboard
+domainId: data-and-analytics
+categoryIds:
+  - sql
+  - exploratory-analysis
+  - statistics
+  - data-experiments
+  - kpis
+  - forecasting
+  - segmentation
+  - visualization
+  - dashboards
+  - reporting
+  - governance
+outcome:
+  ko: 비즈니스 질문을 검토 가능한 쿼리, 통계와 불확실성, 공정한 세그먼트 비교, KPI 및 예측 근거가 연결된 접근 가능한 대시보드로 전환한다.
+  en: Turns a business question into an accessible dashboard linked to reviewable queries, statistical uncertainty, fair segment comparisons, KPI definitions, and forecast evidence.
+inputs:
+  - A decision question, approved datasets, metric definitions, target users, refresh expectations, and governance limits
+  - Statistical assumptions, comparison groups, forecast horizon, accessibility requirements, and responsible decision owners
+outputs:
+  - An accessible dashboard with traceable KPIs, trends, comparisons, uncertainty, freshness, and drill-down evidence
+  - A governed analytical note documenting queries, statistical assumptions, forecast limits, segmentation safeguards, data ownership, and recommended decisions
+completionCriteria:
+  - Every KPI, statistic, segment, and forecast links to reviewable data, assumptions, uncertainty, freshness, and an accountable owner
+  - Every visual has an accessible label and a table or text alternative, and uses color-independent encoding for status, trends, and comparisons
+  - The dashboard does not fabricate statistics or forecasts, infer discriminatory segments, or present evidence-free conclusions as decision-ready facts
+routingProfileId: data-and-analytics
+requiredCapabilityIds:
+  - query-and-explore-data
+  - apply-statistics-and-experimental-analysis
+  - define-kpis-and-forecast-outcomes
+  - segment-and-compare-populations
+  - visualize-data-and-build-dashboards
+recommendedCapabilityIds:
+  - produce-governed-analytical-reports
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: business-question-to-dashboard-normal
+    type: normal
+    path: tests/evaluations/packs/business-question-to-dashboard/normal.yaml
+  - id: business-question-to-dashboard-boundary
+    type: boundary
+    path: tests/evaluations/packs/business-question-to-dashboard/boundary.yaml
+  - id: business-question-to-dashboard-refusal
+    type: refusal
+    path: tests/evaluations/packs/business-question-to-dashboard/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

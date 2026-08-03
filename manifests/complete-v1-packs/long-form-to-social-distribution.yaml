@@ -1,0 +1,47 @@
+schemaVersion: 2
+id: long-form-to-social-distribution
+domainId: promotion-and-distribution
+categoryIds:
+  - social-distribution
+  - channel-adaptation
+  - content-repurposing
+  - campaign-operations
+  - performance-feedback
+outcome:
+  ko: 승인된 장문 콘텐츠를 원문의 의미와 권리를 보존하는 채널별 소셜 자산, 게시 일정, 승인 기록, 성과 피드백 계획으로 전환한다.
+  en: Turns approved long-form content into channel-specific social assets, a distribution schedule, approval records, and a feedback plan while preserving source meaning and rights.
+inputs:
+  - Approved long-form source, audience, channel list, rights, voice, and claim constraints
+  - Distribution window, account permissions, approvers, and measurement objectives
+outputs:
+  - Channel-adapted social posts and media briefs traceable to the approved source
+  - A distribution calendar with approval status, owners, links, and performance feedback fields
+completionCriteria:
+  - Every asset preserves source meaning, attribution, rights, and factual qualifications
+  - Channel adaptations meet format requirements without fabricated urgency or engagement manipulation
+  - Publishing remains staged until authorized account owners approve each asset and schedule
+routingProfileId: promotion-and-distribution
+requiredCapabilityIds:
+  - adapt-repurpose-and-distribute-content
+recommendedCapabilityIds:
+  - operate-and-optimize-campaigns
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: long-form-to-social-distribution-normal
+    type: normal
+    path: tests/evaluations/packs/long-form-to-social-distribution/normal.yaml
+  - id: long-form-to-social-distribution-boundary
+    type: boundary
+    path: tests/evaluations/packs/long-form-to-social-distribution/boundary.yaml
+  - id: long-form-to-social-distribution-refusal
+    type: refusal
+    path: tests/evaluations/packs/long-form-to-social-distribution/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

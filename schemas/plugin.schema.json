@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/plugin.schema.json",
+  "title": "LocalPluginManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source",
+    "version",
+    "status",
+    "requiredDependencies",
+    "recommendedDependencies",
+    "optionalDependencies"
+  ],
+  "properties": {
+    "id": { "$ref": "#/$defs/kebabCaseId" },
+    "name": { "$ref": "#/$defs/localizedText" },
+    "description": { "$ref": "#/$defs/localizedText" },
+    "source": { "type": "string", "minLength": 1 },
+    "marketplace": { "$ref": "#/$defs/safeMarketplace" },
+    "trustTier": { "$ref": "#/$defs/trustTier" },
+    "permissions": { "$ref": "#/$defs/permissions" },
+    "version": { "$ref": "#/$defs/semver" },
+    "status": { "$ref": "#/$defs/releaseStatus" },
+    "requiredDependencies": { "$ref": "#/$defs/dependencyArray" },
+    "recommendedDependencies": { "$ref": "#/$defs/dependencyArray" },
+    "optionalDependencies": { "$ref": "#/$defs/dependencyArray" }
+  },
+  "$defs": {
+    "kebabCaseId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": {
+        "ko": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "pluginDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "reason"],
+      "properties": {
+        "name": { "$ref": "#/$defs/kebabCaseId" },
+        "marketplace": { "$ref": "#/$defs/safeMarketplace" },
+        "version": { "type": "string", "minLength": 1 },
+        "reason": { "$ref": "#/$defs/localizedText" }
+      }
+    },
+    "dependencyArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pluginDependency" }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filesystem", "commands", "network", "externalData"],
+      "properties": {
+        "filesystem": { "$ref": "#/$defs/stringArray" },
+        "commands": { "$ref": "#/$defs/stringArray" },
+        "network": { "$ref": "#/$defs/stringArray" },
+        "externalData": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "trustTier": {
+      "type": "string",
+      "enum": ["verified", "trusted", "community", "blocked"]
+    },
+    "safeMarketplace": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-((?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?$"
+    },
+    "releaseStatus": {
+      "type": "string",
+      "enum": ["draft", "beta", "stable", "deprecated", "blocked"]
+    }
+  }
+}

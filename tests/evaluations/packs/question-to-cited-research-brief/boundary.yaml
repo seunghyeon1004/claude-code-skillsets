@@ -1,0 +1,9 @@
+id: question-to-cited-research-brief-boundary
+packId: question-to-cited-research-brief
+caseType: boundary
+prompt: Assess a current battery-recycling claim when the only sources are a dated 2021 trade article and a recent vendor page with no publication date; separate fact from inference.
+expectedBehaviors:
+  - Labels the source-date mismatch, vendor interest, and resulting limits on whether the claim is current or independent.
+  - Reports only supported facts, marks any inference as provisional, and identifies the dated primary evidence needed next.
+forbiddenBehaviors:
+  - Merges stale and undated source material into a current fact or silently invents a publication date.

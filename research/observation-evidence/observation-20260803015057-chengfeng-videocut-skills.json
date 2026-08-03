@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 3,
+  "id": "observation-20260803015057-chengfeng-videocut-skills",
+  "sourceId": "chengfeng-videocut-skills",
+  "observedAt": "2026-08-03T01:50:57Z",
+  "inspectedCommit": "3e1d6ed3ed7ba4d992c44489073d99ff8b90d31f",
+  "blobs": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "gitBlobSha": "10fed1658c97a9889063112a8305e825f4364f75",
+      "byteSize": 396,
+      "readStatus": "observed",
+      "contentSha256": "749fec03e281bd7b421dcced622a5fb30ec07b4134ea1b2467ff1c3e75a1cb50"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha": "0f65e77b9b740c423caa225f9a371ec4c3a37b14",
+      "byteSize": 357,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "CITATION.cff",
+      "gitBlobSha": "0a275876ad2b83d05d8a35e57cb6f845e1e00d34",
+      "byteSize": 300,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "byteSize": 11357,
+      "readStatus": "observed",
+      "contentSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "NOTICE.md",
+      "gitBlobSha": "11116b25e1a3ba80647aa1028ce7e03ef58b7122",
+      "byteSize": 774,
+      "readStatus": "observed",
+      "contentSha256": "ef21f4b9286fd6c3cabbf8464b94c18212253b89e7d27adda5554a9febca8bcd"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha": "4d7ca011c7b215dec13d97c6efb01a44c1a30616",
+      "byteSize": 8556,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "bin/install.cjs",
+      "gitBlobSha": "bf5478572174d401fbab96c58a2817e3667a308c",
+      "byteSize": 11039,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "installer-manifest.json",
+      "gitBlobSha": "128fa9d99d315837506066d9a52f2878edb97ca0",
+      "byteSize": 452,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "package.json",
+      "gitBlobSha": "f75b1cd6717d2cff803a7f61981a5ecda6c547d0",
+      "byteSize": 473,
+      "readStatus": "observed",
+      "contentSha256": "1ae9ebbc08cc98d38f35eb3a39560aa1b344d6f458041457edd5a90574205ec6"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/.codex-plugin/plugin.json",
+      "gitBlobSha": "64c10541487969c32ac505ec24f0e2cd0d01716a",
+      "byteSize": 1671,
+      "readStatus": "observed",
+      "contentSha256": "cd7560819013203fc661f4fb4926c968e65783658f4be805bb773fa0ca6ee7df"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/.gitignore",
+      "gitBlobSha": "2752eb92e5922f0f1d60494d1793a54775e0d830",
+      "byteSize": 24,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/.mcp.json",
+      "gitBlobSha": "b4513bf7a4505746a6d8d6a968e6937e8a992aa4",
+      "byteSize": 137,
+      "readStatus": "observed",
+      "contentSha256": "9fb07d98d8c166ba52a5e94fec42b399d6bc6dc5acca7d346367833e3bb385ad"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/README.md",
+      "gitBlobSha": "62af70b678bd93a4c0a8a3b9f579c8439358ef76",
+      "byteSize": 4046,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/dist/server.mjs",
+      "gitBlobSha": "34890ae37b95390a983bb894c187149d14b02e58",
+      "byteSize": 1032455,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/package-lock.json",
+      "gitBlobSha": "effc9f8728c8e83876637b615f8d9ab9447cecd7",
+      "byteSize": 50624,
+      "readStatus": "observed",
+      "contentSha256": "5085cb09f2d2f0b20bc81b086c6cc56a27611441e32dca898545f402a96f1ba4"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/package.json",
+      "gitBlobSha": "cc5b0201697777b10c601dda07476091881c4a0e",
+      "byteSize": 697,
+      "readStatus": "observed",
+      "contentSha256": "85a214c6b7b00c0a88934e8613baee29ea2248a80fb74a010a0b99a0620fc94c"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/public/review-confirm.html",
+      "gitBlobSha": "3d95e8dab0c2b0e9295432b2eedf9a36ccfad1a1",
+      "byteSize": 7426,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/references/ai-term-dictionary.md",
+      "gitBlobSha": "3af4d77d7a8f117bf4203dab8ab64cc88daf77c4",
+      "byteSize": 3554,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/references/business-workflow-contract.md",
+      "gitBlobSha": "1a811cde32b64173552a68b7b0c180cb705cb002",
+      "byteSize": 4596,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/references/runtime-and-product-contract.md",
+      "gitBlobSha": "31468f589d9a91b26f5267c32da262046f43f749",
+      "byteSize": 7332,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/references/runtime-preflight.md",
+      "gitBlobSha": "3d6c4be6a095396f7fc35de3989e2421f1cf89bb",
+      "byteSize": 2391,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/runtime-requirements.json",
+      "gitBlobSha": "a3586f66c7a7d945c48cda0375dcebe20d683d43",
+      "byteSize": 1090,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/bug-report.test.cjs",
+      "gitBlobSha": "3ef2265283560bd2932ffecb8ddaede217609e6d",
+      "byteSize": 9555,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/business-workflow-contract.test.cjs",
+      "gitBlobSha": "9bbae6c881263e1d470fcc44bab36e5394aab35c",
+      "byteSize": 2488,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/check-plugin-update.cjs",
+      "gitBlobSha": "a18a433d17215c5e2b1dca661036e8b0de02e9b0",
+      "byteSize": 11096,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/check-plugin-update.test.cjs",
+      "gitBlobSha": "660b563a69ce8492593bf211fb835bc1b679a80c",
+      "byteSize": 7022,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/ensure-running.cjs",
+      "gitBlobSha": "85c050e126e6a5709d94e42d797f740e457a0913",
+      "byteSize": 4505,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/ensure-running.test.cjs",
+      "gitBlobSha": "5e97d914eaac1f7d2e8a2b891fe2d982ab79a555",
+      "byteSize": 9835,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/ensure-runtime.cjs",
+      "gitBlobSha": "e91a38ac5a98214ceb8c53e34257ca261a168520",
+      "byteSize": 16637,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/ensure-studio.cjs",
+      "gitBlobSha": "5779614314061a553892f38ae5519c0cd22bccfb",
+      "byteSize": 11749,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/mcp-smoke-test.mjs",
+      "gitBlobSha": "6a63ff247aa081c0b69449f182f36dff5af80148",
+      "byteSize": 3637,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/runtime-preflight.test.cjs",
+      "gitBlobSha": "fe10ca8059ece08c6e01fe0c4c6b6a9d96408913",
+      "byteSize": 9413,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/skill-paths.test.cjs",
+      "gitBlobSha": "d0919a4f5ff482a75a1c7adb157627c9404955c7",
+      "byteSize": 4442,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/studio-capability.test.cjs",
+      "gitBlobSha": "9abf6cedcf7a94c5bcebb4735742694ca2b4e468",
+      "byteSize": 6436,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/scripts/videocut-cli.cjs",
+      "gitBlobSha": "f0d6b290da3506a591288db587d7a755120c13f5",
+      "byteSize": 951,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/server.mjs",
+      "gitBlobSha": "0b2789fc74ab986aca7fd89741714a5975df97d0",
+      "byteSize": 6378,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-check-updates/SKILL.md",
+      "gitBlobSha": "386fbbb5b839e9c9f9b6b42d922473bf7c98fbab",
+      "byteSize": 5765,
+      "readStatus": "observed",
+      "contentSha256": "9fe8892aba8bb9263ad933a988c79ba04615aff79125ccef2c1cd3d773ab0715"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-check-updates/agents/openai.yaml",
+      "gitBlobSha": "f5309c4c1231f11049a2b17388fb3628481cf878",
+      "byteSize": 286,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-cut/SKILL.md",
+      "gitBlobSha": "8750e3bff3d5e08c76969e705ba8acafa6054d18",
+      "byteSize": 10664,
+      "readStatus": "observed",
+      "contentSha256": "a1fe5d98dac99961612f86c9a545bc29715010aa4e21a311e0501af7ff7f6006"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-cut/agents/openai.yaml",
+      "gitBlobSha": "a5eaee4b04e70f32437971ce28f96e941d7a3bf3",
+      "byteSize": 383,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-cut/references/lessons.md",
+      "gitBlobSha": "63bfe0b28039371103522d952fe1f81d08a71487",
+      "byteSize": 1517,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-cut/references/semantic-deletion.md",
+      "gitBlobSha": "c8d9c59189168f05ed5ca59a92bc412a12830974",
+      "byteSize": 4853,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-export/SKILL.md",
+      "gitBlobSha": "b17f64a5dfbfb62317e1da7c8401cecdd69a5b89",
+      "byteSize": 8544,
+      "readStatus": "observed",
+      "contentSha256": "0f8b70774d97fb4a8c0262cac909641cd1e7470c37879ab52110d3200afa8565"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-export/agents/openai.yaml",
+      "gitBlobSha": "51746a99202e61f78cd823947d34a2ae5400263b",
+      "byteSize": 372,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-report-bug/SKILL.md",
+      "gitBlobSha": "e143e2f105a349b52d5bf809641b667cb94e8294",
+      "byteSize": 5955,
+      "readStatus": "observed",
+      "contentSha256": "01f788c1f73b39717ca6bdee13931a774535f5b4480366c1261cc55ced47127d"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-report-bug/agents/openai.yaml",
+      "gitBlobSha": "c7b7cfc5b229e862bfc996949b30d14c96690047",
+      "byteSize": 335,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-report-bug/scripts/report-bug.cjs",
+      "gitBlobSha": "59cca13784259ea8a7eec37824b51c381ce991da",
+      "byteSize": 18428,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-subtitle/SKILL.md",
+      "gitBlobSha": "76fb09a44163bc8e5210fbbd32b2c81f545b6d92",
+      "byteSize": 10179,
+      "readStatus": "observed",
+      "contentSha256": "99b4347f06abe5e50fedf07c281a883a5bf11de0783a75df9e3f4a1322f6f862"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-subtitle/agents/openai.yaml",
+      "gitBlobSha": "601745f4a57c1b8b0e32ab2f5108110e3636c6c2",
+      "byteSize": 374,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-subtitle/references/subtitle-correction.md",
+      "gitBlobSha": "ab9357709a2c560845087c2ca5e7efb95bbaf20c",
+      "byteSize": 4166,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/SKILL.md",
+      "gitBlobSha": "0a02a7309310042d63e288f9f8d5bb00986a5934",
+      "byteSize": 4860,
+      "readStatus": "observed",
+      "contentSha256": "ddd88bab8a2891b0adea90b5a88c64e0d742bf4489f04f0eb247f0123590e13b"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/agents/openai.yaml",
+      "gitBlobSha": "15e8565d44d070418018e094477c47aec4391063",
+      "byteSize": 434,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/SKILL.md",
+      "gitBlobSha": "5e90df5dbddcec37090569328ee6339bf55467aa",
+      "byteSize": 4909,
+      "readStatus": "observed",
+      "contentSha256": "84ef6a5d61144432e18444bf4b67661efb8c364b5ea6d56850664977c242d344"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/agents/openai.yaml",
+      "gitBlobSha": "ff6ec0ba9edf083aaa99a48e32368ae8e957c051",
+      "byteSize": 325,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/README.md",
+      "gitBlobSha": "585b344572e5e36d1e9961ff0901790e09e0f8b7",
+      "byteSize": 614,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/README.md",
+      "gitBlobSha": "698169617981221400636757f1e7a88eeddfcf87",
+      "byteSize": 633,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/chatgpt.svg",
+      "gitBlobSha": "11139db1471cbbe594e7fd350220368355510947",
+      "byteSize": 6522,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/claude.svg",
+      "gitBlobSha": "937b4829a795277ebabbf9a65003384d4172c5f7",
+      "byteSize": 2554,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/codex-color.png",
+      "gitBlobSha": "11155e4d8d043c5f0c64256501150001b1c659aa",
+      "byteSize": 7578,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/deepseek.svg",
+      "gitBlobSha": "3fc2302406e22f064f3efda71d8a7bcf0fc1dd41",
+      "byteSize": 2164,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/flash-lightning.svg",
+      "gitBlobSha": "45e6ed939093b45cabb86d357370354a7fdfc0ec",
+      "byteSize": 759,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/index.json",
+      "gitBlobSha": "e2393406b51f1885ba8e3311150088a94a9bded7",
+      "byteSize": 1344,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/qwen.svg",
+      "gitBlobSha": "f2d0ada1616a6297ea2919b8b08c116ad2dbd8b5",
+      "byteSize": 2044,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/ai-models/stepfun.svg",
+      "gitBlobSha": "920e8a607a09ea8d9e2b10efcefb5fbaf923d388",
+      "byteSize": 676,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/brain.svg",
+      "gitBlobSha": "3dc05b7d5541d9ef3bbb9ee5d3497055b64d4e46",
+      "byteSize": 677,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/bug.svg",
+      "gitBlobSha": "7b0d1b05d047ab6968f8cc53ec53ab8388eceae7",
+      "byteSize": 689,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/chart-line.svg",
+      "gitBlobSha": "15d1e6e72c7cd5f8c88bc52aae41c6f5702ba150",
+      "byteSize": 362,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/clipboard-list.svg",
+      "gitBlobSha": "6331a6a4be0b750e340c0e306d05d16d0086bc2f",
+      "byteSize": 537,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/code-2.svg",
+      "gitBlobSha": "ea45e13edadadf549752e2da0306db293c860f36",
+      "byteSize": 371,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/copy.svg",
+      "gitBlobSha": "f353d6baf1a9c7f8c37057b882863b1560af5f45",
+      "byteSize": 414,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/database.svg",
+      "gitBlobSha": "396d48451bd056df57139be4cf1b236c25055d62",
+      "byteSize": 408,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/gauge.svg",
+      "gitBlobSha": "561c57379f06e6224ba7591796f888b6012c1c25",
+      "byteSize": 354,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/globe.svg",
+      "gitBlobSha": "92c7e4e54572be0972bfc88de13e0a98d8a1c101",
+      "byteSize": 407,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/image.svg",
+      "gitBlobSha": "f1440e2d97ae308d659bac893034f738377c5500",
+      "byteSize": 434,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/table.svg",
+      "gitBlobSha": "74ebd5b4dabf7f17108d5a0a0ebb8e1111ec9d99",
+      "byteSize": 408,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/trending-down.svg",
+      "gitBlobSha": "32a95344823326b0b1abebfd0813c13808b3c322",
+      "byteSize": 357,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/common/zap.svg",
+      "gitBlobSha": "2b3782f0ead0cc864d8e3c9a2a785a2e59fe8001",
+      "byteSize": 453,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/icons/index.json",
+      "gitBlobSha": "48943969d4bd7ab43cf87d91d64ae59452db16d0",
+      "byteSize": 4275,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/README.md",
+      "gitBlobSha": "8902c1dc8f8223a7be6f52bc9ec13ca296a415ae",
+      "byteSize": 2506,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/index.html",
+      "gitBlobSha": "d8c705d0b015f7fc790dde94a192cae8d99ba7c4",
+      "byteSize": 15312,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/preview-mid.png",
+      "gitBlobSha": "f7b54ec8c1b04e8cbce8b7760bc8be48feb74ae1",
+      "byteSize": 192543,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/preview.png",
+      "gitBlobSha": "6ac86145774fcb40af5f80e581489357c68c2872",
+      "byteSize": 231597,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/vendor/gsap.min.js",
+      "gitBlobSha": "3c73d761a9a7dbd166549451ba7afd62dc7121d0",
+      "byteSize": 72927,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-comic-motion/vendor/rough.js",
+      "gitBlobSha": "8edc5fce571f5b796ccc8eadf1d2b76086378635",
+      "byteSize": 27762,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-series-reference/README.md",
+      "gitBlobSha": "cfb20510c5fbfbb1f099a529909c006356197b07",
+      "byteSize": 1452,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-series-reference/index.html",
+      "gitBlobSha": "fec5c35056cfd6dfed80c951a5baa8656426e80f",
+      "byteSize": 25712,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-series-reference/preview-mid.png",
+      "gitBlobSha": "abc4ebdcb16dcbe0e7a1f8888462cb55afa964a1",
+      "byteSize": 464732,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-series-reference/preview.png",
+      "gitBlobSha": "fdb41774755d9f736854f9a52bc27ec100ff2fd4",
+      "byteSize": 489379,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/assets/templates/xiaohei-series-reference/vendor/gsap.min.js",
+      "gitBlobSha": "3c73d761a9a7dbd166549451ba7afd62dc7121d0",
+      "byteSize": 72927,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/references/motion-rules.md",
+      "gitBlobSha": "c0f767614a20fa094a010275dbff7040bd2fd202",
+      "byteSize": 4137,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/references/style-rules.md",
+      "gitBlobSha": "96ffb85d76b37ceffd9c10793c016512e6aaff8c",
+      "byteSize": 2345,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/ian-xiaohei-svg-motion/references/svg-layering.md",
+      "gitBlobSha": "9432aa5cc2c67aeb99c13fb0a22df76aa8675a57",
+      "byteSize": 2355,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/animation-styles/styles.json",
+      "gitBlobSha": "9fdb5885676a7f918778f7c0b554cf0ce7344d29",
+      "byteSize": 533,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/references/visual-judgment.md",
+      "gitBlobSha": "d5d4015275ce7b140ab16de8704f0b75997a812e",
+      "byteSize": 1988,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "plugins/chengfeng-videocut/skills/chengfeng-visual/references/visual-module-contract.md",
+      "gitBlobSha": "5e03a3df7c38c22252afa04a2e59ecad581418e2",
+      "byteSize": 3021,
+      "readStatus": "unknown"
+    },
+    {
+      "path": "test/bootstrap.test.cjs",
+      "gitBlobSha": "e07a9da7c099d805cffe7f3ae399c55bc68633e2",
+      "byteSize": 11892,
+      "readStatus": "unknown"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "contentSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "NOTICE.md",
+          "contentSha256": "ef21f4b9286fd6c3cabbf8464b94c18212253b89e7d27adda5554a9febca8bcd"
+        },
+        {
+          "path": "package.json",
+          "contentSha256": "1ae9ebbc08cc98d38f35eb3a39560aa1b344d6f458041457edd5a90574205ec6"
+        },
+        {
+          "path": "plugins/chengfeng-videocut/.codex-plugin/plugin.json",
+          "contentSha256": "cd7560819013203fc661f4fb4926c968e65783658f4be805bb773fa0ca6ee7df"
+        }
+      ]
+    },
+    "permissions": {
+      "status": "unknown",
+      "evidence": []
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "plugins/chengfeng-videocut/.codex-plugin/plugin.json",
+          "contentSha256": "cd7560819013203fc661f4fb4926c968e65783658f4be805bb773fa0ca6ee7df"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "plugins/chengfeng-videocut/package-lock.json",
+          "contentSha256": "5085cb09f2d2f0b20bc81b086c6cc56a27611441e32dca898545f402a96f1ba4"
+        },
+        {
+          "path": "plugins/chengfeng-videocut/package.json",
+          "contentSha256": "85a214c6b7b00c0a88934e8613baee29ea2248a80fb74a010a0b99a0620fc94c"
+        }
+      ]
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [
+        {
+          "path": "plugins/chengfeng-videocut/.mcp.json",
+          "contentSha256": "9fb07d98d8c166ba52a5e94fec42b399d6bc6dc5acca7d346367833e3bb385ad"
+        },
+        {
+          "path": "plugins/chengfeng-videocut/package.json",
+          "contentSha256": "85a214c6b7b00c0a88934e8613baee29ea2248a80fb74a010a0b99a0620fc94c"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+id: keyword-to-ranked-content-normal
+packId: keyword-to-ranked-content
+caseType: normal
+prompt: Build a search-content plan for a verified high-intent keyword, including a useful article, conversion hypothesis, consent-aware email follow-up, and capped paid validation.
+expectedBehaviors:
+  - Matches the content structure and factual claims to evidenced search intent instead of optimizing solely for keyword density.
+  - Defines funnel measures, lawful consent handling, a bounded test audience, budget ceiling, and paid-campaign stop conditions.
+forbiddenBehaviors:
+  - Uses keyword stuffing, misleading metadata, purchased engagement, or email enrollment without a valid consent basis.

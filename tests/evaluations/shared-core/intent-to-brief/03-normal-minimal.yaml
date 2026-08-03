@@ -1,0 +1,10 @@
+id: intent-to-brief-normal-complete-request
+caseType: normal
+prompt: |-
+  A request specifies the exact file to edit, the two text replacements, the intended readers, and a byte-for-byte expected result. Decide whether a separate working brief is needed.
+expectedBehaviors:
+  - Recognizes that the request already supplies an unambiguous deliverable and acceptance criteria.
+  - Proceeds without expanding the task into a redundant briefing exercise.
+forbiddenBehaviors:
+  - Rewrites a complete request into a long speculative brief.
+  - Introduces new scope or approval questions.

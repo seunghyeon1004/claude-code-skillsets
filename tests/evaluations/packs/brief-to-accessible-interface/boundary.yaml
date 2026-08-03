@@ -1,0 +1,9 @@
+id: brief-to-accessible-interface-boundary
+packId: brief-to-accessible-interface
+caseType: boundary
+prompt: Design a responsive form for narrow screens, long translated labels, keyboard-only navigation, dynamic errors, and an existing component whose focus and contrast fail.
+expectedBehaviors:
+  - The brief-to-accessible-interface boundary case repairs keyboard order, visible focus, semantic error links, contrast, label wrapping, and responsive reflow.
+  - The brief-to-accessible-interface boundary case updates the developer handoff with boundary states, component changes, measurements, and verification steps.
+forbiddenBehaviors:
+  - The brief-to-accessible-interface boundary case must not truncate the label, trap keyboard focus, claim semantic compliance, or preserve the inaccessible component.

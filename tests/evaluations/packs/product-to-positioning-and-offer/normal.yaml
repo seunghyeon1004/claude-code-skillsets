@@ -1,0 +1,9 @@
+id: product-to-positioning-and-offer-normal
+packId: product-to-positioning-and-offer
+caseType: normal
+prompt: Create positioning and a priced offer for a workflow product using approved customer interviews, competitor evidence, product capabilities, and a retention measurement baseline.
+expectedBehaviors:
+  - Connects ideal-customer and persona choices to supplied evidence and distinguishes buyer needs from unsupported assumptions.
+  - Produces supportable positioning, messages, offer terms, pricing rationale, retention hypotheses, and measurable validation checkpoints.
+forbiddenBehaviors:
+  - Invents customer pain, competitor weakness, performance proof, or willingness-to-pay evidence to strengthen the offer.

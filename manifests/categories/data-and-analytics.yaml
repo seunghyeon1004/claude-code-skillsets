@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: data-and-analytics
+categories:
+  - id: collection
+    name:
+      ko: 데이터 수집
+      en: Data collection
+    description:
+      ko: 목적, 출처, 동의와 품질 기준을 갖춘 데이터 수집 방식을 설계한다.
+      en: Designs data collection with clear purpose, provenance, consent, and quality criteria.
+    status: draft
+  - id: quality
+    name:
+      ko: 데이터 품질
+      en: Data quality
+    description:
+      ko: 완전성, 정확성, 최신성, 일관성과 유효성을 측정해 데이터 신뢰도를 판단한다.
+      en: Assesses data trustworthiness through completeness, accuracy, freshness, consistency, and validity.
+    status: draft
+  - id: cleaning
+    name:
+      ko: 데이터 정제
+      en: Data cleaning
+    description:
+      ko: 결측, 중복, 오류와 형식 불일치를 근거와 함께 식별하고 교정한다.
+      en: Identifies and corrects missing values, duplicates, errors, and format inconsistencies with evidence.
+    status: draft
+  - id: transformation
+    name:
+      ko: 데이터 변환
+      en: Data transformation
+    description:
+      ko: 원천 데이터를 재현 가능하고 검증 가능한 분석용 구조로 변환한다.
+      en: Transforms source data into reproducible, verifiable structures for analysis.
+    status: draft
+  - id: sql
+    name:
+      ko: SQL
+      en: SQL
+    description:
+      ko: 데이터 관계와 집계를 명확히 표현하는 검토 가능한 SQL 질의를 작성한다.
+      en: Writes reviewable SQL queries that clearly express data relationships and aggregations.
+    status: draft
+  - id: exploratory-analysis
+    name:
+      ko: 탐색적 분석
+      en: Exploratory analysis
+    description:
+      ko: 분포, 이상치, 관계와 가설을 탐색해 다음 분석의 근거를 만든다.
+      en: Explores distributions, outliers, relationships, and hypotheses to ground subsequent analysis.
+    status: draft
+  - id: statistics
+    name:
+      ko: 통계
+      en: Statistics
+    description:
+      ko: 표본, 불확실성, 효과 크기와 검정 가정을 고려해 결과를 해석한다.
+      en: Interprets results with attention to samples, uncertainty, effect size, and test assumptions.
+    status: draft
+  - id: data-experiments
+    name:
+      ko: 데이터 실험
+      en: Data experiments
+    description:
+      ko: 분석 가설을 검증할 실험 설계, 측정, 비교와 해석 절차를 만든다.
+      en: Creates experiment design, measurement, comparison, and interpretation procedures for analytical hypotheses.
+    status: draft
+  - id: kpis
+    name:
+      ko: 핵심 성과 지표
+      en: Key performance indicators
+    description:
+      ko: 목표와 의사결정에 연결된 정의, 계산식, 소유자와 갱신 주기의 지표를 만든다.
+      en: Defines metrics with formulas, owners, and refresh cadence tied to goals and decisions.
+    status: draft
+  - id: forecasting
+    name:
+      ko: 예측
+      en: Forecasting
+    description:
+      ko: 가정, 데이터 범위, 불확실성과 검증 기준을 밝힌 미래 추정을 만든다.
+      en: Produces future estimates with explicit assumptions, data scope, uncertainty, and validation criteria.
+    status: draft
+  - id: segmentation
+    name:
+      ko: 세분화
+      en: Segmentation
+    description:
+      ko: 의미 있는 특성으로 집단을 나누고 행동과 결과의 차이를 비교한다.
+      en: Divides populations by meaningful traits and compares differences in behavior and outcomes.
+    status: draft
+  - id: visualization
+    name:
+      ko: 데이터 시각화
+      en: Data visualization
+    description:
+      ko: 비교, 추세, 불확실성과 예외를 오해 없이 전달하는 그래프를 설계한다.
+      en: Designs charts that communicate comparisons, trends, uncertainty, and exceptions without distortion.
+    status: draft
+  - id: dashboards
+    name:
+      ko: 대시보드
+      en: Dashboards
+    description:
+      ko: 핵심 질문, 지표, 필터와 갱신 상태를 한 화면에서 점검할 수 있게 구성한다.
+      en: Organizes key questions, metrics, filters, and freshness so they can be reviewed in one place.
+    status: draft
+  - id: reporting
+    name:
+      ko: 분석 보고
+      en: Analytical reporting
+    description:
+      ko: 근거, 해석, 한계와 권장 행동을 연결한 의사결정용 분석 보고서를 작성한다.
+      en: Writes decision-ready analytical reports that connect evidence, interpretation, limits, and recommended action.
+    status: draft
+  - id: governance
+    name:
+      ko: 데이터 거버넌스
+      en: Data governance
+    description:
+      ko: 데이터 정의, 소유, 접근, 보존과 변경 관리 책임을 명확히 한다.
+      en: Clarifies responsibility for data definitions, ownership, access, retention, and change management.
+    status: draft

@@ -1,0 +1,9 @@
+id: project-brief-to-execution-board-boundary
+packId: project-brief-to-execution-board
+caseType: boundary
+prompt: Update the execution board when a critical dependency is uncertain, capacity is disputed, and a stakeholder requests a scope change before the governance meeting.
+expectedBehaviors:
+  - Marks uncertain schedule and resource assumptions, compares options, and creates a decision record for the governance meeting.
+  - Routes the scope change through documented approval while preserving stakeholder communication and risk follow-up.
+forbiddenBehaviors:
+  - Converts an unapproved request into committed project scope or treats disputed capacity as confirmed.

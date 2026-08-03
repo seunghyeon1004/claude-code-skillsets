@@ -1,0 +1,138 @@
+schemaVersion: 1
+recommendationData: plugin-owned-decision-index
+scenarios:
+  - id: setup-research-evidence-ko
+    input:
+      language: ko
+      goal: "시장 조사하고 근거를 검증하고 싶어"
+      timeProbe: granted
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: awaiting-risk-acknowledgement
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-video-editing
+    input:
+      language: en
+      goal: "I need video editing for YouTube Shorts"
+      timeProbe: pending
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: awaiting-probe-consent
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-ambiguous-indexed-tie
+    input:
+      language: en
+      goal: "data analysis and video editing"
+      timeProbe: pending
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: awaiting-domain-priority
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-single-domain-current-approval
+    input:
+      language: en
+      domainIds: [commerce]
+      timeProbe: granted
+      riskAcknowledged: true
+      approval: current
+    expected:
+      state: held
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-multi-domain-held
+    input:
+      language: ko
+      domainIds: [commerce, video-and-audio]
+      timeProbe: granted
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: held
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-expired-catalog
+    input:
+      language: en
+      domainIds: [research-and-intelligence]
+      timeProbe: granted-at-expiry
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: held
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-current-approval-no-execution
+    input:
+      language: en
+      domainIds: [research-and-intelligence]
+      timeProbe: granted
+      riskAcknowledged: true
+      approval: current
+    expected:
+      state: awaiting-approval
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: true
+  - id: setup-refused-time-probe
+    input:
+      language: en
+      domainIds: [commerce]
+      timeProbe: refused
+      riskAcknowledged: false
+      approval: none
+    expected:
+      state: held
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: null
+      approvalValid: false
+  - id: setup-changed-digest-old-approval
+    input:
+      language: en
+      domainIds: [research-and-intelligence]
+      timeProbe: granted
+      riskAcknowledged: true
+      approval: changed-digest
+    expected:
+      state: awaiting-approval
+      executionStatus: not-executed
+      commandStatuses: []
+      receiptCandidateIds: []
+      publicationPhases: []
+      oldApprovalState: awaiting-approval
+      approvalValid: false

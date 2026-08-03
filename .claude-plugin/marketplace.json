@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "claude-code-skillsets",
+  "description": "No-vendoring broker with source-identity evidence. Anthropic official Marketplace listing is not safety certification. v0.1: darwin + exact Claude Code 2.1.198; 0/20 executable, 20/20 review-held discovery-only. Exact install occurs only after separate approval; a local receipt is recorded. / source identity 근거 기반 비번들 브로커입니다. Anthropic 공식 Marketplace 등재는 안전성 인증이 아닙니다. v0.1: darwin + 정확한 Claude Code 2.1.198; 0/20 실행 가능, 20/20 검토 대기·발견 전용. 정확한 설치는 별도 승인 후에만 실행하며 로컬 영수증을 기록합니다.",
+  "owner": {
+    "name": "seunghyeon1004"
+  },
+  "plugins": [
+    {
+      "name": "shared-core",
+      "displayName": "Shared Core",
+      "homepage": "https://github.com/seunghyeon1004/claude-code-skillsets#readme",
+      "category": "productivity",
+      "source": "./plugins/shared-core",
+      "version": "0.1.0",
+      "tags": [
+        "broker"
+      ]
+    },
+    {
+      "name": "skillset-manager",
+      "displayName": "Skillset Manager",
+      "homepage": "https://github.com/seunghyeon1004/claude-code-skillsets#readme",
+      "category": "productivity",
+      "description": "Anthropic official Marketplace listing is not safety certification. v0.1: darwin + exact Claude Code 2.1.198; 0/20 executable, 20/20 review-held discovery-only. Exact install occurs only after separate approval; a local receipt is recorded. / Anthropic 공식 Marketplace 등재는 안전성 인증이 아닙니다. v0.1: darwin + 정확한 Claude Code 2.1.198; 0/20 실행 가능, 20/20 검토 대기·발견 전용. 정확한 설치는 별도 승인 후에만 실행하며 로컬 영수증을 기록합니다.",
+      "source": "./plugins/skillset-manager",
+      "version": "0.1.2",
+      "dependencies": [
+        {
+          "name": "shared-core"
+        }
+      ],
+      "tags": [
+        "setup"
+      ]
+    }
+  ]
+}

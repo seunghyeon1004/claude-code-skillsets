@@ -1,0 +1,67 @@
+schemaVersion: 2
+domainId: devops-and-security
+capabilities:
+  - id: provision-reproducible-development-environments
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - development-environments
+    outcome:
+      ko: 도구, 버전, 설정, 의존성과 검증 절차가 고정된 재현 가능한 개발 환경을 만든다.
+      en: Produces reproducible development environments with pinned tools, versions, settings, dependencies, and verification.
+    status: draft
+  - id: package-and-provision-cloud-infrastructure
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - containers
+      - iac
+      - cloud
+    outcome:
+      ko: 최소 컨테이너 이미지와 검토 가능한 코드형 인프라로 가용성, 보안, 비용 요구를 충족하는 클라우드 구성을 만든다.
+      en: Produces cloud infrastructure meeting availability, security, and cost needs through minimal containers and reviewable infrastructure code.
+    status: draft
+  - id: automate-safe-software-delivery
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - ci-cd
+      - deployment
+      - rollback
+    outcome:
+      ko: 빌드, 테스트, 승인, 단계적 배포, 검증과 롤백 조건이 연결된 안전한 전달 파이프라인을 만든다.
+      en: Produces a safe delivery pipeline connecting build, test, approval, progressive deployment, verification, and rollback triggers.
+    status: draft
+  - id: observe-and-operate-reliable-services
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - observability
+      - sre
+    outcome:
+      ko: 서비스 수준, 오류 예산, 로그, 지표, 추적과 대응 행동이 연결된 신뢰성 운영 체계를 만든다.
+      en: Produces a reliability operating model connecting service levels, error budgets, logs, metrics, traces, and response actions.
+    status: draft
+  - id: respond-to-security-incidents-and-recover
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - security-incident-response
+      - recovery
+    outcome:
+      ko: 탐지, 격리, 증거 보존, 복구, 검증과 교훈이 추적 가능한 보안 사고 대응 기록을 만든다.
+      en: Produces a traceable security incident record covering detection, containment, evidence preservation, recovery, validation, and learning.
+    status: draft
+  - id: protect-secrets-and-software-dependencies
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - secrets
+      - dependency-security
+    outcome:
+      ko: 비밀 정보 생명주기와 의존성 출처, 취약점, 라이선스, 업데이트 위험을 통제하는 보호 계획을 만든다.
+      en: Produces a protection plan governing secret lifecycles and dependency provenance, vulnerabilities, licenses, and update risk.
+    status: draft
+  - id: assess-application-threats-and-security
+    ownerDomainId: devops-and-security
+    categoryIds:
+      - application-security
+      - threat-modeling
+    outcome:
+      ko: 자산, 신뢰 경계, 공격 경로, 취약점, 완화책과 잔여 위험이 근거와 함께 연결된 보안 평가를 만든다.
+      en: Produces an evidence-backed security assessment connecting assets, trust boundaries, attack paths, vulnerabilities, mitigations, and residual risk.
+    status: draft

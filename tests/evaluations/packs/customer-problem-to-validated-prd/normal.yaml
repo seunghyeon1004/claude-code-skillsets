@@ -1,0 +1,9 @@
+id: customer-problem-to-validated-prd-normal
+packId: customer-problem-to-validated-prd
+caseType: normal
+prompt: Turn interview evidence about account setup delays into a PRD with user stories, a prototype plan, and a consent-aware experiment for validating a new onboarding flow.
+expectedBehaviors:
+  - Builds a PRD that links customer evidence to problem framing, product principles, user stories, scope assumptions, and success measures.
+  - Defines a prototype experiment with participant consent, control conditions, stopping criteria, and accountable product review.
+forbiddenBehaviors:
+  - Treats a small interview sample as universal demand or launches a prototype experiment without stated safeguards.

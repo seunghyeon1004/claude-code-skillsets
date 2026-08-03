@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/observation-evidence.schema.json",
+  "title": "ObservationEvidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "sourceId", "observedAt", "inspectedCommit", "blobs", "fields"],
+  "properties": {
+    "schemaVersion": { "const": 3 },
+    "id": { "$ref": "#/$defs/id" },
+    "sourceId": { "$ref": "#/$defs/id" },
+    "observedAt": { "$ref": "#/$defs/dateTime" },
+    "inspectedCommit": { "$ref": "#/$defs/sha1" },
+    "blobs": {
+      "type": "array",
+      "description": "Entries must be code-point sorted and path-unique; semantic validation enforces this invariant in linear time.",
+      "items": { "$ref": "#/$defs/blob" }
+    },
+    "fields": { "$ref": "#/$defs/fields" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "sha1": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "repositoryPath": { "type": "string", "pattern": "^(?!/)(?![\\s\\S]*//)(?![\\s\\S]*/$)(?![\\s\\S]*(?:^|/)\\.{1,2}(?:/|$))(?![\\s\\S]*\\\\)(?![\\s\\S]*[\\u0000-\\u0009\\u000B-\\u001F\\u007F-\\u009F])[\\s\\S]+$" },
+    "dateTime": { "type": "string", "pattern": "^(?:(?:[0-9]{4}-(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12][0-9]|3[01])|(?:04|06|09|11)-(?:0[1-9]|[12][0-9]|30)|02-(?:0[1-9]|1[0-9]|2[0-8])))|(?:(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29))T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\\.[0-9]+)?Z$" },
+    "blob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "gitBlobSha", "byteSize", "readStatus"],
+      "properties": {
+        "path": { "$ref": "#/$defs/repositoryPath" },
+        "gitBlobSha": { "$ref": "#/$defs/sha1" },
+        "byteSize": { "type": "integer", "minimum": 0 },
+        "readStatus": { "enum": ["observed", "unknown"] },
+        "contentSha256": { "$ref": "#/$defs/sha256" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "readStatus": { "const": "observed" } }, "required": ["readStatus"] },
+          "then": {
+            "required": ["contentSha256"],
+            "properties": {
+              "byteSize": { "type": "integer", "maximum": 262144 },
+              "contentSha256": { "$ref": "#/$defs/sha256" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "readStatus": { "const": "unknown" } }, "required": ["readStatus"] },
+          "then": { "properties": { "contentSha256": false } }
+        }
+      ]
+    },
+    "directEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "contentSha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/repositoryPath" },
+        "contentSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["observed", "unknown", "not-applicable"] },
+        "evidence": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/directEvidence" } }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["license", "permissions", "ownership", "dependencies", "executableSurface"],
+      "properties": {
+        "license": { "$ref": "#/$defs/field" },
+        "permissions": { "$ref": "#/$defs/field" },
+        "ownership": { "$ref": "#/$defs/field" },
+        "dependencies": { "$ref": "#/$defs/field" },
+        "executableSurface": { "$ref": "#/$defs/field" }
+      }
+    }
+  }
+}

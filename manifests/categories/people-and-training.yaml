@@ -1,0 +1,115 @@
+schemaVersion: 2
+domainId: people-and-training
+categories:
+  - id: workforce-planning
+    name:
+      ko: 인력 계획
+      en: Workforce planning
+    description:
+      ko: 사업 목표와 업무 수요를 필요한 역량, 인원, 시점과 비용에 연결한다.
+      en: Connects business goals and workload demand to needed capabilities, staffing, timing, and cost.
+    status: draft
+  - id: roles
+    name:
+      ko: 역할 설계
+      en: Role design
+    description:
+      ko: 역할의 목적, 책임, 권한, 협업 관계와 성공 기준을 명확히 한다.
+      en: Clarifies role purpose, responsibilities, authority, collaboration, and success criteria.
+    status: draft
+  - id: job-descriptions
+    name:
+      ko: 직무 설명서
+      en: Job descriptions
+    description:
+      ko: 직무의 책임, 요구 역량, 근무 조건과 평가 기준을 포괄적이고 명확하게 작성한다.
+      en: Describes responsibilities, required capabilities, working conditions, and evaluation criteria clearly and inclusively.
+    status: draft
+  - id: candidates
+    name:
+      ko: 지원자 관리
+      en: Candidates
+    description:
+      ko: 지원자 정보, 동의, 단계, 의사소통과 근거를 일관되게 관리한다.
+      en: Manages candidate information, consent, stages, communication, and evidence consistently.
+    status: draft
+  - id: interviews
+    name:
+      ko: 인터뷰
+      en: Interviews
+    description:
+      ko: 직무 관련 역량을 일관된 질문과 행동 근거로 탐색하는 인터뷰를 설계한다.
+      en: Designs interviews that examine job-relevant capabilities through consistent questions and behavioral evidence.
+    status: draft
+  - id: hiring-evaluation
+    name:
+      ko: 채용 평가
+      en: Hiring evaluation
+    description:
+      ko: 사전에 정의한 직무 기준과 관찰 근거로 지원자를 구조적으로 비교한다.
+      en: Compares candidates systematically against predefined job criteria and observed evidence.
+    status: draft
+  - id: employee-onboarding
+    name:
+      ko: 직원 온보딩
+      en: Employee onboarding
+    description:
+      ko: 신규 구성원이 역할, 도구, 관계, 정책과 초기 성과 기대를 이해하도록 지원한다.
+      en: Supports new employees in understanding their role, tools, relationships, policies, and early performance expectations.
+    status: draft
+  - id: people-performance
+    name:
+      ko: 성과 관리
+      en: People performance
+    description:
+      ko: 역할 기대, 관찰 가능한 결과, 지원 요구와 성장 목표를 바탕으로 성과를 검토한다.
+      en: Reviews performance against role expectations, observable results, support needs, and growth goals.
+    status: draft
+  - id: feedback
+    name:
+      ko: 피드백
+      en: Feedback
+    description:
+      ko: 구체적인 관찰, 영향, 기대와 다음 행동을 존중하는 방식으로 전달한다.
+      en: Communicates specific observations, impact, expectations, and next actions respectfully.
+    status: draft
+  - id: careers
+    name:
+      ko: 경력 개발
+      en: Career development
+    description:
+      ko: 개인의 목표와 조직의 기회를 역량, 경험과 성장 경로로 연결한다.
+      en: Connects individual goals and organizational opportunities to capabilities, experiences, and growth paths.
+    status: draft
+  - id: organizational-policy
+    name:
+      ko: 조직 정책
+      en: Organizational policy
+    description:
+      ko: 조직 운영의 기대, 적용 범위, 책임, 예외와 검토 절차를 명확히 문서화한다.
+      en: Documents organizational expectations, scope, responsibilities, exceptions, and review procedures clearly.
+    status: draft
+  - id: curricula
+    name:
+      ko: 교육과정
+      en: Curricula
+    description:
+      ko: 학습 목표를 순서화된 주제, 활동, 실습과 평가 계획으로 구성한다.
+      en: Structures learning objectives into sequenced topics, activities, practice, and assessment plans.
+    status: draft
+  - id: learning-materials
+    name:
+      ko: 학습 자료
+      en: Learning materials
+    description:
+      ko: 학습자의 수준과 접근성 요구에 맞는 설명, 예시, 실습과 참고 자료를 만든다.
+      en: Produces explanations, examples, practice, and references suited to learner level and accessibility needs.
+    status: draft
+  - id: assessment
+    name:
+      ko: 학습 평가
+      en: Learning assessment
+    description:
+      ko: 학습 목표 달성을 타당하고 일관되게 확인하는 과제와 채점 기준을 설계한다.
+      en: Designs tasks and scoring criteria that assess learning objectives validly and consistently.
+    status: draft

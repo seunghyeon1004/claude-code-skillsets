@@ -1,0 +1,131 @@
+schemaVersion: 2
+domainId: documents-and-knowledge
+categories:
+  - id: documents
+    name:
+      ko: 문서 작성
+      en: Document authoring
+    description:
+      ko: 목적, 독자, 근거와 구조에 맞는 명확하고 유지 가능한 문서를 작성한다.
+      en: Authors clear, maintainable documents that fit purpose, audience, evidence, and structure.
+    status: draft
+  - id: spreadsheets
+    name:
+      ko: 스프레드시트
+      en: Spreadsheets
+    description:
+      ko: 입력, 계산, 검증과 결과를 추적할 수 있는 스프레드시트 모델을 만든다.
+      en: Builds spreadsheet models with traceable inputs, calculations, validation, and results.
+    status: draft
+  - id: presentations
+    name:
+      ko: 프레젠테이션
+      en: Presentations
+    description:
+      ko: 청중의 의사결정과 이해를 돕는 이야기 구조와 시각 자료를 구성한다.
+      en: Structures narrative and visual material to support audience understanding and decisions.
+    status: draft
+  - id: pdfs
+    name:
+      ko: PDF
+      en: PDFs
+    description:
+      ko: 고정 형식 문서의 내용, 레이아웃, 접근성, 보안과 배포 요구를 다룬다.
+      en: Handles content, layout, accessibility, security, and distribution requirements for fixed-format documents.
+    status: draft
+  - id: templates
+    name:
+      ko: 문서 템플릿
+      en: Document templates
+    description:
+      ko: 반복 업무에서 일관된 구조와 품질을 유지하도록 재사용 가능한 문서 틀을 설계한다.
+      en: Designs reusable document structures that preserve consistency and quality in repeated work.
+    status: draft
+  - id: conversion
+    name:
+      ko: 문서 변환
+      en: Document conversion
+    description:
+      ko: 형식 변환 후 내용, 구조, 링크와 시각적 품질이 유지되는지 검증한다.
+      en: Verifies content, structure, links, and visual quality survive format conversion.
+    status: draft
+  - id: ocr
+    name:
+      ko: 광학 문자 인식
+      en: Optical character recognition
+    description:
+      ko: 스캔 자료에서 텍스트를 추출하고 오류, 표와 원문 근거를 검토한다.
+      en: Extracts text from scanned material and reviews errors, tables, and source evidence.
+    status: draft
+  - id: tables
+    name:
+      ko: 표
+      en: Tables
+    description:
+      ko: 비교와 참조가 쉬운 구조, 레이블, 정렬과 접근성을 갖춘 표를 설계한다.
+      en: Designs tables with structure, labels, ordering, and accessibility for easy comparison and reference.
+    status: draft
+  - id: charts
+    name:
+      ko: 차트
+      en: Charts
+    description:
+      ko: 데이터의 추세와 비교를 왜곡 없이 보여 주는 목적에 맞는 차트를 만든다.
+      en: Creates purpose-fit charts that show data trends and comparisons without distortion.
+    status: draft
+  - id: meeting-records
+    name:
+      ko: 회의 기록
+      en: Meeting records
+    description:
+      ko: 논의, 결정, 근거, 담당자와 기한을 확인 가능한 회의 기록으로 남긴다.
+      en: Captures discussion, decisions, evidence, owners, and due dates as verifiable meeting records.
+    status: draft
+  - id: notes
+    name:
+      ko: 노트
+      en: Notes
+    description:
+      ko: 관찰, 아이디어, 근거와 다음 행동을 검색하고 재사용할 수 있게 정리한다.
+      en: Organizes observations, ideas, evidence, and next actions so they can be searched and reused.
+    status: draft
+  - id: knowledge-bases
+    name:
+      ko: 지식 베이스
+      en: Knowledge bases
+    description:
+      ko: 신뢰할 수 있는 업무 지식을 구조, 소유권, 갱신과 출처 정보로 관리한다.
+      en: Manages trusted operational knowledge with structure, ownership, updates, and source information.
+    status: draft
+  - id: search
+    name:
+      ko: 검색
+      en: Search
+    description:
+      ko: 사용자가 관련 지식을 빠르게 찾고 출처와 최신성을 판단할 수 있게 한다.
+      en: Enables users to find relevant knowledge quickly and judge its source and freshness.
+    status: draft
+  - id: sop-documentation
+    name:
+      ko: 표준 운영 절차 문서화
+      en: Standard operating procedure documentation
+    description:
+      ko: 반복 업무의 단계, 책임, 입력, 예외와 검증을 재현 가능한 절차로 문서화한다.
+      en: Documents repeated work steps, responsibility, inputs, exceptions, and verification as reproducible procedures.
+    status: draft
+  - id: classification
+    name:
+      ko: 분류
+      en: Classification
+    description:
+      ko: 목적, 민감도, 수명과 검색 요구에 맞게 기록을 일관되게 분류한다.
+      en: Classifies records consistently for purpose, sensitivity, lifecycle, and retrieval needs.
+    status: draft
+  - id: archiving
+    name:
+      ko: 보관
+      en: Archiving
+    description:
+      ko: 보존 기준, 접근 권한, 검색 가능성과 폐기 조건에 따라 기록을 관리한다.
+      en: Manages records according to retention criteria, access control, retrievability, and disposal conditions.
+    status: draft

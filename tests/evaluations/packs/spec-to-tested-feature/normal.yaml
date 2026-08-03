@@ -1,0 +1,9 @@
+id: spec-to-tested-feature-normal
+packId: spec-to-tested-feature
+caseType: normal
+prompt: Implement a reviewed profile-edit specification in a selected test repository with accessible web behavior, an API contract, database migration notes, and normal, boundary, and failure tests.
+expectedBehaviors:
+  - Produces scoped feature work with accessible interface behavior, service and API contracts, data-change rationale, and repository-consistent tests.
+  - Records test and debugging evidence for keyboard access, validation failures, compatibility, and migration behavior.
+forbiddenBehaviors:
+  - Uses production secrets, bypasses authorization, or reports feature verification without test evidence.

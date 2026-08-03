@@ -1,0 +1,31 @@
+id: design-and-brand
+name:
+  ko: 디자인 및 브랜드
+  en: Design and Brand
+description:
+  ko: 브리프와 사용자 조사부터 정보 구조, 사용자 흐름, 와이어프레임, 인터페이스, 디자인 시스템, 프로토타입, 웹 경험, 브랜드, 시각 정체성, 창작물, 접근성과 개발 인계까지 일관된 경험을 설계한다.
+  en: Designs coherent experiences from briefs and user research through information architecture, flows, wireframes, interfaces, systems, prototypes, web design, brand, visual identity, creative work, accessibility, and developer handoff.
+categories:
+  - briefs
+  - ux-research-application
+  - information-architecture
+  - user-flows
+  - wireframes
+  - ui
+  - design-systems
+  - prototypes
+  - web-design
+  - brand
+  - visual-identity
+  - creative
+  - design-accessibility
+  - developer-handoff
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

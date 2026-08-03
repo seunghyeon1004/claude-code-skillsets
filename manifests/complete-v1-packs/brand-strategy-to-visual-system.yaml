@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: brand-strategy-to-visual-system
+domainId: design-and-brand
+categoryIds:
+  - brand
+  - visual-identity
+  - creative
+  - ui
+  - design-accessibility
+  - design-systems
+  - developer-handoff
+outcome:
+  ko: 브랜드 전략을 차별화된 시각 정체성, 접근 가능한 자산 지침, 재사용 가능한 디자인 토큰과 검토 가능한 채널별 크리에이티브 체계로 전환한다.
+  en: Turns brand strategy into a differentiated visual identity, accessible asset guidance, reusable design tokens, and reviewable channel-specific creative system.
+inputs:
+  - Brand audience, promise, differentiation, voice, evidence, channel needs, and existing rights-cleared assets
+  - Accessibility requirements, production constraints, localization needs, design-system context, and approval owners
+outputs:
+  - A visual system covering logo use, typography, color, imagery, layout, design tokens, and developer-ready asset rules
+  - Brand-aligned creative examples and accessible asset guidance for common channels, formats, states, and localization needs
+completionCriteria:
+  - Typography and color choices pass defined contrast and readability checks, and meaning uses non-color cues in every critical state
+  - Accessible asset guidance covers alt text intent, scalable text, motion limits, image readability, localization, and rights provenance
+  - The system documents licensed source assets, permitted adaptations, review ownership, and rejection of copied brands, deceptive creative, or false accessibility claims
+routingProfileId: design-and-brand
+requiredCapabilityIds:
+  - define-brands-and-visual-identities
+  - produce-brand-aligned-creative
+recommendedCapabilityIds:
+  - design-accessible-user-interfaces
+  - build-design-systems-and-developer-handoffs
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: brand-strategy-to-visual-system-normal
+    type: normal
+    path: tests/evaluations/packs/brand-strategy-to-visual-system/normal.yaml
+  - id: brand-strategy-to-visual-system-boundary
+    type: boundary
+    path: tests/evaluations/packs/brand-strategy-to-visual-system/boundary.yaml
+  - id: brand-strategy-to-visual-system-refusal
+    type: refusal
+    path: tests/evaluations/packs/brand-strategy-to-visual-system/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

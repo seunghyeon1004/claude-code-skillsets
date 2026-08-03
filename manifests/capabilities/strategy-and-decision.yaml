@@ -1,0 +1,48 @@
+schemaVersion: 2
+domainId: strategy-and-decision
+capabilities:
+  - id: frame-strategic-problems-and-opportunities
+    ownerDomainId: strategy-and-decision
+    categoryIds:
+      - problem-framing
+      - opportunity-assessment
+    outcome:
+      ko: 문제의 원인과 제약을 기회 가치 및 실행 가능성과 연결한 전략 프레임을 만든다.
+      en: Produces a strategic frame connecting problem causes and constraints to opportunity value and feasibility.
+    status: draft
+  - id: define-strategic-goals-and-metrics
+    ownerDomainId: strategy-and-decision
+    categoryIds:
+      - goals-and-metrics
+    outcome:
+      ko: 전략 목표를 기준선, 목표값, 측정 방법이 있는 결과 지표로 전환한다.
+      en: Produces strategic outcome metrics with baselines, targets, and measurement methods.
+    status: draft
+  - id: design-business-and-execution-strategy
+    ownerDomainId: strategy-and-decision
+    categoryIds:
+      - business-models
+      - execution-strategy
+    outcome:
+      ko: 가치와 수익 구조를 단계, 책임, 자원, 검증 지점이 있는 실행 전략으로 연결한다.
+      en: Produces an execution strategy connecting value and revenue logic to phases, ownership, resources, and validation points.
+    status: draft
+  - id: model-strategic-scenarios-and-risks
+    ownerDomainId: strategy-and-decision
+    categoryIds:
+      - scenario-planning
+      - risk-analysis
+    outcome:
+      ko: 핵심 불확실성별 시나리오, 위험 신호, 완화 선택지를 비교한 모델을 만든다.
+      en: Produces a comparative model of scenarios, risk signals, and mitigation options around key uncertainties.
+    status: draft
+  - id: govern-strategic-decisions
+    ownerDomainId: strategy-and-decision
+    categoryIds:
+      - strategy-prioritization
+      - decision-records
+      - strategy-review
+    outcome:
+      ko: 우선순위 근거, 선택과 기각 사유, 재검토 조건을 포함한 추적 가능한 전략 결정 기록을 만든다.
+      en: Produces a traceable strategic decision record with prioritization evidence, choice rationale, rejected options, and review triggers.
+    status: draft

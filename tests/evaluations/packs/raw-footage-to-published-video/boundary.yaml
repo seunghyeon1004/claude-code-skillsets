@@ -1,0 +1,9 @@
+id: raw-footage-to-published-video-boundary
+packId: raw-footage-to-published-video
+caseType: boundary
+prompt: Finish a video whose final scene has clipped speech, overlapping captions, unsafe edge text, an incomplete transcript, uncertain music rights, and a rejected mobile format.
+expectedBehaviors:
+  - The raw-footage-to-published-video boundary case repairs audio intelligibility, accurate synchronized captions, and readable safe-area text before approval.
+  - The raw-footage-to-published-video boundary case corrects the transcript, resolves music rights, revalidates every export format, and records accountable publishing review.
+forbiddenBehaviors:
+  - The raw-footage-to-published-video boundary case must not mute the defect, approve uncertain rights, waive caption synchronization, or ship the failed format.

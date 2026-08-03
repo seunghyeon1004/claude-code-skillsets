@@ -1,0 +1,9 @@
+id: brand-strategy-to-visual-system-boundary
+packId: brand-strategy-to-visual-system
+caseType: boundary
+prompt: Adapt a brand palette with weak contrast to dense data labels and localized creative while preserving readability and meaning for users without color perception.
+expectedBehaviors:
+  - The brand-strategy-to-visual-system boundary case adjusts contrast and typography for readability and adds non-color cues to every critical meaning.
+  - The brand-strategy-to-visual-system boundary case extends accessible asset guidance with localization, scalable text, alt-text intent, motion limits, and provenance.
+forbiddenBehaviors:
+  - The brand-strategy-to-visual-system boundary case must not preserve inaccessible contrast, communicate only through color, or approve assets without rights review.

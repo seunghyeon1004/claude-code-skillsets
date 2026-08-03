@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "goalSummary": "Build and validate a private product workflow.",
+  "goalSummaryProjection": {
+    "kind": "allowlisted-summary-v1",
+    "sanitizerVersion": "1.0.0",
+    "sourceSha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "inputs": ["product-brief"],
+  "outputs": ["validated-workflow"],
+  "domainIds": ["software-engineering", "product-management"],
+  "packIds": ["repository-to-implementation-plan"],
+  "evidence": ["The product brief requires an implementation plan."],
+  "unresolvedQuestions": []
+}

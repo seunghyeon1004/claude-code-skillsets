@@ -1,0 +1,33 @@
+id: documents-and-knowledge
+name:
+  ko: 문서 및 지식
+  en: Documents and Knowledge
+description:
+  ko: 문서, 스프레드시트, 프레젠테이션과 PDF부터 템플릿, 변환, OCR, 표, 차트, 회의 기록, 노트, 지식 베이스, 검색, 표준 운영 절차, 분류와 보관까지 재사용 가능한 업무 지식을 만든다.
+  en: Produces reusable operational knowledge from documents, spreadsheets, presentations, and PDFs through templates, conversion, OCR, tables, charts, meeting records, notes, knowledge bases, search, standard operating procedures, classification, and archiving.
+categories:
+  - documents
+  - spreadsheets
+  - presentations
+  - pdfs
+  - templates
+  - conversion
+  - ocr
+  - tables
+  - charts
+  - meeting-records
+  - notes
+  - knowledge-bases
+  - search
+  - sop-documentation
+  - classification
+  - archiving
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

@@ -1,0 +1,66 @@
+schemaVersion: 2
+domainId: people-and-training
+capabilities:
+  - id: plan-workforce-and-roles
+    ownerDomainId: people-and-training
+    categoryIds:
+      - workforce-planning
+      - roles
+    outcome:
+      ko: 사업 목표와 업무 수요를 필요한 역량, 인원, 역할 책임, 시점과 비용에 연결한 인력 계획을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a workforce plan connecting business goals and workload demand to needed capabilities, staffing, role responsibilities, timing, and cost. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: create-job-descriptions-and-manage-candidates
+    ownerDomainId: people-and-training
+    categoryIds:
+      - job-descriptions
+      - candidates
+    outcome:
+      ko: 포괄적인 직무 설명과 지원자 동의, 단계, 의사소통, 직무 관련 근거가 연결된 채용 기록을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces an inclusive job description and hiring record connecting candidate consent, stages, communication, and job-relevant evidence. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: structure-interviews-and-hiring-evaluations
+    ownerDomainId: people-and-training
+    categoryIds:
+      - interviews
+      - hiring-evaluation
+    outcome:
+      ko: 사전에 정의한 직무 기준, 일관된 질문, 행동 근거와 독립된 평가가 있는 인터뷰 점수표를 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces an interview scorecard with predefined job criteria, consistent questions, behavioral evidence, and independent evaluation. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: onboard-and-develop-employees
+    ownerDomainId: people-and-training
+    categoryIds:
+      - employee-onboarding
+      - careers
+    outcome:
+      ko: 역할, 도구, 관계, 초기 기대와 개인의 성장 목표를 단계별 학습 및 경력 기회에 연결한 계획을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a plan connecting role, tools, relationships, early expectations, and individual growth goals to sequenced learning and career opportunities. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: support-performance-and-feedback-cycles
+    ownerDomainId: people-and-training
+    categoryIds:
+      - people-performance
+      - feedback
+    outcome:
+      ko: 역할 기대, 관찰 가능한 결과, 구체적 피드백, 지원 요구와 다음 성장 행동이 연결된 성과 검토 자료를 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces performance review material connecting role expectations, observable results, specific feedback, support needs, and next growth actions. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: draft-organizational-people-policies
+    ownerDomainId: people-and-training
+    categoryIds:
+      - organizational-policy
+    outcome:
+      ko: 적용 범위, 책임, 기대 행동, 예외, 접근성, 승인과 갱신 기준이 명확한 조직 인사 정책 초안을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a draft organizational people policy with explicit scope, responsibilities, expected conduct, exceptions, accessibility, approval, and update criteria. It supports qualified human review and does not replace final judgment or approval.
+    status: draft
+  - id: design-learning-programs-and-assessments
+    ownerDomainId: people-and-training
+    categoryIds:
+      - curricula
+      - learning-materials
+      - assessment
+    outcome:
+      ko: 학습 목표, 순서화된 교육과정, 접근 가능한 자료, 실습과 타당한 평가 기준이 연결된 교육 프로그램을 만든다. 자격 있는 담당자의 검토를 지원하며 최종 판단이나 승인을 대신하지 않는다.
+      en: Produces a learning program connecting objectives, sequenced curricula, accessible materials, practice, and valid assessment criteria. It supports qualified human review and does not replace final judgment or approval.
+    status: draft

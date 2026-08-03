@@ -1,0 +1,108 @@
+{
+  "observedAt": "2026-07-23T09:08:12Z",
+  "snapshotIds": [
+    "2026-07-23-nexscope-ecommerce-skills",
+    "2026-07-23-kepano-obsidian-skills",
+    "2026-07-23-alirezarezvani-claude-skills",
+    "2026-07-23-jeremylongshore-plugins-plus-skills",
+    "2026-07-23-composio-awesome-claude-skills"
+  ],
+  "sources": [
+    {
+      "id": "2026-07-23-nexscope-ecommerce-skills",
+      "sourceUrl": "https://github.com/nexscope-ai/eCommerce-Skills",
+      "inspectedCommit": "56f3288dd1ba3ae7cae43d369115a915229e510b",
+      "countMetrics": [
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 162 }
+      ],
+      "contentSha256": "0bfeb62a2057dfff1e6f513a1ba7a69d1811d80ef1a1f49924d93eae656ab4fa"
+    },
+    {
+      "id": "2026-07-23-kepano-obsidian-skills",
+      "sourceUrl": "https://github.com/kepano/obsidian-skills",
+      "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 5 }
+      ],
+      "contentSha256": "0e48599f45f0ea0b84d9a634e4793a716997825f4cbf5d238eae94be4a282fc2"
+    },
+    {
+      "id": "2026-07-23-alirezarezvani-claude-skills",
+      "sourceUrl": "https://github.com/alirezarezvani/claude-skills",
+      "inspectedCommit": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 88 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 88 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 798 }
+      ],
+      "contentSha256": "586704ee4f10a34817973aa3cc44ee8c8cab73986c88eb4fe5adfa2f0fb7fc9b"
+    },
+    {
+      "id": "2026-07-23-jeremylongshore-plugins-plus-skills",
+      "sourceUrl": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+      "inspectedCommit": "4fdcab59171f5b4c44487356ba022210bdce1168",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 987 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 628 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 5602 }
+      ],
+      "contentSha256": "f732f0c07683cf29b7ab4e1708ff41b91e70804bf2240420401773ed5fa1ff9b"
+    },
+    {
+      "id": "2026-07-23-composio-awesome-claude-skills",
+      "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "inspectedCommit": "92568c1edaff1bde5371154f036d959346c145a8",
+      "countMetrics": [
+        { "kind": "marketplace-entry", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 107 },
+        { "kind": "plugin-manifest", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 1 },
+        { "kind": "repository-record", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 37 },
+        { "kind": "skill-file", "reportedCount": null, "reportedCountSourceUrl": null, "independentlyCountedTotal": 864 }
+      ],
+      "contentSha256": "6230f8f041b7253ef845f988a21a3508f63d5c55f3e58ee03c984a7f49a435d3",
+      "originalSourceUrls": [
+        "https://github.com/1NickPappas/move-code-quality-skill",
+        "https://github.com/Anjos2/recursive-research",
+        "https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill",
+        "https://github.com/LewisLiu007/full-page-screenshot",
+        "https://github.com/NeoLabHQ/context-engineering-kit",
+        "https://github.com/PleasePrompto/notebooklm-skill",
+        "https://github.com/anandpareek-hub/pixelbin-claude-skill",
+        "https://github.com/anthropics/skills",
+        "https://github.com/avelikiy/great_cto",
+        "https://github.com/bluzername/claude-code-terminal-title",
+        "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+        "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+        "https://github.com/conorluddy/ios-simulator-skill",
+        "https://github.com/emaynard/claude-family-history-research-skill",
+        "https://github.com/emory/ASD-AuDHD-PAI-Skills",
+        "https://github.com/haunchen/n8n-skills",
+        "https://github.com/jthack/ffuf_claude_skill",
+        "https://github.com/jthack/threat-hunting-with-sigma-rules-skill",
+        "https://github.com/lackeyjb/playwright-skill",
+        "https://github.com/mhattingpete/claude-skills-marketplace",
+        "https://github.com/michalparkola/tapestry-skills-for-claude-code",
+        "https://github.com/obra/superpowers",
+        "https://github.com/omkamal/pypict-claude-skill",
+        "https://github.com/openweb-org/openweb",
+        "https://github.com/rampstackco/claude-skills",
+        "https://github.com/rockscy/solo-skills",
+        "https://github.com/sanjay3290/ai-skills",
+        "https://github.com/santiago-vargas-de-kruijf/claude-overkill",
+        "https://github.com/sboghossian/master-claude-for-legal",
+        "https://github.com/smerchek/claude-epub-skill",
+        "https://github.com/uxKero/anydesign",
+        "https://github.com/wholiver/swiftui-design-skill",
+        "https://github.com/ykdojo/claude-code-tips",
+        "https://github.com/yusufkaraaslan/Skill_Seekers",
+        "https://github.com/yvgude/lean-ctx",
+        "https://github.com/zxkane/aws-skills"
+      ]
+    }
+  ]
+}

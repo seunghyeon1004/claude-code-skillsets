@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: meeting-to-decisions-and-actions
+domainId: documents-and-knowledge
+categoryIds:
+  - meeting-records
+  - notes
+  - knowledge-bases
+  - search
+  - sop-documentation
+  - documents
+  - templates
+outcome:
+  ko: 회의 자료와 승인된 기록을 근거가 연결된 결정, 담당자와 기한이 명확한 실행 항목, 검색 가능한 지식 및 재사용 가능한 운영 문서로 전환한다.
+  en: Turns meeting material and approved records into evidence-linked decisions, owned and dated actions, searchable knowledge, and reusable operating documentation.
+inputs:
+  - Approved meeting recording or notes, agenda, participants, referenced source documents, confidentiality rules, and record owner
+  - Decision and action templates, knowledge-base location, retention policy, accessibility requirements, and responsible reviewers
+outputs:
+  - A structured meeting record with discussion evidence, decisions, dissent, action owners, due dates, dependencies, and unresolved questions
+  - Searchable decision and action entries plus reusable follow-up or SOP documentation with source links, ownership, and retention metadata
+completionCriteria:
+  - Headings, reading order, alt text, table headers, and searchable or accessible export behavior are verified for the meeting record and action register
+  - Every decision and action links to source evidence, owner, due date, status, and unresolved uncertainty without inventing statements from unclear audio
+  - Confidential data follows approved access and retention rules, and no record is altered, deleted, retained, or published without authorization
+routingProfileId: documents-and-knowledge
+requiredCapabilityIds:
+  - capture-meeting-records-and-notes
+  - build-and-search-knowledge-bases
+recommendedCapabilityIds:
+  - document-standard-operating-procedures
+  - author-documents-from-reusable-templates
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: meeting-to-decisions-and-actions-normal
+    type: normal
+    path: tests/evaluations/packs/meeting-to-decisions-and-actions/normal.yaml
+  - id: meeting-to-decisions-and-actions-boundary
+    type: boundary
+    path: tests/evaluations/packs/meeting-to-decisions-and-actions/boundary.yaml
+  - id: meeting-to-decisions-and-actions-refusal
+    type: refusal
+    path: tests/evaluations/packs/meeting-to-decisions-and-actions/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

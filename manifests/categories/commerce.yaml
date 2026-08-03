@@ -1,0 +1,123 @@
+schemaVersion: 2
+domainId: commerce
+categories:
+  - id: product-research
+    name:
+      ko: 상품 조사
+      en: Product research
+    description:
+      ko: 고객 수요, 대안, 원가, 공급과 차별화 근거를 조사한다.
+      en: Researches customer demand, alternatives, costs, supply, and differentiation evidence.
+    status: draft
+  - id: product-planning
+    name:
+      ko: 상품 기획
+      en: Product planning
+    description:
+      ko: 대상 고객, 구성, 품질 기준, 공급 제약과 출시 조건을 상품 계획으로 정리한다.
+      en: Structures target customers, assortment, quality criteria, supply constraints, and launch conditions into a product plan.
+    status: draft
+  - id: catalogs
+    name:
+      ko: 상품 카탈로그
+      en: Product catalogs
+    description:
+      ko: 상품 식별자, 속성, 분류, 변형과 상태를 일관된 카탈로그로 관리한다.
+      en: Manages product identifiers, attributes, taxonomy, variants, and status in a consistent catalog.
+    status: draft
+  - id: listings
+    name:
+      ko: 상품 목록
+      en: Product listings
+    description:
+      ko: 정확한 제목, 설명, 이미지, 속성, 가격과 고지를 갖춘 판매 목록을 만든다.
+      en: Creates sales listings with accurate titles, descriptions, images, attributes, pricing, and disclosures.
+    status: draft
+  - id: commerce-pricing
+    name:
+      ko: 상거래 가격
+      en: Commerce pricing
+    description:
+      ko: 비용, 경쟁, 가치, 마진과 채널 조건을 반영해 판매 가격을 설계한다.
+      en: Designs selling prices around costs, competition, value, margins, and channel terms.
+    status: draft
+  - id: merchandising
+    name:
+      ko: 머천다이징
+      en: Merchandising
+    description:
+      ko: 상품 구성, 배치, 묶음과 노출 우선순위를 고객 맥락과 성과에 맞춘다.
+      en: Aligns assortment, placement, bundles, and exposure priorities with customer context and performance.
+    status: draft
+  - id: stores
+    name:
+      ko: 온라인 스토어
+      en: Stores
+    description:
+      ko: 스토어의 탐색, 상품 정보, 결제 흐름과 운영 설정을 일관되게 관리한다.
+      en: Manages store navigation, product information, checkout flow, and operating settings consistently.
+    status: draft
+  - id: marketplaces
+    name:
+      ko: 마켓플레이스
+      en: Marketplaces
+    description:
+      ko: 마켓플레이스별 규칙, 목록, 수수료, 재고와 주문 동기화를 관리한다.
+      en: Manages marketplace-specific rules, listings, fees, inventory, and order synchronization.
+    status: draft
+  - id: inventory
+    name:
+      ko: 재고
+      en: Inventory
+    description:
+      ko: 가용 수량, 위치, 예약, 보충과 품절 위험을 추적한다.
+      en: Tracks available quantities, locations, reservations, replenishment, and stockout risk.
+    status: draft
+  - id: orders
+    name:
+      ko: 주문
+      en: Orders
+    description:
+      ko: 주문 접수부터 결제, 할당, 처리, 예외와 완료 상태를 추적한다.
+      en: Tracks orders from receipt through payment, allocation, processing, exceptions, and completion.
+    status: draft
+  - id: shipping
+    name:
+      ko: 배송
+      en: Shipping
+    description:
+      ko: 포장, 운송 방식, 비용, 추적과 전달 예외를 주문 약속에 맞게 관리한다.
+      en: Manages packaging, carrier methods, cost, tracking, and delivery exceptions against order promises.
+    status: draft
+  - id: returns
+    name:
+      ko: 반품
+      en: Returns
+    description:
+      ko: 반품 사유, 자격, 회수, 검사, 환불과 재고 처리를 추적한다.
+      en: Tracks return reasons, eligibility, retrieval, inspection, refund, and inventory disposition.
+    status: draft
+  - id: promotions
+    name:
+      ko: 판매 프로모션
+      en: Commerce promotions
+    description:
+      ko: 대상, 혜택, 기간, 조건, 중복 규칙과 성과 기준이 명확한 판촉을 설계한다.
+      en: Designs promotions with explicit audience, benefit, timing, conditions, stacking rules, and performance criteria.
+    status: draft
+  - id: reviews
+    name:
+      ko: 상품 리뷰
+      en: Product reviews
+    description:
+      ko: 고객 리뷰의 주제, 신뢰 신호, 문제와 개선 기회를 분석한다.
+      en: Analyzes customer review themes, trust signals, issues, and improvement opportunities.
+    status: draft
+  - id: revenue-analysis
+    name:
+      ko: 매출 분석
+      en: Revenue analysis
+    description:
+      ko: 상품, 채널, 고객, 프로모션별 매출, 마진과 변화 요인을 비교한다.
+      en: Compares revenue, margin, and change drivers across products, channels, customers, and promotions.
+    status: draft

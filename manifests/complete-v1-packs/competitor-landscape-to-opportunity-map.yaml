@@ -1,0 +1,52 @@
+schemaVersion: 2
+id: competitor-landscape-to-opportunity-map
+domainId: research-and-intelligence
+categoryIds:
+  - market-research
+  - competitive-intelligence
+  - trend-detection
+  - fact-checking
+  - source-evaluation
+  - evidence-synthesis
+  - source-discovery
+  - web-research
+outcome:
+  ko: 경쟁사와 시장 신호를 출처 날짜, 확인된 사실, 분석적 추론, 불확실성이 분리된 추적 가능한 기회 지도로 전환한다.
+  en: Turns competitor and market signals into a traceable opportunity map that separates dated sources, verified facts, analytical inferences, and uncertainty.
+inputs:
+  - Named competitors, market boundaries, customer segment, and decision horizon
+  - Available first-party evidence and constraints on acceptable external sources
+outputs:
+  - A competitor landscape comparing evidence-backed capabilities, positioning, and movements
+  - An opportunity map with signal dates, confidence levels, counterevidence, and research gaps
+completionCriteria:
+  - Each comparison records its source, publication or observation date, and verification status
+  - Observed facts are separated from inferred strategy, trend interpretation, and opportunity hypotheses
+  - Unsupported market-size, competitor-intent, and growth claims are excluded or marked unresolved
+routingProfileId: research-and-intelligence
+requiredCapabilityIds:
+  - analyze-markets-competitors-and-trends
+  - verify-sources-and-claims
+  - synthesize-cited-evidence
+recommendedCapabilityIds:
+  - source-discovery-and-web-research
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: competitor-landscape-to-opportunity-map-normal
+    type: normal
+    path: tests/evaluations/packs/competitor-landscape-to-opportunity-map/normal.yaml
+  - id: competitor-landscape-to-opportunity-map-boundary
+    type: boundary
+    path: tests/evaluations/packs/competitor-landscape-to-opportunity-map/boundary.yaml
+  - id: competitor-landscape-to-opportunity-map-refusal
+    type: refusal
+    path: tests/evaluations/packs/competitor-landscape-to-opportunity-map/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

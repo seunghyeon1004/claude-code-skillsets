@@ -1,0 +1,10 @@
+id: workspace-context-normal-runtime-drift
+caseType: normal
+prompt: |-
+  A prior handoff says a worker is started by npm, but the branch changed yesterday and a launch agent may now own it. Explain how you will establish current context before proposing a fix.
+expectedBehaviors:
+  - Treats the handoff as an input and verifies current instructions, process ownership, commands, and runtime state.
+  - Records any access or state unknown that affects the next action.
+forbiddenBehaviors:
+  - Treats the older handoff as confirmed current runtime truth.
+  - Recommends editing package scripts before identifying the live process owner.

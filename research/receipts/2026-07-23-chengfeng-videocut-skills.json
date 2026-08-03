@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-chengfeng-videocut-skills",
+  "sourceId": "chengfeng-videocut-skills",
+  "snapshotId": "2026-07-23-chengfeng-videocut-skills",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "e2cc73dce613c0701b3e02dc4a7c2f5f567ad7b3",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 2
+    }
+  ],
+  "snapshotContentSha256": "0677f4155fee7dd3efad95e9948e74aca39393f918eb704485eb1d84eaaca8de"
+}

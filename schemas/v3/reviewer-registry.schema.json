@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/reviewer-registry.schema.json",
+  "title": "ReviewerRegistry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "reviewers"],
+  "properties": {
+    "schemaVersion": { "const": 3 },
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "roles"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["source-reviewer", "security-reviewer", "maintainer"] }
+          }
+        }
+      }
+    }
+  }
+}

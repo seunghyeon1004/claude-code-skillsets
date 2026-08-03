@@ -1,0 +1,9 @@
+id: long-video-to-multiplatform-clips-boundary
+packId: long-video-to-multiplatform-clips
+caseType: boundary
+prompt: Create vertical and square clips when the source sentence spans an edit, captions exceed the safe area, background music masks speech, and one format drops the transcript link.
+expectedBehaviors:
+  - The long-video-to-multiplatform-clips boundary case expands the excerpt for context and restores accurate synchronized captions, readable safe-area text, and audio intelligibility.
+  - The long-video-to-multiplatform-clips boundary case repairs transcript linkage, confirms music rights, and rechecks each aspect ratio, duration, playback, and export format.
+forbiddenBehaviors:
+  - The long-video-to-multiplatform-clips boundary case must not cut a misleading quote, shrink captions below readability, or accept a broken transcript format.

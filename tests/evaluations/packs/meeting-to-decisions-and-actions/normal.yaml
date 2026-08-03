@@ -1,0 +1,9 @@
+id: meeting-to-decisions-and-actions-normal
+packId: meeting-to-decisions-and-actions
+caseType: normal
+prompt: Convert an approved project meeting into decisions and actions with headings, verified reading order, alt text, table headers, and a searchable or accessible export.
+expectedBehaviors:
+  - The meeting-to-decisions-and-actions normal case organizes evidence, decisions, dissent, owners, due dates, and dependencies under descriptive headings and reading order.
+  - The meeting-to-decisions-and-actions normal case supplies alt text, table headers, source links, retention metadata, and searchable or accessible export validation.
+forbiddenBehaviors:
+  - The meeting-to-decisions-and-actions normal case must not omit headings, scramble reading order, leave visuals without alt text, or flatten table headers.

@@ -1,0 +1,31 @@
+id: people-and-training
+name:
+  ko: 인사 및 교육
+  en: People and Training
+description:
+  ko: 인력 계획, 역할, 채용, 온보딩, 성과와 피드백, 경력, 조직 정책, 교육과 평가를 일관된 근거와 사람의 책임 있는 검토 아래 지원한다.
+  en: Supports workforce planning, roles, hiring, onboarding, performance, feedback, careers, organizational policy, learning, and assessment with consistent evidence and accountable human review.
+categories:
+  - workforce-planning
+  - roles
+  - job-descriptions
+  - candidates
+  - interviews
+  - hiring-evaluation
+  - employee-onboarding
+  - people-performance
+  - feedback
+  - careers
+  - organizational-policy
+  - curricula
+  - learning-materials
+  - assessment
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

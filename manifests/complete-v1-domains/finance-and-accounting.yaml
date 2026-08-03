@@ -1,0 +1,31 @@
+id: finance-and-accounting
+name:
+  ko: 재무 및 회계
+  en: Finance and Accounting
+description:
+  ko: 예산, 현금 흐름, 거래 기록, 재무제표, 예측, 단위 경제성, 수익성, 자금 조달, 세무 준비와 경영 보고를 근거 기반으로 지원한다.
+  en: Supports evidence-based budgeting, cash flow, transaction records, financial statements, forecasting, unit economics, profitability, fundraising, tax preparation, and management reporting.
+categories:
+  - budgets
+  - cash-flow
+  - costs
+  - receipts
+  - invoicing
+  - collections
+  - bookkeeping-assistance
+  - financial-statements
+  - forecasts
+  - unit-economics
+  - profitability
+  - fundraising
+  - tax-preparation
+  - management-reporting
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

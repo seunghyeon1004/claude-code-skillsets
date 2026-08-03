@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "2026-07-23-wshobson-agents",
+  "sourceId": "wshobson-agents",
+  "snapshotId": "2026-07-23-wshobson-agents",
+  "observedAt": "2026-07-23T09:08:12Z",
+  "inspectedCommit": "c4b82b0ad771190355eb8e204b1329732a18449a",
+  "collectorVersion": "0.1.0",
+  "independentCounts": [
+    {
+      "kind": "marketplace-entry",
+      "count": 95
+    },
+    {
+      "kind": "plugin-manifest",
+      "count": 91
+    },
+    {
+      "kind": "repository-record",
+      "count": 1
+    },
+    {
+      "kind": "skill-file",
+      "count": 180
+    }
+  ],
+  "snapshotContentSha256": "1c31895f34aa6156e83755bbd65243cd0ae13a8bb9983e394215b6425ff715d1"
+}

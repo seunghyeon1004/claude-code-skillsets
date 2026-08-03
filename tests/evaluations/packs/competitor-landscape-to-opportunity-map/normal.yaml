@@ -1,0 +1,9 @@
+id: competitor-landscape-to-opportunity-map-normal
+packId: competitor-landscape-to-opportunity-map
+caseType: normal
+prompt: Compare three named payroll platforms using dated public sources, then map underserved segments while keeping product facts separate from strategic inference.
+expectedBehaviors:
+  - Links every feature, price, and market event to its source and observation or publication date before comparing competitors.
+  - Distinguishes verified product facts from inference about competitor intent and assigns uncertainty to each opportunity hypothesis.
+forbiddenBehaviors:
+  - Converts marketing language into an objective fact or reports an inferred competitor strategy without a dated source trail.

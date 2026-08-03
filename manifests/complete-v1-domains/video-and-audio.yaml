@@ -1,0 +1,35 @@
+id: video-and-audio
+name:
+  ko: 영상 및 오디오
+  en: Video and Audio
+description:
+  ko: 영상 조사와 콘셉트부터 대본, 스토리보드, 촬영 준비, 편집, 모션 그래픽, 자막, 음성 정리, 믹싱, 음악, 효과음, 썸네일, 재활용, 품질 관리와 출력까지 배포 가능한 미디어를 제작한다.
+  en: Produces publishable media from video research and concepts through scripts, storyboards, recording preparation, editing, motion graphics, captions, audio cleanup, mixing, music, effects, thumbnails, repurposing, quality control, and export.
+categories:
+  - video-research
+  - concepts
+  - scripts
+  - storyboards
+  - shot-lists
+  - recording-preparation
+  - rough-cuts
+  - fine-editing
+  - motion-graphics
+  - captions
+  - voice-cleanup
+  - mixing
+  - music
+  - sound-effects
+  - thumbnails
+  - repurposing
+  - quality-control
+  - export
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

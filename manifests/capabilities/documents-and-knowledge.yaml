@@ -1,0 +1,75 @@
+schemaVersion: 2
+domainId: documents-and-knowledge
+capabilities:
+  - id: author-documents-from-reusable-templates
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - documents
+      - templates
+    outcome:
+      ko: 목적, 독자, 근거와 구조에 맞고 반복 업무에서 재사용 가능한 완성도 높은 문서를 만든다.
+      en: Produces high-quality documents that fit purpose, audience, evidence, and structure and can be reused in repeated work.
+    status: draft
+  - id: build-data-rich-spreadsheets
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - spreadsheets
+      - tables
+      - charts
+    outcome:
+      ko: 추적 가능한 계산, 검증된 표와 왜곡 없는 차트가 연결된 데이터 중심 스프레드시트를 만든다.
+      en: Produces data-rich spreadsheets with traceable calculations, validated tables, and undistorted charts.
+    status: draft
+  - id: create-presentations
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - presentations
+    outcome:
+      ko: 청중의 이해와 의사결정을 돕는 명확한 이야기 구조, 근거와 시각 자료가 있는 프레젠테이션을 만든다.
+      en: Produces presentations with clear narrative, evidence, and visual material that support audience understanding and decisions.
+    status: draft
+  - id: convert-extract-and-process-pdfs
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - pdfs
+      - conversion
+      - ocr
+    outcome:
+      ko: PDF 변환과 OCR 이후 내용, 구조, 표와 출처 근거를 검증해 재사용 가능한 자료를 만든다.
+      en: Produces reusable material by verifying content, structure, tables, and source evidence after PDF conversion and OCR.
+    status: draft
+  - id: capture-meeting-records-and-notes
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - meeting-records
+      - notes
+    outcome:
+      ko: 논의, 결정, 근거, 담당자, 기한과 다음 행동을 검색하고 확인할 수 있는 회의 기록과 노트를 만든다.
+      en: Produces searchable, verifiable meeting records and notes covering discussion, decisions, evidence, owners, due dates, and next actions.
+    status: draft
+  - id: build-and-search-knowledge-bases
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - knowledge-bases
+      - search
+    outcome:
+      ko: 출처, 소유자와 최신성이 분명하고 사용자가 관련 지식을 빠르게 찾을 수 있는 지식 베이스를 만든다.
+      en: Produces knowledge bases with clear sources, owners, and freshness that let users find relevant knowledge quickly.
+    status: draft
+  - id: document-standard-operating-procedures
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - sop-documentation
+    outcome:
+      ko: 반복 업무의 단계, 책임, 입력, 예외와 검증을 실제로 수행 가능한 표준 운영 절차로 문서화한다.
+      en: Documents repeated-work steps, responsibility, inputs, exceptions, and verification as executable standard operating procedures.
+    status: draft
+  - id: classify-and-archive-records
+    ownerDomainId: documents-and-knowledge
+    categoryIds:
+      - classification
+      - archiving
+    outcome:
+      ko: 민감도, 목적, 보존 기간, 접근과 폐기 조건에 맞춰 기록을 일관되게 분류하고 보관한다.
+      en: Classifies and archives records consistently for sensitivity, purpose, retention, access, and disposal conditions.
+    status: draft

@@ -1,0 +1,1070 @@
+[
+  {
+    "capabilityId": "academic-evidence-research",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "question-to-cited-research-brief"
+    ]
+  },
+  {
+    "capabilityId": "adapt-repurpose-and-distribute-content",
+    "requiredByPackIds": [
+      "long-form-to-social-distribution"
+    ],
+    "recommendedByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ]
+  },
+  {
+    "capabilityId": "analyze-costs-unit-economics-and-profitability",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "transactions-to-management-report"
+    ]
+  },
+  {
+    "capabilityId": "analyze-customer-research",
+    "requiredByPackIds": [
+      "customer-interviews-to-insights"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "analyze-markets-competitors-and-trends",
+    "requiredByPackIds": [
+      "competitor-landscape-to-opportunity-map"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "analyze-repository-context",
+    "requiredByPackIds": [
+      "repository-to-implementation-plan"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "apply-statistics-and-experimental-analysis",
+    "requiredByPackIds": [
+      "business-question-to-dashboard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assemble-and-refine-video-edits",
+    "requiredByPackIds": [
+      "long-video-to-multiplatform-clips",
+      "raw-footage-to-published-video"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assess-ai-use-cases-and-models",
+    "requiredByPackIds": [
+      "use-case-to-agent-design"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assess-application-threats-and-security",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "application-to-security-review"
+    ]
+  },
+  {
+    "capabilityId": "assess-privacy-and-intellectual-property-risk",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "contract-to-risk-and-revision-brief"
+    ]
+  },
+  {
+    "capabilityId": "assist-bookkeeping-and-statement-preparation",
+    "requiredByPackIds": [
+      "transactions-to-management-report"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assist-with-contract-drafting-and-review",
+    "requiredByPackIds": [
+      "contract-to-risk-and-revision-brief"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assist-with-legal-research",
+    "requiredByPackIds": [
+      "contract-to-risk-and-revision-brief"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "assist-with-tax-preparation",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "transactions-to-management-report"
+    ]
+  },
+  {
+    "capabilityId": "author-documents-from-reusable-templates",
+    "requiredByPackIds": [
+      "source-files-to-polished-document"
+    ],
+    "recommendedByPackIds": [
+      "meeting-to-decisions-and-actions"
+    ]
+  },
+  {
+    "capabilityId": "automate-repetitive-operational-work",
+    "requiredByPackIds": [
+      "repetitive-work-to-approved-automation"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "automate-safe-software-delivery",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "service-to-ci-cd-deployment"
+    ]
+  },
+  {
+    "capabilityId": "build-and-search-knowledge-bases",
+    "requiredByPackIds": [
+      "meeting-to-decisions-and-actions"
+    ],
+    "recommendedByPackIds": [
+      "source-files-to-polished-document"
+    ]
+  },
+  {
+    "capabilityId": "build-data-collection-and-transformation-pipelines",
+    "requiredByPackIds": [
+      "raw-data-to-validated-dataset"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "build-data-rich-spreadsheets",
+    "requiredByPackIds": [
+      "source-files-to-polished-document"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "build-design-systems-and-developer-handoffs",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "brand-strategy-to-visual-system",
+      "brief-to-accessible-interface"
+    ]
+  },
+  {
+    "capabilityId": "build-evidence-based-product-roadmaps",
+    "requiredByPackIds": [
+      "prd-to-prioritized-roadmap"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "build-retrieval-augmented-generation",
+    "requiredByPackIds": [
+      "prototype-to-evaluated-agent"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "capture-meeting-records-and-notes",
+    "requiredByPackIds": [
+      "meeting-to-decisions-and-actions"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "capture-voice-of-customer",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "discovery-call-to-proposal"
+    ]
+  },
+  {
+    "capabilityId": "classify-and-archive-records",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "source-files-to-polished-document"
+    ]
+  },
+  {
+    "capabilityId": "clean-and-mix-audio",
+    "requiredByPackIds": [
+      "raw-footage-to-published-video"
+    ],
+    "recommendedByPackIds": [
+      "long-video-to-multiplatform-clips"
+    ]
+  },
+  {
+    "capabilityId": "conduct-targeted-outreach",
+    "requiredByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "connect-models-to-tools-and-mcp",
+    "requiredByPackIds": [
+      "use-case-to-agent-design"
+    ],
+    "recommendedByPackIds": [
+      "prototype-to-evaluated-agent"
+    ]
+  },
+  {
+    "capabilityId": "control-project-change-and-risk",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "project-brief-to-execution-board"
+    ]
+  },
+  {
+    "capabilityId": "convert-extract-and-process-pdfs",
+    "requiredByPackIds": [
+      "source-files-to-polished-document"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "coordinate-compliance-incident-response",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "regulation-to-compliance-checklist"
+    ]
+  },
+  {
+    "capabilityId": "coordinate-emergency-operations",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "manual-process-to-maintained-sop"
+    ]
+  },
+  {
+    "capabilityId": "coordinate-influencer-and-community-promotion",
+    "requiredByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "coordinate-project-dependencies-and-resources",
+    "requiredByPackIds": [
+      "project-brief-to-execution-board"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "craft-conversion-copy",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "idea-to-edited-article"
+    ]
+  },
+  {
+    "capabilityId": "create-job-descriptions-and-manage-candidates",
+    "requiredByPackIds": [
+      "role-need-to-interview-scorecard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "create-market-positioning-and-messaging",
+    "requiredByPackIds": [
+      "product-to-positioning-and-offer"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "create-motion-graphics-and-thumbnails",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "long-video-to-multiplatform-clips",
+      "raw-footage-to-published-video"
+    ]
+  },
+  {
+    "capabilityId": "create-presentations",
+    "requiredByPackIds": [
+      "source-files-to-polished-document"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "create-proposals-and-rfp-responses",
+    "requiredByPackIds": [
+      "discovery-call-to-proposal"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-and-decompose-project-work",
+    "requiredByPackIds": [
+      "project-brief-to-execution-board"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-brands-and-visual-identities",
+    "requiredByPackIds": [
+      "brand-strategy-to-visual-system"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-ideal-customers-and-personas",
+    "requiredByPackIds": [
+      "product-to-positioning-and-offer"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-kpis-and-forecast-outcomes",
+    "requiredByPackIds": [
+      "business-question-to-dashboard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-product-principles-and-requirements",
+    "requiredByPackIds": [
+      "customer-problem-to-validated-prd"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "define-strategic-goals-and-metrics",
+    "requiredByPackIds": [
+      "evidence-to-strategic-decision"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "demonstrate-and-negotiate-solutions",
+    "requiredByPackIds": [
+      "discovery-call-to-proposal"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-accessible-user-interfaces",
+    "requiredByPackIds": [
+      "brief-to-accessible-interface"
+    ],
+    "recommendedByPackIds": [
+      "brand-strategy-to-visual-system"
+    ]
+  },
+  {
+    "capabilityId": "design-and-coordinate-operational-handoffs",
+    "requiredByPackIds": [
+      "manual-process-to-maintained-sop"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-and-evolve-databases",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "spec-to-tested-feature"
+    ]
+  },
+  {
+    "capabilityId": "design-and-optimize-conversion-funnels",
+    "requiredByPackIds": [
+      "keyword-to-ranked-content"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-and-price-marketing-offers",
+    "requiredByPackIds": [
+      "product-to-positioning-and-offer"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-business-and-execution-strategy",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "evidence-to-strategic-decision"
+    ]
+  },
+  {
+    "capabilityId": "design-learning-programs-and-assessments",
+    "requiredByPackIds": [
+      "expertise-to-training-program"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-prompts-and-grounding-context",
+    "requiredByPackIds": [
+      "use-case-to-agent-design"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "design-responsive-web-experiences",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "brief-to-accessible-interface"
+    ]
+  },
+  {
+    "capabilityId": "design-single-and-multi-agent-systems",
+    "requiredByPackIds": [
+      "use-case-to-agent-design"
+    ],
+    "recommendedByPackIds": [
+      "prototype-to-evaluated-agent"
+    ]
+  },
+  {
+    "capabilityId": "design-software-architecture",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "repository-to-implementation-plan"
+    ]
+  },
+  {
+    "capabilityId": "develop-content-ideas-and-outlines",
+    "requiredByPackIds": [
+      "idea-to-edited-article"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "discover-customer-problems-and-needs",
+    "requiredByPackIds": [
+      "customer-problem-to-validated-prd"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "document-and-prepare-software-releases",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "bug-report-to-verified-fix"
+    ]
+  },
+  {
+    "capabilityId": "document-standard-operating-procedures",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "meeting-to-decisions-and-actions",
+      "source-files-to-polished-document"
+    ]
+  },
+  {
+    "capabilityId": "draft-long-form-editorial-content",
+    "requiredByPackIds": [
+      "idea-to-edited-article"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "draft-organizational-people-policies",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "role-need-to-interview-scorecard"
+    ]
+  },
+  {
+    "capabilityId": "edit-verify-and-proofread-content",
+    "requiredByPackIds": [
+      "idea-to-edited-article",
+      "source-to-multilingual-publication"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "estimate-and-schedule-project-work",
+    "requiredByPackIds": [
+      "project-brief-to-execution-board"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "evaluate-guard-and-monitor-ai-systems",
+    "requiredByPackIds": [
+      "prototype-to-evaluated-agent"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "execute-paid-acquisition",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "keyword-to-ranked-content"
+    ]
+  },
+  {
+    "capabilityId": "facilitate-meetings-and-record-decisions",
+    "requiredByPackIds": [
+      "project-brief-to-execution-board"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "forecast-and-report-financial-performance",
+    "requiredByPackIds": [
+      "transactions-to-management-report"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "frame-strategic-problems-and-opportunities",
+    "requiredByPackIds": [
+      "evidence-to-strategic-decision"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "govern-records-retention-and-deletion",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "regulation-to-compliance-checklist"
+    ]
+  },
+  {
+    "capabilityId": "govern-strategic-decisions",
+    "requiredByPackIds": [
+      "evidence-to-strategic-decision"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "implement-accessible-web-interfaces",
+    "requiredByPackIds": [
+      "spec-to-tested-feature"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "implement-backend-services-and-apis",
+    "requiredByPackIds": [
+      "spec-to-tested-feature"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "implement-mobile-applications",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "spec-to-tested-feature"
+    ]
+  },
+  {
+    "capabilityId": "implement-stateful-agent-memory",
+    "requiredByPackIds": [
+      "prototype-to-evaluated-agent"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "maintain-customer-relationship-records",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "account-research-to-personalized-outreach"
+    ]
+  },
+  {
+    "capabilityId": "maintain-legal-and-compliance-policies",
+    "requiredByPackIds": [
+      "regulation-to-compliance-checklist"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "maintain-risk-registers-and-audit-evidence",
+    "requiredByPackIds": [
+      "regulation-to-compliance-checklist"
+    ],
+    "recommendedByPackIds": [
+      "contract-to-risk-and-revision-brief"
+    ]
+  },
+  {
+    "capabilityId": "manage-inventory-orders-and-fulfillment",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "product-idea-to-store-listing"
+    ]
+  },
+  {
+    "capabilityId": "manage-post-purchase-returns-and-reviews",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "product-idea-to-store-listing"
+    ]
+  },
+  {
+    "capabilityId": "manage-procurement-vendors-and-resources",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "manual-process-to-maintained-sop"
+    ]
+  },
+  {
+    "capabilityId": "manage-product-catalogs-and-listings",
+    "requiredByPackIds": [
+      "product-idea-to-store-listing"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "map-and-prototype-user-experiences",
+    "requiredByPackIds": [
+      "brief-to-accessible-interface"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "map-and-standardize-operational-processes",
+    "requiredByPackIds": [
+      "manual-process-to-maintained-sop"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "map-regulations-to-compliance-checklists",
+    "requiredByPackIds": [
+      "regulation-to-compliance-checklist"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "measure-and-improve-operations",
+    "requiredByPackIds": [
+      "repetitive-work-to-approved-automation"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "measure-products-and-assess-launch-readiness",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "prd-to-prioritized-roadmap"
+    ]
+  },
+  {
+    "capabilityId": "model-strategic-scenarios-and-risks",
+    "requiredByPackIds": [
+      "evidence-to-strategic-decision"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "monitor-renew-and-expand-accounts",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "discovery-call-to-proposal"
+    ]
+  },
+  {
+    "capabilityId": "observe-and-operate-reliable-services",
+    "requiredByPackIds": [
+      "incident-alert-to-postmortem"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "onboard-and-develop-employees",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "expertise-to-training-program"
+    ]
+  },
+  {
+    "capabilityId": "onboard-and-support-customers",
+    "requiredByPackIds": [
+      "discovery-call-to-proposal"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "operate-and-optimize-campaigns",
+    "requiredByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ],
+    "recommendedByPackIds": [
+      "long-form-to-social-distribution"
+    ]
+  },
+  {
+    "capabilityId": "operate-email-and-lifecycle-marketing",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "keyword-to-ranked-content"
+    ]
+  },
+  {
+    "capabilityId": "operate-stores-and-marketplaces",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "product-idea-to-store-listing"
+    ]
+  },
+  {
+    "capabilityId": "optimize-ai-cost-and-latency",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "prototype-to-evaluated-agent",
+      "use-case-to-agent-design"
+    ]
+  },
+  {
+    "capabilityId": "optimize-pricing-and-merchandising",
+    "requiredByPackIds": [
+      "product-idea-to-store-listing"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "package-and-provision-cloud-infrastructure",
+    "requiredByPackIds": [
+      "service-to-ci-cd-deployment"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "patent-landscape-research",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "question-to-cited-research-brief"
+    ]
+  },
+  {
+    "capabilityId": "plan-and-prepare-recording",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "topic-to-recording-ready-script"
+    ]
+  },
+  {
+    "capabilityId": "plan-budgets-and-cash-flow",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "transactions-to-management-report"
+    ]
+  },
+  {
+    "capabilityId": "plan-content-and-search-growth",
+    "requiredByPackIds": [
+      "keyword-to-ranked-content"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "plan-launch-promotion",
+    "requiredByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "plan-workforce-and-roles",
+    "requiredByPackIds": [
+      "role-need-to-interview-scorecard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "prepare-fundraising-financials",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "transactions-to-management-report"
+    ]
+  },
+  {
+    "capabilityId": "process-receipts-invoices-and-collections",
+    "requiredByPackIds": [
+      "transactions-to-management-report"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "produce-accessible-captions",
+    "requiredByPackIds": [
+      "long-video-to-multiplatform-clips",
+      "raw-footage-to-published-video"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "produce-brand-aligned-creative",
+    "requiredByPackIds": [
+      "brand-strategy-to-visual-system"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "produce-governed-analytical-reports",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "business-question-to-dashboard",
+      "raw-data-to-validated-dataset"
+    ]
+  },
+  {
+    "capabilityId": "produce-technical-and-business-writing",
+    "requiredByPackIds": [
+      "source-to-multilingual-publication"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "protect-secrets-and-software-dependencies",
+    "requiredByPackIds": [
+      "application-to-security-review"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "provision-reproducible-development-environments",
+    "requiredByPackIds": [
+      "service-to-ci-cd-deployment"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "publish-content-to-cms",
+    "requiredByPackIds": [
+      "source-to-multilingual-publication"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "qualify-opportunities-through-discovery",
+    "requiredByPackIds": [
+      "account-research-to-personalized-outreach"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "query-and-explore-data",
+    "requiredByPackIds": [
+      "business-question-to-dashboard",
+      "raw-data-to-validated-dataset"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "report-project-status-to-stakeholders",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "project-brief-to-execution-board"
+    ]
+  },
+  {
+    "capabilityId": "repurpose-and-deliver-quality-controlled-media",
+    "requiredByPackIds": [
+      "long-video-to-multiplatform-clips"
+    ],
+    "recommendedByPackIds": [
+      "raw-footage-to-published-video"
+    ]
+  },
+  {
+    "capabilityId": "research-accounts-and-discover-leads",
+    "requiredByPackIds": [
+      "account-research-to-personalized-outreach"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "research-and-develop-media-concepts",
+    "requiredByPackIds": [
+      "topic-to-recording-ready-script"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "research-and-plan-commerce-products",
+    "requiredByPackIds": [
+      "product-idea-to-store-listing"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "respond-to-security-incidents-and-recover",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "incident-alert-to-postmortem"
+    ]
+  },
+  {
+    "capabilityId": "retain-customers-and-measure-growth",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "product-to-positioning-and-offer"
+    ]
+  },
+  {
+    "capabilityId": "review-refactor-and-optimize-software",
+    "requiredByPackIds": [
+      "bug-report-to-verified-fix"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "run-and-assure-service-operations",
+    "requiredByPackIds": [
+      "manual-process-to-maintained-sop"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "run-project-retrospectives",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "project-brief-to-execution-board"
+    ]
+  },
+  {
+    "capabilityId": "run-promotions-and-analyze-revenue",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "product-idea-to-store-listing"
+    ]
+  },
+  {
+    "capabilityId": "secure-earned-media-coverage",
+    "requiredByPackIds": [
+      "launch-plan-to-multichannel-campaign"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "segment-and-compare-populations",
+    "requiredByPackIds": [
+      "business-question-to-dashboard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "shape-and-prioritize-product-scope",
+    "requiredByPackIds": [
+      "prd-to-prioritized-roadmap"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "source-and-integrate-music-and-effects",
+    "requiredByPackIds": [
+      "raw-footage-to-published-video"
+    ],
+    "recommendedByPackIds": [
+      "long-video-to-multiplatform-clips"
+    ]
+  },
+  {
+    "capabilityId": "source-discovery-and-web-research",
+    "requiredByPackIds": [
+      "question-to-cited-research-brief"
+    ],
+    "recommendedByPackIds": [
+      "competitor-landscape-to-opportunity-map",
+      "customer-interviews-to-insights"
+    ]
+  },
+  {
+    "capabilityId": "structure-interviews-and-hiring-evaluations",
+    "requiredByPackIds": [
+      "role-need-to-interview-scorecard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "support-performance-and-feedback-cycles",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "expertise-to-training-program"
+    ]
+  },
+  {
+    "capabilityId": "synthesize-cited-evidence",
+    "requiredByPackIds": [
+      "competitor-landscape-to-opportunity-map",
+      "customer-interviews-to-insights",
+      "question-to-cited-research-brief"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "test-and-debug-software",
+    "requiredByPackIds": [
+      "bug-report-to-verified-fix",
+      "spec-to-tested-feature"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "translate-and-localize-content",
+    "requiredByPackIds": [
+      "source-to-multilingual-publication"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "translate-briefs-and-research-into-ux-structure",
+    "requiredByPackIds": [
+      "brief-to-accessible-interface"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "turn-requirements-into-specifications",
+    "requiredByPackIds": [
+      "repository-to-implementation-plan"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "validate-and-clean-data",
+    "requiredByPackIds": [
+      "raw-data-to-validated-dataset"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "validate-products-with-prototypes-and-experiments",
+    "requiredByPackIds": [],
+    "recommendedByPackIds": [
+      "customer-problem-to-validated-prd"
+    ]
+  },
+  {
+    "capabilityId": "verify-sources-and-claims",
+    "requiredByPackIds": [
+      "competitor-landscape-to-opportunity-map",
+      "customer-interviews-to-insights",
+      "question-to-cited-research-brief"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "visualize-data-and-build-dashboards",
+    "requiredByPackIds": [
+      "business-question-to-dashboard"
+    ],
+    "recommendedByPackIds": []
+  },
+  {
+    "capabilityId": "write-and-visualize-video-narratives",
+    "requiredByPackIds": [
+      "topic-to-recording-ready-script"
+    ],
+    "recommendedByPackIds": []
+  }
+]

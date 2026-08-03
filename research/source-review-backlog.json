@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 2,
+  "candidates": [
+    {
+      "id": "source-review-alirezarezvani-claude-skills",
+      "sourceId": "alirezarezvani-claude-skills",
+      "sourceRepository": "https://github.com/alirezarezvani/claude-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-alirezarezvani-claude-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
+      "snapshotContentSha256": "586704ee4f10a34817973aa3cc44ee8c8cab73986c88eb4fe5adfa2f0fb7fc9b",
+      "representativeSkillPaths": [
+        "business-operations/skills/process-mapper/SKILL.md",
+        "engineering/skills/mcp-server-builder/SKILL.md",
+        "engineering/skills/sql-database-assistant/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "engineering/skills/mcp-server-builder/SKILL.md"
+        },
+        {
+          "domainId": "business-operations",
+          "representativeSkillPath": "business-operations/skills/process-mapper/SKILL.md"
+        },
+        {
+          "domainId": "data-and-analytics",
+          "representativeSkillPath": "engineering/skills/sql-database-assistant/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-anthropic-skills",
+      "sourceId": "anthropic-skills",
+      "sourceRepository": "https://github.com/anthropics/skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-anthropic-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb",
+      "snapshotContentSha256": "cf2b1e8206fb84c75ea867ee5c88282b5a61cac5820dccc053db3a578927107e",
+      "representativeSkillPaths": [
+        "skills/claude-api/SKILL.md",
+        "skills/mcp-builder/SKILL.md",
+        "skills/pdf/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "skills/mcp-builder/SKILL.md"
+        },
+        {
+          "domainId": "documents-and-knowledge",
+          "representativeSkillPath": "skills/pdf/SKILL.md"
+        },
+        {
+          "domainId": "software-engineering",
+          "representativeSkillPath": "skills/claude-api/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-chengfeng-videocut-skills",
+      "sourceId": "chengfeng-videocut-skills",
+      "sourceRepository": "https://github.com/Agentchengfeng/chengfeng-videocut-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-chengfeng-videocut-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "e2cc73dce613c0701b3e02dc4a7c2f5f567ad7b3",
+      "snapshotContentSha256": "0677f4155fee7dd3efad95e9948e74aca39393f918eb704485eb1d84eaaca8de",
+      "representativeSkillPaths": [
+        "plugins/chengfeng-videocut/skills/cut-talking-head/SKILL.md",
+        "plugins/chengfeng-videocut/skills/finish-talking-head/SKILL.md"
+      ],
+      "domainClassifications": [],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-composio-awesome-claude-skills",
+      "sourceId": "composio-awesome-claude-skills",
+      "sourceRepository": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-composio-awesome-claude-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "92568c1edaff1bde5371154f036d959346c145a8",
+      "snapshotContentSha256": "6230f8f041b7253ef845f988a21a3508f63d5c55f3e58ee03c984a7f49a435d3",
+      "representativeSkillPaths": [
+        "composio-skills/aero-workflow-automation/SKILL.md",
+        "composio-skills/agent-mail-automation/SKILL.md",
+        "composio-skills/zoho-inventory-automation/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "composio-skills/agent-mail-automation/SKILL.md"
+        },
+        {
+          "domainId": "business-operations",
+          "representativeSkillPath": "composio-skills/aero-workflow-automation/SKILL.md"
+        },
+        {
+          "domainId": "commerce",
+          "representativeSkillPath": "composio-skills/zoho-inventory-automation/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-coreyhaines31-marketingskills",
+      "sourceId": "coreyhaines31-marketingskills",
+      "sourceRepository": "https://github.com/coreyhaines31/marketingskills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-coreyhaines31-marketingskills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "c21a984a56da10fb6085e6334f6f60929220a4da",
+      "snapshotContentSha256": "2652f28194c95f3961b4d0326787daaa8a48b3efddb9886128654c7cc343bd59",
+      "representativeSkillPaths": [
+        "skills/ai-seo/SKILL.md",
+        "skills/customer-research/SKILL.md",
+        "skills/influencer-marketing/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "marketing-and-growth",
+          "representativeSkillPath": "skills/ai-seo/SKILL.md"
+        },
+        {
+          "domainId": "promotion-and-distribution",
+          "representativeSkillPath": "skills/influencer-marketing/SKILL.md"
+        },
+        {
+          "domainId": "research-and-intelligence",
+          "representativeSkillPath": "skills/customer-research/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-daymade-claude-code-skills",
+      "sourceId": "daymade-claude-code-skills",
+      "sourceRepository": "https://github.com/daymade/claude-code-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-daymade-claude-code-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "3b097ca8e06535443dc9b9cf14cb97005ed550da",
+      "snapshotContentSha256": "5855b801671876ed4a360350a0c38dd6c6cd9f05830346309020bc6c18a4794f",
+      "representativeSkillPaths": [
+        "daymade-docs/pdf-creator/SKILL.md",
+        "deep-research/SKILL.md",
+        "terraform-skill/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "devops-and-security",
+          "representativeSkillPath": "terraform-skill/SKILL.md"
+        },
+        {
+          "domainId": "documents-and-knowledge",
+          "representativeSkillPath": "daymade-docs/pdf-creator/SKILL.md"
+        },
+        {
+          "domainId": "research-and-intelligence",
+          "representativeSkillPath": "deep-research/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-deanpeters-product-manager-skills",
+      "sourceId": "deanpeters-product-manager-skills",
+      "sourceRepository": "https://github.com/deanpeters/Product-Manager-Skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-deanpeters-product-manager-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "99710188c134acf590a02c0e4ee1f431e60004cf",
+      "snapshotContentSha256": "d6b0308030ef5b3acb8c4fca172db0483abb23b9c35c8f324578d7cf9b6aee9a",
+      "representativeSkillPaths": [
+        "skills/company-research/SKILL.md",
+        "skills/prd-development/SKILL.md",
+        "skills/problem-framing-canvas/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "product-management",
+          "representativeSkillPath": "skills/prd-development/SKILL.md"
+        },
+        {
+          "domainId": "research-and-intelligence",
+          "representativeSkillPath": "skills/company-research/SKILL.md"
+        },
+        {
+          "domainId": "strategy-and-decision",
+          "representativeSkillPath": "skills/problem-framing-canvas/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-huggingface-skills",
+      "sourceId": "huggingface-skills",
+      "sourceRepository": "https://github.com/huggingface/skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-huggingface-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "86cdeee824b73e504198b6005bb113552cdfa7ba",
+      "snapshotContentSha256": "c99599d96773e9d76146068d2b63af1a053da7d7da8840b60f332948026e982f",
+      "representativeSkillPaths": [
+        "hf-mcp/skills/hf-mcp/SKILL.md",
+        "skills/hf-cli/SKILL.md",
+        "skills/hf-cloud-sagemaker-deployment-planner/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "hf-mcp/skills/hf-mcp/SKILL.md"
+        },
+        {
+          "domainId": "devops-and-security",
+          "representativeSkillPath": "skills/hf-cloud-sagemaker-deployment-planner/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-jeremylongshore-plugins-plus-skills",
+      "sourceId": "jeremylongshore-plugins-plus-skills",
+      "sourceRepository": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-jeremylongshore-plugins-plus-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "4fdcab59171f5b4c44487356ba022210bdce1168",
+      "snapshotContentSha256": "f732f0c07683cf29b7ab4e1708ff41b91e70804bf2240420401773ed5fa1ff9b",
+      "representativeSkillPaths": [
+        "plugins/ai-agency/tonone/skills/lens-dashboard/SKILL.md",
+        "plugins/ai-ml/ai-sdk-agents/skills/orchestrating-multi-agent-systems/SKILL.md",
+        "plugins/database/freshie-inventory-manager/skills/freshie-inventory/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "plugins/ai-ml/ai-sdk-agents/skills/orchestrating-multi-agent-systems/SKILL.md"
+        },
+        {
+          "domainId": "commerce",
+          "representativeSkillPath": "plugins/database/freshie-inventory-manager/skills/freshie-inventory/SKILL.md"
+        },
+        {
+          "domainId": "data-and-analytics",
+          "representativeSkillPath": "plugins/ai-agency/tonone/skills/lens-dashboard/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-k-dense-scientific-agent-skills",
+      "sourceId": "k-dense-scientific-agent-skills",
+      "sourceRepository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-k-dense-scientific-agent-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "831d49eb77eed3c792be2970921b46764012ef00",
+      "snapshotContentSha256": "26a91b44e23ad097a76a8ba084eab0a3f66e338cb31f691df99b32f9f104f5c3",
+      "representativeSkillPaths": [
+        "skills/exploratory-data-analysis/SKILL.md",
+        "skills/market-research-reports/SKILL.md",
+        "skills/pdf/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "data-and-analytics",
+          "representativeSkillPath": "skills/exploratory-data-analysis/SKILL.md"
+        },
+        {
+          "domainId": "documents-and-knowledge",
+          "representativeSkillPath": "skills/pdf/SKILL.md"
+        },
+        {
+          "domainId": "research-and-intelligence",
+          "representativeSkillPath": "skills/market-research-reports/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-kepano-obsidian-skills",
+      "sourceId": "kepano-obsidian-skills",
+      "sourceRepository": "https://github.com/kepano/obsidian-skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-kepano-obsidian-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+      "snapshotContentSha256": "0e48599f45f0ea0b84d9a634e4793a716997825f4cbf5d238eae94be4a282fc2",
+      "representativeSkillPaths": [
+        "skills/defuddle/SKILL.md",
+        "skills/json-canvas/SKILL.md",
+        "skills/obsidian-bases/SKILL.md"
+      ],
+      "domainClassifications": [],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-nexscope-ecommerce-skills",
+      "sourceId": "nexscope-ecommerce-skills",
+      "sourceRepository": "https://github.com/nexscope-ai/eCommerce-Skills",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-nexscope-ecommerce-skills",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "56f3288dd1ba3ae7cae43d369115a915229e510b",
+      "snapshotContentSha256": "0bfeb62a2057dfff1e6f513a1ba7a69d1811d80ef1a1f49924d93eae656ab4fa",
+      "representativeSkillPaths": [
+        "conversion-rate-optimization/SKILL.md",
+        "cross-border-ecommerce/SKILL.md",
+        "product-review-analysis/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "commerce",
+          "representativeSkillPath": "cross-border-ecommerce/SKILL.md"
+        },
+        {
+          "domainId": "marketing-and-growth",
+          "representativeSkillPath": "conversion-rate-optimization/SKILL.md"
+        },
+        {
+          "domainId": "product-management",
+          "representativeSkillPath": "product-review-analysis/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-obra-superpowers",
+      "sourceId": "obra-superpowers",
+      "sourceRepository": "https://github.com/obra/superpowers",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-obra-superpowers",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "d884ae04edebef577e82ff7c4e143debd0bbec99",
+      "snapshotContentSha256": "9ed7828bf274052df1deca567333221cb045f8269dbf5cb382cc8567f7c89342",
+      "representativeSkillPaths": [
+        "skills/brainstorming/SKILL.md",
+        "skills/dispatching-parallel-agents/SKILL.md",
+        "skills/receiving-code-review/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "software-engineering",
+          "representativeSkillPath": "skills/receiving-code-review/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    },
+    {
+      "id": "source-review-wshobson-agents",
+      "sourceId": "wshobson-agents",
+      "sourceRepository": "https://github.com/wshobson/agents",
+      "status": "review-required",
+      "snapshotId": "2026-07-23-wshobson-agents",
+      "observedAt": "2026-07-23T09:08:12Z",
+      "inspectedCommit": "c4b82b0ad771190355eb8e204b1329732a18449a",
+      "snapshotContentSha256": "1c31895f34aa6156e83755bbd65243cd0ae13a8bb9983e394215b6425ff715d1",
+      "representativeSkillPaths": [
+        "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+        "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+        "plugins/llm-application-dev/skills/llm-evaluation/SKILL.md"
+      ],
+      "domainClassifications": [
+        {
+          "domainId": "ai-agents-and-automation",
+          "representativeSkillPath": "plugins/llm-application-dev/skills/llm-evaluation/SKILL.md"
+        },
+        {
+          "domainId": "data-and-analytics",
+          "representativeSkillPath": "plugins/business-analytics/skills/data-storytelling/SKILL.md"
+        },
+        {
+          "domainId": "design-and-brand",
+          "representativeSkillPath": "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md"
+        }
+      ],
+      "reclassification": "next-research-observation"
+    }
+  ]
+}

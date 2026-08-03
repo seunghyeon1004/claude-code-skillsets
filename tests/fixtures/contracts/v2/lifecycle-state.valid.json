@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "catalogFingerprint": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "goalSummarySha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+  "domainIds": ["software-engineering"],
+  "level": "recommended",
+  "packIds": ["repository-to-implementation-plan"],
+  "providerIds": ["external-catalog"],
+  "marketplaceIdentities": [{ "id": "external-catalog", "source": "example/catalog" }],
+  "platform": "darwin",
+  "claudeVersion": "1.0.0",
+  "approvedPlanFingerprint": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+  "operations": [{
+    "id": "install-external-catalog",
+    "kind": "install",
+    "platform": "darwin",
+    "providerId": "external-catalog",
+    "commandId": "catalog-install",
+    "approvedPlanFingerprint": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"
+  }],
+  "receipts": [{ "operationId": "install-external-catalog", "status": "succeeded", "resultCode": "installed" }],
+  "ownership": [{ "pluginId": "external-catalog", "packIds": ["repository-to-implementation-plan"], "managed": true }]
+}

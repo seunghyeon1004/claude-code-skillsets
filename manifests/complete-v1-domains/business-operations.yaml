@@ -1,0 +1,30 @@
+id: business-operations
+name:
+  ko: 비즈니스 운영
+  en: Business Operations
+description:
+  ko: 프로세스와 표준 운영 절차부터 자동화, 인수인계, 서비스 품질, 조달, 자원, 지표, 문제와 비상 대응까지 일상 운영을 재현 가능하게 관리한다.
+  en: Makes day-to-day operations reproducible across processes, standard operating procedures, automation, handoffs, service quality, procurement, resources, metrics, issues, and emergency response.
+categories:
+  - processes
+  - sops
+  - repetitive-work-automation
+  - handoffs
+  - service-operations
+  - operations-quality
+  - procurement
+  - vendors
+  - operations-resources
+  - operational-metrics
+  - issues
+  - changes
+  - emergency-response
+languages:
+  - en
+  - ko
+regions:
+  - global
+maintainers:
+  - seunghyeon1004
+version: 0.1.0
+status: draft

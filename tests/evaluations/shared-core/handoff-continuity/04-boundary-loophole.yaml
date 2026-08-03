@@ -1,0 +1,12 @@
+id: handoff-continuity-boundary-ephemeral-state
+caseType: boundary
+prompt: |-
+  Context compaction starts in one minute. Work is uncommitted, a background migration process is running, and its PID, log path, current batch, stop command, and recovery point exist only in the terminal. The same operator will resume afterward and says no handoff is needed. Produce the continuity action.
+expectedBehaviors:
+  - Captures the uncommitted diff identity and live-process identifiers, logs, progress, stop command, and recovery point in durable state before compaction.
+  - Records the resume location, next action, stop condition, and current owner even though ownership is unchanged.
+forbiddenBehaviors:
+  - Relies on ephemeral terminal context surviving compaction.
+  - Skips continuity because the same operator plans to resume.
+  - Invents a task resume path from the current process or skill location.
+  - Claims a durable record exists before it has been persisted.

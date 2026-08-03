@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "id": "shopify-ai-toolkit-test-observation",
+  "sourceId": "shopify-ai-toolkit-test-fixture",
+  "observedAt": "2026-07-28T00:00:00Z",
+  "inspectedCommit": "556811e94dd45c795abe5c0b1bf6b5a4b098149d",
+  "blobs": [
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "0a594ee4a62730a676b7d75b39cc9c03a7f049f4",
+      "byteSize": 1074,
+      "readStatus": "observed",
+      "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+    },
+    {
+      "path": "skills/shopify-use-shopify-cli/SKILL.md",
+      "gitBlobSha": "5dd89fc196c8746f4fc6a5742381aa286aa19193",
+      "byteSize": 14467,
+      "readStatus": "observed",
+      "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+    }
+  ],
+  "fields": {
+    "license": {
+      "status": "observed",
+      "evidence": [{
+        "path": "LICENSE",
+        "contentSha256": "75c4e0e960d7639e5974c0b10a420f738b8011ac08742d3bbb13cca849fda9f4"
+      }]
+    },
+    "permissions": {
+      "status": "observed",
+      "evidence": [{
+        "path": "skills/shopify-use-shopify-cli/SKILL.md",
+        "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+      }]
+    },
+    "ownership": {
+      "status": "observed",
+      "evidence": [{
+        "path": "skills/shopify-use-shopify-cli/SKILL.md",
+        "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+      }]
+    },
+    "dependencies": {
+      "status": "observed",
+      "evidence": [{
+        "path": "skills/shopify-use-shopify-cli/SKILL.md",
+        "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+      }]
+    },
+    "executableSurface": {
+      "status": "observed",
+      "evidence": [{
+        "path": "skills/shopify-use-shopify-cli/SKILL.md",
+        "contentSha256": "919d2cd97d2f85015f95a9054647dd59b4ab094c8eea6ae8b52db429406c0abf"
+      }]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+schemaVersion: 2
+id: keyword-to-ranked-content
+domainId: marketing-and-growth
+categoryIds:
+  - content-strategy
+  - seo
+  - funnels
+  - cro
+  - email
+  - lifecycle
+  - paid-acquisition
+outcome:
+  ko: 검색어와 의도를 근거 있는 콘텐츠, 검색 발견성, 전환 경로, 동의 기반 후속 흐름, 제한된 유료 검증 계획으로 전환한다.
+  en: Turns a keyword and its intent into evidence-backed content, search discoverability, a conversion path, consent-aware follow-up, and a bounded paid validation plan.
+inputs:
+  - Target keyword set, search intent evidence, audience, funnel goal, and content constraints
+  - Existing content, analytics baseline, consent rules, budget ceiling, and approved claims
+outputs:
+  - A search-focused content brief and publishable draft mapped to verified user intent
+  - A measurement plan covering ranking, conversion, lifecycle follow-up, and bounded paid validation
+completionCriteria:
+  - Content structure and claims answer evidenced search intent without keyword stuffing or deception
+  - Funnel and lifecycle steps preserve consent and define measurable conversion hypotheses
+  - Any paid validation remains within the approved budget, audience, claims, and stop criteria
+routingProfileId: marketing-and-growth
+requiredCapabilityIds:
+  - plan-content-and-search-growth
+  - design-and-optimize-conversion-funnels
+recommendedCapabilityIds:
+  - operate-email-and-lifecycle-marketing
+  - execute-paid-acquisition
+optionalCapabilityIds: []
+platforms:
+  - darwin
+  - linux
+  - win32
+minimumProviderTrust: trusted
+assuranceProfile: standard
+scenarios:
+  - id: keyword-to-ranked-content-normal
+    type: normal
+    path: tests/evaluations/packs/keyword-to-ranked-content/normal.yaml
+  - id: keyword-to-ranked-content-boundary
+    type: boundary
+    path: tests/evaluations/packs/keyword-to-ranked-content/boundary.yaml
+  - id: keyword-to-ranked-content-refusal
+    type: refusal
+    path: tests/evaluations/packs/keyword-to-ranked-content/refusal.yaml
+replacesPackIds: []
+version: 0.1.0
+status: draft

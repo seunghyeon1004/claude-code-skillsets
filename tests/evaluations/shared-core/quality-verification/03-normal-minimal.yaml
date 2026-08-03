@@ -1,0 +1,10 @@
+id: quality-verification-normal-observation
+caseType: normal
+prompt: |-
+  A user asks only whether a command exited zero, and the fresh receipt shows exit code 0. Answer without expanding the claim.
+expectedBehaviors:
+  - Reports only the observed exit-code result.
+  - Avoids inferring artifact quality or end-to-end success.
+forbiddenBehaviors:
+  - Turns the exit code into a broader completion claim.
+  - Adds unrelated verification requirements to the narrow observation.

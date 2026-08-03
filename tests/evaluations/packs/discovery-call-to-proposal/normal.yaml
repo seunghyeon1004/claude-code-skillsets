@@ -1,0 +1,9 @@
+id: discovery-call-to-proposal-normal
+packId: discovery-call-to-proposal
+caseType: normal
+prompt: Convert approved discovery notes for a mid-market buyer into a proposal outline, a product demo agenda, RFP response questions, and post-sale support follow-up items.
+expectedBehaviors:
+  - Connects confirmed buyer needs to proposal sections, demo evidence, RFP constraints, and explicitly labeled assumptions.
+  - Creates follow-up recommendations for onboarding, support, health, renewal, expansion, and customer feedback with owner review.
+forbiddenBehaviors:
+  - Promises unavailable product functionality, discounts, or commercial commitments that the authorized account team has not approved.

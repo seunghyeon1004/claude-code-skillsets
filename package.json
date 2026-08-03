@@ -1,0 +1,64 @@
+{
+  "name": "claude-code-skillsets",
+  "version": "0.1.0",
+  "description": "A bilingual decision broker for reviewable Claude Code plugin installation, with a non-executing Codex discovery companion.",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seunghyeon1004/claude-code-skillsets.git"
+  },
+  "homepage": "https://github.com/seunghyeon1004/claude-code-skillsets#readme",
+  "bugs": {
+    "url": "https://github.com/seunghyeon1004/claude-code-skillsets/issues"
+  },
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "vitest run",
+    "test:catalog-refresh": "vitest run --config vitest.catalog-refresh.config.ts",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx src/cli.ts validate",
+    "generate": "tsx src/cli.ts generate && npm run build:manager-runtime",
+    "build:manager-runtime": "tsx scripts/build-skillset-manager-runtime.ts",
+    "check:manager-runtime": "tsx scripts/build-skillset-manager-runtime.ts --check",
+    "broker": "tsx src/discovery/cli.ts",
+    "eval:setup": "tsx src/evaluate/setup.ts",
+    "eval:maintain": "tsx src/evaluate/maintain.ts",
+    "eval:doctor": "tsx src/evaluate/doctor.ts",
+    "eval:shared-core": "tsx src/evaluate/shared-core.ts",
+    "eval:sanitize": "tsx src/evaluate/sanitize.ts",
+    "eval:sanitize:verify": "tsx src/evaluate/sanitize.ts --verify",
+    "research:collect": "tsx scripts/research/collect-github-tree.ts",
+    "research:refresh": "tsx scripts/research/refresh-catalog.ts",
+    "research:approve-official-marketplace": "tsx scripts/research/approve-official-marketplace.ts",
+    "research:materialize-source-review-backlog": "tsx scripts/research/materialize-source-review-backlog.ts",
+    "research:materialize-decision": "tsx scripts/research/materialize-decision-research.ts",
+    "research:migrate-decision-broker-v1": "tsx scripts/research/migrate-decision-broker-v1.ts",
+    "verify:research-append-only": "tsx scripts/research/assert-extension-append-only.ts",
+    "verify:review-ledger-append-only": "tsx scripts/research/assert-review-ledger-append-only.ts",
+    "verify:official-claims-append-only": "tsx scripts/research/assert-official-listing-claims-append-only.ts",
+    "verify:branch-protection": "tsx scripts/github/verify-branch-protection.ts",
+    "verify:solo-semantic-rc": "tsx scripts/release/run-solo-semantic-rc.ts",
+    "verify:public-history": "tsx scripts/release/verify-public-history.ts",
+    "verify:p03-immutable": "tsx scripts/research/assert-p03-immutable.ts",
+    "verify:broker-only": "tsx scripts/verify-broker-only.ts",
+    "verify:decision-index-history": "tsx scripts/verify-decision-index-history.ts",
+    "check:generated": "npm run research:materialize-source-review-backlog -- --check && tsx scripts/research/check-decision-broker-v1.ts && npm run generate && npm run check:manager-runtime && git diff --exit-code -- .claude-plugin generated plugins/skillset-manager/data plugins/skillset-manager/runtime.mjs generated/decision-index.json plugins/skillset-manager/data/decision-index.json research/source-review-backlog.json research/source-observations.json research/source-diffs.json research/materialized-review-state.json",
+    "check": "npm run typecheck && npm test && npm run validate && npm run check:generated",
+    "check:catalog-refresh": "npm run typecheck && npm run test:catalog-refresh && npm run validate && npm run check:generated"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "semver": "7.8.5",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/semver": "7.7.1",
+    "esbuild": "0.28.1",
+    "tsx": "4.23.1",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

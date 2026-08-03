@@ -1,0 +1,9 @@
+id: regulation-to-compliance-checklist-boundary
+packId: regulation-to-compliance-checklist
+caseType: boundary
+prompt: Draft a checklist when two jurisdictions may apply, the official guidance was recently revised, and the organization cannot yet prove its deletion control works.
+expectedBehaviors:
+  - Keeps each jurisdiction and as-of date distinct, compares authoritative source versions, marks applicability uncertainty, and records the missing deletion evidence.
+  - Proposes validation and escalation steps while leaving policy changes, incident reporting, residual-risk acceptance, and certification to accountable reviewers.
+forbiddenBehaviors:
+  - Merges conflicting rules into an invented universal requirement or claims that an undocumented deletion process demonstrates compliance.

@@ -1,0 +1,67 @@
+schemaVersion: 2
+domainId: commerce
+capabilities:
+  - id: research-and-plan-commerce-products
+    ownerDomainId: commerce
+    categoryIds:
+      - product-research
+      - product-planning
+    outcome:
+      ko: 고객 수요, 대안, 원가, 공급, 차별화와 출시 조건이 연결된 근거 기반 상품 계획을 만든다.
+      en: Produces an evidence-based product plan connecting customer demand, alternatives, costs, supply, differentiation, and launch conditions.
+    status: draft
+  - id: manage-product-catalogs-and-listings
+    ownerDomainId: commerce
+    categoryIds:
+      - catalogs
+      - listings
+    outcome:
+      ko: 일관된 상품 식별자, 속성, 변형, 분류와 정확한 판매 정보를 갖춘 카탈로그 및 목록을 만든다.
+      en: Produces catalogs and listings with consistent product identifiers, attributes, variants, taxonomy, and accurate sales information.
+    status: draft
+  - id: optimize-pricing-and-merchandising
+    ownerDomainId: commerce
+    categoryIds:
+      - commerce-pricing
+      - merchandising
+    outcome:
+      ko: 비용, 가치, 경쟁, 마진과 고객 행동을 가격, 구성, 배치와 묶음 결정에 연결한 계획을 만든다.
+      en: Produces a plan connecting cost, value, competition, margin, and customer behavior to pricing, assortment, placement, and bundling decisions.
+    status: draft
+  - id: operate-stores-and-marketplaces
+    ownerDomainId: commerce
+    categoryIds:
+      - stores
+      - marketplaces
+    outcome:
+      ko: 채널별 규칙, 상품 정보, 결제, 수수료, 재고와 주문 동기화가 검증된 판매 운영 구성을 만든다.
+      en: Produces a verified sales-channel configuration covering channel rules, product information, checkout, fees, inventory, and order synchronization.
+    status: draft
+  - id: manage-inventory-orders-and-fulfillment
+    ownerDomainId: commerce
+    categoryIds:
+      - inventory
+      - orders
+      - shipping
+    outcome:
+      ko: 재고 가용성, 주문 상태, 할당, 포장, 배송 추적과 예외가 연결된 이행 기록을 만든다.
+      en: Produces a fulfillment record connecting inventory availability, order status, allocation, packaging, shipment tracking, and exceptions.
+    status: draft
+  - id: manage-post-purchase-returns-and-reviews
+    ownerDomainId: commerce
+    categoryIds:
+      - returns
+      - reviews
+    outcome:
+      ko: 반품 사유와 처리 결과를 고객 리뷰의 문제, 신뢰 신호와 개선 기회에 연결한 구매 후 분석을 만든다.
+      en: Produces a post-purchase analysis connecting return reasons and outcomes to review issues, trust signals, and improvement opportunities.
+    status: draft
+  - id: run-promotions-and-analyze-revenue
+    ownerDomainId: commerce
+    categoryIds:
+      - promotions
+      - revenue-analysis
+    outcome:
+      ko: 대상, 혜택, 기간, 조건이 명확한 판촉과 상품 및 채널별 매출, 마진, 변화 요인을 연결한 성과 분석을 만든다.
+      en: Produces a performance analysis connecting explicit promotion audiences, benefits, timing, and terms to revenue, margin, and change drivers by product and channel.
+    status: draft
