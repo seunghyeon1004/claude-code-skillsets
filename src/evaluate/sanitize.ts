@@ -177,9 +177,11 @@ function projectBranchProtectionReceipt(value: Record<string, unknown>): Record<
   ) {
     throw new Error("Unsupported branch protection receipt shape for sanitized upload");
   }
+  const repositoryMetadata = projectRepositoryMetadata(value);
   return {
     schemaVersion: 3,
     receiptType: "branch-protection",
+    ...repositoryMetadata,
     directPushesDisabled: value.directPushesDisabled,
     forcePushesDisabled: value.forcePushesDisabled,
     deletionsDisabled: value.deletionsDisabled,
@@ -251,7 +253,7 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
   if (value.schemaVersion === 3 && value.receiptType === "branch-protection") {
     assertExactKeys(
       value,
-      ["schemaVersion", "receiptType", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
+      ["schemaVersion", "receiptType", "repositoryId", "repositoryOwnerType", "commitSha", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
       receiptPath
     );
     if (
@@ -264,6 +266,7 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
       || value.requiresCodeOwnerReview !== false
       || value.governanceMode !== "solo-maintainer"
       || value.humanReviewGuarantee !== "not-guaranteed"
+      || !hasValidSanitizedRepositoryEvidence(value)
     ) {
       throw unsupportedProjectedShape(receiptPath);
     }
@@ -334,6 +337,35 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
     return;
   }
   throw unsupportedProjectedShape(receiptPath);
+}
+
+function projectRepositoryMetadata(value: Record<string, unknown>): Record<string, unknown> {
+  if (!hasValidRawRepositoryEvidence(value)) {
+    throw new Error("Unsupported branch protection repository metadata for sanitized upload");
+  }
+  return {
+    repositoryId: value.repositoryId,
+    repositoryOwnerType: value.repositoryOwnerType,
+    commitSha: value.commitSha
+  };
+}
+
+function hasValidRawRepositoryEvidence(value: Record<string, unknown>): boolean {
+  return Number.isSafeInteger(value.repositoryId)
+    && (value.repositoryId as number) > 0
+    && typeof value.repositoryOwnerLogin === "string"
+    && /^[A-Za-z0-9_.-]+$/u.test(value.repositoryOwnerLogin)
+    && (value.repositoryOwnerType === "User" || value.repositoryOwnerType === "Organization")
+    && typeof value.commitSha === "string"
+    && /^[0-9a-f]{40}$/u.test(value.commitSha);
+}
+
+function hasValidSanitizedRepositoryEvidence(value: Record<string, unknown>): boolean {
+  return Number.isSafeInteger(value.repositoryId)
+    && (value.repositoryId as number) > 0
+    && (value.repositoryOwnerType === "User" || value.repositoryOwnerType === "Organization")
+    && typeof value.commitSha === "string"
+    && /^[0-9a-f]{40}$/u.test(value.commitSha);
 }
 
 function assertProjectedSummaryCase(value: unknown, receiptPath: string): void {

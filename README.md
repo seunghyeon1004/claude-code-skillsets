@@ -172,25 +172,34 @@ commit, path, immutable raw URL, content SHA-256으로 구성된 검증용 메�
 GitHub Free에서는 정확한 두 커밋 공개 이력으로 단계적 공개를 시작합니다. 승인된
 clean tree로 부모가 없는 `A`를 만들고, 같은 tree의 자식 `B`를 만든 뒤 annotated
 `public-history/root-v1` tag가 `A`를 가리키게 합니다. 기존 저장소는 비공개 archive로
-보존하고 이 정확한 `A`/`B`/tag만 새 빈 비공개 저장소에 올립니다. 비공개 상태에서
-`B`의 일반 CI와 public-history bootstrap이 통과하고 사용자가 최종 승인한 뒤에만
-공개 전환합니다. 공개 전환 자체는 릴리스가 아니며 release tag, GitHub Release 또는
-발표를 동반하지 않습니다.
+보존하고 이 정확한 `A`/`B`/tag만 새 빈 비공개 저장소에 올립니다. `B`의 일반 CI와
+public-history bootstrap을 통과한 뒤 `registry-approved/r01`도 정확히 `B`에 고정합니다.
+그 뒤 보안·릴리스 유지보수는 `B`를 유일한 parent로 두는 단일 커밋 `C`로만 진행하며,
+정확한 변경 경로 allowlist 밖의 파일과 보호된 research 및 R01 catalog/data bytes는
+바뀌지 않아야 합니다.
 
-공개 직후 정확한 `B`에서 `quality`와 `claude-plugin-validation`이 성공했는지 다시
-확인하고 비공개 취약점 신고를 활성화·검증한 뒤 `main`을 보호합니다. `main`은 PR을
+별도 승인 후 비공개 `main`을 `B`에서 `C`로 force 없이 fast-forward push하고 그
+push-event CI run을 보존합니다. private Actions billing이 그 run을 막은 경우에만 별도
+최종 공개 승인 뒤 같은 run ID를 rerun합니다. 정확한 `C`에서 `quality`와
+`claude-plugin-validation`이 성공했는지 확인하고 비공개 취약점 신고를 활성화·검증한
+뒤 `main`을 보호합니다. 공개 전환 자체는 릴리스가 아닙니다. `main`은 PR을
 요구하지만 승인 수는 `0`이고 CODEOWNERS review를 요구하지 않습니다. 두 required
 check는 GitHub Actions app ID `15368`에 결합합니다. 직접 push, force push, 브랜치
 삭제를 차단하고 관리자에게도 규칙을 적용하며 사용자, 팀, app의 우회는 없습니다.
 이 solo maintainer 구성은 쓰기 경로를 보호하지만 독립적인 사람의 검토를 보장하지
 않습니다.
 
-명시적 승인 뒤 clean local `main`의 정확한 `B`에서 로컬 구독 Claude CLI로 읽기 전용
+명시적 승인 뒤 clean local `main`의 정확한 `C`에서 로컬 구독 Claude CLI로 읽기 전용
 동일한 SHA fixture suite를 실행합니다. 외부 후보를 설치하거나 GitHub를 변경하지 않으며,
 sanitized 영수증만 릴리스 근거로 보존합니다. 이어 인증 없이 같은 SHA를 clone하고
 marketplace 추가, manager 설치, 첫 setup preview를 검증합니다. 모든 단계가 통과한
 뒤에만 release tag, GitHub Release와 발표가 가능합니다. 실패하면 tag나 발표 없이
-비공개로 복귀하고 새 SHA로 처음부터 반복합니다. 이미 공개 중 내려받은 복사본은
+비공개로 복귀합니다. 원격 push 전에는 `B`의 새 단일 자식 `C`로 교체할 수 있지만,
+원격 `main`에 C가 올라간 뒤 sibling C를 non-fast-forward/force push하지 않습니다. 이
+경우 비공개 전환 후 중단하고, 현재 원격 C 위의 단일 append-only repair commit과 B부터
+repair까지의 재감사를 포함한 새 명시적 plan/approval 없이는 진행하지 않습니다. A/B/R01
+bootstrap은 반복하거나 tag를 이동하지 않습니다. 이미
+공개 중 내려받은 복사본은
 회수할 수 없습니다. 전체 순서는
 [GitHub Free 단계적 공개 런북](docs/release/github-free-staged-public.md)에 고정합니다.
 

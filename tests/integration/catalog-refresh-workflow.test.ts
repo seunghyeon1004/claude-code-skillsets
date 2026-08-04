@@ -156,11 +156,14 @@ describe("catalog refresh workflow policy", () => {
     ]);
     const scripts = (JSON.parse(packageJson) as { scripts: Record<string, string> }).scripts;
 
-    expect(runbook).toMatch(/registry-approved\/r01[\s\S]*exact(?:ly)? `?B`?/i);
+    expect(runbook).toContain('APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"');
+    expect(runbook).toContain('APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"');
+    expect(runbook).toContain('BOOTSTRAP_TIP_B="$(git rev-parse registry-approved/r01^{commit})"');
+    expect(runbook).toContain('R01_TAG_OBJECT="$(git rev-parse registry-approved/r01^{tag})"');
     expect(runbook).toMatch(
-      /verify[\s\S]*annotated tag[\s\S]*configure `REGISTRY_APPROVAL_ANCHORED`[\s\S]*`APPROVED_REGISTRY_TAG_OBJECT`[\s\S]*current-tip CI[\s\S]*public staging/i
+      /Candidate C[\s\S]*exactly B as its only parent[\s\S]*R01-approved catalog bytes[\s\S]*unchanged[\s\S]*exact push-event CI[\s\S]*public staging/i
     );
-    expect(runbook).toContain('gh workflow run catalog-refresh.yml --ref main -f expected_tip="$B"');
+    expect(runbook).toContain('gh workflow run catalog-refresh.yml --repo "$REPO" --ref main -f expected_tip="$CANDIDATE_SHA"');
     expect(runbook).toContain("CATALOG_REFRESH_ENABLED");
     expect(runbook).toContain("claude plugin marketplace update claude-code-skillsets");
     expect(runbook).toContain("claude plugin update skillset-manager@claude-code-skillsets --scope user");

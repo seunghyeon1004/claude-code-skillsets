@@ -48,6 +48,9 @@ export function validateReviewerRegistry(value: unknown): ReviewerRegistry {
 
 export function validateBranchProtectionReceipt(value: unknown): BranchProtectionReceipt {
   const receipt = validateContract("branch protection receipt", validateBranchProtectionReceiptSchema, value);
+  if (receipt.repository.split("/", 1)[0] !== receipt.repositoryOwnerLogin) {
+    throw new Error("Invalid branch protection receipt: repository owner login must match repository");
+  }
   if (!hasExactRequiredBranchProtectionChecks(receipt.requiredChecks)) {
     throw new Error("Invalid branch protection receipt: required checks must bind to GitHub Actions exactly");
   }

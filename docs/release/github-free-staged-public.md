@@ -19,8 +19,10 @@ digest must preserve the public parent's exact index bytes. See
 [`docs/decision-index-history.md`](../decision-index-history.md).
 
 Do not create or move a release tag, create a GitHub Release, announce the project,
-or describe the candidate as released. Any code or documentation change creates a
-new SHA and restarts this stage.
+or describe the candidate as released. Before the one-time remote bootstrap, any
+code or documentation change creates a new SHA and restarts this stage. After the
+bootstrap and R01 anchor exist, use the corrective-descendant contract in 1D instead;
+the bootstrap cannot be restarted against the existing repository.
 
 ### 1A. Create the two-commit public candidate locally
 
@@ -173,82 +175,217 @@ with the exact replacement URL and A/B/tag values.
 
 ### 1D. Anchor reviewed refreshes after the strict bootstrap
 
-The one-time A/B/public-history bootstrap remains pre-anchor and exact-ref only.
-After that bootstrap succeeds, use a separate approved remote operation to create
-the annotated `registry-approved/r01` tag at exactly `B`; never include it in the
-initial three-line remote bootstrap. Verify the annotated tag object and target
-before configuring GitHub:
+The one-time A/B bootstrap and the separately approved R01 anchor already exist. The
+A / `public-history/root-v1` pair and B / `registry-approved/r01` pair are immutable.
+Never move either tag and never rerun the bootstrap. Resolve all four identities from
+the local annotated tags on every restart and compare them with the approved values;
+do not rely on shell variables left by the bootstrap session.
 
-```bash
-git tag -a registry-approved/r01 "$B" -m "R01 reviewed broker registry base"
-test "$(git cat-file -t registry-approved/r01)" = tag
-test "$(git rev-parse registry-approved/r01^{commit})" = "$B"
-R01_TAG_OBJECT="$(git rev-parse registry-approved/r01)"
-```
-
-Pushing that new tag and changing repository variables or secrets are separate
-external effects and require explicit approval. After the approved tag push, use
-GitHub's repository settings to configure `REGISTRY_APPROVAL_ANCHORED` to the exact
-value `anchored` and `APPROVED_REGISTRY_TAG_OBJECT` to the exact protected
-`R01_TAG_OBJECT`. Verify the remote annotated tag again, rerun current-tip CI at
-unchanged `B` with the exact required input:
+Candidate C is a narrow post-bootstrap security and release maintenance commit. It
+must have exactly B as its only parent. It may update only the exact reviewed path set
+below. The R01-approved catalog bytes, catalog data, and protected research stay
+unchanged. Those unchanged decision surfaces are the only reason a new registry tag
+is not required. Protected research surface changes or catalog/data changes require
+the reviewed research workflow and a next registry-approved tag.
 
 ```bash
 set -euo pipefail
-PREEXISTING_CI_RUNS="$(gh run list --workflow ci.yml --event workflow_dispatch --branch main --commit "$B" --limit 1000 --json databaseId,createdAt)"
-DISPATCHED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-gh workflow run ci.yml --ref main -f expected_tip="$B"
+REPO="seunghyeon1004/claude-code-skillsets"
+PUBLIC_REMOTE_URL="https://github.com/$REPO.git"
+export GH_HOST=github.com
+GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")
 
-list_new_ci_run_ids() {
-  gh run list --workflow ci.yml --event workflow_dispatch --branch main --commit "$B" --limit 1000 --json databaseId,createdAt \
-    | jq -c --argjson preexisting "$PREEXISTING_CI_RUNS" --arg dispatched_at "$DISPATCHED_AT" '
+APPROVED_REPOSITORY_ID="1322344258"
+APPROVED_PUBLIC_ROOT_A="cb2f51c097be78612b07bcafe66bc30914c7d5ac"
+APPROVED_PUBLIC_ROOT_TAG_OBJECT="6b56351f581797fc3ca26bd0c3a1f7978da4c675"
+APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"
+APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"
+
+PUBLIC_ROOT_A="$(git rev-parse public-history/root-v1^{commit})"
+PUBLIC_ROOT_TAG_OBJECT="$(git rev-parse public-history/root-v1^{tag})"
+BOOTSTRAP_TIP_B="$(git rev-parse registry-approved/r01^{commit})"
+R01_TAG_OBJECT="$(git rev-parse registry-approved/r01^{tag})"
+test "$PUBLIC_ROOT_A" = "$APPROVED_PUBLIC_ROOT_A"
+test "$PUBLIC_ROOT_TAG_OBJECT" = "$APPROVED_PUBLIC_ROOT_TAG_OBJECT"
+test "$BOOTSTRAP_TIP_B" = "$APPROVED_BOOTSTRAP_TIP_B"
+test "$R01_TAG_OBJECT" = "$APPROVED_R01_TAG_OBJECT"
+
+CANDIDATE_SHA="$(git rev-parse HEAD)"
+test "$(git rev-list --parents -n 1 "$CANDIDATE_SHA")" = "$CANDIDATE_SHA $BOOTSTRAP_TIP_B"
+AUTHOR_EMAIL="$(git show -s --format=%ae "$CANDIDATE_SHA")"
+case "$AUTHOR_EMAIL" in *.local) exit 1 ;; esac
+COMMITTER_EMAIL="$(git show -s --format=%ce "$CANDIDATE_SHA")"
+case "$COMMITTER_EMAIL" in *.local) exit 1 ;; esac
+SIGNED_OFF_COUNT="$(git show -s --format=%B "$CANDIDATE_SHA" | git interpret-trailers --parse | awk -F': ' '$1 == "Signed-off-by" { count += 1 } END { print count + 0 }')"
+test "$SIGNED_OFF_COUNT" = 1
+
+EXPECTED_MAINTENANCE_PATHS="$(cat <<'PATHS'
+README.en.md
+README.md
+docs/release/github-free-staged-public.md
+package-lock.json
+plugins/skillset-manager/THIRD_PARTY_NOTICES
+plugins/skillset-manager/runtime.mjs
+schemas/v3/branch-protection-receipt.schema.json
+scripts/github/verify-branch-protection.ts
+src/contracts/review-ledger.ts
+src/evaluate/sanitize.ts
+src/model/review-ledger.ts
+tests/fixtures/github/branch-protection.valid.json
+tests/integration/catalog-refresh-workflow.test.ts
+tests/integration/plugin-package-readiness.test.ts
+tests/integration/release-gates.test.ts
+tests/unit/branch-protection.test.ts
+tests/unit/sanitize.test.ts
+PATHS
+)"
+ACTUAL_MAINTENANCE_PATHS="$(git diff --name-only "$BOOTSTRAP_TIP_B" "$CANDIDATE_SHA" | LC_ALL=C sort)"
+test "$ACTUAL_MAINTENANCE_PATHS" = "$EXPECTED_MAINTENANCE_PATHS"
+
+PROTECTED_RESEARCH_PATHS=(
+  governance/reviewers.json
+  manifests/decision-candidate-evidence.yaml
+  manifests/complete-v1-providers
+  manifests/source-reviews
+  manifests/conflicts
+  manifests/provider-selections
+  research
+)
+R01_CATALOG_DATA_PATHS=(
+  .claude-plugin/marketplace.json
+  generated/catalog.en.md
+  generated/catalog.ko.md
+  generated/decision-index.json
+  generated/install-index.json
+  generated/official-marketplace-index.json
+  manifests/official-listing-capability-claims.yaml
+  manifests/plugins/skillset-manager.yaml
+  plugins/skillset-manager/.claude-plugin/plugin.json
+  plugins/skillset-manager/data
+)
+git diff --quiet "$BOOTSTRAP_TIP_B" "$CANDIDATE_SHA" -- \
+  "${PROTECTED_RESEARCH_PATHS[@]}" "${R01_CATALOG_DATA_PATHS[@]}"
+
+npm ci
+test "$(node -p 'require("./package-lock.json").packages["node_modules/fast-uri"].version')" = "3.1.5"
+test "$(node -p 'require("./package-lock.json").packages["node_modules/fast-uri"].integrity')" = "sha512-gHwA1O9LDIcKunMKhObS/HimwtehO1nPUECKAu5TpKgaO19fcWEl4bliWe1jWxVFvIXztJjjQ4L8XQ1EU9f7Jw=="
+test "$(node -p 'require("./package-lock.json").packages["node_modules/postcss"].version')" = "8.5.25"
+test "$(node -p 'require("./package-lock.json").packages["node_modules/postcss"].integrity')" = "sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw=="
+test "$(node -p 'String(require("./package-lock.json").packages["node_modules/postcss"].dev)')" = true
+test "$(node -p 'require("./package-lock.json").packages["node_modules/nanoid"].version')" = "3.3.18"
+test "$(node -p 'require("./package-lock.json").packages["node_modules/nanoid"].integrity')" = "sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w=="
+test "$(node -p 'String(require("./package-lock.json").packages["node_modules/nanoid"].dev)')" = true
+npm ls fast-uri postcss nanoid
+npm audit --audit-level=low
+npm run check:manager-runtime
+npm run check
+REGISTRY_APPROVAL_ANCHORED=anchored \
+APPROVED_REGISTRY_TAG_OBJECT="$R01_TAG_OBJECT" \
+APPEND_BASE="$BOOTSTRAP_TIP_B" \
+bash tests/e2e/clean-copy.sh
+
+preflight_repository_state() {
+  expected_visibility="$1"
+  expected_main="$2"
+  repository_json="$("${GH_API[@]}" --method GET "repos/$REPO")"
+  test "$(jq -r '.id' <<<"$repository_json")" = "$APPROVED_REPOSITORY_ID"
+  test "$(jq -r '.full_name' <<<"$repository_json")" = "$REPO"
+  test "$(jq -r '.owner.login' <<<"$repository_json")" = "seunghyeon1004"
+  test "$(jq -r '.owner.type' <<<"$repository_json")" = User
+  test "$(jq -r '.visibility' <<<"$repository_json")" = "$expected_visibility"
+  test "$(jq -r '.default_branch' <<<"$repository_json")" = main
+  test "$(jq -r '.archived' <<<"$repository_json")" = false
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$expected_main"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/public-history/root-v1" --jq .object.sha)" = "$APPROVED_PUBLIC_ROOT_TAG_OBJECT"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/tags/$APPROVED_PUBLIC_ROOT_TAG_OBJECT" --jq .object.sha)" = "$APPROVED_PUBLIC_ROOT_A"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/registry-approved/r01" --jq .object.sha)" = "$APPROVED_R01_TAG_OBJECT"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/tags/$APPROVED_R01_TAG_OBJECT" --jq .object.sha)" = "$APPROVED_BOOTSTRAP_TIP_B"
+  expected_direct_refs="$(printf '%s\t%s\n' \
+    "$expected_main" refs/heads/main \
+    "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+    "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 | LC_ALL=C sort)"
+  test "$(git ls-remote --refs "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_direct_refs"
+  expected_advertised_refs="$(printf '%s\t%s\n' \
+    "$expected_main" refs/heads/main \
+    "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+    "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
+    "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
+    "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' | LC_ALL=C sort)"
+  test "$(git ls-remote --heads --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_advertised_refs"
+  test "$(gh pr list --repo "$REPO" --state all --limit 1000 --json number | jq 'length')" = 0
+}
+
+preflight_repository_state private "$BOOTSTRAP_TIP_B"
+printf 'approved target inventory: id=%s repo=%s owner=%s visibility=private main=%s root-tag=%s root=%s r01-tag=%s r01=%s\n' \
+  "$APPROVED_REPOSITORY_ID" "$REPO" seunghyeon1004 "$BOOTSTRAP_TIP_B" \
+  "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" "$APPROVED_PUBLIC_ROOT_A" \
+  "$APPROVED_R01_TAG_OBJECT" "$APPROVED_BOOTSTRAP_TIP_B"
+```
+
+Show that live inventory and the exact B:C push to the user. Obtain explicit approval
+for this push only. It does not authorize public visibility, settings changes, a
+release, or an announcement. Continue in the same shell only after that approval:
+
+```bash
+PREEXISTING_PUSH_RUNS="$(gh run list --repo "$REPO" --workflow ci.yml --event push --branch main --commit "$CANDIDATE_SHA" --limit 1000 --json databaseId,createdAt)"
+PUSHED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+preflight_repository_state private "$BOOTSTRAP_TIP_B"
+git push --porcelain "$PUBLIC_REMOTE_URL" "$CANDIDATE_SHA:refs/heads/main"
+preflight_repository_state private "$CANDIDATE_SHA"
+
+list_new_push_run_ids() {
+  gh run list --repo "$REPO" --workflow ci.yml --event push --branch main --commit "$CANDIDATE_SHA" --limit 1000 --json databaseId,createdAt \
+    | jq -c --argjson preexisting "$PREEXISTING_PUSH_RUNS" --arg pushed_at "$PUSHED_AT" '
       [$preexisting[].databaseId] as $preexisting_ids
-      | [
-          .[]
-          | .databaseId as $id
-          | select(.createdAt >= $dispatched_at)
-          | select(($preexisting_ids | index($id)) == null)
-          | $id
-        ]
+      | [.[] | .databaseId as $id | select(.createdAt >= $pushed_at) | select(($preexisting_ids | index($id)) == null) | $id]
     '
 }
 
-CI_RUN_ID=""
 for attempt in $(seq 1 12); do
-  NEW_CI_RUN_IDS="$(list_new_ci_run_ids)"
-  NEW_CI_RUN_COUNT="$(jq 'length' <<<"$NEW_CI_RUN_IDS")"
-  if test "$NEW_CI_RUN_COUNT" = 1; then
-    CI_RUN_ID="$(jq -r '.[0]' <<<"$NEW_CI_RUN_IDS")"
-    break
-  fi
-  test "$NEW_CI_RUN_COUNT" = 0
+  NEW_PUSH_RUN_IDS="$(list_new_push_run_ids)"
+  test "$(jq 'length' <<<"$NEW_PUSH_RUN_IDS")" -le 1
+  test "$(jq 'length' <<<"$NEW_PUSH_RUN_IDS")" = 0 || break
   sleep 5
 done
-test -n "$CI_RUN_ID"
-gh run watch "$CI_RUN_ID" --exit-status
-NEW_CI_RUN_IDS="$(list_new_ci_run_ids)"
-test "$(jq 'length' <<<"$NEW_CI_RUN_IDS")" = 1
-test "$(jq -r '.[0]' <<<"$NEW_CI_RUN_IDS")" = "$CI_RUN_ID"
-CI_RUN="$(gh run view "$CI_RUN_ID" --json conclusion,headSha,jobs,status)"
-test "$(jq -r '.status' <<<"$CI_RUN")" = completed
-test "$(jq -r '.conclusion' <<<"$CI_RUN")" = success
-test "$(jq -r '.headSha' <<<"$CI_RUN")" = "$B"
-test "$(jq '[.jobs[] | select(.name == "quality")] | length' <<<"$CI_RUN")" = 1
-test "$(jq '[.jobs[] | select(.name == "quality" and .status == "completed" and .conclusion == "success")] | length' <<<"$CI_RUN")" = 1
-test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation")] | length' <<<"$CI_RUN")" = 1
-test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation" and .status == "completed" and .conclusion == "success")] | length' <<<"$CI_RUN")" = 1
-test "$(gh api repos/seunghyeon1004/claude-code-skillsets/git/ref/heads/main --jq .object.sha)" = "$B"
+test "$(jq 'length' <<<"$NEW_PUSH_RUN_IDS")" = 1
+PUSH_CI_RUN_ID="$(jq -r '.[0]' <<<"$NEW_PUSH_RUN_IDS")"
+PUSH_CI_RUN="$(gh run view "$PUSH_CI_RUN_ID" --repo "$REPO" --json conclusion,event,headSha,jobs,status)"
+test "$(jq -r '.event' <<<"$PUSH_CI_RUN")" = push
+test "$(jq -r '.headSha' <<<"$PUSH_CI_RUN")" = "$CANDIDATE_SHA"
+set +e
+gh run watch "$PUSH_CI_RUN_ID" --repo "$REPO" --exit-status
+PRIVATE_PUSH_WATCH_STATUS=$?
+set -e
+PUSH_CI_RUN="$(gh run view "$PUSH_CI_RUN_ID" --repo "$REPO" --json conclusion,event,headSha,jobs,status)"
+test "$(jq -r '.event' <<<"$PUSH_CI_RUN")" = push
+test "$(jq -r '.headSha' <<<"$PUSH_CI_RUN")" = "$CANDIDATE_SHA"
+if test "$PRIVATE_PUSH_WATCH_STATUS" = 0; then
+  test "$(jq -r '.status' <<<"$PUSH_CI_RUN")" = completed
+  test "$(jq -r '.conclusion' <<<"$PUSH_CI_RUN")" = success
+  test "$(jq '[.jobs[] | select(.name == "quality")] | length' <<<"$PUSH_CI_RUN")" = 1
+  test "$(jq '[.jobs[] | select(.name == "quality" and .status == "completed" and .conclusion == "success")] | length' <<<"$PUSH_CI_RUN")" = 1
+  test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation")] | length' <<<"$PUSH_CI_RUN")" = 1
+  test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation" and .status == "completed" and .conclusion == "success")] | length' <<<"$PUSH_CI_RUN")" = 1
+else
+  gh run view "$PUSH_CI_RUN_ID" --repo "$REPO" --log-failed || true
+  printf '%s\n' "STOP: classify the exact failure; only confirmed private Actions billing may proceed to visibility approval" >&2
+  exit 2
+fi
 ```
 
-Wait for both exact `B` jobs, `quality` and `claude-plugin-validation`, to reach
-terminal `success`. Do not dispatch the Catalog refresh workflow during initial
-public staging; this release candidate already contains its reviewed catalog. After
-the CI result, confirm that fresh live `main` still points exactly to `B`, then proceed
-to stage 2 under its separate explicit public-visibility approval. The repository
-variable `CATALOG_REFRESH_ENABLED` must remain unset throughout initial staging and
-release; do not configure it in stages 1 through 6. The workflow requires its exact
-approved value before checkout, so both schedule and manual refreshes fail before
-collection while the variable is absent.
+Run the gates for `CANDIDATE_SHA` in this order: exact push-event CI, branch
+protection and its receipt, same-SHA semantic RC, then anonymous install. The exact
+push-event run ID is mandatory evidence. A manual `workflow_dispatch`
+current-tip run may be supplementary evidence, but it must never substitute for that
+push run. If the watch stops, do not classify an arbitrary CI failure as billing.
+Inspect the exact run and obtain explicit user confirmation that private-repository
+Actions billing is the sole blocker. Preserve `PUSH_CI_RUN_ID`; only that confirmed
+case may continue to stage 2 and rerun the same push-event run attempt after
+visibility. Otherwise both exact `CANDIDATE_SHA` jobs, `quality` and
+`claude-plugin-validation`, must reach terminal `success` while private.
+Do not dispatch Catalog refresh during initial public staging. `CATALOG_REFRESH_ENABLED`
+must remain unset through stages 1 to 6. After fresh live `main` is confirmed exactly
+at `CANDIDATE_SHA`, proceed to stage 2 under its separate visibility approval.
 
 ### 1E. Review candidate additions from the generated backlog
 
@@ -318,24 +455,118 @@ the failure; it also verifies that the checkout is clean again.
 
 ## 2. Approved public staging
 
-After the remote bootstrap workflow passes and explicit final user approval is
-recorded, change repository visibility to public. This
-visibility change is not a release and must not be combined with a tag, GitHub
-Release, marketplace-directory submission, or announcement.
+Public visibility requires a separate explicit final user approval after the private
+B:C push and exact push-run inventory. It is not a release and must not be combined
+with a tag, GitHub Release, marketplace submission, or announcement. On a restarted
+shell, restore the captured push run ID and derive C from the reviewed local commit.
+Resolve and verify the immutable identities again before displaying the final live
+inventory:
 
-Immediately after visibility changes to public, confirm in GitHub Actions that the
-exact `B` SHA has successful `quality` and `claude-plugin-validation` runs. Only then
-enable the public private-vulnerability-reporting endpoint that `SUPPORT.md` links
-to, and verify it before any release claim:
+Obtain explicit final user approval before you change repository visibility to public.
 
 ```bash
+set -euo pipefail
 REPO="seunghyeon1004/claude-code-skillsets"
-gh api --method PUT "repos/$REPO/private-vulnerability-reporting"
-test "$(gh api "repos/$REPO/private-vulnerability-reporting" --jq .enabled)" = true
+PUBLIC_REMOTE_URL="https://github.com/$REPO.git"
+export GH_HOST=github.com
+GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")
+APPROVED_REPOSITORY_ID="1322344258"
+APPROVED_PUBLIC_ROOT_A="cb2f51c097be78612b07bcafe66bc30914c7d5ac"
+APPROVED_PUBLIC_ROOT_TAG_OBJECT="6b56351f581797fc3ca26bd0c3a1f7978da4c675"
+APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"
+APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"
+BOOTSTRAP_TIP_B="$(git rev-parse registry-approved/r01^{commit})"
+CANDIDATE_SHA="$(git rev-parse HEAD)"
+PUSH_CI_RUN_ID="<captured-push-run-id>"
+test "$(git rev-parse public-history/root-v1^{commit})" = "$APPROVED_PUBLIC_ROOT_A"
+test "$(git rev-parse public-history/root-v1^{tag})" = "$APPROVED_PUBLIC_ROOT_TAG_OBJECT"
+test "$BOOTSTRAP_TIP_B" = "$APPROVED_BOOTSTRAP_TIP_B"
+test "$(git rev-parse registry-approved/r01^{tag})" = "$APPROVED_R01_TAG_OBJECT"
+test "$(git rev-list --parents -n 1 "$CANDIDATE_SHA")" = "$CANDIDATE_SHA $BOOTSTRAP_TIP_B"
+
+preflight_repository_state() {
+  expected_visibility="$1"
+  expected_main="$2"
+  repository_json="$("${GH_API[@]}" --method GET "repos/$REPO")"
+  test "$(jq -r '.id' <<<"$repository_json")" = "$APPROVED_REPOSITORY_ID"
+  test "$(jq -r '.full_name' <<<"$repository_json")" = "$REPO"
+  test "$(jq -r '.owner.login' <<<"$repository_json")" = "seunghyeon1004"
+  test "$(jq -r '.owner.type' <<<"$repository_json")" = User
+  test "$(jq -r '.visibility' <<<"$repository_json")" = "$expected_visibility"
+  test "$(jq -r '.default_branch' <<<"$repository_json")" = main
+  test "$(jq -r '.archived' <<<"$repository_json")" = false
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$expected_main"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/public-history/root-v1" --jq .object.sha)" = "$APPROVED_PUBLIC_ROOT_TAG_OBJECT"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/tags/$APPROVED_PUBLIC_ROOT_TAG_OBJECT" --jq .object.sha)" = "$APPROVED_PUBLIC_ROOT_A"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/registry-approved/r01" --jq .object.sha)" = "$APPROVED_R01_TAG_OBJECT"
+  test "$("${GH_API[@]}" --method GET "repos/$REPO/git/tags/$APPROVED_R01_TAG_OBJECT" --jq .object.sha)" = "$APPROVED_BOOTSTRAP_TIP_B"
+  expected_direct_refs="$(printf '%s\t%s\n' \
+    "$expected_main" refs/heads/main \
+    "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+    "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 | LC_ALL=C sort)"
+  test "$(git ls-remote --refs "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_direct_refs"
+  expected_advertised_refs="$(printf '%s\t%s\n' \
+    "$expected_main" refs/heads/main \
+    "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+    "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
+    "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
+    "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' | LC_ALL=C sort)"
+  test "$(git ls-remote --heads --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_advertised_refs"
+  test "$(gh pr list --repo "$REPO" --state all --limit 1000 --json number | jq 'length')" = 0
+}
+
+preflight_repository_state private "$CANDIDATE_SHA"
+PUSH_CI_RUN="$(gh run view "$PUSH_CI_RUN_ID" --repo "$REPO" --json conclusion,event,headSha,jobs,status)"
+test "$(jq -r '.event' <<<"$PUSH_CI_RUN")" = push
+test "$(jq -r '.headSha' <<<"$PUSH_CI_RUN")" = "$CANDIDATE_SHA"
+```
+
+Show this exact private inventory and push-run state, explain that public copies cannot
+be recalled, and obtain explicit final approval. Continue in the same shell only after
+approval:
+
+```bash
+preflight_repository_state private "$CANDIDATE_SHA"
+gh repo edit "github.com/$REPO" --visibility public --accept-visibility-change-consequences
+preflight_repository_state public "$CANDIDATE_SHA"
+
+if test "$(jq -r '.conclusion' <<<"$PUSH_CI_RUN")" != success; then
+  gh run rerun "$PUSH_CI_RUN_ID" --repo "$REPO"
+fi
+gh run watch "$PUSH_CI_RUN_ID" --repo "$REPO" --exit-status
+PUSH_CI_RUN="$(gh run view "$PUSH_CI_RUN_ID" --repo "$REPO" --json conclusion,event,headSha,jobs,status)"
+test "$(jq -r '.event' <<<"$PUSH_CI_RUN")" = push
+test "$(jq -r '.status' <<<"$PUSH_CI_RUN")" = completed
+test "$(jq -r '.conclusion' <<<"$PUSH_CI_RUN")" = success
+test "$(jq -r '.headSha' <<<"$PUSH_CI_RUN")" = "$CANDIDATE_SHA"
+test "$(jq '[.jobs[] | select(.name == "quality")] | length' <<<"$PUSH_CI_RUN")" = 1
+test "$(jq '[.jobs[] | select(.name == "quality" and .status == "completed" and .conclusion == "success")] | length' <<<"$PUSH_CI_RUN")" = 1
+test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation")] | length' <<<"$PUSH_CI_RUN")" = 1
+test "$(jq '[.jobs[] | select(.name == "claude-plugin-validation" and .status == "completed" and .conclusion == "success")] | length' <<<"$PUSH_CI_RUN")" = 1
+preflight_repository_state public "$CANDIDATE_SHA"
+```
+
+If private billing blocked the first attempt, the successful evidence above is the
+same push-event run attempt rerun after visibility, not a manual dispatch. Only after
+that exact run succeeds, enable the public private-vulnerability-reporting endpoint
+that `SUPPORT.md` links to. Repeat the full preflight immediately before and after the
+mutation:
+
+After visibility, the exact push-event jobs must be successful. Only then may branch
+protection and its prerequisite public support setting be changed.
+
+```bash
+preflight_repository_state public "$CANDIDATE_SHA"
+"${GH_API[@]}" --method PUT "repos/$REPO/private-vulnerability-reporting"
+preflight_repository_state public "$CANDIDATE_SHA"
+test "$("${GH_API[@]}" "repos/$REPO/private-vulnerability-reporting" --jq .enabled)" = true
+preflight_repository_state public "$CANDIDATE_SHA"
 ```
 
 Only after that support gate passes, apply `main` branch protection and verify the
-live policy:
+live policy. Signed-commit protection is a separate GitHub endpoint and this policy
+keeps it disabled; a GET must return exact HTTP 404. A 200, another status, or a
+transport failure stops the release:
 
 - disable direct pushes, force pushes, and branch deletion, including for admins;
 - allow no user, team, or app bypass;
@@ -348,28 +579,43 @@ live policy:
   "not-guaranteed"`. This protects the write path but does **not** guarantee an
   independent human review.
 
-Use this exact GitHub API payload. It requires pull requests even though the minimum
-approval count is zero, and binds both required checks to the GitHub Actions app:
+The target is a personal-account repository, so omit
+`bypass_pull_request_allowances`; field absence means no bypass for this owner type.
+An organization-owned repository must instead include explicit empty
+`bypass_pull_request_allowances` arrays for `users`, `teams`, and `apps`. Any present
+malformed or nonempty child is a verification failure for either owner type.
+
+GitHub's whole protection request is contexts-only. After the full protection GET,
+use the status-check subresource with a checks-only PATCH if the app pins do not
+match. Here checks-only means no `contexts`; the subresource payload also repeats
+`strict: true`. Never put `contexts` and `checks` in the same request object. The
+first payload requires pull requests even though the minimum approval count is zero:
 
 ```bash
+set -euo pipefail
 mkdir -p .release-evidence
+preflight_repository_state public "$CANDIDATE_SHA"
+
+set +e
+SIGNATURE_PROBE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/branches/main/protection/required_signatures" 2>&1)"
+SIGNATURE_PROBE_STATUS=$?
+set -e
+test "$SIGNATURE_PROBE_STATUS" = 1
+grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$SIGNATURE_PROBE"
+preflight_repository_state public "$CANDIDATE_SHA"
+
 cat > .release-evidence/main-protection.json <<'JSON'
 {
   "required_status_checks": {
     "strict": true,
-    "contexts": [],
-    "checks": [
-      { "context": "claude-plugin-validation", "app_id": 15368 },
-      { "context": "quality", "app_id": 15368 }
-    ]
+    "contexts": ["claude-plugin-validation", "quality"]
   },
   "enforce_admins": true,
   "required_pull_request_reviews": {
     "dismiss_stale_reviews": true,
     "require_code_owner_reviews": false,
     "required_approving_review_count": 0,
-    "require_last_push_approval": false,
-    "bypass_pull_request_allowances": { "users": [], "teams": [], "apps": [] }
+    "require_last_push_approval": false
   },
   "restrictions": null,
   "required_linear_history": false,
@@ -381,8 +627,41 @@ cat > .release-evidence/main-protection.json <<'JSON'
   "allow_fork_syncing": false
 }
 JSON
-gh api --method PUT "repos/$REPO/branches/main/protection" \
+preflight_repository_state public "$CANDIDATE_SHA"
+"${GH_API[@]}" --method PUT "repos/$REPO/branches/main/protection" \
   --input .release-evidence/main-protection.json
+
+preflight_repository_state public "$CANDIDATE_SHA"
+FULL_PROTECTION="$("${GH_API[@]}" --method GET "repos/$REPO/branches/main/protection")"
+if ! jq -e '
+  [.required_status_checks.checks[] | {context, app_id}] | sort_by(.context)
+  == [
+    {"context":"claude-plugin-validation","app_id":15368},
+    {"context":"quality","app_id":15368}
+  ]
+' <<<"$FULL_PROTECTION" >/dev/null; then
+  cat > .release-evidence/status-checks.json <<'JSON'
+{
+  "strict": true,
+  "checks": [
+    { "context": "claude-plugin-validation", "app_id": 15368 },
+    { "context": "quality", "app_id": 15368 }
+  ]
+}
+JSON
+  preflight_repository_state public "$CANDIDATE_SHA"
+  "${GH_API[@]}" --method PATCH "repos/$REPO/branches/main/protection/required_status_checks" \
+    --input .release-evidence/status-checks.json
+fi
+preflight_repository_state public "$CANDIDATE_SHA"
+
+set +e
+SIGNATURE_PROBE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/branches/main/protection/required_signatures" 2>&1)"
+SIGNATURE_PROBE_STATUS=$?
+set -e
+test "$SIGNATURE_PROBE_STATUS" = 1
+grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$SIGNATURE_PROBE"
+preflight_repository_state public "$CANDIDATE_SHA"
 ```
 
 Use the normal read-only GitHub CLI session to create the local receipt after the
@@ -390,20 +669,28 @@ policy is applied; no self-hosted runner, protected environment, or special
 Administration token is a public-release prerequisite:
 
 ```bash
+preflight_repository_state public "$CANDIDATE_SHA"
 mkdir -p .release-evidence/raw
 npm run verify:branch-protection -- \
-  --repo seunghyeon1004/claude-code-skillsets --branch main \
+  --repo seunghyeon1004/claude-code-skillsets --repository-id 1322344258 \
+  --expected-tip "$CANDIDATE_SHA" \
+  --branch main \
   --output .release-evidence/raw/branch-protection.json
 npm run eval:sanitize -- .release-evidence/raw .release-evidence/sanitized
 npm run eval:sanitize:verify -- .release-evidence/sanitized
 ```
 
-Freeze the candidate. If `main` no longer points to the private-stage SHA, stop and
-use rollback instead of validating a different commit.
+The verifier uses the same fixed GitHub API media type and version as the runbook. In
+one invocation it fetches the repository, verifies `main` at exact `CANDIDATE_SHA`,
+fetches protection and the separate required-signatures endpoint, then verifies
+`main` again. The raw receipt preserves repository ID, full name, owner login/type,
+and commit SHA. The sanitized receipt deliberately removes repository full name and
+owner login; it preserves only repository ID, owner type, and commit SHA as minimum
+public identity evidence. If any identity or tip changes, stop and use rollback.
 
 ## 3. Protected same-SHA local semantic RC
 
-Use a clean local checkout of protected `main` at the exact `B` SHA. After explicit
+Use a clean local checkout of protected `main` at the exact `CANDIDATE_SHA`. After explicit
 approval for the local subscription Claude CLI evaluation, run the read-only fixture
 suite below. The command refuses a dirty worktree, a non-`main` branch, or a SHA that
 does not equal the local `main` tip before it invokes Claude. Its evaluator uses the
@@ -411,7 +698,8 @@ repository's fixture data and Claude Code safe mode with read-only tools; it doe
 install candidates, mutate GitHub, or use a remote runner.
 
 ```bash
-SHA="$(git rev-parse HEAD)"
+SHA="$CANDIDATE_SHA"
+test "$(git rev-parse HEAD)" = "$SHA"
 npm ci
 npm run verify:solo-semantic-rc -- \
   --commit-sha "$SHA" \
@@ -427,7 +715,7 @@ Do not reuse a receipt from another SHA.
 ## 4. Unauthenticated installation verification
 
 From a clean environment with no GitHub authentication, verify that the exact same
-SHA is reachable by HTTPS clone. Then test public marketplace add, manager install,
+`CANDIDATE_SHA` is reachable by HTTPS clone. Then test public marketplace add, manager install,
 and the first-user setup preview. The marketplace and installed plugin must resolve
 to the staged repository, and setup must preserve its approval boundaries.
 
@@ -453,12 +741,170 @@ after the update command reports success; restart Claude Code if required by the
 CLI update notice. Then inspect `/plugin` or `claude plugin list --json` and verify
 the expected manager version before relying on the new decision index.
 
-Do not install an external candidate during this release check without its separate
-user approval. Record only sanitized evidence.
+Run the actual public install in a disposable environment. This uses only this
+repository's manager and its same-marketplace `shared-core` dependency; it does not
+install an external candidate. Preserve only the projected JSON evidence, never the
+temporary paths or raw Claude configuration:
+
+```bash
+set -euo pipefail
+REPO="seunghyeon1004/claude-code-skillsets"
+PUBLIC_REMOTE_URL="https://github.com/$REPO.git"
+GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")
+APPROVED_REPOSITORY_ID="1322344258"
+APPROVED_PUBLIC_ROOT_A="cb2f51c097be78612b07bcafe66bc30914c7d5ac"
+APPROVED_PUBLIC_ROOT_TAG_OBJECT="6b56351f581797fc3ca26bd0c3a1f7978da4c675"
+APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"
+APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"
+RECEIPT_PATH="$PWD/.release-evidence/sanitized/branch-protection.json"
+CANDIDATE_SHA="$(jq -er '.commitSha | select(test("^[0-9a-f]{40}$"))' "$RECEIPT_PATH")"
+test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+
+preflight_public_candidate() {
+  repository_json="$("${GH_API[@]}" --method GET "repos/$REPO")"
+  test "$(jq -r '.id' <<<"$repository_json")" = "$APPROVED_REPOSITORY_ID"
+  test "$(jq -r '.full_name' <<<"$repository_json")" = "$REPO"
+  test "$(jq -r '.owner.login' <<<"$repository_json")" = seunghyeon1004
+  test "$(jq -r '.owner.type' <<<"$repository_json")" = User
+  test "$(jq -r '.visibility' <<<"$repository_json")" = public
+  test "$(jq -r '.default_branch' <<<"$repository_json")" = main
+  test "$(jq -r '.archived' <<<"$repository_json")" = false
+  expected_refs="$(printf '%s\t%s\n' \
+    "$CANDIDATE_SHA" refs/heads/main \
+    "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+    "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
+    "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
+    "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' | LC_ALL=C sort)"
+  test "$(git ls-remote --heads --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_refs"
+  test "$(gh pr list --repo "$REPO" --state all --limit 1000 --json number | jq 'length')" = 0
+}
+
+preflight_public_candidate
+EVIDENCE_BASE="$PWD"
+ANON_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/skillsets-anonymous-install.XXXXXX")"
+trap 'rm -rf "$ANON_ROOT"' EXIT
+mkdir -p "$ANON_ROOT/home" "$ANON_ROOT/claude" "$ANON_ROOT/plugin-cache" "$ANON_ROOT/project" "$ANON_ROOT/tmp"
+TRUSTED_PATH="$(dirname "$(command -v claude)"):/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+env -i \
+  PATH="$TRUSTED_PATH" \
+  HOME="$ANON_ROOT/home" \
+  SHELL=/bin/bash \
+  TMPDIR="$ANON_ROOT/tmp" \
+  LC_ALL=C \
+  CLAUDE_CONFIG_DIR="$ANON_ROOT/claude" \
+  CLAUDE_CODE_PLUGIN_CACHE_DIR="$ANON_ROOT/plugin-cache" \
+  GIT_CONFIG_GLOBAL=/dev/null \
+  GIT_CONFIG_NOSYSTEM=1 \
+  GIT_TERMINAL_PROMPT=0 \
+  REPO="$REPO" \
+  CANDIDATE_SHA="$CANDIDATE_SHA" \
+  ANON_ROOT="$ANON_ROOT" \
+  EVIDENCE_BASE="$EVIDENCE_BASE" \
+  /bin/bash --noprofile --norc <<'ANONYMOUS_INSTALL'
+set -euo pipefail
+unset GH_TOKEN GITHUB_TOKEN SSH_AUTH_SOCK GIT_ASKPASS GIT_CONFIG_PARAMETERS GIT_CONFIG_COUNT
+
+canonical_directory_below() {
+  candidate="$1"
+  boundary="$2"
+  test -d "$candidate"
+  test ! -L "$candidate"
+  candidate_real="$(cd "$candidate" && pwd -P)"
+  boundary_real="$(cd "$boundary" && pwd -P)"
+  case "$candidate_real" in
+    "$boundary_real"/*) printf '%s\n' "$candidate_real" ;;
+    *) return 1 ;;
+  esac
+}
+
+compare_plugin_tree() {
+  expected="$1"
+  installed="$2"
+  test -z "$(find "$expected" -type l -print -quit)"
+  test -z "$(find "$installed" -type l -print -quit)"
+  diff -qr -- "$expected" "$installed"
+}
+
+ANON_REPO_URL="https://github.com/$REPO.git"
+test "$(git -c credential.helper= ls-remote "$ANON_REPO_URL" refs/heads/main | awk '{print $1}')" = "$CANDIDATE_SHA"
+git -c credential.helper= clone --no-tags --single-branch --branch main "$ANON_REPO_URL" "$ANON_ROOT/project/repository"
+test "$(git -C "$ANON_ROOT/project/repository" rev-parse HEAD)" = "$CANDIDATE_SHA"
+cd "$ANON_ROOT/project"
+claude plugin marketplace add "$REPO" --scope local
+claude plugin install skillset-manager@claude-code-skillsets --scope local
+
+MARKETPLACES="$(claude plugin marketplace list --json)"
+PLUGINS="$(claude plugin list --json)"
+jq -e --arg repo "$REPO" '
+  [.[] | select(.name == "claude-code-skillsets" and .repo == $repo and .source == "github")] | length == 1
+' <<<"$MARKETPLACES" >/dev/null
+jq -e '
+  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.2" and .scope == "local" and .enabled == true)] | length == 1
+  and [.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1
+' <<<"$PLUGINS" >/dev/null
+
+MARKETPLACE_LOCATION="$(jq -er '.[] | select(.name == "claude-code-skillsets") | .installLocation' <<<"$MARKETPLACES")"
+MANAGER_INSTALL_PATH="$(jq -er '.[] | select(.id == "skillset-manager@claude-code-skillsets") | .installPath' <<<"$PLUGINS")"
+SHARED_INSTALL_PATH="$(jq -er '.[] | select(.id == "shared-core@claude-code-skillsets") | .installPath' <<<"$PLUGINS")"
+MARKETPLACE_ROOT="$(canonical_directory_below "$MARKETPLACE_LOCATION" "$ANON_ROOT")"
+MANAGER_ROOT="$(canonical_directory_below "$MANAGER_INSTALL_PATH" "$ANON_ROOT/plugin-cache")"
+SHARED_ROOT="$(canonical_directory_below "$SHARED_INSTALL_PATH" "$ANON_ROOT/plugin-cache")"
+test "$(git -C "$MARKETPLACE_ROOT" rev-parse HEAD)" = "$CANDIDATE_SHA"
+compare_plugin_tree "$ANON_ROOT/project/repository/plugins/skillset-manager" "$MANAGER_ROOT"
+compare_plugin_tree "$ANON_ROOT/project/repository/plugins/shared-core" "$SHARED_ROOT"
+
+REQUEST="$(node -e '
+const fs = require("node:fs");
+const index = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+const request = {
+  schemaVersion: 1,
+  language: "en",
+  platform: "linux",
+  observedAt: index.observedThrough,
+  claudeProbeConsent: "granted",
+  domainIds: [index.profiles[0].domainId]
+};
+process.stdout.write(Buffer.from(`${JSON.stringify(request, null, 2)}\n`).toString("base64url"));
+' "$MANAGER_ROOT/data/decision-index.json")"
+PREVIEW="$(node "$MANAGER_ROOT/runtime.mjs" preview --request "$REQUEST")"
+jq -e '.command == "preview" and .status == "held" and (has("approvedExecution") | not)' \
+  <<<"$PREVIEW" >/dev/null
+
+EVIDENCE_ROOT="$EVIDENCE_BASE/.release-evidence"
+EVIDENCE_SANITIZED="$EVIDENCE_ROOT/sanitized"
+test ! -L "$EVIDENCE_ROOT"
+mkdir -p "$EVIDENCE_ROOT"
+test ! -L "$EVIDENCE_ROOT"
+test ! -L "$EVIDENCE_SANITIZED"
+mkdir -p "$EVIDENCE_SANITIZED"
+test ! -L "$EVIDENCE_SANITIZED"
+EVIDENCE_DIR="$EVIDENCE_SANITIZED/anonymous-install-$CANDIDATE_SHA"
+test ! -e "$EVIDENCE_DIR"
+mkdir "$EVIDENCE_DIR"
+set -o noclobber
+jq --arg repo "$REPO" '[.[] | select(.name == "claude-code-skillsets") | {name, repo: $repo, source}]' \
+  <<<"$MARKETPLACES" > "$EVIDENCE_DIR/marketplace.json"
+jq '[.[] | select(.id == "skillset-manager@claude-code-skillsets" or .id == "shared-core@claude-code-skillsets") | {id, version, scope, enabled}]' \
+  <<<"$PLUGINS" > "$EVIDENCE_DIR/plugins.json"
+jq '{command, status, approvedExecutionPresent: has("approvedExecution")}' \
+  <<<"$PREVIEW" > "$EVIDENCE_DIR/preview.json"
+ANONYMOUS_INSTALL
+
+test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+preflight_public_candidate
+```
+
+If any anonymous clone, source, dependency, version, or enablement check fails, stage
+4 fails. The `EXIT` trap removes only the isolated temporary root. Do not install an
+external candidate during this release check without its separate user approval.
 
 ## 5. Release, tag, and announcement
 
-Only after stages 1 through 4 pass for one unchanged SHA may the maintainer create
+Immediately before any release tag, GitHub Release, announcement, or directory
+submission, run `test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"` and
+`preflight_public_candidate` again in the stage 4 shell. Only after stages 1 through
+4 pass for that one unchanged SHA may the maintainer create
 or move the release tag, publish a GitHub Release, announce the public repository,
 or submit it to an external marketplace directory. Release evidence must identify
 that exact SHA.
@@ -469,22 +915,78 @@ On any failure after stage 2, stop testing, create no tag or GitHub Release, mak
 announcement, and switch the repository back to private. Record the failed gate and
 retain only sanitized evidence. Publicly fetched copies cannot be revoked.
 
-Fixes produce a new candidate SHA and restart at stage 1. Do not weaken branch
-protection, skip the exact-SHA check, or reuse an RC receipt from an older commit.
+The rollback must work even when strict ref, branch, tag, or PR inventory is the
+failed gate. It therefore checks only the immutable target identity before each
+bounded private-visibility attempt, then proves both the target and archive are
+private:
+
+```bash
+set -euo pipefail
+REPO="seunghyeon1004/claude-code-skillsets"
+ARCHIVE_REPO="seunghyeon1004/claude-code-skillsets-private-bootstrap-v9"
+APPROVED_REPOSITORY_ID="1322344258"
+APPROVED_ARCHIVE_REPOSITORY_ID="1319698664"
+GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")
+
+rollback_identity_preflight() {
+  target="$("${GH_API[@]}" --method GET "repos/$REPO")"
+  test "$(jq -r '.id' <<<"$target")" = "$APPROVED_REPOSITORY_ID"
+  test "$(jq -r '.full_name' <<<"$target")" = "$REPO"
+  test "$(jq -r '.owner.login' <<<"$target")" = seunghyeon1004
+  test "$(jq -r '.owner.type' <<<"$target")" = User
+}
+
+ROLLBACK_CONFIRMED=false
+for attempt in $(seq 1 6); do
+  rollback_identity_preflight
+  set +e
+  printf '%s\n' '{"visibility":"private"}' \
+    | "${GH_API[@]}" --method PATCH "repos/$REPO" --input - >/dev/null
+  PATCH_STATUS=$?
+  set -e
+  sleep "$((attempt * 2))"
+  rollback_identity_preflight
+  target="$("${GH_API[@]}" --method GET "repos/$REPO")"
+  if test "$(jq -r '.private' <<<"$target")" = true \
+    && test "$(jq -r '.visibility' <<<"$target")" = private; then
+    ROLLBACK_CONFIRMED=true
+    break
+  fi
+  test "$PATCH_STATUS" -eq 0 || test "$attempt" -lt 6
+done
+test "$ROLLBACK_CONFIRMED" = true
+rollback_identity_preflight
+archive="$("${GH_API[@]}" --method GET "repos/$ARCHIVE_REPO")"
+test "$(jq -r '.id' <<<"$archive")" = "$APPROVED_ARCHIVE_REPOSITORY_ID"
+test "$(jq -r '.full_name' <<<"$archive")" = "$ARCHIVE_REPO"
+test "$(jq -r '.private' <<<"$archive")" = true
+```
+
+Before the one-time bootstrap, fixes produce a new candidate SHA and restart stage 1.
+Before C is pushed, it may be replaced only by another reviewed single commit whose
+only parent is B. After C is present on remote `main`, a sibling C would require a
+non-fast-forward or force push and is prohibited. On any later failure, return the
+repository to private and stop. Do not mutate remote state again until a new explicit
+append-only repair plan is reviewed and approved. That plan must make the current
+remote C the direct parent of one repair commit, re-audit every public commit from B
+through the repair, enforce an exact repair allowlist plus unchanged protected
+research/catalog data, and rerun every gate. Never rerun bootstrap, move A/B/R01,
+weaken branch protection, or reuse an older receipt.
 
 ## 7. Later approved catalog maintenance
 
 A manual Catalog refresh is a later maintenance action, not an initial public-staging
 or release prerequisite. Both manual and schedule routes require
 `CATALOG_REFRESH_ENABLED` to equal `enabled`. Obtain separate approval to activate
-that maintenance policy, bind the manual run to the reviewed exact `B` tip, and only
+that maintenance policy, bind the manual run to the reviewed exact `CANDIDATE_SHA`, and only
 then enable and dispatch it after the release workflow is complete:
 
 ```bash
 REPO="seunghyeon1004/claude-code-skillsets"
+export GH_HOST=github.com
 gh variable set CATALOG_REFRESH_ENABLED --body enabled --repo "$REPO"
 test "$(gh variable get CATALOG_REFRESH_ENABLED --repo "$REPO")" = enabled
-gh workflow run catalog-refresh.yml --ref main -f expected_tip="$B"
+gh workflow run catalog-refresh.yml --repo "$REPO" --ref main -f expected_tip="$CANDIDATE_SHA"
 ```
 
 The manual route checks the required tip before checkout and verifies the resulting

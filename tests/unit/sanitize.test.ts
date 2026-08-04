@@ -52,6 +52,13 @@ const requiredCheckBindings = requiredBranchProtectionChecks.map((name) => ({
   name,
   app: { id: 15368, slug: "github-actions" }
 }));
+const rawBranchProtectionRepositoryEvidence = {
+  repository: "seunghyeon1004/claude-code-skillsets",
+  repositoryId: 1322344258,
+  repositoryOwnerLogin: "seunghyeon1004",
+  repositoryOwnerType: "User" as const,
+  commitSha: "f".repeat(40)
+};
 const unsafeBranchProtectionChecks = [
   "Bearer ghp_private_branch_protection_token",
   "actor: private-maintainer",
@@ -320,6 +327,7 @@ describe("semantic receipt sanitization", () => {
       const { source, destination } = await receiptDirectories();
       const receipt = {
         schemaVersion: 3,
+        ...rawBranchProtectionRepositoryEvidence,
         directPushesDisabled: true,
         forcePushesDisabled: true,
         deletionsDisabled: true,
@@ -336,8 +344,7 @@ describe("semantic receipt sanitization", () => {
       await expect(readdir(destination)).resolves.toEqual([]);
 
       await writeFile(join(destination, "branch-protection.json"), JSON.stringify({
-        ...receipt,
-        receiptType: "branch-protection"
+        ...sanitizedBranchProtectionReceipt(receipt)
       }));
       await expect(verifySanitizedReceiptTree(destination)).rejects.toThrow();
     }
@@ -359,6 +366,7 @@ describe("semantic receipt sanitization", () => {
       const { source, destination } = await receiptDirectories();
       const receipt = {
         schemaVersion: 3,
+        ...rawBranchProtectionRepositoryEvidence,
         directPushesDisabled: true,
         forcePushesDisabled: true,
         deletionsDisabled: true,
@@ -373,8 +381,7 @@ describe("semantic receipt sanitization", () => {
 
       await expect(sanitizeReceiptTree(source, destination)).rejects.toThrow();
       await writeFile(join(destination, "branch-protection.json"), JSON.stringify({
-        ...receipt,
-        receiptType: "branch-protection"
+        ...sanitizedBranchProtectionReceipt(receipt)
       }));
       await expect(verifySanitizedReceiptTree(destination)).rejects.toThrow();
     }
@@ -384,6 +391,7 @@ describe("semantic receipt sanitization", () => {
     const { source, destination } = await receiptDirectories();
     const receipt = {
       schemaVersion: 3,
+      ...rawBranchProtectionRepositoryEvidence,
       directPushesDisabled: true,
       forcePushesDisabled: true,
       deletionsDisabled: true,
@@ -396,10 +404,9 @@ describe("semantic receipt sanitization", () => {
     };
     await writeFile(join(source, "branch-protection.json"), JSON.stringify(receipt));
     await sanitizeReceiptTree(source, destination);
-    await expect(readJson(join(destination, "branch-protection.json"))).resolves.toEqual({
-      ...receipt,
-      receiptType: "branch-protection"
-    });
+    await expect(readJson(join(destination, "branch-protection.json"))).resolves.toEqual(
+      sanitizedBranchProtectionReceipt(receipt)
+    );
 
     for (const unsafe of [
       { directPushesDisabled: false },
@@ -506,4 +513,23 @@ async function makeTemporaryDirectory(): Promise<string> {
 
 async function readJson(path: string): Promise<unknown> {
   return JSON.parse(await readFile(path, "utf8")) as unknown;
+}
+
+function sanitizedBranchProtectionReceipt(receipt: Record<string, unknown>): Record<string, unknown> {
+  return {
+    schemaVersion: 3,
+    receiptType: "branch-protection",
+    repositoryId: receipt.repositoryId,
+    repositoryOwnerType: receipt.repositoryOwnerType,
+    commitSha: receipt.commitSha,
+    directPushesDisabled: receipt.directPushesDisabled,
+    forcePushesDisabled: receipt.forcePushesDisabled,
+    deletionsDisabled: receipt.deletionsDisabled,
+    requiredChecks: receipt.requiredChecks,
+    minimumApprovals: receipt.minimumApprovals,
+    dismissesStaleReviews: receipt.dismissesStaleReviews,
+    requiresCodeOwnerReview: receipt.requiresCodeOwnerReview,
+    governanceMode: receipt.governanceMode,
+    humanReviewGuarantee: receipt.humanReviewGuarantee
+  };
 }

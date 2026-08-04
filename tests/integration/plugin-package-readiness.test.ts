@@ -24,7 +24,7 @@ describe("marketplace package readiness", () => {
     for (const dependency of [
       "ajv 8.20.0 - MIT",
       "fast-deep-equal 3.1.3 - MIT",
-      "fast-uri 3.1.4 - BSD-3-Clause",
+      "fast-uri 3.1.5 - BSD-3-Clause",
       "json-schema-traverse 1.0.0 - MIT",
       "semver 7.8.5 - ISC",
       "yaml 2.9.0 - ISC"

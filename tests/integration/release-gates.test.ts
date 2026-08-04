@@ -1,4 +1,4 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { cp, mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -8,7 +8,10 @@ import {
   sanitizeReceiptTree,
   verifySanitizedReceiptTree
 } from "../../src/evaluate/sanitize.js";
-import { receiptFromGitHubProtection, verifyBranchProtection } from "../../scripts/github/verify-branch-protection.js";
+import {
+  repositoryMetadataFromGitHubResponse,
+  verifyGitHubProtectionResponse
+} from "../../scripts/github/verify-branch-protection.js";
 import { requiredCheckBindings } from "../../src/governance/branch-protection.js";
 import { checkDecisionBrokerV1 } from "../../scripts/research/check-decision-broker-v1.js";
 import { assertExtensionAppendOnly } from "../../scripts/research/assert-extension-append-only.js";
@@ -310,7 +313,7 @@ describe("foundation release gates", () => {
     expect(releaseGuide).toMatch(/exactly three advertised lines[\s\S]*annotated tag object[\s\S]*peeled/i);
   });
 
-  it("isolates exact-B manual current-tip CI from the first-public bootstrap dispatch", async () => {
+  it("captures corrective-candidate push CI without substituting manual current-tip CI", async () => {
     const [workflow, bootstrapWorkflow, releaseGuide] = await Promise.all([
       readFile(join(projectRoot, ".github", "workflows", "ci.yml"), "utf8"),
       readFile(join(projectRoot, ".github", "workflows", "public-history-bootstrap.yml"), "utf8"),
@@ -325,36 +328,30 @@ describe("foundation release gates", () => {
     expect((workflow.match(/EXPECTED_CURRENT_TIP: \$\{\{ inputs\.expected_tip \}\}/g) ?? [])).toHaveLength(2);
     expect(bootstrapWorkflow).not.toMatch(/MANUAL_CURRENT_TIP|EXPECTED_CURRENT_TIP|expected_tip/);
     expect(bootstrapWorkflow).toMatch(/root_commit:[\s\S]*tip_commit:[\s\S]*tag_name:[\s\S]*tag_object:/);
-    expect(releaseGuide).toContain('gh workflow run ci.yml --ref main -f expected_tip="$B"');
     const currentTipSection = releaseGuide.slice(
       releaseGuide.indexOf("### 1D. Anchor reviewed refreshes"),
       releaseGuide.indexOf("### 1E. Review candidate additions")
     );
     expect(currentTipSection).toMatch(/```bash\nset -euo pipefail/);
+    expect(currentTipSection).toContain("--event push");
     expect(currentTipSection).toContain("--limit 1000 --json databaseId,createdAt");
-    expect(currentTipSection.indexOf("PREEXISTING_CI_RUNS=")).toBeLessThan(
-      currentTipSection.indexOf('gh workflow run ci.yml --ref main -f expected_tip="$B"')
+    expect(currentTipSection.indexOf("PREEXISTING_PUSH_RUNS=")).toBeLessThan(
+      currentTipSection.indexOf('git push --porcelain "$PUBLIC_REMOTE_URL" "$CANDIDATE_SHA:refs/heads/main"')
     );
-    expect(currentTipSection.indexOf('DISPATCHED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"')).toBeLessThan(
-      currentTipSection.indexOf('gh workflow run ci.yml --ref main -f expected_tip="$B"')
+    expect(currentTipSection.indexOf('PUSHED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"')).toBeLessThan(
+      currentTipSection.indexOf('git push --porcelain "$PUBLIC_REMOTE_URL" "$CANDIDATE_SHA:refs/heads/main"')
     );
     expect(currentTipSection).toMatch(/\[\$preexisting\[\]\.databaseId\] as \$preexisting_ids/);
-    expect(currentTipSection).toMatch(/\.createdAt >= \$dispatched_at/);
+    expect(currentTipSection).toMatch(/\.createdAt >= \$pushed_at/);
     expect(currentTipSection).toMatch(/index\(\$id\).*== null/);
-    expect(currentTipSection).toMatch(/for attempt in \$\(seq 1 12\)[\s\S]*NEW_CI_RUN_IDS=.*list_new_ci_run_ids/);
-    expect(currentTipSection).toMatch(/NEW_CI_RUN_COUNT=.*jq 'length'/);
-    expect(currentTipSection).toMatch(/test "\$NEW_CI_RUN_COUNT" = 0/);
-    expect((currentTipSection.match(/NEW_CI_RUN_IDS="\$\(list_new_ci_run_ids\)"/g) ?? [])).toHaveLength(2);
-    expect(currentTipSection).toMatch(/test "\$\(jq 'length' <<<"\$NEW_CI_RUN_IDS"\)" = 1/);
-    expect(currentTipSection).toMatch(/test "\$\(jq -r '\.\[0\]' <<<"\$NEW_CI_RUN_IDS"\)" = "\$CI_RUN_ID"/);
-    expect(currentTipSection).toContain('--json conclusion,headSha,jobs,status');
-    expect(currentTipSection).toMatch(/\.status == "completed" and \.conclusion == "success"/);
-    expect(currentTipSection).toMatch(/test "\$\(jq '\[\.jobs\[\] \| select\(\.name == "quality"\)\] \| length'/);
-    expect(currentTipSection).toMatch(/test "\$\(jq '\[\.jobs\[\] \| select\(\.name == "claude-plugin-validation"\)\] \| length'/);
-    expect(currentTipSection).toMatch(/exact `B`[\s\S]*quality[\s\S]*claude-plugin-validation[\s\S]*terminal[^.]*success/i);
+    expect(currentTipSection).toMatch(/for attempt in \$\(seq 1 12\)[\s\S]*NEW_PUSH_RUN_IDS=.*list_new_push_run_ids/);
+    expect(currentTipSection).toContain('PUSH_CI_RUN_ID="$(jq -r \'.[0]\' <<<"$NEW_PUSH_RUN_IDS")"');
+    expect(currentTipSection).toContain('gh run view "$PUSH_CI_RUN_ID" --repo "$REPO"');
+    expect(currentTipSection).toMatch(/manual[^.]*workflow_dispatch[^.]*never[^.]*substitute/i);
+    expect(currentTipSection).toMatch(/exact `CANDIDATE_SHA`[\s\S]*quality[\s\S]*claude-plugin-validation[\s\S]*terminal[^.]*success/i);
   });
 
-  it("keeps catalog refresh outside initial public staging and binds later maintenance to exact B", async () => {
+  it("keeps catalog refresh outside initial public staging and binds later maintenance to the candidate", async () => {
     const releaseGuide = await readFile(
       join(projectRoot, "docs", "release", "github-free-staged-public.md"),
       "utf8"
@@ -371,11 +368,11 @@ describe("foundation release gates", () => {
     expect(prePublicSection).not.toContain("gh workflow run catalog-refresh.yml");
     expect(prePublicSection).toMatch(/CATALOG_REFRESH_ENABLED[^.]*remain unset/i);
     expect(prePublicSection).not.toMatch(/gh variable set CATALOG_REFRESH_ENABLED/);
-    expect(prePublicSection).toMatch(/fresh live `main`[^.]*exact(?:ly)?[^.]*`B`[^.]*stage 2/i);
+    expect(prePublicSection).toMatch(/fresh live `main`[^.]*exact(?:ly)?[^.]*`CANDIDATE_SHA`[^.]*stage 2/i);
     expect(releaseGuide.indexOf("## 7. Later approved catalog maintenance")).toBeGreaterThan(
       releaseGuide.indexOf("## 5. Release, tag, and announcement")
     );
-    expect(maintenanceSection).toContain('gh workflow run catalog-refresh.yml --ref main -f expected_tip="$B"');
+    expect(maintenanceSection).toContain('gh workflow run catalog-refresh.yml --repo "$REPO" --ref main -f expected_tip="$CANDIDATE_SHA"');
     expect(maintenanceSection).toContain("gh variable set CATALOG_REFRESH_ENABLED --body enabled");
     expect(maintenanceSection).toMatch(/manual[^.]*schedule[^.]*CATALOG_REFRESH_ENABLED[^.]*enabled/is);
     expect(maintenanceSection).toMatch(/separate approval|separately approved/i);
@@ -392,6 +389,67 @@ describe("foundation release gates", () => {
     expect(maintenanceSection).toMatch(/body[^.]*branch[^.]*SHA[^.]*base[^.]*repository/is);
     expect(maintenanceSection).toMatch(/cannot guarantee[^.]*cleanup|cleanup[^.]*not guaranteed/i);
     expect(maintenanceSection).toMatch(/operator[^.]*inspect[^.]*live[^.]*refs[^.]*PRs[^.]*retry/i);
+  });
+
+  it("keeps the one-time bootstrap immutable while validating a corrective descendant", async () => {
+    const releaseGuide = await readFile(
+      join(projectRoot, "docs", "release", "github-free-staged-public.md"),
+      "utf8"
+    );
+    const correctiveSection = releaseGuide.slice(
+      releaseGuide.indexOf("### 1D. Anchor reviewed refreshes"),
+      releaseGuide.indexOf("### 1E. Review candidate additions")
+    );
+
+    expect(correctiveSection).toContain('APPROVED_PUBLIC_ROOT_A="cb2f51c097be78612b07bcafe66bc30914c7d5ac"');
+    expect(correctiveSection).toContain('APPROVED_PUBLIC_ROOT_TAG_OBJECT="6b56351f581797fc3ca26bd0c3a1f7978da4c675"');
+    expect(correctiveSection).toContain('APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"');
+    expect(correctiveSection).toContain('APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"');
+    expect(correctiveSection).toContain('BOOTSTRAP_TIP_B="$(git rev-parse registry-approved/r01^{commit})"');
+    expect(correctiveSection).toContain('CANDIDATE_SHA="$(git rev-parse HEAD)"');
+    expect(correctiveSection).toContain('test "$(git rev-list --parents -n 1 "$CANDIDATE_SHA")" = "$CANDIDATE_SHA $BOOTSTRAP_TIP_B"');
+    expect(correctiveSection).toMatch(/--format=%ae[\s\S]*\.local[\s\S]*--format=%ce[\s\S]*\.local/);
+    expect(correctiveSection).toMatch(/interpret-trailers --parse[\s\S]*Signed-off-by/);
+    expect(correctiveSection).toContain("EXPECTED_MAINTENANCE_PATHS=");
+    for (const path of [
+      "README.en.md",
+      "README.md",
+      "docs/release/github-free-staged-public.md",
+      "package-lock.json",
+      "plugins/skillset-manager/THIRD_PARTY_NOTICES",
+      "plugins/skillset-manager/runtime.mjs",
+      "schemas/v3/branch-protection-receipt.schema.json",
+      "scripts/github/verify-branch-protection.ts",
+      "src/contracts/review-ledger.ts",
+      "src/evaluate/sanitize.ts",
+      "src/model/review-ledger.ts",
+      "tests/fixtures/github/branch-protection.valid.json",
+      "tests/integration/catalog-refresh-workflow.test.ts",
+      "tests/integration/plugin-package-readiness.test.ts",
+      "tests/integration/release-gates.test.ts",
+      "tests/unit/branch-protection.test.ts",
+      "tests/unit/sanitize.test.ts"
+    ]) expect(correctiveSection).toContain(path);
+    expect(correctiveSection).toContain('test "$ACTUAL_MAINTENANCE_PATHS" = "$EXPECTED_MAINTENANCE_PATHS"');
+    expect(correctiveSection).toContain("R01_CATALOG_DATA_PATHS=(");
+    expect(correctiveSection).toMatch(/fast-uri[\s\S]*3\.1\.5[\s\S]*sha512-gHwA1O9LDIcKunMKhObS\/HimwtehO1nPUECKAu5TpKgaO19fcWEl4bliWe1jWxVFvIXztJjjQ4L8XQ1EU9f7Jw==/);
+    expect(correctiveSection).toMatch(/postcss[\s\S]*8\.5\.25[\s\S]*sha512-DTPx3RWSSnWyzLxQnlH0rJP\+EW5ekl16ZU4\/psbIhA0e53kJfdgaN5vKM\+xP7yJtXVu\+nfdVFmlgFDEKAe4Pyw==/);
+    expect(correctiveSection).toMatch(/nanoid[\s\S]*3\.3\.18[\s\S]*sha512-DTg4MJbGMWkfi6VZFdNt2\/caMbQy4Ou\+Op\/hJQvGEWcnVfoA1QA\+xzRKAzw9jD6\+GVOOeYr\/mIcuDSdug6F6\+w==/);
+    expect(correctiveSection).toMatch(/node_modules\/nanoid"\]\.dev[\s\S]*true/);
+    expect(correctiveSection).toContain("npm ls fast-uri postcss nanoid");
+    expect(correctiveSection).toContain("npm audit --audit-level=low");
+    expect(correctiveSection).toContain("npm run check:manager-runtime");
+    expect(correctiveSection).toContain("npm run check");
+    expect(correctiveSection).toMatch(/clean-copy/i);
+    expect(correctiveSection).toMatch(/A[^.]*public-history\/root-v1[^.]*immutable/i);
+    expect(correctiveSection).toMatch(/B[^.]*registry-approved\/r01[^.]*immutable/i);
+    expect(correctiveSection).toMatch(/never[^.]*rerun[^.]*bootstrap/i);
+    expect(correctiveSection).not.toContain("gh workflow run public-history-bootstrap.yml");
+    expect(correctiveSection).toMatch(/R01-approved catalog bytes[^.]*unchanged/i);
+    expect(correctiveSection).toMatch(/protected research[^.]*unchanged/i);
+    expect(correctiveSection).toMatch(/protected research surface changes[^.]*next registry-approved tag/i);
+    expect(correctiveSection).not.toMatch(/release-mechanics-only/i);
+    expect(correctiveSection).toMatch(/Run the gates for `CANDIDATE_SHA`[^.]*CI[^.]*branch\s+protection[^.]*semantic RC[^.]*anonymous install/is);
   });
 
   it("revalidates the exact source revision through a no-local single-branch transport fixture", async () => {
@@ -562,16 +620,104 @@ describe("foundation release gates", () => {
     }
     expect(releaseGuide).toMatch(/explicit final user approval[\s\S]*change repository visibility to public/i);
     expect(releaseGuide).toMatch(/after visibility[\s\S]*successful[\s\S]*Only then[\s\S]*branch protection/i);
-    expect(releaseGuide).toMatch(/exact `B` SHA[\s\S]*local subscription Claude CLI/i);
+    expect(releaseGuide).toMatch(/exact `CANDIDATE_SHA`[\s\S]*local subscription Claude CLI/i);
     expect(releaseGuide).toMatch(/required approvals to `0`[\s\S]*do not require CODEOWNERS/i);
     expect(releaseGuide).toMatch(/humanReviewGuarantee:[\s\S]*not-guaranteed/i);
     expect(releaseGuide).toContain("repos/$REPO/private-vulnerability-reporting");
-    expect(releaseGuide).toContain('test "$(gh api "repos/$REPO/private-vulnerability-reporting" --jq .enabled)" = true');
+    expect(releaseGuide).toContain('test "$("${GH_API[@]}" "repos/$REPO/private-vulnerability-reporting" --jq .enabled)" = true');
     expect(releaseGuide).toContain('"required_approving_review_count": 0');
     expect(releaseGuide).toContain('{ "context": "quality", "app_id": 15368 }');
     expect(releaseGuide).toContain('{ "context": "claude-plugin-validation", "app_id": 15368 }');
-    expect(releaseGuide).toContain('"bypass_pull_request_allowances": { "users": [], "teams": [], "apps": [] }');
+    expect(releaseGuide).toMatch(/personal(?:-account)? repository[\s\S]*omit[\s\S]*bypass_pull_request_allowances/i);
+    expect(releaseGuide).toMatch(/organization-owned repository[\s\S]*explicit empty[\s\S]*bypass_pull_request_allowances/i);
+    expect(releaseGuide).toMatch(/whole protection[\s\S]*contexts-only[\s\S]*subresource[\s\S]*checks-only/i);
+    expect(releaseGuide).toMatch(/never[\s\S]*contexts[\s\S]*checks[\s\S]*same request object/i);
+    const protectionPayload = releaseGuide.match(/main-protection\.json <<'JSON'\n([\s\S]*?)\nJSON/)?.[1];
+    expect(protectionPayload).toBeDefined();
+    const parsedProtectionPayload = JSON.parse(protectionPayload!) as {
+      required_status_checks: Record<string, unknown>;
+      required_pull_request_reviews: Record<string, unknown>;
+    };
+    expect(parsedProtectionPayload.required_status_checks).toEqual({
+      strict: true,
+      contexts: ["claude-plugin-validation", "quality"]
+    });
+    expect(parsedProtectionPayload.required_pull_request_reviews).not.toHaveProperty("bypass_pull_request_allowances");
+    const statusCheckPayload = releaseGuide.match(/status-checks\.json <<'JSON'\n([\s\S]*?)\nJSON/)?.[1];
+    expect(statusCheckPayload).toBeDefined();
+    expect(JSON.parse(statusCheckPayload!)).toEqual({
+      strict: true,
+      checks: [
+        { context: "claude-plugin-validation", app_id: 15368 },
+        { context: "quality", app_id: 15368 }
+      ]
+    });
+    expect(releaseGuide).toContain('repos/$REPO/branches/main/protection/required_status_checks');
+    const wholePut = releaseGuide.indexOf('"${GH_API[@]}" --method PUT "repos/$REPO/branches/main/protection"');
+    const fullGet = releaseGuide.indexOf('"${GH_API[@]}" --method GET "repos/$REPO/branches/main/protection"', wholePut);
+    const checksPatch = releaseGuide.indexOf('"${GH_API[@]}" --method PATCH "repos/$REPO/branches/main/protection/required_status_checks"', fullGet);
+    expect(wholePut).toBeGreaterThan(-1);
+    expect(fullGet).toBeGreaterThan(wholePut);
+    expect(checksPatch).toBeGreaterThan(fullGet);
+    expect(releaseGuide).toContain("--repository-id 1322344258");
+    expect(releaseGuide).toContain('--expected-tip "$CANDIDATE_SHA"');
+    expect(releaseGuide).toContain('GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")');
+    expect((releaseGuide.match(/PUBLIC_REMOTE_URL="https:\/\/github\.com\/\$REPO\.git"/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect(releaseGuide).toContain('gh run rerun "$PUSH_CI_RUN_ID" --repo "$REPO"');
+    expect(releaseGuide).toContain('git ls-remote --refs "$PUBLIC_REMOTE_URL"');
+    expect(releaseGuide).toContain('git ls-remote --heads --tags "$PUBLIC_REMOTE_URL"');
+    expect(releaseGuide).toContain('gh pr list --repo "$REPO" --state all --limit 1000 --json number');
+    expect(releaseGuide).toContain(".default_branch");
+    expect(releaseGuide).toContain(".archived");
+    expect(releaseGuide).toContain("protection/required_signatures");
+    expect(releaseGuide).not.toContain('--method DELETE "repos/$REPO/branches/main/protection/required_signatures"');
+    const visibility = releaseGuide.indexOf('gh repo edit "github.com/$REPO" --visibility public');
+    const rerun = releaseGuide.indexOf('gh run rerun "$PUSH_CI_RUN_ID" --repo "$REPO"', visibility);
+    expect(visibility).toBeGreaterThan(-1);
+    expect(rerun).toBeGreaterThan(visibility);
+    expect(releaseGuide).toMatch(/billing[\s\S]*same push-event run attempt/i);
+    expect((releaseGuide.match(/preflight_repository_state public "\$CANDIDATE_SHA"/g) ?? []).length).toBeGreaterThanOrEqual(4);
     expect(releaseGuide).toMatch(/unauthenticated[\s\S]*clone[\s\S]*marketplace[\s\S]*install/i);
+    for (const token of [
+      'HOME="$ANON_ROOT/home"',
+      'CLAUDE_CONFIG_DIR="$ANON_ROOT/claude"',
+      "env -i",
+      "unset GH_TOKEN GITHUB_TOKEN SSH_AUTH_SOCK GIT_ASKPASS",
+      "GIT_CONFIG_PARAMETERS GIT_CONFIG_COUNT",
+      "GIT_CONFIG_GLOBAL=/dev/null",
+      "GIT_CONFIG_NOSYSTEM=1",
+      "GIT_TERMINAL_PROMPT=0",
+      "git -c credential.helper= ls-remote",
+      "git -c credential.helper= clone",
+      'claude plugin marketplace add "$REPO" --scope local',
+      "claude plugin install skillset-manager@claude-code-skillsets --scope local",
+      "claude plugin marketplace list --json",
+      "claude plugin list --json",
+      'skillset-manager@claude-code-skillsets" and .version == "0.1.2"',
+      'shared-core@claude-code-skillsets" and .version == "0.1.0"',
+      'EVIDENCE_DIR="$EVIDENCE_SANITIZED/anonymous-install-$CANDIDATE_SHA"',
+      'mkdir "$EVIDENCE_DIR"',
+      "set -o noclobber",
+      'test ! -L "$EVIDENCE_ROOT"',
+      'test ! -L "$EVIDENCE_SANITIZED"',
+      'MARKETPLACE_ROOT="$(canonical_directory_below "$MARKETPLACE_LOCATION" "$ANON_ROOT")"',
+      'test "$(git -C "$MARKETPLACE_ROOT" rev-parse HEAD)" = "$CANDIDATE_SHA"',
+      'MANAGER_ROOT="$(canonical_directory_below "$MANAGER_INSTALL_PATH" "$ANON_ROOT/plugin-cache")"',
+      'SHARED_ROOT="$(canonical_directory_below "$SHARED_INSTALL_PATH" "$ANON_ROOT/plugin-cache")"',
+      'compare_plugin_tree "$ANON_ROOT/project/repository/plugins/skillset-manager" "$MANAGER_ROOT"',
+      'compare_plugin_tree "$ANON_ROOT/project/repository/plugins/shared-core" "$SHARED_ROOT"',
+      'PREVIEW="$(node "$MANAGER_ROOT/runtime.mjs" preview --request "$REQUEST")"',
+      '.command == "preview" and .status == "held" and (has("approvedExecution") | not)'
+    ]) expect(releaseGuide).toContain(token);
+    expect(releaseGuide).not.toMatch(/runtime\.mjs"?\s+(?:execute|approval-object)\b/);
+    expect(releaseGuide).toContain('CANDIDATE_SHA="$(jq -er \'.commitSha | select(test("^[0-9a-f]{40}$"))\' "$RECEIPT_PATH")"');
+    expect((releaseGuide.match(/preflight_public_candidate/g) ?? []).length).toBeGreaterThanOrEqual(4);
+    expect(releaseGuide).toMatch(/Immediately before any release tag[\s\S]*preflight_public_candidate/i);
+    expect(releaseGuide).toContain("rollback_identity_preflight");
+    expect(releaseGuide).toContain('APPROVED_ARCHIVE_REPOSITORY_ID="1319698664"');
+    expect(releaseGuide).toContain('"${GH_API[@]}" --method PATCH "repos/$REPO" --input -');
+    expect(releaseGuide).toMatch(/ROLLBACK_CONFIRMED[\s\S]*visibility[\s\S]*private/i);
+    expect(releaseGuide).toMatch(/After C is present on remote `main`[\s\S]*sibling C[\s\S]*prohibited[\s\S]*append-only repair plan/i);
     expect(releaseGuide).toMatch(/only after[\s\S]*(?:tag|GitHub Release)[\s\S]*announce/i);
     expect(releaseGuide).toMatch(/switch the repository back to private/i);
     expect(releaseGuide).toContain("<approved-private-candidate-sha>");
@@ -602,6 +748,31 @@ describe("foundation release gates", () => {
     expect(security).toMatch(/do not.*public issue/i);
     expect(license).toContain("Apache License");
     expect(license).toContain("Version 2.0, January 2004");
+  });
+
+  it("clears injected Git authorization configuration in the anonymous env allowlist", () => {
+    const result = spawnSync("/usr/bin/env", [
+      "-i",
+      `PATH=${process.env.PATH ?? "/usr/bin:/bin"}`,
+      "GIT_CONFIG_GLOBAL=/dev/null",
+      "GIT_CONFIG_NOSYSTEM=1",
+      "git",
+      "config",
+      "--show-origin",
+      "--get-regexp",
+      "^http\\."
+    ], {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GIT_CONFIG_COUNT: "1",
+        GIT_CONFIG_KEY_0: "http.https://github.com/.extraHeader",
+        GIT_CONFIG_VALUE_0: "Authorization: bearer injected-secret"
+      }
+    });
+
+    expect(result.status).toBe(1);
+    expect(`${result.stdout}${result.stderr}`).not.toMatch(/authorization|injected-secret/i);
   });
 
   it("keeps both READMEs aligned with the solo GitHub Free and directory-submission contracts", async () => {
@@ -715,6 +886,10 @@ describe("foundation release gates", () => {
       await writeFile(join(source, "branch-protection.json"), JSON.stringify({
         schemaVersion: 3,
         repository: "seunghyeon1004/claude-code-skillsets",
+        repositoryId: 1322344258,
+        repositoryOwnerLogin: "seunghyeon1004",
+        repositoryOwnerType: "User",
+        commitSha: "f".repeat(40),
         branch: "main",
         observedAt: "2026-07-29T00:00:00Z",
         directPushesDisabled: true,
@@ -735,6 +910,9 @@ describe("foundation release gates", () => {
       expect(JSON.parse(output)).toEqual({
         schemaVersion: 3,
         receiptType: "branch-protection",
+        repositoryId: 1322344258,
+        repositoryOwnerType: "User",
+        commitSha: "f".repeat(40),
         directPushesDisabled: true,
         forcePushesDisabled: true,
         deletionsDisabled: true,
@@ -745,7 +923,8 @@ describe("foundation release gates", () => {
         governanceMode: "solo-maintainer",
         humanReviewGuarantee: "not-guaranteed"
       });
-      expect(output).not.toMatch(/seunghyeon1004|private-maintainer|secret-value|authorization/i);
+      expect(JSON.parse(output)).not.toHaveProperty("repositoryOwnerLogin");
+      expect(output).not.toMatch(/private-maintainer|secret-value|authorization/i);
       await expect(verifySanitizedReceiptTree(destination)).resolves.toBeUndefined();
     } finally {
       await rm(root, { recursive: true, force: true });
@@ -756,15 +935,26 @@ describe("foundation release gates", () => {
     const fixture = JSON.parse(await readFile(
       join(projectRoot, "tests", "fixtures", "github", "branch-protection.valid.json"),
       "utf8"
-    )) as { fixture: string; protection: unknown };
+    )) as { fixture: string; expectedRepositoryId: number; expectedTip: string; repository: unknown; protection: unknown };
 
     expect(fixture.fixture).toBe("non-live local test fixture");
-    expect(verifyBranchProtection(receiptFromGitHubProtection({
+    const repositoryMetadata = repositoryMetadataFromGitHubResponse({
+      expectedRepository: "example/private-broker",
+      expectedRepositoryId: fixture.expectedRepositoryId,
+      response: fixture.repository
+    });
+    expect(verifyGitHubProtectionResponse({
       repository: "example/private-broker",
+      repositoryMetadata,
+      expectedTip: fixture.expectedTip,
       branch: "main",
       observedAt: "2026-07-29T00:00:00Z",
       protection: fixture.protection
-    }))).toMatchObject({
+    })).toMatchObject({
+      repositoryId: 101,
+      repositoryOwnerLogin: "example",
+      repositoryOwnerType: "User",
+      commitSha: fixture.expectedTip,
       directPushesDisabled: true,
       forcePushesDisabled: true,
       deletionsDisabled: true,

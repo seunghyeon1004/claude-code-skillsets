@@ -61,6 +61,10 @@ export interface LedgerState {
 export interface BranchProtectionReceipt {
   schemaVersion: 3;
   repository: string;
+  repositoryId: number;
+  repositoryOwnerLogin: string;
+  repositoryOwnerType: "User" | "Organization";
+  commitSha: string;
   branch: string;
   observedAt: string;
   directPushesDisabled: boolean;

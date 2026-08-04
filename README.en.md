@@ -192,14 +192,18 @@ On GitHub Free, staged publication begins with an exact two-commit public histor
 Create a parentless `A` from the approved clean tree, create `B` as its same-tree
 child, and point the annotated `public-history/root-v1` tag at `A`. Preserve the
 existing repository as a private archive and push only that exact `A`/`B`/tag graph
-to a new empty private repository. Change visibility only after ordinary CI and the
-public-history bootstrap pass on `B` while private and the user gives final approval.
-Public visibility is not a release and is not combined with a release tag, GitHub
-Release, or announcement.
+to a new empty private repository. After ordinary CI and the public-history bootstrap
+pass, anchor `registry-approved/r01` exactly at `B`. Subsequent security and release
+maintenance is one commit `C` whose only parent is `B`. It may change only the exact
+reviewed path allowlist and must leave protected research and R01 catalog/data bytes
+unchanged.
 
-Immediately after publication, reconfirm successful `quality` and
-`claude-plugin-validation` checks on exact `B`, then enable and verify private
-vulnerability reporting before protecting `main`. Pull requests are required with
+After separate approval, fast-forward private `main` from `B` to `C` without force and
+retain that push-event CI run. Only if private Actions billing blocks it, obtain final
+public-visibility approval and rerun the same run ID after publication. Require
+successful `quality` and `claude-plugin-validation` checks on exact `C`, then enable
+and verify private vulnerability reporting before protecting `main`. Public visibility
+is not a release. Pull requests are required with
 an approval count of `0`, and the policy does not require CODEOWNERS review. Both
 required checks are bound to GitHub Actions app ID `15368`. Direct pushes, force
 pushes, and branch deletion are disabled; enforcement includes admins and there is
@@ -207,13 +211,18 @@ no bypass for any user, team, or app. This solo-maintainer write-path policy doe
 not create a human-review gate. Independent human review is not guaranteed.
 
 After explicit approval, run the read-only same SHA fixture suite from a clean local
-`main` checkout of exact `B` using the local subscription Claude CLI. It installs no
+`main` checkout of exact `C` using the local subscription Claude CLI. It installs no
 external candidate, makes no GitHub mutation, and retains only sanitized receipts as
 release evidence. Then verify an unauthenticated clone of that SHA, marketplace add,
 manager install, and the first setup preview. Only after every stage passes may the
 maintainer create a release tag or GitHub Release and announce the project. On
-failure, return the repository to private without a tag or announcement and restart
-from a new SHA. Copies fetched while public cannot be recalled. The full order is
+failure, return the repository to private without a tag or announcement. Before the
+remote push, C may be replaced by another single child of B. After remote C exists,
+never non-fast-forward or force-push a sibling C. Stop after returning private until a
+new explicit plan approves one append-only repair commit on the current remote C and
+re-audits every public commit from B through that repair. Never rerun the A/B/R01
+bootstrap or move those tags. Copies fetched while
+public cannot be recalled. The full order is
 fixed in the
 [GitHub Free staged-public runbook](docs/release/github-free-staged-public.md).
 
