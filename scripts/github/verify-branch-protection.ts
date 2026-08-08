@@ -45,6 +45,7 @@ export function verifyBranchProtection(receipt: unknown): BranchProtectionReceip
   if (!validated.directPushesDisabled) throw new Error("branch protection must disable direct pushes");
   if (!validated.forcePushesDisabled) throw new Error("branch protection must disable force pushes");
   if (!validated.deletionsDisabled) throw new Error("branch protection must disable branch deletion");
+  if (validated.requiredSignaturesEnabled) throw new Error("branch protection must disable signed commits");
   if (!hasExactRequiredBranchProtectionChecks(validated.requiredChecks)) {
     throw new Error("branch protection must bind every required check to the GitHub Actions producer");
   }
@@ -81,6 +82,10 @@ export function receiptFromGitHubProtection(input: {
   const statusChecks = nullableRecord(protection.required_status_checks);
   const forcePushes = nullableRecord(protection.allow_force_pushes);
   const deletions = nullableRecord(protection.allow_deletions);
+  const requiredSignatures = asRecord(protection.required_signatures, "required signatures");
+  if (requiredSignatures.enabled !== false) {
+    throw new Error("branch protection must disable signed commits");
+  }
   const checks = Array.isArray(statusChecks?.checks)
     ? statusChecks.checks.flatMap((value) => {
       const check = nullableRecord(value);
@@ -111,6 +116,7 @@ export function receiptFromGitHubProtection(input: {
       && hasNoBypassAllowances(pullRequestReviews, input.repositoryMetadata.repositoryOwnerType),
     forcePushesDisabled: forcePushes?.enabled === false,
     deletionsDisabled: deletions?.enabled === false,
+    requiredSignaturesEnabled: false,
     requiredChecks: checks.sort((left, right) => compareCodePointStrings(left.name, right.name)),
     minimumApprovals: pullRequestReviews !== null
       && Number.isSafeInteger(pullRequestReviews.required_approving_review_count)
@@ -191,8 +197,13 @@ export function verifyGitHubProtectionResponse(input: {
   if (!hasNoBypassAllowances(pullRequestReviews, input.repositoryMetadata.repositoryOwnerType)) {
     throw new Error("branch protection bypass allowances are invalid for the repository owner type");
   }
-  if (protection.restrictions !== null) throw new Error("branch protection restrictions must be null");
+  const personalRepositoryOmittedRestrictions = input.repositoryMetadata.repositoryOwnerType === "User"
+    && !Object.prototype.hasOwnProperty.call(protection, "restrictions");
+  if (protection.restrictions !== null && !personalRepositoryOmittedRestrictions) {
+    throw new Error("branch protection restrictions must be null or omitted for a personal repository");
+  }
   assertDisabledControl(protection, "required_linear_history", "linear history");
+  assertDisabledControl(protection, "required_signatures", "signed commits");
   assertDisabledControl(protection, "allow_force_pushes", "force pushes");
   assertDisabledControl(protection, "allow_deletions", "deletion");
   assertDisabledControl(protection, "block_creations", "block creations");
@@ -226,10 +237,26 @@ export function repositoryTipFromGitHubResponse(input: {
 
 export function verifyDisabledRequiredSignaturesProbe(input: {
   exitStatus: number | null;
+  expectedUrl: string;
   output: string;
 }): void {
-  if (input.exitStatus !== 1 || !/^HTTP\/\S+ 404(?:\s|$)/mu.test(input.output)) {
-    throw new Error("branch protection must disable signed commits with an exact required-signatures 404 response");
+  const statuses = [...input.output.matchAll(/^HTTP\/\S+ (\d{3})(?:\s|$)/gmu)];
+  const status = statuses.at(-1)?.[1];
+  const segments = input.output.split(/\r?\n\r?\n/gu);
+  const body = segments.at(-1)?.trim() ?? "";
+  let response: Record<string, unknown> | null = null;
+  try {
+    response = asRecord(JSON.parse(body) as unknown, "required signatures response");
+  } catch {
+    response = null;
+  }
+  if (
+    input.exitStatus !== 0
+    || status !== "200"
+    || response?.url !== input.expectedUrl
+    || response.enabled !== false
+  ) {
+    throw new Error("branch protection must disable signed commits with an exact required-signatures 200 response");
   }
 }
 
@@ -264,19 +291,20 @@ async function main(args: readonly string[]): Promise<void> {
     githubApiGetArgs(`repos/${repo}/branches/${encodeURIComponent(branch)}/protection`),
     { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }
   )) as unknown;
+  const signaturesEndpoint = `repos/${repo}/branches/${encodeURIComponent(branch)}/protection/required_signatures`;
   const signaturesProbe = spawnSync(
     "gh",
     [
-      ...githubApiGetArgs(`repos/${repo}/branches/${encodeURIComponent(branch)}/protection/required_signatures`).slice(0, -1),
+      ...githubApiGetArgs(signaturesEndpoint).slice(0, -1),
       "--include",
-      "--silent",
-      `repos/${repo}/branches/${encodeURIComponent(branch)}/protection/required_signatures`
+      signaturesEndpoint
     ],
     { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }
   );
   if (signaturesProbe.error !== undefined) throw signaturesProbe.error;
   verifyDisabledRequiredSignaturesProbe({
     exitStatus: signaturesProbe.status,
+    expectedUrl: `https://api.github.com/${signaturesEndpoint}`,
     output: `${signaturesProbe.stdout}${signaturesProbe.stderr}`
   });
   const afterProtectionTip = JSON.parse(execFileSync(

@@ -26,6 +26,7 @@ const compliantReceipt: BranchProtectionReceipt = {
   directPushesDisabled: true,
   forcePushesDisabled: true,
   deletionsDisabled: true,
+  requiredSignaturesEnabled: false,
   requiredChecks: [
     { name: "claude-plugin-validation", app: { id: 15368, slug: "github-actions" } },
     { name: "quality", app: { id: 15368, slug: "github-actions" } }
@@ -85,20 +86,44 @@ describe("branch protection", () => {
       response: { object: { type: "commit", sha: "e".repeat(40) } },
       expectedTip: compliantReceipt.commitSha
     })).toThrow(/main|tip|SHA/i);
+    const expectedUrl = "https://api.github.com/repos/example/project/branches/main/protection/required_signatures";
     expect(verifyDisabledRequiredSignaturesProbe({
-      exitStatus: 1,
-      output: "HTTP/2.0 404 Not Found\ncontent-type: application/json\n"
+      exitStatus: 0,
+      expectedUrl,
+      output: [
+        "HTTP/2.0 200 OK",
+        "content-type: application/json",
+        "",
+        `{"url":"${expectedUrl}","enabled":false}`
+      ].join("\n")
     })).toBeUndefined();
     for (const probe of [
-      { exitStatus: 0, output: "HTTP/2.0 200 OK\n" },
-      { exitStatus: 1, output: "HTTP/2.0 403 Forbidden\n" },
-      { exitStatus: 1, output: "network failure" }
+      {
+        exitStatus: 0,
+        expectedUrl,
+        output: [
+          "HTTP/2.0 200 OK",
+          "content-type: application/json",
+          "",
+          `{"url":"${expectedUrl}","enabled":true}`
+        ].join("\n")
+      },
+      {
+        exitStatus: 0,
+        expectedUrl,
+        output: "HTTP/2.0 200 OK\ncontent-type: application/json\n\n{\"url\":\"https://api.github.com/repos/other/project/branches/main/protection/required_signatures\",\"enabled\":false}"
+      },
+      { exitStatus: 0, expectedUrl, output: "HTTP/2.0 200 OK\n" },
+      { exitStatus: 1, expectedUrl, output: "HTTP/2.0 404 Not Found\n" },
+      { exitStatus: 1, expectedUrl, output: "HTTP/2.0 403 Forbidden\n" },
+      { exitStatus: 1, expectedUrl, output: "network failure" }
     ]) expect(() => verifyDisabledRequiredSignaturesProbe(probe)).toThrow(/signed commits|signature/i);
   });
 
   it("rejects a missing write protection, CI binding, or honest sole-maintainer disclosure", () => {
     expect(() => verifyBranchProtection({ ...compliantReceipt, directPushesDisabled: false })).toThrow(/direct push/i);
     expect(() => verifyBranchProtection({ ...compliantReceipt, requiredChecks: compliantReceipt.requiredChecks.slice(1) })).toThrow(/required checks/i);
+    expect(() => verifyBranchProtection({ ...compliantReceipt, requiredSignaturesEnabled: true as false })).toThrow(/signed commits|signature/i);
     expect(() => verifyBranchProtection({ ...compliantReceipt, minimumApprovals: 1 })).toThrow(/approval/i);
     expect(() => verifyBranchProtection({ ...compliantReceipt, dismissesStaleReviews: false })).toThrow(/stale/i);
     expect(() => verifyBranchProtection({ ...compliantReceipt, requiresCodeOwnerReview: true })).toThrow(/CODEOWNERS/i);
@@ -120,6 +145,7 @@ describe("branch protection", () => {
       observedAt: compliantReceipt.observedAt,
       protection: {
         enforce_admins: { enabled: true },
+        required_signatures: { enabled: false },
         required_status_checks: { checks: githubChecks() },
         required_pull_request_reviews: {
           require_code_owner_reviews: false,
@@ -142,6 +168,7 @@ describe("branch protection", () => {
       observedAt: compliantReceipt.observedAt,
       protection: {
         enforce_admins: { enabled: true },
+        required_signatures: { enabled: false },
         required_status_checks: { checks: githubChecks() },
         required_pull_request_reviews: {
           require_code_owner_reviews: false,
@@ -167,6 +194,7 @@ describe("branch protection", () => {
       observedAt: compliantReceipt.observedAt,
       protection: {
         enforce_admins: { enabled: true },
+        required_signatures: { enabled: false },
         required_status_checks: { checks: githubChecks() },
         required_pull_request_reviews: {
           require_code_owner_reviews: false,
@@ -186,6 +214,7 @@ describe("branch protection", () => {
   it("rejects contexts-only and non-GitHub-Actions required checks", () => {
     const base = {
       enforce_admins: { enabled: true },
+      required_signatures: { enabled: false },
       required_pull_request_reviews: {
         require_code_owner_reviews: false,
         required_approving_review_count: 0,
@@ -240,7 +269,7 @@ describe("branch protection", () => {
       expectedTip: compliantReceipt.commitSha,
       branch: compliantReceipt.branch,
       observedAt: compliantReceipt.observedAt,
-      protection: githubProtection({ includeBypassAllowances: false })
+      protection: githubProtection({ includeBypassAllowances: false, omitRestrictions: true })
     })).toEqual({
       ...compliantReceipt,
       repositoryId: personalRepositoryMetadata.repositoryId,
@@ -255,7 +284,9 @@ describe("branch protection", () => {
       })],
       ["last push", githubProtection({ pullRequestOverrides: { require_last_push_approval: true } })],
       ["restrictions", githubProtection({ restrictions: {} })],
+      ["restrictions", { ...githubProtection(), restrictions: undefined }],
       ["linear history", githubProtection({ required_linear_history: { enabled: true } })],
+      ["signed commits", githubProtection({ required_signatures: { enabled: true } })],
       ["block creations", githubProtection({ block_creations: { enabled: true } })],
       ["conversation", githubProtection({ required_conversation_resolution: { enabled: true } })],
       ["lock branch", githubProtection({ lock_branch: { enabled: true } })],
@@ -273,8 +304,8 @@ describe("branch protection", () => {
     }
 
     for (const [key, label] of [
-      ["restrictions", "restrictions"],
       ["required_linear_history", "linear history"],
+      ["required_signatures", "signed commits"],
       ["block_creations", "block creations"],
       ["required_conversation_resolution", "conversation"],
       ["lock_branch", "lock branch"],
@@ -316,6 +347,14 @@ describe("branch protection", () => {
       observedAt: compliantReceipt.observedAt,
       protection: githubProtection({ includeBypassAllowances: true })
     })).toMatchObject({ directPushesDisabled: true });
+    expect(() => verifyGitHubProtectionResponse({
+      repository: "example-org/private-broker",
+      repositoryMetadata: organizationRepositoryMetadata(),
+      expectedTip: compliantReceipt.commitSha,
+      branch: compliantReceipt.branch,
+      observedAt: compliantReceipt.observedAt,
+      protection: githubProtection({ includeBypassAllowances: true, omitRestrictions: true })
+    })).toThrow(/restrictions/i);
 
     expect(() => verifyGitHubProtectionResponse({
       repository: "example-org/private-broker",
@@ -488,8 +527,10 @@ function githubProtection(options: {
   bypassPullRequestAllowances?: unknown;
   requiredStatusChecks?: unknown;
   pullRequestOverrides?: Record<string, unknown>;
+  omitRestrictions?: boolean;
   restrictions?: unknown;
   required_linear_history?: unknown;
+  required_signatures?: unknown;
   block_creations?: unknown;
   required_conversation_resolution?: unknown;
   lock_branch?: unknown;
@@ -507,7 +548,7 @@ function githubProtection(options: {
   } else if (options.includeBypassAllowances ?? true) {
     pullRequestReviews.bypass_pull_request_allowances = { users: [], teams: [], apps: [] };
   }
-  return {
+  const protection: Record<string, unknown> = {
     required_status_checks: options.requiredStatusChecks ?? {
       strict: true,
       contexts: ["claude-plugin-validation", "quality"],
@@ -517,6 +558,7 @@ function githubProtection(options: {
     required_pull_request_reviews: pullRequestReviews,
     restrictions: options.restrictions === undefined ? null : options.restrictions,
     required_linear_history: options.required_linear_history ?? { enabled: false },
+    required_signatures: options.required_signatures ?? { enabled: false },
     allow_force_pushes: { enabled: false },
     allow_deletions: { enabled: false },
     block_creations: options.block_creations ?? { enabled: false },
@@ -524,6 +566,8 @@ function githubProtection(options: {
     lock_branch: options.lock_branch ?? { enabled: false },
     allow_fork_syncing: options.allow_fork_syncing ?? { enabled: false }
   };
+  if (options.omitRestrictions) delete protection.restrictions;
+  return protection;
 }
 
 function githubRepository(overrides: Record<string, unknown> = {}) {

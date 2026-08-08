@@ -70,6 +70,7 @@ export interface BranchProtectionReceipt {
   directPushesDisabled: boolean;
   forcePushesDisabled: boolean;
   deletionsDisabled: boolean;
+  requiredSignaturesEnabled: false;
   requiredChecks: RequiredCheckBinding[];
   minimumApprovals: number;
   dismissesStaleReviews: boolean;
