@@ -565,8 +565,10 @@ preflight_repository_state public "$CANDIDATE_SHA"
 
 Only after that support gate passes, apply `main` branch protection and verify the
 live policy. Signed-commit protection is a separate GitHub endpoint and this policy
-keeps it disabled; a GET must return exact HTTP 404. A 200, another status, or a
-transport failure stops the release:
+keeps it disabled. Before branch protection exists, the probe must return exact HTTP
+404. After protection is applied, the pinned API must return HTTP 200 with the exact
+repository endpoint and `enabled: false`; another status, malformed response,
+`enabled: true`, or a transport failure stops the release:
 
 - disable direct pushes, force pushes, and branch deletion, including for admins;
 - allow no user, team, or app bypass;
@@ -584,6 +586,10 @@ The target is a personal-account repository, so omit
 An organization-owned repository must instead include explicit empty
 `bypass_pull_request_allowances` arrays for `users`, `teams`, and `apps`. Any present
 malformed or nonempty child is a verification failure for either owner type.
+The protection PUT still sends `restrictions: null`. GitHub may omit that field from
+the subsequent GET for a personal repository because push restrictions are an
+organization-only feature; the verifier accepts only that owner-aware omission or an
+explicit `null` and rejects every non-null value.
 
 GitHub's whole protection request is contexts-only. After the full protection GET,
 use the status-check subresource with a checks-only PATCH if the app pins do not
@@ -597,11 +603,11 @@ mkdir -p .release-evidence
 preflight_repository_state public "$CANDIDATE_SHA"
 
 set +e
-SIGNATURE_PROBE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/branches/main/protection/required_signatures" 2>&1)"
-SIGNATURE_PROBE_STATUS=$?
+SIGNATURE_PROBE_BEFORE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/branches/main/protection/required_signatures" 2>&1)"
+SIGNATURE_PROBE_BEFORE_STATUS=$?
 set -e
-test "$SIGNATURE_PROBE_STATUS" = 1
-grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$SIGNATURE_PROBE"
+test "$SIGNATURE_PROBE_BEFORE_STATUS" = 1
+grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$SIGNATURE_PROBE_BEFORE"
 preflight_repository_state public "$CANDIDATE_SHA"
 
 cat > .release-evidence/main-protection.json <<'JSON'
@@ -655,12 +661,9 @@ JSON
 fi
 preflight_repository_state public "$CANDIDATE_SHA"
 
-set +e
-SIGNATURE_PROBE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/branches/main/protection/required_signatures" 2>&1)"
-SIGNATURE_PROBE_STATUS=$?
-set -e
-test "$SIGNATURE_PROBE_STATUS" = 1
-grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$SIGNATURE_PROBE"
+REQUIRED_SIGNATURES_AFTER="$("${GH_API[@]}" --method GET "repos/$REPO/branches/main/protection/required_signatures")"
+test "$(jq -r '.url' <<<"$REQUIRED_SIGNATURES_AFTER")" = "https://api.github.com/repos/$REPO/branches/main/protection/required_signatures"
+test "$(jq -r '.enabled' <<<"$REQUIRED_SIGNATURES_AFTER")" = false
 preflight_repository_state public "$CANDIDATE_SHA"
 ```
 
@@ -684,9 +687,10 @@ The verifier uses the same fixed GitHub API media type and version as the runboo
 one invocation it fetches the repository, verifies `main` at exact `CANDIDATE_SHA`,
 fetches protection and the separate required-signatures endpoint, then verifies
 `main` again. The raw receipt preserves repository ID, full name, owner login/type,
-and commit SHA. The sanitized receipt deliberately removes repository full name and
-owner login; it preserves only repository ID, owner type, and commit SHA as minimum
-public identity evidence. If any identity or tip changes, stop and use rollback.
+commit SHA, and `requiredSignaturesEnabled: false`. The sanitized receipt deliberately
+removes repository full name and owner login; it preserves repository ID, owner type,
+commit SHA, and the disabled-signatures evidence. If any identity or tip changes,
+stop and use rollback.
 
 ## 3. Protected same-SHA local semantic RC
 

@@ -670,6 +670,10 @@ describe("foundation release gates", () => {
     expect(releaseGuide).toContain(".default_branch");
     expect(releaseGuide).toContain(".archived");
     expect(releaseGuide).toContain("protection/required_signatures");
+    expect(releaseGuide).toMatch(/SIGNATURE_PROBE_BEFORE[\s\S]*404[\s\S]*--method PUT[^\n]*protection/);
+    expect(releaseGuide).toMatch(/--method PUT[^\n]*protection[\s\S]*REQUIRED_SIGNATURES_AFTER[\s\S]*enabled[^\n]*false/);
+    expect(releaseGuide).toMatch(/after[^.]*protection[\s\S]*required_signatures[\s\S]*enabled[\s\S]*false/i);
+    expect(releaseGuide).toMatch(/requiredSignaturesEnabled[\s\S]*false/);
     expect(releaseGuide).not.toContain('--method DELETE "repos/$REPO/branches/main/protection/required_signatures"');
     const visibility = releaseGuide.indexOf('gh repo edit "github.com/$REPO" --visibility public');
     const rerun = releaseGuide.indexOf('gh run rerun "$PUSH_CI_RUN_ID" --repo "$REPO"', visibility);
@@ -895,6 +899,7 @@ describe("foundation release gates", () => {
         directPushesDisabled: true,
         forcePushesDisabled: true,
         deletionsDisabled: true,
+        requiredSignaturesEnabled: false,
         requiredChecks: requiredCheckBindings(),
         minimumApprovals: 0,
         dismissesStaleReviews: true,
@@ -916,6 +921,7 @@ describe("foundation release gates", () => {
         directPushesDisabled: true,
         forcePushesDisabled: true,
         deletionsDisabled: true,
+        requiredSignaturesEnabled: false,
         requiredChecks: requiredCheckBindings(),
         minimumApprovals: 0,
         dismissesStaleReviews: true,
@@ -958,6 +964,7 @@ describe("foundation release gates", () => {
       directPushesDisabled: true,
       forcePushesDisabled: true,
       deletionsDisabled: true,
+      requiredSignaturesEnabled: false,
       requiredChecks: requiredCheckBindings(),
       minimumApprovals: 0,
       dismissesStaleReviews: true,

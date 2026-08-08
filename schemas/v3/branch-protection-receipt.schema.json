@@ -4,7 +4,7 @@
   "title": "BranchProtectionReceipt",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "repository", "repositoryId", "repositoryOwnerLogin", "repositoryOwnerType", "commitSha", "branch", "observedAt", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
+  "required": ["schemaVersion", "repository", "repositoryId", "repositoryOwnerLogin", "repositoryOwnerType", "commitSha", "branch", "observedAt", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredSignaturesEnabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
   "properties": {
     "schemaVersion": { "const": 3 },
     "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
@@ -17,6 +17,7 @@
     "directPushesDisabled": { "type": "boolean" },
     "forcePushesDisabled": { "type": "boolean" },
     "deletionsDisabled": { "type": "boolean" },
+    "requiredSignaturesEnabled": { "const": false },
     "requiredChecks": {
       "type": "array",
       "uniqueItems": true,

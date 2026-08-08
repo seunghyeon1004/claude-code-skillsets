@@ -168,6 +168,7 @@ function projectBranchProtectionReceipt(value: Record<string, unknown>): Record<
     value.directPushesDisabled !== true
     || value.forcePushesDisabled !== true
     || value.deletionsDisabled !== true
+    || value.requiredSignaturesEnabled !== false
     || !hasExactRequiredBranchProtectionChecks(value.requiredChecks)
     || value.minimumApprovals !== 0
     || value.dismissesStaleReviews !== true
@@ -185,6 +186,7 @@ function projectBranchProtectionReceipt(value: Record<string, unknown>): Record<
     directPushesDisabled: value.directPushesDisabled,
     forcePushesDisabled: value.forcePushesDisabled,
     deletionsDisabled: value.deletionsDisabled,
+    requiredSignaturesEnabled: value.requiredSignaturesEnabled,
     requiredChecks: requiredCheckBindings(),
     minimumApprovals: value.minimumApprovals,
     dismissesStaleReviews: value.dismissesStaleReviews,
@@ -253,13 +255,14 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
   if (value.schemaVersion === 3 && value.receiptType === "branch-protection") {
     assertExactKeys(
       value,
-      ["schemaVersion", "receiptType", "repositoryId", "repositoryOwnerType", "commitSha", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
+      ["schemaVersion", "receiptType", "repositoryId", "repositoryOwnerType", "commitSha", "directPushesDisabled", "forcePushesDisabled", "deletionsDisabled", "requiredSignaturesEnabled", "requiredChecks", "minimumApprovals", "dismissesStaleReviews", "requiresCodeOwnerReview", "governanceMode", "humanReviewGuarantee"],
       receiptPath
     );
     if (
       value.directPushesDisabled !== true
       || value.forcePushesDisabled !== true
       || value.deletionsDisabled !== true
+      || value.requiredSignaturesEnabled !== false
       || !hasExactRequiredBranchProtectionChecks(value.requiredChecks)
       || value.minimumApprovals !== 0
       || value.dismissesStaleReviews !== true

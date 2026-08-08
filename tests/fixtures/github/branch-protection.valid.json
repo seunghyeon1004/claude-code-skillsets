@@ -23,6 +23,9 @@
     "allow_deletions": {
       "enabled": false
     },
+    "required_signatures": {
+      "enabled": false
+    },
     "required_status_checks": {
       "strict": true,
       "contexts": ["claude-plugin-validation", "quality"],
@@ -31,7 +34,6 @@
         { "context": "quality", "app_id": 15368 }
       ]
     },
-    "restrictions": null,
     "required_linear_history": { "enabled": false },
     "block_creations": { "enabled": false },
     "required_conversation_resolution": { "enabled": false },
