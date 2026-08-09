@@ -164,6 +164,9 @@ describe("doctor semantic evaluator", () => {
       /copy.*exactly.*claude --version.*returns the version string.*marketplace names and errors.*allowlisted plugin health fields.*all checks are read-only.*results stay local.*no repair is authorized.*state\/install-lock\.json.*decision-index\.json/is
     );
     expect(response.systemPrompt).toMatch(
+      /fixed English protocol.*regardless of.*request language.*Korean.*do not\s+translate/is
+    );
+    expect(response.systemPrompt).toMatch(
       /immediately after.*acknowledgment.*exact heading.*## Core Check Results/is
     );
     expect(response.systemPrompt).toMatch(
@@ -180,6 +183,15 @@ describe("doctor semantic evaluator", () => {
     );
     expect(response.systemPrompt).toMatch(
       /trusted fixture metadata.*overlaps.*rejected input[\s\S]*within.*two.*sentences[\s\S]*do not (?:name|list|describe)[\s\S]*unselected taxonomy.*example/is
+    );
+    expect(response.systemPrompt).toMatch(
+      /empty-selection.*plain paragraphs.*do not.*backticks.*blockquote.*list.*emphasis.*code fence/is
+    );
+    expect(response.systemPrompt).toMatch(
+      /heading.*structural.*neutral.*localized.*must not name.*domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID/is
+    );
+    expect(response.systemPrompt).toMatch(
+      /do not place.*translated heading.*before the.*Disclosed Core Checks heading/is
     );
     expect(response.systemPrompt).toMatch(
       /does not suppress[\s\S]*broker-plugin[\s\S]*doctorState diagnoses/is
@@ -277,6 +289,18 @@ Doctor ends here. No changes were made.`;
       requiredDisclosureDetails,
       "Disclosure complete."
     ))).toContain("Doctor response invariant failed: disclosure-details");
+    const translatedDisclosure = completeDisclosure
+      .replace(
+        "All checks are read-only. Results stay local and are summarized without secret values. No repair is authorized.",
+        "모든 검사는 읽기 전용이며 수리는 승인되지 않았습니다."
+      )
+      .replace(
+        "The bundled read-only doctor adapter inspects `state/install-lock.json` and authenticates its approval and candidate IDs against `${CLAUDE_PLUGIN_ROOT}/data/decision-index.json`; these files contain broker and setup evidence, not credential data.",
+        "내장 doctor 어댑터는 상태 파일을 검사합니다."
+      );
+    const translatedErrors = validateDoctorResponse(translatedDisclosure);
+    expect(translatedErrors).toContain("Doctor response invariant failed: disclosure-details");
+    expect(translatedErrors).not.toContain("Doctor response invariant failed: rejected-input-order");
     expect(validateDoctorResponse(completeDisclosure.replace(
       "## Core Check Results",
       "## Findings"
@@ -339,6 +363,13 @@ External-provider research is pending; diagnosis is limited to installed broker 
       emptySelectionPair,
       emptySetupSelectionPair
     ), setupBoundaryCase)).toEqual([]);
+    expect(validateDoctorResponse(responseWithAcknowledgment
+      .replace("## Executable Checks", "## 실행 가능 검사")
+      .replace(emptySelectionPair, emptySetupSelectionPair), setupBoundaryCase)).toEqual([]);
+    expect(validateDoctorResponse(responseWithAcknowledgment.replace(
+      emptySelectionPair,
+      `\`No setup candidate is selected, so no executable checks were run.\`\n\n\`External-provider research is pending; diagnosis is limited to installed broker plugins.\``
+    ), setupBoundaryCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
   });
 
   it("rejects result text inserted before the core command block", async () => {

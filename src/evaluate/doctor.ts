@@ -175,25 +175,36 @@ export function validateDoctorResponse(
   }
 
   const disclosureDetailsIndex = commandBlockIndex + doctorCommandBlock.length + 2;
-  if (!normalized.slice(disclosureDetailsIndex).startsWith(doctorDisclosureDetails)) {
+  const hasExactDisclosureDetails = normalized
+    .slice(disclosureDetailsIndex)
+    .startsWith(doctorDisclosureDetails);
+  if (!hasExactDisclosureDetails) {
     errors.push("Doctor response invariant failed: disclosure-details");
   }
-  const completeDisclosureEnd = disclosureDetailsIndex + doctorDisclosureDetails.length;
-  const boundaryAfterDisclosure = acknowledgmentOccurrences > 0
-    ? `\n\n${rejectedInputAcknowledgment}\n\n${doctorResultsHeading}`
-    : `\n\n${doctorResultsHeading}`;
-  const hasExactBoundary = normalized
-    .slice(completeDisclosureEnd)
-    .startsWith(boundaryAfterDisclosure);
-  if (!hasExactBoundary) {
-    errors.push(acknowledgmentOccurrences > 0
-      ? "Doctor response invariant failed: rejected-input-order"
-      : "Doctor response invariant failed: disclosure-order");
-  }
-  if (acknowledgmentOccurrences === 1 && acknowledgmentLines.length === 1) {
-    const acknowledgmentIndex = acknowledgmentLines[0]!.index;
-    const expectedAcknowledgmentIndex = completeDisclosureEnd + 2;
-    if (acknowledgmentIndex !== expectedAcknowledgmentIndex) {
+  if (hasExactDisclosureDetails) {
+    const completeDisclosureEnd = disclosureDetailsIndex + doctorDisclosureDetails.length;
+    const boundaryAfterDisclosure = acknowledgmentOccurrences > 0
+      ? `\n\n${rejectedInputAcknowledgment}\n\n${doctorResultsHeading}`
+      : `\n\n${doctorResultsHeading}`;
+    let invalidOrder = !normalized
+      .slice(completeDisclosureEnd)
+      .startsWith(boundaryAfterDisclosure);
+    if (acknowledgmentOccurrences === 1 && acknowledgmentLines.length === 1) {
+      const expectedAcknowledgmentIndex = completeDisclosureEnd + 2;
+      invalidOrder ||= acknowledgmentLines[0]!.index !== expectedAcknowledgmentIndex;
+    }
+    if (invalidOrder) {
+      errors.push(acknowledgmentOccurrences > 0
+        ? "Doctor response invariant failed: rejected-input-order"
+        : "Doctor response invariant failed: disclosure-order");
+    }
+  } else if (acknowledgmentOccurrences === 1 && acknowledgmentLines.length === 1) {
+    const actualDisclosureDetailsIndex = normalized.indexOf(
+      doctorDisclosureDetails,
+      commandBlockIndex + doctorCommandBlock.length
+    );
+    if (actualDisclosureDetailsIndex >= 0
+      && acknowledgmentLines[0]!.index < actualDisclosureDetailsIndex) {
       errors.push("Doctor response invariant failed: rejected-input-order");
     }
   }
@@ -319,6 +330,11 @@ Immediately after that code block, copy these disclosure details exactly:
 
 ${doctorDisclosureDetails}
 
+This entire disclosure prefix and every other fixed English protocol segment are
+verbatim English regardless of the request language, including Korean. Do not
+translate or localize them. Korean or another requested language applies only to
+non-fixed diagnosis and guidance text after \`${doctorResultsHeading}\`.
+
 If the exact acknowledgment is required, put it immediately after those details.
 Immediately after the acknowledgment, output the exact heading
 \`${doctorResultsHeading}\`. If no acknowledgment is required, output that exact
@@ -327,7 +343,14 @@ End every response with the exact standalone sentence
 \`Any follow-up mutation requires separate explicit approval.\` immediately before
 the exact standalone sentence \`Doctor ends here. No changes were made.\`.
 
-Do not place a result, action summary, title, or translated heading before it.
+For an empty selection, the dedicated Markdown heading is structural, neutral,
+outside the diagnosis pair, and may be localized. It must not name a specific
+domain, pack, profile, tool, executable, taxonomy label, or ID. Output the required
+two sentences as plain paragraphs. The instruction backticks only delimit literals;
+do not output backticks, a blockquote, list marker, emphasis, or code fence around either sentence.
+
+Do not place a result, action summary, title, or translated heading before the
+exact Disclosed Core Checks heading.
 Report safe diagnostic fields only. After the required disclosure, proceed directly
 to safe diagnoses. Do not discuss privacy controls, filtering, redaction, omission,
 or fields that are not reported.`;

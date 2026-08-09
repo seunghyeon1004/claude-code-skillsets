@@ -38,6 +38,8 @@ All checks are read-only. Results stay local and are summarized without secret v
 
 The bundled read-only doctor adapter inspects `state/install-lock.json` and authenticates its approval and candidate IDs against `${CLAUDE_PLUGIN_ROOT}/data/decision-index.json`; these files contain broker and setup evidence, not credential data.
 
+Every fixed English protocol segment in this skill remains verbatim English regardless of the request language, including Korean; do not translate or localize it. The requested language applies only to non-fixed diagnosis and guidance text after `## Core Check Results`.
+
 Do not add, omit, combine, or run a core command before the complete disclosure.
 
 A simulation or trusted fixture Read does not substitute for this visible response
@@ -122,6 +124,12 @@ This restriction applies only to the empty-selection executable diagnosis.
 It does not suppress separately required broker-plugin or doctorState diagnoses.
 Put a dedicated Markdown heading immediately before either exact two-sentence
 diagnosis. Put no prose or other content before or after the pair in that section.
+The heading is structural, neutral, and outside the diagnosis pair; it may be
+localized but must not name a specific domain, pack, profile, tool, executable,
+taxonomy label, or ID.
+Output the two sentences as plain paragraphs. The backticks in this skill only
+delimit literals: do not output backticks, a blockquote, list marker, emphasis, or
+code fence around either sentence.
 Every subsequent broker-plugin or doctorState diagnosis must start under a new
 Markdown heading.
 

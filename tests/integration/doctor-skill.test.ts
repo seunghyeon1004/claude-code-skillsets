@@ -56,6 +56,9 @@ describe("skillset-manager doctor skill", () => {
     expect(content).toMatch(
       /dedicated Markdown heading.*immediately before.*exact two-sentence/is
     );
+    expect(content).toMatch(
+      /heading.*structural.*neutral.*outside.*diagnosis pair[\s\S]*localized.*must not name.*domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID[\s\S]*plain paragraphs[\s\S]*(?:do not output|no) backticks.*blockquote.*list.*emphasis.*code fence/is
+    );
     expect(content).toMatch(/no prose.*before or after.*pair/is);
     expect(content).toMatch(
       /subsequent broker-plugin or\s+doctorState.*new\s+Markdown heading/is
@@ -108,6 +111,9 @@ describe("skillset-manager doctor skill", () => {
     );
     expect(disclosure).toMatch(
       /copy.*exactly.*claude --version.*returns the version string.*marketplace names and errors.*allowlisted plugin health fields.*all checks are read-only.*results stay local.*no repair is authorized.*state\/install-lock\.json.*decision-index\.json/is
+    );
+    expect(disclosure).toMatch(
+      /fixed English protocol.*regardless of.*request language.*Korean.*do not translate/is
     );
     expect(disclosure).toMatch(
       /immediately after.*acknowledgment.*exact heading.*## Core Check Results/is
@@ -281,7 +287,7 @@ describe("skillset-manager doctor evaluation corpus", () => {
         "External-provider research is pending; diagnosis is limited to installed broker plugins."
       );
       expect(evaluation.forbiddenBehaviors.join(" ")).toMatch(
-        /empty-selection diagnosis.*domain.*pack.*profile.*tool.*executable.*label/is
+        /empty-selection heading.*names a specific domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID.*next heading.*wraps.*plain diagnosis paragraphs/is
       );
       if (evaluation.caseType === "normal") {
         expect(evaluation.prompt).toMatch(/do not output.*rejected-input acknowledgment/is);
