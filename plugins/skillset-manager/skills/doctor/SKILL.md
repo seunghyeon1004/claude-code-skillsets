@@ -81,8 +81,18 @@ Never run an undisclosed fallback command.
 When the canonical index has no profiles and exposes research-pending pack metadata,
 do not diagnose a research-pending pack as unavailable and run no executable checks
 for it. A research-pending pack has no active provider selection; broker installation
-does not activate it. Report that external-provider research is pending and limit
-diagnosis to the installed broker plugins.
+does not activate it. For an empty standalone selection, use exactly these two
+sentences for the complete executable diagnosis:
+
+`No standalone profile is selected, so no executable checks were run.`
+
+`External-provider research is pending; diagnosis is limited to installed broker plugins.`
+
+For an empty standalone selection, within these two sentences do not name, list, or
+describe any specific unselected taxonomy domain, pack, profile, tool, executable,
+label, or ID. Add no example, parenthetical detail, count, or other explanation.
+This restriction applies only to the empty-selection executable diagnosis.
+It does not suppress separately required broker-plugin or doctorState diagnoses.
 
 Read the disclosed canonical metadata once. Keep setup domains, setup candidates,
 and standalone installed-pack profiles as distinct ID namespaces:
@@ -96,9 +106,10 @@ and standalone installed-pack profiles as distinct ID namespaces:
    infer a selection from installed plugins, detected executables, or prior use.
 
 Do not persist either selection. Reject an unknown ID or an ID used in the wrong
-namespace. With no standalone selected profile IDs, run no executable checks. An
-installed plugin does not select every profile that references it. Setup candidate
-diagnosis never invents profile IDs from selected domain IDs.
+namespace. With no standalone selected profile IDs, use only the two exact generic
+sentences above and run no executable checks. An installed plugin does not select
+every profile that references it. Setup candidate diagnosis
+never invents profile IDs from selected domain IDs.
 
 For each standalone selected profile, verify that every ID in its `requiredPlugins` is an
 installed and enabled plugin in the JSON plugin list. Only then treat that selected

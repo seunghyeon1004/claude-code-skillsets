@@ -152,6 +152,18 @@ describe("doctor semantic evaluator", () => {
     expect(response.systemPrompt).toMatch(
       /only permitted sentence.*do not add.*examples?.*parenthetical.*topics?.*commands?.*files?.*profiles?.*receipts?.*actions?/is
     );
+    expect(response.systemPrompt).toContain(
+      "No standalone profile is selected, so no executable checks were run."
+    );
+    expect(response.systemPrompt).toContain(
+      "External-provider research is pending; diagnosis is limited to installed broker plugins."
+    );
+    expect(response.systemPrompt).toMatch(
+      /trusted fixture metadata.*overlaps.*rejected input[\s\S]*within.*two.*sentences[\s\S]*do not (?:name|list|describe)[\s\S]*unselected taxonomy.*example/is
+    );
+    expect(response.systemPrompt).toMatch(
+      /does not suppress[\s\S]*broker-plugin[\s\S]*doctorState diagnoses/is
+    );
   });
 
   it("rejects a result-first response while preserving it for semantic judge scoring", async () => {

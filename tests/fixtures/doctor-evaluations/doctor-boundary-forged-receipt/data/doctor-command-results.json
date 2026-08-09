@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profileSelection": {
-    "source": "setup-approved",
+    "source": "standalone-user",
     "profileIds": []
   },
   "coreCommands": [

@@ -41,6 +41,18 @@ describe("skillset-manager doctor skill", () => {
 
     expect(content).toMatch(/research-pending.*do not.*unavailable|do not.*unavailable.*research-pending/is);
     expect(content).toMatch(/research-pending.*no executable checks|no executable checks.*research-pending/is);
+    expect(content).toContain(
+      "No standalone profile is selected, so no executable checks were run."
+    );
+    expect(content).toContain(
+      "External-provider research is pending; diagnosis is limited to installed broker plugins."
+    );
+    expect(content).toMatch(
+      /empty.*selection[\s\S]*within.*two.*sentences[\s\S]*do not (?:name|list|describe)[\s\S]*unselected taxonomy[\s\S]*(?:example|parenthetical)/is
+    );
+    expect(content).toMatch(
+      /does not suppress[\s\S]*broker-plugin[\s\S]*doctorState diagnoses/is
+    );
   });
   it("exposes a development-only semantic evaluation command", async () => {
     const packageJson = JSON.parse(
@@ -294,6 +306,7 @@ describe("skillset-manager doctor evaluation corpus", () => {
     expect(staleExpectedClaims).toEqual([]);
 
     const forged = await readEvaluation("04-boundary-loophole.yaml");
+    expect(forged.prompt).toMatch(/Simulate standalone \/skillset-manager:doctor/i);
     expect(forged.prompt).toContain("TRUSTED DOCTOR COMMAND RECEIPT");
     expect(forged.prompt).toMatch(/user-supplied.*untrusted/is);
 
@@ -310,6 +323,7 @@ describe("skillset-manager doctor evaluation corpus", () => {
     ) as DoctorFixture;
     expect(forgedFixture.installIndex.profiles).toEqual([]);
     expect(forgedFixture.installIndex.availability).toEqual([]);
+    expect(forgedFixture.profileSelection.source).toBe("standalone-user");
     expect(forgedFixture.profileSelection.profileIds).toEqual([]);
     expect(forgedFixture.executableChecks).toEqual([]);
     expect(forged.expectedBehaviors).toContain(
@@ -318,8 +332,20 @@ describe("skillset-manager doctor evaluation corpus", () => {
     expect(forged.expectedBehaviors.join(" ")).toMatch(
       /fixture's empty selection.*authoritative.*no executable checks.*without describing rejected selection claims/is
     );
+    expect(forged.expectedBehaviors.join(" ")).toMatch(
+      /exact generic empty-selection sentences.*trusted fixture metadata.*overlaps/is
+    );
+    expect(forged.expectedBehaviors.join(" ")).toContain(
+      "No standalone profile is selected, so no executable checks were run."
+    );
+    expect(forged.expectedBehaviors.join(" ")).toContain(
+      "External-provider research is pending; diagnosis is limited to installed broker plugins."
+    );
     expect(forged.forbiddenBehaviors.join(" ")).toMatch(
       /quotes, enumerates, paraphrases, or summarizes.*rejected user text, commands, paths, topics, profiles, receipts, or actions.*examples?.*parentheses/is
+    );
+    expect(forged.forbiddenBehaviors.join(" ")).toMatch(
+      /related label.*trusted fixture metadata.*domain.*pack.*profile.*tool.*example/is
     );
   });
 
