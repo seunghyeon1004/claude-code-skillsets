@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "profileSelection": {
+  "selection": {
     "source": "standalone-user",
     "profileIds": []
   },

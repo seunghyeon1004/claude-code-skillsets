@@ -1,8 +1,9 @@
 {
   "schemaVersion": 1,
-  "profileSelection": {
+  "selection": {
     "source": "setup-approved",
-    "profileIds": []
+    "domainIds": [],
+    "candidateIds": []
   },
   "coreCommands": [
     {

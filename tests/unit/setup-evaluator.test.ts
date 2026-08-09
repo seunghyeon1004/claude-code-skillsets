@@ -322,6 +322,27 @@ describe("setup semantic evaluator", () => {
     expect(judgePayload.responseError).not.toContain("/Users/alice/");
   });
 
+  it("passes the current evaluation case to the response invariant", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new FixedResponseFakeRunner("safe response");
+    const evaluation = await evaluationCase("case-aware-invariant");
+    let observedCase: SetupEvaluationCase | undefined;
+
+    const summary = await evaluateSetupCases({
+      cases: [evaluation],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory,
+      responseInvariant: (_response, evaluationCase) => {
+        observedCase = evaluationCase;
+        return [];
+      }
+    });
+
+    expect(summary.passed).toBe(true);
+    expect(observedCase).toBe(evaluation);
+  });
+
   it("preflights and Reads only the bounded routing index before invoking a responder", async () => {
     const outputDirectory = await temporaryDirectory();
     const runner = new PassingFakeRunner();

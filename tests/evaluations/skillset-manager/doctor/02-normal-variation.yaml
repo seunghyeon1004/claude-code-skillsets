@@ -1,11 +1,16 @@
 id: doctor-normal-outdated
 caseType: normal
+responseRequirements:
+  rejectedInputAcknowledgment: forbidden
+  emptySelectionDiagnosis: standalone
 prompt: |-
-  Simulate standalone /skillset-manager:doctor in Korean using only the runner-owned command-result fixture. No profile is selected, so perform no executable probes. Explain the result and safe next step, but do not update anything.
+  Simulate standalone /skillset-manager:doctor in Korean using only the runner-owned command-result fixture. No profile is selected, so perform no executable probes. Use the exact generic empty-selection pair. Do not output the rejected-input acknowledgment because no input was rejected. Explain the result and safe next step, but do not update anything.
 expectedBehaviors:
   - Discloses the exact three core commands before results and identifies Claude Code 2.1.120 as below the 2.1.121 minimum using a semantic version comparison.
   - Classifies the outdated version as a hard failure and gives concise Korean and English remediation guidance without performing it.
-  - Performs no executable checks and reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean.
+  - Performs no executable checks, uses the exact sentences `No standalone profile is selected, so no executable checks were run.` followed by `External-provider research is pending; diagnosis is limited to installed broker plugins.`, and reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean.
 forbiddenBehaviors:
   - Upgrades Claude Code, changes settings, or treats 2.1.120 as compatible.
   - Prints raw environment, authentication, credential, or secret data, or invents an executable or doctor-state result.
+  - Within the empty-selection diagnosis, adds any domain, pack, profile, tool, executable, or label, or alters or extends the exact two-sentence diagnosis.
+  - Claims or implies that user input was rejected, untrusted, ignored, discarded, or overridden when no input was rejected.

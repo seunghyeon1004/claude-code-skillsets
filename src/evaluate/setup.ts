@@ -65,6 +65,10 @@ export interface SetupEvaluationCase {
   expectedBehaviors: string[];
   forbiddenBehaviors: string[];
   fixturePluginRoot: string;
+  responseRequirements?: {
+    rejectedInputAcknowledgment?: "required" | "forbidden" | "optional";
+    emptySelectionDiagnosis?: "standalone" | "setup-approved";
+  };
 }
 
 export interface SetupTimeProbe {
@@ -438,7 +442,10 @@ export interface EvaluateSetupOptions {
   skillContent: string;
   runner: ModelRunner;
   outputDirectory: string;
-  responseInvariant?: (response: string) => readonly string[];
+  responseInvariant?: (
+    response: string,
+    evaluationCase: SetupEvaluationCase
+  ) => readonly string[];
   trustedReadRelativePath?: string;
   trustedResponderSystemPrompt?: TrustedResponderSystemPrompt;
   trustedAdditionalReadRelativePaths?: string[];
@@ -2331,7 +2338,7 @@ export async function evaluateSetupCases(
         throw new Error("Responder returned no text");
       }
       response = options.responseInvariant === undefined ? output.text.trim() : output.text;
-      for (const invariantError of options.responseInvariant?.(response) ?? []) {
+      for (const invariantError of options.responseInvariant?.(response, evaluationCase) ?? []) {
         errors.push(sanitizedErrorMessage(invariantError));
       }
     } catch (error) {
@@ -2604,6 +2611,9 @@ function failedBehaviorReceipts(behaviors: string[], reason: string): BehaviorRe
 }
 
 function validateEvaluationCase(value: unknown, fileName: string): SetupEvaluationCase {
+  const responseRequirements = isRecord(value)
+    ? value.responseRequirements
+    : undefined;
   if (
     !isRecord(value)
     || typeof value.id !== "string"
@@ -2611,6 +2621,16 @@ function validateEvaluationCase(value: unknown, fileName: string): SetupEvaluati
     || typeof value.prompt !== "string"
     || !stringArray(value.expectedBehaviors)
     || !stringArray(value.forbiddenBehaviors)
+    || (responseRequirements !== undefined && (
+      !isRecord(responseRequirements)
+      || (responseRequirements.rejectedInputAcknowledgment !== undefined
+        && responseRequirements.rejectedInputAcknowledgment !== "required"
+        && responseRequirements.rejectedInputAcknowledgment !== "forbidden"
+        && responseRequirements.rejectedInputAcknowledgment !== "optional")
+      || (responseRequirements.emptySelectionDiagnosis !== undefined
+        && responseRequirements.emptySelectionDiagnosis !== "standalone"
+        && responseRequirements.emptySelectionDiagnosis !== "setup-approved")
+    ))
   ) {
     throw new Error(`Invalid setup evaluation case: ${fileName}`);
   }
@@ -2620,7 +2640,20 @@ function validateEvaluationCase(value: unknown, fileName: string): SetupEvaluati
     prompt: value.prompt,
     expectedBehaviors: value.expectedBehaviors,
     forbiddenBehaviors: value.forbiddenBehaviors,
-    fixturePluginRoot: ""
+    fixturePluginRoot: "",
+    ...(isRecord(responseRequirements) ? {
+      responseRequirements: {
+        ...(responseRequirements.rejectedInputAcknowledgment === "required"
+          || responseRequirements.rejectedInputAcknowledgment === "forbidden"
+          || responseRequirements.rejectedInputAcknowledgment === "optional"
+          ? { rejectedInputAcknowledgment: responseRequirements.rejectedInputAcknowledgment }
+          : {}),
+        ...(responseRequirements.emptySelectionDiagnosis === "standalone"
+          || responseRequirements.emptySelectionDiagnosis === "setup-approved"
+          ? { emptySelectionDiagnosis: responseRequirements.emptySelectionDiagnosis }
+          : {})
+      }
+    } : {})
   };
 }
 

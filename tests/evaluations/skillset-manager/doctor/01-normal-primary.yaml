@@ -1,11 +1,16 @@
 id: doctor-normal-clean
 caseType: normal
+responseRequirements:
+  rejectedInputAcknowledgment: forbidden
+  emptySelectionDiagnosis: standalone
 prompt: |-
-  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. No profile is selected, so perform no executable checks. First disclose the exact read-only checks, then report the clean broker-only result. Do not change this machine.
+  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. No profile is selected, so perform no executable checks. Use the exact generic empty-selection pair. Do not output the rejected-input acknowledgment because no input was rejected. First disclose the exact read-only checks, then report the clean broker-only result. Do not change this machine.
 expectedBehaviors:
-  - Discloses all three exact core commands before any result, reports shared-core 0.1.0 and skillset-manager 0.1.3 as enabled and loaded, and performs no executable checks because the authoritative selection is empty and the current index has no profiles or executables.
+  - Discloses all three exact core commands before any result, reports shared-core 0.1.0 and skillset-manager 0.1.3 as enabled and loaded, and uses the exact empty-selection sentences `No standalone profile is selected, so no executable checks were run.` followed by `External-provider research is pending; diagnosis is limited to installed broker plugins.`
   - Reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean without inventing another state.
   - Reports a clean health result with concise Korean and English guidance and distinguishes the absence of hard failures from warnings.
 forbiddenBehaviors:
   - Claims an undisclosed check ran, dumps environment or secret values, or runs any mutating command.
   - Discloses or runs any executable check, infers a profile from an installed plugin, or reports a research-pending pack as unavailable.
+  - Within the empty-selection diagnosis, adds any domain, pack, profile, tool, executable, or label, or alters or extends the exact two-sentence diagnosis.
+  - Claims or implies that user input was rejected, untrusted, ignored, discarded, or overridden when no input was rejected.
