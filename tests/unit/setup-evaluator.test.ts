@@ -581,6 +581,25 @@ describe("setup semantic evaluator", () => {
     expect(summary.passed).toBe(false);
     expect(summary.cases).toHaveLength(9);
   });
+
+  it("keeps the real routing-only CLI suite to one routing-index Read per case", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingFakeRunner();
+
+    await expect(runSetupEvaluationCli(
+      ["--output-dir", outputDirectory],
+      { runner, stdout: { write: () => undefined } }
+    )).resolves.toBe(0);
+
+    const responses = runner.requests.filter(({ kind }) => kind === "response");
+    expect(responses).toHaveLength(9);
+    for (const response of responses) {
+      expect(response.requiredReads).toEqual([expect.objectContaining({
+        path: expect.stringMatching(/\/data\/routing-index\.json$/u)
+      })]);
+      expect(response.requiredReads?.some(({ path }) => path.endsWith("/state/install-lock.json"))).toBe(false);
+    }
+  });
 });
 
 describe("decision-index setup fixture evaluator", () => {

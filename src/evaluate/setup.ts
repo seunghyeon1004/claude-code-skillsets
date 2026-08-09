@@ -2483,8 +2483,7 @@ export async function runSetupEvaluationCli(
     ),
     skillContent: await readFile(dependencies.skillPath ?? skillPath, "utf8"),
     runner: dependencies.runner ?? new ClaudeCliRunner(),
-    outputDirectory,
-    trustedAdditionalReadRelativePaths: [join("state", "install-lock.json")]
+    outputDirectory
   });
   (dependencies.stdout ?? process.stdout).write(`${JSON.stringify(summary, null, 2)}\n`);
   return exitCodeForSummary(summary);
