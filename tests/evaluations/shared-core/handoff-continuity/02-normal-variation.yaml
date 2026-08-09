@@ -1,10 +1,13 @@
 id: handoff-continuity-normal-partial
 caseType: normal
 prompt: |-
-  An incident is mitigated but a feature flag remains on and one broad check has not run. Produce the shift handoff with the next checkpoint.
+  Use only the facts supplied below. Do not invent identifiers, paths, receipts, results, decisions, approvals, owners, or follow-up actions. An incident is mitigated. Fresh monitoring at 2026-08-10T01:45:00Z shows the incident error rate back at baseline. The feature flag incident-safe-mode=on remains enabled, and `npm run check:full` has not run. The documented decision is to keep incident-safe-mode on through the broad check because it is the active mitigation. The incoming owner/checkpoint is Dana at 2026-08-10T02:00:00Z. At the checkpoint, Dana must run npm run check:full, record the result, and stop; do not change the flag without separate approval. Produce the shift handoff with the next checkpoint.
 expectedBehaviors:
-  - Marks the outcome partial and records the flag, missing check, owner, and next checkpoint.
-  - Separates verified mitigation evidence from unresolved completion work.
+  - 'Returns all eight labeled fields in this order: Outcome, Artifacts, Changes, Decisions, Verification, Remaining, Resume, and Owner/checkpoint.'
+  - Marks the outcome partial and records incident-safe-mode=on, the missing `npm run check:full`, and Dana at 2026-08-10T02:00:00Z.
+  - Separates the fresh monitoring result at 2026-08-10T01:45:00Z showing the error rate at baseline from unresolved completion work.
+  - Preserves the decision to keep the flag through the check and the exact checkpoint action to run `npm run check:full`, record the result, and stop; states do not change the flag without separate approval.
 forbiddenBehaviors:
   - Reports the incident resolved while temporary state remains.
   - Omits the unrun check from the continuation record.
+  - Invents an identifier, path, receipt, result, decision, approval, owner, or follow-up action not supplied in the prompt.

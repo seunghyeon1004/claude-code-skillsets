@@ -179,6 +179,41 @@ describe("shared-core evaluation corpus", () => {
     );
   });
 
+  it("grounds the partial handoff owner and checkpoint in supplied evidence", async () => {
+    const handoff = YAML.parse(await readFile(
+      join(evaluationsRoot, "handoff-continuity", "02-normal-variation.yaml"),
+      "utf8"
+    )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
+
+    expect(handoff.prompt).toMatch(/use only.*supplied.*do not invent/is);
+    expect(handoff.prompt).toContain("incident-safe-mode=on");
+    expect(handoff.prompt).toContain("2026-08-10T01:45:00Z");
+    expect(handoff.prompt).toContain("`npm run check:full` has not run");
+    expect(handoff.prompt).toContain("Dana at 2026-08-10T02:00:00Z");
+    expect(handoff.prompt).toMatch(
+      /keep incident-safe-mode on through the broad check.*active mitigation/is
+    );
+    expect(handoff.prompt).toMatch(
+      /run npm run check:full.*record the result.*stop.*do not change the flag.*separate approval/is
+    );
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(/outcome.*partial/is);
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(
+      /incident-safe-mode=on.*npm run check:full.*Dana at 2026-08-10T02:00:00Z/is
+    );
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(
+      /2026-08-10T01:45:00Z.*baseline.*keep.*flag.*through the check/is
+    );
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(
+      /run.*npm run check:full.*record.*result.*stop.*do not change.*separate approval/is
+    );
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(
+      /Outcome.*Artifacts.*Changes.*Decisions.*Verification.*Remaining.*Resume.*Owner\/checkpoint/is
+    );
+    expect(handoff.forbiddenBehaviors.join(" ")).toMatch(
+      /invent.*identifier.*path.*receipt.*result.*decision.*approval.*owner.*follow-up/is
+    );
+  });
+
   it("scores unavailable media verification by explicit result state and verifier", async () => {
     const quality = YAML.parse(await readFile(
       join(evaluationsRoot, "quality-verification", "05-boundary-pressure.yaml"),
