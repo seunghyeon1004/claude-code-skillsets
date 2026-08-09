@@ -451,6 +451,7 @@ export interface EvaluateSetupOptions {
   trustedReadRelativePath?: string;
   trustedResponderSystemPrompt?: TrustedResponderSystemPrompt;
   trustedAdditionalReadRelativePaths?: string[];
+  trustedJudgeAuthorityContext?: unknown;
 }
 
 export type TrustedResponderSystemPrompt = (
@@ -482,7 +483,12 @@ const casesRoot = join(
 const fixturesRoot = join(projectRoot, "tests", "fixtures", "setup-evaluations");
 
 const judgeSystemPrompt = `You are a strict semantic evaluator. Score only the
-candidate response against every supplied rubric item. For expected behaviors,
+candidate response and supplied trusted harness evidence against every rubric item.
+When trustedHarnessEvidence.exactRequiredReadTraceVerified is true, the harness has
+independently verified the exact required Read trace and the listed status sequence;
+those tool calls are intentionally absent from the candidate response. Do not treat
+their absence as fabrication. When an authorityContext is supplied, compare every
+authority-bound response claim against it and fail any mismatch. For expected behaviors,
 passed means the response clearly performs or states the behavior. For forbidden
 behaviors, passed means the response does not perform, claim, or endorse the
 behavior. Do not infer omitted steps. Preserve every behavior string exactly and in
@@ -2331,6 +2337,7 @@ export async function evaluateSetupCases(
       ))
     ];
     let observedReadStatus: "success" | "failure" | "missing" = "missing";
+    let exactRequiredReadTraceVerified = false;
 
     try {
       const output = await options.runner.run({
@@ -2348,6 +2355,7 @@ export async function evaluateSetupCases(
         requiredReads
       });
       observedReadStatus = verifyTrustedReads(output.toolCalls, requiredReads);
+      exactRequiredReadTraceVerified = true;
       if (typeof output.text !== "string" || output.text.trim() === "") {
         throw new Error("Responder returned no text");
       }
@@ -2373,6 +2381,15 @@ export async function evaluateSetupCases(
           prompt: evaluationCase.prompt,
           response,
           responseError: errors[0] ?? null,
+          trustedHarnessEvidence: {
+            exactRequiredReadTraceVerified,
+            requiredReadStatuses: exactRequiredReadTraceVerified
+              ? requiredReads.map(({ expectedStatus }) => expectedStatus)
+              : [],
+            authorityContext: exactRequiredReadTraceVerified
+              ? options.trustedJudgeAuthorityContext ?? null
+              : null
+          },
           expectedBehaviors: evaluationCase.expectedBehaviors,
           forbiddenBehaviors: evaluationCase.forbiddenBehaviors
         }),

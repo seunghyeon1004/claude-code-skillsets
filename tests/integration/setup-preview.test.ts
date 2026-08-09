@@ -79,6 +79,24 @@ describe("read-only setup runtime preview handoff", () => {
     expect(responseRequest?.systemPrompt).toMatch(/Bash.*forbidden|forbidden.*Bash/i);
     expect(responseRequest?.additionalDirectories).toHaveLength(1);
 
+    const judgeRequest = runner.requests.find(({ kind }) => kind === "judge");
+    const judgePayload = JSON.parse(judgeRequest?.prompt ?? "null") as {
+      trustedHarnessEvidence?: unknown;
+    };
+    expect(judgeRequest?.systemPrompt).toMatch(/independently verified the exact required Read trace/i);
+    expect(judgePayload.trustedHarnessEvidence).toEqual({
+      exactRequiredReadTraceVerified: true,
+      requiredReadStatuses: ["success", "failure", "success"],
+      authorityContext: {
+        kind: "setup-runtime-preview-projection",
+        projection: runner.projection
+      }
+    });
+    const trustedHarnessEvidenceRaw = JSON.stringify(judgePayload.trustedHarnessEvidence);
+    expect(trustedHarnessEvidenceRaw).not.toMatch(
+      /argv|approvedExecution|approvalObjectAccess|setup-preview-plugin-/u
+    );
+
     expect(runner.projection).toEqual({
       schemaVersion: 1,
       fixtureKind: "approved-official-disposable",
@@ -114,7 +132,11 @@ describe("read-only setup runtime preview handoff", () => {
         expected: { decisionIndexDigest: string; routingIndexDigest: string }
       ) => unknown;
     }).validateAndProjectSetupRuntimePreview;
+    const validateResponse = (module as {
+      validateSetupRuntimePreviewResponse?: (response: string, projection: unknown) => string[];
+    }).validateSetupRuntimePreviewResponse;
     expect(typeof project).toBe("function");
+    expect(typeof validateResponse).toBe("function");
     if (project === undefined) return;
 
     const decisionIndexDigest = "b".repeat(64);
@@ -166,6 +188,32 @@ describe("read-only setup runtime preview handoff", () => {
       decisionIndexDigest,
       routingIndexDigest
     })).toThrow(/size|large|bound/i);
+
+    if (validateResponse === undefined) return;
+    const projection = project(canonicalJson(preview), { decisionIndexDigest, routingIndexDigest });
+    const response = projectionResponse(projection);
+    expect(validateResponse(response, projection)).toEqual([]);
+    expect(validateResponse(response.replace("\n```json", "\n\n```json"), projection)).toEqual([]);
+    expect(validateResponse(`Preface\n${response}`, projection).join(" ")).toMatch(
+      /projection block.*start|start.*projection block/i
+    );
+    expect(validateResponse(response.replace("\n```json", "\n\n\n```json"), projection).join(" ")).toMatch(
+      /projection block.*start|start.*projection block/i
+    );
+    expect(validateResponse(
+      response.replace("{\n", "{\n  \"candidateIds\": [\"changed\"],\n"),
+      projection
+    ).join(" ")).toMatch(/projection block.*canonical|canonical.*projection block/i);
+    expect(validateResponse("No projection block.", projection).join(" ")).toMatch(
+      /projection block.*exactly once/i
+    );
+    expect(validateResponse(`${response}\n${response}`, projection).join(" ")).toMatch(
+      /projection block.*exactly once/i
+    );
+    expect(validateResponse(
+      projectionResponse({ ...(projection as Record<string, unknown>), candidateIds: ["changed"] }),
+      projection
+    ).join(" ")).toMatch(/projection block.*match/i);
   });
 });
 
@@ -209,6 +257,7 @@ class PreviewRunner implements ModelRunner {
     };
     return {
       text: [
+        projectionResponse(this.projection),
         `The decision digest ${projection.decisionIndexDigest} and routing digest ${projection.routingIndexDigest} match.`,
         `The runtime preview, not routing data, supplies candidates: ${projection.candidateIds.join(", ")}.`,
         `Risks requiring acknowledgement: ${projection.riskDisclosures.join(", ")}.`,
@@ -222,6 +271,15 @@ class PreviewRunner implements ModelRunner {
       }))
     };
   }
+}
+
+function projectionResponse(projection: unknown): string {
+  return [
+    "## Verified Runtime Preview Projection",
+    "```json",
+    canonicalJson(projection).trimEnd(),
+    "```"
+  ].join("\n");
 }
 
 function behaviorResults(behaviors: string[], evidence: string, reason: string): Record<string, unknown> {

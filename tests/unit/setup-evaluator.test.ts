@@ -669,6 +669,13 @@ describe("setup semantic evaluator", () => {
     ) as { errors: string[]; trustedRead: { observedStatus: string } };
     expect(receipt.errors.join(" ")).toMatch(/required trusted Read trace/i);
     expect(receipt.trustedRead.observedStatus).toBe("missing");
+    const judgeRequest = runner.requests.find(({ kind }) => kind === "judge");
+    const judge = judgePayload(judgeRequest!);
+    expect(judge.trustedHarnessEvidence).toEqual({
+      exactRequiredReadTraceVerified: false,
+      requiredReadStatuses: [],
+      authorityContext: null
+    });
   });
 
   it("rejects reordered Reads and any non-exact Read input", async () => {
@@ -1741,7 +1748,10 @@ class ExtraJudgePropertyFakeRunner implements ModelRunner {
 }
 
 class MissingReadTraceFakeRunner implements ModelRunner {
+  readonly requests: ModelRequest[] = [];
+
   async run(request: ModelRequest): Promise<ModelOutput> {
+    this.requests.push(request);
     if (request.kind === "response") {
       return { text: "response without a tool trace", toolCalls: [] };
     }
@@ -1797,11 +1807,21 @@ function judgePayload(request: ModelRequest): {
   caseId: string;
   expectedBehaviors: string[];
   forbiddenBehaviors: string[];
+  trustedHarnessEvidence: {
+    exactRequiredReadTraceVerified: boolean;
+    requiredReadStatuses: string[];
+    authorityContext: unknown;
+  };
 } {
   return JSON.parse(request.prompt) as {
     caseId: string;
     expectedBehaviors: string[];
     forbiddenBehaviors: string[];
+    trustedHarnessEvidence: {
+      exactRequiredReadTraceVerified: boolean;
+      requiredReadStatuses: string[];
+      authorityContext: unknown;
+    };
   };
 }
 
