@@ -362,6 +362,19 @@ describe("setup semantic evaluator", () => {
     expect(setupResponseInvariant(`${authority}\n${uniqueRoute}`, evaluation).join(" ")).toMatch(
       /unique-route.*forbidden/i
     );
+    expect(setupResponseInvariant(`It would be wrong to say ${authority}`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${authority} This qualifier changes it.`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`A qualification:\n${authority}`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`\`\`\`text\n\n${authority}\n\n\`\`\``, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`Context.\n\n${authority}\n\nClosing.`, evaluation)).toEqual([]);
 
     const koreanEvaluation: SetupEvaluationCase = {
       ...evaluation,
@@ -373,6 +386,33 @@ describe("setup semantic evaluator", () => {
       `${koreanAuthority}\n${authority}`,
       koreanEvaluation
     ).join(" ")).toMatch(/opposite-language.*forbidden/i);
+  });
+
+  it("requires the complete fresh-index boundary after a time hold", async () => {
+    const evaluation: SetupEvaluationCase = {
+      ...await evaluationCase("setup-expired-catalog"),
+      responseRequirements: { refreshBoundary: "en" }
+    };
+    const boundary = "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.";
+    const koreanBoundary = "향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다.";
+
+    expect(setupResponseInvariant(boundary, evaluation)).toEqual([]);
+    expect(setupResponseInvariant("Fresh inputs are required.", evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`Not this: ${boundary}`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${boundary}\n${boundary}`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${boundary}\n${koreanBoundary}`, evaluation).join(" ")).toMatch(
+      /opposite-language.*refresh boundary.*forbidden/i
+    );
+    expect(setupResponseInvariant(koreanBoundary, {
+      ...evaluation,
+      responseRequirements: { refreshBoundary: "ko" }
+    })).toEqual([]);
   });
 
   it("preflights and Reads only the bounded routing index before invoking a responder", async () => {
@@ -1602,10 +1642,13 @@ class PassingFakeRunner implements ModelRunner {
     this.requests.push(request);
     if (request.kind === "response") {
       const ambiguousAuthority = "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.";
+      const refreshBoundary = "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.";
       return responseWithRequiredRead(
         request,
         request.prompt.includes("two equally long indexed phrases")
           ? ambiguousAuthority
+          : request.prompt.includes("claimed UTC timestamp") || request.prompt.includes("refuses the UTC time probe")
+            ? refreshBoundary
           : `response to ${request.prompt}`
       );
     }

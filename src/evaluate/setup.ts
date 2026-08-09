@@ -69,6 +69,7 @@ export interface SetupEvaluationCase {
     rejectedInputAcknowledgment?: "required" | "forbidden" | "optional";
     emptySelectionDiagnosis?: "standalone" | "setup-approved";
     ambiguousRoutingAuthority?: "en" | "ko";
+    refreshBoundary?: "en" | "ko";
   };
 }
 
@@ -490,6 +491,10 @@ candidate response. Return only the required structured result.`;
 const AMBIGUOUS_ROUTING_AUTHORITY = {
   en: "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.",
   ko: "라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다."
+} as const;
+const REFRESH_BOUNDARY = {
+  en: "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.",
+  ko: "향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다."
 } as const;
 const UNIQUE_ROUTE_DISCLOSURES = [
   "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed.",
@@ -2426,22 +2431,61 @@ export function setupResponseInvariant(
   response: string,
   evaluationCase: SetupEvaluationCase
 ): readonly string[] {
-  const language = evaluationCase.responseRequirements?.ambiguousRoutingAuthority;
-  if (language === undefined) return [];
-
-  const required = AMBIGUOUS_ROUTING_AUTHORITY[language];
-  const opposite = AMBIGUOUS_ROUTING_AUTHORITY[language === "en" ? "ko" : "en"];
   const errors: string[] = [];
-  if (occurrenceCount(response, required) !== 1) {
-    errors.push("Ambiguous routing authority sentence must appear exactly once");
+  const ambiguousLanguage = evaluationCase.responseRequirements?.ambiguousRoutingAuthority;
+  if (ambiguousLanguage !== undefined) {
+    const required = AMBIGUOUS_ROUTING_AUTHORITY[ambiguousLanguage];
+    const opposite = AMBIGUOUS_ROUTING_AUTHORITY[ambiguousLanguage === "en" ? "ko" : "en"];
+    if (occurrenceCount(response, required) !== 1 || standaloneParagraphCount(response, required) !== 1) {
+      errors.push("Ambiguous routing authority sentence must appear as a standalone paragraph exactly once");
+    }
+    if (occurrenceCount(response, opposite) !== 0) {
+      errors.push("Opposite-language ambiguous routing authority sentence is forbidden");
+    }
+    if (UNIQUE_ROUTE_DISCLOSURES.some((sentence) => occurrenceCount(response, sentence) !== 0)) {
+      errors.push("Unique-route disclosure is forbidden for an ambiguous routing case");
+    }
   }
-  if (occurrenceCount(response, opposite) !== 0) {
-    errors.push("Opposite-language ambiguous routing authority sentence is forbidden");
-  }
-  if (UNIQUE_ROUTE_DISCLOSURES.some((sentence) => occurrenceCount(response, sentence) !== 0)) {
-    errors.push("Unique-route disclosure is forbidden for an ambiguous routing case");
+
+  const refreshLanguage = evaluationCase.responseRequirements?.refreshBoundary;
+  if (refreshLanguage !== undefined) {
+    const required = REFRESH_BOUNDARY[refreshLanguage];
+    const opposite = REFRESH_BOUNDARY[refreshLanguage === "en" ? "ko" : "en"];
+    if (occurrenceCount(response, required) !== 1 || standaloneParagraphCount(response, required) !== 1) {
+      errors.push("Refresh boundary sentence must appear as a standalone paragraph exactly once");
+    }
+    if (occurrenceCount(response, opposite) !== 0) {
+      errors.push("Opposite-language refresh boundary sentence is forbidden");
+    }
   }
   return errors;
+}
+
+function standaloneParagraphCount(value: string, sentence: string): number {
+  const lines = value.split(/\r?\n/u);
+  let openFence: { character: string; length: number } | undefined;
+  let count = 0;
+
+  for (const [index, line] of lines.entries()) {
+    const fence = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/u);
+    if (fence !== null) {
+      const marker = fence[1]!;
+      const character = marker[0]!;
+      if (openFence === undefined) {
+        openFence = { character, length: marker.length };
+      } else if (character === openFence.character
+        && marker.length >= openFence.length
+        && fence[2]!.trim() === "") {
+        openFence = undefined;
+      }
+      continue;
+    }
+    if (openFence !== undefined || line.trim() !== sentence) continue;
+    const previousIsBoundary = index === 0 || lines[index - 1]!.trim() === "";
+    const nextIsBoundary = index === lines.length - 1 || lines[index + 1]!.trim() === "";
+    if (previousIsBoundary && nextIsBoundary) count += 1;
+  }
+  return count;
 }
 
 function occurrenceCount(value: string, needle: string): number {
@@ -2676,6 +2720,9 @@ function validateEvaluationCase(value: unknown, fileName: string): SetupEvaluati
       || (responseRequirements.ambiguousRoutingAuthority !== undefined
         && responseRequirements.ambiguousRoutingAuthority !== "en"
         && responseRequirements.ambiguousRoutingAuthority !== "ko")
+      || (responseRequirements.refreshBoundary !== undefined
+        && responseRequirements.refreshBoundary !== "en"
+        && responseRequirements.refreshBoundary !== "ko")
     ))
   ) {
     throw new Error(`Invalid setup evaluation case: ${fileName}`);
@@ -2701,6 +2748,10 @@ function validateEvaluationCase(value: unknown, fileName: string): SetupEvaluati
         ...(responseRequirements.ambiguousRoutingAuthority === "en"
           || responseRequirements.ambiguousRoutingAuthority === "ko"
           ? { ambiguousRoutingAuthority: responseRequirements.ambiguousRoutingAuthority }
+          : {}),
+        ...(responseRequirements.refreshBoundary === "en"
+          || responseRequirements.refreshBoundary === "ko"
+          ? { refreshBoundary: responseRequirements.refreshBoundary }
           : {})
       }
     } : {})
