@@ -113,7 +113,7 @@ for it. A research-pending pack has no active provider selection; broker install
 does not activate it. For an empty standalone selection, use exactly these two
 sentences for the complete executable diagnosis:
 
-`No standalone profile is selected, so no executable checks were run.`
+`No standalone profile is selected, so no installed-pack executable availability checks were run.`
 
 `External-provider research is pending; diagnosis is limited to installed broker plugins.`
 
@@ -129,13 +129,15 @@ before or after the pair in that section.
 Output the two sentences as plain paragraphs. The backticks in this skill only
 delimit literals: do not output backticks, a blockquote, list marker, emphasis, or
 code fence around either sentence.
-Every subsequent broker-plugin or doctorState diagnosis must start under a new
-Markdown heading.
+Immediately after either exact diagnosis pair, output the exact fixed English
+heading `## Broker and Setup State`. Do not translate, localize, rename, omit, or
+repeat it, and put no content between the pair and that heading. Put every subsequent
+broker-plugin or doctorState diagnosis under that heading or a later Markdown heading.
 
 For an authenticated setup invocation with no selected candidate IDs, use exactly
 these two sentences for the complete executable diagnosis instead:
 
-`No setup candidate is selected, so no executable checks were run.`
+`No setup candidate is selected, so no installed-pack executable availability checks were run.`
 
 `External-provider research is pending; diagnosis is limited to installed broker plugins.`
 

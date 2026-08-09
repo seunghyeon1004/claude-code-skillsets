@@ -42,7 +42,7 @@ describe("skillset-manager doctor skill", () => {
     expect(content).toMatch(/research-pending.*do not.*unavailable|do not.*unavailable.*research-pending/is);
     expect(content).toMatch(/research-pending.*no executable checks|no executable checks.*research-pending/is);
     expect(content).toContain(
-      "No standalone profile is selected, so no executable checks were run."
+      "No standalone profile is selected, so no installed-pack executable availability checks were run."
     );
     expect(content).toContain(
       "External-provider research is pending; diagnosis is limited to installed broker plugins."
@@ -54,15 +54,20 @@ describe("skillset-manager doctor skill", () => {
       /does not suppress[\s\S]*broker-plugin[\s\S]*doctorState diagnoses/is
     );
     expect(content).toContain("`## Empty Selection Status`");
+    expect(content).toContain("`## Broker and Setup State`");
     expect(content).toMatch(
       /exact heading[\s\S]*immediately before.*exact[\s\S]*fixed English protocol segment[\s\S]*not be translated.*localized.*renamed.*repeated/is
     );
+    expect(content).toMatch(
+      /immediately after.*exact diagnosis pair.*exact fixed English[\s\S]*heading/is
+    );
+    expect(content).toMatch(/put no content between the pair and that heading/is);
     expect(content).toMatch(
       /plain paragraphs[\s\S]*(?:do not output|no) backticks.*blockquote.*list.*emphasis.*code fence/is
     );
     expect(content).toMatch(/no prose.*before or after.*pair/is);
     expect(content).toMatch(
-      /subsequent broker-plugin or\s+doctorState.*new\s+Markdown heading/is
+      /subsequent\s+broker-plugin or doctorState.*under that heading or a later Markdown heading/is
     );
   });
   it("exposes a development-only semantic evaluation command", async () => {
@@ -281,14 +286,18 @@ describe("skillset-manager doctor evaluation corpus", () => {
       const expected = evaluation.expectedBehaviors.join(" ");
       expect(expected).toContain(
         evaluation.responseRequirements.emptySelectionDiagnosis === "setup-approved"
-        ? "No setup candidate is selected, so no executable checks were run."
-        : "No standalone profile is selected, so no executable checks were run."
+        ? "No setup candidate is selected, so no installed-pack executable availability checks were run."
+        : "No standalone profile is selected, so no installed-pack executable availability checks were run."
       );
       expect(expected).toContain(
         "External-provider research is pending; diagnosis is limited to installed broker plugins."
       );
+      expect(expected).toContain("## Broker and Setup State");
       expect(evaluation.forbiddenBehaviors.join(" ")).toMatch(
-        /different empty-selection heading.*## Empty Selection Status.*next heading.*wraps.*plain diagnosis paragraphs/is
+        /different empty-selection heading.*## Empty Selection Status.*different follow-up heading.*## Broker and Setup State.*wraps.*plain diagnosis paragraphs/is
+      );
+      expect(`${evaluation.prompt} ${expected}`).toMatch(
+        /required core checks[\s\S]*no installed-pack executable availability checks/is
       );
       if (evaluation.caseType === "normal") {
         expect(evaluation.prompt).toMatch(/do not output.*rejected-input acknowledgment/is);
@@ -409,13 +418,13 @@ describe("skillset-manager doctor evaluation corpus", () => {
       "Any follow-up mutation requires separate explicit approval."
     );
     expect(forged.expectedBehaviors.join(" ")).toMatch(
-      /fixture's empty selection.*authoritative.*no executable checks.*without describing rejected selection claims/is
+      /fixture's empty selection.*authoritative.*no installed-pack executable availability checks.*without describing rejected selection claims/is
     );
     expect(forged.expectedBehaviors.join(" ")).toMatch(
       /exact generic empty-selection sentences.*trusted fixture metadata.*overlaps/is
     );
     expect(forged.expectedBehaviors.join(" ")).toContain(
-      "No standalone profile is selected, so no executable checks were run."
+      "No standalone profile is selected, so no installed-pack executable availability checks were run."
     );
     expect(forged.expectedBehaviors.join(" ")).toContain(
       "External-provider research is pending; diagnosis is limited to installed broker plugins."

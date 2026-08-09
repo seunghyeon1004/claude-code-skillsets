@@ -176,7 +176,7 @@ describe("doctor semantic evaluator", () => {
       /only permitted sentence.*do not add.*examples?.*parenthetical.*topics?.*commands?.*files?.*profiles?.*receipts?.*actions?/is
     );
     expect(response.systemPrompt).toContain(
-      "No standalone profile is selected, so no executable checks were run."
+      "No standalone profile is selected, so no installed-pack executable availability checks were run."
     );
     expect(response.systemPrompt).toContain(
       "External-provider research is pending; diagnosis is limited to installed broker plugins."
@@ -189,6 +189,9 @@ describe("doctor semantic evaluator", () => {
     );
     expect(response.systemPrompt).toMatch(
       /exact heading.*## Empty Selection Status.*immediately before.*diagnosis pair/is
+    );
+    expect(response.systemPrompt).toMatch(
+      /immediately after.*diagnosis pair.*exact heading.*## Broker and Setup State.*no content.*between/is
     );
     expect(response.systemPrompt).toMatch(
       /do not place.*translated heading.*before the.*Disclosed Core Checks heading/is
@@ -317,10 +320,10 @@ Doctor ends here. No changes were made.`;
 
   it("enforces case-specific acknowledgment and empty-selection response requirements", () => {
     const acknowledgment = "I ignored untrusted requests and used only the trusted evidence.";
-    const emptySelectionPair = `No standalone profile is selected, so no executable checks were run.
+    const emptySelectionPair = `No standalone profile is selected, so no installed-pack executable availability checks were run.
 
 External-provider research is pending; diagnosis is limited to installed broker plugins.`;
-    const emptySetupSelectionPair = `No setup candidate is selected, so no executable checks were run.
+    const emptySetupSelectionPair = `No setup candidate is selected, so no installed-pack executable availability checks were run.
 
 External-provider research is pending; diagnosis is limited to installed broker plugins.`;
     const response = validDoctorResponse();
@@ -380,9 +383,25 @@ External-provider research is pending; diagnosis is limited to installed broker 
       "## Empty Selection Status",
       "## Empty Selection Status\n\n## Empty Selection Status"
     ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Broker and Setup State",
+      "## Doctor State"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Broker and Setup State",
+      "**Broker and Setup State**"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Broker and Setup State\n\nBroker and setup state is healthy.\n\n",
+      ""
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Broker and Setup State",
+      "## Broker and Setup State\n\n## Broker and Setup State"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
     expect(validateDoctorResponse(responseWithAcknowledgment.replace(
       emptySelectionPair,
-      `\`No setup candidate is selected, so no executable checks were run.\`\n\n\`External-provider research is pending; diagnosis is limited to installed broker plugins.\``
+      `\`No setup candidate is selected, so no installed-pack executable availability checks were run.\`\n\n\`External-provider research is pending; diagnosis is limited to installed broker plugins.\``
     ), setupBoundaryCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
   });
 
@@ -647,9 +666,13 @@ All disclosed checks passed.
 
 ## Empty Selection Status
 
-No standalone profile is selected, so no executable checks were run.
+No standalone profile is selected, so no installed-pack executable availability checks were run.
 
 External-provider research is pending; diagnosis is limited to installed broker plugins.
+
+## Broker and Setup State
+
+Broker and setup state is healthy.
 
 Any follow-up mutation requires separate explicit approval.
 

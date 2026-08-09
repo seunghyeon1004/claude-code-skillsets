@@ -52,10 +52,11 @@ All checks are read-only. Results stay local and are summarized without secret v
 The bundled read-only doctor adapter inspects \`state/install-lock.json\` and authenticates its approval and candidate IDs against \`\${CLAUDE_PLUGIN_ROOT}/data/decision-index.json\`; these files contain broker and setup evidence, not credential data.`;
 const doctorResultsHeading = "## Core Check Results";
 const emptySelectionHeading = "## Empty Selection Status";
+const brokerAndSetupStateHeading = "## Broker and Setup State";
 const noStandaloneSelection =
-  "No standalone profile is selected, so no executable checks were run.";
+  "No standalone profile is selected, so no installed-pack executable availability checks were run.";
 const noSetupSelection =
-  "No setup candidate is selected, so no executable checks were run.";
+  "No setup candidate is selected, so no installed-pack executable availability checks were run.";
 const externalResearchPending =
   "External-provider research is pending; diagnosis is limited to installed broker plugins.";
 
@@ -146,6 +147,8 @@ export function validateDoctorResponse(
     const precedingHeading = precedingHeadings.at(-1);
     const emptySelectionHeadingOccurrences = normalized
       .split(emptySelectionHeading).length - 1;
+    const brokerAndSetupStateHeadingOccurrences = normalized
+      .split(brokerAndSetupStateHeading).length - 1;
     const contentAfterPrecedingHeading = precedingHeading === undefined
       ? beforeExactDiagnosis
       : beforeExactDiagnosis.slice(
@@ -158,9 +161,9 @@ export function validateDoctorResponse(
       || precedingHeading === undefined
       || precedingHeading[0] !== emptySelectionHeading
       || emptySelectionHeadingOccurrences !== 1
+      || brokerAndSetupStateHeadingOccurrences !== 1
       || contentAfterPrecedingHeading.trim().length > 0
-      || !/^\n\n(?:#{1,6}[ \t]|Any follow-up mutation requires separate explicit approval\.)/u
-        .test(afterExactDiagnosis)
+      || !afterExactDiagnosis.startsWith(`\n\n${brokerAndSetupStateHeading}\n`)
     ) {
       errors.push("Doctor response invariant failed: empty-selection-diagnosis");
     }
@@ -314,11 +317,13 @@ unselected taxonomy domain, pack, profile, tool, executable, label, or ID. Add n
 example, parenthetical detail, count, or other empty-selection explanation. This
 restriction does not suppress separately required broker-plugin or
 doctorState diagnoses.
-After either exact two-sentence diagnosis, any subsequent broker-plugin or
-doctorState diagnosis must start under a new Markdown heading.
 Put the exact heading \`${emptySelectionHeading}\` immediately before the exact
 two-sentence diagnosis. Do not translate, localize, rename, or repeat it. Put no
 prose or other content before or after the pair in that section.
+Immediately after the diagnosis pair, output the exact fixed English heading
+\`${brokerAndSetupStateHeading}\`. Do not translate, localize, rename, omit, or
+repeat it, and put no content between the pair and that heading. Put subsequent
+broker-plugin and doctorState diagnoses under it or a later Markdown heading.
 Do not echo the raw fixture wholesale. No other tool is available.
 
 The Read is harness transport, not a diagnostic core check. After the Read completes,
@@ -354,6 +359,10 @@ For an empty selection, output the exact fixed English heading
 localize, rename, or repeat it. Output the required two sentences as plain paragraphs.
 The instruction backticks only delimit literals;
 do not output backticks, a blockquote, list marker, emphasis, or code fence around either sentence.
+Immediately after the diagnosis pair, output the exact fixed English heading
+\`${brokerAndSetupStateHeading}\`. Do not translate, localize, rename, omit, or
+repeat it, and put no content between the pair and that heading. Put subsequent
+broker-plugin and doctorState diagnoses under it or a later Markdown heading.
 
 Do not place a result, action summary, title, or translated heading before the
 exact Disclosed Core Checks heading.
