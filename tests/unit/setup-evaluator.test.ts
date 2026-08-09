@@ -17,6 +17,7 @@ import {
   parseClaudeVersion,
   runSetupEvaluationCli,
   setupApprovalPreviewDigest,
+  setupResponseInvariant,
   type ModelOutput,
   type ModelRequest,
   type ModelRunner,
@@ -341,6 +342,37 @@ describe("setup semantic evaluator", () => {
 
     expect(summary.passed).toBe(true);
     expect(observedCase).toBe(evaluation);
+  });
+
+  it("enforces the ambiguous-routing authority sentence without unique-route disclosure", async () => {
+    const evaluation: SetupEvaluationCase = {
+      ...await evaluationCase("setup-ambiguous-indexed-tie"),
+      responseRequirements: { ambiguousRoutingAuthority: "en" }
+    };
+    const authority = "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.";
+    const uniqueRoute = "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed.";
+
+    expect(setupResponseInvariant(authority, evaluation)).toEqual([]);
+    expect(setupResponseInvariant("Choose a domain.", evaluation).join(" ")).toMatch(
+      /ambiguous routing authority.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${authority}\n${authority}`, evaluation).join(" ")).toMatch(
+      /ambiguous routing authority.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${authority}\n${uniqueRoute}`, evaluation).join(" ")).toMatch(
+      /unique-route.*forbidden/i
+    );
+
+    const koreanEvaluation: SetupEvaluationCase = {
+      ...evaluation,
+      responseRequirements: { ambiguousRoutingAuthority: "ko" }
+    };
+    const koreanAuthority = "라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다.";
+    expect(setupResponseInvariant(koreanAuthority, koreanEvaluation)).toEqual([]);
+    expect(setupResponseInvariant(
+      `${koreanAuthority}\n${authority}`,
+      koreanEvaluation
+    ).join(" ")).toMatch(/opposite-language.*forbidden/i);
   });
 
   it("preflights and Reads only the bounded routing index before invoking a responder", async () => {
@@ -1569,7 +1601,13 @@ class PassingFakeRunner implements ModelRunner {
   async run(request: ModelRequest): Promise<ModelOutput> {
     this.requests.push(request);
     if (request.kind === "response") {
-      return responseWithRequiredRead(request, `response to ${request.prompt}`);
+      const ambiguousAuthority = "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.";
+      return responseWithRequiredRead(
+        request,
+        request.prompt.includes("two equally long indexed phrases")
+          ? ambiguousAuthority
+          : `response to ${request.prompt}`
+      );
     }
     return { structured: passingJudgeResult(request) };
   }

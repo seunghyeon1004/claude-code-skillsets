@@ -99,15 +99,16 @@ English phrases. Normalize Unicode, case, punctuation, and whitespace; attached
 Korean particles may be removed from a word token. Do not infer intent, expand a
 phrase with a model, search for alternatives, or match an unindexed synonym.
 
-If there is no unique match, show the localized domain choices and ask the user
-to select one. A tie is ambiguous, not a recommendation. Do not silently choose,
-merge, or prioritize multiple domains. After a unique route and before any probe
-disclosure or consent question, output exactly one sentence in the request language;
-do not output both:
+If there is no unique match, show the localized domain choices and ask the user to
+select one. A tie is ambiguous, not a recommendation. Do not silently choose, merge,
+or prioritize multiple domains. For an ambiguous route, output exactly one sentence in the request language; do not output both:
+- Korean: `라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다.`
+- English: `Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.`
+Do not output the unique-route sentence before one domain is selected. After a unique
+route and before probe disclosure or consent, output exactly one request-language sentence; do not output both:
 - Korean: `다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다.`
 - English: `No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed.`
-Complete language and goal/domain routing before the `awaiting-probe-consent`
-state; do not ask probe consent first.
+Complete language and goal/domain routing before `awaiting-probe-consent`; do not ask probe consent first.
 
 ## Probe Consent
 

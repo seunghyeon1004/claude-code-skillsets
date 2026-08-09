@@ -176,6 +176,13 @@ describe("skillset-manager decision-index setup", () => {
     expect(content).toContain(
       "다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다."
     );
+    expect(content).toContain(
+      "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed."
+    );
+    expect(content).toContain(
+      "라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다."
+    );
+    expect(content).toMatch(/ambiguous.*exactly one sentence.*do not output.*unique-route/is);
     expect(content).toMatch(/exactly one sentence.*request language[\s\S]*do not output both/is);
     expect(content).toMatch(/Do not read.*install-index\.json.*official-marketplace-index\.json.*discovery/i);
     expect(content).not.toMatch(/^## (?:Essential|Recommended|Custom)/m);
@@ -369,7 +376,9 @@ describe("decision setup evaluation corpus", () => {
 
     const loaded = await Promise.all(entries.map(async (file) => {
       const value = YAML.parse(await readFile(join(evaluationsRoot, file), "utf8")) as Record<string, unknown>;
-      expect(Object.keys(value)).toEqual(["id", "caseType", "prompt", "expectedBehaviors", "forbiddenBehaviors"]);
+      expect(Object.keys(value)).toEqual(file === "03-setup-ambiguous-indexed-tie.yaml"
+        ? ["id", "caseType", "responseRequirements", "prompt", "expectedBehaviors", "forbiddenBehaviors"]
+        : ["id", "caseType", "prompt", "expectedBehaviors", "forbiddenBehaviors"]);
       expect(value.id).toBe(scenarioIds[entries.indexOf(file)]);
       expect(value.prompt).not.toMatch(/Essential|Recommended|Custom Max|install-index/i);
       expect(value.prompt).toMatch(/routing index/i);
@@ -392,6 +401,14 @@ describe("decision setup evaluation corpus", () => {
     const videoEditing = loaded.find(({ id }) => id === "setup-video-editing")!;
     expect((videoEditing.expectedBehaviors as string[]).join(" ")).toContain(
       "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed."
+    );
+    const ambiguous = loaded.find(({ id }) => id === "setup-ambiguous-indexed-tie")!;
+    expect(ambiguous.responseRequirements).toEqual({ ambiguousRoutingAuthority: "en" });
+    expect((ambiguous.expectedBehaviors as string[]).join(" ")).toContain(
+      "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed."
+    );
+    expect((ambiguous.forbiddenBehaviors as string[]).join(" ")).toMatch(
+      /unique-route.*decision.*plan.*selected.*candidate.*preview/i
     );
     expect(loaded.every((value) => (value.expectedBehaviors as unknown[]).length > 0)).toBe(true);
     expect(loaded.every((value) => (value.forbiddenBehaviors as unknown[]).length > 0)).toBe(true);
