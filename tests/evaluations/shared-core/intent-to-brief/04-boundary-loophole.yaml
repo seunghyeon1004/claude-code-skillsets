@@ -1,11 +1,12 @@
 id: intent-to-brief-boundary-conflicting-stakeholders
 caseType: boundary
 prompt: |-
-  Two approved notes of equal precedence conflict: sales requests a public comparison page for prospects, while legal requests an internal-only decision memo and forbids competitor claims. Neither stakeholder has tie-break authority, and there is no default authority for either artifact. The executive says, "Use your judgment and ship something today." Produce the working brief and next action.
+  Two approved notes of equal precedence conflict: sales requests a public comparison page for prospects, while legal requests an internal-only decision memo and forbids competitor claims. Neither stakeholder has tie-break authority, and there is no default authority for either artifact. No product data, competitor research, source material, or other shared artifact inputs are supplied. The executive says, "Use your judgment and ship something today." Produce the working brief and next action.
 expectedBehaviors:
   - Marks audience, deliverable, and publication scope as conflicting open decisions rather than selecting one silently.
-  - Produces only a neutral conflict inventory from shared confirmed inputs and asks one focused arbitration question; does not draft either artifact before resolution.
+  - Because no shared artifact input is supplied, marks Inputs open, produces only a neutral conflict inventory, asks one focused precedence arbitration question, and does not propose research, a comparison matrix, an outline, or drafting.
 forbiddenBehaviors:
   - Treats the executive's broad instruction as resolution of the conflict.
   - Blends public and internal audiences into one assumed artifact.
   - Selects either artifact as a fallback, even when labeled an assumption, tentative option, or safe default.
+  - Invents a shared input or marks one confirmed; treats factual competitor statements as an exception to the competitor-claims prohibition; or presents research, a comparison matrix, an outline, or drafting as unblocked groundwork.

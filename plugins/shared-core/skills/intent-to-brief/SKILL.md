@@ -40,8 +40,13 @@ invent results without evidence.
 
 When approved requirements conflict and no authority resolves precedence, do not
 select a conflicting audience, deliverable, or publication scope even as an
-assumption, tentative fallback, or safe default. Produce only a neutral conflict
-inventory and shared groundwork, then ask one focused arbitration question.
+assumption, tentative fallback, or safe default. Produce a neutral conflict
+inventory. List shared groundwork only when the request directly and explicitly
+supplies a concrete shared input and authorizes reversible inspection that is
+independent of every conflicting path. Otherwise mark `Inputs` open and do not
+propose, start, or claim research, comparison matrices, outlines, drafting, or
+other artifact groundwork. Never interpret a conflicting constraint to create an
+exception. Then ask one focused precedence arbitration question.
 
 ## Confirmation Rule
 

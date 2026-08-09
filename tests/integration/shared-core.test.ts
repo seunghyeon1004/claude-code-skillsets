@@ -112,6 +112,9 @@ describe("shared-core plugin", () => {
     expect(intent).toMatch(
       /approved requirements.*conflict.*no authority.*do not.*select.*fallback.*neutral conflict.*inventory/is
     );
+    expect(intent).toMatch(
+      /only when.*request.*explicitly.*supplies.*shared input.*otherwise.*Inputs.*open.*do not.*research.*comparison matrices.*outlines.*drafting/is
+    );
 
     const risk = await readFile(
       join(skillsRoot, "risk-privacy-permissions", "SKILL.md"),
@@ -260,9 +263,15 @@ describe("shared-core evaluation corpus", () => {
       "utf8"
     )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
     expect(conflict.prompt).toMatch(/equal precedence.*no default authority/is);
-    expect(conflict.expectedBehaviors.join(" ")).toMatch(/neutral conflict inventory.*arbitration question/is);
+    expect(conflict.prompt).toMatch(/no product data.*competitor research.*shared artifact inputs.*supplied/is);
+    expect(conflict.expectedBehaviors.join(" ")).toMatch(
+      /no shared artifact input.*Inputs open.*neutral conflict inventory.*arbitration question.*does not propose.*research.*comparison matrix.*outline/is
+    );
     expect(conflict.forbiddenBehaviors.join(" ")).toMatch(
       /selects either artifact as a fallback.*assumption.*safe default/is
+    );
+    expect(conflict.forbiddenBehaviors.join(" ")).toMatch(
+      /invents.*shared input.*confirmed.*factual competitor.*exception.*competitor.*claims.*research.*comparison matrix.*outline.*unblocked/is
     );
   });
 
