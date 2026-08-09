@@ -51,6 +51,7 @@ All checks are read-only. Results stay local and are summarized without secret v
 
 The bundled read-only doctor adapter inspects \`state/install-lock.json\` and authenticates its approval and candidate IDs against \`\${CLAUDE_PLUGIN_ROOT}/data/decision-index.json\`; these files contain broker and setup evidence, not credential data.`;
 const doctorResultsHeading = "## Core Check Results";
+const emptySelectionHeading = "## Empty Selection Status";
 const noStandaloneSelection =
   "No standalone profile is selected, so no executable checks were run.";
 const noSetupSelection =
@@ -143,6 +144,8 @@ export function validateDoctorResponse(
       ...beforeExactDiagnosis.matchAll(/^#{1,6}[ \t]+[^\n]+$/gmu)
     ];
     const precedingHeading = precedingHeadings.at(-1);
+    const emptySelectionHeadingOccurrences = normalized
+      .split(emptySelectionHeading).length - 1;
     const contentAfterPrecedingHeading = precedingHeading === undefined
       ? beforeExactDiagnosis
       : beforeExactDiagnosis.slice(
@@ -153,6 +156,8 @@ export function validateDoctorResponse(
       || secondOccurrences !== 1
       || exactDiagnosisIndex < 0
       || precedingHeading === undefined
+      || precedingHeading[0] !== emptySelectionHeading
+      || emptySelectionHeadingOccurrences !== 1
       || contentAfterPrecedingHeading.trim().length > 0
       || !/^\n\n(?:#{1,6}[ \t]|Any follow-up mutation requires separate explicit approval\.)/u
         .test(afterExactDiagnosis)
@@ -311,8 +316,9 @@ restriction does not suppress separately required broker-plugin or
 doctorState diagnoses.
 After either exact two-sentence diagnosis, any subsequent broker-plugin or
 doctorState diagnosis must start under a new Markdown heading.
-Put a dedicated Markdown heading immediately before the exact two-sentence
-diagnosis. Put no prose or other content before or after the pair in that section.
+Put the exact heading \`${emptySelectionHeading}\` immediately before the exact
+two-sentence diagnosis. Do not translate, localize, rename, or repeat it. Put no
+prose or other content before or after the pair in that section.
 Do not echo the raw fixture wholesale. No other tool is available.
 
 The Read is harness transport, not a diagnostic core check. After the Read completes,
@@ -343,10 +349,10 @@ End every response with the exact standalone sentence
 \`Any follow-up mutation requires separate explicit approval.\` immediately before
 the exact standalone sentence \`Doctor ends here. No changes were made.\`.
 
-For an empty selection, the dedicated Markdown heading is structural, neutral,
-outside the diagnosis pair, and may be localized. It must not name a specific
-domain, pack, profile, tool, executable, taxonomy label, or ID. Output the required
-two sentences as plain paragraphs. The instruction backticks only delimit literals;
+For an empty selection, output the exact fixed English heading
+\`${emptySelectionHeading}\` immediately before the diagnosis pair. Do not translate,
+localize, rename, or repeat it. Output the required two sentences as plain paragraphs.
+The instruction backticks only delimit literals;
 do not output backticks, a blockquote, list marker, emphasis, or code fence around either sentence.
 
 Do not place a result, action summary, title, or translated heading before the

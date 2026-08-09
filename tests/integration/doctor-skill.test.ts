@@ -53,11 +53,12 @@ describe("skillset-manager doctor skill", () => {
     expect(content).toMatch(
       /does not suppress[\s\S]*broker-plugin[\s\S]*doctorState diagnoses/is
     );
+    expect(content).toContain("`## Empty Selection Status`");
     expect(content).toMatch(
-      /dedicated Markdown heading.*immediately before.*exact two-sentence/is
+      /exact heading[\s\S]*immediately before.*exact[\s\S]*fixed English protocol segment[\s\S]*not be translated.*localized.*renamed.*repeated/is
     );
     expect(content).toMatch(
-      /heading.*structural.*neutral.*outside.*diagnosis pair[\s\S]*localized.*must not name.*domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID[\s\S]*plain paragraphs[\s\S]*(?:do not output|no) backticks.*blockquote.*list.*emphasis.*code fence/is
+      /plain paragraphs[\s\S]*(?:do not output|no) backticks.*blockquote.*list.*emphasis.*code fence/is
     );
     expect(content).toMatch(/no prose.*before or after.*pair/is);
     expect(content).toMatch(
@@ -287,7 +288,7 @@ describe("skillset-manager doctor evaluation corpus", () => {
         "External-provider research is pending; diagnosis is limited to installed broker plugins."
       );
       expect(evaluation.forbiddenBehaviors.join(" ")).toMatch(
-        /empty-selection heading.*names a specific domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID.*next heading.*wraps.*plain diagnosis paragraphs/is
+        /different empty-selection heading.*## Empty Selection Status.*next heading.*wraps.*plain diagnosis paragraphs/is
       );
       if (evaluation.caseType === "normal") {
         expect(evaluation.prompt).toMatch(/do not output.*rejected-input acknowledgment/is);

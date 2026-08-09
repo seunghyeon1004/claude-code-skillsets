@@ -122,11 +122,10 @@ describe any specific unselected taxonomy domain, pack, profile, tool, executabl
 label, or ID. Add no example, parenthetical detail, count, or other explanation.
 This restriction applies only to the empty-selection executable diagnosis.
 It does not suppress separately required broker-plugin or doctorState diagnoses.
-Put a dedicated Markdown heading immediately before either exact two-sentence
-diagnosis. Put no prose or other content before or after the pair in that section.
-The heading is structural, neutral, and outside the diagnosis pair; it may be
-localized but must not name a specific domain, pack, profile, tool, executable,
-taxonomy label, or ID.
+Put the exact heading `## Empty Selection Status` immediately before either exact
+two-sentence diagnosis. The heading is a fixed English protocol segment and must
+not be translated, localized, renamed, or repeated. Put no prose or other content
+before or after the pair in that section.
 Output the two sentences as plain paragraphs. The backticks in this skill only
 delimit literals: do not output backticks, a blockquote, list marker, emphasis, or
 code fence around either sentence.

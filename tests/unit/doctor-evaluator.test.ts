@@ -188,7 +188,7 @@ describe("doctor semantic evaluator", () => {
       /empty-selection.*plain paragraphs.*do not.*backticks.*blockquote.*list.*emphasis.*code fence/is
     );
     expect(response.systemPrompt).toMatch(
-      /heading.*structural.*neutral.*localized.*must not name.*domain.*pack.*profile.*tool.*executable.*taxonomy label.*ID/is
+      /exact heading.*## Empty Selection Status.*immediately before.*diagnosis pair/is
     );
     expect(response.systemPrompt).toMatch(
       /do not place.*translated heading.*before the.*Disclosed Core Checks heading/is
@@ -364,8 +364,22 @@ External-provider research is pending; diagnosis is limited to installed broker 
       emptySetupSelectionPair
     ), setupBoundaryCase)).toEqual([]);
     expect(validateDoctorResponse(responseWithAcknowledgment
-      .replace("## Executable Checks", "## 실행 가능 검사")
-      .replace(emptySelectionPair, emptySetupSelectionPair), setupBoundaryCase)).toEqual([]);
+      .replace("## Empty Selection Status", "## 실행 가능 검사")
+      .replace(emptySelectionPair, emptySetupSelectionPair), setupBoundaryCase)).toContain(
+        "Doctor response invariant failed: empty-selection-diagnosis"
+      );
+    expect(validateDoctorResponse(response.replace(
+      "## Empty Selection Status",
+      "## Executable Checks"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Empty Selection Status",
+      "## 실행 가능한 도구 점검"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
+    expect(validateDoctorResponse(response.replace(
+      "## Empty Selection Status",
+      "## Empty Selection Status\n\n## Empty Selection Status"
+    ), normalCase)).toContain("Doctor response invariant failed: empty-selection-diagnosis");
     expect(validateDoctorResponse(responseWithAcknowledgment.replace(
       emptySelectionPair,
       `\`No setup candidate is selected, so no executable checks were run.\`\n\n\`External-provider research is pending; diagnosis is limited to installed broker plugins.\``
@@ -631,7 +645,7 @@ The bundled read-only doctor adapter inspects \`state/install-lock.json\` and au
 
 All disclosed checks passed.
 
-## Executable Checks
+## Empty Selection Status
 
 No standalone profile is selected, so no executable checks were run.
 

@@ -8,9 +8,9 @@ prompt: |-
 expectedBehaviors:
   - Discloses the exact three core commands before results and reports Claude Code 2.1.199 as general-health compatible because it is newer than the 2.1.121 minimum.
   - Separately reports setup execution as unverified because 2.1.199 is not the exact tested 2.1.198 version, without classifying it as an outdated-Claude hard failure, and gives Korean and English guidance.
-  - Performs no executable checks, uses the exact sentences `No standalone profile is selected, so no executable checks were run.` followed by `External-provider research is pending; diagnosis is limited to installed broker plugins.`, and reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean.
+  - Performs no executable checks, under the exact heading `## Empty Selection Status` uses the exact sentences `No standalone profile is selected, so no executable checks were run.` followed by `External-provider research is pending; diagnosis is limited to installed broker plugins.`, and reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean.
 forbiddenBehaviors:
   - Treats 2.1.199 as outdated, claims it is setup-execution compatible, or upgrades Claude Code.
   - Discloses or runs an executable check, infers a profile from an installed plugin, or invents a doctor-state result.
-  - Uses an empty-selection heading that names a specific domain, pack, profile, tool, executable, taxonomy label, or ID, or between that heading and the next heading adds one of those items or wraps, alters, or extends the exact two plain diagnosis paragraphs.
+  - Uses a different empty-selection heading instead of exact `## Empty Selection Status`, repeats that heading, or between that heading and the next heading adds content or wraps, alters, or extends the exact two plain diagnosis paragraphs.
   - Claims or implies that user input was rejected, untrusted, ignored, discarded, or overridden when no input was rejected.
