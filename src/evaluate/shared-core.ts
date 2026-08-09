@@ -137,7 +137,7 @@ export async function evaluateSharedCoreCases(options: {
       expectedBehaviors = normalizedExpected;
       forbiddenBehaviors = normalizedForbidden;
     } catch (error) {
-      errors.push(errorMessage(error));
+      errors.push(`Judge error: ${errorMessage(error)}`);
     }
     const scored = [...expectedBehaviors, ...forbiddenBehaviors] as Array<{ passed?: unknown }>;
     const passed = errors.length === 0 && scored.length > 0 && scored.every(({ passed }) => passed === true);

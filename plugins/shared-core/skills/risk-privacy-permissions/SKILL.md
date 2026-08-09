@@ -31,6 +31,15 @@ Record:
 4. Before external disclosure, credential use, persistent permission, paid action, or destruction, present the resolved record and obtain explicit approval for that scope.
 5. Execute only the approved scope; record the result, revocation, retention, and cleanup.
 
+If only broader unjustified permission is available, stop and choose an alternate
+tool or path. A promise that access is temporary or will be revoked does not make a
+broad permission acceptable.
+
+When destination audience, retention, required fields, or decision authority are
+unresolved, do not upload even minimized data. The disclosure scope must be resolved
+and explicitly approved before any upload; urgency cannot move confirmation in
+parallel with disclosure.
+
 Broad approval such as "authorize everything" does not cover recipients, fields, retention, cost, or destruction details that were unresolved when it was given.
 
 ## When Not to Use

@@ -32,6 +32,17 @@ Add an explicit out-of-scope line when nearby work could expand the request.
 4. Ask one focused question only when an open value changes the execution path or acceptance decision.
 5. Proceed with confirmed work and preserve the labels in the final handoff.
 
+A path-changing open value blocks only the dependent output decision. It does not
+block reversible inspection of confirmed inputs. Within the brief, identify safe
+preparatory work on shared confirmed inputs as unblocked without assuming an
+unresolved audience or deliverable. Do not claim that the work ran, and do not
+invent results without evidence.
+
+When approved requirements conflict and no authority resolves precedence, do not
+select a conflicting audience, deliverable, or publication scope even as an
+assumption, tentative fallback, or safe default. Produce only a neutral conflict
+inventory and shared groundwork, then ask one focused arbitration question.
+
 ## Confirmation Rule
 
 Label a field `confirmed` only with a direct, explicit exact value. Explicit negative

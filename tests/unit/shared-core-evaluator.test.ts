@@ -95,6 +95,29 @@ describe("shared-core live evaluator", () => {
     expect(receipt.errors.join(" ")).toMatch(/schema validation.*additional properties/i);
   });
 
+  it("preserves the response and labels a judge transport failure", async () => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new FailingJudgeRunner(),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receipt = JSON.parse(await readFile(summary.cases[0]!.receiptPath, "utf8")) as {
+      response: string;
+      expectedBehaviors: unknown[];
+      forbiddenBehaviors: unknown[];
+      errors: string[];
+    };
+    expect(receipt.response).toBe("Evidence-backed response");
+    expect(receipt.expectedBehaviors).toEqual([]);
+    expect(receipt.forbiddenBehaviors).toEqual([]);
+    expect(receipt.errors).toEqual(["Judge error: Claude exited 1: stderr empty"]);
+  });
+
   it("refuses preexisting and symlinked output directories without truncating data", async () => {
     const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
     const root = await realpath(await mkdtemp(join(tmpdir(), "shared-core-output-victim-")));
@@ -140,6 +163,15 @@ class PassingRunner implements SharedCoreModelRunner {
         ...(this.extraProperty ? { unexpected: true } : {})
       }
     };
+  }
+}
+
+class FailingJudgeRunner implements SharedCoreModelRunner {
+  async run(request: SharedCoreModelRequest): Promise<{ text?: string; structured?: unknown }> {
+    if (request.kind === "response") {
+      return { text: "Evidence-backed response" };
+    }
+    throw new Error("Claude exited 1: stderr empty");
   }
 }
 
