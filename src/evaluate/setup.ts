@@ -438,6 +438,7 @@ export interface EvaluateSetupOptions {
   skillContent: string;
   runner: ModelRunner;
   outputDirectory: string;
+  responseInvariant?: (response: string) => readonly string[];
   trustedReadRelativePath?: string;
   trustedResponderSystemPrompt?: TrustedResponderSystemPrompt;
   trustedAdditionalReadRelativePaths?: string[];
@@ -2329,7 +2330,10 @@ export async function evaluateSetupCases(
       if (typeof output.text !== "string" || output.text.trim() === "") {
         throw new Error("Responder returned no text");
       }
-      response = output.text.trim();
+      response = options.responseInvariant === undefined ? output.text.trim() : output.text;
+      for (const invariantError of options.responseInvariant?.(response) ?? []) {
+        errors.push(sanitizedErrorMessage(invariantError));
+      }
     } catch (error) {
       errors.push(`Responder error: ${sanitizedErrorMessage(error)}`);
     }

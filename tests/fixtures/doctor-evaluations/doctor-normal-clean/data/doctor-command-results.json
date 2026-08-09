@@ -20,23 +20,34 @@
     {
       "command": "claude plugin list --json",
       "exitCode": 0,
-      "stdout": "[{\"id\":\"shared-core@claude-code-skillsets\",\"version\":\"0.1.0\",\"scope\":\"user\",\"enabled\":true,\"loadStatus\":\"loaded\"},{\"id\":\"repository-planning@claude-code-skillsets\",\"version\":\"0.1.0\",\"scope\":\"user\",\"enabled\":true,\"loadStatus\":\"loaded\"}]",
+      "stdout": "[{\"id\":\"shared-core@claude-code-skillsets\",\"version\":\"0.1.0\",\"scope\":\"user\",\"enabled\":true,\"loadStatus\":\"loaded\"},{\"id\":\"skillset-manager@claude-code-skillsets\",\"version\":\"0.1.3\",\"scope\":\"user\",\"enabled\":true,\"loadStatus\":\"loaded\"}]",
       "stderr": ""
     }
   ],
+  "doctorState": {
+    "schemaVersion": 1,
+    "command": "doctor-state",
+    "executionLock": {
+      "automaticRemovalAllowed": false,
+      "maintenanceHold": false,
+      "path": "/Users/doctor-fixture/.claude/claude-code-skillsets/state/setup-execution.lock",
+      "relativePath": "state/setup-execution.lock",
+      "requiresManualReview": false,
+      "setupHold": false,
+      "status": "absent"
+    },
+    "setupReconciliation": {
+      "automaticRemovalAllowed": false,
+      "automaticRetryAllowed": false,
+      "candidates": [],
+      "manualReconciliation": null,
+      "possibleInstalledResidue": false,
+      "status": "clean"
+    }
+  },
   "installIndex": {
     "schemaVersion": 1,
-    "indexFingerprint": "sha256:f4f18276f34e0a9dc6b79a355e901ab6183da375c73e1ef024cd4af19a033413",
-    "state": {
-      "lockPath": "$HOME/.claude/claude-code-skillsets/install-lock.json",
-      "temporaryPath": "$HOME/.claude/claude-code-skillsets/install-lock.json.tmp",
-      "directoryMode": "0700",
-      "fileMode": "0600",
-      "prepareDirectoryCommand": "mkdir -p -- \"$HOME/.claude/claude-code-skillsets\"",
-      "protectDirectoryCommand": "chmod 0700 -- \"$HOME/.claude/claude-code-skillsets\"",
-      "prepareTemporaryCommand": "install -m 0600 /dev/null \"$HOME/.claude/claude-code-skillsets/install-lock.json.tmp\"",
-      "atomicRenameCommand": "mv -- \"$HOME/.claude/claude-code-skillsets/install-lock.json.tmp\" \"$HOME/.claude/claude-code-skillsets/install-lock.json\""
-    },
+    "indexFingerprint": "sha256:88048f075ee0ed45de95cb6d909d423b99061408ca1eac6f3358bd9a75bb90cc",
     "marketplace": {
       "id": "claude-code-skillsets",
       "source": "seunghyeon1004/claude-code-skillsets"
@@ -1005,24 +1016,32 @@
           "ko": "스킬셋 관리자",
           "en": "Skillset manager"
         },
-        "version": "0.1.0",
+        "version": "0.1.3",
         "source": "./plugins/skillset-manager",
         "marketplace": "claude-code-skillsets",
         "trustTier": "verified",
         "permissions": {
           "filesystem": [
-            "plugin-owned install index",
-            "user-scoped setup lock and same-directory temporary file"
+            "plugin-owned current and digest-history decision indexes",
+            "plugin-owned maintenance policy",
+            "plugin-owned routing index",
+            "user-scoped setup install and execution state with same-directory temporary files"
           ],
           "commands": [
-            "atomic rename of approved setup lock temporary file",
+            "approval-bound canonical Node -e state publisher",
+            "approved canonical Node executable --version",
+            "approved canonical Node executable running plugin-owned runtime.mjs approval-object",
+            "approved canonical Node executable running plugin-owned runtime.mjs execute",
+            "approved canonical Node executable running plugin-owned runtime.mjs preview",
             "claude --version",
             "claude plugin install approved plugin",
             "claude plugin list --json",
-            "claude plugin marketplace add approved safe source",
+            "claude plugin marketplace add separately approved exact marketplace source",
             "claude plugin marketplace list",
             "claude plugin marketplace list --json",
-            "command -v -- declared executable"
+            "command -v -- declared executable",
+            "date -u +%Y-%m-%dT%H:%M:%SZ after explicit probe consent",
+            "restricted bash discovery of canonical Node path and SHA-256 after explicit probe consent"
           ],
           "network": [
             "configured Claude Code marketplaces during approved installation"
@@ -1032,8 +1051,7 @@
         "requiredDependencies": [
           {
             "id": "shared-core",
-            "marketplace": "claude-code-skillsets",
-            "version": "^0.1.0"
+            "marketplace": "claude-code-skillsets"
           }
         ],
         "installCommand": "claude plugin install skillset-manager@claude-code-skillsets --scope user",

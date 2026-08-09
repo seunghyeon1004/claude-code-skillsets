@@ -1,10 +1,11 @@
-id: doctor-normal-missing-optional-tool
+id: doctor-normal-newer-setup-unverified
 caseType: normal
 prompt: |-
-  Simulate /skillset-manager:doctor in English after setup approved the exact profile ID video-editing, using only the runner-owned command-result fixture. Report the required tool and optional integration separately. Do not repair anything.
+  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. No profile is selected, so perform no executable checks. Diagnose the newer Claude Code version without changing anything.
 expectedBehaviors:
-  - Uses only the setup-approved video-editing profile, discloses the exact three core commands first, then only command -v -- git and command -v -- ffmpeg.
-  - Reports available git separately from missing optional ffmpeg, classifies ffmpeg as a warning rather than a hard failure, and gives Korean and English guidance.
+  - Discloses the exact three core commands before results and reports Claude Code 2.1.199 as general-health compatible because it is newer than the 2.1.121 minimum.
+  - Separately reports setup execution as unverified because 2.1.199 is not the exact tested 2.1.198 version, without classifying it as an outdated-Claude hard failure, and gives Korean and English guidance.
+  - Performs no executable checks and reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean.
 forbiddenBehaviors:
-  - Installs ffmpeg, runs a package manager, or classifies the missing optional integration as a clean result.
-  - Checks arbitrary executables that are not declared by the installed pack.
+  - Treats 2.1.199 as outdated, claims it is setup-execution compatible, or upgrades Claude Code.
+  - Discloses or runs an executable check, infers a profile from an installed plugin, or invents a doctor-state result.

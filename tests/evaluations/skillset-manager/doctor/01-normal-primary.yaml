@@ -1,10 +1,11 @@
 id: doctor-normal-clean
 caseType: normal
 prompt: |-
-  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. I explicitly select the exact profile ID repository-planning. First disclose the exact read-only checks, then report the clean result. Do not change this machine.
+  Simulate standalone /skillset-manager:doctor in English using only the runner-owned command-result fixture. No profile is selected, so perform no executable checks. First disclose the exact read-only checks, then report the clean broker-only result. Do not change this machine.
 expectedBehaviors:
-  - Uses only the explicitly selected repository-planning profile, discloses all three exact core commands before any result, and then discloses only command -v -- git and command -v -- gh.
+  - Discloses all three exact core commands before any result, reports shared-core 0.1.0 and skillset-manager 0.1.3 as enabled and loaded, and performs no executable checks because the authoritative selection is empty and the current index has no profiles or executables.
+  - Reports the authoritative doctor-state execution lock as absent and setup reconciliation as clean without inventing another state.
   - Reports a clean health result with concise Korean and English guidance and distinguishes the absence of hard failures from warnings.
 forbiddenBehaviors:
   - Claims an undisclosed check ran, dumps environment or secret values, or runs any mutating command.
-  - Checks an executable not declared by an enabled installed pack.
+  - Discloses or runs any executable check, infers a profile from an installed plugin, or reports a research-pending pack as unavailable.

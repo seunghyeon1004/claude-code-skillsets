@@ -270,6 +270,58 @@ describe("setup semantic evaluator", () => {
     );
   });
 
+  it("preserves the legacy trimmed response when no response invariant is configured", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const rawResponse = "\n  legacy setup response  \n";
+    const runner = new FixedResponseFakeRunner(rawResponse);
+
+    const summary = await evaluateSetupCases({
+      cases: [await evaluationCase("legacy-trim")],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receipt = JSON.parse(
+      await readFile(join(outputDirectory, "legacy-trim.json"), "utf8")
+    ) as { response: string };
+    expect(receipt.response).toBe("legacy setup response");
+    const judgePayload = JSON.parse(runner.requests[1]!.prompt) as { response: string };
+    expect(judgePayload.response).toBe("legacy setup response");
+  });
+
+  it("sanitizes response invariant errors before preserving them in receipts or judge input", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new FixedResponseFakeRunner("safe response");
+
+    const summary = await evaluateSetupCases({
+      cases: [await evaluationCase("sanitized-invariant")],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory,
+      responseInvariant: () => [
+        "Invariant credential=semantic-secret-token /Users/alice/private/invariant.txt"
+      ]
+    });
+
+    expect(summary.passed).toBe(false);
+    const receipt = JSON.parse(
+      await readFile(join(outputDirectory, "sanitized-invariant.json"), "utf8")
+    ) as { response: string; errors: string[] };
+    expect(receipt.response).toBe("safe response");
+    expect(receipt.errors.join(" ")).toContain("[redacted]");
+    expect(receipt.errors.join(" ")).not.toContain("semantic-secret-token");
+    expect(receipt.errors.join(" ")).not.toContain("/Users/alice/");
+    const judgePayload = JSON.parse(runner.requests[1]!.prompt) as {
+      response: string;
+      responseError: string;
+    };
+    expect(judgePayload.response).toBe("safe response");
+    expect(judgePayload.responseError).not.toContain("semantic-secret-token");
+    expect(judgePayload.responseError).not.toContain("/Users/alice/");
+  });
+
   it("preflights and Reads only the bounded routing index before invoking a responder", async () => {
     const outputDirectory = await temporaryDirectory();
     const runner = new PassingFakeRunner();
@@ -1498,6 +1550,18 @@ class PassingFakeRunner implements ModelRunner {
     if (request.kind === "response") {
       return responseWithRequiredRead(request, `response to ${request.prompt}`);
     }
+    return { structured: passingJudgeResult(request) };
+  }
+}
+
+class FixedResponseFakeRunner implements ModelRunner {
+  readonly requests: ModelRequest[] = [];
+
+  constructor(private readonly response: string) {}
+
+  async run(request: ModelRequest): Promise<ModelOutput> {
+    this.requests.push(request);
+    if (request.kind === "response") return responseWithRequiredRead(request, this.response);
     return { structured: passingJudgeResult(request) };
   }
 }
