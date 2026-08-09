@@ -193,7 +193,9 @@ function artifactOutputs(root: string, artifacts: GeneratedArtifacts): readonly 
       artifacts.officialMarketplaceIndex
     ],
     [join(root, "generated", "decision-index.json"), artifacts.decisionIndex],
-    [join(root, "plugins", "skillset-manager", "data", "decision-index.json"), artifacts.decisionIndex]
+    [join(root, "plugins", "skillset-manager", "data", "decision-index.json"), artifacts.decisionIndex],
+    [join(root, "generated", "routing-index.json"), artifacts.routingIndex],
+    [join(root, "plugins", "skillset-manager", "data", "routing-index.json"), artifacts.routingIndex]
   ];
 }
 

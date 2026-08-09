@@ -701,6 +701,17 @@ does not equal the local `main` tip before it invokes Claude. Its evaluator uses
 repository's fixture data and Claude Code safe mode with read-only tools; it does not
 install candidates, mutate GitHub, or use a remote runner.
 
+Before creating an artifact or invoking a model, the runner resolves one canonical
+regular Claude executable and requires `claude auth status --json` to report
+`loggedIn: true`, `authMethod: "claude.ai"`, `apiProvider: "firstParty"`, and a
+nonempty subscription type. API-key, auth-token, custom-base-URL, Bedrock, Vertex,
+and Foundry routing environment variables fail the gate. Authentication email,
+organization, tokens, headers, cookies, and the inherited environment are never
+written to the receipt. Every evaluation child receives only the runner's fixed
+non-secret environment allowlist. The runner executes canonical `tsx` directly,
+outside the npm lifecycle, and passes the verified Claude executable absolute path
+and SHA-256 to each evaluator for validation before and after every model call.
+
 ```bash
 SHA="$CANDIDATE_SHA"
 test "$(git rev-parse HEAD)" = "$SHA"
@@ -712,9 +723,14 @@ npm run verify:solo-semantic-rc -- \
 ```
 
 Keep only `.rc-artifacts/$SHA/sanitized` as release evidence. The generated local
-target receipt identifies the exact SHA and repeats `humanReviewGuarantee:
-"not-guaranteed"`; it must never be described as a full or independent human review.
-Do not reuse a receipt from another SHA.
+target receipt identifies the exact SHA; the routing path, byte length, byte digest,
+and self digest; the full decision-index byte length, byte digest, and semantic
+digest; the catalog version and validity interval; and the observed `claude.ai`
+subscription mode. It records `semanticHarnessStatus: "passed"` separately from
+`executableAvailability`: a passing language harness does not make a review-held
+catalog executable. The receipt repeats `humanReviewGuarantee: "not-guaranteed"`
+and must never be described as a full or independent human review. Do not reuse a
+receipt from another SHA or another routing/catalog byte set.
 
 ## 4. Unauthenticated installation verification
 
@@ -844,7 +860,7 @@ jq -e --arg repo "$REPO" '
   [.[] | select(.name == "claude-code-skillsets" and .repo == $repo and .source == "github")] | length == 1
 ' <<<"$MARKETPLACES" >/dev/null
 jq -e '
-  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.2" and .scope == "local" and .enabled == true)] | length == 1
+  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.3" and .scope == "local" and .enabled == true)] | length == 1
   and [.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1
 ' <<<"$PLUGINS" >/dev/null
 
@@ -858,21 +874,33 @@ test "$(git -C "$MARKETPLACE_ROOT" rev-parse HEAD)" = "$CANDIDATE_SHA"
 compare_plugin_tree "$ANON_ROOT/project/repository/plugins/skillset-manager" "$MANAGER_ROOT"
 compare_plugin_tree "$ANON_ROOT/project/repository/plugins/shared-core" "$SHARED_ROOT"
 
+# The request carries only routing projection values; the installed runtime authenticates the full decision index.
+ROUTING_INDEX_PATH="$MANAGER_ROOT/data/routing-index.json"
+DECISION_INDEX_DIGEST="$(jq -er '.decisionIndexDigest | select(test("^[a-f0-9]{64}$"))' "$ROUTING_INDEX_PATH")"
+ROUTING_INDEX_DIGEST="$(jq -er '.digest | select(test("^[a-f0-9]{64}$"))' "$ROUTING_INDEX_PATH")"
 REQUEST="$(node -e '
 const fs = require("node:fs");
-const index = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+const routing = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
 const request = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   language: "en",
   platform: "linux",
-  observedAt: index.observedThrough,
+  observedAt: routing.observedThrough,
   claudeProbeConsent: "granted",
-  domainIds: [index.profiles[0].domainId]
+  domainIds: [routing.profiles[0].domainId],
+  decisionIndexDigest: routing.decisionIndexDigest,
+  routingIndexDigest: routing.digest
 };
 process.stdout.write(Buffer.from(`${JSON.stringify(request, null, 2)}\n`).toString("base64url"));
-' "$MANAGER_ROOT/data/decision-index.json")"
+' "$ROUTING_INDEX_PATH")"
 PREVIEW="$(node "$MANAGER_ROOT/runtime.mjs" preview --request "$REQUEST")"
-jq -e '.command == "preview" and .status == "held" and (has("approvedExecution") | not)' \
+jq -e --arg decision_digest "$DECISION_INDEX_DIGEST" --arg routing_digest "$ROUTING_INDEX_DIGEST" '
+  .command == "preview"
+  and .status == "held"
+  and (has("approvedExecution") | not)
+  and (.reviewSummary | split("\n") | any(. == "decisionIndexDigest: \($decision_digest)"))
+  and (.reviewSummary | split("\n") | any(. == "routingIndexDigest: \($routing_digest)"))
+' \
   <<<"$PREVIEW" >/dev/null
 
 EVIDENCE_ROOT="$EVIDENCE_BASE/.release-evidence"
@@ -891,7 +919,8 @@ jq --arg repo "$REPO" '[.[] | select(.name == "claude-code-skillsets") | {name, 
   <<<"$MARKETPLACES" > "$EVIDENCE_DIR/marketplace.json"
 jq '[.[] | select(.id == "skillset-manager@claude-code-skillsets" or .id == "shared-core@claude-code-skillsets") | {id, version, scope, enabled}]' \
   <<<"$PLUGINS" > "$EVIDENCE_DIR/plugins.json"
-jq '{command, status, approvedExecutionPresent: has("approvedExecution")}' \
+jq --arg decision_digest "$DECISION_INDEX_DIGEST" --arg routing_digest "$ROUTING_INDEX_DIGEST" \
+  '{command, status, approvedExecutionPresent: has("approvedExecution"), decisionIndexDigest: $decision_digest, routingIndexDigest: $routing_digest}' \
   <<<"$PREVIEW" > "$EVIDENCE_DIR/preview.json"
 ANONYMOUS_INSTALL
 

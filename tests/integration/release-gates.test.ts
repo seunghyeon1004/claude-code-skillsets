@@ -697,7 +697,7 @@ describe("foundation release gates", () => {
       "claude plugin install skillset-manager@claude-code-skillsets --scope local",
       "claude plugin marketplace list --json",
       "claude plugin list --json",
-      'skillset-manager@claude-code-skillsets" and .version == "0.1.2"',
+      'skillset-manager@claude-code-skillsets" and .version == "0.1.3"',
       'shared-core@claude-code-skillsets" and .version == "0.1.0"',
       'EVIDENCE_DIR="$EVIDENCE_SANITIZED/anonymous-install-$CANDIDATE_SHA"',
       'mkdir "$EVIDENCE_DIR"',
@@ -711,7 +711,10 @@ describe("foundation release gates", () => {
       'compare_plugin_tree "$ANON_ROOT/project/repository/plugins/skillset-manager" "$MANAGER_ROOT"',
       'compare_plugin_tree "$ANON_ROOT/project/repository/plugins/shared-core" "$SHARED_ROOT"',
       'PREVIEW="$(node "$MANAGER_ROOT/runtime.mjs" preview --request "$REQUEST")"',
-      '.command == "preview" and .status == "held" and (has("approvedExecution") | not)'
+      'and .status == "held"',
+      'and (has("approvedExecution") | not)',
+      'any(. == "decisionIndexDigest: \\($decision_digest)")',
+      'any(. == "routingIndexDigest: \\($routing_digest)")'
     ]) expect(releaseGuide).toContain(token);
     expect(releaseGuide).not.toMatch(/runtime\.mjs"?\s+(?:execute|approval-object)\b/);
     expect(releaseGuide).toContain('CANDIDATE_SHA="$(jq -er \'.commitSha | select(test("^[0-9a-f]{40}$"))\' "$RECEIPT_PATH")"');
@@ -779,6 +782,30 @@ describe("foundation release gates", () => {
     expect(`${result.stdout}${result.stderr}`).not.toMatch(/authorization|injected-secret/i);
   });
 
+  it("builds the anonymous schema-v2 request only from routing data and verifies both review-summary bindings", async () => {
+    const releaseGuide = await readFile(
+      join(projectRoot, "docs", "release", "github-free-staged-public.md"),
+      "utf8"
+    );
+    const start = releaseGuide.indexOf('ANON_ROOT="$(mktemp -d');
+    const end = releaseGuide.indexOf("ANONYMOUS_INSTALL\n\n", start);
+    expect(start).toBeGreaterThan(-1);
+    expect(end).toBeGreaterThan(start);
+    const anonymousInstall = releaseGuide.slice(start, end);
+
+    expect(anonymousInstall).toContain(
+      'const routing = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));'
+    );
+    expect(anonymousInstall).not.toContain("data/decision-index.json");
+    expect(anonymousInstall).not.toContain("process.argv[2]");
+    expect(anonymousInstall).toContain("decisionIndexDigest: routing.decisionIndexDigest");
+    expect(anonymousInstall).toContain("routingIndexDigest: routing.digest");
+    expect(anonymousInstall).toContain("split(\"\\n\")");
+    expect(anonymousInstall).toContain('"decisionIndexDigest: \\($decision_digest)"');
+    expect(anonymousInstall).toContain('"routingIndexDigest: \\($routing_digest)"');
+    expect(anonymousInstall).toMatch(/runtime[^.]*authenticates[^.]*full decision index/i);
+  });
+
   it("keeps both READMEs aligned with the solo GitHub Free and directory-submission contracts", async () => {
     const [readmeKo, readmeEn] = await Promise.all([
       readFile(join(projectRoot, "README.md"), "utf8"),
@@ -821,10 +848,15 @@ describe("foundation release gates", () => {
     expect(scripts["verify:private-rc-target"]).toBeUndefined();
     expect(script).toContain("--execute requires explicit --approved-read-only confirmation");
     expect(script).toContain("local semantic RC requires a clean working tree");
-    expect(script).toContain("eval:sanitize:verify");
+    expect(script).toContain('"setup-preview.ts"');
+    expect(script).toContain('"sanitize.ts"');
+    expect(script).toContain('"--verify"');
     expect(script).not.toMatch(/gh api|BRANCH_PROTECTION_READ_TOKEN|self-hosted|private-rc/i);
     expect(releaseGuide).toContain("verify:solo-semantic-rc");
     expect(releaseGuide).toContain("--approved-read-only");
+    expect(releaseGuide).toMatch(/canonical `tsx`[^.]*directly[^.]*npm lifecycle/i);
+    expect(releaseGuide).toMatch(/Claude executable[^.]*absolute path[^.]*SHA-256[^.]*before and after every model call/i);
+    expect(releaseGuide).not.toMatch(/Claude executable shim/i);
     expect(releaseGuide).toMatch(/Keep only.*sanitized.*release evidence/is);
   });
 

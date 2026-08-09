@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "e8c91a207d9de81efacdc937be621650f697b60631f99a6f7b23b9d876f2970a",
+  "observedThrough": "2026-08-03T02:30:05Z",
+  "catalogExpiresAt": "2026-08-12T02:30:05Z",
+  "profiles": [
+    {
+      "id": "research-evidence",
+      "domainId": "research-and-intelligence",
+      "phrases": {
+        "ko": [
+          "시장 조사",
+          "근거 검증"
+        ],
+        "en": [
+          "market research",
+          "evidence verification"
+        ]
+      },
+      "coreCapabilityId": "source-discovery-and-web-research",
+      "requiredCapabilityIds": [
+        "verify-sources-and-claims",
+        "synthesize-cited-evidence"
+      ]
+    },
+    {
+      "id": "strategy-decision",
+      "domainId": "strategy-and-decision",
+      "phrases": {
+        "ko": [
+          "사업 전략",
+          "의사결정"
+        ],
+        "en": [
+          "business strategy",
+          "decision making"
+        ]
+      },
+      "coreCapabilityId": "frame-strategic-problems-and-opportunities",
+      "requiredCapabilityIds": [
+        "design-business-and-execution-strategy",
+        "model-strategic-scenarios-and-risks"
+      ]
+    },
+    {
+      "id": "writing-publication",
+      "domainId": "writing-and-publishing",
+      "phrases": {
+        "ko": [
+          "콘텐츠 작성",
+          "글 편집"
+        ],
+        "en": [
+          "content writing",
+          "editorial publishing"
+        ]
+      },
+      "coreCapabilityId": "draft-long-form-editorial-content",
+      "requiredCapabilityIds": [
+        "edit-verify-and-proofread-content",
+        "publish-content-to-cms"
+      ]
+    },
+    {
+      "id": "marketing-growth",
+      "domainId": "marketing-and-growth",
+      "phrases": {
+        "ko": [
+          "마케팅 성장",
+          "전환 최적화"
+        ],
+        "en": [
+          "marketing growth",
+          "conversion optimization"
+        ]
+      },
+      "coreCapabilityId": "create-market-positioning-and-messaging",
+      "requiredCapabilityIds": [
+        "plan-content-and-search-growth",
+        "design-and-optimize-conversion-funnels"
+      ]
+    },
+    {
+      "id": "promotion-distribution",
+      "domainId": "promotion-and-distribution",
+      "phrases": {
+        "ko": [
+          "출시 홍보",
+          "콘텐츠 배포"
+        ],
+        "en": [
+          "launch promotion",
+          "content distribution"
+        ]
+      },
+      "coreCapabilityId": "plan-launch-promotion",
+      "requiredCapabilityIds": [
+        "adapt-repurpose-and-distribute-content",
+        "operate-and-optimize-campaigns"
+      ]
+    },
+    {
+      "id": "sales-customer",
+      "domainId": "sales-and-customer",
+      "phrases": {
+        "ko": [
+          "영업 리드",
+          "고객 제안"
+        ],
+        "en": [
+          "sales leads",
+          "customer proposals"
+        ]
+      },
+      "coreCapabilityId": "research-accounts-and-discover-leads",
+      "requiredCapabilityIds": [
+        "qualify-opportunities-through-discovery",
+        "create-proposals-and-rfp-responses"
+      ]
+    },
+    {
+      "id": "product-management",
+      "domainId": "product-management",
+      "phrases": {
+        "ko": [
+          "고객 문제",
+          "제품 로드맵"
+        ],
+        "en": [
+          "customer problems",
+          "product roadmap"
+        ]
+      },
+      "coreCapabilityId": "discover-customer-problems-and-needs",
+      "requiredCapabilityIds": [
+        "define-product-principles-and-requirements",
+        "build-evidence-based-product-roadmaps"
+      ]
+    },
+    {
+      "id": "project-management",
+      "domainId": "project-management",
+      "phrases": {
+        "ko": [
+          "프로젝트 계획",
+          "일정 관리"
+        ],
+        "en": [
+          "project planning",
+          "schedule management"
+        ]
+      },
+      "coreCapabilityId": "define-and-decompose-project-work",
+      "requiredCapabilityIds": [
+        "estimate-and-schedule-project-work",
+        "coordinate-project-dependencies-and-resources"
+      ]
+    },
+    {
+      "id": "software-engineering",
+      "domainId": "software-engineering",
+      "phrases": {
+        "ko": [
+          "소프트웨어 개발",
+          "버그 수정"
+        ],
+        "en": [
+          "software development",
+          "bug fixing"
+        ]
+      },
+      "coreCapabilityId": "analyze-repository-context",
+      "requiredCapabilityIds": [
+        "turn-requirements-into-specifications",
+        "test-and-debug-software"
+      ]
+    },
+    {
+      "id": "devops-security",
+      "domainId": "devops-and-security",
+      "phrases": {
+        "ko": [
+          "배포 자동화",
+          "보안 대응"
+        ],
+        "en": [
+          "deployment automation",
+          "security response"
+        ]
+      },
+      "coreCapabilityId": "provision-reproducible-development-environments",
+      "requiredCapabilityIds": [
+        "automate-safe-software-delivery",
+        "observe-and-operate-reliable-services"
+      ]
+    },
+    {
+      "id": "ai-agents-automation",
+      "domainId": "ai-agents-and-automation",
+      "phrases": {
+        "ko": [
+          "AI 에이전트",
+          "업무 자동화"
+        ],
+        "en": [
+          "AI agents",
+          "workflow automation"
+        ]
+      },
+      "coreCapabilityId": "assess-ai-use-cases-and-models",
+      "requiredCapabilityIds": [
+        "design-prompts-and-grounding-context",
+        "design-single-and-multi-agent-systems"
+      ]
+    },
+    {
+      "id": "data-analytics",
+      "domainId": "data-and-analytics",
+      "phrases": {
+        "ko": [
+          "데이터 분석",
+          "대시보드"
+        ],
+        "en": [
+          "data analysis",
+          "analytics dashboard"
+        ]
+      },
+      "coreCapabilityId": "build-data-collection-and-transformation-pipelines",
+      "requiredCapabilityIds": [
+        "validate-and-clean-data",
+        "visualize-data-and-build-dashboards"
+      ]
+    },
+    {
+      "id": "design-brand",
+      "domainId": "design-and-brand",
+      "phrases": {
+        "ko": [
+          "UX 디자인",
+          "브랜드 디자인"
+        ],
+        "en": [
+          "UX design",
+          "brand design"
+        ]
+      },
+      "coreCapabilityId": "translate-briefs-and-research-into-ux-structure",
+      "requiredCapabilityIds": [
+        "design-accessible-user-interfaces",
+        "build-design-systems-and-developer-handoffs"
+      ]
+    },
+    {
+      "id": "video-audio",
+      "domainId": "video-and-audio",
+      "phrases": {
+        "ko": [
+          "영상 편집",
+          "유튜브 쇼츠"
+        ],
+        "en": [
+          "video editing",
+          "YouTube Shorts"
+        ]
+      },
+      "coreCapabilityId": "assemble-and-refine-video-edits",
+      "requiredCapabilityIds": [
+        "repurpose-and-deliver-quality-controlled-media",
+        "produce-accessible-captions"
+      ]
+    },
+    {
+      "id": "documents-knowledge",
+      "domainId": "documents-and-knowledge",
+      "phrases": {
+        "ko": [
+          "문서 작성",
+          "지식 관리"
+        ],
+        "en": [
+          "document authoring",
+          "knowledge management"
+        ]
+      },
+      "coreCapabilityId": "author-documents-from-reusable-templates",
+      "requiredCapabilityIds": [
+        "build-and-search-knowledge-bases",
+        "document-standard-operating-procedures"
+      ]
+    },
+    {
+      "id": "business-operations",
+      "domainId": "business-operations",
+      "phrases": {
+        "ko": [
+          "업무 프로세스",
+          "운영 자동화"
+        ],
+        "en": [
+          "business process",
+          "operations automation"
+        ]
+      },
+      "coreCapabilityId": "map-and-standardize-operational-processes",
+      "requiredCapabilityIds": [
+        "automate-repetitive-operational-work",
+        "run-and-assure-service-operations"
+      ]
+    },
+    {
+      "id": "finance-accounting",
+      "domainId": "finance-and-accounting",
+      "phrases": {
+        "ko": [
+          "예산 관리",
+          "재무 보고"
+        ],
+        "en": [
+          "budget planning",
+          "financial reporting"
+        ]
+      },
+      "coreCapabilityId": "plan-budgets-and-cash-flow",
+      "requiredCapabilityIds": [
+        "analyze-costs-unit-economics-and-profitability",
+        "forecast-and-report-financial-performance"
+      ]
+    },
+    {
+      "id": "commerce",
+      "domainId": "commerce",
+      "phrases": {
+        "ko": [
+          "쇼핑몰 상품 홍보",
+          "상품 매출"
+        ],
+        "en": [
+          "ecommerce product promotion",
+          "online store revenue"
+        ]
+      },
+      "coreCapabilityId": "operate-stores-and-marketplaces",
+      "requiredCapabilityIds": [
+        "manage-product-catalogs-and-listings",
+        "run-promotions-and-analyze-revenue"
+      ]
+    },
+    {
+      "id": "people-training",
+      "domainId": "people-and-training",
+      "phrases": {
+        "ko": [
+          "인력 계획",
+          "교육 프로그램"
+        ],
+        "en": [
+          "workforce planning",
+          "training program"
+        ]
+      },
+      "coreCapabilityId": "plan-workforce-and-roles",
+      "requiredCapabilityIds": [
+        "onboard-and-develop-employees",
+        "design-learning-programs-and-assessments"
+      ]
+    },
+    {
+      "id": "legal-risk-compliance",
+      "domainId": "legal-risk-and-compliance",
+      "phrases": {
+        "ko": [
+          "법률 검토",
+          "컴플라이언스"
+        ],
+        "en": [
+          "legal review",
+          "compliance management"
+        ]
+      },
+      "coreCapabilityId": "assist-with-legal-research",
+      "requiredCapabilityIds": [
+        "assist-with-contract-drafting-and-review",
+        "maintain-legal-and-compliance-policies"
+      ]
+    }
+  ],
+  "decisionIndexDigest": "19bd3fb13a0749e2b8e361b5a4644f37adcaa32aa2918861569d4dfbde921268",
+  "digest": "34271a2a2a32197d87196eaab54a1e4f20e6050fc2c8ebf3c3a1e2ec1a48ea60"
+}

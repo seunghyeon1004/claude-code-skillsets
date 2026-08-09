@@ -7,9 +7,10 @@ installation decision. It is not a marketplace list, external-skill bundle, or
 safety certification. It does not copy external skills or guarantee safety; it
 discloses provenance, compatibility, review state, and unknown information in a minimal plan.
 For one goal or domain, it proposes at most two external upstream Claude plugins with
-Anthropic official-marketplace listing and source-identity evidence, then first shows
-their evidence, gaps, and `unknown` fields. External candidate installation requires
-separate approval; in `0.1`, candidate update and removal are also on a
+Anthropic official-marketplace listing and source-identity evidence. They appear
+only when a route has candidates and first show their evidence, gaps, and `unknown` fields.
+A route with no candidate returns an empty array and preserves its capability gaps.
+External candidate installation requires separate approval; in `0.1`, candidate update and removal are also on a
 review-required hold.
 
 **Technical preview:** currently 0/20 executable and 20/20 review-held
@@ -45,6 +46,9 @@ release, not a claim that it is the latest version. Every current domain route i
 review-held and performs no installation. `related` evidence never supplies coverage
 or authorizes installation. See the generated [route availability table](generated/catalog.en.md#route-availability)
 for each route's candidate order/state, unsupported count, observation time, and expiry.
+Setup preview `discoveryCandidates` are discovery-only and never enter the approval
+digest or installation authority. A route with no candidate returns an empty array
+while preserving its existing capability gaps.
 
 The 20 broad domains below and 40 draft outcome packs are a classification taxonomy
 and future-review backlog, not supported or executable capabilities.

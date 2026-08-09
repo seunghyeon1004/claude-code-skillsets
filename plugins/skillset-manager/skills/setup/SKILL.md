@@ -14,31 +14,35 @@ until the user has separately approved the exact final preview.
 
 ## Source Boundary
 
-Read `${CLAUDE_PLUGIN_ROOT}/data/decision-index.json` before making a
-recommendation. This plugin-owned file is the only recommendation data source.
+Read `${CLAUDE_PLUGIN_ROOT}/data/routing-index.json` before routing a goal or
+showing domain choices. This bounded plugin-owned routing data is authoritative
+only for goal phrase matching and domain selection. It must not select, name, or
+describe an installation candidate. Candidate, command, disclosure, and approval
+data are authoritative only in the bound installed-runtime preview.
 Do not read `install-index.json`, `official-marketplace-index.json`, discovery
 output, marketplace search, raw community listings, user-pasted catalogs, shell
 history, or another plugin's data to choose a candidate. Treat a missing,
-malformed, stale, or digest-mismatched decision index as a hard stop.
+malformed, stale, oversized, or digest-mismatched routing index as a hard stop.
 
-Use its `schemaVersion`, `digest`, `catalogExpiresAt`, localized `profiles`,
-candidate state and reasons, capability evidence, sensitive-field evidence, and
-the precomputed decision-plan inputs. Do not revive a held or blocked candidate,
-invent a missing field, or turn `eligible-with-disclosures` into `safe`,
-`trusted`, or individually reviewed.
+Use only its `schemaVersion`, `digest`, `decisionIndexDigest`, `catalogVersion`,
+`observedThrough`, `catalogExpiresAt`, and localized `profiles`. Do not infer any
+candidate fact from this projection.
 
 ## Installed Runtime Boundary
 
 Use the shipped `${CLAUDE_PLUGIN_ROOT}/runtime.mjs` for every authoritative
 preview and every approved execution. Do not reconstruct its planner, digest,
-driver, capability, or publisher in the conversation. The tracked bundle owns
-the no-argument installed-index loader, validates and freezes the plugin-owned
-index, and contains all runtime dependencies; it does not depend on the source
-repository, `tsx`, `npm`, or an adjacent schema directory.
+driver, capability, or publisher in the conversation. The runtime's tracked bundle
+validates and freezes the full decision index and routing index together. It owns
+the no-argument installed-index loader, verifies both self-digests, their exact
+catalog metadata and profile equality, and contains all runtime dependencies. It
+does not depend on the source repository, `tsx`, `npm`, or an adjacent schema directory.
 
 After goal routing and the consented UTC, Node, and Claude executable observations, encode exactly one
-bounded request as base64url JSON. Its only fields are `schemaVersion: 1`,
-`language`, `platform`, strict `observedAt`, `claudeProbeConsent: granted`, and
+bounded request as base64url JSON. Its only fields are `schemaVersion: 2`,
+`language`, `platform`, strict `observedAt`, `claudeProbeConsent: granted`,
+the routing file's exact `decisionIndexDigest` and `routingIndexDigest` (its
+`digest` value), and
 either a goal of at most 512 characters or one or two unique Complete v1
 `domainIds`. Current
 `starter-partial` routes require exactly one domain; a future genuine `complete`
@@ -51,9 +55,16 @@ canonical Node path:
 <ABSOLUTE_NODE_PATH> <CLAUDE_PLUGIN_ROOT>/runtime.mjs preview --request <BASE64URL_REQUEST>
 ```
 
+The runtime must reject a missing or changed digest binding before Claude
+identity observation or plan calculation. Accept a preview only when its bounded
+`reviewSummary` repeats the same `decisionIndexDigest` and `routingIndexDigest`.
+
 Display the returned bounded `reviewSummary`, `approval.previewDigest`, and
 `riskAcknowledgement` by default. Do not print the complete approval object or
 duplicate it through `plan`; the default preview intentionally omits both. The
+top-level `discoveryCandidates` are authenticated starter-route context only:
+they are discovery-only, non-installable, and excluded from the approval preview,
+preview digest, approval object, and execution authority.
 summary contains every human-review field and is at most 5 KiB and 120 lines for
 the standard one-primary/one-complement route. The complete canonical approval
 and decision plan are available only on demand through the returned read-only
@@ -80,7 +91,7 @@ approval, and receipts. Do not ask again when that language is clear.
 ## Goal or Domains
 
 Ask for either a short goal or a selection of one localized domain from
-the decision index. Do not ask for categories, purposes, tools, plugins,
+the routing index. Do not ask for categories, purposes, tools, plugins,
 platforms, installation levels, or an Essential/Recommended/Custom tier.
 
 For a goal, perform bounded phrase matching only against the indexed Korean and
@@ -157,8 +168,8 @@ marketplace ID alone is insufficient.
 
 ## Precomputed Decision Plan
 
-Using only the loaded decision index, current consented UTC time, selected goal
-or domain, and runtime facts, read the bounded precomputed plan. The
+Using only the digest-bound installed-runtime preview, current consented UTC time,
+selected goal or domain, and runtime facts, read the bounded precomputed plan. The
 plan contains at most one `primary` and one `complement`, has
 `executionStatus: not-executed`, and covers only candidates marked
 `eligible-with-disclosures` for the current runtime and platform.
@@ -464,6 +475,7 @@ the expected-prior-digest stale check on the exact prior canonical raw SHA-256
 (or exact absence) before rename. That check is not atomic against a same-user
 external writer that ignores the execution lock.
 
-The first public release may have only `data/decision-index.json`. Before a future
-release changes that file's digest, preserve its exact prior bytes append-only as
+The public release carries both current `data/decision-index.json` and bounded
+`data/routing-index.json`. Before a future release changes the full decision
+file's digest, preserve its exact prior bytes append-only as
 `data/decision-index-history/<digest>.json`. Never rewrite or delete history.

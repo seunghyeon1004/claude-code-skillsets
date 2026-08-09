@@ -3642,7 +3642,7 @@ var require_fast_uri = __commonJS({
         normalizeString(uri, options);
       } else if (typeof uri === "object") {
         uri = /** @type {T} */
-        parse2(serialize(uri, options), options);
+        parse2(serialize2(uri, options), options);
       }
       return uri;
     }
@@ -3655,13 +3655,13 @@ var require_fast_uri = __commonJS({
       }
       const resolved = resolveComponent(baseParsed, relativeParsed, schemelessOptions, true);
       schemelessOptions.skipEscape = true;
-      return serialize(resolved, schemelessOptions);
+      return serialize2(resolved, schemelessOptions);
     }
     function resolveComponent(base, relative, options, skipNormalization) {
       const target = {};
       if (!skipNormalization) {
-        base = parse2(serialize(base, options), options);
-        relative = parse2(serialize(relative, options), options);
+        base = parse2(serialize2(base, options), options);
+        relative = parse2(serialize2(relative, options), options);
       }
       options = options || {};
       if (!options.tolerant && relative.scheme) {
@@ -3715,7 +3715,7 @@ var require_fast_uri = __commonJS({
       const normalizedB = normalizeComparableURI(uriB, options);
       return normalizedA !== void 0 && normalizedB !== void 0 && normalizedA.toLowerCase() === normalizedB.toLowerCase();
     }
-    function serialize(cmpts, opts) {
+    function serialize2(cmpts, opts) {
       const component = {
         host: cmpts.host,
         scheme: cmpts.scheme,
@@ -3914,7 +3914,7 @@ var require_fast_uri = __commonJS({
     function normalizeStringWithStatus(uri, opts) {
       const { parsed, malformedAuthorityOrPort } = parseWithStatus(uri, opts);
       return {
-        normalized: malformedAuthorityOrPort ? uri : serialize(parsed, opts),
+        normalized: malformedAuthorityOrPort ? uri : serialize2(parsed, opts),
         malformedAuthorityOrPort
       };
     }
@@ -3924,7 +3924,7 @@ var require_fast_uri = __commonJS({
         return malformedAuthorityOrPort ? void 0 : normalized;
       }
       if (typeof uri === "object") {
-        return serialize(uri, opts);
+        return serialize2(uri, opts);
       }
     }
     var fastUri = {
@@ -3933,7 +3933,7 @@ var require_fast_uri = __commonJS({
       resolve: resolve6,
       resolveComponent,
       equal,
-      serialize,
+      serialize: serialize2,
       parse: parse2
     };
     module.exports = fastUri;
@@ -16577,7 +16577,7 @@ var require_dist = __commonJS({
 
 // src/plugin-runtime/skillset-manager.ts
 import { execFile as execFileCallback2 } from "node:child_process";
-import { createHash as createHash5 } from "node:crypto";
+import { createHash as createHash6 } from "node:crypto";
 import { constants as fsConstants2, realpathSync } from "node:fs";
 import { access, lstat as lstat4, readFile as readFile4, realpath as realpath3 } from "node:fs/promises";
 import { delimiter, isAbsolute as isAbsolute2, join as join4, resolve as resolve5 } from "node:path";
@@ -16585,10 +16585,13 @@ import { fileURLToPath as fileURLToPath3 } from "node:url";
 import { promisify as promisify2 } from "node:util";
 
 // src/decision/index-loader.ts
-import { createHash } from "node:crypto";
+import { createHash as createHash2 } from "node:crypto";
 import { lstat, readFile, readdir, realpath } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+// src/contracts/decision.ts
+import { createHash } from "node:crypto";
 
 // schemas/v3/decision-index.schema.json
 var decision_index_schema_default = {
@@ -17041,6 +17044,83 @@ var decision_index_schema_default = {
   }
 };
 
+// schemas/v3/routing-index.schema.json
+var routing_index_schema_default = {
+  $schema: "https://json-schema.org/draft/2020-12/schema",
+  $id: "https://github.com/seunghyeon1004/claude-code-skillsets/schemas/v3/routing-index.schema.json",
+  title: "DecisionRoutingIndex",
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "schemaVersion",
+    "catalogVersion",
+    "observedThrough",
+    "catalogExpiresAt",
+    "profiles",
+    "decisionIndexDigest",
+    "digest"
+  ],
+  properties: {
+    schemaVersion: { const: 1 },
+    catalogVersion: { $ref: "#/$defs/sha256" },
+    observedThrough: { type: "string", minLength: 1 },
+    catalogExpiresAt: { type: "string", minLength: 1 },
+    profiles: {
+      type: "array",
+      minItems: 1,
+      items: { $ref: "#/$defs/profile" }
+    },
+    decisionIndexDigest: { $ref: "#/$defs/sha256" },
+    digest: { $ref: "#/$defs/sha256" }
+  },
+  $defs: {
+    id: {
+      type: "string",
+      pattern: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    sha256: {
+      type: "string",
+      pattern: "^[a-f0-9]{64}$"
+    },
+    profile: {
+      type: "object",
+      additionalProperties: false,
+      required: ["id", "domainId", "phrases", "coreCapabilityId", "requiredCapabilityIds"],
+      properties: {
+        id: { $ref: "#/$defs/id" },
+        domainId: { $ref: "#/$defs/id" },
+        phrases: {
+          type: "object",
+          additionalProperties: false,
+          required: ["ko", "en"],
+          properties: {
+            ko: {
+              type: "array",
+              minItems: 1,
+              uniqueItems: true,
+              items: { type: "string", minLength: 1 }
+            },
+            en: {
+              type: "array",
+              minItems: 1,
+              uniqueItems: true,
+              items: { type: "string", minLength: 1 }
+            }
+          }
+        },
+        coreCapabilityId: { $ref: "#/$defs/id" },
+        requiredCapabilityIds: {
+          type: "array",
+          minItems: 1,
+          maxItems: 3,
+          uniqueItems: true,
+          items: { $ref: "#/$defs/id" }
+        }
+      }
+    }
+  }
+};
+
 // schemas/v3/decision-intents.schema.json
 var decision_intents_schema_default = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
@@ -17449,9 +17529,59 @@ var decision_candidate_evidence_schema_default = {
 
 // src/contracts/decision.ts
 var import__ = __toESM(require__(), 1);
+
+// src/research/snapshot.ts
+function compareCodePointStrings(left, right) {
+  const leftCharacters = Array.from(left);
+  const rightCharacters = Array.from(right);
+  const length = Math.min(leftCharacters.length, rightCharacters.length);
+  for (let index = 0; index < length; index += 1) {
+    const leftPoint = leftCharacters[index].codePointAt(0);
+    const rightPoint = rightCharacters[index].codePointAt(0);
+    if (leftPoint !== rightPoint) {
+      return leftPoint < rightPoint ? -1 : 1;
+    }
+  }
+  return leftCharacters.length === rightCharacters.length ? 0 : leftCharacters.length < rightCharacters.length ? -1 : 1;
+}
+
+// src/research/canonical-json.ts
+function canonicalize(value) {
+  return serialize(value, /* @__PURE__ */ new Set());
+}
+function serialize(value, ancestors) {
+  if (value === null) return "null";
+  if (typeof value === "string" || typeof value === "boolean") return JSON.stringify(value);
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) throw new Error("Canonical JSON does not permit non-finite numbers");
+    return JSON.stringify(value);
+  }
+  if (typeof value !== "object") throw new Error(`Canonical JSON does not permit ${typeof value}`);
+  if (ancestors.has(value)) throw new Error("Canonical JSON does not permit cyclic values");
+  ancestors.add(value);
+  try {
+    if (Array.isArray(value)) {
+      return `[${value.map((item) => serialize(item, ancestors)).join(",")}]`;
+    }
+    const prototype = Object.getPrototypeOf(value);
+    if (prototype !== Object.prototype && prototype !== null) {
+      throw new Error("Canonical JSON permits only plain objects");
+    }
+    const symbols = Object.getOwnPropertySymbols(value);
+    if (symbols.length > 0) throw new Error("Canonical JSON does not permit symbol keys");
+    return `{${Object.keys(value).sort(compareCodePointStrings).map(
+      (key) => `${JSON.stringify(key)}:${serialize(value[key], ancestors)}`
+    ).join(",")}}`;
+  } finally {
+    ancestors.delete(value);
+  }
+}
+
+// src/contracts/decision.ts
 var decisionStarterRoutesSchema = require_decision_starter_routes_schema();
 var ajv = new import__.Ajv2020({ allErrors: true, strict: true });
 var validateDecisionIndexSchema = ajv.compile(decision_index_schema_default);
+var validateDecisionRoutingIndexSchema = ajv.compile(routing_index_schema_default);
 var validateDecisionIntentsSchema = ajv.compile(decision_intents_schema_default);
 var validateDecisionCandidateEvidenceSchema = ajv.compile(
   decision_candidate_evidence_schema_default
@@ -17460,12 +17590,46 @@ var validateDecisionStarterRoutesSchema = ajv.compile(decisionStarterRoutesSchem
 function validateDecisionIndex(value) {
   return validateContract("decision index", validateDecisionIndexSchema, value, decisionIndexErrors);
 }
+function validateDecisionRoutingIndex(value, decisionIndexValue) {
+  const routing = validateContract("decision routing index", validateDecisionRoutingIndexSchema, value);
+  const decisionIndex = validateDecisionIndex(decisionIndexValue);
+  const { digest: _routingDigest, ...routingWithoutDigest } = routing;
+  const { digest: _decisionDigest, ...decisionWithoutDigest } = decisionIndex;
+  if (routing.digest !== decisionRoutingIndexDigest(routingWithoutDigest)) {
+    throw new Error("decision routing index digest mismatch");
+  }
+  if (decisionIndex.digest !== sha256Canonical(decisionWithoutDigest)) {
+    throw new Error("decision index digest mismatch");
+  }
+  if (routing.catalogVersion !== decisionIndex.catalogVersion) {
+    throw new Error("decision routing index catalogVersion does not match the decision index");
+  }
+  if (routing.observedThrough !== decisionIndex.observedThrough) {
+    throw new Error("decision routing index observedThrough does not match the decision index");
+  }
+  if (routing.catalogExpiresAt !== decisionIndex.catalogExpiresAt) {
+    throw new Error("decision routing index catalogExpiresAt does not match the decision index");
+  }
+  if (routing.decisionIndexDigest !== decisionIndex.digest) {
+    throw new Error("decision routing index decision index digest mismatch");
+  }
+  if (canonicalize(routing.profiles) !== canonicalize(decisionIndex.profiles)) {
+    throw new Error("decision routing index profiles do not exactly match the decision index");
+  }
+  return routing;
+}
+function decisionRoutingIndexDigest(value) {
+  return sha256Canonical(value);
+}
+function sha256Canonical(value) {
+  return createHash("sha256").update(canonicalize(value)).digest("hex");
+}
 function validateContract(kind, validator, value, semanticErrors = () => []) {
   if (!validator(value)) {
     throw new Error(`Invalid ${kind}:
 ${formatAjvErrors(validator.errors).join("\n")}`);
   }
-  const errors = semanticErrors(value).sort((left, right) => compareCodePointStrings(left.path, right.path) || compareCodePointStrings(left.message, right.message));
+  const errors = semanticErrors(value).sort((left, right) => compareCodePointStrings2(left.path, right.path) || compareCodePointStrings2(left.message, right.message));
   if (errors.length > 0) {
     throw new Error(`Invalid ${kind}:
 ${errors.map(({ path, message }) => `${path}: ${message}`).join("\n")}`);
@@ -17703,7 +17867,7 @@ function isCurrentCoverageEvidence(evidence) {
   return evidence.current === true && (evidence.support === "direct" || evidence.support === "inferred");
 }
 function formatAjvErrors(errors) {
-  return (errors ?? []).slice().sort((left, right) => compareCodePointStrings(errorPath(left), errorPath(right)) || compareCodePointStrings(left.keyword, right.keyword)).map((error) => `${errorPath(error)}: ${error.message ?? error.keyword}`);
+  return (errors ?? []).slice().sort((left, right) => compareCodePointStrings2(errorPath(left), errorPath(right)) || compareCodePointStrings2(left.keyword, right.keyword)).map((error) => `${errorPath(error)}: ${error.message ?? error.keyword}`);
 }
 function errorPath(error) {
   if (error.keyword === "required") {
@@ -17723,14 +17887,14 @@ function stringArray(value) {
 function stableValue(value) {
   if (Array.isArray(value)) return `[${value.map(stableValue).join(",")}]`;
   if (isRecord(value)) {
-    return `{${Object.keys(value).sort(compareCodePointStrings).map((key) => `${JSON.stringify(key)}:${stableValue(value[key])}`).join(",")}}`;
+    return `{${Object.keys(value).sort(compareCodePointStrings2).map((key) => `${JSON.stringify(key)}:${stableValue(value[key])}`).join(",")}}`;
   }
   return JSON.stringify(value);
 }
 function isRecord(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
-function compareCodePointStrings(left, right) {
+function compareCodePointStrings2(left, right) {
   const leftCharacters = Array.from(left);
   const rightCharacters = Array.from(right);
   const length = Math.min(leftCharacters.length, rightCharacters.length);
@@ -17800,6 +17964,9 @@ var authenticatedDecisionIndexSets = /* @__PURE__ */ new WeakMap();
 var installedPluginRoot = fileURLToPath(new URL(".", import.meta.url));
 var installedDecisionIndex;
 var installedDecisionIndexSet;
+var installedDecisionBoundary;
+var SETUP_ROUTING_INDEX_MAX_BYTES = 128 * 1024;
+var SETUP_ROUTING_INDEX_MAX_LINES = 2e3;
 async function loadPluginDecisionIndex(pluginRoot2) {
   const value = JSON.parse(await readFile(join(pluginRoot2, "data", "decision-index.json"), "utf8"));
   const index = validateDecisionIndex(value);
@@ -17816,6 +17983,63 @@ function loadInstalledDecisionIndex() {
 function loadInstalledDecisionIndexSet() {
   installedDecisionIndexSet ??= loadInstalledDecisionIndex().then(async (current) => loadDecisionIndexSet(installedPluginRoot, current));
   return installedDecisionIndexSet;
+}
+function loadInstalledDecisionBoundary() {
+  installedDecisionBoundary ??= Promise.all([
+    loadInstalledDecisionIndex(),
+    loadRoutingIndexValue(installedPluginRoot)
+  ]).then(([decisionIndex, routingValue]) => {
+    let routingIndex;
+    try {
+      routingIndex = validateDecisionRoutingIndex(routingValue, decisionIndex);
+    } catch (error) {
+      throw new Error("Routing index is not bound to the authenticated decision index", { cause: error });
+    }
+    return Object.freeze({ decisionIndex, routingIndex });
+  });
+  return installedDecisionBoundary;
+}
+async function loadRoutingIndexValue(pluginRoot2) {
+  const path = join(pluginRoot2, "data", "routing-index.json");
+  const metadata = await lstat(path).catch((error) => {
+    throw new Error("Routing index is missing or unreadable", { cause: error });
+  });
+  if (metadata.isSymbolicLink() || !metadata.isFile()) {
+    throw new Error("Routing index must be a regular non-symlink file");
+  }
+  if (metadata.size < 1 || metadata.size > SETUP_ROUTING_INDEX_MAX_BYTES) {
+    throw new Error("Routing index exceeds its nonempty 128 KiB size contract");
+  }
+  if (await realpath(path) !== resolve(path)) {
+    throw new Error("Routing index path must be canonical");
+  }
+  const raw = await readFile(path, "utf8");
+  const lineCount = raw.endsWith("\n") ? raw.split("\n").length - 1 : raw.split("\n").length;
+  if (lineCount > SETUP_ROUTING_INDEX_MAX_LINES) {
+    throw new Error("Routing index exceeds its 2000-line contract");
+  }
+  let value;
+  try {
+    value = JSON.parse(raw);
+  } catch (error) {
+    throw new Error("Routing index is not valid JSON", { cause: error });
+  }
+  if (!isRecord2(value) || Object.keys(value).sort(compareCodePoints).join("\0") !== [
+    "catalogExpiresAt",
+    "catalogVersion",
+    "decisionIndexDigest",
+    "digest",
+    "observedThrough",
+    "profiles",
+    "schemaVersion"
+  ].sort(compareCodePoints).join("\0") || value.schemaVersion !== 1 || typeof value.decisionIndexDigest !== "string" || !/^[a-f0-9]{64}$/u.test(value.decisionIndexDigest) || typeof value.catalogVersion !== "string" || !/^[a-f0-9]{64}$/u.test(value.catalogVersion) || typeof value.observedThrough !== "string" || typeof value.catalogExpiresAt !== "string" || !Array.isArray(value.profiles) || typeof value.digest !== "string" || !/^[a-f0-9]{64}$/u.test(value.digest)) {
+    throw new Error("Routing index has an invalid closed shape");
+  }
+  if (`${JSON.stringify(value, null, 2)}
+` !== raw) {
+    throw new Error("Routing index must use canonical generated JSON bytes");
+  }
+  return value;
 }
 function decisionIndexFromSet(set, digest2) {
   return authenticatedDecisionIndexSets.get(set)?.get(digest2);
@@ -17958,7 +18182,7 @@ function assertTargetEvidenceWindow(reviewedAt, expiresAt, observedThrough, requ
   }
 }
 function digestText(value) {
-  return createHash("sha256").update(value).digest("hex");
+  return createHash2("sha256").update(value).digest("hex");
 }
 function assertFutureTimestamp(value, observedThrough, label) {
   const timestamp2 = value === void 0 ? Number.NaN : Date.parse(value);
@@ -18065,7 +18289,7 @@ function indexWithoutDigest(index) {
   return withoutDigest;
 }
 function digest(value) {
-  return createHash("sha256").update(stableValue2(value)).digest("hex");
+  return createHash2("sha256").update(stableValue2(value)).digest("hex");
 }
 function stableValue2(value) {
   if (Array.isArray(value)) return `[${value.map(stableValue2).join(",")}]`;
@@ -18100,7 +18324,7 @@ function deepFreeze(value, seen = /* @__PURE__ */ new WeakSet()) {
 
 // src/evaluate/setup.ts
 import { execFile as execFileCallback, spawn } from "node:child_process";
-import { createHash as createHash4 } from "node:crypto";
+import { createHash as createHash5 } from "node:crypto";
 import { isAbsolute, join as join3, resolve as resolve4 } from "node:path";
 import { fileURLToPath as fileURLToPath2 } from "node:url";
 import { promisify } from "node:util";
@@ -18473,7 +18697,7 @@ function coversAll(candidate, capabilities) {
   return capabilities.every((capabilityId) => candidate.providedCapabilityIds.includes(capabilityId));
 }
 function compareCandidateForRequired(left, right, required, profiles, input) {
-  return compareCandidateMeaningful(left, right, required, profiles, input) || compareCodePointStrings2(left.id, right.id) || compareCodePointStrings2(left.sourceId, right.sourceId);
+  return compareCandidateMeaningful(left, right, required, profiles, input) || compareCodePointStrings3(left.id, right.id) || compareCodePointStrings3(left.sourceId, right.sourceId);
 }
 function compareCandidateMeaningful(left, right, required, profiles, input) {
   const leftRank = candidateRank(left, required, profiles, input);
@@ -18488,14 +18712,14 @@ function compareCandidateSets(left, right, profiles, input) {
   if (leftCoverage !== rightCoverage) return rightCoverage - leftCoverage;
   const leftRank = aggregateCandidateRanks(left, required, profiles, input);
   const rightRank = aggregateCandidateRanks(right, required, profiles, input);
-  return rightRank.targetEvidenceAt - leftRank.targetEvidenceAt || rightRank.strongPhraseMatches - leftRank.strongPhraseMatches || rightRank.goalNameOverlap - leftRank.goalNameOverlap || rightRank.reviewedAt - leftRank.reviewedAt || compareCodePointStrings2(candidateSetKey(left), candidateSetKey(right));
+  return rightRank.targetEvidenceAt - leftRank.targetEvidenceAt || rightRank.strongPhraseMatches - leftRank.strongPhraseMatches || rightRank.goalNameOverlap - leftRank.goalNameOverlap || rightRank.reviewedAt - leftRank.reviewedAt || compareCodePointStrings3(candidateSetKey(left), candidateSetKey(right));
 }
 function orderCandidatesForProfiles(candidates, profiles) {
   const firstCore = profiles[0].coreCapabilityId;
   return candidates.slice().sort((left, right) => {
     const leftCoversFirst = left.providedCapabilityIds.includes(firstCore) ? 1 : 0;
     const rightCoversFirst = right.providedCapabilityIds.includes(firstCore) ? 1 : 0;
-    return rightCoversFirst - leftCoversFirst || compareCodePointStrings2(left.id, right.id);
+    return rightCoversFirst - leftCoversFirst || compareCodePointStrings3(left.id, right.id);
   });
 }
 function coverageCount(candidate, capabilities) {
@@ -18588,7 +18812,7 @@ function uniqueStrings2(values) {
   return values.filter((value, index) => values.indexOf(value) === index);
 }
 function candidateSetKey(candidates) {
-  return candidates.map(({ id, sourceId }) => `${id}\0${sourceId}`).sort(compareCodePointStrings2).join("");
+  return candidates.map(({ id, sourceId }) => `${id}\0${sourceId}`).sort(compareCodePointStrings3).join("");
 }
 function isEligibleCandidate(candidate, input) {
   return candidate.runtime === input.runtime && candidate.state === "eligible-with-disclosures" && !candidate.stateReasons.some((reason) => reason === "review-blocked" || reason === "blocked" || reason === "stale" || reason === "stale-evidence" || reason === "expired" || reason === "review-stale") && candidate.stateReasons.includes(targetVerifiedReason(input.runtime, input.platform)) && candidateExpiryReasons(candidate, input).length === 0;
@@ -18603,7 +18827,7 @@ function excludedCandidatesFor(index, input, required) {
       state: expiryReasons.length > 0 ? "held" : candidate.state,
       stateReasons: uniqueStrings2([...candidate.stateReasons, ...expiryReasons])
     };
-  }).sort((left, right) => compareCodePointStrings2(left.candidateId, right.candidateId) || compareCodePointStrings2(left.sourceId, right.sourceId));
+  }).sort((left, right) => compareCodePointStrings3(left.candidateId, right.candidateId) || compareCodePointStrings3(left.sourceId, right.sourceId));
 }
 function candidateExpiryReasons(candidate, input) {
   const asOf = Date.parse(input.asOf);
@@ -18649,14 +18873,14 @@ function decisionPlanSnapshot(plan) {
 function stableValue3(value) {
   if (Array.isArray(value)) return `[${value.map(stableValue3).join(",")}]`;
   if (isRecord3(value)) {
-    return `{${Object.keys(value).sort(compareCodePointStrings2).map((key) => `${JSON.stringify(key)}:${stableValue3(value[key])}`).join(",")}}`;
+    return `{${Object.keys(value).sort(compareCodePointStrings3).map((key) => `${JSON.stringify(key)}:${stableValue3(value[key])}`).join(",")}}`;
   }
   return JSON.stringify(value);
 }
 function isRecord3(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
-function compareCodePointStrings2(left, right) {
+function compareCodePointStrings3(left, right) {
   const leftCharacters = Array.from(left);
   const rightCharacters = Array.from(right);
   const length = Math.min(leftCharacters.length, rightCharacters.length);
@@ -18670,11 +18894,11 @@ function compareCodePointStrings2(left, right) {
 
 // src/decision/atomic-publisher.ts
 import { lstat as lstat3, readFile as readFile3, realpath as realpath2 } from "node:fs/promises";
-import { createHash as createHash3 } from "node:crypto";
+import { createHash as createHash4 } from "node:crypto";
 import { resolve as resolve3, sep as sep2 } from "node:path";
 
 // src/state/setup-state.ts
-import { createHash as createHash2, randomBytes } from "node:crypto";
+import { createHash as createHash3, randomBytes } from "node:crypto";
 import { constants as fsConstants } from "node:fs";
 import { chmod, lstat as lstat2, mkdir, open, readFile as readFile2, rm } from "node:fs/promises";
 import { homedir } from "node:os";
@@ -18780,7 +19004,7 @@ function canonicalSetupStateJson(value) {
 `;
 }
 function setupStateRawDigest(raw) {
-  return createHash2("sha256").update(raw).digest("hex");
+  return createHash3("sha256").update(raw).digest("hex");
 }
 async function readCanonicalSetupInstallLock() {
   const path = setupInstallLockPath();
@@ -18973,7 +19197,7 @@ async function observeSetupPublisherRuntimeIdentity() {
   return {
     executablePath,
     version: process.versions.node,
-    sha256: createHash3("sha256").update(await readFile3(executablePath)).digest("hex")
+    sha256: createHash4("sha256").update(await readFile3(executablePath)).digest("hex")
   };
 }
 async function verifySetupPublisherRuntimeIdentity(expected) {
@@ -20418,14 +20642,23 @@ function setupApprovalPreviewDigest(preview) {
 }
 var SETUP_REVIEW_SUMMARY_MAX_BYTES = 5 * 1024;
 var SETUP_REVIEW_SUMMARY_MAX_LINES = 120;
-function buildSetupReviewSummary(binding) {
+function buildSetupReviewSummary(binding, routingIndexDigest, discoveryCandidates = []) {
+  if (!/^[a-f0-9]{64}$/u.test(routingIndexDigest)) {
+    throw new Error("Setup review summary requires an authenticated routing index digest");
+  }
   const { preview, previewDigest } = binding;
   const unknowns = preview.candidates.flatMap(
     (candidate) => Object.entries(candidate.disclosures).filter(([, disclosure]) => disclosure.status === "unknown").map(([field]) => `${candidate.candidateId}:${field}`)
   );
+  const discoveryLines = discoveryCandidates.length > 0 || preview.candidates.length === 0 ? [
+    `discoveryCandidates: ${JSON.stringify(discoveryCandidates)}`,
+    "discoveryAuthority: discovery-only; not approval-bound; installable:false"
+  ] : [];
   const lines = [
     "# Setup Review Summary",
     `approvalPreviewDigest: ${previewDigest}`,
+    `decisionIndexDigest: ${preview.decisionIndexDigest}`,
+    `routingIndexDigest: ${routingIndexDigest}`,
     `catalogExpiresAt: ${preview.catalogExpiresAt}`,
     `candidates: ${JSON.stringify(preview.candidates.map((candidate) => ({
       candidateId: candidate.candidateId,
@@ -20451,6 +20684,7 @@ function buildSetupReviewSummary(binding) {
       support
     }))))}`,
     `unknowns: ${JSON.stringify(unknowns)}`,
+    ...discoveryLines,
     `uncoveredCapabilities: ${JSON.stringify(preview.uncoveredCapabilityIds)}`,
     `riskDisclosures: ${JSON.stringify(preview.riskDisclosures)}`,
     `executableIdentities: ${JSON.stringify({
@@ -20467,8 +20701,47 @@ function buildSetupReviewSummary(binding) {
   }
   return summary;
 }
+function buildSetupDiscoveryCandidates(index, selectedDomainIds, selectedInstallCandidates) {
+  const selectedCandidateIds = new Set(selectedInstallCandidates.map(({ id }) => id));
+  const candidateById = new Map(index.candidates.map((candidate) => [candidate.id, candidate]));
+  const evidenceById = new Map(index.candidateEvidence.map((evidence) => [evidence.id, evidence]));
+  const discovery = /* @__PURE__ */ new Map();
+  for (const domainId of selectedDomainIds) {
+    const route = index.starterRoutes?.find((candidate) => candidate.domainId === domainId);
+    if (route === void 0) continue;
+    for (const candidateId of route.orderedCandidateIds) {
+      if (selectedCandidateIds.has(candidateId)) continue;
+      const existing = discovery.get(candidateId);
+      if (existing !== void 0) {
+        if (!existing.domainIds.includes(domainId)) existing.domainIds.push(domainId);
+        continue;
+      }
+      if (discovery.size >= 2) continue;
+      const candidate = candidateById.get(candidateId);
+      if (candidate === void 0) continue;
+      const evidenceSupport = [
+        ["direct", route.directEvidenceIds],
+        ["inferred", route.inferredEvidenceIds],
+        ["related", route.relatedEvidenceIds ?? []]
+      ].flatMap(([support, evidenceIds]) => evidenceIds.some(
+        (evidenceId) => evidenceById.get(evidenceId)?.candidateId === candidateId
+      ) ? [support] : []);
+      discovery.set(candidateId, {
+        candidateId,
+        ...candidate.displayName === void 0 ? {} : { displayName: candidate.displayName },
+        sourceId: candidate.sourceId,
+        domainIds: [domainId],
+        state: candidate.state,
+        stateReasons: [...candidate.stateReasons],
+        evidenceSupport,
+        installable: false
+      });
+    }
+  }
+  return [...discovery.values()];
+}
 function sha256(value) {
-  return createHash4("sha256").update(value).digest("hex");
+  return createHash5("sha256").update(value).digest("hex");
 }
 function stableValue4(value) {
   if (Array.isArray(value)) return `[${value.map(stableValue4).join(",")}]`;
@@ -20509,7 +20782,9 @@ async function runSkillsetManagerRuntime(argv) {
   if (parsed.command === "execute" && parsed.riskAcknowledgementDigest === void 0) {
     throw new Error("Risk acknowledgement digest is required for execute");
   }
-  const index = await loadInstalledDecisionIndex();
+  const boundary = await loadInstalledDecisionBoundary();
+  assertRuntimeRequestDecisionBoundary(parsed.request, boundary);
+  const index = boundary.decisionIndex;
   const claudeExecutableIdentity = parsed.command === "preview" ? await observeClaudeExecutableIdentityFromPath() : parsed.approvedClaudeIdentity;
   if (claudeExecutableIdentity === void 0) {
     throw new Error("Approved Claude executable identity is required for execute");
@@ -20521,6 +20796,11 @@ async function runSkillsetManagerRuntime(argv) {
     previewPlan.approvalBinding.preview.riskDisclosures
   );
   const executable = isExecutablePreview(previewPlan);
+  const discoveryCandidates = buildSetupDiscoveryCandidates(
+    index,
+    previewPlan.requiresDomainPrioritySelection ? [] : previewPlan.domainIds,
+    previewPlan.candidates
+  );
   if (parsed.command === "preview") {
     return {
       schemaVersion: 1,
@@ -20528,8 +20808,13 @@ async function runSkillsetManagerRuntime(argv) {
       status: previewPlan.status,
       holdReason: previewPlan.holdReason,
       holdReasons: previewPlan.holdReasons,
+      discoveryCandidates,
       approval: { previewDigest: previewPlan.approvalBinding.previewDigest },
-      reviewSummary: buildSetupReviewSummary(previewPlan.approvalBinding),
+      reviewSummary: buildSetupReviewSummary(
+        previewPlan.approvalBinding,
+        boundary.routingIndex.digest,
+        discoveryCandidates
+      ),
       riskAcknowledgement: acknowledgement,
       ...executable ? {
         approvalObjectAccess: {
@@ -20619,7 +20904,7 @@ function parseArguments(argv) {
     throw new Error("Execute requires exactly request, preview digest, risk acknowledgement, and approved Claude identity");
   }
   const requestRaw = requiredFlag(flags, "--request");
-  const request = validateRequest(parseRequest(requestRaw));
+  const request = validateRuntimeRequest(parseRequest(requestRaw));
   const requestArgument = encodeRequest(request);
   return {
     command,
@@ -20688,7 +20973,7 @@ function parseRequest(encoded) {
     throw new Error("Setup request is not valid base64url JSON");
   }
 }
-function validateRequest(value) {
+function validateRuntimeRequest(value) {
   if (!isRecord8(value)) throw new Error("Setup request must be an object");
   const allowedKeys = /* @__PURE__ */ new Set([
     "schemaVersion",
@@ -20696,14 +20981,16 @@ function validateRequest(value) {
     "platform",
     "observedAt",
     "claudeProbeConsent",
+    "decisionIndexDigest",
+    "routingIndexDigest",
     "goal",
     "domainIds"
   ]);
   if (Object.keys(value).some((key) => !allowedKeys.has(key))) {
     throw new Error("Setup request has an unknown field");
   }
-  if (value.schemaVersion !== 1 || value.language !== "ko" && value.language !== "en" || !isPlatform(value.platform) || !isStrictUtc(value.observedAt) || value.claudeProbeConsent !== "granted") {
-    throw new Error("Setup request has an invalid schema, language, platform, or observedAt");
+  if (value.schemaVersion !== 2 || value.language !== "ko" && value.language !== "en" || !isPlatform(value.platform) || !isStrictUtc(value.observedAt) || value.claudeProbeConsent !== "granted" || typeof value.decisionIndexDigest !== "string" || !/^[a-f0-9]{64}$/u.test(value.decisionIndexDigest) || typeof value.routingIndexDigest !== "string" || !/^[a-f0-9]{64}$/u.test(value.routingIndexDigest)) {
+    throw new Error("Setup request has an invalid schema, language, platform, observedAt, or index binding");
   }
   const hasGoal = typeof value.goal === "string";
   const hasDomains = Array.isArray(value.domainIds);
@@ -20714,11 +21001,13 @@ function validateRequest(value) {
       throw new Error("Setup goal is empty, too long, or contains control characters");
     }
     return {
-      schemaVersion: 1,
+      schemaVersion: 2,
       language: value.language,
       platform: value.platform,
       observedAt: value.observedAt,
       claudeProbeConsent: "granted",
+      decisionIndexDigest: value.decisionIndexDigest,
+      routingIndexDigest: value.routingIndexDigest,
       goal
     };
   }
@@ -20727,13 +21016,23 @@ function validateRequest(value) {
     throw new Error("Setup request requires one or two unique Complete v1 domain IDs");
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     language: value.language,
     platform: value.platform,
     observedAt: value.observedAt,
     claudeProbeConsent: "granted",
+    decisionIndexDigest: value.decisionIndexDigest,
+    routingIndexDigest: value.routingIndexDigest,
     domainIds
   };
+}
+function assertRuntimeRequestDecisionBoundary(request, boundary) {
+  if (request.decisionIndexDigest !== boundary.decisionIndex.digest) {
+    throw new Error("Setup request decision index digest does not match the installed runtime boundary");
+  }
+  if (request.routingIndexDigest !== boundary.routingIndex.digest) {
+    throw new Error("Setup request routing index digest does not match the installed runtime boundary");
+  }
 }
 function setupFixture(request, riskAcknowledged, claudeExecutableIdentity) {
   return {
@@ -21036,7 +21335,7 @@ async function observeClaudeExecutableFile(path) {
   }
   return {
     executablePath,
-    sha256: createHash5("sha256").update(await readFile4(executablePath)).digest("hex")
+    sha256: createHash6("sha256").update(await readFile4(executablePath)).digest("hex")
   };
 }
 function assertClaudeExecutableIdentity(value) {
@@ -21060,7 +21359,7 @@ function sortJson(value) {
   return Object.fromEntries(Object.keys(value).sort().map((key) => [key, sortJson(value[key])]));
 }
 function sha2562(value) {
-  return createHash5("sha256").update(value).digest("hex");
+  return createHash6("sha256").update(value).digest("hex");
 }
 function isDomainId(value) {
   return COMPLETE_V1_DOMAIN_IDS.includes(value);
@@ -21089,5 +21388,7 @@ if (entryPoint !== void 0 && realpathSync(fileURLToPath3(import.meta.url)) === r
   }
 }
 export {
-  runSkillsetManagerRuntime
+  assertRuntimeRequestDecisionBoundary,
+  runSkillsetManagerRuntime,
+  validateRuntimeRequest
 };

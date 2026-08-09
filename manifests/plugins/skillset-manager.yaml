@@ -10,9 +10,18 @@ marketplace: claude-code-skillsets
 trustTier: verified
 permissions:
   filesystem:
-    - plugin-owned install index
-    - user-scoped setup lock and same-directory temporary file
+    - plugin-owned routing index
+    - plugin-owned current and digest-history decision indexes
+    - plugin-owned maintenance policy
+    - user-scoped setup install and execution state with same-directory temporary files
   commands:
+    - date -u +%Y-%m-%dT%H:%M:%SZ after explicit probe consent
+    - restricted bash discovery of canonical Node path and SHA-256 after explicit probe consent
+    - approved canonical Node executable --version
+    - approved canonical Node executable running plugin-owned runtime.mjs preview
+    - approved canonical Node executable running plugin-owned runtime.mjs approval-object
+    - approved canonical Node executable running plugin-owned runtime.mjs execute
+    - approval-bound canonical Node -e state publisher
     - claude --version
     - claude plugin marketplace list
     - claude plugin marketplace list --json
@@ -20,11 +29,10 @@ permissions:
     - command -v -- declared executable
     - claude plugin install approved plugin
     - claude plugin marketplace add separately approved exact marketplace source
-    - atomic rename of approved setup lock temporary file
   network:
     - configured Claude Code marketplaces during approved installation
   externalData: []
-version: 0.1.2
+version: 0.1.3
 status: beta
 requiredDependencies:
   - name: shared-core

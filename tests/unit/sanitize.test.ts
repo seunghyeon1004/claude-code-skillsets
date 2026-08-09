@@ -430,9 +430,23 @@ describe("semantic receipt sanitization", () => {
   it("preserves and independently validates the local read-only semantic RC target", async () => {
     const { source, destination } = await receiptDirectories();
     const receipt = {
-      schemaVersion: 5,
+      schemaVersion: 6,
       receiptType: "local-semantic-rc-target",
       commitSha: "a".repeat(40),
+      routingIndexPath: "plugins/skillset-manager/data/routing-index.json",
+      routingIndexByteLength: 10_081,
+      routingIndexBytesSha256: "b".repeat(64),
+      routingIndexDigest: "c".repeat(64),
+      routingDecisionIndexDigest: "d".repeat(64),
+      catalogVersion: "f".repeat(64),
+      catalogObservedThrough: "2026-08-03T02:30:05Z",
+      catalogExpiresAt: "2026-08-12T02:30:05Z",
+      decisionIndexDigest: "d".repeat(64),
+      decisionIndexByteLength: 489_808,
+      decisionIndexBytesSha256: "e".repeat(64),
+      subscriptionAuthMode: "claude.ai",
+      semanticHarnessStatus: "passed",
+      executableAvailability: "none",
       executionMode: "subscription-claude-cli-fixture-read-only",
       humanReviewGuarantee: "not-guaranteed"
     };
@@ -445,6 +459,32 @@ describe("semantic receipt sanitization", () => {
       humanReviewGuarantee: "guaranteed"
     }));
     await expect(verifySanitizedReceiptTree(destination)).rejects.toThrow();
+
+    for (const invalid of [
+      { routingIndexPath: "generated/routing-index.json" },
+      { routingIndexByteLength: 0 },
+      { routingIndexByteLength: 128 * 1024 + 1 },
+      { routingIndexBytesSha256: "not-a-digest" },
+      { routingIndexDigest: "not-a-digest" },
+      { routingDecisionIndexDigest: "f".repeat(64) },
+      { catalogVersion: "not-a-digest" },
+      { catalogObservedThrough: "not-a-timestamp" },
+      { catalogExpiresAt: "2026-08-03T02:30:05Z" },
+      { decisionIndexDigest: "f".repeat(64) },
+      { decisionIndexByteLength: 0 },
+      { decisionIndexBytesSha256: "not-a-digest" },
+      { subscriptionAuthMode: "api-key" },
+      { semanticHarnessStatus: "not-run" },
+      { executableAvailability: "unknown" },
+      { extra: "not allowed" }
+    ]) {
+      const { source: invalidSource, destination: invalidDestination } = await receiptDirectories();
+      await writeFile(join(invalidSource, "local-semantic-rc-target.json"), JSON.stringify({
+        ...receipt,
+        ...invalid
+      }));
+      await expect(sanitizeReceiptTree(invalidSource, invalidDestination)).rejects.toThrow();
+    }
   });
 
   it("rejects a preexisting destination tree without deleting or truncating it", async () => {

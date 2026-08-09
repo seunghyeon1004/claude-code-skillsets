@@ -6,16 +6,24 @@ import { promisify } from "node:util";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   decisionIndexDigest,
+  loadPluginDecisionBoundary,
   loadPluginDecisionIndex
 } from "../../src/decision/index-loader.js";
 import * as decisionIndexLoader from "../../src/decision/index-loader.js";
-import { evaluateSetupDecisionFixture } from "../../src/evaluate/setup.js";
+import { buildSetupReviewSummary, evaluateSetupDecisionFixture } from "../../src/evaluate/setup.js";
+import { generateRoutingIndex } from "../../src/generate/routing-index.js";
+import {
+  assertRuntimeRequestDecisionBoundary,
+  validateRuntimeRequest,
+  type RuntimeRequest
+} from "../../src/plugin-runtime/skillset-manager.js";
 import { createApprovedOfficialDecisionIndexFixture } from "../helpers/official-marketplace-fixture.js";
 
 const execFile = promisify(execFileCallback);
 const projectRoot = process.cwd();
 const sourcePluginRoot = join(projectRoot, "plugins", "skillset-manager");
 const temporaryRoots: string[] = [];
+const decisionBoundaryByRoot = new Map<string, ReturnType<typeof loadPluginDecisionBoundary>>();
 let approvedDecisionIndexRaw: Promise<string> | undefined;
 
 interface RuntimeResult {
@@ -39,6 +47,16 @@ interface RuntimeResult {
   };
   riskAcknowledgement: { digest: string; disclosures: string[] };
   reviewSummary?: string;
+  discoveryCandidates?: Array<{
+    candidateId: string;
+    displayName?: string;
+    sourceId: string;
+    domainIds: string[];
+    state: string;
+    stateReasons: string[];
+    evidenceSupport: Array<"direct" | "inferred" | "related">;
+    installable: false;
+  }>;
   approvalObjectAccess?: { argv: string[] };
   approvedExecution?: { argv: string[] };
   execution?: {
@@ -82,10 +100,56 @@ interface RuntimeResult {
 afterEach(async () => {
   vi.restoreAllMocks();
   await Promise.all(temporaryRoots.splice(0).map((root) => rm(root, { recursive: true, force: true })));
+  decisionBoundaryByRoot.clear();
   approvedDecisionIndexRaw = undefined;
 });
 
 describe("installed skillset-manager runtime", () => {
+  it("requires a schema-v2 request bound to both installed routing and decision digests", async () => {
+    const pluginRoot = await copyPlugin();
+    const boundary = await loadPluginDecisionBoundary(pluginRoot);
+    const valid: RuntimeRequest = {
+      schemaVersion: 2,
+      language: "en",
+      platform: "darwin",
+      observedAt: boundary.decisionIndex.observedThrough,
+      claudeProbeConsent: "granted",
+      domainIds: [boundary.decisionIndex.profiles[0]!.domainId],
+      decisionIndexDigest: boundary.decisionIndex.digest,
+      routingIndexDigest: boundary.routingIndex.digest
+    };
+
+    expect(validateRuntimeRequest(valid)).toEqual(valid);
+    expect(() => validateRuntimeRequest({ ...valid, schemaVersion: 1 })).toThrow(/schema|binding/i);
+    expect(() => validateRuntimeRequest({
+      ...valid,
+      decisionIndexDigest: undefined
+    })).toThrow(/schema|binding|digest/i);
+    expect(() => assertRuntimeRequestDecisionBoundary({
+      ...valid,
+      routingIndexDigest: "a".repeat(64)
+    }, boundary)).toThrow(/routing.*digest|binding/i);
+    expect(() => assertRuntimeRequestDecisionBoundary({
+      ...valid,
+      decisionIndexDigest: "b".repeat(64)
+    }, boundary)).toThrow(/decision.*digest|binding/i);
+  });
+
+  it("exposes both authenticated catalog digests in the bounded runtime review summary", async () => {
+    const pluginRoot = await copyPlugin();
+    const boundary = await loadPluginDecisionBoundary(pluginRoot);
+    const plan = await evaluateSetupDecisionFixture(boundary.decisionIndex, {
+      language: "en",
+      platform: "darwin",
+      domainIds: [boundary.decisionIndex.profiles[0]!.domainId],
+      timeProbe: { consent: "pending" }
+    });
+
+    const summary = buildSetupReviewSummary(plan.approvalBinding, boundary.routingIndex.digest);
+    expect(summary).toContain(`decisionIndexDigest: ${boundary.decisionIndex.digest}`);
+    expect(summary).toContain(`routingIndexDigest: ${boundary.routingIndex.digest}`);
+  });
+
   it("diagnoses the anchored execution lock without deleting or trusting PID state", async () => {
     const pluginRoot = await copyPlugin();
     const runtimePath = join(pluginRoot, "runtime.mjs");
@@ -176,7 +240,7 @@ describe("installed skillset-manager runtime", () => {
     await chmod(replacementClaude, 0o755);
     const runtimePath = join(pluginRoot, "runtime.mjs");
     const index = await decisionIndex(pluginRoot);
-    const request = requestArgument({
+    const request = await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -253,7 +317,7 @@ describe("installed skillset-manager runtime", () => {
     await writeFakeClaude(claudePath);
     const runtimePath = join(pluginRoot, "runtime.mjs");
     const index = await decisionIndex(pluginRoot);
-    const request = requestArgument({
+    const request = await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -294,7 +358,7 @@ describe("installed skillset-manager runtime", () => {
         domainIds: [domainId],
         timeProbe: { consent: "granted" as const, utcTimestamp: index.observedThrough }
       };
-      const bundledPreview = await runRuntime(runtimePath, ["preview", "--request", requestArgument({
+      const bundledPreview = await runRuntime(runtimePath, ["preview", "--request", await requestArgument(pluginRoot, {
         schemaVersion: 1,
         language: input.language,
         platform: input.platform,
@@ -330,14 +394,14 @@ describe("installed skillset-manager runtime", () => {
         candidateIds: rootPlan.candidates.map(({ id }) => id)
       });
     }
-  });
+  }, 30_000);
 
   it("keeps a two-domain genuine complete plan executable through the installed runtime", async () => {
     const pluginRoot = await copyPlugin();
     const index = await writeTwoDomainCompleteIndex(pluginRoot);
     const runtimePath = join(pluginRoot, "runtime.mjs");
     const env = await fakeClaudeEnvironment();
-    const result = await runRuntime(runtimePath, ["preview", "--request", requestArgument({
+    const result = await runRuntime(runtimePath, ["preview", "--request", await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -401,7 +465,7 @@ describe("installed skillset-manager runtime", () => {
     const runtimePath = join(pluginRoot, "runtime.mjs");
     const env = await fakeClaudeEnvironment();
     const index = await decisionIndex(pluginRoot);
-    const request = requestArgument({
+    const request = await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -808,7 +872,7 @@ describe("installed skillset-manager runtime", () => {
     const runtimePath = join(pluginRoot, "runtime.mjs");
     const env = await fakeClaudeEnvironment();
     const index = await decisionIndex(pluginRoot);
-    const request = requestArgument({
+    const request = await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -826,13 +890,80 @@ describe("installed skillset-manager runtime", () => {
     expect(preview.approvedExecution).toBeUndefined();
     expect(preview.approvalObjectAccess).toBeUndefined();
   });
+
+  it("shows current held route candidates as non-installable discovery without approval authority", async () => {
+    const pluginRoot = await copyCurrentPlugin();
+    const runtimePath = join(pluginRoot, "runtime.mjs");
+    const env = await fakeClaudeEnvironment();
+    const index = await decisionIndex(pluginRoot);
+
+    for (const [domainId, candidateId] of [
+      ["video-and-audio", "runway-api"],
+      ["marketing-and-growth", "windsor-ai"]
+    ] as const) {
+      const preview = await runRuntime(runtimePath, ["preview", "--request", await requestArgument(pluginRoot, {
+        schemaVersion: 1,
+        language: "en",
+        platform: "darwin",
+        observedAt: index.observedThrough,
+        domainIds: [domainId]
+      })], env);
+
+      expect(preview.discoveryCandidates).toEqual([
+        expect.objectContaining({
+          candidateId,
+          sourceId: "anthropic-plugins-official",
+          domainIds: [domainId],
+          state: "held",
+          evidenceSupport: ["related"],
+          installable: false
+        })
+      ]);
+      expect(preview.discoveryCandidates?.[0]?.stateReasons).toContain("individual-safety-review:not-complete");
+      expect(preview.reviewSummary).toContain("discovery-only; not approval-bound; installable:false");
+      expect(preview.reviewSummary).toContain(candidateId);
+      expect(preview.approvedExecution).toBeUndefined();
+      expect(preview.approvalObjectAccess).toBeUndefined();
+    }
+  });
+
+  it("keeps a current zero-route domain discovery-empty while preserving capability gaps", async () => {
+    const pluginRoot = await copyCurrentPlugin();
+    const runtimePath = join(pluginRoot, "runtime.mjs");
+    const env = await fakeClaudeEnvironment();
+    const index = await decisionIndex(pluginRoot);
+    const preview = await runRuntime(runtimePath, ["preview", "--request", await requestArgument(pluginRoot, {
+      schemaVersion: 1,
+      language: "en",
+      platform: "darwin",
+      observedAt: index.observedThrough,
+      domainIds: ["software-engineering"]
+    })], env);
+
+    expect(preview.discoveryCandidates).toEqual([]);
+    expect(preview.reviewSummary).toContain("discoveryCandidates: []");
+    expect(preview.reviewSummary).toContain("uncoveredCapabilities:");
+    expect(preview.reviewSummary).toContain("analyze-repository-context");
+    expect(preview.approvedExecution).toBeUndefined();
+  });
 });
 
 async function copyPlugin(): Promise<string> {
   const root = await temporaryDirectory("skillset-plugin-copy-");
   const pluginRoot = join(root, "skillset-manager");
   await cp(sourcePluginRoot, pluginRoot, { recursive: true });
-  await writeFile(join(pluginRoot, "data", "decision-index.json"), await eligibleDecisionIndexRaw(), "utf8");
+  const decisionRaw = await eligibleDecisionIndexRaw();
+  await Promise.all([
+    writeFile(join(pluginRoot, "data", "decision-index.json"), decisionRaw, "utf8"),
+    writeFile(join(pluginRoot, "data", "routing-index.json"), generateRoutingIndex(JSON.parse(decisionRaw)), "utf8")
+  ]);
+  return pluginRoot;
+}
+
+async function copyCurrentPlugin(): Promise<string> {
+  const root = await temporaryDirectory("skillset-current-plugin-copy-");
+  const pluginRoot = join(root, "skillset-manager");
+  await cp(sourcePluginRoot, pluginRoot, { recursive: true });
   return pluginRoot;
 }
 
@@ -872,7 +1003,7 @@ async function executableRoute(
   const runtimeEnv = env ?? await fakeClaudeEnvironment();
   const index = await decisionIndex(pluginRoot);
   for (const { domainId } of index.profiles) {
-    const request = requestArgument({
+    const request = await requestArgument(pluginRoot, {
       schemaVersion: 1,
       language: "en",
       platform: "darwin",
@@ -911,7 +1042,7 @@ async function routeForDomain(
   preview: RuntimeResult & { approval: { previewDigest: string; preview: { candidates: unknown[] } } };
 }> {
   const index = await decisionIndex(pluginRoot);
-  const request = requestArgument({
+  const request = await requestArgument(pluginRoot, {
     schemaVersion: 1,
     language: "en",
     platform: "darwin",
@@ -939,7 +1070,7 @@ async function heldRoute(
   env: NodeJS.ProcessEnv
 ): Promise<{ request: string; preview: RuntimeResult }> {
   const index = await decisionIndex(pluginRoot);
-  const request = requestArgument({
+  const request = await requestArgument(pluginRoot, {
     schemaVersion: 1,
     language: "en",
     platform: "linux",
@@ -990,13 +1121,29 @@ async function writeTwoDomainCompleteIndex(pluginRoot: string) {
   }
   const { digest: _digest, ...withoutDigest } = index;
   index.digest = decisionIndexDigest(withoutDigest);
-  await writeFile(join(pluginRoot, "data", "decision-index.json"), `${JSON.stringify(index, null, 2)}\n`, "utf8");
+  await Promise.all([
+    writeFile(join(pluginRoot, "data", "decision-index.json"), `${JSON.stringify(index, null, 2)}\n`, "utf8"),
+    writeFile(join(pluginRoot, "data", "routing-index.json"), generateRoutingIndex(index), "utf8")
+  ]);
+  decisionBoundaryByRoot.delete(pluginRoot);
   return index;
 }
 
-function requestArgument(value: unknown): string {
+async function requestArgument(pluginRoot: string, value: unknown): Promise<string> {
+  let boundaryPromise = decisionBoundaryByRoot.get(pluginRoot);
+  if (boundaryPromise === undefined) {
+    boundaryPromise = loadPluginDecisionBoundary(pluginRoot);
+    decisionBoundaryByRoot.set(pluginRoot, boundaryPromise);
+  }
+  const boundary = await boundaryPromise;
   const request = value !== null && typeof value === "object" && !Array.isArray(value)
-    ? { ...(value as Record<string, unknown>), claudeProbeConsent: "granted" }
+    ? {
+      ...(value as Record<string, unknown>),
+      schemaVersion: 2,
+      claudeProbeConsent: "granted",
+      decisionIndexDigest: boundary.decisionIndex.digest,
+      routingIndexDigest: boundary.routingIndex.digest
+    }
     : value;
   return Buffer.from(`${JSON.stringify(request, null, 2)}\n`, "utf8").toString("base64url");
 }

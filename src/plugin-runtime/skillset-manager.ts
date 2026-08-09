@@ -6,11 +6,13 @@ import { delimiter, isAbsolute, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import {
-  loadInstalledDecisionIndex,
+  loadInstalledDecisionBoundary,
   loadInstalledDecisionIndexSet
 } from "../decision/index-loader.js";
+import type { PluginDecisionBoundary } from "../decision/index-loader.js";
 import {
   buildSetupReviewSummary,
+  buildSetupDiscoveryCandidates,
   evaluateSetupDecisionFixture,
   executeAndPublishApprovedSetupCandidates,
   parseSetupInstallLock,
@@ -40,12 +42,14 @@ const MAX_OUTPUT_BYTES = 4 * 1024 * 1024;
 const COMMAND_TIMEOUT_MS = 120_000;
 const runtimePath = fileURLToPath(import.meta.url);
 
-interface RuntimeRequest {
-  schemaVersion: 1;
+export interface RuntimeRequest {
+  schemaVersion: 2;
   language: "ko" | "en";
   platform: Platform;
   observedAt: string;
   claudeProbeConsent: "granted";
+  decisionIndexDigest: string;
+  routingIndexDigest: string;
   goal?: string;
   domainIds?: DomainId[];
 }
@@ -93,7 +97,9 @@ export async function runSkillsetManagerRuntime(argv: readonly string[]): Promis
   if (parsed.command === "execute" && parsed.riskAcknowledgementDigest === undefined) {
     throw new Error("Risk acknowledgement digest is required for execute");
   }
-  const index = await loadInstalledDecisionIndex();
+  const boundary = await loadInstalledDecisionBoundary();
+  assertRuntimeRequestDecisionBoundary(parsed.request, boundary);
+  const index = boundary.decisionIndex;
   const claudeExecutableIdentity = parsed.command === "preview"
     ? await observeClaudeExecutableIdentityFromPath()
     : parsed.approvedClaudeIdentity;
@@ -107,6 +113,11 @@ export async function runSkillsetManagerRuntime(argv: readonly string[]): Promis
     previewPlan.approvalBinding.preview.riskDisclosures
   );
   const executable = isExecutablePreview(previewPlan);
+  const discoveryCandidates = buildSetupDiscoveryCandidates(
+    index,
+    previewPlan.requiresDomainPrioritySelection ? [] : previewPlan.domainIds,
+    previewPlan.candidates
+  );
 
   if (parsed.command === "preview") {
     return {
@@ -115,8 +126,13 @@ export async function runSkillsetManagerRuntime(argv: readonly string[]): Promis
       status: previewPlan.status,
       holdReason: previewPlan.holdReason,
       holdReasons: previewPlan.holdReasons,
+      discoveryCandidates,
       approval: { previewDigest: previewPlan.approvalBinding.previewDigest },
-      reviewSummary: buildSetupReviewSummary(previewPlan.approvalBinding),
+      reviewSummary: buildSetupReviewSummary(
+        previewPlan.approvalBinding,
+        boundary.routingIndex.digest,
+        discoveryCandidates
+      ),
       riskAcknowledgement: acknowledgement,
       ...(executable ? {
         approvalObjectAccess: {
@@ -213,7 +229,7 @@ function parseArguments(argv: readonly string[]): ParsedArguments {
     throw new Error("Execute requires exactly request, preview digest, risk acknowledgement, and approved Claude identity");
   }
   const requestRaw = requiredFlag(flags, "--request");
-  const request = validateRequest(parseRequest(requestRaw));
+  const request = validateRuntimeRequest(parseRequest(requestRaw));
   const requestArgument = encodeRequest(request);
   return {
     command,
@@ -294,18 +310,23 @@ function parseRequest(encoded: string): unknown {
   }
 }
 
-function validateRequest(value: unknown): RuntimeRequest {
+export function validateRuntimeRequest(value: unknown): RuntimeRequest {
   if (!isRecord(value)) throw new Error("Setup request must be an object");
   const allowedKeys = new Set([
-    "schemaVersion", "language", "platform", "observedAt", "claudeProbeConsent", "goal", "domainIds"
+    "schemaVersion", "language", "platform", "observedAt", "claudeProbeConsent",
+    "decisionIndexDigest", "routingIndexDigest", "goal", "domainIds"
   ]);
   if (Object.keys(value).some((key) => !allowedKeys.has(key))) {
     throw new Error("Setup request has an unknown field");
   }
-  if (value.schemaVersion !== 1 || (value.language !== "ko" && value.language !== "en")
+  if (value.schemaVersion !== 2 || (value.language !== "ko" && value.language !== "en")
     || !isPlatform(value.platform) || !isStrictUtc(value.observedAt)
-    || value.claudeProbeConsent !== "granted") {
-    throw new Error("Setup request has an invalid schema, language, platform, or observedAt");
+    || value.claudeProbeConsent !== "granted"
+    || typeof value.decisionIndexDigest !== "string"
+    || !/^[a-f0-9]{64}$/u.test(value.decisionIndexDigest)
+    || typeof value.routingIndexDigest !== "string"
+    || !/^[a-f0-9]{64}$/u.test(value.routingIndexDigest)) {
+    throw new Error("Setup request has an invalid schema, language, platform, observedAt, or index binding");
   }
   const hasGoal = typeof value.goal === "string";
   const hasDomains = Array.isArray(value.domainIds);
@@ -316,11 +337,13 @@ function validateRequest(value: unknown): RuntimeRequest {
       throw new Error("Setup goal is empty, too long, or contains control characters");
     }
     return {
-      schemaVersion: 1,
+      schemaVersion: 2,
       language: value.language,
       platform: value.platform,
       observedAt: value.observedAt,
       claudeProbeConsent: "granted",
+      decisionIndexDigest: value.decisionIndexDigest,
+      routingIndexDigest: value.routingIndexDigest,
       goal
     };
   }
@@ -331,13 +354,27 @@ function validateRequest(value: unknown): RuntimeRequest {
     throw new Error("Setup request requires one or two unique Complete v1 domain IDs");
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     language: value.language,
     platform: value.platform,
     observedAt: value.observedAt,
     claudeProbeConsent: "granted",
+    decisionIndexDigest: value.decisionIndexDigest,
+    routingIndexDigest: value.routingIndexDigest,
     domainIds: domainIds as DomainId[]
   };
+}
+
+export function assertRuntimeRequestDecisionBoundary(
+  request: RuntimeRequest,
+  boundary: PluginDecisionBoundary
+): void {
+  if (request.decisionIndexDigest !== boundary.decisionIndex.digest) {
+    throw new Error("Setup request decision index digest does not match the installed runtime boundary");
+  }
+  if (request.routingIndexDigest !== boundary.routingIndex.digest) {
+    throw new Error("Setup request routing index digest does not match the installed runtime boundary");
+  }
 }
 
 function setupFixture(

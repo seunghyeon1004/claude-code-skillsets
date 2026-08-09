@@ -28,7 +28,7 @@ try {
     plugins: [{
       name: "bundle-decision-contract-schemas",
       setup(buildContext) {
-        // Bundle the three runtime schemas; the source repository keeps using createRequire for its Node CLI.
+        // Bundle the runtime schemas; the source repository keeps using createRequire for its Node CLI.
         buildContext.onLoad({ filter: /[/\\]src[/\\]contracts[/\\]decision\.ts$/ }, async ({ path }) => {
           const source = await readFile(path, "utf8");
           const transformed = source
@@ -36,12 +36,14 @@ try {
               'import { createRequire } from "node:module";',
               [
                 'import decisionIndexSchema from "../../schemas/v3/decision-index.schema.json";',
+                'import decisionRoutingIndexSchema from "../../schemas/v3/routing-index.schema.json";',
                 'import decisionIntentsSchema from "../../schemas/v3/decision-intents.schema.json";',
                 'import decisionCandidateEvidenceSchema from "../../schemas/v3/decision-candidate-evidence.schema.json";'
               ].join("\n")
             )
             .replace('const require = createRequire(import.meta.url);\n', "")
             .replace('const decisionIndexSchema = require("../../schemas/v3/decision-index.schema.json") as object;\n', "")
+            .replace('const decisionRoutingIndexSchema = require("../../schemas/v3/routing-index.schema.json") as object;\n', "")
             .replace('const decisionIntentsSchema = require("../../schemas/v3/decision-intents.schema.json") as object;\n', "")
             .replace('const decisionCandidateEvidenceSchema = require("../../schemas/v3/decision-candidate-evidence.schema.json") as object;\n', "");
           if (transformed === source || transformed.includes("createRequire(import.meta.url)")) {

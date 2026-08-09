@@ -1,3 +1,5 @@
+# Isolated synthetic eligible-runtime unit coverage; not current production catalog semantic truth.
+# Production catalog status is 35/35 candidates held.
 schemaVersion: 1
 recommendationData: plugin-owned-decision-index
 scenarios:
