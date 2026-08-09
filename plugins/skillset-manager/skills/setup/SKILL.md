@@ -133,6 +133,11 @@ time-unknown hold; do not produce executable commands or install anything. A
 manual claim cannot replace the UTC command output. The `date` output must be a
 strict UTC timestamp. Unknown time, an invalid timestamp, or a timestamp on or
 after `catalogExpiresAt` holds every install.
+After a time-unknown or expired hold, explicitly state that any future attempt
+must freshly load and bind both the routing index and full decision index, rerun
+the consented probes, show a new risk acknowledgement, and obtain a separate
+exact approval. Never imply that refreshing only the routing index or reusing an
+older preview is sufficient.
 
 The second disclosed command discovers a local Node publisher without executing
 that prospective binary:

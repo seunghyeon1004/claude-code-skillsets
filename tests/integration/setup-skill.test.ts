@@ -207,6 +207,9 @@ describe("skillset-manager decision-index setup", () => {
     expect(probe).toMatch(/Run no probe without current explicit consent/i);
     expect(probe).toMatch(/time-unknown hold/i);
     expect(probe).toMatch(/Unknown time[\s\S]*timestamp[\s\S]*catalogExpiresAt[\s\S]*holds every install/i);
+    expect(probe).toMatch(
+      /time-unknown or expired hold[\s\S]*freshly load and bind both[\s\S]*routing index[\s\S]*full decision index[\s\S]*consented probes[\s\S]*risk acknowledgement[\s\S]*separate\s+exact approval/i
+    );
     expect(probe).toMatch(/credential or\s+authentication state[\s\S]*shell history[\s\S]*environment variable\s+values[\s\S]*browser data[\s\S]*SSH keys/i);
   });
 
