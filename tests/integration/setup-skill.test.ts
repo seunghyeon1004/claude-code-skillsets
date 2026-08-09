@@ -170,6 +170,13 @@ describe("skillset-manager decision-index setup", () => {
     expect(content).toMatch(/schemaVersion:\s*2/i);
     expect(content).toContain("decisionIndexDigest");
     expect(content).toContain("routingIndexDigest");
+    expect(content).toContain(
+      "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed."
+    );
+    expect(content).toContain(
+      "다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다."
+    );
+    expect(content).toMatch(/exactly one sentence.*request language[\s\S]*do not output both/is);
     expect(content).toMatch(/Do not read.*install-index\.json.*official-marketplace-index\.json.*discovery/i);
     expect(content).not.toMatch(/^## (?:Essential|Recommended|Custom)/m);
   });
@@ -378,6 +385,14 @@ describe("decision setup evaluation corpus", () => {
       return value;
     }));
     expect(loaded).toHaveLength(9);
+    const researchKorean = loaded.find(({ id }) => id === "setup-research-evidence-ko")!;
+    expect((researchKorean.expectedBehaviors as string[]).join(" ")).toContain(
+      "다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다."
+    );
+    const videoEditing = loaded.find(({ id }) => id === "setup-video-editing")!;
+    expect((videoEditing.expectedBehaviors as string[]).join(" ")).toContain(
+      "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed."
+    );
     expect(loaded.every((value) => (value.expectedBehaviors as unknown[]).length > 0)).toBe(true);
     expect(loaded.every((value) => (value.forbiddenBehaviors as unknown[]).length > 0)).toBe(true);
   });

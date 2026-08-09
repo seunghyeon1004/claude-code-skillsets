@@ -101,8 +101,13 @@ phrase with a model, search for alternatives, or match an unindexed synonym.
 
 If there is no unique match, show the localized domain choices and ask the user
 to select one. A tie is ambiguous, not a recommendation. Do not silently choose,
-merge, or prioritize multiple domains. Complete language and goal/domain routing
-before the `awaiting-probe-consent` state; do not ask probe consent first.
+merge, or prioritize multiple domains. After a unique route and before any probe
+disclosure or consent question, output exactly one sentence in the request language;
+do not output both:
+- Korean: `다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다.`
+- English: `No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed.`
+Complete language and goal/domain routing before the `awaiting-probe-consent`
+state; do not ask probe consent first.
 
 ## Probe Consent
 
