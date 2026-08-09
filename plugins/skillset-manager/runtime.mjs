@@ -20761,7 +20761,7 @@ function hasExactObjectKeys(value, expected) {
 
 // src/plugin-runtime/skillset-manager.ts
 var execFile2 = promisify2(execFileCallback2);
-var RISK_ACKNOWLEDGEMENT = "I acknowledge every listed setup risk disclosure for this exact preview.";
+var SETUP_RISK_ACKNOWLEDGEMENT = "I acknowledge every listed risk before separate exact approval.";
 var MAX_GOAL_LENGTH = 512;
 var MAX_OUTPUT_BYTES = 4 * 1024 * 1024;
 var COMMAND_TIMEOUT_MS = 12e4;
@@ -21076,11 +21076,11 @@ function riskAcknowledgementFor(previewDigest, disclosures) {
   const normalized = {
     schemaVersion: 1,
     previewDigest,
-    statement: RISK_ACKNOWLEDGEMENT,
+    statement: SETUP_RISK_ACKNOWLEDGEMENT,
     disclosures: [...disclosures]
   };
   return {
-    statement: RISK_ACKNOWLEDGEMENT,
+    statement: SETUP_RISK_ACKNOWLEDGEMENT,
     disclosures: [...disclosures],
     digest: sha2562(canonicalJson(normalized))
   };
@@ -21388,6 +21388,7 @@ if (entryPoint !== void 0 && realpathSync(fileURLToPath3(import.meta.url)) === r
   }
 }
 export {
+  SETUP_RISK_ACKNOWLEDGEMENT,
   assertRuntimeRequestDecisionBoundary,
   runSkillsetManagerRuntime,
   validateRuntimeRequest

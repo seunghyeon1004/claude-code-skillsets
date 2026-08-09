@@ -321,6 +321,9 @@ Ask for a specific acknowledgement before the final approval question: the user
 must acknowledge incomplete individual safety review, every unknown sensitive
 field, every capability inference that is not an install smoke, and that success
 does not guarantee safety, trust, capability quality, or an exact reviewed revision.
+State the order explicitly: every listed risk must be acknowledged before a
+separate exact approval can be requested. Use the runtime-provided acknowledgement
+statement; do not paraphrase it into weaker or unordered consent.
 This acknowledgement is not installation approval.
 For Shopify official evidence, telemetry, Node/Bash execution behavior, store
 authentication, and secret-flow behavior remain `unknown`; do not describe them

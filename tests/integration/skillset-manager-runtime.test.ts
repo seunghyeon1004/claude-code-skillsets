@@ -1,4 +1,5 @@
 import { execFile as execFileCallback } from "node:child_process";
+import { createHash } from "node:crypto";
 import { access, chmod, cp, mkdtemp, mkdir, readFile, realpath, rm, symlink, writeFile } from "node:fs/promises";
 import { delimiter, join } from "node:path";
 import { tmpdir } from "node:os";
@@ -45,7 +46,7 @@ interface RuntimeResult {
       } | null;
     };
   };
-  riskAcknowledgement: { digest: string; disclosures: string[] };
+  riskAcknowledgement: { statement: string; digest: string; disclosures: string[] };
   reviewSummary?: string;
   discoveryCandidates?: Array<{
     candidateId: string;
@@ -264,6 +265,9 @@ describe("installed skillset-manager runtime", () => {
       sha256: expect.stringMatching(/^[0-9a-f]{64}$/)
     });
     expect(preview.riskAcknowledgement.disclosures).toContain("claude-executable:local-binary-trust-required");
+    expect(preview.riskAcknowledgement.statement).toBe(
+      "I acknowledge every listed risk before separate exact approval."
+    );
 
     const candidate = preview.approval.preview.candidates[0] as {
       pluginName: string;
@@ -413,6 +417,8 @@ describe("installed skillset-manager runtime", () => {
       status: "awaiting-risk-acknowledgement",
       approvedExecution: { argv: expect.any(Array) }
     });
+    expect(flagValue(result.approvedExecution!.argv, "--risk-acknowledgement-digest"))
+      .toBe(result.riskAcknowledgement.digest);
     expect(result).not.toHaveProperty("plan");
     expect(result.approval).toEqual({ previewDigest: expect.stringMatching(/^[a-f0-9]{64}$/) });
     expect(result.approvalObjectAccess).toMatchObject({ argv: expect.any(Array) });
@@ -851,6 +857,18 @@ describe("installed skillset-manager runtime", () => {
       .rejects.toThrow(/preview digest mismatch/i);
     await expect(runRuntime(runtimePath, replaceFlag(executableArgs, "--risk-acknowledgement-digest", "0".repeat(64)), route.env))
       .rejects.toThrow(/acknowledgement digest mismatch/i);
+    const oldAcknowledgementDigest = createHash("sha256").update(`${JSON.stringify({
+      disclosures: route.preview.riskAcknowledgement.disclosures,
+      previewDigest: route.preview.approval.previewDigest,
+      schemaVersion: 1,
+      statement: "I acknowledge every listed setup risk disclosure for this exact preview."
+    }, null, 2)}\n`).digest("hex");
+    expect(oldAcknowledgementDigest).not.toBe(route.preview.riskAcknowledgement.digest);
+    await expect(runRuntime(
+      runtimePath,
+      replaceFlag(executableArgs, "--risk-acknowledgement-digest", oldAcknowledgementDigest),
+      route.env
+    )).rejects.toThrow(/acknowledgement digest mismatch/i);
 
     const held = await heldRoute(runtimePath, pluginRoot, route.env);
     const approvedClaudeIdentity = flagValue(executableArgs, "--approved-claude-identity")!;

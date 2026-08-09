@@ -28,6 +28,7 @@ import { createApprovedOfficialDecisionIndexFixture } from "./approved-official-
 import { loadPluginDecisionBoundary } from "../decision/index-loader.js";
 import { generateRoutingIndex } from "../generate/routing-index.js";
 import {
+  SETUP_RISK_ACKNOWLEDGEMENT,
   validateRuntimeRequest,
   type RuntimeRequest
 } from "../plugin-runtime/skillset-manager.js";
@@ -50,6 +51,7 @@ export interface SetupRuntimePreviewProjection {
   routingIndexDigest: string;
   approvalPreviewDigest: string;
   candidateIds: string[];
+  riskAcknowledgementStatement: typeof SETUP_RISK_ACKNOWLEDGEMENT;
   riskDisclosures: string[];
   approvalBoundaries: {
     riskAcknowledgementRequired: true;
@@ -210,8 +212,8 @@ export function validateAndProjectSetupRuntimePreview(
     ["statement", "disclosures", "digest"],
     "risk acknowledgement"
   );
-  if (typeof risk.statement !== "string" || risk.statement.length < 1) {
-    throw new Error("Setup runtime preview risk acknowledgement statement is missing");
+  if (risk.statement !== SETUP_RISK_ACKNOWLEDGEMENT) {
+    throw new Error("Setup runtime preview risk acknowledgement statement is not the exact approval sequence");
   }
   sha256Field(risk.digest, "risk acknowledgement digest");
   const riskDisclosures = stringArray(risk.disclosures, "risk disclosures", 1, 64);
@@ -297,6 +299,7 @@ export function validateAndProjectSetupRuntimePreview(
     routingIndexDigest,
     approvalPreviewDigest: previewDigest,
     candidateIds,
+    riskAcknowledgementStatement: SETUP_RISK_ACKNOWLEDGEMENT,
     riskDisclosures: [...riskDisclosures],
     approvalBoundaries: {
       riskAcknowledgementRequired: true,

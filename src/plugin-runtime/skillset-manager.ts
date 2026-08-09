@@ -36,7 +36,7 @@ import {
 import type { SetupPublisherRuntimeIdentity } from "../decision/atomic-publisher.js";
 
 const execFile = promisify(execFileCallback);
-const RISK_ACKNOWLEDGEMENT = "I acknowledge every listed setup risk disclosure for this exact preview.";
+export const SETUP_RISK_ACKNOWLEDGEMENT = "I acknowledge every listed risk before separate exact approval.";
 const MAX_GOAL_LENGTH = 512;
 const MAX_OUTPUT_BYTES = 4 * 1024 * 1024;
 const COMMAND_TIMEOUT_MS = 120_000;
@@ -55,7 +55,7 @@ export interface RuntimeRequest {
 }
 
 interface RuntimeRiskAcknowledgement {
-  statement: typeof RISK_ACKNOWLEDGEMENT;
+  statement: typeof SETUP_RISK_ACKNOWLEDGEMENT;
   disclosures: string[];
   digest: string;
 }
@@ -435,11 +435,11 @@ function riskAcknowledgementFor(previewDigest: string, disclosures: readonly str
   const normalized = {
     schemaVersion: 1,
     previewDigest,
-    statement: RISK_ACKNOWLEDGEMENT,
+    statement: SETUP_RISK_ACKNOWLEDGEMENT,
     disclosures: [...disclosures]
   };
   return {
-    statement: RISK_ACKNOWLEDGEMENT,
+    statement: SETUP_RISK_ACKNOWLEDGEMENT,
     disclosures: [...disclosures],
     digest: sha256(canonicalJson(normalized))
   };

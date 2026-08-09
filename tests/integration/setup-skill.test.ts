@@ -229,6 +229,8 @@ describe("skillset-manager decision-index setup", () => {
     expect(preview).toMatch(/decision-index evidence ID[\s\S]*support[\s\S]*direct[\s\S]*inferred[\s\S]*unknown/i);
     expect(preview).toContain("capability-inference:not-install-smoke");
     expect(preview).toMatch(/specific acknowledgement/i);
+    expect(preview).toMatch(/every listed risk[\s\S]*acknowledged before[\s\S]*separate exact approval/i);
+    expect(preview).toMatch(/runtime-provided acknowledgement[\s\S]*do not paraphrase/i);
     expect(preview).toMatch(/not installation approval/i);
     expect(approval).toMatch(/separate[\s\S]*final approval/i);
     expect(approval).toMatch(/decision-index digest[\s\S]*catalog expiry[\s\S]*commands[\s\S]*candidate IDs[\s\S]*execution order[\s\S]*state paths/i);

@@ -88,6 +88,7 @@ describe("read-only setup runtime preview handoff", () => {
       routingIndexDigest: expect.stringMatching(/^[a-f0-9]{64}$/u),
       approvalPreviewDigest: expect.stringMatching(/^[a-f0-9]{64}$/u),
       candidateIds: expect.arrayContaining([expect.stringMatching(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u)]),
+      riskAcknowledgementStatement: "I acknowledge every listed risk before separate exact approval.",
       riskDisclosures: expect.any(Array),
       approvalBoundaries: {
         riskAcknowledgementRequired: true,
@@ -124,7 +125,8 @@ describe("read-only setup runtime preview handoff", () => {
       executionInvoked: false,
       decisionIndexDigest,
       routingIndexDigest,
-      candidateIds: ["fixture-candidate"]
+      candidateIds: ["fixture-candidate"],
+      riskAcknowledgementStatement: "I acknowledge every listed risk before separate exact approval."
     });
     expect(() => project(canonicalJson({ ...preview, extra: "not closed" }), {
       decisionIndexDigest,
@@ -134,6 +136,20 @@ describe("read-only setup runtime preview handoff", () => {
       ...preview,
       reviewSummary: reviewSummary.replace(routingIndexDigest, "d".repeat(64))
     }), { decisionIndexDigest, routingIndexDigest })).toThrow(/routing.*digest|digest.*routing/i);
+    expect(() => project(canonicalJson({
+      ...preview,
+      riskAcknowledgement: {
+        ...(preview.riskAcknowledgement as Record<string, unknown>),
+        statement: "I acknowledge only some risks."
+      }
+    }), { decisionIndexDigest, routingIndexDigest })).toThrow(/acknowledgement.*sequence/i);
+    expect(() => project(canonicalJson({
+      ...preview,
+      riskAcknowledgement: {
+        ...(preview.riskAcknowledgement as Record<string, unknown>),
+        statement: "x".repeat(1024)
+      }
+    }), { decisionIndexDigest, routingIndexDigest })).toThrow(/acknowledgement.*sequence/i);
     expect(() => project(canonicalJson({
       ...preview,
       discoveryCandidates: [{
@@ -250,7 +266,7 @@ function validRuntimePreview(decisionIndexDigest: string, routingIndexDigest: st
     approval: { previewDigest },
     reviewSummary,
     riskAcknowledgement: {
-      statement: "I acknowledge every listed setup risk disclosure for this exact preview.",
+      statement: "I acknowledge every listed risk before separate exact approval.",
       disclosures: riskDisclosures,
       digest: "d".repeat(64)
     },
