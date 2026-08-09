@@ -189,6 +189,9 @@ describe("skillset-manager decision-index setup", () => {
       "향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다."
     );
     expect(content).toMatch(/ambiguous.*exactly one sentence.*do not output.*unique-route/is);
+    expect(content).toMatch(
+      /complete routing-authority statement[\s\S]*do not prefix.*suffix.*repeat[\s\S]*do not replace.*paraphrase/is
+    );
     expect(content).toMatch(/exactly one sentence.*request language[\s\S]*do not output both/is);
     expect(content).toMatch(/Do not read.*install-index\.json.*official-marketplace-index\.json.*discovery/i);
     expect(content).not.toMatch(/^## (?:Essential|Recommended|Custom)/m);

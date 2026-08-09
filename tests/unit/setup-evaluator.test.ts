@@ -235,6 +235,13 @@ describe("setup semantic evaluator", () => {
       expect(request.systemPrompt).toContain("SETUP SKILL ONLY");
       expect(request.systemPrompt).toContain("Trusted Evaluation Harness Binding");
       expect(request.systemPrompt).toContain(request.requiredRead?.path);
+      expect(request.systemPrompt).toMatch(
+        /fixed case-specific sentence,\s+emit that fixed sentence exactly\s+once as its own standalone paragraph,\s+unchanged and unwrapped;\s+preserve all other\s+case-required content outside that paragraph\./u
+      );
+      expect(request.systemPrompt).not.toMatch(/^\t/mu);
+      expect(request.systemPrompt).not.toMatch(
+        /has no candidate selection.*individual safety.*approval.*execution authority/is
+      );
       expect(request.allowedTools).toEqual(["Read"]);
       expect(request.additionalDirectories).toEqual([
         request.requiredRead?.path.replace(/\/data\/routing-index\.json$/, "")
@@ -359,6 +366,10 @@ describe("setup semantic evaluator", () => {
     expect(setupResponseInvariant(`${authority}\n${authority}`, evaluation).join(" ")).toMatch(
       /ambiguous routing authority.*exactly once/i
     );
+    expect(setupResponseInvariant(
+      "Routing data has no candidate, safety, approval, or execution authority; routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.",
+      evaluation
+    ).join(" ")).toMatch(/ambiguous routing authority.*exactly once/i);
     expect(setupResponseInvariant(`${authority}\n${uniqueRoute}`, evaluation).join(" ")).toMatch(
       /unique-route.*forbidden/i
     );

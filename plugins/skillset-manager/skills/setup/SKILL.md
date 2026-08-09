@@ -101,7 +101,7 @@ phrase with a model, search for alternatives, or match an unindexed synonym.
 
 If there is no unique match, show the localized domain choices and ask the user to
 select one. A tie is ambiguous, not a recommendation. Do not silently choose, merge,
-or prioritize multiple domains. For an ambiguous route, output exactly one sentence in the request language; do not output both:
+or prioritize multiple domains. For an ambiguous route, output exactly one sentence below as one complete standalone paragraph in the request language; do not output both. It is the complete routing-authority statement: do not prefix, suffix, or repeat it, and do not replace it with a paraphrase:
 - Korean: `라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다.`
 - English: `Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.`
 Do not output the unique-route sentence before one domain is selected. After a unique
