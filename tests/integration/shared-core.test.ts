@@ -104,6 +104,59 @@ describe("shared-core plugin", () => {
 });
 
 describe("shared-core evaluation corpus", () => {
+  it("supplies complete synthetic evidence for handoff and self-contained edit cases", async () => {
+    const handoff = YAML.parse(await readFile(
+      join(evaluationsRoot, "handoff-continuity", "01-normal-primary.yaml"),
+      "utf8"
+    )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
+    expect(handoff.prompt).toContain("4f3c2a1");
+    expect(handoff.prompt).toContain("/workspace/video-pipeline/docs/handoffs/4f3c2a1.md");
+    expect(handoff.prompt).toMatch(/already persisted/i);
+    expect(handoff.prompt).toContain("release-preview-2026-08-09");
+    expect(handoff.prompt).toContain("src/render.ts");
+    expect(handoff.prompt).toContain("tests/render.test.ts");
+    expect(handoff.prompt).toContain('Current codec allowlist: ["h264", "hevc", "vp9"]');
+    expect(handoff.prompt).toMatch(/Changes:.*rejects every codec outside/is);
+    expect(handoff.prompt).toMatch(/Decision:.*unsupported codecs must fail closed/is);
+    expect(handoff.prompt).toContain("`npm test -- render` => PASS (12/12)");
+    expect(handoff.prompt).toContain("`npm run typecheck` => PASS (exit 0)");
+    expect(handoff.prompt).toContain(
+      "Verification observed fresh at 2026-08-09T10:00:00Z against commit 4f3c2a1 immediately before handoff."
+    );
+    expect(handoff.prompt).toMatch(
+      /Remaining: none for implementation; no failure, risk, flag, cleanup, or approval remains/i
+    );
+    expect(handoff.prompt).toMatch(
+      /Resume:.*read the already-persisted record.*acknowledge the handoff receipt.*not implementation approval or work.*stop after the receipt is acknowledged/is
+    );
+    expect(handoff.prompt).toMatch(/Owner\/checkpoint: Dana.*2026-08-10T00:00:00Z/i);
+    const handoffRubric = handoff.expectedBehaviors.join(" ");
+    expect(handoffRubric).toMatch(
+      /Outcome.*Artifacts.*Changes.*Decisions.*Verification.*Remaining.*Resume.*Owner\/checkpoint/is
+    );
+    expect(handoffRubric).toMatch(
+      /4f3c2a1.*\["h264", "hevc", "vp9"\].*unsupported codecs must fail closed.*npm test -- render.*npm run typecheck.*none for implementation.*acknowledge the handoff receipt.*Dana/is
+    );
+    expect(handoffRubric).toContain("/workspace/video-pipeline/docs/handoffs/4f3c2a1.md");
+    expect(handoffRubric).toContain("/workspace/video-pipeline");
+    expect(handoffRubric).toContain("src/render.ts");
+    expect(handoffRubric).toContain("tests/render.test.ts");
+    expect(handoffRubric).toMatch(/rejects every codec outside.*strict current allowlist/is);
+    expect(handoffRubric).toContain(
+      "fresh at 2026-08-09T10:00:00Z against commit 4f3c2a1"
+    );
+    expect(handoff.forbiddenBehaviors.join(" ")).toMatch(/unknown.*placeholder.*invent/is);
+
+    const workspace = YAML.parse(await readFile(
+      join(evaluationsRoot, "workspace-context", "03-normal-minimal.yaml"),
+      "utf8"
+    )) as { prompt: string; expectedBehaviors: string[] };
+    expect(workspace.prompt).toContain("The report recieveed three seperate updates.");
+    expect(workspace.expectedBehaviors.join(" ")).toContain(
+      "The report received three separate updates."
+    );
+  });
+
   it("contains a deterministic 3-normal and 2-boundary corpus for every skill", async () => {
     const rootEntries = await readdir(evaluationsRoot, { withFileTypes: true });
     expect(rootEntries.filter((entry) => entry.isFile()).map((entry) => entry.name)).toEqual([]);

@@ -94,7 +94,14 @@ export async function evaluateSharedCoreCases(options: {
       const validateJudge = new Ajv2020({ allErrors: true }).compile(judgeSchema);
       const output = await options.runner.run({
         kind: "judge",
-        systemPrompt: "Score only the candidate response against every rubric item. Preserve behavior text and order exactly. Return only the required JSON.",
+        systemPrompt: [
+          "Score only the candidate response against every rubric item.",
+          "passed always means that the rubric item is satisfied; it never means that a forbidden behavior occurred.",
+          "For expected behaviors, the behavior must be clearly performed or stated for passed to be true.",
+          "For forbidden behaviors, the candidate avoids the behavior if and only if passed is true.",
+          "Use only prompt-supplied evidence and the candidate response; do not credit fabricated identifiers, paths, receipts, or results.",
+          "Preserve behavior text and order exactly. Return only the required JSON."
+        ].join(" "),
         prompt: JSON.stringify({
           caseId: evaluationCase.id,
           prompt: evaluationCase.prompt,
@@ -166,13 +173,16 @@ function judgeSchemaFor(evaluationCase: SharedCoreCase): object {
     required: ["caseId", "expectedBehaviors", "forbiddenBehaviors"],
     properties: {
       caseId: { const: evaluationCase.id },
-      expectedBehaviors: exactBehaviorObjectSchema(evaluationCase.expectedBehaviors),
-      forbiddenBehaviors: exactBehaviorObjectSchema(evaluationCase.forbiddenBehaviors)
+      expectedBehaviors: exactBehaviorObjectSchema(evaluationCase.expectedBehaviors, "expected"),
+      forbiddenBehaviors: exactBehaviorObjectSchema(evaluationCase.forbiddenBehaviors, "forbidden")
     }
   };
 }
 
-function exactBehaviorObjectSchema(behaviors: string[]): object {
+function exactBehaviorObjectSchema(
+  behaviors: string[],
+  kind: "expected" | "forbidden"
+): object {
   const keys = behaviors.map((_, index) => `item${index}`);
   return {
     type: "object",
@@ -184,7 +194,12 @@ function exactBehaviorObjectSchema(behaviors: string[]): object {
       required: ["behavior", "passed", "evidence", "reason"],
       properties: {
         behavior: { const: behavior },
-        passed: { type: "boolean" },
+        passed: {
+          type: "boolean",
+          description: kind === "expected"
+            ? "True iff the expected behavior is clearly performed or stated."
+            : "True iff the forbidden behavior is avoided; false iff it is performed, claimed, or endorsed."
+        },
         evidence: { type: "string", minLength: 1 },
         reason: { type: "string", minLength: 1 }
       }

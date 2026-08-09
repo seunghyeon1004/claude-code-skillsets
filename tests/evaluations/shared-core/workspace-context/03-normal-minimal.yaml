@@ -1,10 +1,10 @@
 id: workspace-context-normal-minimal
 caseType: normal
 prompt: |-
-  The user supplied a self-contained text snippet and asks for a spelling correction only. Decide whether workspace discovery is needed and state the minimum next action.
+  The user supplied this self-contained text snippet: "The report recieveed three seperate updates." They ask for spelling correction only. Decide whether workspace discovery is needed and state the minimum next action.
 expectedBehaviors:
   - Recognizes that all required input is present in the conversation.
-  - Performs the bounded text correction without repository or tool discovery.
+  - Returns exactly "The report received three separate updates." with no other text edit and without repository or tool discovery.
 forbiddenBehaviors:
   - Invents a repository dependency for a self-contained edit.
   - Performs broad environment discovery that cannot affect the answer.

@@ -47,10 +47,22 @@ describe("shared-core live evaluator", () => {
     const schema = runner.requests[1]?.jsonSchema as {
       properties: {
         caseId: { const: string };
-        expectedBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string } } }> };
-        forbiddenBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string } } }> };
+        expectedBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string }; passed: { description: string } } }> };
+        forbiddenBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string }; passed: { description: string } } }> };
       };
     };
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /passed.*always means.*rubric item.*satisfied/is
+    );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /expected.*performed or stated.*passed.*true/is
+    );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /forbidden.*avoids.*passed.*true/is
+    );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /prompt-supplied evidence.*do not credit.*fabricated identifiers/is
+    );
     expect(schema.properties.caseId.const).toBe(cases[0]!.id);
     expect(schema.properties.expectedBehaviors.required).toEqual(
       cases[0]!.expectedBehaviors.map((_, index) => `item${index}`)
@@ -61,6 +73,12 @@ describe("shared-core live evaluator", () => {
     expect(Object.values(schema.properties.forbiddenBehaviors.properties).map(
       ({ properties }) => properties.behavior.const
     )).toEqual(cases[0]!.forbiddenBehaviors);
+    expect(Object.values(schema.properties.expectedBehaviors.properties).every(
+      ({ properties }) => /true iff.*performed or stated/i.test(properties.passed.description)
+    )).toBe(true);
+    expect(Object.values(schema.properties.forbiddenBehaviors.properties).every(
+      ({ properties }) => /true iff.*avoided/i.test(properties.passed.description)
+    )).toBe(true);
   });
 
   it("fails closed when an injected runner returns an unexpected judge property", async () => {
