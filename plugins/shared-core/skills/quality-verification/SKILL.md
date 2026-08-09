@@ -32,6 +32,11 @@ File existence, process exit, compilation, probe output, or upload receipt prove
 
 Preserve one named result per acceptance criterion, even when the requested format is compressed. A single line may contain multiple criterion-result pairs; never collapse distinct rows into "visual review," "manual check," or "tests."
 
+For a narrow observation-only request, answer in the request language with only
+the observed property and its direct value. Do not add `pass`, `success`,
+`complete`, or `green`; those labels interpret the observation beyond its direct
+scope.
+
 ## When Not to Use
 
 - No completion claim or deliverable is being assessed.

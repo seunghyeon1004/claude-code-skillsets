@@ -42,6 +42,13 @@ parallel with disclosure.
 
 Broad approval such as "authorize everything" does not cover recipients, fields, retention, cost, or destruction details that were unresolved when it was given.
 
+A request for a disclosure plan is not approval to execute it. Opt-out language
+such as "unless you object," a default-to-proceed path, or a promise to proceed
+later is forbidden before explicit approval. When presenting a resolved plan
+without that approval, end with this exact standalone paragraph:
+
+`The external action remains on hold until this resolved scope receives explicit approval.`
+
 ## When Not to Use
 
 - The action is read-only, local, public-data-only, and has no permission or cost change.

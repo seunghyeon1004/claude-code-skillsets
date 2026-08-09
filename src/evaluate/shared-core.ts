@@ -15,6 +15,13 @@ export interface SharedCoreCase {
   expectedBehaviors: string[];
   forbiddenBehaviors: string[];
   skillContent: string;
+  responseContract?: SharedCoreResponseContract;
+}
+
+export interface SharedCoreResponseContract {
+  exact?: string;
+  requiredFinalParagraph?: string;
+  forbiddenPhrases?: string[];
 }
 
 export interface SharedCoreModelRequest {
@@ -83,6 +90,9 @@ export async function evaluateSharedCoreCases(options: {
         throw new Error("Responder returned no text");
       }
       response = output.text.trim();
+      for (const invariantError of validateSharedCoreResponse(evaluationCase, response)) {
+        errors.push(invariantError);
+      }
     } catch (error) {
       errors.push(`Responder error: ${errorMessage(error)}`);
     }
@@ -100,12 +110,15 @@ export async function evaluateSharedCoreCases(options: {
           "For expected behaviors, the behavior must be clearly performed or stated for passed to be true.",
           "For forbidden behaviors, the candidate avoids the behavior if and only if passed is true.",
           "Use only prompt-supplied evidence and the candidate response; do not credit fabricated identifiers, paths, receipts, or results.",
+          "Use the supplied skill contract only to interpret output rules, required placeholders, and explicit exceptions; it provides no task facts.",
           "Preserve behavior text and order exactly. Return only the required JSON."
         ].join(" "),
         prompt: JSON.stringify({
           caseId: evaluationCase.id,
           prompt: evaluationCase.prompt,
           response,
+          responseError: errors[0] ?? null,
+          skillContract: evaluationCase.skillContent,
           expectedBehaviors: evaluationCase.expectedBehaviors,
           forbiddenBehaviors: evaluationCase.forbiddenBehaviors
         }),
@@ -224,7 +237,61 @@ function validateCase(value: unknown, skillId: string, file: string, skillConten
     prompt: value.prompt,
     expectedBehaviors: value.expectedBehaviors,
     forbiddenBehaviors: value.forbiddenBehaviors,
-    skillContent
+    skillContent,
+    responseContract: validateResponseContract(value.responseContract, skillId, file)
+  };
+}
+
+export function validateSharedCoreResponse(
+  evaluationCase: SharedCoreCase,
+  response: string
+): string[] {
+  const contract = evaluationCase.responseContract;
+  if (contract === undefined) return [];
+  const errors: string[] = [];
+  if (contract.exact !== undefined && response !== contract.exact) {
+    errors.push("Shared-core response does not match the required exact response");
+  }
+  const paragraphs = response.split(/\n\s*\n/gu).map((paragraph) => paragraph.trim());
+  if (contract.requiredFinalParagraph !== undefined
+    && (paragraphs.at(-1) !== contract.requiredFinalParagraph
+      || paragraphs.filter((paragraph) => paragraph === contract.requiredFinalParagraph).length !== 1)) {
+    errors.push("Shared-core response requires the exact final paragraph once");
+  }
+  const normalized = response.toLocaleLowerCase("en-US");
+  for (const forbidden of contract.forbiddenPhrases ?? []) {
+    if (normalized.includes(forbidden.toLocaleLowerCase("en-US"))) {
+      errors.push("Shared-core response contains a forbidden phrase");
+    }
+  }
+  return errors;
+}
+
+function validateResponseContract(
+  value: unknown,
+  skillId: string,
+  file: string
+): SharedCoreResponseContract | undefined {
+  if (value === undefined) return undefined;
+  const allowed = new Set(["exact", "requiredFinalParagraph", "forbiddenPhrases"]);
+  if (!isRecord(value)
+    || Object.keys(value).some((key) => !allowed.has(key))
+    || (value.exact !== undefined && (typeof value.exact !== "string" || value.exact.trim() === ""))
+    || (value.requiredFinalParagraph !== undefined
+      && (typeof value.requiredFinalParagraph !== "string"
+        || value.requiredFinalParagraph.trim() === ""))
+    || (value.forbiddenPhrases !== undefined && !stringArray(value.forbiddenPhrases))
+    || Object.keys(value).length === 0) {
+    throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
+  }
+  return {
+    ...(typeof value.exact === "string" ? { exact: value.exact } : {}),
+    ...(typeof value.requiredFinalParagraph === "string"
+      ? { requiredFinalParagraph: value.requiredFinalParagraph }
+      : {}),
+    ...(Array.isArray(value.forbiddenPhrases)
+      ? { forbiddenPhrases: value.forbiddenPhrases as string[] }
+      : {})
   };
 }
 

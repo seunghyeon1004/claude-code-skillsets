@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import {
   evaluateSharedCoreCases,
   loadSharedCoreCases,
+  validateSharedCoreResponse,
   type SharedCoreModelRequest,
   type SharedCoreModelRunner
 } from "../../src/evaluate/shared-core.js";
@@ -29,6 +30,28 @@ describe("shared-core live evaluator", () => {
     expect(cases.filter(({ caseType }) => caseType === "normal")).toHaveLength(24);
     expect(cases.filter(({ caseType }) => caseType === "boundary")).toHaveLength(16);
     expect(cases.map(({ key }) => key)).toEqual(cases.map(({ key }) => key).sort());
+  });
+
+  it("enforces exact observations and explicit-approval holds deterministically", async () => {
+    const cases = await loadSharedCoreCases(projectRoot);
+    const quality = cases.find(({ key }) => key === "quality-verification--03-normal-minimal")!;
+    const risk = cases.find(({ key }) => key === "risk-privacy-permissions--01-normal-primary")!;
+
+    expect(validateSharedCoreResponse(quality, "Observed exit code: 0.")).toEqual([]);
+    expect(validateSharedCoreResponse(quality, "Exit code: 0 - Pass.").join(" ")).toMatch(
+      /exact response/i
+    );
+    const hold = "The external action remains on hold until this resolved scope receives explicit approval.";
+    expect(validateSharedCoreResponse(risk, `Scoped plan.\n\n${hold}`)).toEqual([]);
+    expect(validateSharedCoreResponse(risk, `${hold}\n\nI'll proceed unless you object.`).join(" ")).toMatch(
+      /forbidden phrase/i
+    );
+    expect(validateSharedCoreResponse(risk, `${hold}\n\nNext: upload the minimized file.`).join(" ")).toMatch(
+      /final paragraph/i
+    );
+    expect(validateSharedCoreResponse(risk, `${hold}\n\n${hold}`).join(" ")).toMatch(
+      /final paragraph/i
+    );
   });
 
   it("uses isolated skill response calls and strict separate judge calls", async () => {
@@ -63,6 +86,13 @@ describe("shared-core live evaluator", () => {
     expect(runner.requests[1]?.systemPrompt).toMatch(
       /prompt-supplied evidence.*do not credit.*fabricated identifiers/is
     );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /skill contract.*output rules.*(?:not|no) task facts/is
+    );
+    const judgePayload = JSON.parse(runner.requests[1]?.prompt ?? "null") as {
+      skillContract?: string;
+    };
+    expect(judgePayload.skillContract).toBe(cases[0]!.skillContent);
     expect(schema.properties.caseId.const).toBe(cases[0]!.id);
     expect(schema.properties.expectedBehaviors.required).toEqual(
       cases[0]!.expectedBehaviors.map((_, index) => `item${index}`)
