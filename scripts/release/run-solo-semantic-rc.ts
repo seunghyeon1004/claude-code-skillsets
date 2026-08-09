@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { constants } from "node:fs";
 import { access, lstat, readFile, realpath } from "node:fs/promises";
+import { userInfo } from "node:os";
 import { delimiter, dirname, isAbsolute, join, resolve } from "node:path";
 import { validateDecisionIndex, validateDecisionRoutingIndex } from "../../src/contracts/decision.js";
 import { assertDecisionIndexIntegrity } from "../../src/decision/index-loader.js";
@@ -31,7 +32,7 @@ const forbiddenEnvironmentKeys = [
   "CLAUDE_CODE_SKIP_FOUNDRY_AUTH"
 ] as const;
 
-type SafeChildEnvironment = Record<"PATH" | "HOME" | "TMPDIR" | "LANG" | "LC_ALL" | "NO_COLOR" | "TERM", string>;
+type SafeChildEnvironment = Record<"PATH" | "HOME" | "TMPDIR" | "LANG" | "LC_ALL" | "NO_COLOR" | "TERM" | "USER", string>;
 type EvaluationChildEnvironment = SafeChildEnvironment & Record<
   "SEMANTIC_RC_CLAUDE_EXECUTABLE" | "SEMANTIC_RC_CLAUDE_SHA256",
   string
@@ -266,9 +267,11 @@ function assertNoAlternateProviderEnvironment(environment: NodeJS.ProcessEnv): v
 function safeChildEnvironment(environment: NodeJS.ProcessEnv): SafeChildEnvironment {
   const path = requiredEnvironmentValue(environment, "PATH");
   const home = requiredEnvironmentValue(environment, "HOME");
+  const username = userInfo().username.trim();
   const temporary = environment.TMPDIR === undefined || environment.TMPDIR === ""
     ? "/tmp"
     : environment.TMPDIR;
+  if (username === "") throw new Error("OS username is required for semantic RC");
   if (!isAbsolute(home) || !isAbsolute(temporary)) {
     throw new Error("HOME and TMPDIR must be absolute for semantic RC");
   }
@@ -279,7 +282,8 @@ function safeChildEnvironment(environment: NodeJS.ProcessEnv): SafeChildEnvironm
     LANG: "C",
     LC_ALL: "C",
     NO_COLOR: "1",
-    TERM: "dumb"
+    TERM: "dumb",
+    USER: username
   };
 }
 

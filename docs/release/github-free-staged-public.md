@@ -708,7 +708,9 @@ nonempty subscription type. API-key, auth-token, custom-base-URL, Bedrock, Verte
 and Foundry routing environment variables fail the gate. Authentication email,
 organization, tokens, headers, cookies, and the inherited environment are never
 written to the receipt. Every evaluation child receives only the runner's fixed
-non-secret environment allowlist. The runner executes canonical `tsx` directly,
+non-secret environment allowlist, including the operating-system-derived `USER`
+required for macOS Keychain subscription lookup; an inherited `USER` value is ignored.
+The runner executes canonical `tsx` directly,
 outside the npm lifecycle, and passes the verified Claude executable absolute path
 and SHA-256 to each evaluator for validation before and after every model call.
 

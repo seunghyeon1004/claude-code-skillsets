@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { execFileSync, spawnSync } from "node:child_process";
 import { access, chmod, mkdir, mkdtemp, readFile, realpath, rm, symlink, writeFile } from "node:fs/promises";
-import { homedir, tmpdir } from "node:os";
+import { homedir, tmpdir, userInfo } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
@@ -113,6 +113,7 @@ describe("local sole-maintainer semantic RC", () => {
     }
 
     const dependencies = successfulDependencies(root);
+    dependencies.environment = { ...dependencies.environment, USER: "attacker-controlled" };
     dependencies.resolveExecutable = async (name) => {
       return join(root, "bin", name === "claude" ? "claude-link" : "npm");
     };
@@ -125,8 +126,9 @@ describe("local sole-maintainer semantic RC", () => {
       observedExecutable = executable;
       expect(args).toEqual(["auth", "status", "--json"]);
       expect(Object.keys(environment).sort()).toEqual([
-        "HOME", "LANG", "LC_ALL", "NO_COLOR", "PATH", "TERM", "TMPDIR"
+        "HOME", "LANG", "LC_ALL", "NO_COLOR", "PATH", "TERM", "TMPDIR", "USER"
       ]);
+      expect(environment.USER).toBe(userInfo().username);
       return claudeAiStatus();
     };
     await expect(module.verifyLocalSemanticRcTarget({ root, commitSha }, dependencies)).resolves.toBeDefined();
@@ -225,8 +227,9 @@ describe("local sole-maintainer semantic RC", () => {
       expect(Object.keys(call.environment).sort()).toEqual([
         "HOME", "LANG", "LC_ALL", "NO_COLOR", "PATH",
         "SEMANTIC_RC_CLAUDE_EXECUTABLE", "SEMANTIC_RC_CLAUDE_SHA256",
-        "TERM", "TMPDIR"
+        "TERM", "TMPDIR", "USER"
       ]);
+      expect(call.environment.USER).toBe(userInfo().username);
       expect(call.environment).not.toHaveProperty("ANTHROPIC_API_KEY");
       expect(call.environment.PATH?.split(":" )[0]).toBe(dirname(process.execPath));
       expect(call.environment.SEMANTIC_RC_CLAUDE_EXECUTABLE).toBe(join(root, "bin", "claude"));
