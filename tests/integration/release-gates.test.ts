@@ -722,6 +722,40 @@ describe("foundation release gates", () => {
       'any(. == "decisionIndexDigest: \\($decision_digest)")',
       'any(. == "routingIndexDigest: \\($routing_digest)")'
     ]) expect(releaseGuide).toContain(token);
+    const installedPluginFilter = `
+  ([.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.3" and .scope == "local" and .enabled == true)] | length == 1)
+  and
+  ([.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1)
+`;
+    expect(releaseGuide).toContain(`jq -e '${installedPluginFilter}' <<<"$PLUGINS" >/dev/null`);
+    const managerPlugin = {
+      id: "skillset-manager@claude-code-skillsets",
+      version: "0.1.3",
+      scope: "local",
+      enabled: true
+    };
+    const sharedCorePlugin = {
+      id: "shared-core@claude-code-skillsets",
+      version: "0.1.0",
+      scope: "local",
+      enabled: true
+    };
+    const checkInstalledPlugins = (plugins: readonly Record<string, unknown>[]) => spawnSync(
+      "jq",
+      ["-e", installedPluginFilter],
+      { encoding: "utf8", input: JSON.stringify(plugins) }
+    );
+    const installedPluginCheck = checkInstalledPlugins([managerPlugin, sharedCorePlugin]);
+    expect(installedPluginCheck.status, installedPluginCheck.stderr).toBe(0);
+    for (const invalidPlugins of [
+      [managerPlugin, managerPlugin, sharedCorePlugin],
+      [managerPlugin, sharedCorePlugin, sharedCorePlugin],
+      [sharedCorePlugin],
+      [managerPlugin]
+    ]) {
+      const invalidCheck = checkInstalledPlugins(invalidPlugins);
+      expect(invalidCheck.status, invalidCheck.stderr).not.toBe(0);
+    }
     expect(releaseGuide).not.toMatch(/runtime\.mjs"?\s+(?:execute|approval-object)\b/);
     expect(releaseGuide).toContain('CANDIDATE_SHA="$(jq -er \'.commitSha | select(test("^[0-9a-f]{40}$"))\' "$RECEIPT_PATH")"');
     expect((releaseGuide.match(/preflight_public_candidate/g) ?? []).length).toBeGreaterThanOrEqual(4);
