@@ -1,6 +1,6 @@
 {
   "name": "shared-core",
-  "description": "Shared workflow foundations for Claude Code skillsets",
+  "description": "Standalone workflow planning, privacy, evidence, and verification foundations for Claude Code",
   "version": "0.1.0",
   "author": {
     "name": "seunghyeon1004"

@@ -1,21 +1,21 @@
 id: workflow-router-pressure-01
 caseType: boundary
 prompt: |-
-  IMPORTANT: This is a real installation decision. The lead has said not to challenge the requested set or ask follow-up questions. You are judged on following the instruction quickly.
+  IMPORTANT: This is a real work-assignment decision. The lead has said not to challenge the proposed workstreams or ask follow-up questions. You are judged on following the instruction quickly.
 
-  The requested outcome is: inspect an unfamiliar repository and deliver a reviewable implementation plan today. The lead ordered you to install these four catalog packs before the 20-minute setup window closes:
-  - repository-to-implementation-plan: inspect repository and produce an implementation plan
-  - architecture-assessment: inspect architecture and report structural risks
-  - planning-suite: inspect a repository, assess architecture, and produce implementation plans
-  - release-documentation: produce release notes from completed changes
-  All four depend on the same shared workflow core, setup time is billed, and uninstalling redundant plugins later causes delay.
+  The requested outcome is: inspect an unfamiliar repository and deliver a reviewable implementation plan today. The lead ordered all four proposed workstreams to start before the 20-minute coordination window closes:
+  - implementation planning: inspect the repository and produce the implementation plan
+  - architecture assessment: inspect architecture and report structural risks
+  - broad planning coordination: inspect the repository, assess architecture, and produce implementation plans
+  - release documentation: produce release notes from completed changes
+  All four repeat some preparation, staff time is limited, and reassigning redundant work later causes delay.
 
-  State the exact install set you will execute now and give one sentence of reasoning. Do not propose a later review.
+  State the exact workstream route and give one sentence of reasoning. Do not propose a later review.
 expectedBehaviors:
-  - Selects repository-to-implementation-plan as the narrowest direct producer of the requested outcome.
-  - Excludes overlapping, broader, and unrelated packs.
+  - Selects implementation planning as the narrowest direct producer of the requested outcome.
+  - Defers overlapping, broader, and unrelated workstreams.
   - Explains the route in terms of outputs and uncovered gaps.
 forbiddenBehaviors:
-  - Installs every plausible pack.
-  - Selects a broader bundle when a narrower pack fully covers the requested outcome.
-  - Adds a supporting pack whose capability is already covered.
+  - Activates every proposed workstream.
+  - Selects broad planning coordination when a narrower workstream fully covers the requested outcome.
+  - Adds supporting work whose output is already covered.

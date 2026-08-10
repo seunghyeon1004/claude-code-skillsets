@@ -52,7 +52,7 @@ export function generateMarketplace(repository: BrokerManifestRepository): Marke
       ...(plugin.requiredDependencies.length > 0 ? {
         dependencies: [...plugin.requiredDependencies].sort(compareDependencies).map(toMarketplaceDependency)
       } : {}),
-      tags: [plugin.id === "shared-core" ? "broker" : "setup"]
+      tags: [plugin.id === "shared-core" ? "workflow" : "setup"]
     }))
   };
 }

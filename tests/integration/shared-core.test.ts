@@ -25,7 +25,7 @@ const expectedDescriptionContracts = {
   "plan-and-checkpoints": /dependency-and-checkpoint record[\s\S]*not for general implementation plans, execution/i,
   "quality-verification": /criterion-to-evidence verification matrix[\s\S]*not for generic coding completion, generic test generation/i,
   "risk-privacy-permissions": /seven-field risk record[\s\S]*not for domain compliance interpretation, generic security review/i,
-  "workflow-router": /provided catalog categories and packs[\s\S]*Primary, Supporting, Deferred, and Coverage[\s\S]*not for general skill, agent, tool/i,
+  "workflow-router": /one defined request[\s\S]*Primary workstream, Supporting workstream, Deferred work, and Coverage[\s\S]*not for catalog, pack, skill, agent, tool, plugin/i,
   "workspace-context": /bounded context record of Instructions, Capabilities, Sources, Constraints[\s\S]*not for general repository exploration, feature implementation/i
 } as const;
 const expectedEvaluationFiles = [
@@ -66,6 +66,15 @@ describe("shared-core plugin", () => {
       .sort();
 
     expect(directories).toEqual(expectedSkills);
+  });
+
+  it("keeps workflow routing independent from catalogs and component selection", async () => {
+    const content = await readFile(join(skillsRoot, "workflow-router", "SKILL.md"), "utf8");
+
+    expect(content).toMatch(/already-proposed work[^.]*one defined request/is);
+    expect(content).toMatch(/does not discover, recommend, select, or install external components/i);
+    expect(content).toMatch(/do not introduce[^.]*tool[^.]*plugin[^.]*skill[^.]*pack[^.]*agent[^.]*provider/is);
+    expect(content).not.toMatch(/primary pack|supporting pack|catalog metadata|installing multiple packs/i);
   });
 
   it.each(expectedSkills)("validates the %s skill structure", async (skillName) => {
