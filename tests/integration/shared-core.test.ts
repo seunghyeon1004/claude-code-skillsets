@@ -102,6 +102,18 @@ describe("shared-core plugin", () => {
     expect(content).toMatch(/incident lead.*urgency.*not.*substitute.*evidence/is);
   });
 
+  it("does not launder unsupported claims through generalized publishable prose", async () => {
+    const content = await readFile(join(skillsRoot, "evidence-provenance", "SKILL.md"), "utf8");
+
+    expect(content).toMatch(
+      /removing.*names.*numbers.*dates.*generalizing.*softening.*directional.*forward-looking.*does not add support/is
+    );
+    expect(content).toMatch(/review ledger.*does not cure.*unsupported assertion.*publishable artifact/is);
+    expect(content).toMatch(
+      /no supported.*item remains.*publish.*decision.*blocked.*bullet count.*caption.*length.*deadline.*format pressure.*does not override.*blocked decision.*substitute claims/is
+    );
+  });
+
   it("keeps safe preparatory work moving without crossing unresolved risk boundaries", async () => {
     const intent = await readFile(join(skillsRoot, "intent-to-brief", "SKILL.md"), "utf8");
     expect(intent).toMatch(
