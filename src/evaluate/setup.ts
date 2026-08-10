@@ -2934,6 +2934,7 @@ async function runClaude(args: string[], timeoutMilliseconds: number): Promise<s
     let stdout = "";
     let stderr = "";
     let settled = false;
+    let terminalEventClaimed = false;
     let timeoutError: Error | undefined;
     let forceKillTimeout: ReturnType<typeof setTimeout> | undefined;
     const timeout = setTimeout(() => {
@@ -2963,7 +2964,8 @@ async function runClaude(args: string[], timeoutMilliseconds: number): Promise<s
     });
 
     async function finishAfterIdentity(error?: Error, output?: string): Promise<void> {
-      if (settled) return;
+      if (settled || terminalEventClaimed) return;
+      terminalEventClaimed = true;
       try {
         if (identity !== undefined) await verifySemanticRcClaudeIdentity(identity);
         finish(error, output);
