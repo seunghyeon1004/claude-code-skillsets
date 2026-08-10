@@ -868,8 +868,9 @@ compare_plugin_tree() {
   test -z "$(find "$expected" -name .in_use -print -quit)"
   test -z "$(find "$installed" -name .in_use ! -path "$installed/.in_use" -print -quit)"
   if test -e "$installed/.in_use"; then
-    test -f "$installed/.in_use"
+    test -d "$installed/.in_use"
     test ! -L "$installed/.in_use"
+    test -z "$(find "$installed/.in_use" -mindepth 1 -print -quit)"
   fi
   diff -qr -x .in_use -- "$expected" "$installed"
 }
