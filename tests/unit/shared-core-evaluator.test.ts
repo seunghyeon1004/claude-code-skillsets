@@ -52,6 +52,48 @@ describe("shared-core live evaluator", () => {
     expect(validateSharedCoreResponse(risk, `${hold}\n\n${hold}`).join(" ")).toMatch(
       /final paragraph/i
     );
+    const unicodeEmail = "owner@예시.한국";
+    const punycodeEmail = "owner@xn--vv4b11d.xn--3e0b707e";
+    expect(validateSharedCoreResponse({
+      ...quality,
+      responseContract: { forbiddenPhrases: [unicodeEmail] }
+    }, `Owner/checkpoint: ${punycodeEmail}`).join(" ")).toMatch(/forbidden phrase/i);
+  });
+
+  it.each([
+    [
+      "an identity missing from the prompt",
+      ["outside@example.test"],
+      ""
+    ],
+    [
+      "canonical duplicate identities",
+      ["owner@예시.한국", "owner@xn--vv4b11d.xn--3e0b707e"],
+      "Owner: owner@예시.한국"
+    ],
+    [
+      "a malformed identity",
+      ["not-an-email"],
+      "Owner: not-an-email"
+    ]
+  ])("revalidates %s for programmatic evaluator callers", async (
+    _label,
+    allowedEmailIdentities,
+    promptSuffix
+  ) => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const outputDirectory = await temporaryDirectory();
+    const evaluationCase = {
+      ...loaded!,
+      prompt: `${loaded!.prompt}\n${promptSuffix}`,
+      responseContract: { allowedEmailIdentities }
+    };
+
+    await expect(evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new PassingRunner(),
+      outputDirectory
+    })).rejects.toThrow(/invalid shared-core response contract/i);
   });
 
   it("uses isolated skill response calls and strict separate judge calls", async () => {
@@ -65,6 +107,15 @@ describe("shared-core live evaluator", () => {
     expect(runner.requests.map(({ kind }) => kind)).toEqual(["response", "judge"]);
     expect(runner.requests[0]?.systemPrompt).toContain("# ");
     expect(runner.requests[0]?.allowedTools).toEqual([]);
+    expect(runner.requests[0]?.systemPrompt).toMatch(
+      /evaluation prompt.*only.*task facts/is
+    );
+    expect(runner.requests[0]?.systemPrompt).toMatch(
+      /account.*profile.*session.*identity.*email.*not.*task evidence/is
+    );
+    expect(runner.requests[0]?.systemPrompt).toMatch(
+      /no email identity.*allowed.*response/is
+    );
     expect(runner.requests[1]?.systemPrompt).not.toBe(runner.requests[0]?.systemPrompt);
     expect(runner.requests[1]?.jsonSchema).toBeDefined();
     const schema = runner.requests[1]?.jsonSchema as {
@@ -88,6 +139,9 @@ describe("shared-core live evaluator", () => {
     );
     expect(runner.requests[1]?.systemPrompt).toMatch(
       /skill contract.*output rules.*(?:not|no) task facts/is
+    );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /account.*profile.*session.*identity.*email.*not.*task evidence/is
     );
     const judgePayload = JSON.parse(runner.requests[1]?.prompt ?? "null") as {
       skillContract?: string;
@@ -123,6 +177,275 @@ describe("shared-core live evaluator", () => {
       errors: string[];
     };
     expect(receipt.errors.join(" ")).toMatch(/schema validation.*additional properties/i);
+  });
+
+  it("fails closed and redacts response emails absent from the evaluation prompt", async () => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+    const runner = new UnexpectedEmailRunner();
+
+    const summary = await evaluateSharedCoreCases({ cases, runner, outputDirectory });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain("owner+fixture@example.test");
+    expect(receiptText).toContain("<contact-email>");
+    const receipt = JSON.parse(receiptText) as { response: string; errors: string[] };
+    expect(receipt.response).toContain("Owner/checkpoint: <contact-email>");
+    expect(receipt.errors.join(" ")).toMatch(/email identity.*outside.*response boundary/i);
+    expect(runner.judgePrompt).not.toContain("owner+fixture@example.test");
+    expect(runner.judgePrompt).toContain("<contact-email>");
+  });
+
+  it("preserves an email identity supplied by the evaluation prompt", async () => {
+    const cases = await loadSharedCoreCases(projectRoot);
+    const loaded = cases.find(({ key }) => key === "handoff-continuity--02-normal-variation")!;
+    const suppliedEmail = "owner+fixture@example.test";
+    const evaluationCase = {
+      ...loaded,
+      prompt: `${loaded.prompt}\nOwner/checkpoint assignment: \`${suppliedEmail}\`; this exact address is owner evidence.`,
+      responseContract: { allowedEmailIdentities: [suppliedEmail] }
+    };
+    const outputDirectory = await temporaryDirectory();
+    const runner = new UnexpectedEmailRunner(`Owner/checkpoint: ${suppliedEmail}`);
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).toContain(suppliedEmail);
+    expect(receiptText).not.toContain("<contact-email>");
+    expect(runner.responseSystemPrompt).toContain(suppliedEmail);
+    expect(runner.responseSystemPrompt).toMatch(/only allowed email identity/is);
+  });
+
+  it.each([
+    "owner_@example.test",
+    "owner*@example.test",
+    '"owner.name"@example.test',
+    "owner@[192.0.2.1]"
+  ])("preserves the explicitly supplied email identity %s", async (suppliedEmail) => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const evaluationCase = {
+      ...loaded!,
+      prompt: `${loaded!.prompt}\nOwner contact: ${suppliedEmail}`,
+      responseContract: { allowedEmailIdentities: [suppliedEmail] }
+    };
+    const outputDirectory = await temporaryDirectory();
+    const response = `Owner/checkpoint: ${suppliedEmail}`;
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new UnexpectedEmailRunner(response),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    const receipt = JSON.parse(receiptText) as { response: string };
+    expect(receipt.response).toBe(response);
+    expect(receiptText).not.toContain("<contact-email>");
+    expect(receiptText).not.toContain("<redacted-model-text>");
+  });
+
+  it("treats Unicode and IDNA domain forms as the same supplied identity", async () => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const unicodeEmail = "owner@예시.한국";
+    const asciiEmail = "owner@xn--vv4b11d.xn--3e0b707e";
+    const evaluationCase = {
+      ...loaded!,
+      prompt: `${loaded!.prompt}\nOwner contact: ${unicodeEmail}`,
+      responseContract: { allowedEmailIdentities: [unicodeEmail] }
+    };
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new UnexpectedEmailRunner(`Owner/checkpoint: ${asciiEmail}`),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).toContain(asciiEmail);
+    expect(receiptText).not.toContain("<contact-email>");
+  });
+
+  it("fails closed and redacts unexpected email identities from judge output", async () => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new UnexpectedJudgeEmailRunner(),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain("judge+fixture@example.test");
+    expect(receiptText).toContain("<contact-email>");
+    const receipt = JSON.parse(receiptText) as { errors: string[] };
+    expect(receipt.errors.join(" ")).toMatch(/judge output.*email identity.*outside.*response boundary/i);
+  });
+
+  it.each([
+    ["fullwidth", "Owner/checkpoint: owner＋tag＠ｅxample．com", "<redacted-model-text>"],
+    ["zero-width", "Owner/checkpoint: owner\u200b@\u200bexample.com", "<redacted-model-text>"],
+    ["IDNA dot-equivalent", "Owner/checkpoint: owner@example。test", "<redacted-model-text>"],
+    ["colon suffix", "Owner/checkpoint: owner@example.test:즉시", "<contact-email>"],
+    ["unicode", "Owner/checkpoint: 사용자@예시.한국", "<contact-email>"]
+  ])("fails closed on an unexpected %s email identity", async (_label, response, placeholder) => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new UnexpectedEmailRunner(response),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain(response);
+    expect(receiptText).toContain(placeholder);
+  });
+
+  it("redacts a case-forbidden prompt email even when the response obfuscates it", async () => {
+    const cases = await loadSharedCoreCases(projectRoot);
+    const evaluationCase = cases.find(
+      ({ key }) => key === "handoff-continuity--04-boundary-loophole"
+    )!;
+    const outputDirectory = await temporaryDirectory();
+    const response = "Owner/checkpoint: alerts＠example．test";
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new UnexpectedEmailRunner(response),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain(response);
+    expect(receiptText).toContain("<redacted-model-text>");
+  });
+
+  it.each([
+    ["quoted local part", 'Owner/checkpoint: "owner.name"@example.test', "<contact-email>"],
+    ["domain literal", "Owner/checkpoint: owner@[192.0.2.1]", "<contact-email>"],
+    ["whitespace-separated", "Owner/checkpoint: owner @ example . test", "<redacted-model-text>"],
+    ["multiline whitespace-separated", "Owner/contact:\nowner @ example . test", "<redacted-model-text>"],
+    ["described whitespace-separated", "Owner/checkpoint: same operator (owner @ example.com), immediately", "<redacted-model-text>"],
+    ["Markdown-separated", "Owner/checkpoint: owner**@**example.com", "<redacted-model-text>"],
+    ["balanced backtick", "Owner/checkpoint: alice`@`example.com", "<redacted-model-text>"]
+  ])("fails closed on a visually reconstructable %s identity", async (
+    _label,
+    response,
+    placeholder
+  ) => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new UnexpectedEmailRunner(response),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain(response);
+    expect(receiptText).toContain(placeholder);
+  });
+
+  it("preserves a prompt-supplied matrix expression with a spaced at operator", async () => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const expression = "Owner/checkpoint: verify left @ right.transpose";
+    const evaluationCase = {
+      ...loaded!,
+      prompt: `${loaded!.prompt}\nVerified expression: ${expression}`
+    };
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new UnexpectedEmailRunner(expression),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).toContain(expression);
+    expect(receiptText).not.toContain("<redacted-model-text>");
+  });
+
+  it("does not classify package versions or SSH repository syntax as email identities", async () => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const repository = "git@github.com:owner/repo";
+    const cases = [{
+      ...loaded!,
+      prompt: `${loaded!.prompt}\nRepository: ${repository}`
+    }];
+    const outputDirectory = await temporaryDirectory();
+    const response = `Dependencies: package@1.2.3. Repository: ${repository}.`;
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new UnexpectedEmailRunner(response),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).toContain(response);
+    expect(receiptText).not.toContain("<contact-email>");
+  });
+
+  it("snapshots a direct caller contract before the first async boundary", async () => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const injectedEmail = "late-mutation@example.test";
+    const allowedEmailIdentities: string[] = [];
+    const forbiddenPhrases = ["original-forbidden"];
+    const evaluationCase = {
+      ...loaded!,
+      responseContract: { allowedEmailIdentities, forbiddenPhrases }
+    };
+    const outputDirectory = await temporaryDirectory();
+
+    const evaluation = evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner: new UnexpectedEmailRunner(`Owner/checkpoint: ${injectedEmail}`),
+      outputDirectory
+    });
+    allowedEmailIdentities.push(injectedEmail);
+    forbiddenPhrases.push("late-forbidden");
+    const summary = await evaluation;
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain(injectedEmail);
+    expect(receiptText).toContain("<contact-email>");
+  });
+
+  it("redacts unexpected email identities from responder transport errors", async () => {
+    const cases = (await loadSharedCoreCases(projectRoot)).slice(0, 1);
+    const outputDirectory = await temporaryDirectory();
+
+    const summary = await evaluateSharedCoreCases({
+      cases,
+      runner: new ThrowingResponderRunner(),
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(false);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).not.toContain("transport+fixture@example.test");
+    expect(receiptText).toContain("<contact-email>");
   });
 
   it("preserves the response and labels a judge transport failure", async () => {
@@ -205,12 +528,86 @@ class FailingJudgeRunner implements SharedCoreModelRunner {
   }
 }
 
-function behavior(value: string) {
-  return { behavior: value, passed: true, evidence: "response", reason: "satisfied" };
+class UnexpectedEmailRunner implements SharedCoreModelRunner {
+  judgePrompt = "";
+  responseSystemPrompt = "";
+
+  constructor(private readonly response = "Owner/checkpoint: owner+fixture@example.test") {}
+
+  async run(request: SharedCoreModelRequest): Promise<{ text?: string; structured?: unknown }> {
+    if (request.kind === "response") {
+      this.responseSystemPrompt = request.systemPrompt;
+      return { text: this.response };
+    }
+    this.judgePrompt = request.prompt;
+    const payload = JSON.parse(request.prompt) as {
+      caseId: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+    };
+    return {
+      structured: {
+        caseId: payload.caseId,
+        expectedBehaviors: behaviorObject(payload.expectedBehaviors),
+        forbiddenBehaviors: behaviorObject(payload.forbiddenBehaviors)
+      }
+    };
+  }
 }
 
-function behaviorObject(values: string[]): Record<string, ReturnType<typeof behavior>> {
-  return Object.fromEntries(values.map((value, index) => [`item${index}`, behavior(value)]));
+class UnexpectedJudgeEmailRunner implements SharedCoreModelRunner {
+  async run(request: SharedCoreModelRequest): Promise<{ text?: string; structured?: unknown }> {
+    if (request.kind === "response") return { text: "Evidence-backed response" };
+    const payload = JSON.parse(request.prompt) as {
+      caseId: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+    };
+    return {
+      structured: {
+        caseId: payload.caseId,
+        expectedBehaviors: behaviorObject(
+          payload.expectedBehaviors,
+          "judge+fixture@example.test"
+        ),
+        forbiddenBehaviors: behaviorObject(payload.forbiddenBehaviors)
+      }
+    };
+  }
+}
+
+class ThrowingResponderRunner implements SharedCoreModelRunner {
+  async run(request: SharedCoreModelRequest): Promise<{ text?: string; structured?: unknown }> {
+    if (request.kind === "response") {
+      throw new Error("transport+fixture@example.test");
+    }
+    const payload = JSON.parse(request.prompt) as {
+      caseId: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+    };
+    return {
+      structured: {
+        caseId: payload.caseId,
+        expectedBehaviors: behaviorObject(payload.expectedBehaviors),
+        forbiddenBehaviors: behaviorObject(payload.forbiddenBehaviors)
+      }
+    };
+  }
+}
+
+function behavior(value: string, evidence = "response") {
+  return { behavior: value, passed: true, evidence, reason: "satisfied" };
+}
+
+function behaviorObject(
+  values: string[],
+  evidence = "response"
+): Record<string, ReturnType<typeof behavior>> {
+  return Object.fromEntries(values.map((value, index) => [
+    `item${index}`,
+    behavior(value, evidence)
+  ]));
 }
 
 async function temporaryDirectory(): Promise<string> {

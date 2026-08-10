@@ -26,6 +26,12 @@ Owner/checkpoint: <who acts next and when>
 
 Use durable files, commits, logs, or external receipts. Capture identifiers before closing ephemeral terminals or browser sessions. If a required path, value, or command is unavailable, write `unknown - recover before proceeding`; never reconstruct it from memory.
 
+Owner/checkpoint values must come only from task evidence. Account, profile, or
+session metadata such as an email address or username is not owner evidence; do
+not copy or infer it into a handoff record.
+A known non-owner contact is irrelevant evidence: do not repeat it in
+Owner/checkpoint, even to disclaim that it is the owner.
+
 Before context loss, give uncommitted work a durable, non-mutating identity:
 persist a binary diff and a status snapshot at supplied or approved paths, then
 record their SHA-256 identity. Do not reduce uncommitted state to a filename list

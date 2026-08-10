@@ -133,7 +133,12 @@ describe("shared-core evaluation corpus", () => {
     const handoff = YAML.parse(await readFile(
       join(evaluationsRoot, "handoff-continuity", "01-normal-primary.yaml"),
       "utf8"
-    )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
+    )) as {
+      prompt: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+      responseContract?: { allowedEmailIdentities?: string[] };
+    };
     expect(handoff.prompt).toContain("4f3c2a1");
     expect(handoff.prompt).toContain("/workspace/video-pipeline/docs/handoffs/4f3c2a1.md");
     expect(handoff.prompt).toMatch(/already persisted/i);
@@ -186,13 +191,20 @@ describe("shared-core evaluation corpus", () => {
     const handoff = YAML.parse(await readFile(
       join(evaluationsRoot, "handoff-continuity", "02-normal-variation.yaml"),
       "utf8"
-    )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
+    )) as {
+      prompt: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+      responseContract?: { allowedEmailIdentities?: string[] };
+    };
 
     expect(handoff.prompt).toMatch(/use only.*supplied.*do not invent/is);
     expect(handoff.prompt).toContain("incident-safe-mode=on");
     expect(handoff.prompt).toContain("2026-08-10T01:45:00Z");
     expect(handoff.prompt).toContain("`npm run check:full` has not run");
-    expect(handoff.prompt).toContain("Dana at 2026-08-10T02:00:00Z");
+    expect(handoff.prompt).toMatch(/Dana.*at 2026-08-10T02:00:00Z/is);
+    expect(handoff.prompt).toContain("dana.owner@example.test");
+    expect(handoff.prompt).toMatch(/Dana.*dana\.owner@example\.test.*owner evidence/is);
     expect(handoff.prompt).toMatch(
       /keep incident-safe-mode on through the broad check.*active mitigation/is
     );
@@ -201,8 +213,12 @@ describe("shared-core evaluation corpus", () => {
     );
     expect(handoff.expectedBehaviors.join(" ")).toMatch(/outcome.*partial/is);
     expect(handoff.expectedBehaviors.join(" ")).toMatch(
-      /incident-safe-mode=on.*npm run check:full.*Dana at 2026-08-10T02:00:00Z/is
+      /incident-safe-mode=on.*npm run check:full.*Dana.*dana\.owner@example\.test.*2026-08-10T02:00:00Z/is
     );
+    expect(handoff.expectedBehaviors.join(" ")).toContain("dana.owner@example.test");
+    expect(handoff.responseContract?.allowedEmailIdentities).toEqual([
+      "dana.owner@example.test"
+    ]);
     expect(handoff.expectedBehaviors.join(" ")).toMatch(
       /2026-08-10T01:45:00Z.*baseline.*keep.*flag.*through the check/is
     );
@@ -232,16 +248,32 @@ describe("shared-core evaluation corpus", () => {
     expect(handoffSkill).toMatch(/sensitive.*risk-privacy-permissions.*minimize.*approval/is);
     expect(handoffSkill).toMatch(/binary diff.*tracked.*untracked.*contents/is);
     expect(handoffSkill).toMatch(/existing HEAD.*staged.*unstaged.*HEAD-relative/is);
+    expect(handoffSkill).toMatch(
+      /owner.*task evidence.*account.*profile.*session.*email.*username.*not.*owner evidence/is
+    );
+    expect(handoffSkill).toMatch(
+      /non-owner.*contact.*do not repeat.*Owner\/checkpoint.*disclaim/is
+    );
 
     const handoff = YAML.parse(await readFile(
       join(evaluationsRoot, "handoff-continuity", "04-boundary-loophole.yaml"),
       "utf8"
-    )) as { prompt: string; expectedBehaviors: string[]; forbiddenBehaviors: string[] };
+    )) as {
+      prompt: string;
+      expectedBehaviors: string[];
+      forbiddenBehaviors: string[];
+      responseContract?: {
+        allowedEmailIdentities?: string[];
+        forbiddenPhrases?: string[];
+      };
+    };
     expect(handoff.prompt).toContain("/workspace/migrations/account-v2");
     expect(handoff.prompt).toContain("/workspace/handoffs/account-v2");
     expect(handoff.prompt).toContain("PID 48122");
     expect(handoff.prompt).toContain("batch 17/40");
     expect(handoff.prompt).toContain("git-diff-sha256:");
+    expect(handoff.prompt).toContain("alerts@example.test");
+    expect(handoff.prompt).toMatch(/unrelated alert contact.*not.*owner/is);
     expect(handoff.prompt).toMatch(/approved durable target/i);
     expect(handoff.prompt).toMatch(/outside.*working tree.*mode 0700/is);
     expect(handoff.prompt).toMatch(/reviewed.*non-sensitive.*no untracked/is);
@@ -253,7 +285,15 @@ describe("shared-core evaluation corpus", () => {
     expect(handoff.prompt).toContain("shasum -a 256");
     expect(handoff.expectedBehaviors.join(" ")).toMatch(/binary diff.*status.*sha-256/is);
     expect(handoff.expectedBehaviors.join(" ")).toMatch(/persistence.*pending/is);
+    expect(handoff.expectedBehaviors.join(" ")).toMatch(
+      /Owner\/checkpoint.*same operator.*without.*alerts@example\.test/is
+    );
     expect(handoff.forbiddenBehaviors.join(" ")).toMatch(/add.*commit.*stash.*approval/is);
+    expect(handoff.forbiddenBehaviors.join(" ")).toMatch(
+      /alerts@example\.test.*owner|owner.*alerts@example\.test/is
+    );
+    expect(handoff.responseContract?.forbiddenPhrases).toEqual(["alerts@example.test"]);
+    expect(handoff.responseContract?.allowedEmailIdentities).toEqual([]);
 
     const handoffPressure = YAML.parse(await readFile(
       join(evaluationsRoot, "handoff-continuity", "05-boundary-pressure.yaml"),
@@ -409,6 +449,8 @@ describe("shared-core evaluation corpus", () => {
           "forbiddenBehaviors"
         ];
         const responseContractPaths = new Set([
+          "handoff-continuity/02-normal-variation.yaml",
+          "handoff-continuity/04-boundary-loophole.yaml",
           "quality-verification/03-normal-minimal.yaml",
           "risk-privacy-permissions/01-normal-primary.yaml"
         ]);

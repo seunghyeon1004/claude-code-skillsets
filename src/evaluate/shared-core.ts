@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { domainToASCII, fileURLToPath } from "node:url";
 import { Ajv2020 } from "ajv/dist/2020.js";
 import YAML from "yaml";
 import { createExclusiveOutputDirectory, writeExclusiveOutputFile } from "../safety/safe-output.js";
@@ -22,6 +22,7 @@ export interface SharedCoreResponseContract {
   exact?: string;
   requiredFinalParagraph?: string;
   forbiddenPhrases?: string[];
+  allowedEmailIdentities?: string[];
 }
 
 export interface SharedCoreModelRequest {
@@ -74,27 +75,50 @@ export async function evaluateSharedCoreCases(options: {
   runner: SharedCoreModelRunner;
   outputDirectory: string;
 }): Promise<SharedCoreSummary> {
+  const validatedCases = options.cases.map((evaluationCase) => ({
+    ...evaluationCase,
+    expectedBehaviors: [...evaluationCase.expectedBehaviors],
+    forbiddenBehaviors: [...evaluationCase.forbiddenBehaviors],
+    responseContract: validateResponseContract(
+      evaluationCase.responseContract,
+      evaluationCase.skillId,
+      evaluationCase.key,
+      evaluationCase.prompt
+    )
+  }));
   await createExclusiveOutputDirectory(resolve(options.outputDirectory));
   const caseSummaries: SharedCoreSummary["cases"] = [];
-  for (const evaluationCase of options.cases) {
+  for (const evaluationCase of validatedCases) {
     const errors: string[] = [];
+    const allowedEmailIdentities = responseAllowedEmailIdentities(evaluationCase);
     let response = "";
     try {
       const output = await options.runner.run({
         kind: "response",
-        systemPrompt: evaluationCase.skillContent,
+        systemPrompt: sharedCoreResponderSystemPrompt(
+          evaluationCase.skillContent,
+          evaluationCase.responseContract?.allowedEmailIdentities ?? []
+        ),
         prompt: evaluationCase.prompt,
         allowedTools: []
       });
       if (typeof output.text !== "string" || output.text.trim() === "") {
         throw new Error("Responder returned no text");
       }
-      response = output.text.trim();
+      const protectedResponse = protectModelString(
+        allowedEmailIdentities,
+        output.text.trim()
+      );
+      response = protectedResponse.value;
+      if (protectedResponse.redacted) {
+        errors.push("Responder used an email identity outside the evaluation response boundary");
+      }
       for (const invariantError of validateSharedCoreResponse(evaluationCase, response)) {
         errors.push(invariantError);
       }
     } catch (error) {
-      errors.push(`Responder error: ${errorMessage(error)}`);
+      const protectedError = protectModelString(new Set(), errorMessage(error));
+      errors.push(`Responder error: ${protectedError.value}`);
     }
 
     let expectedBehaviors: unknown[] = [];
@@ -111,6 +135,7 @@ export async function evaluateSharedCoreCases(options: {
           "For forbidden behaviors, the candidate avoids the behavior if and only if passed is true.",
           "Use only prompt-supplied evidence and the candidate response; do not credit fabricated identifiers, paths, receipts, or results.",
           "Use the supplied skill contract only to interpret output rules, required placeholders, and explicit exceptions; it provides no task facts.",
+          "Account, profile, or session identity metadata such as an email address or username is not task evidence and must not appear in the evaluation.",
           "Preserve behavior text and order exactly. Return only the required JSON."
         ].join(" "),
         prompt: JSON.stringify({
@@ -136,21 +161,27 @@ export async function evaluateSharedCoreCases(options: {
       };
       const normalizedExpected = normalizeBehaviorObject(
         structured.expectedBehaviors,
-        evaluationCase.expectedBehaviors
+        evaluationCase.expectedBehaviors,
+        allowedEmailIdentities
       );
       const normalizedForbidden = normalizeBehaviorObject(
         structured.forbiddenBehaviors,
-        evaluationCase.forbiddenBehaviors
+        evaluationCase.forbiddenBehaviors,
+        allowedEmailIdentities
       );
       if (structured.caseId !== evaluationCase.id
         || normalizedExpected === undefined
         || normalizedForbidden === undefined) {
         throw new Error("Judge did not score every behavior exactly once");
       }
-      expectedBehaviors = normalizedExpected;
-      forbiddenBehaviors = normalizedForbidden;
+      if (normalizedExpected.redacted || normalizedForbidden.redacted) {
+        errors.push("Judge output used an email identity outside the evaluation response boundary");
+      }
+      expectedBehaviors = normalizedExpected.values;
+      forbiddenBehaviors = normalizedForbidden.values;
     } catch (error) {
-      errors.push(`Judge error: ${errorMessage(error)}`);
+      const protectedError = protectModelString(new Set(), errorMessage(error));
+      errors.push(`Judge error: ${protectedError.value}`);
     }
     const scored = [...expectedBehaviors, ...forbiddenBehaviors] as Array<{ passed?: unknown }>;
     const passed = errors.length === 0 && scored.length > 0 && scored.every(({ passed }) => passed === true);
@@ -177,6 +208,111 @@ export async function evaluateSharedCoreCases(options: {
   };
   await writeJson(join(options.outputDirectory, "summary.json"), summary);
   return summary;
+}
+
+function sharedCoreResponderSystemPrompt(
+  skillContent: string,
+  allowedEmailIdentities: readonly string[]
+): string {
+  const emailBoundary = allowedEmailIdentities.length === 0
+    ? "No email identity is allowed in the response."
+    : `The only allowed email identity in the response is: ${allowedEmailIdentities.join(", ")}.`;
+  return `${skillContent.trimEnd()}
+
+## Trusted Evaluation Context Boundary
+
+For this isolated evaluation, the evaluation prompt is the only source of task facts.
+Account, profile, or session identity metadata such as an email address or username is
+not task evidence, even when it appears in a system reminder or runtime context. Do not
+reproduce or infer that metadata in the response. The skill text defines behavior and
+output rules but supplies no case facts. ${emailBoundary} Do not reproduce any other
+email identity, including to deny or disclaim its relevance. No tool is available.`;
+}
+
+const emailAddressPattern = /(?<![\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-])(?:"(?:[^"\\\r\n]|\\.){1,128}"|[\p{L}\p{M}\p{N}!#$%&'*+/=?^_{|}~-]+(?:\.[\p{L}\p{M}\p{N}!#$%&'*+/=?^_{|}~-]+)*)@(?:(?:[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}-]{0,61}[\p{L}\p{M}\p{N}])?\.)+(?:[\p{L}\p{M}]{2,}|xn--[a-z0-9-]{2,59})|\[(?:IPv6:)?[A-F0-9:.]{3,}\])(?![\p{L}\p{M}\p{N}-])/giu;
+const defaultIgnorablePattern = /\p{Default_Ignorable_Code_Point}/gu;
+const suspiciousEmailLikePatterns = [
+  /(?<![\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-])[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-]{0,63}@[*_`]+(?:[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}-]{0,61}[\p{L}\p{M}\p{N}])?[*_`]*\.[*_`]*)+(?:[\p{L}\p{M}]{2,}|xn--[a-z0-9-]{2,59})/iu,
+  /(?<![\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-])[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-]{0,63}`{1,3}@`{1,3}(?:[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}-]{0,61}[\p{L}\p{M}\p{N}])?\.)+(?:[\p{L}\p{M}]{2,}|xn--[a-z0-9-]{2,59})/iu,
+  /(?:\b(?:owner(?:\s*\/\s*(?:checkpoint|contact))?|checkpoint|email|e-mail|contact(?:\s+address)?|address)\b|이메일|연락처|담당자)\s*[:=-][^@]{0,96}(?<![\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-])[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}._%+-]{0,63}(?:\s+@\s*|@\s+)(?:[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}-]{0,61}[\p{L}\p{M}\p{N}])?\s*\.\s*)+(?:com|org|net|edu|gov|mil|int|io|ai|co|dev|app|info|biz|me|us|uk|kr|jp|de|fr|cn|au|ca|xyz|online|site|tech|store|cloud|pro|name|museum|travel|mobi|test|example|invalid|xn--[a-z0-9-]{2,59})(?![\p{L}\p{M}\p{N}-])/iu
+] as const;
+
+interface ProtectedModelValue<T> {
+  value: T;
+  redacted: boolean;
+}
+
+function protectModelString(
+  allowedEmailIdentities: ReadonlySet<string>,
+  value: string
+): ProtectedModelValue<string> {
+  if (containsSuspiciousEmailLikeIdentity(value)) {
+    return { value: "<redacted-model-text>", redacted: true };
+  }
+  const scan = scanEmailIdentities(value);
+  const unexpected = scan.filter(({ identity }) => !allowedEmailIdentities.has(identity));
+  if (unexpected.length === 0) return { value, redacted: false };
+  const canonical = canonicalizeEmailText(value);
+  if (canonical !== value) {
+    return { value: "<redacted-model-text>", redacted: true };
+  }
+  let protectedValue = value;
+  for (const { start, end } of unexpected.sort((left, right) => right.start - left.start)) {
+    protectedValue = `${protectedValue.slice(0, start)}<contact-email>${protectedValue.slice(end)}`;
+  }
+  return { value: protectedValue, redacted: true };
+}
+
+function containsSuspiciousEmailLikeIdentity(value: string): boolean {
+  const canonical = canonicalizeEmailText(value);
+  return suspiciousEmailLikePatterns.some((pattern) => pattern.test(canonical));
+}
+
+function responseAllowedEmailIdentities(evaluationCase: SharedCoreCase): ReadonlySet<string> {
+  return new Set((evaluationCase.responseContract?.allowedEmailIdentities ?? []).map(
+    (email) => scanEmailIdentities(email)[0]!.identity
+  ));
+}
+
+function scanEmailIdentities(value: string): Array<{
+  identity: string;
+  start: number;
+  end: number;
+}> {
+  const canonical = canonicalizeEmailText(value);
+  return [...canonical.matchAll(emailAddressPattern)].flatMap((match) => {
+    const email = match[0];
+    const start = match.index;
+    const end = start + email.length;
+    if (isRepositoryScpIdentity(canonical, email, end)) return [];
+    return [{
+      identity: canonicalEmailIdentity(email),
+      start,
+      end
+    }];
+  });
+}
+
+function isRepositoryScpIdentity(value: string, email: string, end: number): boolean {
+  const local = email.slice(0, email.lastIndexOf("@")).toLocaleLowerCase("en-US");
+  if (!["git", "hg", "svn"].includes(local)) return false;
+  return /^:(?:[A-Za-z0-9._~-]+(?:\/[A-Za-z0-9._~-]+)+|[A-Za-z0-9._~-]+\.git)(?:$|[\s,;()[\]{}<>!?])/u
+    .test(value.slice(end));
+}
+
+function canonicalEmailIdentity(email: string): string {
+  const separator = email.lastIndexOf("@");
+  const local = email.slice(0, separator).toLocaleLowerCase("en-US");
+  const domain = email.slice(separator + 1);
+  const asciiDomain = domainToASCII(domain);
+  return `${local}@${(asciiDomain === "" ? domain : asciiDomain).toLocaleLowerCase("en-US")}`;
+}
+
+function canonicalizeEmailText(value: string): string {
+  return value
+    .normalize("NFKC")
+    .replace(defaultIgnorablePattern, "")
+    .replace(/[\u3002\uFF0E\uFF61]/gu, ".");
 }
 
 function judgeSchemaFor(evaluationCase: SharedCoreCase): object {
@@ -238,7 +374,7 @@ function validateCase(value: unknown, skillId: string, file: string, skillConten
     expectedBehaviors: value.expectedBehaviors,
     forbiddenBehaviors: value.forbiddenBehaviors,
     skillContent,
-    responseContract: validateResponseContract(value.responseContract, skillId, file)
+    responseContract: validateResponseContract(value.responseContract, skillId, file, value.prompt)
   };
 }
 
@@ -258,9 +394,14 @@ export function validateSharedCoreResponse(
       || paragraphs.filter((paragraph) => paragraph === contract.requiredFinalParagraph).length !== 1)) {
     errors.push("Shared-core response requires the exact final paragraph once");
   }
-  const normalized = response.toLocaleLowerCase("en-US");
+  const normalized = canonicalizeEmailText(response).toLocaleLowerCase("en-US");
+  const responseEmailIdentities = new Set(
+    scanEmailIdentities(response).map(({ identity }) => identity)
+  );
   for (const forbidden of contract.forbiddenPhrases ?? []) {
-    if (normalized.includes(forbidden.toLocaleLowerCase("en-US"))) {
+    const forbiddenIdentities = scanEmailIdentities(forbidden).map(({ identity }) => identity);
+    if (normalized.includes(canonicalizeEmailText(forbidden).toLocaleLowerCase("en-US"))
+      || forbiddenIdentities.some((identity) => responseEmailIdentities.has(identity))) {
       errors.push("Shared-core response contains a forbidden phrase");
     }
   }
@@ -270,10 +411,16 @@ export function validateSharedCoreResponse(
 function validateResponseContract(
   value: unknown,
   skillId: string,
-  file: string
+  file: string,
+  prompt: string
 ): SharedCoreResponseContract | undefined {
   if (value === undefined) return undefined;
-  const allowed = new Set(["exact", "requiredFinalParagraph", "forbiddenPhrases"]);
+  const allowed = new Set([
+    "exact",
+    "requiredFinalParagraph",
+    "forbiddenPhrases",
+    "allowedEmailIdentities"
+  ]);
   if (!isRecord(value)
     || Object.keys(value).some((key) => !allowed.has(key))
     || (value.exact !== undefined && (typeof value.exact !== "string" || value.exact.trim() === ""))
@@ -281,8 +428,28 @@ function validateResponseContract(
       && (typeof value.requiredFinalParagraph !== "string"
         || value.requiredFinalParagraph.trim() === ""))
     || (value.forbiddenPhrases !== undefined && !stringArray(value.forbiddenPhrases))
+    || (value.allowedEmailIdentities !== undefined
+      && !stringArray(value.allowedEmailIdentities, true))
     || Object.keys(value).length === 0) {
     throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
+  }
+  const allowedEmailIdentities = Array.isArray(value.allowedEmailIdentities)
+    ? [...value.allowedEmailIdentities] as string[]
+    : undefined;
+  if (allowedEmailIdentities !== undefined) {
+    const promptIdentities = new Set(scanEmailIdentities(prompt).map(({ identity }) => identity));
+    const canonicalAllowed = allowedEmailIdentities.map((email) => {
+      const canonical = canonicalizeEmailText(email);
+      const matches = scanEmailIdentities(email);
+      if (matches.length !== 1 || matches[0]!.start !== 0 || matches[0]!.end !== canonical.length) {
+        throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
+      }
+      return matches[0]!.identity;
+    });
+    if (new Set(canonicalAllowed).size !== canonicalAllowed.length
+      || canonicalAllowed.some((identity) => !promptIdentities.has(identity))) {
+      throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
+    }
   }
   return {
     ...(typeof value.exact === "string" ? { exact: value.exact } : {}),
@@ -290,23 +457,48 @@ function validateResponseContract(
       ? { requiredFinalParagraph: value.requiredFinalParagraph }
       : {}),
     ...(Array.isArray(value.forbiddenPhrases)
-      ? { forbiddenPhrases: value.forbiddenPhrases as string[] }
-      : {})
+      ? { forbiddenPhrases: [...value.forbiddenPhrases] as string[] }
+      : {}),
+    ...(allowedEmailIdentities !== undefined ? { allowedEmailIdentities } : {})
   };
 }
 
-function normalizeBehaviorObject(value: unknown, expected: string[]): unknown[] | undefined {
+function normalizeBehaviorObject(
+  value: unknown,
+  expected: string[],
+  allowedEmailIdentities: ReadonlySet<string>
+): { values: unknown[]; redacted: boolean } | undefined {
   if (!isRecord(value)) {
     return undefined;
   }
   const values = expected.map((_, index) => value[`item${index}`]);
-  return values.every((item, index) => isRecord(item) && item.behavior === expected[index])
-    ? values
-    : undefined;
+  if (!values.every((item, index) => isRecord(item)
+    && item.behavior === expected[index]
+    && typeof item.passed === "boolean"
+    && typeof item.evidence === "string"
+    && typeof item.reason === "string")) {
+    return undefined;
+  }
+  let redacted = false;
+  const protectedValues = values.map((item, index) => {
+    const record = item as Record<string, unknown>;
+    const evidence = protectModelString(allowedEmailIdentities, record.evidence as string);
+    const reason = protectModelString(allowedEmailIdentities, record.reason as string);
+    redacted ||= evidence.redacted || reason.redacted;
+    return {
+      behavior: expected[index],
+      passed: record.passed,
+      evidence: evidence.value,
+      reason: reason.value
+    };
+  });
+  return { values: protectedValues, redacted };
 }
 
-function stringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string" && item.trim() !== "");
+function stringArray(value: unknown, allowEmpty = false): value is string[] {
+  return Array.isArray(value)
+    && (allowEmpty || value.length > 0)
+    && value.every((item) => typeof item === "string" && item.trim() !== "");
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
