@@ -214,13 +214,27 @@ pushes, and branch deletion are disabled; enforcement includes admins and there 
 no bypass for any user, team, or app. This solo-maintainer write-path policy does
 not create a human-review gate. Independent human review is not guaranteed.
 
-After explicit approval, run the read-only same SHA fixture suite from a clean local
-`main` checkout of exact `C` using the local subscription Claude CLI. It installs no
-external candidate, makes no GitHub mutation, and retains only sanitized receipts as
-release evidence. Then verify an unauthenticated clone of that SHA, marketplace add,
-manager install, and the first setup preview. Only after every stage passes may the
-maintainer create a release tag or GitHub Release and announce the project. On
-failure, return the repository to private without a tag or announcement. Before the
+Stage 3 uses exactly one of two paths. The default path runs and passes the
+read-only same SHA fixture suite from a clean local `main` checkout of exact `C` using
+the local subscription Claude CLI and retains its passed receipt. The exceptional path
+is a manual exact-SHA owner waiver approved only after the protected public remote
+`main` final SHA is confirmed, when subscription cost prevents the full semantic RC.
+The waiver is not a pass; it records that the full same-SHA fixture suite was not run
+and semantic coverage is not proven. The manual path creates no local waiver receipt or
+verifier. It does not mechanically prove historical absence, and the owner must not
+delete or hide a known semantic failure. When the manual waiver is used, display this
+sentence verbatim in the repository README, GitHub Release body, and submission-visible
+description:
+
+> Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.
+
+The full RC path installs no external candidate, makes no GitHub mutation, and retains
+only sanitized receipts as release evidence. Then verify an unauthenticated clone of
+that SHA, marketplace add, manager install, and the first setup preview. Only after
+stages 1, 2, and 4 pass and Stage 3 has either a full RC pass or a separately approved
+manual exact-SHA owner waiver may the maintainer create a release tag or GitHub
+Release and announce the project. On failure, return the repository to private without
+a tag or announcement. Before the
 remote push, C may be replaced by another single child of B. After remote C exists,
 never non-fast-forward or force-push a sibling C. Stop after returning private until a
 new explicit plan approves one append-only repair commit on the current remote C and

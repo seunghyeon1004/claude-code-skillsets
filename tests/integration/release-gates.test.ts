@@ -812,6 +812,7 @@ describe("foundation release gates", () => {
       readFile(join(projectRoot, "README.en.md"), "utf8")
     ]);
     const readmes = [readmeKo, readmeEn];
+    const waiverDisclosure = "Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.";
 
     for (const readme of readmes) {
       expect(readme).not.toMatch(/BRANCH_PROTECTION_READ_TOKEN|private-rc/i);
@@ -833,14 +834,20 @@ describe("foundation release gates", () => {
       expect(readme).toMatch(/Claude\s+Code[^.]*`?claude-plugins-official`?|`?claude-plugins-official`?[^.]*Claude\s+Code/i);
       expect(readme).not.toMatch(/claude-community|has no application process|신청 절차가 없습니다/i);
       expect(readme).toMatch(/skillset-manager[^.]*policy hold|skillset-manager[^.]*정책[^.]*보류/i);
+      expect(readme).toContain(waiverDisclosure);
+      expect(readme).toMatch(/manual exact-SHA owner waiver|수동 exact-SHA owner waiver/i);
+      expect(readme).toMatch(/waiver[^.]*not a pass[^.]*full[^.]*suite[^.]*not run|waiver[^.]*통과가 아니며[^.]*전체[^.]*suite[^.]*실행하지 않/i);
+      expect(readme).toMatch(/does not mechanically prove historical absence[^.]*must not[^.]*hide[^.]*known semantic failure|역사적 부재[^.]*기계적으로 증명하지\s*않[^.]*알려진 semantic failure[^.]*숨/i);
     }
   });
 
   it("uses the local approved read-only semantic RC instead of a hosted release prerequisite", async () => {
-    const [packageJson, releaseGuide, script] = await Promise.all([
+    const [packageJson, releaseGuide, directorySubmission, script, contributing] = await Promise.all([
       readFile(join(projectRoot, "package.json"), "utf8"),
       readFile(join(projectRoot, "docs", "release", "github-free-staged-public.md"), "utf8"),
-      readFile(join(projectRoot, "scripts", "release", "run-solo-semantic-rc.ts"), "utf8")
+      readFile(join(projectRoot, "docs", "release", "claude-directory-submission.md"), "utf8"),
+      readFile(join(projectRoot, "scripts", "release", "run-solo-semantic-rc.ts"), "utf8"),
+      readFile(join(projectRoot, "CONTRIBUTING.md"), "utf8")
     ]);
     const scripts = (JSON.parse(packageJson) as { scripts: Record<string, string> }).scripts;
 
@@ -858,6 +865,111 @@ describe("foundation release gates", () => {
     expect(releaseGuide).toMatch(/Claude executable[^.]*absolute path[^.]*SHA-256[^.]*before and after every model call/i);
     expect(releaseGuide).not.toMatch(/Claude executable shim/i);
     expect(releaseGuide).toMatch(/Keep only.*sanitized.*release evidence/is);
+    expect(releaseGuide).toMatch(/manual exact-SHA owner waiver/i);
+    expect(releaseGuide).toMatch(/freshly verified[^.]*protected public remote `?main`?[^.]*final SHA/i);
+    expect(releaseGuide).toMatch(/subscription cost[^.]*semantic coverage[^.]*not\s+proven/i);
+    expect(releaseGuide).toContain("WAIVE-FULL-SEMANTIC-RC:$SHA:SUBSCRIPTION-COST:SEMANTIC-COVERAGE-NOT-PROVEN:NO-KNOWN-SEMANTIC-FAILURE");
+    expect(releaseGuide).toMatch(/manual waiver[^.]*not a pass[^.]*not[^.]*mechanically prove[^.]*historical absence/i);
+    expect(releaseGuide).toMatch(/must not[^.]*delete[^.]*hide[^.]*known semantic failure/i);
+    expect(releaseGuide).toMatch(/GitHub Release target SHA[^.]*must equal/i);
+    expect(releaseGuide).toMatch(/release body[^.]*repository README[^.]*submission-visible description/i);
+    const disclosure = "Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.";
+    const stageFiveStart = releaseGuide.indexOf("## 5. Release, tag, and announcement");
+    const stageFiveEnd = releaseGuide.indexOf("## 6. Rollback", stageFiveStart);
+    const stageFive = releaseGuide.slice(stageFiveStart, stageFiveEnd);
+    expect(stageFive).toContain('SEMANTIC_DISPOSITION="${SEMANTIC_DISPOSITION:?set full-pass or manual-waiver}"');
+    expect(stageFive).toContain('full-pass)');
+    expect(stageFive).toContain('manual-waiver)');
+    expect(stageFive).toContain('.schemaVersion == 6');
+    expect(stageFive).toContain('.receiptType == "local-semantic-rc-target"');
+    expect(stageFive).toContain('.commitSha == $sha');
+    expect(stageFive).toContain('.semanticHarnessStatus == "passed"');
+    expect(stageFive).toContain('npm run eval:sanitize:verify -- "$SEMANTIC_EVIDENCE_ROOT"');
+    const fullPassBranch = stageFive.slice(stageFive.indexOf("  full-pass)"), stageFive.indexOf("  manual-waiver)"));
+    expect(fullPassBranch).toContain("verify_full_semantic_pass");
+    expect(fullPassBranch).toContain("Full exact-SHA semantic RC passed.");
+    expect(fullPassBranch).not.toContain("Owner waiver:");
+    expect(fullPassBranch).not.toContain(disclosure);
+    const releaseBodyMaterialized = stageFive.indexOf('RELEASE_BODY_SHA256="$(shasum -a 256');
+    const approvalManifestMaterialized = stageFive.indexOf('APPROVAL_MANIFEST_SHA256="$(shasum -a 256');
+    const displayedMutation = stageFive.indexOf("Tag to create:");
+    const approvalInstruction = stageFive.indexOf("Stop here for every disposition");
+    const finalPreflight = stageFive.indexOf('FINAL_PREFLIGHT="$RELEASE_EVIDENCE/final-pre-release"');
+    const releaseCreate = stageFive.indexOf('gh release create "$RELEASE_TAG" --repo "$REPO" --target "$SHA"');
+    expect(releaseBodyMaterialized).toBeGreaterThan(-1);
+    expect(approvalManifestMaterialized).toBeGreaterThan(releaseBodyMaterialized);
+    expect(displayedMutation).toBeGreaterThan(approvalManifestMaterialized);
+    expect(approvalInstruction).toBeGreaterThan(displayedMutation);
+    expect(stageFive.slice(displayedMutation, approvalInstruction)).toContain('cat "$RELEASE_BODY"');
+    expect(stageFive.slice(displayedMutation, approvalInstruction)).toContain('cat "$APPROVAL_MANIFEST"');
+    expect(stageFive.slice(displayedMutation, approvalInstruction)).toContain('"$WAIVER"');
+    for (const immutable of [
+      "APPROVED_RELEASE_REPO",
+      "APPROVED_RELEASE_TAG",
+      "APPROVED_RELEASE_SHA",
+      "APPROVED_RELEASE_TITLE",
+      "APPROVED_SEMANTIC_DISPOSITION",
+      "APPROVED_RELEASE_BODY_SHA256",
+      "APPROVED_MANIFEST_SHA256"
+    ]) {
+      expect(stageFive.slice(releaseBodyMaterialized, approvalInstruction)).toContain(`readonly ${immutable}=`);
+    }
+    expect(stageFive).toMatch(/same approval[^.]*waiver token[^.]*tag and Release[^.]*remote mutations/i);
+    expect(finalPreflight).toBeGreaterThan(approvalInstruction);
+    expect(releaseCreate).toBeGreaterThan(finalPreflight);
+    expect(stageFive.slice(approvalInstruction, releaseCreate)).toContain("preflight_public_candidate");
+    expect(stageFive.slice(approvalInstruction, releaseCreate)).toContain("npm run verify:branch-protection --");
+    expect(stageFive.slice(approvalInstruction, releaseCreate)).toContain('shasum -a 256 "$RELEASE_BODY"');
+    expect(stageFive.slice(approvalInstruction, releaseCreate)).toContain('shasum -a 256 "$APPROVAL_MANIFEST"');
+    const postApproval = stageFive.slice(approvalInstruction, releaseCreate);
+    expect(postApproval).toContain('test "$REPO" = "$APPROVED_RELEASE_REPO"');
+    expect(postApproval).toContain('test "$RELEASE_TAG" = "$APPROVED_RELEASE_TAG"');
+    expect(postApproval).toContain('test "$SHA" = "$APPROVED_RELEASE_SHA"');
+    expect(postApproval).toContain('test "$SHA" = "$CANDIDATE_SHA"');
+    expect(postApproval).toContain('test "$RELEASE_TITLE" = "$APPROVED_RELEASE_TITLE"');
+    expect(postApproval).toContain('test "$SEMANTIC_DISPOSITION" = "$APPROVED_SEMANTIC_DISPOSITION"');
+    expect(postApproval).toContain('= "$APPROVED_RELEASE_BODY_SHA256"');
+    expect(postApproval).toContain('= "$APPROVED_MANIFEST_SHA256"');
+    for (const binding of [
+      ".repository == $repository",
+      ".tag == $tag",
+      ".targetSha == $targetSha",
+      ".title == $title",
+      ".semanticDisposition == $semanticDisposition",
+      ".releaseBodySha256 == $releaseBodySha256"
+    ]) {
+      expect(postApproval).toContain(binding);
+    }
+    expect(postApproval).toContain('--arg targetSha "$APPROVED_RELEASE_SHA"');
+    expect(postApproval).toContain('--arg semanticDisposition "$APPROVED_SEMANTIC_DISPOSITION"');
+    expect(stageFive.slice(approvalInstruction, releaseCreate)).toContain("verify_full_semantic_pass");
+    expect(stageFive).toContain('--notes-file "$RELEASE_BODY"');
+    expect(stageFive).toContain("jq -e --rawfile expected \"$RELEASE_BODY\" '.body == $expected'");
+    expect(stageFive).toMatch(/git\/ref\/tags\/\$RELEASE_TAG[^]*\.object\.type[^]*= commit/);
+    expect(stageFive).toMatch(/git\/ref\/tags\/\$RELEASE_TAG[^]*\.object\.sha[^]*= "\$SHA"/);
+    expect(stageFive).toContain('git ls-remote --tags "$PUBLIC_REMOTE_URL"');
+    expect(stageFive).toContain('gh pr list --repo "$REPO" --state open');
+    expect(releaseGuide).toMatch(/do not call[^.]*pre-release[^.]*preflight_public_candidate/i);
+    expect(releaseGuide).toMatch(/command may have succeeded[^.]*client\s+returns\s+nonzero[^.]*do\s+not\s+retry/is);
+    const standalone = stageFive.slice(stageFive.indexOf('SHA="${APPROVED_RELEASE_SHA:?'));
+    expect(standalone).toContain('test "$(git status --porcelain=v1)" = ""');
+    expect(standalone).toContain('REPO="seunghyeon1004/claude-code-skillsets"');
+    expect(standalone).toContain('RELEASE_JSON="$("${GH_API[@]}"');
+    expect(standalone).toContain("npm run verify:branch-protection --");
+    expect(standalone).toContain('SEMANTIC_EVIDENCE_ROOT="${SEMANTIC_EVIDENCE_ROOT:?');
+    expect(standalone).toContain('npm run eval:sanitize:verify -- "$SEMANTIC_EVIDENCE_ROOT"');
+    expect(standalone).toContain('$SEMANTIC_EVIDENCE_ROOT/governance/local-semantic-rc-target.json');
+    expect(standalone).toContain("jq -e --rawfile expected \"$EXPECTED_BODY\" '.body == $expected'");
+    expect(standalone).toContain('git ls-remote --tags "$PUBLIC_REMOTE_URL"');
+    expect(stageFive).toMatch(/immediately before announcement[^.]*again immediately before directory submission/i);
+    expect(contributing).toMatch(/semantic RC[^.]*passed[^.]*manual\s+exact-SHA\s+owner\s+waiver/i);
+    expect(contributing).toMatch(/waiver[^.]*not a pass[^.]*historical absence[^.]*known semantic failure/i);
+    expect(directorySubmission).toContain(disclosure);
+    expect(directorySubmission).toMatch(/manual exact-SHA owner waiver/i);
+    expect(directorySubmission).toMatch(/repository\s+README[^.]*release\s+body[^.]*submission-visible\s+description/i);
+    expect(directorySubmission).toMatch(/GitHub Release `v0\.1\.0`[^.]*lightweight tag[^.]*exact body[^.]*protected `main`[^.]*same approved SHA/i);
+    expect(directorySubmission).toMatch(/standalone post-release inventory[^.]*freshly[^.]*immediately before/i);
+    expect(releaseGuide).toContain(disclosure);
   });
 
   it("isolates the zero-base first-public bootstrap in an exact-metadata manual workflow", async () => {
