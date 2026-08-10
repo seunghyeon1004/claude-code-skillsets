@@ -177,6 +177,15 @@ describe("shared-core evaluation corpus", () => {
     );
     expect(handoff.forbiddenBehaviors.join(" ")).toMatch(/unknown.*placeholder.*invent/is);
 
+    const workspacePrimary = YAML.parse(await readFile(
+      join(evaluationsRoot, "workspace-context", "01-normal-primary.yaml"),
+      "utf8"
+    )) as { prompt: string; expectedBehaviors: string[] };
+    expect(workspacePrimary.prompt).toMatch(/state the bounded context record.*first evidence-backed action/is);
+    expect(workspacePrimary.expectedBehaviors[1]).toBe(
+      "Bounds the first discovery action to the likely export area and requires verified repository evidence before proceeding."
+    );
+
     const workspace = YAML.parse(await readFile(
       join(evaluationsRoot, "workspace-context", "03-normal-minimal.yaml"),
       "utf8"
