@@ -236,6 +236,9 @@ describe("skillset-manager decision-index setup", () => {
     expect(probe).toMatch(
       /time-unknown or expired hold[\s\S]*freshly load the routing index[\s\S]*current consent[\s\S]*required probes[\s\S]*new preview[\s\S]*freshly loads and binds[\s\S]*routing index[\s\S]*full decision index[\s\S]*risk acknowledgement[\s\S]*separate\s+exact approval/i
     );
+    expect(probe).toMatch(
+      /current\s+refusal-based\s+hold[\s\S]*mandatory\s+final\s+hold\s+paragraph[\s\S]*do\s+not\s+introduce[\s\S]*(?:if|in\s+a\s+real\s+run|would)[\s\S]*qualification/i
+    );
     expect(probe).toMatch(/credential or\s+authentication state[\s\S]*shell history[\s\S]*environment variable\s+values[\s\S]*browser data[\s\S]*SSH keys/i);
   });
 

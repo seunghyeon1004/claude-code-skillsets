@@ -146,7 +146,7 @@ timestamp. Unknown time, an invalid timestamp, or a timestamp on or after
 After a time-unknown or expired hold, print exactly one sentence below in the current request language:
 - English: `Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.`
 - Korean: `향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다.`
-Print it as its own standalone paragraph with no prefix, suffix, translation, markdown marker, or qualification.
+Print it as its own standalone paragraph with no prefix, suffix, translation, markdown marker, or qualification. This applies immediately to the current refusal-based hold as well as every other unknown-time or expired hold. The exact sentence is the mandatory final hold paragraph. Do not introduce it with `if`, `in a real run`, `would`, or any other hypothetical or conditional qualification.
 Never imply that refreshing only the routing index or reusing an older preview is sufficient.
 
 The second disclosed command discovers a local Node publisher without executing

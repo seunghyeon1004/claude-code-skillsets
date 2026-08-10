@@ -238,6 +238,10 @@ describe("setup semantic evaluator", () => {
       expect(request.systemPrompt).toMatch(
         /fixed case-specific sentence,\s+emit that fixed sentence exactly\s+once as its own standalone paragraph,\s+unchanged and unwrapped;\s+preserve all other\s+case-required content outside that paragraph\./u
       );
+      expect(request.systemPrompt).toMatch(
+        /fixed\s+requirement\s+applies\s+to\s+the\s+current\s+case\s+immediately[\s\S]*never\s+introduce\s+it\s+with\s+a\s+hypothetical\s+or\s+conditional\s+qualification/i
+      );
+      expect(request.systemPrompt).toMatch(/must\s+be\s+the\s+final\s+response\s+paragraph/i);
       expect(request.systemPrompt).not.toMatch(/^\t/mu);
       expect(request.systemPrompt).not.toMatch(
         /has no candidate selection.*individual safety.*approval.*execution authority/is
@@ -414,8 +418,15 @@ describe("setup semantic evaluator", () => {
     expect(setupResponseInvariant(`Not this: ${boundary}`, evaluation).join(" ")).toMatch(
       /refresh boundary.*standalone.*exactly once/i
     );
+    expect(setupResponseInvariant(
+      `If this happened in a real run, the recovery path would be: ${boundary}`,
+      evaluation
+    ).join(" ")).toMatch(/refresh boundary.*standalone.*exactly once/i);
     expect(setupResponseInvariant(`${boundary}\n${boundary}`, evaluation).join(" ")).toMatch(
       /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${boundary}\n\nTrailing explanation.`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*final.*standalone.*exactly once/i
     );
     expect(setupResponseInvariant(`${boundary}\n${koreanBoundary}`, evaluation).join(" ")).toMatch(
       /opposite-language.*refresh boundary.*forbidden/i
