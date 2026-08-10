@@ -81,20 +81,23 @@ form field. Copy only data requested by the re-verified live form. 아래 항목
 ### English Description
 
 Eight human-readable Claude Code workflow skills for turning ambiguous requests
-into scoped briefs, establishing workspace context, selecting minimal
-non-overlapping workflows, planning checkpoints, reviewing privacy and
-permissions, tracking provenance, verifying quality, and preserving handoffs.
+into scoped briefs, establishing workspace context, separating overlapping
+already-proposed workstreams inside one defined request, planning checkpoints,
+reviewing privacy and permissions, tracking provenance, verifying quality, and
+preserving handoffs. The workflow router does not discover or select external
+components.
 The plugin has no installer or executable network client, writes no persistent
 project state, and collects no project telemetry, accounts, or secrets.
 
 ### 한국어 설명
 
-모호한 요청을 범위가 정해진 brief로 바꾸고, workspace context를 확립하며, 겹치지
-않는 최소 workflow를 선택하고, checkpoint를 계획하고, 개인정보·권한과 근거를
-검토하고, 품질을 검증하며, handoff를 보존하는 사람이 읽을 수 있는 Claude Code
-workflow 스킬 8개입니다. 설치 프로그램이나 실행 가능한 네트워크 클라이언트가 없고
-영구 프로젝트 상태를 쓰지 않으며 프로젝트 텔레메트리, 계정 또는 비밀 값을 수집하지
-않습니다.
+모호한 요청을 범위가 정해진 brief로 바꾸고, workspace context를 확립하며, 하나의
+정해진 요청 안에 이미 제안된 workstream의 겹치는 책임을 분리하고, checkpoint를
+계획하고, 개인정보·권한과 근거를 검토하고, 품질을 검증하며, handoff를 보존하는
+사람이 읽을 수 있는 Claude Code workflow 스킬 8개입니다. workflow router는 외부
+component를 발견하거나 선택하지 않습니다. 설치 프로그램이나 실행 가능한 네트워크
+클라이언트가 없고 영구 프로젝트 상태를 쓰지 않으며 프로젝트 텔레메트리, 계정 또는
+비밀 값을 수집하지 않습니다.
 
 ### Working Use Cases / 실제 사용 사례
 
@@ -270,8 +273,12 @@ Every item must pass before the single Shared Core form is submitted:
       all resolve to the same approved SHA.
 - [ ] The standalone post-release inventory in the release runbook passed freshly and
       unmodified immediately before opening this submission.
-- [ ] Clean-environment marketplace add, the `shared-core` install, and its three
-      documented use cases pass against that exact commit.
+- [ ] Clean-environment marketplace add and the `shared-core` install identity and
+      load checks pass against that exact commit.
+- [ ] The three documented use cases map to actual named skills. They are
+      illustrative examples, not execution evidence, and are not claimed to have
+      run or passed without separate candidate-bound evaluation evidence for each
+      exact prompt.
 - [ ] `claude plugin validate plugins/shared-core --strict` passes.
 - [ ] Homepage, privacy, support, license, and security-reporting URLs are public
       and usable without maintainer credentials.
@@ -297,8 +304,11 @@ Every item must pass before the single Shared Core form is submitted:
       승인 SHA를 가리킵니다.
 - [ ] 릴리스 runbook의 독립 post-release inventory를 이 제출 직전에 수정 없이 새로
       실행하여 통과했습니다.
-- [ ] 동일 커밋의 깨끗한 환경에서 marketplace 추가, `shared-core` 설치 및 문서화된
-      사용 사례 3개가 통과합니다.
+- [ ] 동일 커밋의 깨끗한 환경에서 marketplace 추가와 `shared-core` 설치 identity 및
+      load 검사가 통과합니다.
+- [ ] 문서화된 사용 사례 3개가 실제 이름 있는 스킬에 연결됩니다. 이들은 실행 근거가
+      아닌 설명용 예시이며, 각 exact prompt에 대한 별도의 candidate-bound 평가 근거가
+      없으면 실행 또는 통과했다고 주장하지 않습니다.
 - [ ] `shared-core`의 strict validation이 통과합니다.
 - [ ] homepage, privacy, support, license 및 보안 신고 URL을 관리자 인증 없이 사용할
       수 있습니다.
