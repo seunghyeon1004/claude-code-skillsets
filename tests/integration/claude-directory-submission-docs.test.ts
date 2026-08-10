@@ -102,6 +102,9 @@ describe("Claude directory submission documentation", () => {
     expect(guide).toContain("/shared-core:intent-to-brief");
     expect(guide).toContain("/shared-core:risk-privacy-permissions");
     expect(guide).toContain("/shared-core:quality-verification");
+    expect(guide).toMatch(/already-proposed workstreams inside one defined request/i);
+    expect(guide).toMatch(/does not discover or select external\s+components/i);
+    expect(guide).not.toMatch(/selecting minimal\s+non-overlapping workflows/i);
     expect(guide).toMatch(/CURRENT POLICY HOLD - DO NOT SUBMIT/);
     expect(guide).toMatch(/Section 2\.D/);
     expect(guide).toMatch(/Section 2\.F/);
@@ -130,6 +133,11 @@ describe("Claude directory submission documentation", () => {
     expect(submissionGates).toContain(
       "- [ ] The user gives a separate final approval to submit `shared-core`."
     );
+    expect(submissionGates).toMatch(/marketplace add[\s\S]*install identity and[\s\S]*load checks pass/i);
+    expect(submissionGates).toMatch(/three documented use cases map to actual named skills/i);
+    expect(submissionGates).toMatch(/illustrative examples, not execution evidence/i);
+    expect(submissionGates).toMatch(/separate candidate-bound evaluation evidence[\s\S]*each[\s\S]*exact prompt/i);
+    expect(submissionGates).not.toMatch(/three\s+documented use cases pass/i);
     expect(submissionGates).toContain(
       "- [ ] 소유자가 Software Directory Terms를 검토하고 직접 동의합니다."
     );
