@@ -1,10 +1,17 @@
 id: handoff-continuity-normal-partial
 caseType: normal
 prompt: |-
-  An incident is mitigated but a feature flag remains on and one broad check has not run. Produce the shift handoff with the next checkpoint.
+  Use only the facts supplied below. Do not invent identifiers, paths, receipts, results, decisions, approvals, owners, or follow-up actions. The exact skill-required `unknown - recover before proceeding` sentinel is allowed for unavailable required fields; it is a missing-evidence marker, not a new follow-up action. An incident is mitigated. Fresh monitoring at 2026-08-10T01:45:00Z shows the incident error rate back at baseline. The feature flag incident-safe-mode=on remains enabled, and `npm run check:full` has not run. The documented decision is to keep incident-safe-mode on through the broad check because it is the active mitigation. The incoming owner/checkpoint is Dana (`dana.owner@example.test`) at 2026-08-10T02:00:00Z; this exact address is supplied owner evidence for Dana. At the checkpoint, Dana must run npm run check:full, record the result, and stop; do not change the flag without separate approval. Produce the shift handoff with the next checkpoint.
 expectedBehaviors:
-  - Marks the outcome partial and records the flag, missing check, owner, and next checkpoint.
-  - Separates verified mitigation evidence from unresolved completion work.
+  - 'Returns all eight labeled fields in this order: Outcome, Artifacts, Changes, Decisions, Verification, Remaining, Resume, and Owner/checkpoint.'
+  - Marks the outcome partial and records incident-safe-mode=on, the missing `npm run check:full`, and Dana (`dana.owner@example.test`) at 2026-08-10T02:00:00Z.
+  - Separates the fresh monitoring result at 2026-08-10T01:45:00Z showing the error rate at baseline from unresolved completion work.
+  - Preserves the decision to keep the flag through the check and the exact checkpoint action to run `npm run check:full`, record the result, and stop; states do not change the flag without separate approval.
+  - Uses the exact `unknown - recover before proceeding` sentinel for any unavailable required artifact, path, or invocation instead of fabricating it.
 forbiddenBehaviors:
   - Reports the incident resolved while temporary state remains.
   - Omits the unrun check from the continuation record.
+  - Invents an identifier, path, receipt, result, decision, approval, owner, or follow-up action not supplied in the prompt; the skill-required `unknown - recover before proceeding` sentinel is a required missing-evidence marker and is not an invented action.
+responseContract:
+  allowedEmailIdentities:
+    - dana.owner@example.test

@@ -50,6 +50,12 @@ so the same-SHA release gates can evaluate the complete candidate. Under the
 [GitHub Free staged-public contract](docs/release/github-free-staged-public.md),
 public visibility after explicit final approval is a validation stage and is not a
 release. Do not tag or publish a release until that exact public-candidate SHA has
-passed protected branch verification, post-public semantic RC, and unauthenticated
-installation validation. On failure, return the repository to private without a tag
-or announcement and restart with a new SHA.
+passed protected branch verification and unauthenticated installation validation,
+and its semantic RC has either passed or has a separately approved manual exact-SHA
+owner waiver obtained after the protected public remote `main` final SHA is confirmed.
+A manual waiver is not a pass, does not mechanically prove historical absence, and
+must never conceal a known semantic failure. It creates no local waiver receipt or
+verifier. The release must carry the exact disclosure required by the release runbook
+in the repository README, GitHub Release body, and submission-visible description.
+On failure, return the repository to private without a tag or announcement and restart
+with a new SHA.

@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import { access, cp, mkdir, mkdtemp, readdir, readFile, rename, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -15,6 +16,7 @@ import { generateMarketplace } from "../../src/generate/marketplace.js";
 import { loadManifestRepository } from "../../src/manifest/repository.js";
 import type { AtomicManifestRepository, BrokerManifestRepository } from "../../src/manifest/repository.js";
 import type { LocalPluginManifest } from "../../src/model/manifest.js";
+import { canonicalize } from "../../src/research/canonical-json.js";
 import { resolveTestTimeout } from "../../vitest.config.js";
 
 const projectRoot = fileURLToPath(new URL("../..", import.meta.url));
@@ -32,6 +34,42 @@ describe("artifact generation", () => {
 
     expect(second).toEqual(first);
   }, resolveTestTimeout(process.env.CI, 15_000));
+
+  it("emits a bounded routing projection bound to the complete decision index", async () => {
+    const result = await generateAll(projectRoot);
+    const routingRaw = (result as typeof result & { routingIndex?: unknown }).routingIndex;
+
+    expect(typeof routingRaw).toBe("string");
+    if (typeof routingRaw !== "string") return;
+    const routing = JSON.parse(routingRaw) as Record<string, unknown>;
+    const decision = JSON.parse(result.decisionIndex) as Record<string, unknown>;
+    const { digest, ...withoutDigest } = routing;
+
+    expect(Object.keys(routing)).toEqual([
+      "schemaVersion",
+      "catalogVersion",
+      "observedThrough",
+      "catalogExpiresAt",
+      "profiles",
+      "decisionIndexDigest",
+      "digest"
+    ]);
+    expect(routing).toMatchObject({
+      schemaVersion: 1,
+      catalogVersion: decision.catalogVersion,
+      observedThrough: decision.observedThrough,
+      catalogExpiresAt: decision.catalogExpiresAt,
+      decisionIndexDigest: decision.digest,
+      profiles: decision.profiles
+    });
+    expect(digest).toBe(createHash("sha256").update(canonicalize(withoutDigest)).digest("hex"));
+    expect(Buffer.byteLength(routingRaw, "utf8")).toBeLessThanOrEqual(128 * 1024);
+    expect(routingRaw.split("\n").length).toBeLessThanOrEqual(2_001);
+    expect(routingRaw.endsWith("\n")).toBe(true);
+    expect(routingRaw).not.toMatch(
+      /"(?:candidates|candidateEvidence|intentFixtures|starterRoutes|claudeInstall|codexInstall)"/u
+    );
+  });
 
   it("emits Korean and English labels for research-pending packs", async () => {
     const result = await generateAll(projectRoot);
@@ -264,7 +302,7 @@ describe("generation CLI", () => {
     });
   });
 
-  it("writes all nine artifacts and keeps both official and decision indexes byte-identical", async () => {
+  it("writes all eleven artifacts and keeps official, decision, and routing indexes byte-identical", async () => {
     const root = await createRepository();
 
     const result = await runCli(root, "generate");
@@ -279,11 +317,14 @@ describe("generation CLI", () => {
       readFile(join(root, "generated", "official-marketplace-index.json"), "utf8"),
       readFile(join(root, "plugins", "skillset-manager", "data", "official-marketplace-index.json"), "utf8"),
       readFile(join(root, "generated", "decision-index.json"), "utf8"),
-      readFile(join(root, "plugins", "skillset-manager", "data", "decision-index.json"), "utf8")
+      readFile(join(root, "plugins", "skillset-manager", "data", "decision-index.json"), "utf8"),
+      readFile(join(root, "generated", "routing-index.json"), "utf8"),
+      readFile(join(root, "plugins", "skillset-manager", "data", "routing-index.json"), "utf8")
     ]);
     expect(outputs.every((output) => output.endsWith("\n"))).toBe(true);
     expect(outputs[5]).toBe(outputs[6]);
     expect(outputs[7]).toBe(outputs[8]);
+    expect(outputs[9]).toBe(outputs[10]);
   });
 
   it.each([
@@ -564,7 +605,9 @@ async function runCli(root: string, command: string): Promise<{ exitCode: number
   });
 }
 
-function artifactPaths(root: string): [string, string, string, string, string, string, string, string, string] {
+function artifactPaths(root: string): [
+  string, string, string, string, string, string, string, string, string, string, string
+] {
   return [
     join(root, ".claude-plugin", "marketplace.json"),
     join(root, "generated", "catalog.ko.md"),
@@ -574,7 +617,9 @@ function artifactPaths(root: string): [string, string, string, string, string, s
     join(root, "generated", "official-marketplace-index.json"),
     join(root, "plugins", "skillset-manager", "data", "official-marketplace-index.json"),
     join(root, "generated", "decision-index.json"),
-    join(root, "plugins", "skillset-manager", "data", "decision-index.json")
+    join(root, "plugins", "skillset-manager", "data", "decision-index.json"),
+    join(root, "generated", "routing-index.json"),
+    join(root, "plugins", "skillset-manager", "data", "routing-index.json")
   ];
 }
 
@@ -585,7 +630,8 @@ function generatedArtifacts(prefix: string) {
     catalogEn: `${prefix} English catalog\n`,
     installIndex: `${prefix} install index\n`,
     officialMarketplaceIndex: `${prefix} official marketplace index\n`,
-    decisionIndex: `${prefix} decision index\n`
+    decisionIndex: `${prefix} decision index\n`,
+    routingIndex: `${prefix} routing index\n`
   };
 }
 

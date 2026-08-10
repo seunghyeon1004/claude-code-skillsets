@@ -33,6 +33,13 @@ Apply these rules:
 - When public prose must stay clean, preserve the ledger in review notes rather than dropping provenance.
 - Do not replace an unsupported claim with a new unsupported benefit or factual claim.
 
+Removing names, numbers, dates, or specificity, or generalizing, softening, or
+recasting a claim as directional or forward-looking language, does not add support.
+A review ledger label does not cure an unsupported assertion in the publishable
+artifact. If no supported or explicitly labeled item remains, mark the publish
+decision blocked. A requested bullet count, caption, length, deadline, or other
+format pressure does not override the blocked decision or permit substitute claims.
+
 ## Output Contract
 
 Return both:

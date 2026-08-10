@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexFingerprint": "sha256:497ea2c1b8f4d311e4b3c83728f98bff07b13d4b88a9bd7e741aaec2b36c6538",
+  "indexFingerprint": "sha256:88048f075ee0ed45de95cb6d909d423b99061408ca1eac6f3358bd9a75bb90cc",
   "marketplace": {
     "id": "claude-code-skillsets",
     "source": "seunghyeon1004/claude-code-skillsets"
@@ -969,24 +969,32 @@
         "ko": "스킬셋 관리자",
         "en": "Skillset manager"
       },
-      "version": "0.1.2",
+      "version": "0.1.3",
       "source": "./plugins/skillset-manager",
       "marketplace": "claude-code-skillsets",
       "trustTier": "verified",
       "permissions": {
         "filesystem": [
-          "plugin-owned install index",
-          "user-scoped setup lock and same-directory temporary file"
+          "plugin-owned current and digest-history decision indexes",
+          "plugin-owned maintenance policy",
+          "plugin-owned routing index",
+          "user-scoped setup install and execution state with same-directory temporary files"
         ],
         "commands": [
-          "atomic rename of approved setup lock temporary file",
+          "approval-bound canonical Node -e state publisher",
+          "approved canonical Node executable --version",
+          "approved canonical Node executable running plugin-owned runtime.mjs approval-object",
+          "approved canonical Node executable running plugin-owned runtime.mjs execute",
+          "approved canonical Node executable running plugin-owned runtime.mjs preview",
           "claude --version",
           "claude plugin install approved plugin",
           "claude plugin list --json",
           "claude plugin marketplace add separately approved exact marketplace source",
           "claude plugin marketplace list",
           "claude plugin marketplace list --json",
-          "command -v -- declared executable"
+          "command -v -- declared executable",
+          "date -u +%Y-%m-%dT%H:%M:%SZ after explicit probe consent",
+          "restricted bash discovery of canonical Node path and SHA-256 after explicit probe consent"
         ],
         "network": [
           "configured Claude Code marketplaces during approved installation"

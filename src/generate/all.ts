@@ -17,11 +17,13 @@ import type { DomainManifest } from "../model/manifest.js";
 import { generateCatalogs, type GeneratedCatalogs } from "./catalog.js";
 import { generateDecisionIndex } from "./decision-index.js";
 import { bilingualPluginDescription, generateMarketplace } from "./marketplace.js";
+import { generateRoutingIndex } from "./routing-index.js";
 
 export interface GeneratedArtifacts extends GeneratedCatalogs {
   marketplace: string;
   officialMarketplaceIndex: string;
   decisionIndex: string;
+  routingIndex: string;
 }
 
 export async function generateAll(root: string): Promise<GeneratedArtifacts> {
@@ -29,7 +31,8 @@ export async function generateAll(root: string): Promise<GeneratedArtifacts> {
   validateRepositoryGraph(repository.broker);
   await validateRepositoryReferences(root, repository.broker);
   const decisionIndex = await generateDecisionIndex(root);
-  const catalogs = generateCatalogs(repository, validateDecisionIndex(JSON.parse(decisionIndex)));
+  const validatedDecisionIndex = validateDecisionIndex(JSON.parse(decisionIndex));
+  const catalogs = generateCatalogs(repository, validatedDecisionIndex);
   return {
     marketplace: serializeJson(generateMarketplace(repository.broker)),
     officialMarketplaceIndex: generateOfficialMarketplaceIndex(
@@ -37,6 +40,7 @@ export async function generateAll(root: string): Promise<GeneratedArtifacts> {
       loadOfficialMarketplaceBaseline(root)
     ),
     decisionIndex,
+    routingIndex: generateRoutingIndex(validatedDecisionIndex),
     ...catalogs
   };
 }

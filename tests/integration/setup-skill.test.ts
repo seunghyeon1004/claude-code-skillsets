@@ -84,6 +84,67 @@ describe("skillset-manager decision-index setup", () => {
     );
   });
 
+  it("publishes the manager's exact setup filesystem and command surface", async () => {
+    const sourceManifest = YAML.parse(
+      await readFile(join(projectRoot, "manifests", "plugins", "skillset-manager.yaml"), "utf8")
+    ) as { permissions: { filesystem: string[]; commands: string[] } };
+    const generated = JSON.parse(
+      await readFile(join(projectRoot, "generated", "install-index.json"), "utf8")
+    ) as { plugins: Array<{ id: string; permissions: { filesystem: string[]; commands: string[] } }> };
+    const installed = JSON.parse(
+      await readFile(join(pluginRoot, "data", "install-index.json"), "utf8")
+    ) as { plugins: Array<{ id: string; permissions: { filesystem: string[]; commands: string[] } }> };
+    const expectedFilesystem = [
+      "plugin-owned routing index",
+      "plugin-owned current and digest-history decision indexes",
+      "plugin-owned maintenance policy",
+      "user-scoped setup install and execution state with same-directory temporary files"
+    ];
+    const expectedCommands = [
+      "date -u +%Y-%m-%dT%H:%M:%SZ after explicit probe consent",
+      "restricted bash discovery of canonical Node path and SHA-256 after explicit probe consent",
+      "approved canonical Node executable --version",
+      "approved canonical Node executable running plugin-owned runtime.mjs preview",
+      "approved canonical Node executable running plugin-owned runtime.mjs approval-object",
+      "approved canonical Node executable running plugin-owned runtime.mjs execute",
+      "approval-bound canonical Node -e state publisher",
+      "claude --version",
+      "claude plugin marketplace list",
+      "claude plugin marketplace list --json",
+      "claude plugin list --json",
+      "command -v -- declared executable",
+      "claude plugin install approved plugin",
+      "claude plugin marketplace add separately approved exact marketplace source"
+    ];
+
+    expect(sourceManifest.permissions.filesystem).toEqual(expectedFilesystem);
+    expect(sourceManifest.permissions.commands).toEqual(expectedCommands);
+    const generatedFilesystemOrder = [...expectedFilesystem].sort();
+    const generatedCommandOrder = [...expectedCommands].sort();
+    expect(generated.plugins.find(({ id }) => id === "skillset-manager")?.permissions.filesystem)
+      .toEqual(generatedFilesystemOrder);
+    expect(installed.plugins.find(({ id }) => id === "skillset-manager")?.permissions.filesystem)
+      .toEqual(generatedFilesystemOrder);
+    expect(generated.plugins.find(({ id }) => id === "skillset-manager")?.permissions.commands)
+      .toEqual(generatedCommandOrder);
+    expect(installed.plugins.find(({ id }) => id === "skillset-manager")?.permissions.commands)
+      .toEqual(generatedCommandOrder);
+  });
+
+  it("keeps Korean and English discovery-only copy honest for zero-candidate routes", async () => {
+    const [ko, en] = await Promise.all([
+      readFile(join(projectRoot, "README.md"), "utf8"),
+      readFile(join(projectRoot, "README.en.md"), "utf8")
+    ]);
+
+    expect(ko).toContain("경로에 후보가 있을 때만 표시");
+    expect(ko).toContain("후보가 없는 경로는 빈 배열");
+    expect(en).toContain("only when a route has candidates");
+    expect(en).toContain("A route with no candidate returns an empty array");
+    expect(ko).toContain("`discoveryCandidates`");
+    expect(en).toContain("`discoveryCandidates`");
+  });
+
   it("is a concise, discoverable setup skill", async () => {
     const content = await readFile(skillPath, "utf8");
     const frontmatter = content.match(/^---\n([\s\S]*?)\n---(?:\n|$)/)?.[1];
@@ -94,15 +155,44 @@ describe("skillset-manager decision-index setup", () => {
       description: expect.stringMatching(/^Use when\b/)
     });
     expect(content.split("\n").length).toBeLessThanOrEqual(500);
-    expect(content).toContain("${CLAUDE_PLUGIN_ROOT}/data/decision-index.json");
+    expect(content).toContain("${CLAUDE_PLUGIN_ROOT}/data/routing-index.json");
+    expect(content).not.toMatch(/Read\s+`?\$\{CLAUDE_PLUGIN_ROOT\}\/data\/decision-index\.json/i);
     expect(content).toContain("/skillset-manager:doctor");
   });
 
-  it("uses only the plugin-owned decision index for recommendations", async () => {
+  it("uses routing data only for intent and the bound runtime preview for recommendations", async () => {
     const content = await readFile(skillPath, "utf8");
 
-    expect(content).toContain("${CLAUDE_PLUGIN_ROOT}/data/decision-index.json");
-    expect(content).toMatch(/only recommendation data source/i);
+    expect(content).toContain("${CLAUDE_PLUGIN_ROOT}/data/routing-index.json");
+    expect(content).toMatch(/routing data[^.]*goal[^.]*domain/i);
+    expect(content).toMatch(/must not[^.]*candidate|do not[^.]*candidate/i);
+    expect(content).toMatch(/runtime[^.]*full decision index[^.]*routing index/i);
+    expect(content).toMatch(/schemaVersion:\s*2/i);
+    expect(content).toContain("decisionIndexDigest");
+    expect(content).toContain("routingIndexDigest");
+    expect(content).toContain(
+      "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed."
+    );
+    expect(content).toContain(
+      "다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다."
+    );
+    expect(content).toContain(
+      "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed."
+    );
+    expect(content).toContain(
+      "라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다."
+    );
+    expect(content).toContain(
+      "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval."
+    );
+    expect(content).toContain(
+      "향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다."
+    );
+    expect(content).toMatch(/ambiguous.*exactly one sentence.*do not output.*unique-route/is);
+    expect(content).toMatch(
+      /complete routing-authority statement[\s\S]*do not prefix.*suffix.*repeat[\s\S]*do not replace.*paraphrase/is
+    );
+    expect(content).toMatch(/exactly one sentence.*request language[\s\S]*do not output both/is);
     expect(content).toMatch(/Do not read.*install-index\.json.*official-marketplace-index\.json.*discovery/i);
     expect(content).not.toMatch(/^## (?:Essential|Recommended|Custom)/m);
   });
@@ -139,7 +229,16 @@ describe("skillset-manager decision-index setup", () => {
     expect(probe).toMatch(/current explicit consent/i);
     expect(probe).toMatch(/Run no probe without current explicit consent/i);
     expect(probe).toMatch(/time-unknown hold/i);
+    expect(probe).toMatch(
+      /user-provided\s+timestamp[\s\S]*untrusted[\s\S]*without a fresh consented UTC command result[\s\S]*time is\s+unknown[\s\S]*equality to `catalogExpiresAt`[\s\S]*conditional/i
+    );
     expect(probe).toMatch(/Unknown time[\s\S]*timestamp[\s\S]*catalogExpiresAt[\s\S]*holds every install/i);
+    expect(probe).toMatch(
+      /time-unknown or expired hold[\s\S]*freshly load the routing index[\s\S]*current consent[\s\S]*required probes[\s\S]*new preview[\s\S]*freshly loads and binds[\s\S]*routing index[\s\S]*full decision index[\s\S]*risk acknowledgement[\s\S]*separate\s+exact approval/i
+    );
+    expect(probe).toMatch(
+      /current\s+refusal-based\s+hold[\s\S]*mandatory\s+final\s+hold\s+paragraph[\s\S]*do\s+not\s+introduce[\s\S]*(?:if|in\s+a\s+real\s+run|would)[\s\S]*qualification/i
+    );
     expect(probe).toMatch(/credential or\s+authentication state[\s\S]*shell history[\s\S]*environment variable\s+values[\s\S]*browser data[\s\S]*SSH keys/i);
   });
 
@@ -159,6 +258,8 @@ describe("skillset-manager decision-index setup", () => {
     expect(preview).toMatch(/decision-index evidence ID[\s\S]*support[\s\S]*direct[\s\S]*inferred[\s\S]*unknown/i);
     expect(preview).toContain("capability-inference:not-install-smoke");
     expect(preview).toMatch(/specific acknowledgement/i);
+    expect(preview).toMatch(/every listed risk[\s\S]*acknowledged before[\s\S]*separate exact approval/i);
+    expect(preview).toMatch(/runtime-provided acknowledgement[\s\S]*do not paraphrase/i);
     expect(preview).toMatch(/not installation approval/i);
     expect(approval).toMatch(/separate[\s\S]*final approval/i);
     expect(approval).toMatch(/decision-index digest[\s\S]*catalog expiry[\s\S]*commands[\s\S]*candidate IDs[\s\S]*execution order[\s\S]*state paths/i);
@@ -287,14 +388,52 @@ describe("decision setup evaluation corpus", () => {
 
     const loaded = await Promise.all(entries.map(async (file) => {
       const value = YAML.parse(await readFile(join(evaluationsRoot, file), "utf8")) as Record<string, unknown>;
-      expect(Object.keys(value)).toEqual(["id", "caseType", "prompt", "expectedBehaviors", "forbiddenBehaviors"]);
+      expect(Object.keys(value)).toEqual(file === "03-setup-ambiguous-indexed-tie.yaml"
+        || file === "06-setup-expired-catalog.yaml"
+        || file === "08-setup-refused-time-probe.yaml"
+        ? ["id", "caseType", "responseRequirements", "prompt", "expectedBehaviors", "forbiddenBehaviors"]
+        : ["id", "caseType", "prompt", "expectedBehaviors", "forbiddenBehaviors"]);
       expect(value.id).toBe(scenarioIds[entries.indexOf(file)]);
       expect(value.prompt).not.toMatch(/Essential|Recommended|Custom Max|install-index/i);
+      expect(value.prompt).toMatch(/routing index/i);
+      expect(value.prompt).toMatch(/runtime[^.]*not (?:been )?invoked|do not invoke the runtime/i);
       expect(value.expectedBehaviors).toEqual(expect.any(Array));
       expect(value.forbiddenBehaviors).toEqual(expect.any(Array));
+      expect((value.expectedBehaviors as string[]).join(" ")).not.toMatch(
+        /primary plus one|current exact preview|successful managed install|candidate succeeds/i
+      );
+      expect((value.forbiddenBehaviors as string[]).join(" ")).toMatch(
+        /candidate|approval|execution|install/i
+      );
       return value;
     }));
     expect(loaded).toHaveLength(9);
+    const researchKorean = loaded.find(({ id }) => id === "setup-research-evidence-ko")!;
+    expect((researchKorean.expectedBehaviors as string[]).join(" ")).toContain(
+      "다이제스트에 결합된 설치 런타임 미리보기가 반환되기 전에는 결정 계획이나 선택된 후보가 존재하지 않으며, executionStatus는 not-executed로 유지됩니다."
+    );
+    const videoEditing = loaded.find(({ id }) => id === "setup-video-editing")!;
+    expect((videoEditing.expectedBehaviors as string[]).join(" ")).toContain(
+      "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed."
+    );
+    const ambiguous = loaded.find(({ id }) => id === "setup-ambiguous-indexed-tie")!;
+    expect(ambiguous.responseRequirements).toEqual({ ambiguousRoutingAuthority: "en" });
+    expect((ambiguous.expectedBehaviors as string[]).join(" ")).toContain(
+      "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed."
+    );
+    expect((ambiguous.forbiddenBehaviors as string[]).join(" ")).toMatch(
+      /unique-route.*decision.*plan.*selected.*candidate.*preview/i
+    );
+    const expired = loaded.find(({ id }) => id === "setup-expired-catalog")!;
+    expect(expired.responseRequirements).toEqual({ refreshBoundary: "en" });
+    expect((expired.expectedBehaviors as string[]).join(" ")).toContain(
+      "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval."
+    );
+    const refusedTime = loaded.find(({ id }) => id === "setup-refused-time-probe")!;
+    expect(refusedTime.responseRequirements).toEqual({ refreshBoundary: "en" });
+    expect((refusedTime.expectedBehaviors as string[]).join(" ")).toContain(
+      "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval."
+    );
     expect(loaded.every((value) => (value.expectedBehaviors as unknown[]).length > 0)).toBe(true);
     expect(loaded.every((value) => (value.forbiddenBehaviors as unknown[]).length > 0)).toBe(true);
   });
@@ -312,6 +451,19 @@ describe("decision setup evaluation corpus", () => {
     )).toBe(true);
     expect(cases.map(({ id }) => id)).toEqual(scenarioIds);
     expect(cases.every(({ fixturePluginRoot }) => fixturePluginRoot === pluginRoot)).toBe(true);
+  });
+
+  it("labels setup decision scenarios as isolated synthetic eligible-runtime coverage, not current catalog truth", async () => {
+    const [readme, manifestRaw] = await Promise.all([
+      readFile(join(fixturesRoot, "README.md"), "utf8"),
+      readFile(join(fixturesRoot, "decision-scenarios.yaml"), "utf8")
+    ]);
+
+    for (const content of [readme, manifestRaw]) {
+      expect(content).toMatch(/isolated synthetic eligible-runtime unit coverage/i);
+      expect(content).toMatch(/production[^\n]*35\/35[^\n]*held/i);
+      expect(content).toMatch(/not[^\n]*(?:current|production)[^\n]*(?:catalog|semantic)[^\n]*truth/i);
+    }
   });
 });
 

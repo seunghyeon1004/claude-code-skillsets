@@ -701,6 +701,19 @@ does not equal the local `main` tip before it invokes Claude. Its evaluator uses
 repository's fixture data and Claude Code safe mode with read-only tools; it does not
 install candidates, mutate GitHub, or use a remote runner.
 
+Before creating an artifact or invoking a model, the runner resolves one canonical
+regular Claude executable and requires `claude auth status --json` to report
+`loggedIn: true`, `authMethod: "claude.ai"`, `apiProvider: "firstParty"`, and a
+nonempty subscription type. API-key, auth-token, custom-base-URL, Bedrock, Vertex,
+and Foundry routing environment variables fail the gate. Authentication email,
+organization, tokens, headers, cookies, and the inherited environment are never
+written to the receipt. Every evaluation child receives only the runner's fixed
+non-secret environment allowlist, including the operating-system-derived `USER`
+required for macOS Keychain subscription lookup; an inherited `USER` value is ignored.
+The runner executes canonical `tsx` directly,
+outside the npm lifecycle, and passes the verified Claude executable absolute path
+and SHA-256 to each evaluator for validation before and after every model call.
+
 ```bash
 SHA="$CANDIDATE_SHA"
 test "$(git rev-parse HEAD)" = "$SHA"
@@ -712,9 +725,33 @@ npm run verify:solo-semantic-rc -- \
 ```
 
 Keep only `.rc-artifacts/$SHA/sanitized` as release evidence. The generated local
-target receipt identifies the exact SHA and repeats `humanReviewGuarantee:
-"not-guaranteed"`; it must never be described as a full or independent human review.
-Do not reuse a receipt from another SHA.
+target receipt identifies the exact SHA; the routing path, byte length, byte digest,
+and self digest; the full decision-index byte length, byte digest, and semantic
+digest; the catalog version and validity interval; and the observed `claude.ai`
+subscription mode. It records `semanticHarnessStatus: "passed"` separately from
+`executableAvailability`: a passing language harness does not make a review-held
+catalog executable. The receipt repeats `humanReviewGuarantee: "not-guaranteed"`
+and must never be described as a full or independent human review. Do not reuse a
+receipt from another SHA or another routing/catalog byte set.
+
+A manual exact-SHA owner waiver is an exceptional alternative. Do not request it until
+Stage 5 has freshly verified the protected public remote `main` final SHA and branch
+protection for this release. The user must explicitly decline the full same-SHA
+semantic RC because of subscription cost, acknowledge that semantic coverage is not
+proven, and attest that no semantic failure is known. Stage 5 constructs and displays
+the exact token only after that live preflight. The token is an operational
+acknowledgement, not a secret or authentication credential.
+
+This manual waiver creates no local waiver receipt and has no local verifier. The
+manual waiver is not a pass and does not mechanically prove historical absence. The
+owner must not delete or hide a known semantic failure to obtain the waiver. Any SHA
+change invalidates the approval and requires a newly displayed exact token and new
+approval.
+
+The GitHub Release target SHA must equal `$SHA`. The release body, repository README,
+and submission-visible description must each display this exact disclosure:
+
+> Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.
 
 ## 4. Unauthenticated installation verification
 
@@ -773,14 +810,15 @@ preflight_public_candidate() {
   test "$(jq -r '.visibility' <<<"$repository_json")" = public
   test "$(jq -r '.default_branch' <<<"$repository_json")" = main
   test "$(jq -r '.archived' <<<"$repository_json")" = false
-  expected_refs="$(printf '%s\t%s\n' \
-    "$CANDIDATE_SHA" refs/heads/main \
+  test "$(git ls-remote --heads "$PUBLIC_REMOTE_URL" refs/heads/main)" = \
+    "$(printf '%s\t%s' "$CANDIDATE_SHA" refs/heads/main)"
+  expected_tags="$(printf '%s\t%s\n' \
     "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
     "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
     "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
     "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' | LC_ALL=C sort)"
-  test "$(git ls-remote --heads --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_refs"
-  test "$(gh pr list --repo "$REPO" --state all --limit 1000 --json number | jq 'length')" = 0
+  test "$(git ls-remote --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_tags"
+  test "$(gh pr list --repo "$REPO" --state open --limit 1000 --json number | jq 'length')" = 0
 }
 
 preflight_public_candidate
@@ -844,7 +882,7 @@ jq -e --arg repo "$REPO" '
   [.[] | select(.name == "claude-code-skillsets" and .repo == $repo and .source == "github")] | length == 1
 ' <<<"$MARKETPLACES" >/dev/null
 jq -e '
-  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.2" and .scope == "local" and .enabled == true)] | length == 1
+  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.3" and .scope == "local" and .enabled == true)] | length == 1
   and [.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1
 ' <<<"$PLUGINS" >/dev/null
 
@@ -858,21 +896,33 @@ test "$(git -C "$MARKETPLACE_ROOT" rev-parse HEAD)" = "$CANDIDATE_SHA"
 compare_plugin_tree "$ANON_ROOT/project/repository/plugins/skillset-manager" "$MANAGER_ROOT"
 compare_plugin_tree "$ANON_ROOT/project/repository/plugins/shared-core" "$SHARED_ROOT"
 
+# The request carries only routing projection values; the installed runtime authenticates the full decision index.
+ROUTING_INDEX_PATH="$MANAGER_ROOT/data/routing-index.json"
+DECISION_INDEX_DIGEST="$(jq -er '.decisionIndexDigest | select(test("^[a-f0-9]{64}$"))' "$ROUTING_INDEX_PATH")"
+ROUTING_INDEX_DIGEST="$(jq -er '.digest | select(test("^[a-f0-9]{64}$"))' "$ROUTING_INDEX_PATH")"
 REQUEST="$(node -e '
 const fs = require("node:fs");
-const index = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+const routing = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
 const request = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   language: "en",
   platform: "linux",
-  observedAt: index.observedThrough,
+  observedAt: routing.observedThrough,
   claudeProbeConsent: "granted",
-  domainIds: [index.profiles[0].domainId]
+  domainIds: [routing.profiles[0].domainId],
+  decisionIndexDigest: routing.decisionIndexDigest,
+  routingIndexDigest: routing.digest
 };
 process.stdout.write(Buffer.from(`${JSON.stringify(request, null, 2)}\n`).toString("base64url"));
-' "$MANAGER_ROOT/data/decision-index.json")"
+' "$ROUTING_INDEX_PATH")"
 PREVIEW="$(node "$MANAGER_ROOT/runtime.mjs" preview --request "$REQUEST")"
-jq -e '.command == "preview" and .status == "held" and (has("approvedExecution") | not)' \
+jq -e --arg decision_digest "$DECISION_INDEX_DIGEST" --arg routing_digest "$ROUTING_INDEX_DIGEST" '
+  .command == "preview"
+  and .status == "held"
+  and (has("approvedExecution") | not)
+  and (.reviewSummary | split("\n") | any(. == "decisionIndexDigest: \($decision_digest)"))
+  and (.reviewSummary | split("\n") | any(. == "routingIndexDigest: \($routing_digest)"))
+' \
   <<<"$PREVIEW" >/dev/null
 
 EVIDENCE_ROOT="$EVIDENCE_BASE/.release-evidence"
@@ -891,7 +941,8 @@ jq --arg repo "$REPO" '[.[] | select(.name == "claude-code-skillsets") | {name, 
   <<<"$MARKETPLACES" > "$EVIDENCE_DIR/marketplace.json"
 jq '[.[] | select(.id == "skillset-manager@claude-code-skillsets" or .id == "shared-core@claude-code-skillsets") | {id, version, scope, enabled}]' \
   <<<"$PLUGINS" > "$EVIDENCE_DIR/plugins.json"
-jq '{command, status, approvedExecutionPresent: has("approvedExecution")}' \
+jq --arg decision_digest "$DECISION_INDEX_DIGEST" --arg routing_digest "$ROUTING_INDEX_DIGEST" \
+  '{command, status, approvedExecutionPresent: has("approvedExecution"), decisionIndexDigest: $decision_digest, routingIndexDigest: $routing_digest}' \
   <<<"$PREVIEW" > "$EVIDENCE_DIR/preview.json"
 ANONYMOUS_INSTALL
 
@@ -905,13 +956,313 @@ external candidate during this release check without its separate user approval.
 
 ## 5. Release, tag, and announcement
 
-Immediately before any release tag, GitHub Release, announcement, or directory
-submission, run `test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"` and
-`preflight_public_candidate` again in the stage 4 shell. Only after stages 1 through
-4 pass for that one unchanged SHA may the maintainer create
-or move the release tag, publish a GitHub Release, announce the public repository,
-or submit it to an external marketplace directory. Release evidence must identify
-that exact SHA.
+Immediately before any release tag or GitHub Release, run the following preparation
+block in the stage 4 shell. This is the post-bootstrap path: merged pull-request
+history and non-release heads may exist, but there must be no open pull request. The
+release-bearing refs must be exact: `main` at the candidate and only the two immutable
+governance tags before release. Stages 1, 2, and 4 must pass for the unchanged SHA.
+Set `SEMANTIC_DISPOSITION` to exactly `full-pass` or `manual-waiver`; the two branches
+produce different public release bodies and cannot be combined. A waiver is not
+passed, and a known semantic failure cannot be waived.
+
+```bash
+set -euo pipefail
+SHA="$CANDIDATE_SHA"
+RELEASE_TAG="v0.1.0"
+RELEASE_TITLE="Claude Code Skillsets v0.1.0"
+SEMANTIC_DISPOSITION="${SEMANTIC_DISPOSITION:?set full-pass or manual-waiver}"
+DISCLOSURE="Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver."
+RELEASE_EVIDENCE="$PWD/.release-evidence/release-$SHA"
+RELEASE_BODY="$RELEASE_EVIDENCE/release-body.md"
+APPROVAL_MANIFEST="$RELEASE_EVIDENCE/approval-manifest.json"
+SEMANTIC_EVIDENCE_ROOT="$PWD/.rc-artifacts/$SHA/sanitized"
+
+verify_full_semantic_pass() {
+  semantic_receipt="$SEMANTIC_EVIDENCE_ROOT/governance/local-semantic-rc-target.json"
+  npm run eval:sanitize:verify -- "$SEMANTIC_EVIDENCE_ROOT"
+  jq -e --arg sha "$SHA" '
+    .schemaVersion == 6
+    and .receiptType == "local-semantic-rc-target"
+    and .commitSha == $sha
+    and .semanticHarnessStatus == "passed"
+  ' "$semantic_receipt" >/dev/null
+}
+
+test "$(git rev-parse HEAD)" = "$SHA"
+preflight_public_candidate
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$SHA"
+test ! -e "$RELEASE_EVIDENCE"
+mkdir -p "$RELEASE_EVIDENCE/raw"
+npm run verify:branch-protection -- \
+  --repo "$REPO" --repository-id "$APPROVED_REPOSITORY_ID" \
+  --expected-tip "$SHA" --branch main \
+  --output "$RELEASE_EVIDENCE/raw/branch-protection.json"
+npm run eval:sanitize -- "$RELEASE_EVIDENCE/raw" "$RELEASE_EVIDENCE/sanitized"
+npm run eval:sanitize:verify -- "$RELEASE_EVIDENCE/sanitized"
+
+set +e
+PREEXISTING_RELEASE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/releases/tags/$RELEASE_TAG" 2>&1)"
+PREEXISTING_RELEASE_STATUS=$?
+set -e
+test "$PREEXISTING_RELEASE_STATUS" = 1
+grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$PREEXISTING_RELEASE"
+test -z "$(git ls-remote --refs "$PUBLIC_REMOTE_URL" "refs/tags/$RELEASE_TAG")"
+
+case "$SEMANTIC_DISPOSITION" in
+  full-pass)
+    verify_full_semantic_pass
+    cat > "$RELEASE_BODY" <<EOF
+# Claude Code Skillsets v0.1.0
+
+Release commit: $SHA
+
+Full exact-SHA semantic RC passed.
+EOF
+    ;;
+  manual-waiver)
+    WAIVER="WAIVE-FULL-SEMANTIC-RC:$SHA:SUBSCRIPTION-COST:SEMANTIC-COVERAGE-NOT-PROVEN:NO-KNOWN-SEMANTIC-FAILURE"
+    cat > "$RELEASE_BODY" <<EOF
+# Claude Code Skillsets v0.1.0
+
+Release commit: $SHA
+
+$DISCLOSURE
+
+Owner waiver: $WAIVER
+EOF
+    ;;
+  *)
+    printf '%s\n' "Unsupported SEMANTIC_DISPOSITION: $SEMANTIC_DISPOSITION" >&2
+    exit 1
+    ;;
+esac
+
+RELEASE_BODY_SHA256="$(shasum -a 256 "$RELEASE_BODY" | awk '{print $1}')"
+jq -n \
+  --arg repository "$REPO" \
+  --arg tag "$RELEASE_TAG" \
+  --arg targetSha "$SHA" \
+  --arg title "$RELEASE_TITLE" \
+  --arg semanticDisposition "$SEMANTIC_DISPOSITION" \
+  --arg releaseBodySha256 "$RELEASE_BODY_SHA256" \
+  '{schemaVersion: 1, repository: $repository, tag: $tag, targetSha: $targetSha,
+    title: $title, semanticDisposition: $semanticDisposition,
+    releaseBodySha256: $releaseBodySha256}' > "$APPROVAL_MANIFEST"
+APPROVAL_MANIFEST_SHA256="$(shasum -a 256 "$APPROVAL_MANIFEST" | awk '{print $1}')"
+readonly APPROVED_RELEASE_REPO="$REPO"
+readonly APPROVED_RELEASE_TAG="$RELEASE_TAG"
+readonly APPROVED_RELEASE_SHA="$SHA"
+readonly APPROVED_RELEASE_TITLE="$RELEASE_TITLE"
+readonly APPROVED_SEMANTIC_DISPOSITION="$SEMANTIC_DISPOSITION"
+readonly APPROVED_RELEASE_BODY_SHA256="$RELEASE_BODY_SHA256"
+readonly APPROVED_MANIFEST_SHA256="$APPROVAL_MANIFEST_SHA256"
+printf 'Repository: %s\nTag to create: %s\nTarget SHA: %s\nTitle: %s\nSemantic disposition: %s\nRelease body SHA-256: %s\n' \
+  "$REPO" "$RELEASE_TAG" "$SHA" "$RELEASE_TITLE" "$SEMANTIC_DISPOSITION" "$RELEASE_BODY_SHA256"
+printf 'Approval manifest SHA-256: %s\n' "$APPROVAL_MANIFEST_SHA256"
+cat "$APPROVAL_MANIFEST"
+printf '%s\n' '--- Exact GitHub Release body ---'
+cat "$RELEASE_BODY"
+if test "$SEMANTIC_DISPOSITION" = manual-waiver; then
+  printf '%s\n' '--- Exact owner-waiver token ---' "$WAIVER"
+fi
+```
+
+Stop here for every disposition. Obtain explicit approval for the displayed repository,
+new lightweight tag, target SHA, title, approval manifest digest, and exact GitHub
+Release body. For
+`manual-waiver`, the same approval must also cover the complete displayed waiver token
+and acknowledge that the tag and Release are remote mutations. Any SHA or body change
+invalidates the approval. After approval, rerun the complete live preflight below; do
+not rely on the pre-approval result. The release command may have succeeded even if the
+client returns nonzero, so do not retry it. Continue directly to authenticated inventory
+and accept success only if every postcondition holds.
+
+```bash
+test "$(git rev-parse HEAD)" = "$SHA"
+test "$REPO" = "$APPROVED_RELEASE_REPO"
+test "$RELEASE_TAG" = "$APPROVED_RELEASE_TAG"
+test "$SHA" = "$APPROVED_RELEASE_SHA"
+test "$SHA" = "$CANDIDATE_SHA"
+test "$RELEASE_TITLE" = "$APPROVED_RELEASE_TITLE"
+test "$SEMANTIC_DISPOSITION" = "$APPROVED_SEMANTIC_DISPOSITION"
+test "$(shasum -a 256 "$RELEASE_BODY" | awk '{print $1}')" = "$APPROVED_RELEASE_BODY_SHA256"
+test "$(shasum -a 256 "$APPROVAL_MANIFEST" | awk '{print $1}')" = "$APPROVED_MANIFEST_SHA256"
+jq -e \
+  --arg repository "$APPROVED_RELEASE_REPO" \
+  --arg tag "$APPROVED_RELEASE_TAG" \
+  --arg targetSha "$APPROVED_RELEASE_SHA" \
+  --arg title "$APPROVED_RELEASE_TITLE" \
+  --arg semanticDisposition "$APPROVED_SEMANTIC_DISPOSITION" \
+  --arg releaseBodySha256 "$APPROVED_RELEASE_BODY_SHA256" '
+    .schemaVersion == 1
+    and .repository == $repository
+    and .tag == $tag
+    and .targetSha == $targetSha
+    and .title == $title
+    and .semanticDisposition == $semanticDisposition
+    and .releaseBodySha256 == $releaseBodySha256
+  ' "$APPROVAL_MANIFEST" >/dev/null
+preflight_public_candidate
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$SHA"
+
+FINAL_PREFLIGHT="$RELEASE_EVIDENCE/final-pre-release"
+test ! -e "$FINAL_PREFLIGHT"
+mkdir -p "$FINAL_PREFLIGHT/raw"
+npm run verify:branch-protection -- \
+  --repo "$REPO" --repository-id "$APPROVED_REPOSITORY_ID" \
+  --expected-tip "$SHA" --branch main \
+  --output "$FINAL_PREFLIGHT/raw/branch-protection.json"
+npm run eval:sanitize -- "$FINAL_PREFLIGHT/raw" "$FINAL_PREFLIGHT/sanitized"
+npm run eval:sanitize:verify -- "$FINAL_PREFLIGHT/sanitized"
+
+set +e
+PREEXISTING_RELEASE="$("${GH_API[@]}" --method GET --include --silent "repos/$REPO/releases/tags/$RELEASE_TAG" 2>&1)"
+PREEXISTING_RELEASE_STATUS=$?
+set -e
+test "$PREEXISTING_RELEASE_STATUS" = 1
+grep -Eq '^HTTP/\S+ 404([[:space:]]|$)' <<<"$PREEXISTING_RELEASE"
+test -z "$(git ls-remote --refs "$PUBLIC_REMOTE_URL" "refs/tags/$RELEASE_TAG")"
+if test "$SEMANTIC_DISPOSITION" = full-pass; then
+  verify_full_semantic_pass
+fi
+
+set +e
+gh release create "$RELEASE_TAG" --repo "$REPO" --target "$SHA" \
+  --title "$RELEASE_TITLE" --notes-file "$RELEASE_BODY" --latest
+RELEASE_CREATE_STATUS=$?
+set -e
+
+RELEASE_JSON="$("${GH_API[@]}" --method GET "repos/$REPO/releases/tags/$RELEASE_TAG")"
+test "$(jq -r '.tag_name' <<<"$RELEASE_JSON")" = "$RELEASE_TAG"
+test "$(jq -r '.target_commitish' <<<"$RELEASE_JSON")" = "$SHA"
+test "$(jq -r '.name' <<<"$RELEASE_JSON")" = "$RELEASE_TITLE"
+test "$(jq -r '.draft' <<<"$RELEASE_JSON")" = false
+test "$(jq -r '.prerelease' <<<"$RELEASE_JSON")" = false
+jq -e --rawfile expected "$RELEASE_BODY" '.body == $expected' <<<"$RELEASE_JSON" >/dev/null
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/$RELEASE_TAG" --jq .object.type)" = commit
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/$RELEASE_TAG" --jq .object.sha)" = "$SHA"
+
+test "$(git ls-remote --heads "$PUBLIC_REMOTE_URL" refs/heads/main)" = \
+  "$(printf '%s\t%s' "$SHA" refs/heads/main)"
+expected_release_tags="$(printf '%s\t%s\n' \
+  "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+  "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
+  "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
+  "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' \
+  "$SHA" "refs/tags/$RELEASE_TAG" | LC_ALL=C sort)"
+test "$(git ls-remote --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_release_tags"
+test "$(gh pr list --repo "$REPO" --state open --limit 1000 --json number | jq 'length')" = 0
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$SHA"
+test "$RELEASE_CREATE_STATUS" = 0 || printf '%s\n' "Release API postconditions prove the nonzero client result completed remotely."
+```
+
+After the release tag exists, do not call the pre-release
+`preflight_public_candidate`: its strict ref allowlist intentionally excludes release
+tags. Instead, run this standalone block from a clean checkout of the approved release
+SHA immediately before announcement and again immediately before directory submission.
+It deliberately reconstructs all other variables and expected body bytes and can run
+in a fresh shell. Set the approved SHA and approved semantic disposition. For
+`full-pass`, also set `SEMANTIC_EVIDENCE_ROOT` to the retained sanitized exact-SHA
+semantic RC evidence directory; the manual path does not read that variable.
+
+```bash
+set -euo pipefail
+SHA="${APPROVED_RELEASE_SHA:?set the approved 40-hex release SHA}"
+SEMANTIC_DISPOSITION="${SEMANTIC_DISPOSITION:?set full-pass or manual-waiver}"
+test "$(git rev-parse HEAD)" = "$SHA"
+test "$(git status --porcelain=v1)" = ""
+test "$(printf '%s' "$SHA" | grep -Ec '^[0-9a-f]{40}$')" = 1
+
+REPO="seunghyeon1004/claude-code-skillsets"
+PUBLIC_REMOTE_URL="https://github.com/$REPO.git"
+GH_API=(gh api --hostname github.com -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2026-03-10")
+APPROVED_REPOSITORY_ID="1322344258"
+APPROVED_PUBLIC_ROOT_A="cb2f51c097be78612b07bcafe66bc30914c7d5ac"
+APPROVED_PUBLIC_ROOT_TAG_OBJECT="6b56351f581797fc3ca26bd0c3a1f7978da4c675"
+APPROVED_BOOTSTRAP_TIP_B="0ad29eea67c9f504c345d8be2bbc514bd0de5aca"
+APPROVED_R01_TAG_OBJECT="92da733d31af3db551a442e141fbd6b2bfd11010"
+RELEASE_TAG="v0.1.0"
+RELEASE_TITLE="Claude Code Skillsets v0.1.0"
+DISCLOSURE="Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver."
+EXPECTED_BODY="$(mktemp "${TMPDIR:-/tmp}/skillsets-release-body.XXXXXX")"
+POST_RELEASE_EVIDENCE="$(mktemp -d "${TMPDIR:-/tmp}/skillsets-post-release.XXXXXX")"
+POST_RELEASE_SANITIZED="$POST_RELEASE_EVIDENCE-sanitized"
+trap 'rm -f "$EXPECTED_BODY"; rm -rf "$POST_RELEASE_EVIDENCE" "$POST_RELEASE_SANITIZED"' EXIT
+
+case "$SEMANTIC_DISPOSITION" in
+  full-pass)
+    SEMANTIC_EVIDENCE_ROOT="${SEMANTIC_EVIDENCE_ROOT:?set retained sanitized exact-SHA semantic RC evidence}"
+    npm run eval:sanitize:verify -- "$SEMANTIC_EVIDENCE_ROOT"
+    jq -e --arg sha "$SHA" '
+      .schemaVersion == 6
+      and .receiptType == "local-semantic-rc-target"
+      and .commitSha == $sha
+      and .semanticHarnessStatus == "passed"
+    ' "$SEMANTIC_EVIDENCE_ROOT/governance/local-semantic-rc-target.json" >/dev/null
+    cat > "$EXPECTED_BODY" <<EOF
+# Claude Code Skillsets v0.1.0
+
+Release commit: $SHA
+
+Full exact-SHA semantic RC passed.
+EOF
+    ;;
+  manual-waiver)
+    WAIVER="WAIVE-FULL-SEMANTIC-RC:$SHA:SUBSCRIPTION-COST:SEMANTIC-COVERAGE-NOT-PROVEN:NO-KNOWN-SEMANTIC-FAILURE"
+    cat > "$EXPECTED_BODY" <<EOF
+# Claude Code Skillsets v0.1.0
+
+Release commit: $SHA
+
+$DISCLOSURE
+
+Owner waiver: $WAIVER
+EOF
+    ;;
+  *) exit 1 ;;
+esac
+
+repository_json="$("${GH_API[@]}" --method GET "repos/$REPO")"
+test "$(jq -r '.id' <<<"$repository_json")" = "$APPROVED_REPOSITORY_ID"
+test "$(jq -r '.full_name' <<<"$repository_json")" = "$REPO"
+test "$(jq -r '.visibility' <<<"$repository_json")" = public
+test "$(jq -r '.default_branch' <<<"$repository_json")" = main
+test "$(jq -r '.archived' <<<"$repository_json")" = false
+
+npm run verify:branch-protection -- \
+  --repo "$REPO" --repository-id "$APPROVED_REPOSITORY_ID" \
+  --expected-tip "$SHA" --branch main \
+  --output "$POST_RELEASE_EVIDENCE/branch-protection.json"
+npm run eval:sanitize -- "$POST_RELEASE_EVIDENCE" "$POST_RELEASE_SANITIZED"
+npm run eval:sanitize:verify -- "$POST_RELEASE_SANITIZED"
+
+RELEASE_JSON="$("${GH_API[@]}" --method GET "repos/$REPO/releases/tags/$RELEASE_TAG")"
+test "$(jq -r '.tag_name' <<<"$RELEASE_JSON")" = "$RELEASE_TAG"
+test "$(jq -r '.target_commitish' <<<"$RELEASE_JSON")" = "$SHA"
+test "$(jq -r '.name' <<<"$RELEASE_JSON")" = "$RELEASE_TITLE"
+test "$(jq -r '.draft' <<<"$RELEASE_JSON")" = false
+test "$(jq -r '.prerelease' <<<"$RELEASE_JSON")" = false
+jq -e --rawfile expected "$EXPECTED_BODY" '.body == $expected' <<<"$RELEASE_JSON" >/dev/null
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/$RELEASE_TAG" --jq .object.type)" = commit
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/tags/$RELEASE_TAG" --jq .object.sha)" = "$SHA"
+test "$("${GH_API[@]}" --method GET "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$SHA"
+test "$(git ls-remote --heads "$PUBLIC_REMOTE_URL" refs/heads/main)" = \
+  "$(printf '%s\t%s' "$SHA" refs/heads/main)"
+expected_release_tags="$(printf '%s\t%s\n' \
+  "$APPROVED_PUBLIC_ROOT_TAG_OBJECT" refs/tags/public-history/root-v1 \
+  "$APPROVED_PUBLIC_ROOT_A" 'refs/tags/public-history/root-v1^{}' \
+  "$APPROVED_R01_TAG_OBJECT" refs/tags/registry-approved/r01 \
+  "$APPROVED_BOOTSTRAP_TIP_B" 'refs/tags/registry-approved/r01^{}' \
+  "$SHA" "refs/tags/$RELEASE_TAG" | LC_ALL=C sort)"
+test "$(git ls-remote --tags "$PUBLIC_REMOTE_URL" | LC_ALL=C sort)" = "$expected_release_tags"
+test "$(gh pr list --repo "$REPO" --state open --limit 1000 --json number | jq 'length')" = 0
+```
+
+The standalone inventory must pass without edits immediately before each external
+announcement or submission. The release target, exact body, lightweight tag, protected
+`main`, and release-bearing tag set must remain bound to the approved SHA. For the
+manual path, the exact disclosure must remain in the repository README and appear
+verbatim in every submission-visible description.
 
 ## 6. Rollback
 
@@ -1037,4 +1388,5 @@ review, assign a second CODEOWNER, and verify that neither author can satisfy th
 own review requirement. Add a tested reviewed-maintainer branch-protection policy and
 a distinct sanitized disclosure in the same change; do not relabel an old
 `solo-maintainer` receipt as compliant. Re-run the same-SHA CI, policy receipt,
-local semantic RC, and anonymous-install gates after that policy change.
+local semantic RC or a newly approved manual exact-SHA owner waiver, and anonymous-install
+gates after that policy change. Never reuse a prior candidate's waiver.

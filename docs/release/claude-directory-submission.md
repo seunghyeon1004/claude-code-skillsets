@@ -119,6 +119,28 @@ not claimed.
 다른 도구를 사용하는 작업을 계획하는 데 도움을 줄 수 있지만 그 도구는 별도로
 선택되고 관리됩니다. Claude Code에서만 검증했으며 Cowork 지원은 주장하지 않습니다.
 
+### Semantic RC Evidence And Waiver Disclosure / Semantic RC 근거와 면제 공개
+
+The exact submission candidate must use one and only one Stage 3 disposition: either
+the full exact-SHA semantic RC passed, or the user approved a manual exact-SHA owner
+waiver after the protected public remote `main` final SHA was confirmed. The manual
+waiver creates no local waiver receipt or verifier and is not a pass.
+
+정확한 제출 후보는 Stage 3 처리 방식 하나만 사용해야 합니다. 전체 exact-SHA semantic
+RC가 통과했거나, 보호된 public remote `main`의 최종 SHA가 확정된 뒤 사용자가 수동
+exact-SHA owner waiver를 승인한 경우 중 하나입니다. 수동 waiver는 로컬 waiver 영수증이나
+verifier를 만들지 않으며 통과가 아닙니다.
+
+For the manual waiver, the repository README, release body, and submission-visible
+description or disclosure field must contain this exact sentence:
+
+> Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.
+
+수동 waiver를 사용하는 경우 repository README, release body와 제출 화면의 설명 또는 공개
+필드에 위 영문 문장을 그대로 표시해야 합니다. 이 owner attestation은 알려진 실패가
+없다는 역사적 부재를 기계적으로 증명하지 않으며, 알려진 실패를 삭제하거나 숨긴 뒤
+사용하면 안 됩니다.
+
 ## CURRENT POLICY HOLD - DO NOT SUBMIT: Skillset Manager
 
 `skillset-manager` is not a Claude plugin directory submission candidate under the
@@ -239,6 +261,15 @@ them if necessary. This check applies only to the Shared Core form.
 Every item must pass before the single Shared Core form is submitted:
 
 - [ ] The exact repository commit is public and anonymously cloneable.
+- [ ] Stage 3 has exactly one candidate-bound disposition: either the full semantic RC
+      passed, or the manual exact-SHA owner waiver was approved after the protected
+      public remote `main` final SHA was confirmed.
+- [ ] For a manual waiver, the repository README, release body, and submission-visible
+      description contain the exact disclosure above.
+- [ ] GitHub Release `v0.1.0`, its lightweight tag, exact body, and protected `main`
+      all resolve to the same approved SHA.
+- [ ] The standalone post-release inventory in the release runbook passed freshly and
+      unmodified immediately before opening this submission.
 - [ ] Clean-environment marketplace add, the `shared-core` install, and its three
       documented use cases pass against that exact commit.
 - [ ] `claude plugin validate plugins/shared-core --strict` passes.
@@ -258,6 +289,14 @@ Every item must pass before the single Shared Core form is submitted:
 공용 코어 폼 하나를 제출하기 전에 모든 항목이 통과해야 합니다.
 
 - [ ] 정확한 저장소 커밋이 공개되어 있고 인증 없이 clone할 수 있습니다.
+- [ ] Stage 3은 전체 semantic RC 통과 또는 보호된 public remote `main`의 최종 SHA 확정
+      뒤 승인된 수동 exact-SHA owner waiver 중 하나만 사용합니다.
+- [ ] 수동 waiver를 사용하면 repository README, release body와 submission-visible 설명에
+      위 정확한 공개 문장이 포함됩니다.
+- [ ] GitHub Release `v0.1.0`, lightweight tag, 정확한 body와 보호된 `main`이 모두 같은
+      승인 SHA를 가리킵니다.
+- [ ] 릴리스 runbook의 독립 post-release inventory를 이 제출 직전에 수정 없이 새로
+      실행하여 통과했습니다.
 - [ ] 동일 커밋의 깨끗한 환경에서 marketplace 추가, `shared-core` 설치 및 문서화된
       사용 사례 3개가 통과합니다.
 - [ ] `shared-core`의 strict validation이 통과합니다.

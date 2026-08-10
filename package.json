@@ -24,6 +24,7 @@
     "check:manager-runtime": "tsx scripts/build-skillset-manager-runtime.ts --check",
     "broker": "tsx src/discovery/cli.ts",
     "eval:setup": "tsx src/evaluate/setup.ts",
+    "eval:setup-preview": "tsx src/evaluate/setup-preview.ts",
     "eval:maintain": "tsx src/evaluate/maintain.ts",
     "eval:doctor": "tsx src/evaluate/doctor.ts",
     "eval:shared-core": "tsx src/evaluate/shared-core.ts",
@@ -44,7 +45,7 @@
     "verify:p03-immutable": "tsx scripts/research/assert-p03-immutable.ts",
     "verify:broker-only": "tsx scripts/verify-broker-only.ts",
     "verify:decision-index-history": "tsx scripts/verify-decision-index-history.ts",
-    "check:generated": "npm run research:materialize-source-review-backlog -- --check && tsx scripts/research/check-decision-broker-v1.ts && npm run generate && npm run check:manager-runtime && git diff --exit-code -- .claude-plugin generated plugins/skillset-manager/data plugins/skillset-manager/runtime.mjs generated/decision-index.json plugins/skillset-manager/data/decision-index.json research/source-review-backlog.json research/source-observations.json research/source-diffs.json research/materialized-review-state.json",
+    "check:generated": "npm run research:materialize-source-review-backlog -- --check && tsx scripts/research/check-decision-broker-v1.ts && npm run generate && npm run check:manager-runtime && git diff --exit-code -- .claude-plugin generated plugins/skillset-manager/data plugins/skillset-manager/runtime.mjs generated/decision-index.json plugins/skillset-manager/data/decision-index.json generated/routing-index.json plugins/skillset-manager/data/routing-index.json research/source-review-backlog.json research/source-observations.json research/source-diffs.json research/materialized-review-state.json",
     "check": "npm run typecheck && npm test && npm run validate && npm run check:generated",
     "check:catalog-refresh": "npm run typecheck && npm run test:catalog-refresh && npm run validate && npm run check:generated"
   },

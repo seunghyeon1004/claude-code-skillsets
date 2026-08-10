@@ -107,7 +107,7 @@ function projectReceiptForUpload(value: unknown): unknown {
     throw new Error("Unsupported semantic receipt shape for sanitized upload");
   }
   if (value.schemaVersion === 3) return projectBranchProtectionReceipt(value);
-  if (value.schemaVersion === 5 && value.receiptType === "local-semantic-rc-target") {
+  if (value.schemaVersion === 6 && value.receiptType === "local-semantic-rc-target") {
     return projectLocalSemanticRcTargetReceipt(value);
   }
   if (value.schemaVersion !== 1 || typeof value.passed !== "boolean") {
@@ -197,19 +197,10 @@ function projectBranchProtectionReceipt(value: Record<string, unknown>): Record<
 }
 
 function projectLocalSemanticRcTargetReceipt(value: Record<string, unknown>): Record<string, unknown> {
-  if (typeof value.commitSha !== "string"
-    || !/^[0-9a-f]{40}$/u.test(value.commitSha)
-    || value.executionMode !== "subscription-claude-cli-fixture-read-only"
-    || value.humanReviewGuarantee !== "not-guaranteed") {
+  if (!isValidLocalSemanticRcTarget(value)) {
     throw new Error("Unsupported local semantic RC target receipt shape for sanitized upload");
   }
-  return {
-    schemaVersion: 5,
-    receiptType: "local-semantic-rc-target",
-    commitSha: value.commitSha,
-    executionMode: value.executionMode,
-    humanReviewGuarantee: value.humanReviewGuarantee
-  };
+  return { ...value };
 }
 
 function projectSummaryCase(value: unknown): Record<string, string | boolean> {
@@ -275,16 +266,20 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
     }
     return;
   }
-  if (value.schemaVersion === 5 && value.receiptType === "local-semantic-rc-target") {
+  if (value.schemaVersion === 6 && value.receiptType === "local-semantic-rc-target") {
     assertExactKeys(
       value,
-      ["schemaVersion", "receiptType", "commitSha", "executionMode", "humanReviewGuarantee"],
+      [
+        "schemaVersion", "receiptType", "commitSha", "routingIndexPath",
+        "routingIndexByteLength", "routingIndexBytesSha256", "routingIndexDigest",
+        "routingDecisionIndexDigest", "catalogVersion", "catalogObservedThrough",
+        "catalogExpiresAt", "decisionIndexDigest", "decisionIndexByteLength",
+        "decisionIndexBytesSha256", "subscriptionAuthMode", "semanticHarnessStatus",
+        "executableAvailability", "executionMode", "humanReviewGuarantee"
+      ],
       receiptPath
     );
-    if (typeof value.commitSha !== "string"
-      || !/^[0-9a-f]{40}$/u.test(value.commitSha)
-      || value.executionMode !== "subscription-claude-cli-fixture-read-only"
-      || value.humanReviewGuarantee !== "not-guaranteed") {
+    if (!isValidLocalSemanticRcTarget(value)) {
       throw unsupportedProjectedShape(receiptPath);
     }
     return;
@@ -340,6 +335,53 @@ function assertProjectedReceipt(value: unknown, receiptPath: string): void {
     return;
   }
   throw unsupportedProjectedShape(receiptPath);
+}
+
+function isValidLocalSemanticRcTarget(value: Record<string, unknown>): boolean {
+  const observed = typeof value.catalogObservedThrough === "string"
+    ? Date.parse(value.catalogObservedThrough)
+    : Number.NaN;
+  const expires = typeof value.catalogExpiresAt === "string"
+    ? Date.parse(value.catalogExpiresAt)
+    : Number.NaN;
+  return value.schemaVersion === 6
+    && value.receiptType === "local-semantic-rc-target"
+    && typeof value.commitSha === "string"
+    && /^[0-9a-f]{40}$/u.test(value.commitSha)
+    && value.routingIndexPath === "plugins/skillset-manager/data/routing-index.json"
+    && Number.isSafeInteger(value.routingIndexByteLength)
+    && (value.routingIndexByteLength as number) > 0
+    && (value.routingIndexByteLength as number) <= 128 * 1024
+    && isSha256(value.routingIndexBytesSha256)
+    && isSha256(value.routingIndexDigest)
+    && isSha256(value.routingDecisionIndexDigest)
+    && isSha256(value.catalogVersion)
+    && typeof value.catalogObservedThrough === "string"
+    && isStrictUtcTimestamp(value.catalogObservedThrough)
+    && typeof value.catalogExpiresAt === "string"
+    && isStrictUtcTimestamp(value.catalogExpiresAt)
+    && expires - observed === 9 * 86_400_000
+    && isSha256(value.decisionIndexDigest)
+    && value.routingDecisionIndexDigest === value.decisionIndexDigest
+    && Number.isSafeInteger(value.decisionIndexByteLength)
+    && (value.decisionIndexByteLength as number) > 0
+    && isSha256(value.decisionIndexBytesSha256)
+    && value.subscriptionAuthMode === "claude.ai"
+    && value.semanticHarnessStatus === "passed"
+    && (value.executableAvailability === "none" || value.executableAvailability === "present")
+    && value.executionMode === "subscription-claude-cli-fixture-read-only"
+    && value.humanReviewGuarantee === "not-guaranteed";
+}
+
+function isSha256(value: unknown): value is string {
+  return typeof value === "string" && /^[0-9a-f]{64}$/u.test(value);
+}
+
+function isStrictUtcTimestamp(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/u.test(value)) return false;
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed)
+    && new Date(parsed).toISOString() === value.replace("Z", ".000Z");
 }
 
 function projectRepositoryMetadata(value: Record<string, unknown>): Record<string, unknown> {

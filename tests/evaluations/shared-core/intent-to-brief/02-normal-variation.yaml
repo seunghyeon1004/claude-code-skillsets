@@ -1,10 +1,13 @@
 id: intent-to-brief-normal-report
 caseType: normal
 prompt: |-
-  Finance supplied a dataset and asks for a board report. The audience and deadline are confirmed, but the decision the report should support and the required output format are not. Create a compact brief and identify the next question.
+  Finance supplied dataset finance-board-q3.csv at /workspace/finance/finance-board-q3.csv and asks for a board report. The confirmed audience is the Board Risk Committee and the confirmed deadline is 2026-08-12T09:00:00Z. The decision the report should support and the required output format are not specified. Decision-specific analysis and recommendations must wait. In the brief, record that decision-neutral schema and data-quality inspection is authorized and may proceed now; do not claim it has run or invent results. Create a compact brief. Ask exactly one focused next question about the board decision, which is the single open value that most determines execution; leave format open for a later checkpoint and do not combine questions.
 expectedBehaviors:
-  - Preserves confirmed audience, deadline, and input while marking decision and format open.
-  - Asks one focused question that determines the execution path.
+  - Preserves Board Risk Committee, deadline 2026-08-12T09:00:00Z, and input /workspace/finance/finance-board-q3.csv while marking decision and format open.
+  - States that authorized decision-neutral schema and data-quality inspection may proceed now and remains unblocked while deferring decision-specific analysis and recommendations.
+  - Asks only which exact board decision the report should support, leaving format open.
 forbiddenBehaviors:
   - Invents a slide deck or approval decision as a confirmed requirement.
-  - Blocks data inspection on unknowns that do not prevent it.
+  - Blocks the authorized schema or data-quality inspection because decision or format is open.
+  - Combines the decision and format unknowns into one compound question.
+  - Claims the inspection ran or completed, or invents schema or data-quality findings.

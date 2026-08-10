@@ -303,6 +303,29 @@ export interface DecisionIndex {
   digest: string;
 }
 
+/** Bounded model-readable routing data bound to one complete decision index. */
+export interface DecisionRoutingIndex {
+  schemaVersion: 1;
+  catalogVersion: string;
+  observedThrough: string;
+  catalogExpiresAt: string;
+  profiles: IntentProfile[];
+  decisionIndexDigest: string;
+  digest: string;
+}
+
+/** Bounded non-installing candidate context projected only from authenticated starter routes. */
+export interface DecisionDiscoveryCandidate {
+  candidateId: string;
+  displayName?: string;
+  sourceId: string;
+  domainIds: DomainId[];
+  state: DecisionState;
+  stateReasons: string[];
+  evidenceSupport: Array<"direct" | "inferred" | "related">;
+  installable: false;
+}
+
 export interface ManagedInstallReceipt {
   managedBy: "claude-code-skillsets";
   decisionPlanDigest: string;

@@ -1,4 +1,5 @@
-import { mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { chmod, mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,9 +17,11 @@ import {
   parseClaudeVersion,
   runSetupEvaluationCli,
   setupApprovalPreviewDigest,
+  setupResponseInvariant,
   type ModelOutput,
   type ModelRequest,
   type ModelRunner,
+  type ToolCall,
   type SetupApprovalBinding,
   type SetupApprovalPreview,
   type SetupDecisionFixture,
@@ -31,13 +34,16 @@ import {
   type SetupDecisionScenario
 } from "../../src/contracts/setup-scenario.js";
 import {
+  decisionRoutingIndexDigest,
   decisionIndexDigest,
   isAuthenticatedDecisionIndex,
   loadInstalledDecisionIndex,
   loadPluginDecisionIndex,
+  loadPluginDecisionBoundary,
   loadPluginDecisionIndexSet
 } from "../../src/decision/index-loader.js";
 import * as decisionIndexLoader from "../../src/decision/index-loader.js";
+import type { DecisionRoutingIndex } from "../../src/model/decision.js";
 import YAML from "yaml";
 import { createApprovedOfficialDecisionIndexFixture } from "../helpers/official-marketplace-fixture.js";
 
@@ -61,10 +67,154 @@ afterEach(async () => {
 });
 
 describe("setup semantic evaluator", () => {
+  it("uses the authenticated canonical Claude executable instead of a PATH shadow", async () => {
+    const root = await realpath(await mkdtemp(join(tmpdir(), "setup-claude-identity-")));
+    temporaryDirectories.push(root);
+    const approvedDirectory = join(root, "approved");
+    const shadowDirectory = join(root, "shadow");
+    await Promise.all([mkdir(approvedDirectory), mkdir(shadowDirectory)]);
+    const approved = join(approvedDirectory, "claude");
+    const shadow = join(shadowDirectory, "claude");
+    await Promise.all([
+      writeFile(approved, "#!/bin/sh\nprintf '%s\\n' '{\"type\":\"result\",\"result\":\"approved\"}'\n"),
+      writeFile(shadow, "#!/bin/sh\nprintf '%s\\n' '{\"type\":\"result\",\"result\":\"shadow\"}'\n")
+    ]);
+    await Promise.all([chmod(approved, 0o755), chmod(shadow, 0o755)]);
+
+    const previous = semanticClaudeEnvironment();
+    process.env.PATH = `${shadowDirectory}:/usr/bin:/bin`;
+    process.env.SEMANTIC_RC_CLAUDE_EXECUTABLE = approved;
+    process.env.SEMANTIC_RC_CLAUDE_SHA256 = sha256Bytes(await readFile(approved));
+    try {
+      await expect(new ClaudeCliRunner(5_000).run({
+        kind: "response",
+        systemPrompt: "fixture",
+        prompt: "fixture"
+      })).resolves.toMatchObject({ text: "approved" });
+    } finally {
+      restoreSemanticClaudeEnvironment(previous);
+    }
+  });
+
+  it("rejects an authenticated Claude executable replaced during a call", async () => {
+    const root = await realpath(await mkdtemp(join(tmpdir(), "setup-claude-replacement-")));
+    temporaryDirectories.push(root);
+    const approved = join(root, "claude");
+    await writeFile(
+      approved,
+      "#!/bin/sh\nprintf '#!/bin/sh\\nexit 99\\n' > \"$0\"\nprintf '%s\\n' '{\"type\":\"result\",\"result\":\"untrusted\"}'\n"
+    );
+    await chmod(approved, 0o755);
+
+    const previous = semanticClaudeEnvironment();
+    process.env.PATH = `${root}:/usr/bin:/bin`;
+    process.env.SEMANTIC_RC_CLAUDE_EXECUTABLE = approved;
+    process.env.SEMANTIC_RC_CLAUDE_SHA256 = sha256Bytes(await readFile(approved));
+    try {
+      await expect(new ClaudeCliRunner(5_000).run({
+        kind: "response",
+        systemPrompt: "fixture",
+        prompt: "fixture"
+      })).rejects.toThrow(/Claude.*(?:changed|identity|SHA-256)/i);
+    } finally {
+      restoreSemanticClaudeEnvironment(previous);
+    }
+  });
+
+  it("rechecks the authenticated Claude executable when a call times out", async () => {
+    const root = await realpath(await mkdtemp(join(tmpdir(), "setup-claude-timeout-replacement-")));
+    temporaryDirectories.push(root);
+    const approved = join(root, "claude");
+    await writeFile(
+      approved,
+      "#!/bin/sh\nprintf '#!/bin/sh\\nexit 99\\n' > \"$0\"\nexec /bin/sleep 5\n"
+    );
+    await chmod(approved, 0o755);
+
+    const previous = semanticClaudeEnvironment();
+    process.env.PATH = `${root}:/usr/bin:/bin`;
+    process.env.SEMANTIC_RC_CLAUDE_EXECUTABLE = approved;
+    process.env.SEMANTIC_RC_CLAUDE_SHA256 = sha256Bytes(await readFile(approved));
+    try {
+      await expect(new ClaudeCliRunner(1_000).run({
+        kind: "response",
+        systemPrompt: "fixture",
+        prompt: "fixture"
+      })).rejects.toThrow(/Claude.*(?:changed|identity|SHA-256)/i);
+    } finally {
+      restoreSemanticClaudeEnvironment(previous);
+    }
+  });
+
+  it("uses the identity-checking finalizer when the authenticated Claude spawn emits an error", async () => {
+    const root = await realpath(await mkdtemp(join(tmpdir(), "setup-claude-spawn-error-")));
+    temporaryDirectories.push(root);
+    const approved = join(root, "claude");
+    await writeFile(approved, "#!/definitely/missing/semantic-rc-interpreter\n", "utf8");
+    await chmod(approved, 0o755);
+
+    const previous = semanticClaudeEnvironment();
+    process.env.PATH = `${root}:/usr/bin:/bin`;
+    process.env.SEMANTIC_RC_CLAUDE_EXECUTABLE = approved;
+    process.env.SEMANTIC_RC_CLAUDE_SHA256 = sha256Bytes(await readFile(approved));
+    try {
+      await expect(new ClaudeCliRunner(5_000).run({
+        kind: "response",
+        systemPrompt: "fixture",
+        prompt: "fixture"
+      })).rejects.toThrow(/ENOENT|spawn|no such/i);
+    } finally {
+      restoreSemanticClaudeEnvironment(previous);
+    }
+  });
+
+  it("loads only a bounded canonical routing projection bound to the full decision index", async () => {
+    const root = await routingPluginRoot();
+
+    await expect(loadPluginDecisionBoundary(root)).resolves.toMatchObject({
+      decisionIndex: { digest: expect.stringMatching(/^[a-f0-9]{64}$/u) },
+      routingIndex: {
+        schemaVersion: 1,
+        decisionIndexDigest: expect.stringMatching(/^[a-f0-9]{64}$/u),
+        digest: expect.stringMatching(/^[a-f0-9]{64}$/u)
+      }
+    });
+  });
+
+  it("rejects an oversized, overlong, empty, symlinked, stale, or forged routing projection", async () => {
+    const mutations: Array<[string, (root: string) => Promise<void>]> = [
+      ["empty", async (root) => writeFile(routingIndexPath(root), "", "utf8")],
+      ["oversized", async (root) => writeFile(routingIndexPath(root), " ".repeat(128 * 1024 + 1), "utf8")],
+      ["overlong", async (root) => writeFile(routingIndexPath(root), "{}\n".repeat(2_001), "utf8")],
+      ["stale full digest", async (root) => mutateRoutingIndex(root, (routing) => {
+        routing.decisionIndexDigest = "a".repeat(64);
+      })],
+      ["forged profile", async (root) => mutateRoutingIndex(root, (routing) => {
+        const first = routing.profiles[0] as { phrases: { en: string[] } };
+        first.phrases.en[0] = "forged route";
+      })]
+    ];
+
+    for (const [label, mutate] of mutations) {
+      const root = await routingPluginRoot();
+      await mutate(root);
+      await expect(loadPluginDecisionBoundary(root), label).rejects.toThrow(/routing index/i);
+    }
+
+    const linkedRoot = await routingPluginRoot();
+    const outsideRoot = await realpath(await mkdtemp(join(tmpdir(), "setup-routing-link-")));
+    temporaryDirectories.push(outsideRoot);
+    const outside = join(outsideRoot, "routing-index.json");
+    await writeFile(outside, await readFile(routingIndexPath(linkedRoot), "utf8"), "utf8");
+    await rm(routingIndexPath(linkedRoot));
+    await import("node:fs/promises").then(({ symlink }) => symlink(outside, routingIndexPath(linkedRoot)));
+    await expect(loadPluginDecisionBoundary(linkedRoot)).rejects.toThrow(/routing index/i);
+  });
+
   it("uses a fresh response request and separate structured judge request per case", async () => {
     const outputDirectory = await temporaryDirectory();
     const runner = new PassingFakeRunner();
-    const cases = [evaluationCase("case-one"), evaluationCase("case-two")];
+    const cases = await Promise.all([evaluationCase("case-one"), evaluationCase("case-two")]);
 
     const summary = await evaluateSetupCases({
       cases,
@@ -85,9 +235,20 @@ describe("setup semantic evaluator", () => {
       expect(request.systemPrompt).toContain("SETUP SKILL ONLY");
       expect(request.systemPrompt).toContain("Trusted Evaluation Harness Binding");
       expect(request.systemPrompt).toContain(request.requiredRead?.path);
+      expect(request.systemPrompt).toMatch(
+        /fixed case-specific sentence,\s+emit that fixed sentence exactly\s+once as its own standalone paragraph,\s+unchanged and unwrapped;\s+preserve all other\s+case-required content outside that paragraph\./u
+      );
+      expect(request.systemPrompt).toMatch(
+        /fixed\s+requirement\s+applies\s+to\s+the\s+current\s+case\s+immediately[\s\S]*never\s+introduce\s+it\s+with\s+a\s+hypothetical\s+or\s+conditional\s+qualification/i
+      );
+      expect(request.systemPrompt).toMatch(/must\s+be\s+the\s+final\s+response\s+paragraph/i);
+      expect(request.systemPrompt).not.toMatch(/^\t/mu);
+      expect(request.systemPrompt).not.toMatch(
+        /has no candidate selection.*individual safety.*approval.*execution authority/is
+      );
       expect(request.allowedTools).toEqual(["Read"]);
       expect(request.additionalDirectories).toEqual([
-        request.requiredRead?.path.replace(/\/data\/decision-index\.json$/, "")
+        request.requiredRead?.path.replace(/\/data\/routing-index\.json$/, "")
       ]);
       expect(request.jsonSchema).toBeUndefined();
       expect(request.prompt).not.toContain("Trusted Evaluation Harness Binding");
@@ -106,8 +267,8 @@ describe("setup semantic evaluator", () => {
       passed: true,
       errors: [],
       trustedRead: {
-        expectedStatus: "failure",
-        observedStatus: "failure"
+        expectedStatus: "success",
+        observedStatus: "success"
       }
     });
     expect(receipt.expectedBehaviors).toEqual([
@@ -121,10 +282,198 @@ describe("setup semantic evaluator", () => {
     );
   });
 
+  it("preserves the legacy trimmed response when no response invariant is configured", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const rawResponse = "\n  legacy setup response  \n";
+    const runner = new FixedResponseFakeRunner(rawResponse);
+
+    const summary = await evaluateSetupCases({
+      cases: [await evaluationCase("legacy-trim")],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const receipt = JSON.parse(
+      await readFile(join(outputDirectory, "legacy-trim.json"), "utf8")
+    ) as { response: string };
+    expect(receipt.response).toBe("legacy setup response");
+    const judgePayload = JSON.parse(runner.requests[1]!.prompt) as { response: string };
+    expect(judgePayload.response).toBe("legacy setup response");
+  });
+
+  it("sanitizes response invariant errors before preserving them in receipts or judge input", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new FixedResponseFakeRunner("safe response");
+
+    const summary = await evaluateSetupCases({
+      cases: [await evaluationCase("sanitized-invariant")],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory,
+      responseInvariant: () => [
+        "Invariant credential=semantic-secret-token /Users/alice/private/invariant.txt"
+      ]
+    });
+
+    expect(summary.passed).toBe(false);
+    const receipt = JSON.parse(
+      await readFile(join(outputDirectory, "sanitized-invariant.json"), "utf8")
+    ) as { response: string; errors: string[] };
+    expect(receipt.response).toBe("safe response");
+    expect(receipt.errors.join(" ")).toContain("[redacted]");
+    expect(receipt.errors.join(" ")).not.toContain("semantic-secret-token");
+    expect(receipt.errors.join(" ")).not.toContain("/Users/alice/");
+    const judgePayload = JSON.parse(runner.requests[1]!.prompt) as {
+      response: string;
+      responseError: string;
+    };
+    expect(judgePayload.response).toBe("safe response");
+    expect(judgePayload.responseError).not.toContain("semantic-secret-token");
+    expect(judgePayload.responseError).not.toContain("/Users/alice/");
+  });
+
+  it("passes the current evaluation case to the response invariant", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new FixedResponseFakeRunner("safe response");
+    const evaluation = await evaluationCase("case-aware-invariant");
+    let observedCase: SetupEvaluationCase | undefined;
+
+    const summary = await evaluateSetupCases({
+      cases: [evaluation],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory,
+      responseInvariant: (_response, evaluationCase) => {
+        observedCase = evaluationCase;
+        return [];
+      }
+    });
+
+    expect(summary.passed).toBe(true);
+    expect(observedCase).toBe(evaluation);
+  });
+
+  it("enforces the ambiguous-routing authority sentence without unique-route disclosure", async () => {
+    const evaluation: SetupEvaluationCase = {
+      ...await evaluationCase("setup-ambiguous-indexed-tie"),
+      responseRequirements: { ambiguousRoutingAuthority: "en" }
+    };
+    const authority = "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.";
+    const uniqueRoute = "No decision plan or selected candidate exists until the digest-bound installed-runtime preview is returned; executionStatus remains not-executed.";
+
+    expect(setupResponseInvariant(authority, evaluation)).toEqual([]);
+    expect(setupResponseInvariant("Choose a domain.", evaluation).join(" ")).toMatch(
+      /ambiguous routing authority.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${authority}\n${authority}`, evaluation).join(" ")).toMatch(
+      /ambiguous routing authority.*exactly once/i
+    );
+    expect(setupResponseInvariant(
+      "Routing data has no candidate, safety, approval, or execution authority; routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.",
+      evaluation
+    ).join(" ")).toMatch(/ambiguous routing authority.*exactly once/i);
+    expect(setupResponseInvariant(`${authority}\n${uniqueRoute}`, evaluation).join(" ")).toMatch(
+      /unique-route.*forbidden/i
+    );
+    expect(setupResponseInvariant(`It would be wrong to say ${authority}`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${authority} This qualifier changes it.`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`A qualification:\n${authority}`, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`\`\`\`text\n\n${authority}\n\n\`\`\``, evaluation).join(" ")).toMatch(
+      /standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`Context.\n\n${authority}\n\nClosing.`, evaluation)).toEqual([]);
+
+    const koreanEvaluation: SetupEvaluationCase = {
+      ...evaluation,
+      responseRequirements: { ambiguousRoutingAuthority: "ko" }
+    };
+    const koreanAuthority = "라우팅 데이터에는 후보 선택, 안전성, 승인 또는 실행 권한이 없으며 executionStatus는 not-executed로 유지됩니다.";
+    expect(setupResponseInvariant(koreanAuthority, koreanEvaluation)).toEqual([]);
+    expect(setupResponseInvariant(
+      `${koreanAuthority}\n${authority}`,
+      koreanEvaluation
+    ).join(" ")).toMatch(/opposite-language.*forbidden/i);
+  });
+
+  it("requires the complete fresh-index boundary after a time hold", async () => {
+    const evaluation: SetupEvaluationCase = {
+      ...await evaluationCase("setup-expired-catalog"),
+      responseRequirements: { refreshBoundary: "en" }
+    };
+    const boundary = "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.";
+    const koreanBoundary = "향후 다시 시도하려면 라우팅 인덱스를 새로 로드하고, 현재 동의를 받아 필요한 프로브를 실행한 다음, 라우팅 인덱스와 전체 결정 인덱스를 새로 로드하고 결합하는 새로운 미리보기를 사용하고, 새로운 위험 고지를 표시하고, 별도의 정확한 승인을 받아야 합니다.";
+
+    expect(setupResponseInvariant(boundary, evaluation)).toEqual([]);
+    expect(setupResponseInvariant("Fresh inputs are required.", evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`Not this: ${boundary}`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(
+      `If this happened in a real run, the recovery path would be: ${boundary}`,
+      evaluation
+    ).join(" ")).toMatch(/refresh boundary.*standalone.*exactly once/i);
+    expect(setupResponseInvariant(`${boundary}\n${boundary}`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${boundary}\n\nTrailing explanation.`, evaluation).join(" ")).toMatch(
+      /refresh boundary.*final.*standalone.*exactly once/i
+    );
+    expect(setupResponseInvariant(`${boundary}\n${koreanBoundary}`, evaluation).join(" ")).toMatch(
+      /opposite-language.*refresh boundary.*forbidden/i
+    );
+    expect(setupResponseInvariant(koreanBoundary, {
+      ...evaluation,
+      responseRequirements: { refreshBoundary: "ko" }
+    })).toEqual([]);
+  });
+
+  it("preflights and Reads only the bounded routing index before invoking a responder", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingFakeRunner();
+    const root = await routingPluginRoot();
+
+    const summary = await evaluateSetupCases({
+      cases: [{ ...await evaluationCase("routing-read"), fixturePluginRoot: root }],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const response = runner.requests.find(({ kind }) => kind === "response")!;
+    expect(response.requiredRead?.path).toBe(join(root, "data", "routing-index.json"));
+    expect(response.systemPrompt).not.toContain("data/decision-index.json");
+  });
+
+  it("rejects an invalid routing index before any model request", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingFakeRunner();
+    const root = await routingPluginRoot();
+    await writeFile(routingIndexPath(root), " ".repeat(128 * 1024 + 1), "utf8");
+
+    await expect(evaluateSetupCases({
+      cases: [{ ...await evaluationCase("oversized-routing"), fixturePluginRoot: root }],
+      skillContent: "SETUP SKILL ONLY",
+      runner,
+      outputDirectory
+    })).rejects.toThrow(/routing index/i);
+    expect(runner.requests).toEqual([]);
+  });
+
   it("binds the judge schema to the exact case id and rubric behaviors", async () => {
     const outputDirectory = await temporaryDirectory();
     const runner = new PassingFakeRunner();
-    const testCase = evaluationCase("schema-bound-case");
+    const testCase = await evaluationCase("schema-bound-case");
 
     await evaluateSetupCases({
       cases: [testCase],
@@ -142,7 +491,7 @@ describe("setup semantic evaluator", () => {
     const runner = new PassingFakeRunner();
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("resume-case")],
+      cases: [await evaluationCase("resume-case")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory,
@@ -153,7 +502,7 @@ describe("setup semantic evaluator", () => {
     const response = runner.requests.find(({ kind }) => kind === "response")!;
     expect(response.requiredReads).toHaveLength(2);
     expect(response.requiredReads?.map(({ path }) => path)).toEqual([
-      join(response.additionalDirectories![0]!, "data", "decision-index.json"),
+      join(response.additionalDirectories![0]!, "data", "routing-index.json"),
       join(response.additionalDirectories![0]!, "state", "install-lock.json")
     ]);
     expect(response.systemPrompt).toContain("install-lock.json");
@@ -164,7 +513,7 @@ describe("setup semantic evaluator", () => {
     const runner = new FailingFakeRunner();
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("failed-case")],
+      cases: [await evaluationCase("failed-case")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -187,7 +536,7 @@ describe("setup semantic evaluator", () => {
     const runner = new MalformedJudgeFakeRunner();
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("malformed-case")],
+      cases: [await evaluationCase("malformed-case")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -213,7 +562,7 @@ describe("setup semantic evaluator", () => {
     const runner = new ExtraJudgePropertyFakeRunner("root");
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("extra-root")],
+      cases: [await evaluationCase("extra-root")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -233,7 +582,7 @@ describe("setup semantic evaluator", () => {
     const runner = new ExtraJudgePropertyFakeRunner("item");
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("extra-item")],
+      cases: [await evaluationCase("extra-item")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -319,7 +668,7 @@ describe("setup semantic evaluator", () => {
     const runner = new MissingReadTraceFakeRunner();
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("trace-missing")],
+      cases: [await evaluationCase("trace-missing")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -331,6 +680,59 @@ describe("setup semantic evaluator", () => {
     ) as { errors: string[]; trustedRead: { observedStatus: string } };
     expect(receipt.errors.join(" ")).toMatch(/required trusted Read trace/i);
     expect(receipt.trustedRead.observedStatus).toBe("missing");
+    const judgeRequest = runner.requests.find(({ kind }) => kind === "judge");
+    const judge = judgePayload(judgeRequest!);
+    expect(judge.trustedHarnessEvidence).toEqual({
+      exactRequiredReadTraceVerified: false,
+      requiredReadStatuses: [],
+      authorityContext: null
+    });
+  });
+
+  it("rejects reordered Reads and any non-exact Read input", async () => {
+    for (const mode of ["swapped", "extra-input"] as const) {
+      const outputDirectory = await temporaryDirectory();
+      const root = await routingPluginRoot();
+      const runner = new ReadTraceFakeRunner(mode);
+      const summary = await evaluateSetupCases({
+        cases: [{ ...await evaluationCase(`trace-${mode}`), fixturePluginRoot: root }],
+        skillContent: "SETUP SKILL ONLY",
+        runner,
+        outputDirectory,
+        trustedAdditionalReadRelativePaths: [join("state", "install-lock.json")]
+      });
+
+      expect(summary.passed, mode).toBe(false);
+      const receipt = JSON.parse(
+        await readFile(join(outputDirectory, `trace-${mode}.json`), "utf8")
+      ) as { errors: string[] };
+      expect(receipt.errors.join(" "), mode).toMatch(/required trusted Read trace/i);
+    }
+  });
+
+  it("rejects duplicate stream tool-use IDs and duplicate tool results", async () => {
+    for (const duplicate of ["tool-use", "tool-result"] as const) {
+      const path = "/tmp/setup-fixture/data/routing-index.json";
+      const toolUse = JSON.stringify({
+        message: { content: [{ type: "tool_use", id: "read-1", name: "Read", input: { file_path: path } }] }
+      });
+      const toolResult = JSON.stringify({
+        message: { content: [{ type: "tool_result", tool_use_id: "read-1", content: "{}" }] }
+      });
+      const stdout = duplicate === "tool-use"
+        ? [toolUse, toolUse, toolResult, JSON.stringify({ type: "result", result: "response" })].join("\n")
+        : [toolUse, toolResult, toolResult, JSON.stringify({ type: "result", result: "response" })].join("\n");
+      const runner = new ClaudeCliRunner(5_000, async () => stdout);
+
+      await expect(runner.run({
+        kind: "response",
+        systemPrompt: "SETUP SKILL ONLY",
+        prompt: "CASE PROMPT",
+        allowedTools: ["Read"],
+        additionalDirectories: ["/tmp/setup-fixture"],
+        requiredRead: { path, expectedStatus: "success" }
+      }), duplicate).rejects.toThrow(/duplicate.*tool|tool.*duplicate/i);
+    }
   });
 
   it("returns nonzero from the real CLI path when a fake judge fails a case", async () => {
@@ -352,6 +754,25 @@ describe("setup semantic evaluator", () => {
     ) as { passed: boolean; cases: unknown[] };
     expect(summary.passed).toBe(false);
     expect(summary.cases).toHaveLength(9);
+  });
+
+  it("keeps the real routing-only CLI suite to one routing-index Read per case", async () => {
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingFakeRunner();
+
+    await expect(runSetupEvaluationCli(
+      ["--output-dir", outputDirectory],
+      { runner, stdout: { write: () => undefined } }
+    )).resolves.toBe(0);
+
+    const responses = runner.requests.filter(({ kind }) => kind === "response");
+    expect(responses).toHaveLength(9);
+    for (const response of responses) {
+      expect(response.requiredReads).toEqual([expect.objectContaining({
+        path: expect.stringMatching(/\/data\/routing-index\.json$/u)
+      })]);
+      expect(response.requiredReads?.some(({ path }) => path.endsWith("/state/install-lock.json"))).toBe(false);
+    }
   });
 });
 
@@ -479,7 +900,7 @@ describe("decision-index setup fixture evaluator", () => {
     };
 
     const summary = await evaluateSetupCases({
-      cases: [evaluationCase("sanitized-exception")],
+      cases: [await evaluationCase("sanitized-exception")],
       skillContent: "SETUP SKILL ONLY",
       runner,
       outputDirectory
@@ -1249,8 +1670,29 @@ class PassingFakeRunner implements ModelRunner {
   async run(request: ModelRequest): Promise<ModelOutput> {
     this.requests.push(request);
     if (request.kind === "response") {
-      return responseWithRequiredRead(request, `response to ${request.prompt}`);
+      const ambiguousAuthority = "Routing data has no candidate, safety, approval, or execution authority; executionStatus remains not-executed.";
+      const refreshBoundary = "Any future attempt must freshly load the routing index, obtain current consent and run the required probes, then use a new preview that freshly loads and binds the routing index with the full decision index, show a new risk acknowledgement, and obtain a separate exact approval.";
+      return responseWithRequiredRead(
+        request,
+        request.prompt.includes("two equally long indexed phrases")
+          ? ambiguousAuthority
+          : request.prompt.includes("claimed UTC timestamp") || request.prompt.includes("refuses the UTC time probe")
+            ? refreshBoundary
+          : `response to ${request.prompt}`
+      );
     }
+    return { structured: passingJudgeResult(request) };
+  }
+}
+
+class FixedResponseFakeRunner implements ModelRunner {
+  readonly requests: ModelRequest[] = [];
+
+  constructor(private readonly response: string) {}
+
+  async run(request: ModelRequest): Promise<ModelOutput> {
+    this.requests.push(request);
+    if (request.kind === "response") return responseWithRequiredRead(request, this.response);
     return { structured: passingJudgeResult(request) };
   }
 }
@@ -1317,11 +1759,32 @@ class ExtraJudgePropertyFakeRunner implements ModelRunner {
 }
 
 class MissingReadTraceFakeRunner implements ModelRunner {
+  readonly requests: ModelRequest[] = [];
+
   async run(request: ModelRequest): Promise<ModelOutput> {
+    this.requests.push(request);
     if (request.kind === "response") {
       return { text: "response without a tool trace", toolCalls: [] };
     }
     return { structured: passingJudgeResult(request) };
+  }
+}
+
+class ReadTraceFakeRunner implements ModelRunner {
+  constructor(private readonly mode: "swapped" | "extra-input") {}
+
+  async run(request: ModelRequest): Promise<ModelOutput> {
+    if (request.kind === "judge") return { structured: passingJudgeResult(request) };
+    const reads = request.requiredReads ?? [];
+    const toolCalls: ToolCall[] = reads.map((requiredRead) => ({
+      name: "Read",
+      input: { file_path: requiredRead.path },
+      completed: true,
+      success: requiredRead.expectedStatus === "success"
+    }));
+    if (this.mode === "swapped") toolCalls.reverse();
+    else toolCalls[0]!.input = { ...toolCalls[0]!.input, offset: 1 };
+    return { text: "response with invalid trace", toolCalls };
   }
 }
 
@@ -1355,23 +1818,85 @@ function judgePayload(request: ModelRequest): {
   caseId: string;
   expectedBehaviors: string[];
   forbiddenBehaviors: string[];
+  trustedHarnessEvidence: {
+    exactRequiredReadTraceVerified: boolean;
+    requiredReadStatuses: string[];
+    authorityContext: unknown;
+  };
 } {
   return JSON.parse(request.prompt) as {
     caseId: string;
     expectedBehaviors: string[];
     forbiddenBehaviors: string[];
+    trustedHarnessEvidence: {
+      exactRequiredReadTraceVerified: boolean;
+      requiredReadStatuses: string[];
+      authorityContext: unknown;
+    };
   };
 }
 
-function evaluationCase(id: string): SetupEvaluationCase {
+async function evaluationCase(id: string): Promise<SetupEvaluationCase> {
   return {
     id,
     caseType: "normal",
     prompt: `prompt for ${id}`,
     expectedBehaviors: ["does the required thing"],
     forbiddenBehaviors: ["does the forbidden thing"],
-    fixturePluginRoot: join(tmpdir(), "missing-setup-fixtures", id)
+    fixturePluginRoot: await routingPluginRoot()
   };
+}
+
+async function routingPluginRoot(): Promise<string> {
+  const root = await realpath(await mkdtemp(join(tmpdir(), "setup-routing-index-")));
+  temporaryDirectories.push(root);
+  await mkdir(join(root, "data"), { recursive: true });
+  const decisionRaw = await readFile(join(pluginRoot, "data", "decision-index.json"), "utf8");
+  await writeFile(join(root, "data", "decision-index.json"), decisionRaw, "utf8");
+  const decisionIndex = JSON.parse(decisionRaw) as {
+    digest: string;
+    catalogVersion: string;
+    observedThrough: string;
+    catalogExpiresAt: string;
+    profiles: DecisionRoutingIndex["profiles"];
+  };
+  const withoutDigest: Omit<DecisionRoutingIndex, "digest"> = {
+    schemaVersion: 1 as const,
+    decisionIndexDigest: decisionIndex.digest,
+    catalogVersion: decisionIndex.catalogVersion,
+    observedThrough: decisionIndex.observedThrough,
+    catalogExpiresAt: decisionIndex.catalogExpiresAt,
+    profiles: structuredClone(decisionIndex.profiles)
+  };
+  await writeFile(routingIndexPath(root), `${JSON.stringify({
+    ...withoutDigest,
+    digest: decisionRoutingIndexDigest(withoutDigest)
+  }, null, 2)}\n`, "utf8");
+  return root;
+}
+
+function routingIndexPath(root: string): string {
+  return join(root, "data", "routing-index.json");
+}
+
+async function mutateRoutingIndex(
+  root: string,
+  mutate: (routing: {
+    decisionIndexDigest: string;
+    profiles: unknown[];
+    digest: string;
+  }) => void
+): Promise<void> {
+  const routing = JSON.parse(await readFile(routingIndexPath(root), "utf8")) as {
+    decisionIndexDigest: string;
+    profiles: unknown[];
+    digest: string;
+    [key: string]: unknown;
+  };
+  mutate(routing);
+  const { digest: _digest, ...withoutDigest } = routing;
+  routing.digest = decisionRoutingIndexDigest(withoutDigest as Parameters<typeof decisionRoutingIndexDigest>[0]);
+  await writeFile(routingIndexPath(root), `${JSON.stringify(routing, null, 2)}\n`, "utf8");
 }
 
 function exactJudgeSchema(evaluationCase: SetupEvaluationCase): object {
@@ -1771,4 +2296,26 @@ function mutateApproval(
 
 function stringArray(value: unknown): string[] | undefined {
   return Array.isArray(value) && value.every((item) => typeof item === "string") ? value : undefined;
+}
+
+function semanticClaudeEnvironment(): Record<string, string | undefined> {
+  return {
+    PATH: process.env.PATH,
+    SEMANTIC_RC_CLAUDE_EXECUTABLE: process.env.SEMANTIC_RC_CLAUDE_EXECUTABLE,
+    SEMANTIC_RC_CLAUDE_SHA256: process.env.SEMANTIC_RC_CLAUDE_SHA256
+  };
+}
+
+function restoreSemanticClaudeEnvironment(previous: Record<string, string | undefined>): void {
+  for (const [key, value] of Object.entries(previous)) {
+    if (value === undefined) {
+      delete process.env[key];
+    } else {
+      process.env[key] = value;
+    }
+  }
+}
+
+function sha256Bytes(value: Buffer): string {
+  return createHash("sha256").update(value).digest("hex");
 }

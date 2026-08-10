@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import { Ajv2020, type ErrorObject, type ValidateFunction } from "ajv/dist/2020.js";
 import type {
@@ -6,18 +7,22 @@ import type {
   DecisionCandidateProjection,
   DecisionIndex,
   DecisionIntentsManifest,
+  DecisionRoutingIndex,
   DecisionStarterRoutesManifest
 } from "../model/decision.js";
 import type { DomainId } from "../model/complete-v1.js";
+import { canonicalize } from "../research/canonical-json.js";
 
 const require = createRequire(import.meta.url);
 const decisionIndexSchema = require("../../schemas/v3/decision-index.schema.json") as object;
+const decisionRoutingIndexSchema = require("../../schemas/v3/routing-index.schema.json") as object;
 const decisionIntentsSchema = require("../../schemas/v3/decision-intents.schema.json") as object;
 const decisionCandidateEvidenceSchema = require("../../schemas/v3/decision-candidate-evidence.schema.json") as object;
 const decisionStarterRoutesSchema = require("../../schemas/v3/decision-starter-routes.schema.json") as object;
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 const validateDecisionIndexSchema = ajv.compile<DecisionIndex>(decisionIndexSchema);
+const validateDecisionRoutingIndexSchema = ajv.compile<DecisionRoutingIndex>(decisionRoutingIndexSchema);
 const validateDecisionIntentsSchema = ajv.compile<DecisionIntentsManifest>(decisionIntentsSchema);
 const validateDecisionCandidateEvidenceSchema = ajv.compile<DecisionCandidateEvidenceManifest>(
   decisionCandidateEvidenceSchema
@@ -31,6 +36,49 @@ interface ContractError {
 
 export function validateDecisionIndex(value: unknown): DecisionIndex {
   return validateContract("decision index", validateDecisionIndexSchema, value, decisionIndexErrors);
+}
+
+/** Validates a bounded routing projection and its exact complete-index binding. */
+export function validateDecisionRoutingIndex(
+  value: unknown,
+  decisionIndexValue: unknown
+): DecisionRoutingIndex {
+  const routing = validateContract("decision routing index", validateDecisionRoutingIndexSchema, value);
+  const decisionIndex = validateDecisionIndex(decisionIndexValue);
+  const { digest: _routingDigest, ...routingWithoutDigest } = routing;
+  const { digest: _decisionDigest, ...decisionWithoutDigest } = decisionIndex;
+  if (routing.digest !== decisionRoutingIndexDigest(routingWithoutDigest)) {
+    throw new Error("decision routing index digest mismatch");
+  }
+  if (decisionIndex.digest !== sha256Canonical(decisionWithoutDigest)) {
+    throw new Error("decision index digest mismatch");
+  }
+  if (routing.catalogVersion !== decisionIndex.catalogVersion) {
+    throw new Error("decision routing index catalogVersion does not match the decision index");
+  }
+  if (routing.observedThrough !== decisionIndex.observedThrough) {
+    throw new Error("decision routing index observedThrough does not match the decision index");
+  }
+  if (routing.catalogExpiresAt !== decisionIndex.catalogExpiresAt) {
+    throw new Error("decision routing index catalogExpiresAt does not match the decision index");
+  }
+  if (routing.decisionIndexDigest !== decisionIndex.digest) {
+    throw new Error("decision routing index decision index digest mismatch");
+  }
+  if (canonicalize(routing.profiles) !== canonicalize(decisionIndex.profiles)) {
+    throw new Error("decision routing index profiles do not exactly match the decision index");
+  }
+  return routing;
+}
+
+export function decisionRoutingIndexDigest(
+  value: Omit<DecisionRoutingIndex, "digest">
+): string {
+  return sha256Canonical(value);
+}
+
+function sha256Canonical(value: unknown): string {
+  return createHash("sha256").update(canonicalize(value)).digest("hex");
 }
 
 export function validateDecisionIntents(value: unknown): DecisionIntentsManifest {

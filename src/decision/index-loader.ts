@@ -3,8 +3,18 @@ import type { Dirent } from "node:fs";
 import { lstat, readFile, readdir, realpath } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { validateDecisionIndex } from "../contracts/decision.js";
-import type { DecisionCandidateProjection, DecisionIndex, DecisionIntentFixture, IntentProfile } from "../model/decision.js";
+import {
+  decisionRoutingIndexDigest,
+  validateDecisionIndex,
+  validateDecisionRoutingIndex
+} from "../contracts/decision.js";
+import type {
+  DecisionCandidateProjection,
+  DecisionIndex,
+  DecisionIntentFixture,
+  DecisionRoutingIndex,
+  IntentProfile
+} from "../model/decision.js";
 import { COMPLETE_V1_DOMAIN_IDS, type Platform } from "../model/complete-v1.js";
 import { normalizedPhraseLength } from "./normalize.js";
 import { assertSemanticListingExcerpt } from "./listing-excerpt.js";
@@ -15,6 +25,15 @@ const authenticatedDecisionIndexSets = new WeakMap<AuthenticatedDecisionIndexSet
 const installedPluginRoot = fileURLToPath(new URL("../../plugins/skillset-manager", import.meta.url));
 let installedDecisionIndex: Promise<DecisionIndex> | undefined;
 let installedDecisionIndexSet: Promise<AuthenticatedDecisionIndexSet> | undefined;
+let installedDecisionBoundary: Promise<PluginDecisionBoundary> | undefined;
+
+export const SETUP_ROUTING_INDEX_MAX_BYTES = 128 * 1024;
+export const SETUP_ROUTING_INDEX_MAX_LINES = 2_000;
+
+export interface PluginDecisionBoundary {
+  decisionIndex: DecisionIndex;
+  routingIndex: DecisionRoutingIndex;
+}
 
 export interface AuthenticatedDecisionIndexSet {
   readonly current: DecisionIndex;
@@ -43,6 +62,93 @@ export function loadInstalledDecisionIndexSet(): Promise<AuthenticatedDecisionIn
   installedDecisionIndexSet ??= loadInstalledDecisionIndex().then(async (current) =>
     loadDecisionIndexSet(installedPluginRoot, current));
   return installedDecisionIndexSet;
+}
+
+/** Loads the small model-readable projection and binds it to the full runtime index. */
+export async function loadPluginDecisionBoundary(pluginRoot: string): Promise<PluginDecisionBoundary> {
+  const root = resolve(pluginRoot);
+  const canonicalRoot = await realpath(root);
+  if (canonicalRoot !== root) throw new Error("Routing index plugin root must be canonical");
+  const [decisionIndex, routingValue] = await Promise.all([
+    loadPluginDecisionIndex(root),
+    loadRoutingIndexValue(root)
+  ]);
+  let routingIndex: DecisionRoutingIndex;
+  try {
+    routingIndex = validateDecisionRoutingIndex(routingValue, decisionIndex);
+  } catch (error) {
+    throw new Error("Routing index is not bound to the authenticated decision index", { cause: error });
+  }
+  return Object.freeze({ decisionIndex, routingIndex });
+}
+
+/** Installed-plugin variant used by the production setup runtime. */
+export function loadInstalledDecisionBoundary(): Promise<PluginDecisionBoundary> {
+  installedDecisionBoundary ??= Promise.all([
+    loadInstalledDecisionIndex(),
+    loadRoutingIndexValue(installedPluginRoot)
+  ]).then(([decisionIndex, routingValue]) => {
+    let routingIndex: DecisionRoutingIndex;
+    try {
+      routingIndex = validateDecisionRoutingIndex(routingValue, decisionIndex);
+    } catch (error) {
+      throw new Error("Routing index is not bound to the authenticated decision index", { cause: error });
+    }
+    return Object.freeze({ decisionIndex, routingIndex });
+  });
+  return installedDecisionBoundary;
+}
+
+/** Loads only the bounded model-readable routing projection. */
+export async function loadPluginDecisionRoutingIndex(pluginRoot: string): Promise<DecisionRoutingIndex> {
+  return (await loadPluginDecisionBoundary(pluginRoot)).routingIndex;
+}
+
+async function loadRoutingIndexValue(pluginRoot: string): Promise<unknown> {
+  const path = join(pluginRoot, "data", "routing-index.json");
+  const metadata = await lstat(path).catch((error: unknown) => {
+    throw new Error("Routing index is missing or unreadable", { cause: error });
+  });
+  if (metadata.isSymbolicLink() || !metadata.isFile()) {
+    throw new Error("Routing index must be a regular non-symlink file");
+  }
+  if (metadata.size < 1 || metadata.size > SETUP_ROUTING_INDEX_MAX_BYTES) {
+    throw new Error("Routing index exceeds its nonempty 128 KiB size contract");
+  }
+  if (await realpath(path) !== resolve(path)) {
+    throw new Error("Routing index path must be canonical");
+  }
+  const raw = await readFile(path, "utf8");
+  const lineCount = raw.endsWith("\n") ? raw.split("\n").length - 1 : raw.split("\n").length;
+  if (lineCount > SETUP_ROUTING_INDEX_MAX_LINES) {
+    throw new Error("Routing index exceeds its 2000-line contract");
+  }
+  let value: unknown;
+  try {
+    value = JSON.parse(raw) as unknown;
+  } catch (error) {
+    throw new Error("Routing index is not valid JSON", { cause: error });
+  }
+  if (!isRecord(value)
+    || Object.keys(value).sort(compareCodePoints).join("\0") !== [
+      "catalogExpiresAt", "catalogVersion", "decisionIndexDigest", "digest", "observedThrough", "profiles", "schemaVersion"
+    ].sort(compareCodePoints).join("\0")
+    || value.schemaVersion !== 1
+    || typeof value.decisionIndexDigest !== "string"
+    || !/^[a-f0-9]{64}$/u.test(value.decisionIndexDigest)
+    || typeof value.catalogVersion !== "string"
+    || !/^[a-f0-9]{64}$/u.test(value.catalogVersion)
+    || typeof value.observedThrough !== "string"
+    || typeof value.catalogExpiresAt !== "string"
+    || !Array.isArray(value.profiles)
+    || typeof value.digest !== "string"
+    || !/^[a-f0-9]{64}$/u.test(value.digest)) {
+    throw new Error("Routing index has an invalid closed shape");
+  }
+  if (`${JSON.stringify(value, null, 2)}\n` !== raw) {
+    throw new Error("Routing index must use canonical generated JSON bytes");
+  }
+  return value;
 }
 
 /** Plugin-root variant used by isolated installed-plugin verification. */
@@ -153,6 +259,8 @@ export function assertDecisionIndexIntegrity(index: DecisionIndex): void {
 export function decisionIndexDigest(index: Omit<DecisionIndex, "digest">): string {
   return digest(index);
 }
+
+export { decisionRoutingIndexDigest };
 
 export function buildDecisionIntentFixtures(
   profiles: readonly IntentProfile[],

@@ -45,6 +45,12 @@ describe("maintain semantic evaluator", () => {
       join(cases[0]!.fixturePluginRoot, "data", "maintenance-plan.json"),
       join(cases[0]!.fixturePluginRoot, "data", "maintenance-evidence.json")
     ]);
+    expect(response.systemPrompt).toContain(
+      `First call Read exactly once on\n\`${join(cases[0]!.fixturePluginRoot, "data", "maintenance-plan.json")}\``
+    );
+    expect(response.systemPrompt).toContain(
+      `Then call Read exactly once on each runner-owned maintenance evidence path in order:\n- \`${join(cases[0]!.fixturePluginRoot, "data", "maintenance-evidence.json")}\``
+    );
   });
 
   it("rejects a sensitive response without persisting the secret in the receipt", async () => {

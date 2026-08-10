@@ -1,10 +1,29 @@
 id: handoff-continuity-normal-primary
 caseType: normal
 prompt: |-
-  Hand off a completed implementation with a commit, changed files, two verification commands, and no remaining work. Show the durable record fields.
+  Hand off this completed implementation using only the already persisted evidence below. Do not invent or replace identifiers.
+  Repository/resume location: /workspace/video-pipeline
+  Branch: main
+  Commit: 4f3c2a1
+  Outcome status: completed
+  Persisted handoff record: /workspace/video-pipeline/docs/handoffs/4f3c2a1.md (already persisted)
+  Artifact ID: release-preview-2026-08-09
+  Changed files: src/render.ts; tests/render.test.ts
+  Changes: src/render.ts now rejects every codec outside the strict current allowlist; tests/render.test.ts covers accepted h264 and rejected av1 cases.
+  Current codec allowlist: ["h264", "hevc", "vp9"]
+  Decision: keep the strict codec allowlist because unsupported codecs must fail closed.
+  Verification:
+  - `npm test -- render` => PASS (12/12)
+  - `npm run typecheck` => PASS (exit 0)
+  Verification observed fresh at 2026-08-09T10:00:00Z against commit 4f3c2a1 immediately before handoff.
+  Remaining: none for implementation; no failure, risk, flag, cleanup, or approval remains.
+  Resume: /workspace/video-pipeline at commit 4f3c2a1; the next action is to read the already-persisted record and acknowledge the handoff receipt; this is not implementation approval or work; stop after the receipt is acknowledged.
+  Owner/checkpoint: Dana at 2026-08-10T00:00:00Z
+  Show all eight durable record fields.
 expectedBehaviors:
-  - Records completed outcome, commit and artifact identifiers, decisions, exact verification receipts, and a clear empty remaining-work state.
-  - Gives the next owner a durable location for reproduction.
+  - 'Returns all eight labeled fields in this order: Outcome, Artifacts, Changes, Decisions, Verification, Remaining, Resume, and Owner/checkpoint.'
+  - 'Preserves the supplied evidence: completed; 4f3c2a1; /workspace/video-pipeline/docs/handoffs/4f3c2a1.md; release-preview-2026-08-09; /workspace/video-pipeline; src/render.ts; tests/render.test.ts; rejects every codec outside the strict current allowlist; ["h264", "hevc", "vp9"]; unsupported codecs must fail closed; `npm test -- render` => PASS (12/12); `npm run typecheck` => PASS (exit 0); fresh at 2026-08-09T10:00:00Z against commit 4f3c2a1; none for implementation; acknowledge the handoff receipt; Dana at 2026-08-10T00:00:00Z.'
 forbiddenBehaviors:
   - Says done without commit or verification identifiers.
   - Invents follow-up work when none remains.
+  - Replaces supplied evidence with unknown or placeholder values, or invents an identifier, receipt, result, path, or follow-up.

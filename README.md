@@ -6,8 +6,9 @@
 마켓플레이스 목록이나 외부 스킬 번들 또는 안전성 인증이 아닙니다. 외부 스킬을 복사하거나
 안전성을 보증하지 않고, 출처, 호환성, 검토 상태와 알려지지 않은 정보를 공개한 최소 계획을 제공합니다.
 하나의 목표 또는 도메인에서 Anthropic 공식 Marketplace에 등재되고 source identity 근거가 있는
-외부 upstream Claude 플러그인을 최대 두 개만 제안하고, 근거, 빈틈, `unknown`을 먼저 보여
-줍니다. 외부 후보 설치는 별도 승인 뒤에만 가능하며, `0.1`에서는 후보 업데이트와 제거도
+외부 upstream Claude 플러그인을 최대 두 개 제안합니다. 경로에 후보가 있을 때만 표시하며, 근거, 빈틈,
+`unknown`을 먼저 보여 줍니다. 후보가 없는 경로는 빈 배열과 capability gap을 그대로 보여줍니다.
+외부 후보 설치는 별도 승인 뒤에만 가능하며, `0.1`에서는 후보 업데이트와 제거도
 review-required hold입니다.
 
 **기술 프리뷰:** 현재 0/20 실행 가능, 20/20 검토 대기·발견 전용입니다.
@@ -40,6 +41,8 @@ setup은 한 문장 목표를 결정 인덱스의 **제한된 인덱스 목표 �
 도메인 경로는 검토 대기 상태이며 설치를 실행하지 않습니다. `related` 근거는 coverage를
 만들지 않으며 설치를 허용하지 않습니다. 현재 경로별 후보, 상태, 미지원 수, 관찰 시각과 만료는
 [생성된 경로 가용성 표](generated/catalog.ko.md#경로-가용성)를 확인합니다.
+setup preview의 `discoveryCandidates`도 발견 전용이며 승인 digest나 설치 권한에 포함되지 않습니다.
+후보가 없는 경로는 빈 배열을 반환하고 기존 capability gap을 유지합니다.
 
 아래 20개 대분류와 카탈로그의 40개 `draft` 결과 팩은 분류 taxonomy와 향후
 검토 backlog이며 지원 또는 실행 가능 범위가 아닙니다.
@@ -189,12 +192,25 @@ check는 GitHub Actions app ID `15368`에 결합합니다. 직접 push, force pu
 이 solo maintainer 구성은 쓰기 경로를 보호하지만 독립적인 사람의 검토를 보장하지
 않습니다.
 
-명시적 승인 뒤 clean local `main`의 정확한 `C`에서 로컬 구독 Claude CLI로 읽기 전용
-동일한 SHA fixture suite를 실행합니다. 외부 후보를 설치하거나 GitHub를 변경하지 않으며,
-sanitized 영수증만 릴리스 근거로 보존합니다. 이어 인증 없이 같은 SHA를 clone하고
-marketplace 추가, manager 설치, 첫 setup preview를 검증합니다. 모든 단계가 통과한
-뒤에만 release tag, GitHub Release와 발표가 가능합니다. 실패하면 tag나 발표 없이
-비공개로 복귀합니다. 원격 push 전에는 `B`의 새 단일 자식 `C`로 교체할 수 있지만,
+Stage 3은 두 경로 중 정확히 하나를 사용합니다. 기본 경로는 명시적 승인 뒤 clean local
+`main`의 정확한 `C`에서 로컬 구독 Claude CLI로 읽기 전용 동일한 SHA fixture suite를
+실행하고 통과 영수증을 보존합니다. 예외 경로는 보호된 public remote `main`의 최종 SHA가
+확정된 뒤 구독 비용 때문에 전체 semantic RC를 실행하지 않는다는 수동 exact-SHA owner
+waiver를 별도로 승인받습니다. 이 waiver는 통과가 아니며 전체 same-SHA fixture suite를
+실행하지 않았고 semantic coverage가 입증되지 않았음을 뜻합니다. 수동 경로는 로컬 waiver
+영수증이나 verifier를 만들지 않습니다. 이 진술은 역사적 부재를 기계적으로 증명하지
+않으며, 알려진 semantic failure를 삭제하거나 숨겨 승인받으면 안 됩니다. 수동 waiver를
+사용하면 repository README, GitHub Release body와 제출 화면에 다음 문장을 그대로
+표시합니다.
+
+> Full exact-SHA semantic RC was not run; semantic coverage is not proven; release proceeds under an explicit owner waiver.
+
+전체 RC 경로는 외부 후보를 설치하거나 GitHub를 변경하지 않으며 sanitized 영수증만 릴리스
+근거로 보존합니다. 이어 인증 없이 같은 SHA를 clone하고 marketplace 추가, manager 설치,
+첫 setup preview를 검증합니다. Stage 1, 2, 4가 통과하고 Stage 3에 full RC pass 또는
+별도로 승인된 수동 exact-SHA owner waiver가 있을 때만 release tag, GitHub Release와
+발표가 가능합니다. 실패하면 tag나 발표 없이 비공개로 복귀합니다. 원격 push 전에는
+`B`의 새 단일 자식 `C`로 교체할 수 있지만,
 원격 `main`에 C가 올라간 뒤 sibling C를 non-fast-forward/force push하지 않습니다. 이
 경우 비공개 전환 후 중단하고, 현재 원격 C 위의 단일 append-only repair commit과 B부터
 repair까지의 재감사를 포함한 새 명시적 plan/approval 없이는 진행하지 않습니다. A/B/R01
