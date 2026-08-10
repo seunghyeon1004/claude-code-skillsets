@@ -889,8 +889,9 @@ jq -e --arg repo "$REPO" '
   [.[] | select(.name == "claude-code-skillsets" and .repo == $repo and .source == "github")] | length == 1
 ' <<<"$MARKETPLACES" >/dev/null
 jq -e '
-  [.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.3" and .scope == "local" and .enabled == true)] | length == 1
-  and [.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1
+  ([.[] | select(.id == "skillset-manager@claude-code-skillsets" and .version == "0.1.3" and .scope == "local" and .enabled == true)] | length == 1)
+  and
+  ([.[] | select(.id == "shared-core@claude-code-skillsets" and .version == "0.1.0" and .scope == "local" and .enabled == true)] | length == 1)
 ' <<<"$PLUGINS" >/dev/null
 
 MARKETPLACE_LOCATION="$(jq -er '.[] | select(.name == "claude-code-skillsets") | .installLocation' <<<"$MARKETPLACES")"
