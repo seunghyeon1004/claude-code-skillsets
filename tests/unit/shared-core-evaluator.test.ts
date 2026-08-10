@@ -58,6 +58,10 @@ describe("shared-core live evaluator", () => {
       ...quality,
       responseContract: { forbiddenPhrases: [unicodeEmail] }
     }, `Owner/checkpoint: ${punycodeEmail}`).join(" ")).toMatch(/forbidden phrase/i);
+    expect(validateSharedCoreResponse({
+      ...quality,
+      responseContract: { requiredPhrases: ["kill -TERM 48122"] }
+    }, "PID 48122 is running.").join(" ")).toMatch(/missing a required phrase/i);
   });
 
   it.each([
@@ -106,6 +110,7 @@ describe("shared-core live evaluator", () => {
     expect(summary.passed).toBe(true);
     expect(runner.requests.map(({ kind }) => kind)).toEqual(["response", "judge"]);
     expect(runner.requests[0]?.systemPrompt).toContain("# ");
+    expect(runner.requests[0]?.prompt).toBe(cases[0]!.prompt);
     expect(runner.requests[0]?.allowedTools).toEqual([]);
     expect(runner.requests[0]?.systemPrompt).toMatch(
       /evaluation prompt.*only.*task facts/is
@@ -121,8 +126,8 @@ describe("shared-core live evaluator", () => {
     const schema = runner.requests[1]?.jsonSchema as {
       properties: {
         caseId: { const: string };
-        expectedBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string }; passed: { description: string } } }> };
-        forbiddenBehaviors: { required: string[]; properties: Record<string, { properties: { behavior: { const: string }; passed: { description: string } } }> };
+        expectedBehaviors: { required: string[]; properties: Record<string, { properties: { passed: { description: string } } }> };
+        forbiddenBehaviors: { required: string[]; properties: Record<string, { properties: { passed: { description: string } } }> };
       };
     };
     expect(runner.requests[1]?.systemPrompt).toMatch(
@@ -143,6 +148,12 @@ describe("shared-core live evaluator", () => {
     expect(runner.requests[1]?.systemPrompt).toMatch(
       /account.*profile.*session.*identity.*email.*not.*task evidence/is
     );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /evidence.*reason.*no email identity.*allowed/is
+    );
+    expect(runner.requests[1]?.systemPrompt).toMatch(
+      /rubric text.*case-contact.*without reconstructing an identity/is
+    );
     const judgePayload = JSON.parse(runner.requests[1]?.prompt ?? "null") as {
       skillContract?: string;
     };
@@ -151,12 +162,12 @@ describe("shared-core live evaluator", () => {
     expect(schema.properties.expectedBehaviors.required).toEqual(
       cases[0]!.expectedBehaviors.map((_, index) => `item${index}`)
     );
-    expect(Object.values(schema.properties.expectedBehaviors.properties).map(
-      ({ properties }) => properties.behavior.const
-    )).toEqual(cases[0]!.expectedBehaviors);
-    expect(Object.values(schema.properties.forbiddenBehaviors.properties).map(
-      ({ properties }) => properties.behavior.const
-    )).toEqual(cases[0]!.forbiddenBehaviors);
+    expect(Object.values(schema.properties.expectedBehaviors.properties).every(
+      ({ properties }) => !("behavior" in properties)
+    )).toBe(true);
+    expect(Object.values(schema.properties.forbiddenBehaviors.properties).every(
+      ({ properties }) => !("behavior" in properties)
+    )).toBe(true);
     expect(Object.values(schema.properties.expectedBehaviors.properties).every(
       ({ properties }) => /true iff.*performed or stated/i.test(properties.passed.description)
     )).toBe(true);
@@ -195,6 +206,50 @@ describe("shared-core live evaluator", () => {
     expect(receipt.errors.join(" ")).toMatch(/email identity.*outside.*response boundary/i);
     expect(runner.judgePrompt).not.toContain("owner+fixture@example.test");
     expect(runner.judgePrompt).toContain("<contact-email>");
+  });
+
+  it("removes a case-forbidden contact identity from responder and judge inputs", async () => {
+    const cases = await loadSharedCoreCases(projectRoot);
+    const evaluationCase = cases.find(
+      ({ key }) => key === "handoff-continuity--04-boundary-loophole"
+    )!;
+    const forbiddenContact = evaluationCase.responseContract!.forbiddenPhrases![0]!;
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingRunner(false, "kill -TERM 48122");
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    const responder = runner.requests.find(({ kind }) => kind === "response")!;
+    const judge = runner.requests.find(({ kind }) => kind === "judge")!;
+    expect(responder.prompt).not.toContain(forbiddenContact);
+    expect(responder.prompt).toContain("<case-contact>");
+    expect(judge.prompt).not.toContain(forbiddenContact);
+    expect(judge.prompt).toContain("<case-contact>");
+    expect(JSON.stringify(judge.jsonSchema)).not.toContain(forbiddenContact);
+    const receiptText = await readFile(summary.cases[0]!.receiptPath, "utf8");
+    expect(receiptText).toContain(forbiddenContact);
+  });
+
+  it("preserves trusted prompt text when no identity requires replacement", async () => {
+    const [loaded] = await loadSharedCoreCases(projectRoot);
+    const prompt = `${loaded!.prompt}\nLiteral fullwidth marker: Ａ`;
+    const evaluationCase = { ...loaded!, prompt };
+    const outputDirectory = await temporaryDirectory();
+    const runner = new PassingRunner();
+
+    const summary = await evaluateSharedCoreCases({
+      cases: [evaluationCase],
+      runner,
+      outputDirectory
+    });
+
+    expect(summary.passed).toBe(true);
+    expect(runner.requests.find(({ kind }) => kind === "response")?.prompt).toBe(prompt);
   });
 
   it("preserves an email identity supplied by the evaluation prompt", async () => {
@@ -496,12 +551,15 @@ describe("shared-core live evaluator", () => {
 class PassingRunner implements SharedCoreModelRunner {
   requests: SharedCoreModelRequest[] = [];
 
-  constructor(private readonly extraProperty = false) {}
+  constructor(
+    private readonly extraProperty = false,
+    private readonly response = "Evidence-backed response"
+  ) {}
 
   async run(request: SharedCoreModelRequest): Promise<{ text?: string; structured?: unknown }> {
     this.requests.push(request);
     if (request.kind === "response") {
-      return { text: "Evidence-backed response" };
+      return { text: this.response };
     }
     const payload = JSON.parse(request.prompt) as {
       caseId: string;
@@ -596,8 +654,8 @@ class ThrowingResponderRunner implements SharedCoreModelRunner {
   }
 }
 
-function behavior(value: string, evidence = "response") {
-  return { behavior: value, passed: true, evidence, reason: "satisfied" };
+function behavior(_value: string, evidence = "response") {
+  return { passed: true, evidence, reason: "satisfied" };
 }
 
 function behaviorObject(

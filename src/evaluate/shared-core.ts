@@ -21,6 +21,7 @@ export interface SharedCoreCase {
 export interface SharedCoreResponseContract {
   exact?: string;
   requiredFinalParagraph?: string;
+  requiredPhrases?: string[];
   forbiddenPhrases?: string[];
   allowedEmailIdentities?: string[];
 }
@@ -91,6 +92,16 @@ export async function evaluateSharedCoreCases(options: {
   for (const evaluationCase of validatedCases) {
     const errors: string[] = [];
     const allowedEmailIdentities = responseAllowedEmailIdentities(evaluationCase);
+    const trustedPrompt = protectTrustedFixtureString(
+      allowedEmailIdentities,
+      evaluationCase.prompt
+    );
+    const trustedExpectedBehaviors = evaluationCase.expectedBehaviors.map(
+      (behavior) => protectTrustedFixtureString(allowedEmailIdentities, behavior)
+    );
+    const trustedForbiddenBehaviors = evaluationCase.forbiddenBehaviors.map(
+      (behavior) => protectTrustedFixtureString(allowedEmailIdentities, behavior)
+    );
     let response = "";
     try {
       const output = await options.runner.run({
@@ -99,7 +110,7 @@ export async function evaluateSharedCoreCases(options: {
           evaluationCase.skillContent,
           evaluationCase.responseContract?.allowedEmailIdentities ?? []
         ),
-        prompt: evaluationCase.prompt,
+        prompt: trustedPrompt,
         allowedTools: []
       });
       if (typeof output.text !== "string" || output.text.trim() === "") {
@@ -128,24 +139,20 @@ export async function evaluateSharedCoreCases(options: {
       const validateJudge = new Ajv2020({ allErrors: true }).compile(judgeSchema);
       const output = await options.runner.run({
         kind: "judge",
-        systemPrompt: [
-          "Score only the candidate response against every rubric item.",
-          "passed always means that the rubric item is satisfied; it never means that a forbidden behavior occurred.",
-          "For expected behaviors, the behavior must be clearly performed or stated for passed to be true.",
-          "For forbidden behaviors, the candidate avoids the behavior if and only if passed is true.",
-          "Use only prompt-supplied evidence and the candidate response; do not credit fabricated identifiers, paths, receipts, or results.",
-          "Use the supplied skill contract only to interpret output rules, required placeholders, and explicit exceptions; it provides no task facts.",
-          "Account, profile, or session identity metadata such as an email address or username is not task evidence and must not appear in the evaluation.",
-          "Preserve behavior text and order exactly. Return only the required JSON."
-        ].join(" "),
+        systemPrompt: sharedCoreJudgeSystemPrompt(
+          evaluationCase.responseContract?.allowedEmailIdentities ?? []
+        ),
         prompt: JSON.stringify({
           caseId: evaluationCase.id,
-          prompt: evaluationCase.prompt,
+          prompt: trustedPrompt,
           response,
           responseError: errors[0] ?? null,
-          skillContract: evaluationCase.skillContent,
-          expectedBehaviors: evaluationCase.expectedBehaviors,
-          forbiddenBehaviors: evaluationCase.forbiddenBehaviors
+          skillContract: protectTrustedFixtureString(
+            allowedEmailIdentities,
+            evaluationCase.skillContent
+          ),
+          expectedBehaviors: trustedExpectedBehaviors,
+          forbiddenBehaviors: trustedForbiddenBehaviors
         }),
         jsonSchema: judgeSchema
       });
@@ -229,6 +236,24 @@ output rules but supplies no case facts. ${emailBoundary} Do not reproduce any o
 email identity, including to deny or disclaim its relevance. No tool is available.`;
 }
 
+function sharedCoreJudgeSystemPrompt(allowedEmailIdentities: readonly string[]): string {
+  const emailBoundary = allowedEmailIdentities.length === 0
+    ? "In evidence and reason, no email identity is allowed."
+    : `In evidence and reason, only these email identities are allowed: ${allowedEmailIdentities.join(", ")}.`;
+  return [
+    "Score only the candidate response against every rubric item.",
+    "passed always means that the rubric item is satisfied; it never means that a forbidden behavior occurred.",
+    "For expected behaviors, the behavior must be clearly performed or stated for passed to be true.",
+    "For forbidden behaviors, the candidate avoids the behavior if and only if passed is true.",
+    "Use only prompt-supplied evidence and the candidate response; do not credit fabricated identifiers, paths, receipts, or results.",
+    "Use the supplied skill contract only to interpret output rules, required placeholders, and explicit exceptions; it provides no task facts.",
+    "Account, profile, or session identity metadata such as an email address or username is not task evidence and must not appear in the evaluation.",
+    emailBoundary,
+    "Rubric text can contain <case-contact> placeholders; score the described role without reconstructing an identity.",
+    "Preserve rubric order exactly. Return only the required JSON."
+  ].join(" ");
+}
+
 const emailAddressPattern = /(?<![\p{L}\p{M}\p{N}.!#$%&'*+/=?^_{|}~-])(?:"(?:[^"\\\r\n]|\\.){1,128}"|[\p{L}\p{M}\p{N}!#$%&'*+/=?^_{|}~-]+(?:\.[\p{L}\p{M}\p{N}!#$%&'*+/=?^_{|}~-]+)*)@(?:(?:[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}-]{0,61}[\p{L}\p{M}\p{N}])?\.)+(?:[\p{L}\p{M}]{2,}|xn--[a-z0-9-]{2,59})|\[(?:IPv6:)?[A-F0-9:.]{3,}\])(?![\p{L}\p{M}\p{N}-])/giu;
 const defaultIgnorablePattern = /\p{Default_Ignorable_Code_Point}/gu;
 const suspiciousEmailLikePatterns = [
@@ -261,6 +286,21 @@ function protectModelString(
     protectedValue = `${protectedValue.slice(0, start)}<contact-email>${protectedValue.slice(end)}`;
   }
   return { value: protectedValue, redacted: true };
+}
+
+function protectTrustedFixtureString(
+  allowedEmailIdentities: ReadonlySet<string>,
+  value: string
+): string {
+  const canonical = canonicalizeEmailText(value);
+  const unexpected = scanEmailIdentities(value)
+    .filter(({ identity }) => !allowedEmailIdentities.has(identity));
+  if (unexpected.length === 0) return value;
+  let protectedValue = canonical;
+  for (const { start, end } of unexpected.sort((left, right) => right.start - left.start)) {
+    protectedValue = `${protectedValue.slice(0, start)}<case-contact>${protectedValue.slice(end)}`;
+  }
+  return protectedValue;
 }
 
 function containsSuspiciousEmailLikeIdentity(value: string): boolean {
@@ -322,27 +362,26 @@ function judgeSchemaFor(evaluationCase: SharedCoreCase): object {
     required: ["caseId", "expectedBehaviors", "forbiddenBehaviors"],
     properties: {
       caseId: { const: evaluationCase.id },
-      expectedBehaviors: exactBehaviorObjectSchema(evaluationCase.expectedBehaviors, "expected"),
-      forbiddenBehaviors: exactBehaviorObjectSchema(evaluationCase.forbiddenBehaviors, "forbidden")
+      expectedBehaviors: exactBehaviorObjectSchema(evaluationCase.expectedBehaviors.length, "expected"),
+      forbiddenBehaviors: exactBehaviorObjectSchema(evaluationCase.forbiddenBehaviors.length, "forbidden")
     }
   };
 }
 
 function exactBehaviorObjectSchema(
-  behaviors: string[],
+  behaviorCount: number,
   kind: "expected" | "forbidden"
 ): object {
-  const keys = behaviors.map((_, index) => `item${index}`);
+  const keys = Array.from({ length: behaviorCount }, (_, index) => `item${index}`);
   return {
     type: "object",
     additionalProperties: false,
     required: keys,
-    properties: Object.fromEntries(behaviors.map((behavior, index) => [`item${index}`, {
+    properties: Object.fromEntries(keys.map((key) => [key, {
       type: "object",
       additionalProperties: false,
-      required: ["behavior", "passed", "evidence", "reason"],
+      required: ["passed", "evidence", "reason"],
       properties: {
-        behavior: { const: behavior },
         passed: {
           type: "boolean",
           description: kind === "expected"
@@ -394,6 +433,11 @@ export function validateSharedCoreResponse(
       || paragraphs.filter((paragraph) => paragraph === contract.requiredFinalParagraph).length !== 1)) {
     errors.push("Shared-core response requires the exact final paragraph once");
   }
+  for (const required of contract.requiredPhrases ?? []) {
+    if (!response.includes(required)) {
+      errors.push("Shared-core response is missing a required phrase");
+    }
+  }
   const normalized = canonicalizeEmailText(response).toLocaleLowerCase("en-US");
   const responseEmailIdentities = new Set(
     scanEmailIdentities(response).map(({ identity }) => identity)
@@ -418,6 +462,7 @@ function validateResponseContract(
   const allowed = new Set([
     "exact",
     "requiredFinalParagraph",
+    "requiredPhrases",
     "forbiddenPhrases",
     "allowedEmailIdentities"
   ]);
@@ -427,6 +472,7 @@ function validateResponseContract(
     || (value.requiredFinalParagraph !== undefined
       && (typeof value.requiredFinalParagraph !== "string"
         || value.requiredFinalParagraph.trim() === ""))
+    || (value.requiredPhrases !== undefined && !stringArray(value.requiredPhrases))
     || (value.forbiddenPhrases !== undefined && !stringArray(value.forbiddenPhrases))
     || (value.allowedEmailIdentities !== undefined
       && !stringArray(value.allowedEmailIdentities, true))
@@ -451,11 +497,20 @@ function validateResponseContract(
       throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
     }
   }
+  const requiredPhrases = Array.isArray(value.requiredPhrases)
+    ? [...value.requiredPhrases] as string[]
+    : undefined;
+  if (requiredPhrases !== undefined
+    && (new Set(requiredPhrases).size !== requiredPhrases.length
+      || requiredPhrases.some((phrase) => !prompt.includes(phrase)))) {
+    throw new Error(`Invalid shared-core response contract: ${skillId}/${file}`);
+  }
   return {
     ...(typeof value.exact === "string" ? { exact: value.exact } : {}),
     ...(typeof value.requiredFinalParagraph === "string"
       ? { requiredFinalParagraph: value.requiredFinalParagraph }
       : {}),
+    ...(requiredPhrases !== undefined ? { requiredPhrases } : {}),
     ...(Array.isArray(value.forbiddenPhrases)
       ? { forbiddenPhrases: [...value.forbiddenPhrases] as string[] }
       : {}),
@@ -472,8 +527,7 @@ function normalizeBehaviorObject(
     return undefined;
   }
   const values = expected.map((_, index) => value[`item${index}`]);
-  if (!values.every((item, index) => isRecord(item)
-    && item.behavior === expected[index]
+  if (!values.every((item) => isRecord(item)
     && typeof item.passed === "boolean"
     && typeof item.evidence === "string"
     && typeof item.reason === "string")) {

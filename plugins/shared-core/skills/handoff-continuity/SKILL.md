@@ -55,6 +55,10 @@ Completion status must agree with the remaining-work list and verification evide
 
 Every handoff field is required. Under a length limit, compress values rather than dropping fields. Preserve known results even when their invocation is unknown, for example: `focused test: passed; command: unknown - recover before proceeding`.
 
+When task evidence supplies process-control facts, preserve the PID, log path,
+progress, stop command, and recovery point in the eight-field record. A resume
+stop condition does not replace the supplied stop command.
+
 ## When Not to Use
 
 - The interaction is a self-contained answer with no artifact, state, or follow-up work.

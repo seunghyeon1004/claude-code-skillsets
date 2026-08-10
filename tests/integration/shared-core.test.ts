@@ -254,6 +254,9 @@ describe("shared-core evaluation corpus", () => {
     expect(handoffSkill).toMatch(
       /non-owner.*contact.*do not repeat.*Owner\/checkpoint.*disclaim/is
     );
+    expect(handoffSkill).toMatch(
+      /process-control.*PID.*log path.*progress.*stop command.*recovery point.*eight-field record/is
+    );
 
     const handoff = YAML.parse(await readFile(
       join(evaluationsRoot, "handoff-continuity", "04-boundary-loophole.yaml"),
@@ -264,6 +267,7 @@ describe("shared-core evaluation corpus", () => {
       forbiddenBehaviors: string[];
       responseContract?: {
         allowedEmailIdentities?: string[];
+        requiredPhrases?: string[];
         forbiddenPhrases?: string[];
       };
     };
@@ -293,6 +297,7 @@ describe("shared-core evaluation corpus", () => {
       /alerts@example\.test.*owner|owner.*alerts@example\.test/is
     );
     expect(handoff.responseContract?.forbiddenPhrases).toEqual(["alerts@example.test"]);
+    expect(handoff.responseContract?.requiredPhrases).toEqual(["kill -TERM 48122"]);
     expect(handoff.responseContract?.allowedEmailIdentities).toEqual([]);
 
     const handoffPressure = YAML.parse(await readFile(
