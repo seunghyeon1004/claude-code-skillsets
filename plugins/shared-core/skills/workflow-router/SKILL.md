@@ -1,42 +1,51 @@
 ---
 name: workflow-router
-description: Use when routing an outcome only across provided catalog categories and packs into Primary, Supporting, Deferred, and Coverage; not for general skill, agent, tool, plugin installation, or open-ended workflow routing.
+description: Use when one defined request has overlapping proposed workstreams and needs Primary workstream, Supporting workstream, Deferred work, and Coverage; not for catalog, pack, skill, agent, tool, plugin, or installation selection, or open-ended workflow design.
 ---
 
 # Workflow Router
 
 ## Overview
 
-Route an outcome to the smallest complete, non-overlapping workflow. A broad bundle is not a better match when a narrower candidate already produces the required output.
+Separate already-proposed work inside one defined request into the smallest complete,
+non-overlapping set of workstreams. This skill assigns responsibility within the
+request. It does not discover, recommend, select, or install external components.
 
 ## Routing Contract
 
 1. Name the requested output and its acceptance boundary.
-2. Filter candidates whose declared inputs and outputs fit.
-3. Choose the narrowest candidate that directly produces the output as the primary pack.
-4. Add a supporting pack only for a named gap the primary pack does not cover.
-5. Count shared dependencies once and defer overlapping, broader, unrelated, or premature packs.
+2. List only the proposed workstreams already present in the request, with each
+   workstream's output and responsibility.
+3. Choose the narrowest workstream that directly produces the output as primary.
+4. Add a supporting workstream only for a named output gap the primary workstream
+   does not cover.
+5. Count shared preparatory work once and defer overlapping, broader, unrelated, or
+   premature work.
 
 Return:
 
 ```text
-Primary: <one pack or no-match>
-Supporting: <only uncovered capabilities>
-Deferred: <pack and reason>
-Coverage: <required output -> owning pack>
+Primary workstream: <one workstream or no-match>
+Supporting workstream: <only an uncovered output responsibility>
+Deferred work: <workstream and reason>
+Coverage: <required output -> responsible workstream>
 ```
 
-If no candidate covers the required output, return `no-match` and state the missing capability instead of assembling a misleading bundle.
+If no proposed workstream covers the required output, return `no-match` and state the
+missing responsibility. Do not introduce a new tool, plugin, skill, pack, agent, or
+provider as part of the route.
 
 ## When Not to Use
 
-- One exact skill is already selected and no category, pack, dependency, or overlap decision remains.
-- The task is to author catalog metadata rather than consume it.
+- The task is selecting from a catalog or choosing, recommending, installing, updating,
+  or removing a pack, plugin, skill, agent, tool, or provider.
+- One workstream already owns the output and no responsibility overlap remains.
+- The task is authoring component metadata or designing a new workflow from scratch.
 - The request needs workspace or risk discovery before routing criteria are known.
 
 ## Common Mistakes
 
-- Choosing the largest suite because it sounds comprehensive.
+- Treating a broad workstream as better merely because it contains more activity.
 - Adding adjacent analysis that was never part of the deliverable.
-- Installing multiple packs that own the same workflow step.
-- Treating a shared dependency as a reason to install every dependent pack.
+- Assigning multiple workstreams to own the same output.
+- Treating shared preparation as a reason to activate every proposed workstream.

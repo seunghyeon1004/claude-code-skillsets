@@ -22,7 +22,7 @@ Open a namespaced skill explicitly in Claude Code. Claude Code에서 이름공�
 | --- | --- |
 | `intent-to-brief` | Turn a broad or fragmented request into a scoped brief. 넓거나 흩어진 요청을 범위가 정해진 brief로 바꿉니다. |
 | `workspace-context` | Establish instructions, source-of-truth files, capabilities, and constraints in an unfamiliar workspace. 낯선 workspace의 지침, source of truth, 기능 및 제약을 확인합니다. |
-| `workflow-router` | Select the smallest non-overlapping workflow when candidate packs or plugins overlap. 후보 pack이나 plugin이 겹칠 때 가장 작은 비중복 workflow를 고릅니다. |
+| `workflow-router` | Separate overlapping workstreams inside one defined request. 하나의 정해진 요청 안에서 겹치는 workstream을 분리합니다. |
 | `plan-and-checkpoints` | Order dependent work and place explicit stop/go gates around risky or external actions. 의존 작업의 순서를 정하고 위험하거나 외부에 영향을 주는 행동에 중단·진행 gate를 둡니다. |
 | `risk-privacy-permissions` | Review data flow, permissions, cost, reversibility, and the exact approval point. 데이터 흐름, 권한, 비용, 되돌리기 가능성 및 정확한 승인 지점을 검토합니다. |
 | `evidence-provenance` | Record source, date, verification state, and reuse rights for claims and assets. 주장과 asset의 출처, 날짜, 검증 상태 및 재사용 권리를 기록합니다. |

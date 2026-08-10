@@ -179,7 +179,7 @@ describe("artifact generation", () => {
       displayName: "Shared Core",
       homepage: "https://github.com/seunghyeon1004/claude-code-skillsets#readme",
       category: "productivity",
-      tags: ["broker"]
+      tags: ["workflow"]
     });
     expect(marketplace.plugins[1]).toMatchObject({
       displayName: "Skillset Manager",
