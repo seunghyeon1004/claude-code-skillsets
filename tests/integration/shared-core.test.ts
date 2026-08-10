@@ -115,6 +115,9 @@ describe("shared-core plugin", () => {
     expect(intent).toMatch(
       /only when.*request.*explicitly.*supplies.*shared input.*otherwise.*Inputs.*open.*do not.*research.*comparison matrices.*outlines.*drafting/is
     );
+    expect(intent).toMatch(
+      /precedence arbitration question.*limited.*authority.*do not.*offer.*fallback.*third option.*scope reduction.*inside.*question/is
+    );
 
     const risk = await readFile(
       join(skillsRoot, "risk-privacy-permissions", "SKILL.md"),

@@ -46,7 +46,10 @@ supplies a concrete shared input and authorizes reversible inspection that is
 independent of every conflicting path. Otherwise mark `Inputs` open and do not
 propose, start, or claim research, comparison matrices, outlines, drafting, or
 other artifact groundwork. Never interpret a conflicting constraint to create an
-exception. Then ask one focused precedence arbitration question.
+exception. Then ask one focused precedence arbitration question. Keep the
+precedence arbitration question limited to identifying the authority or approved
+requirement that controls. Do not offer a fallback, third option, compromise, or
+scope reduction inside the question.
 
 ## Confirmation Rule
 
