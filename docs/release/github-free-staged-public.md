@@ -865,7 +865,13 @@ compare_plugin_tree() {
   installed="$2"
   test -z "$(find "$expected" -type l -print -quit)"
   test -z "$(find "$installed" -type l -print -quit)"
-  diff -qr -- "$expected" "$installed"
+  test -z "$(find "$expected" -name .in_use -print -quit)"
+  test -z "$(find "$installed" -name .in_use ! -path "$installed/.in_use" -print -quit)"
+  if test -e "$installed/.in_use"; then
+    test -f "$installed/.in_use"
+    test ! -L "$installed/.in_use"
+  fi
+  diff -qr -x .in_use -- "$expected" "$installed"
 }
 
 ANON_REPO_URL="https://github.com/$REPO.git"
